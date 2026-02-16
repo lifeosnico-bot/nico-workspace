@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Letta local config
+.letta/
+
+# Trash (reviewed separately)
+.trash/
+
+# Obsidian vault has its own repo — don't double-track
+Vault/
+
+# Node
+node_modules/
+
+# Environment files
+.env
+.env.local
