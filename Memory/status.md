@@ -1,12 +1,12 @@
 # Status
 
-**Last Updated**: 2026-02-16 18:45 | **Updated by**: Cowork | **Session**: 2
+**Last Updated**: 2026-02-16 20:30 | **Updated by**: Claude Code | **Session**: 3
 
 ## Current State
 
-All planning and research is complete. Setup phases are defined and ready to execute. **ZERO backup redundancy right now.** Everything lives only on the M1 local filesystem.
+Phase 0 (GitHub backup) is COMPLETE. ~/Nico/ workspace is on GitHub (lifeosnico-bot/nico-workspace) with auto-backup every 6 hours via launchd. Git credential helper fixed.
 
-**Next action:** ⚠️ **Phase 0-CRITICAL** — Push ~/Nico/ to GitHub immediately. Nothing else until this is done.
+**Next action:** Phase 0A — Consolidate Chat Data (needs Vincent + Cowork)
 
 ---
 
@@ -27,7 +27,7 @@ _These work conversationally — just say "adl: set up automated testing for por
 ## Tasks
 
 ### In Progress
-_(nothing active right now)_
+_(nothing active right now — Phase 0A needs Vincent + Cowork)_
 
 ---
 
@@ -38,17 +38,15 @@ _Dependency: None. This is the FIRST thing to do. Everything else is blocked unt
 
 **Option A — Paste into Claude Code on M1 (recommended, ~2 min):**
 
-- [ ] 1. Open Claude Code on M1 (SSH in from M3 or open Terminal on M1)
-  - [ ] 1a. From M3: `ssh lifeos.nico@100.87.182.78` then `claude`
-  - [ ] 1b. Or on M1 directly: open Terminal → `claude`
-- [ ] 2. Paste the ready-made prompt
-  - [ ] 2a. Copy the prompt from `~/Nico/Memory/Sessions/Chief of Staff CW/URGENT-github-backup-prompt.md`
-  - [ ] 2b. Paste into Claude Code — it will: fix git lock, commit everything, create private GitHub repo, push
-  - [ ] 2c. Claude Code will also set up auto-backup every 6 hours via launchd
-- [ ] 3. Verify
-  - [ ] 3a. `gh repo view nico-workspace` — should show the private repo
-  - [ ] 3b. `git log --oneline -3` — should show the initial commit
-  - [ ] 3c. Check GitHub.com → lifeos.nico → nico-workspace repo exists
+- [x] 1. Open Claude Code on M1 (done 2026-02-16)
+- [x] 2. Paste the ready-made prompt (done 2026-02-16)
+  - [x] 2a. Fixed git lock, committed 12 files, created private repo, pushed
+  - [x] 2b. Auto-backup every 6 hours via launchd (com.nico.workspace-backup)
+  - [x] 2c. Fixed git credential helper with `gh auth setup-git`
+- [x] 3. Verified (done 2026-02-16)
+  - [x] 3a. `gh repo view nico-workspace` — confirmed
+  - [x] 3b. `git log --oneline` — initial commit + backup script commit
+  - [x] 3c. Repo: https://github.com/lifeosnico-bot/nico-workspace
 
 **Option B — Do it manually (~5 min):**
 
@@ -456,6 +454,9 @@ _Dependency: Phase 3 (Obsidian working) + Phase 7 Task 3 (agent SDK) + Phase 8 (
 - [x] Task decomposition rules added to CLAUDE.md (done 2026-02-16)
 - [x] Dependency tracking rules added to CLAUDE.md (done 2026-02-16)
 - [x] Metadata standards added — date/time/version/source on all data (done 2026-02-16)
+- [x] Phase 0: GitHub backup — nico-workspace repo created, auto-backup every 6hrs (done 2026-02-16)
+- [x] Git credential helper fixed with `gh auth setup-git` (done 2026-02-16)
+- [x] Disabled cloud MCP connector sync (Craft tools were burning 17.8k tokens/session) (done 2026-02-16)
 
 ---
 
