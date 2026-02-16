@@ -144,3 +144,61 @@ _Session 2 was split across two Cowork contexts (context ran out mid-session)._
 - CLAUDE.md is fully configured as master instruction file for both Cowork and Claude Code.
 - status.md is the single source of truth for all tasks.
 - Next action: Vincent SSHes into M1 (or opens Terminal on M1) → opens Claude Code → pastes the prompt from URGENT-github-backup-prompt.md → verifies GitHub repo exists.
+
+---
+
+## Session 3 — 2026-02-16 (Claude Code on M1)
+**Focus**: GitHub backup execution + MCP token audit
+**Source**: Claude Code | **Start**: ~13:30 EST | **End**: ~20:30 EST
+
+### What Got Done
+- Executed Phase 0-CRITICAL: created private GitHub repo (lifeosnico-bot/nico-workspace)
+- Fixed git lock, committed 12 files, pushed initial commit
+- Set up auto-backup: ~/Nico/Scripts/auto-backup.sh + launchd plist (every 6 hours)
+- Fixed git credential helper with `gh auth setup-git`
+- Identified MCP token waste: Craft Code Youtube tools loading 21 tools (17.8k tokens/session)
+- Disabled cloud MCP sync: set `tengu_claudeai_mcp_connectors: false` in ~/.claude.json
+- Added Phase 0C (context audit) and Phase 0D (SSH fix) to status.md
+
+### Decisions Made
+- Cloud MCP sync disabled to prevent token waste
+- Phase 0D (SSH fix) flagged as most pressing by Memo
+
+### Left Open
+- Phase 0C: verify MCP fix after Claude Code restart
+- Phase 0D: diagnose SSH permission denied from M3
+
+---
+
+## Session CW-4 — 2026-02-16 (Cowork)
+**Focus**: Strategic review, governance enforcement, communication architecture
+**Source**: Cowork | **Start**: ~21:30 EST | **End**: ongoing
+
+### What Got Done
+- Full status review of GitHub repo and all phases
+- Identified git workflow violation: both agents + auto-backup pushing directly to master
+- Created Phase 0E: Fix Git Workflow — enforce branch protection + PR process
+- Promoted Slack from future placeholder to infrastructure priority (Phase 4B)
+- Split Phase 4 into 4A (device connectivity) and 4B (agent comms backbone)
+- Designed Slack channel structure: #status, #tasks, #decisions, #dev, #lucavo, #nico-internal
+- Established architecture principle: "build for N agents, not 2"
+- Defined status.md protocol: read at session start, Slack during work, write back at session end
+- Identified metadata standards enforcement gap — added as Phase 0E Task 6
+- Added Claude Code multi-device access research to Phase 4A Task 3
+- Updated CLAUDE.md: communication line, git rules (branch protection ON), architecture principle, status.md protocol
+- Updated decisions.md: 4 new decisions logged with timestamps
+- Updated session-log.md: Sessions 3 and CW-4
+
+### Decisions Made (all logged to decisions.md with timestamps)
+- Architecture Principle: build for N agents, not 2 (22:15 EST)
+- Communication: Slack as agent backbone, iMessage demoted to escalation (22:15 EST)
+- Git: enforce branch protection now, not later (22:15 EST)
+- Metadata: enforce, don't just document — rules without enforcement are suggestions (22:15 EST)
+
+### Pending Vincent Decisions
+- Phase 0E Task 1c: Branch protection strictness — require PR approval, or just require PR exists?
+- Phase 0E Task 2: Auto-backup approach — Option A (branch+PR), B (rolling backup branch), or C (kill auto-push)?
+
+### Current Status
+- Phase 0E is next action (needs Vincent's two decisions + Claude Code on M1)
+- All files synchronized: status.md, decisions.md, CLAUDE.md, session-log.md
