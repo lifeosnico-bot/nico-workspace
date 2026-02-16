@@ -1,12 +1,14 @@
 # Status
 
-**Last Updated**: 2026-02-16 20:30 | **Updated by**: Claude Code | **Session**: 3
+**Last Updated**: 2026-02-16 22:40 EST | **Updated by**: Cowork | **Session**: CW-4
 
 ## Current State
 
 Phase 0 (GitHub backup) is COMPLETE. ~/Nico/ workspace is on GitHub (lifeosnico-bot/nico-workspace) with auto-backup every 6 hours via launchd. Git credential helper fixed.
 
-**Next action:** Phase 0A — Consolidate Chat Data (needs Vincent + Cowork)
+**#1 PRIORITY:** Vincent has no way to reach agents (Cowork or Claude Code) from his phone or communicate with them outside of sitting in front of a laptop. This blocks everything — you can't run an AI-native company if the CEO can't talk to his staff.
+
+**Next action:** Phase 0F — Agent Access & Communication (figure out how Vincent reaches agents from any device)
 
 ---
 
@@ -27,7 +29,103 @@ _These work conversationally — just say "adl: set up automated testing for por
 ## Tasks
 
 ### In Progress
-_(nothing active right now — Phase 0A needs Vincent + Cowork)_
+_(nothing active right now — Phase 0F is #1 priority)_
+
+---
+
+### Phase 0F: Agent Access & Communication — How Vincent Reaches Agents From Anywhere (👤 Vincent + 🤖 Cowork + 🤖 Claude Code, ~45 min)
+_Dependency: None. **#1 PRIORITY — do first. Nothing else matters if the CEO can't talk to his staff.**_
+
+**Why:** Vincent currently has Claude Code Desktop installed on two laptops (M3 + M1) and Cowork on M3. There's no way to reach any agent from iPhone. No communication channel exists between Vincent and agents outside of sitting in front of a specific laptop. For an AI-native company, this is the equivalent of having no phone and no email.
+
+**The problem has three parts:**
+1. How does Vincent reach agents from his phone?
+2. How do two Claude Code Desktop installs on different machines coexist?
+3. What's the always-on communication channel between Vincent and all agents?
+
+**How the two Claude Code Desktops work:**
+- M3's Claude Code Desktop sees M3's local files ONLY
+- M1's Claude Code Desktop sees M1's local files ONLY
+- They share the same Anthropic account (billing, API) but sessions are completely independent
+- Worktrees isolate sessions on the SAME machine, not across machines
+- Cross-machine coordination happens through Git (push/pull via GitHub)
+
+**Setup order: fastest wins first, then build out.**
+
+- [ ] 1. QUICK WIN: Claude Code remote sessions from phone (~5 min, Vincent)
+  - [ ] 1a. Open claude.ai/code in Safari on iPhone — can you see and launch remote sessions?
+  - [ ] 1b. Open Claude iOS app — check if it shows Claude Code session monitoring
+  - [ ] 1c. Test: start a remote session from phone, give it a task, confirm it runs
+  - [ ] 1d. **This may give you agent access from your phone TODAY with zero setup**
+- [ ] 2. QUICK WIN: Slack workspace + phone app (~10 min, Vincent)
+  - [ ] 2a. Create Slack workspace (Vincent decides name: "lucavo-lifeos", "nico-hq", or other)
+  - [ ] 2b. Install Slack on iPhone
+  - [ ] 2c. Create channels: #tasks, #status, #decisions, #dev, #lucavo, #nico-internal
+  - [ ] 2d. This gives Vincent a place to send commands from phone immediately — agent integration comes next
+- [ ] 3. Connect agents to Slack (~20 min, Cowork + Claude Code)
+  - [ ] 3a. Connect Cowork to Slack (MCP connector — platform already offers this)
+  - [ ] 3b. Research Claude Code ↔ Slack integration (bot token vs. Slack App vs. API)
+  - [ ] 3c. Implement Claude Code → Slack posting (status updates, task completions)
+  - [ ] 3d. Test: Vincent posts `adl: something` in #tasks from phone → Nico picks it up
+  - [ ] 3e. Test: agent completes task → posts to #status automatically
+- [ ] 4. SSH from phone as terminal fallback (blocked by Phase 0D)
+  - [ ] 4a. Fix SSH from M3 → M1 first (Phase 0D must complete)
+  - [ ] 4b. Install Tailscale on iPhone
+  - [ ] 4c. Install Termius on iPhone
+  - [ ] 4d. Test: SSH from phone → M1 → run `claude` in terminal
+  - [ ] 4e. This gives raw Claude Code CLI access when you need full terminal control
+- [ ] 5. Set up iMessage as escalation channel
+  - [ ] 5a. Sign in to iMessage on M1 (lifeos.nico@gmail.com Apple ID)
+  - [ ] 5b. Reserved for: urgent blockers, things that need Vincent's attention NOW
+  - [ ] 5c. Test: Claude Code sends iMessage via osascript to Vincent's phone
+- [ ] 6. LATER: Advanced multi-device options (research when basics are working)
+  - [ ] 6a. Can Claude Code Desktop on M3 SSH remote into M1 workspace? (VS Code-style remote dev)
+  - [ ] 6b. Can Cowork on M3 mount ~/Nico/ on M1 via Tailscale/SSHFS?
+  - [ ] 6c. Evaluate third-party mobile apps (Happy Coder, Claude Code Mobile IDE)
+  - [ ] 6d. Can multiple Cowork sessions exist simultaneously?
+- [ ] 7. Document the access architecture
+  - [ ] 7a. Define the access pattern per device:
+    - iPhone: [Slack for commands + claude.ai/code for sessions + SSH/Termius for terminal]
+    - M3: [Cowork + Claude Code Desktop + Slack] — sees M3 files, coordinates with M1 via Git
+    - M1: [Claude Code Desktop/CLI + Slack] — sees ~/Nico/ workspace directly
+  - [ ] 7b. Document in CLAUDE.md under "Remote Access"
+  - [ ] 7c. Document: "Two Claude Code Desktops are independent. They share an account, not sessions or files. Git is the sync layer."
+
+---
+
+### Phase 0E: Fix Git Workflow — Enforce Branch + PR Process (🤖 Claude Code on M1 + 👤 Vincent, ~15 min)
+_Dependency: Phase 0 complete (repo exists). **Priority: HIGH — do before any more commits.**_
+
+**Why:** CLAUDE.md says "NEVER push directly to main or dev. ALWAYS create branch: nico/{task-name}." But both Claude Code and Cowork have been pushing straight to `master` since day one, and the auto-backup script does the same every 6 hours. Two agents + one cron job all writing to `master` with no guardrails. The longer this continues, the harder it is to fix habits and the higher the risk of conflicts or bad pushes with no review step.
+
+- [ ] 1. Protect `master` branch on GitHub
+  - [ ] 1a. Enable branch protection rule on `master` via `gh` CLI or GitHub Settings
+  - [ ] 1b. Require pull request before merging (no direct pushes)
+  - [ ] 1c. Decide: require approvals? Or just require PR exists? (Vincent decision)
+- [ ] 2. Update auto-backup script
+  - [ ] 2a. Current: `~/Nico/Scripts/auto-backup.sh` commits + pushes to `master` every 6 hours
+  - [ ] 2b. Option A: Script pushes to `nico/auto-backup` branch and opens PR automatically
+  - [ ] 2c. Option B: Script pushes to a dedicated `backup` branch (no PR, just a rolling backup ref)
+  - [ ] 2d. Option C: Remove auto-backup push, rely on manual branch+PR workflow only
+  - [ ] 2e. Vincent decides which option — implement it
+- [ ] 3. Update agent workflow
+  - [ ] 3a. Claude Code on M1: all work on `nico/{task-name}` branches, PR when done
+  - [ ] 3b. Cowork: all work on `nico/{task-name}` branches, PR when done
+  - [ ] 3c. Add reminder to CLAUDE.md: "Branch protection is ON. Direct pushes to master will be rejected."
+- [ ] 4. Migrate current state
+  - [ ] 4a. Ensure `master` is clean and up to date
+  - [ ] 4b. Create first proper branch: `nico/fix-git-workflow` for these very changes
+  - [ ] 4c. Open PR, merge, confirm protection works
+- [ ] 5. Test
+  - [ ] 5a. Attempt direct push to `master` — should be rejected
+  - [ ] 5b. Create branch, push, open PR, merge — should work
+  - [ ] 5c. Auto-backup runs on next cycle — confirm it follows new process
+- [ ] 6. Enforce metadata standards on all agent output
+  - [ ] 6a. PROBLEM: CLAUDE.md requires date+time, source, and version on every file/log/status update — but no agent is consistently following it
+  - [ ] 6b. Audit existing files: status.md header, decisions.md entries, session-log.md — add missing timestamps
+  - [ ] 6c. Define exact format for each document type (not just "YYYY-MM-DD HH:MM" — what time zone? What counts as "source"?)
+  - [ ] 6d. Add metadata checklist to CLAUDE.md Session Protocol — agents must verify metadata before ending a session
+  - [ ] 6e. Future: when Slack is live, build a validation check — agent posts to #status, bot verifies metadata is present before accepting
 
 ---
 
@@ -258,24 +356,8 @@ _Run after Vincent confirms Phase 2 is done._
 
 ---
 
-### Phase 4: Communication (👤 Vincent, ~5 min)
-
-- [ ] 1. iMessage on M1
-  - [ ] 1a. System Settings → Messages → Sign in with lifeos.nico@gmail.com Apple ID
-  - [ ] 1b. Enable iMessage
-  - [ ] 1c. Open Messages app to confirm it's working
-- [ ] 2. Tailscale on iPhone
-  - [ ] 2a. Install Tailscale from App Store
-  - [ ] 2b. Sign in with same Tailscale account as M1/M3
-  - [ ] 2c. Verify iPhone appears on tailnet
-- [ ] 3. SSH from iPhone
-  - [ ] 3a. Install Termius from App Store (free tier)
-  - [ ] 3b. Add host: IP = 100.87.182.78, username = lifeos.nico, auth = password
-  - [ ] 3c. Connect → verify shell access on M1
-  - [ ] 3d. Type `claude` → verify Claude Code works from phone
-- [ ] 4. Test iMessage from Claude Code (🤖 Claude Code)
-  - [ ] 4a. Send test message via osascript to Vincent's phone
-  - [ ] 4b. Confirm receipt
+### Phase 4: Communication & Access
+_Absorbed into Phase 0F. See Phase 0F for all device connectivity, Slack setup, and agent access tasks._
 
 ---
 
@@ -352,7 +434,7 @@ _Dependency: Phases 0-3 complete (core infrastructure running). Scope and plan a
   - [ ] 3c. Define what each agent has access to (tools, files, APIs)
   - [ ] 3d. Design how Nico (Chief of Staff) delegates to and manages sub-agents
   - [ ] 3e. Build agent registry — which agents exist, their status, their scope
-  - [ ] 3f. Set up inter-agent communication (shared status.md? message queue? direct handoff?)
+  - [ ] 3f. Set up inter-agent communication (Slack #nico-internal channel — see Phase 0F. status.md remains source of truth, Slack is the real-time layer)
   - [ ] 3g. Test: spin up first sub-agent, have Nico assign it a task, verify handoff works
   - [ ] 3h. Define escalation rules — when does a sub-agent escalate back to Nico or Vincent?
 - [ ] 4. Research GitHub tools for agent management
@@ -403,7 +485,7 @@ _Dependency: Phase 3 complete (Obsidian vault + CLI working). Connect Vincent's 
 - [ ] 5. Future integrations (placeholder — add as needed)
   - [ ] 5a. Google Calendar (if used)
   - [ ] 5b. Email (if needed)
-  - [ ] 5c. Slack/Telegram (when communication layer is ready)
+  - [ ] 5c. Telegram (if needed beyond Slack — evaluate after Phase 4B)
 
 ---
 
@@ -510,13 +592,15 @@ _Dependency: None. Can run anytime._
 - Vault: "Nico" at ~/Nico/Vault/, PARA flat structure, empty start
 - Sync: Obsidian Sync (primary) + Git (backup)
 - SaaS stack: Next.js + Supabase
-- Git workflow: nico/{task-name}, never push main
-- Mobile: iPhone via Tailscale + Termius
-- Communication: iMessage first, then Telegram/Slack
+- Git workflow: nico/{task-name}, never push main, branch protection enforced
+- Mobile: iPhone via Tailscale + Termius + Slack
+- Communication: Slack (primary — agent comms backbone), iMessage (escalation/urgent only)
 - Budget: $200-330/mo
 - Trash policy: never delete, move to ~/Nico/.trash/{CW,CC,Chat}/
 - Task list: single list in status.md, updated by CW and CC, reviewed each session
 - Backup: GitHub repos (nico-vault, nico-workspace, cabinet-portal) + Obsidian Sync + auto-commits
+- Architecture principle: build for N agents, not 2. Every infra decision must scale to 5+ concurrent agents.
+- Status.md protocol: agents read at session start, post real-time updates to Slack, write back to status.md at session end
 
 ## Remote Access
 - M3 → M1: ssh lifeos.nico@100.87.182.78
