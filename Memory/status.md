@@ -71,6 +71,23 @@ _Dependency: None. This is the FIRST thing to do. Everything else is blocked unt
 
 ---
 
+### Phase 0D: Fix SSH from M3 → M1 (🤖 Claude Code on M1, ~10 min)
+_Dependency: None. Can run anytime. Flagged by Memo as most pressing._
+
+**Why:** SSH was set up on 2/14 but M3 is now getting "Permission denied" when connecting to M1 (100.87.182.78). This blocks remote access from M3 and phone.
+
+- [ ] 1. Diagnose on M1
+  - [ ] 1a. Check sshd is running: `sudo systemsetup -getremotelogin`
+  - [ ] 1b. Check SSH config: `cat /etc/ssh/sshd_config` — verify PasswordAuthentication, PubkeyAuthentication
+  - [ ] 1c. Check authorized_keys: `cat ~/.ssh/authorized_keys`
+  - [ ] 1d. Check permissions: `ls -la ~/.ssh/` (must be 700 for .ssh, 600 for authorized_keys)
+  - [ ] 1e. Check system log for SSH errors: `log show --predicate 'process == "sshd"' --last 1h`
+- [ ] 2. Fix the issue (based on diagnosis)
+- [ ] 3. Test from M1 locally: `ssh lifeos.nico@localhost`
+- [ ] 4. Have Vincent test from M3: `ssh lifeos.nico@100.87.182.78`
+
+---
+
 ### Phase 0A: Consolidate Chat Data (🤝 Vincent + Cowork, ~20 min)
 _Get all planning docs, decisions, and context from Claude Chat into locations CW and CC can access. Clean up duplicates. Single source of truth for everything._
 
