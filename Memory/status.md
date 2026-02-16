@@ -460,6 +460,31 @@ _Dependency: Phase 3 (Obsidian working) + Phase 7 Task 3 (agent SDK) + Phase 8 (
 
 ---
 
+### Phase 0C: Audit Claude Code Context Loading (🤖 Claude Code, ~15 min)
+_Dependency: None. Can run anytime._
+
+**Why:** Cloud MCP connectors from Claude desktop/web were silently syncing into Claude Code sessions, burning 17.8k tokens (9% of context) on unused Craft tools. The sync flag was disabled but may re-enable on update. Need to audit what loads, ensure nothing else is wasting tokens, and document how to control it.
+
+- [x] 1. Identify the problem (done 2026-02-16)
+  - [x] 1a. Discovered `tengu_claudeai_mcp_connectors: true` syncs claude.ai MCP integrations into CLI
+  - [x] 1b. Craft Code Youtube MCP was loading 21 tools (17.8k tokens) every session
+- [x] 2. Disable cloud MCP sync (done 2026-02-16)
+  - [x] 2a. Set `tengu_claudeai_mcp_connectors: false` in ~/.claude.json
+  - [x] 2b. Requires Claude Code restart to take effect
+- [ ] 3. Verify fix after restart
+  - [ ] 3a. Restart Claude Code session
+  - [ ] 3b. Run `/context` — confirm Craft tools no longer appear
+  - [ ] 3c. Confirm no other unexpected MCP servers loading
+- [ ] 4. Permanent fix if flag resets
+  - [ ] 4a. If Craft reappears after update: go to claude.ai → Settings → Integrations → disconnect Craft
+  - [ ] 4b. Document in CLAUDE.md: "Cloud MCP sync is disabled — do not re-enable without auditing token cost"
+- [ ] 5. Audit remaining context usage
+  - [ ] 5a. Review marketplace plugins (13 .mcp.json files in ~/.claude/plugins/) — are any loading?
+  - [ ] 5b. Check if any other hidden token sinks exist
+  - [ ] 5c. Document baseline context usage in CLAUDE.md for future reference
+
+---
+
 ## Key Decisions (Final — Do Not Re-Ask)
 - Agent name: Nico
 - Framework: Claude Code (YOLO mode)
