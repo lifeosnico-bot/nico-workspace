@@ -37,7 +37,7 @@ _These work conversationally — just say "adl: set up automated testing for por
 ## 📥 Inbox — Unprocessed Ideas
 _Quick captures that haven't been triaged yet. Add with `adl: your idea` via Memo, or via GitHub Issues from your phone. Memo reviews and moves items into the right phase/task during triage._
 
-_Nothing here yet — drop your first idea!_
+- [ ] **2026-02-21 02:15 AM** — Can we set up a file structure in GitHub that will mimic the file structure in Obsidian on M1 and M3? _(added via adl)_
 
 ---
 
