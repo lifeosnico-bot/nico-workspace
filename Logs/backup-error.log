@@ -1,3 +1,11 @@
 fatal: could not read Username for 'https://github.com': Device not configured
 To https://github.com/lifeosnico-bot/nico-workspace.git
    e969f9c..2fb5b71  master -> master
+To https://github.com/lifeosnico-bot/nico-workspace.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/lifeosnico-bot/nico-workspace.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
