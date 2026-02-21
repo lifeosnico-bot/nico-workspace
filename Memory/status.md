@@ -6,9 +6,17 @@
 
 Phase 0 (GitHub backup) is COMPLETE. ~/Nico/ workspace is on GitHub (lifeosnico-bot/nico-workspace) with auto-backup every 6 hours via launchd. Git credential helper fixed.
 
-**#1 PRIORITY:** Vincent has no way to reach agents (Cowork or Claude Code) from his phone or communicate with them outside of sitting in front of a laptop. This blocks everything — you can't run an AI-native company if the CEO can't talk to his staff.
+**#1 PRIORITY:** Fix SSH from M3 → M1 (Phase 0D, ~10 min). Once SSH works, install LettaBot on M1 immediately after. LettaBot gives the M1 true autonomy — heartbeats, cron jobs, proactive behavior, and phone access via Telegram — without Vincent having to type a command. Nothing else matters until the M1 can think and act on its own.
 
-**Next action:** Phase 0F — Agent Access & Communication (figure out how Vincent reaches agents from any device)
+**Next action:** Phase 0D → LettaBot Install → then everything else
+
+**Priority order (revised 2026-02-21):**
+1. Phase 0D: Fix SSH from M3 → M1 (~10 min)
+2. LettaBot: Install + configure on M1 (heartbeats, Telegram, cron jobs)
+3. Phase 0F: Agent Access & Communication (Slack, phone access — partly replaced by LettaBot)
+4. Phase 0A: Consolidate chat data
+5. Phase 0E: Fix Git workflow
+6. Phase 1: Obsidian install
 
 ---
 
@@ -168,6 +176,48 @@ _Dependency: None. This is the FIRST thing to do. Everything else is blocked unt
 **Once verified, mark this phase done and move to Phase 0A.**
 
 ---
+
+
+### LettaBot: Install + Configure on M1 (🤖 Claude Code on M1 + 👤 Vincent, ~30 min)
+_Dependency: Phase 0D (SSH must work first). **#2 PRIORITY — do immediately after SSH is fixed.**_
+
+**Why:** LettaBot wraps the existing Letta/Memo agent on M1 and adds true autonomy:
+- **Heartbeats:** M1 wakes up every X minutes and acts on its own (reflects, updates memory, checks tasks) — no human needed.
+- **Cron jobs:** M1 schedules its own recurring tasks (auto-backups, status updates, etc.).
+- **Telegram integration:** Vincent can message the M1 from his iPhone instantly — no laptop required.
+- **Proactive behavior:** Agent doesn't wait to be asked. It notices things and acts.
+
+Without LettaBot, the M1 only works when Vincent is sitting in front of a laptop typing commands. With LettaBot, the M1 becomes a true always-on autonomous agent.
+
+- [ ] 1. Clone LettaBot repo on M1
+  - [ ] 1a. SSH into M1 from M3: `ssh lifeos.nico@100.87.182.78`
+  - [ ] 1b. `git clone https://github.com/letta-ai/letta-bot ~/Nico/letta-bot`
+  - [ ] 1c. `cd ~/Nico/letta-bot && pip install -r requirements.txt` (or follow repo install instructions)
+- [ ] 2. Set up Telegram bot (Vincent does this, ~5 min)
+  - [ ] 2a. Open Telegram on iPhone
+  - [ ] 2b. Search for "BotFather" → start a chat
+  - [ ] 2c. Send `/newbot` → give it a name (e.g., "NicoAgent") → copy the token it gives you
+  - [ ] 2d. Save token — you'll need it in step 3
+- [ ] 3. Configure and run LettaBot on M1
+  - [ ] 3a. Run `letta-bot onboard` — select existing agent (agent-5a9b0e69)
+  - [ ] 3b. Select Telegram, paste token from step 2
+  - [ ] 3c. Enable heartbeats (set to 60 min to start — can adjust later)
+  - [ ] 3d. Enable cron jobs
+  - [ ] 3e. Run `letta-bot server` — confirm it starts without errors
+- [ ] 4. Test from iPhone
+  - [ ] 4a. Open Telegram on iPhone → find your NicoAgent bot
+  - [ ] 4b. Send "hello" — confirm Memo responds
+  - [ ] 4c. Send "sts" — confirm it returns current status
+  - [ ] 4d. Wait for a heartbeat (or trigger manually with `/heartbeat`) — confirm M1 acts on its own
+- [ ] 5. Set LettaBot to auto-start on M1 boot
+  - [ ] 5a. Create launchd plist: `~/Library/LaunchAgents/com.nico.letta-bot.plist`
+  - [ ] 5b. Load it: `launchctl load ~/Library/LaunchAgents/com.nico.letta-bot.plist`
+  - [ ] 5c. Test: restart M1 → confirm LettaBot starts automatically
+- [ ] 6. Verify full autonomy
+  - [ ] 6a. M1 is running LettaBot server
+  - [ ] 6b. Vincent can message from iPhone via Telegram
+  - [ ] 6c. Heartbeats are firing every 60 min
+  - [ ] 6d. M1 does NOT require Vincent to be at a laptop to function
 
 ### Phase 0D: Fix SSH from M3 → M1 (🤖 Claude Code on M1, ~10 min)
 _Dependency: None. Can run anytime. Flagged by Memo as most pressing._
