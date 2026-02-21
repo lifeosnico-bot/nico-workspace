@@ -34,6 +34,13 @@ _These work conversationally — just say "adl: set up automated testing for por
 
 ---
 
+## 📥 Inbox — Unprocessed Ideas
+_Quick captures that haven't been triaged yet. Add with `adl: your idea` via Memo, or via GitHub Issues from your phone. Memo reviews and moves items into the right phase/task during triage._
+
+_Nothing here yet — drop your first idea!_
+
+---
+
 ## Tasks
 
 ### In Progress
