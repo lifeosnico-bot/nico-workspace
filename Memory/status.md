@@ -38,6 +38,7 @@ _These work conversationally — just say "adl: set up automated testing for por
 _Quick captures that haven't been triaged yet. Add with `adl: your idea` via Memo, or via GitHub Issues from your phone. Memo reviews and moves items into the right phase/task during triage._
 
 - [ ] **2026-02-21 02:15 AM** — Can we set up a file structure in GitHub that will mimic the file structure in Obsidian on M1 and M3? _(added via adl)_
+- [ ] **2026-02-21 02:17 AM** — Should we set up a daily note file structure in GitHub now (before Obsidian is installed) to track daily changes to the task list? _(added via adl)_
 
 ---
 
