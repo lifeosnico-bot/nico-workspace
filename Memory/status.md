@@ -227,20 +227,11 @@ Without LettaBot, the M1 only works when Vincent is sitting in front of a laptop
   - [ ] 6c. Heartbeats are firing every 60 min
   - [ ] 6d. M1 does NOT require Vincent to be at a laptop to function
 
-### Phase 0D: Fix SSH from M3 → M1 (🤖 Claude Code on M1, ~10 min)
-_Dependency: None. Can run anytime. Flagged by Memo as most pressing._
-
-**Why:** SSH was set up on 2/14 but M3 is now getting "Permission denied" when connecting to M1 (100.87.182.78). This blocks remote access from M3 and phone.
-
-- [ ] 1. Diagnose on M1
-  - [ ] 1a. Check sshd is running: `sudo systemsetup -getremotelogin`
-  - [ ] 1b. Check SSH config: `cat /etc/ssh/sshd_config` — verify PasswordAuthentication, PubkeyAuthentication
-  - [ ] 1c. Check authorized_keys: `cat ~/.ssh/authorized_keys`
-  - [ ] 1d. Check permissions: `ls -la ~/.ssh/` (must be 700 for .ssh, 600 for authorized_keys)
-  - [ ] 1e. Check system log for SSH errors: `log show --predicate 'process == "sshd"' --last 1h`
-- [ ] 2. Fix the issue (based on diagnosis)
-- [ ] 3. Test from M1 locally: `ssh lifeos.nico@localhost`
-- [ ] 4. Have Vincent test from M3: `ssh lifeos.nico@100.87.182.78`
+### ~~Phase 0D: Fix SSH from M3 → M1~~ ✅ COMPLETE (2026-02-21)
+- Generated ED25519 key pair on M3
+- Added M3 public key to M1 `~/.ssh/authorized_keys`
+- Verified: M3 ↔ M1 SSH communication working in both directions
+- `nico-sync` script now fully functional (M1 sync step no longer skipped)
 
 ---
 
