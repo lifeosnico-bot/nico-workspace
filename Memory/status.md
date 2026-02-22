@@ -1,21 +1,21 @@
 # Status
 
-**Last Updated**: 2026-02-16 22:40 EST | **Updated by**: Cowork | **Session**: CW-4
+**Last Updated**: 2026-02-21 21:04 EST | **Updated by**: Claude Code (Telegram session) | **Session**: TG-1
 
 ## Current State
 
-Phase 0 (GitHub backup) is COMPLETE. ~/Nico/ workspace is on GitHub (lifeosnico-bot/nico-workspace) with auto-backup every 6 hours via launchd. Git credential helper fixed.
+Phase 0D (SSH) ✅ and LettaBot ✅ are both COMPLETE. Nico is live on M1 with Telegram access from Vincent's iPhone. Discord vs Slack analysis delivered — recommendation is Discord (see decisions.md). Awaiting Vincent's go/no-go.
 
-**#1 PRIORITY:** Fix SSH from M3 → M1 (Phase 0D, ~10 min). Once SSH works, install LettaBot on M1 immediately after. LettaBot gives the M1 true autonomy — heartbeats, cron jobs, proactive behavior, and phone access via Telegram — without Vincent having to type a command. Nothing else matters until the M1 can think and act on its own.
+**#1 PRIORITY:** Vincent decides Discord vs Slack → Nico sets up whichever platform.
 
-**Next action:** Phase 0D → LettaBot Install → then everything else
+**Next action:** Vincent replies to Discord recommendation → platform setup begins
 
-**Priority order (revised 2026-02-21):**
-1. Phase 0D: Fix SSH from M3 → M1 (~10 min)
-2. LettaBot: Install + configure on M1 (heartbeats, Telegram, cron jobs)
-3. Phase 0F: Agent Access & Communication (Slack, phone access — partly replaced by LettaBot)
-4. Phase 0A: Consolidate chat data
-5. Phase 0E: Fix Git workflow
+**Priority order (revised 2026-02-22):**
+1. Discord vs Slack: Vincent decides (analysis delivered, Discord recommended)
+2. Platform setup: Create workspace/server, channels, agent integrations
+3. Phase 0A: Consolidate chat data
+4. Phase 0E: Fix Git workflow
+5. Status.md split: CEO track vs CoS track (discussed, not yet done)
 6. Phase 1: Obsidian install
 
 ---
