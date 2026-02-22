@@ -268,7 +268,68 @@ Sell to someone outside Lucavo Design.
 
 ---
 
-## 8. WHAT NICO HANDLED OVERNIGHT
+## 8. PROJECT MANAGEMENT, TASKS, REMINDERS, CALENDAR, EMAIL
+
+### The Stack
+
+**Task Management**
+Current: status.md (authoritative, always) + Slack #tasks (real-time)
+Future: our own SaaS task layer — built from the pain points we discover running this system
+
+**Project Management + Gantt**
+Gantt charts are a hard requirement — you used them in construction for 30 years and they'll be in the product. For now, three options in play:
+- **Obsidian + Excalidraw canvas**: rough Gantt sketching, good for planning
+- **Mermaid diagrams** (code-rendered Gantt): agents can generate these and drop them in vault notes. Fully automatable.
+- **GanttProject** (free, desktop app): proper Gantt for complex project tracking before we build our own
+
+For the SaaS product: Gantt is a first-class feature. Construction clients expect it. We build it in Phase 3-4 of the portal.
+
+**Reminders**
+- Apple Reminders on iPhone/M3: captures from phone → agents pull via AppleScript on M3
+- Slack reminders: `/remind` command — agents can set these too
+- Future: unified reminder system inside our SaaS
+
+**Calendar**
+- Apple Calendar (current) — accessible via AppleScript from M3
+- Google Calendar (lifeos.nico@gmail.com) — accessible via API
+- Agent reads calendar before morning briefing to include today's appointments
+- Future: calendar blocks visible in portal (client meetings, installs, deliveries)
+
+**Email**
+- Gmail (lifeos.nico@gmail.com) — Gmail API for agent access
+- Use case: agent monitors inbox for client emails, flags anything requiring response, drafts replies for Vincent review
+- Not setting up email automation in Phase 0 — it's Phase 7+ territory
+- For now: Vincent's personal email stays manual
+
+### Gantt in the Morning Meeting
+When we review the roadmap, I'll render it as a text-based Gantt so you can see the timeline. Once Obsidian is up, I'll maintain a live Gantt in the vault.
+
+---
+
+## 9. THE BILLION DOLLAR INSIGHT — CAPTURED
+
+This goes in permanent memory tonight because it's the most important thing said this session.
+
+> "We are building a system for our company to teach us how to build a better one for other companies. While we are building this one, that's when we'll come across our billion dollar idea — like Slack, which became a messaging company instead of a gaming company."
+
+**What this means operationally:**
+Every pain point we hit building this system IS the product research. When something is hard, slow, or broken — that's a feature request for the SaaS we'll sell. We're not just building for Lucavo. We're dogfooding a product we don't know the name of yet.
+
+Slack was Tiny Speck's internal tool before it was Slack. Stewart Butterfield wasn't trying to build a messaging company — he was trying to build a game. The communication layer he built for his team was so good that it became the product.
+
+We're doing the same thing: building an AI-native operations system for a construction company. The system that emerges — agent hierarchy, task routing, client portal, project management — that's the product. Other construction and trades companies will pay for exactly this. They have the same pain. They don't have the tech capability. We do.
+
+**The discipline this requires:**
+- Document every friction point (inbox in status.md, Slack #decisions)
+- When something takes too long manually → that's the next automation to build
+- When Vincent has to explain something twice → that's a feature that should be obvious
+- When an agent gets confused → that's a UX problem in the product
+
+The goal isn't just to run Lucavo better. It's to run Lucavo so intentionally that we build the playbook for an industry.
+
+---
+
+## 10. WHAT NICO HANDLED OVERNIGHT
 
 - [x] DuckDuckGo search script installed (~/Nico/Scripts/search.sh) — free, no API key
 - [x] All Apple Notes processed and incorporated into this plan
