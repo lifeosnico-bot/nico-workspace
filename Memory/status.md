@@ -1,21 +1,23 @@
 # Status
 
-**Last Updated**: 2026-02-22 02:20 EST | **Updated by**: Claude Code (Telegram session) | **Session**: TG-2
+**Last Updated**: 2026-02-22 03:30 EST | **Updated by**: Claude Code (overnight session) | **Session**: TG-2
 
 ## Current State
 
-Phase 0D (SSH) ✅, LettaBot ✅, Phase 0E (Git workflow) ✅, Daily briefing ✅ are all COMPLETE. Nico is live on M1 with Telegram, daily briefings scheduled (8am weekdays / 10am weekends), and master branch is now protected. Discord vs Slack analysis delivered — awaiting Vincent's go/no-go.
+Phase 0D ✅, LettaBot ✅, Phase 0E ✅, Daily briefing ✅ COMPLETE. **Platform decision MADE: Slack.** Morning meeting plan written (~/Nico/Memory/cos-plan.md). DuckDuckGo search script installed (free, replaces Exa). Notes from Apple Notes processed overnight.
 
-**#1 PRIORITY:** Vincent decides Discord vs Slack → Nico sets up whichever platform.
+**#1 PRIORITY (Vincent — morning):** Create Slack workspace + bot token → give to Nico via terminal.
 
-**Next action:** Vincent replies to Discord/Slack decision → platform setup begins
+**Next action:** Vincent creates Slack workspace → Nico sets up all channels and integrations
 
-**Priority order (revised 2026-02-22):**
-1. Discord vs Slack: Vincent decides (analysis delivered, Discord recommended)
-2. Platform setup: Create workspace/server, channels, agent integrations
-3. Phase 0A: Consolidate chat data
-4. Status.md split: CEO track vs CoS track (discussed, not yet done)
-5. Phase 1: Obsidian install
+**Priority order (revised 2026-02-22 overnight):**
+1. Slack setup: Vincent creates workspace + bot (5 min) → Nico handles everything else
+2. Phase 0F Task 1: Test claude.ai/code remote sessions from iPhone (zero setup)
+3. Termius on iPhone + Tailscale (SSH from phone)
+4. Obsidian install + vault
+5. Agent layer: Research Director + Ops Manager (Letta agents)
+6. Phase 0A: Consolidate chat data
+7. Status.md split: CEO vs CoS tracks
 
 ---
 
@@ -34,10 +36,19 @@ _These work conversationally — just say "adl: set up automated testing for por
 ---
 
 ## 📥 Inbox — Unprocessed Ideas
-_Quick captures that haven't been triaged yet. Add with `adl: your idea` via Memo, or via GitHub Issues from your phone. Memo reviews and moves items into the right phase/task during triage._
+_Quick captures that haven't been triaged yet._
 
-- [ ] **2026-02-21 02:15 AM** — Can we set up a file structure in GitHub that will mimic the file structure in Obsidian on M1 and M3? _(added via adl)_
-- [ ] **2026-02-21 02:17 AM** — Should we set up a daily note file structure in GitHub now (before Obsidian is installed) to track daily changes to the task list? _(added via adl)_
+- [ ] **2026-02-21 02:15 AM** — GitHub file structure mirroring Obsidian structure _(adl)_
+- [ ] **2026-02-21 02:17 AM** — Daily note file structure in GitHub before Obsidian is installed _(adl)_
+- [ ] **2026-02-22 03:00 AM** — 50% context window warning hook (Telegram alert at 50% context) _(Apple Notes)_
+- [ ] **2026-02-22 03:00 AM** — Token command to stop massive text output _(Apple Notes)_
+- [ ] **2026-02-22 03:00 AM** — Widget boxes on M1/M3 screen for quick status access _(Apple Notes)_
+- [ ] **2026-02-22 03:00 AM** — Task list → Apple Notes writeback (Letta writes to Apple Notes) _(Apple Notes)_
+- [ ] **2026-02-22 03:00 AM** — lucavolifeos Google account (separate from lifeos.nico?) _(Apple Notes)_
+- [ ] **2026-02-22 03:00 AM** — Dan Messlier GitHub — research when search restored _(Apple Notes)_
+- [ ] **2026-02-22 03:00 AM** — "Watch vid of pa guy in hall in Philly" — personal reminder for Vincent _(Apple Notes)_
+- [ ] **2026-02-22 03:00 AM** — M1 display name: change to "Nico Agent" in System Settings → General → About → Name (requires Vincent, sudo) _(Apple Notes)_
+- [ ] **2026-02-22 03:00 AM** — Exa API key: get free tier at dashboard.exa.ai (1000/mo) — Vincent creates account, enters key via terminal _(overnight)_
 
 ---
 

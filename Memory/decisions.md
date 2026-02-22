@@ -28,6 +28,35 @@ Every infrastructure decision must be evaluated against: "does this work with 5+
 - Violates CLAUDE.md rules that existed but weren't enforced
 - Decision: fix now, not later. Phase 0E created as highest priority.
 
+## 2026-02-22
+
+### Platform Decision: Slack (03:00 EST | Source: Vincent + Nico)
+After analysis of Discord vs Slack, Vincent chose Slack. Key factors:
+- Anthropic has official Slack integration (Claude speaks Slack natively)
+- Business perception: Slack is standard for teams, clients, contractors — Discord is gaming
+- Slack's ecosystem (enterprise SaaS integrations) is deeper and more maintained
+- 90-day free tier history limit → upgrade to Pro ($7.25/mo) once integrations are confirmed working
+- Lists/Canvases/Assigned to you (PRO features) are nice-to-have, not the deciding factor
+- Discord features noted: better bot API for pure agent setups, completely free, unlimited history
+- Final call: Slack for business perception and official AI tooling support
+
+### Autonomy Model: Nico Runs Infrastructure, Vincent Owns Business (03:00 EST | Source: Vincent)
+Vincent granted Nico full autonomy over infrastructure, tooling, and agent setup.
+Vincent's bottleneck role: account creation (can't do on his behalf), phone installs, payments, business decisions.
+Everything else: Nico decides and executes. No approval needed for infrastructure choices.
+
+### Sub-Agent Architecture: Letta + Claude Code Hybrid (03:00 EST | Source: Nico overnight planning)
+- Letta agents for roles needing persistent memory: Research Director, Ops Manager
+- Claude Code Task agents for execution-only roles: Engineering, Product, CSM
+- All agents report through Nico (CoS). Nico is the only persistent orchestrator.
+- Full org chart documented in ~/Nico/Memory/cos-plan.md
+
+### Search Infrastructure: DuckDuckGo (free) over Exa (paid shared credits) (03:00 EST | Source: Nico)
+- Exa shared credits exhausted — platform limitation
+- Solution: ~/Nico/Scripts/search.sh using DuckDuckGo HTML endpoint (free, no API key)
+- Exa free tier (1000/mo) still worth getting for the built-in web_search tool
+- Both solutions implemented/planned
+
 ## 2026-02-14
 
 ### Initialized Memory System
