@@ -16009,3 +16009,17 @@ Node.js v25.6.1
   description: "Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\\'",
   parameters: {}
 }
+[Telegram] getUpdates conflict (likely old instance still polling). Retrying in 5s...
+[Telegram] getUpdates conflict (likely old instance still polling). Retrying in 5s...
+[Telegram] getUpdates conflict (likely old instance still polling). Retrying in 5s...
+[Bot] Result error: error=error, stopReason=error, duration=6598ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
+[Bot] Error processing message: Error: Transport not connected (closed=true, pid=20227, stdin=true)
+    at SubprocessTransport.write (file:///Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/@letta-ai/letta-code-sdk/dist/index.js:98:19)
+    at Session.send (file:///Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/@letta-ai/letta-code-sdk/dist/index.js:436:26)
+    at LettaBot.runSession (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:455:51)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:880:25)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17)
+[Bot] Result error: error=error, stopReason=error, duration=6611ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.

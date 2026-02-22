@@ -34,3 +34,5 @@ remote:      https://github.com/lifeosnico-bot/nico-workspace/pull/new/backup
 remote: 
 To https://github.com/lifeosnico-bot/nico-workspace.git
  * [new branch]      HEAD -> backup
+To https://github.com/lifeosnico-bot/nico-workspace.git
+   8e9ccda..8b5babd  HEAD -> backup
