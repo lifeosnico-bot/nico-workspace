@@ -1,692 +1,585 @@
 # Status
 
-**Last Updated**: 2026-02-23 04:24 EST | **Updated by**: Claude Code | **Session**: housekeeping
+**Last Updated**: 2026-02-23 05:10 EST | **Updated by**: Claude Code | **Session**: session-4-consolidation
+
+---
 
 ## Current State
 
-Phase 0D ✅, LettaBot ✅, Phase 0E ✅, Daily briefing ✅ COMPLETE. **Platform decision MADE: Slack.** Morning meeting plan written (~/Nico/Memory/cos-plan.md). DuckDuckGo search script installed (free, replaces Exa). Notes from Apple Notes processed overnight.
+Phase 0D ✅, LettaBot ✅, Phase 0E ✅, Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅. **Platform decision MADE: Slack** (future comms backbone). **Obsidian is current front-end for everything** — no Apple apps until further notice. iMessage approved for alerts/approvals only. `/handoff` skill built. Task architecture plan approved and in progress.
 
+**#1 PRIORITY (Nico — tonight):** iMessage alert script + master list consolidation + vault housekeeping.
 **#1 PRIORITY (Vincent — morning):** Create Slack workspace + bot token → give to Nico via terminal.
-
-**Next action:** Vincent creates Slack workspace → Nico sets up all channels and integrations
-
-**Priority order (revised 2026-02-22 19:22 EST):**
-1. ~~Termius on iPhone + Tailscale (SSH from phone)~~ ✅ DONE (2026-02-22)
-2. ~~Passwordless sudo (NOPASSWD: ALL)~~ ✅ DONE (2026-02-22)
-3. ~~Obsidian installed~~ ✅ DONE (2026-02-22)
-4. ~~Claude Code --dangerously-skip-permissions alias~~ ✅ DONE (2026-02-22)
-5. Fix Nico headless memory writes (tool use blocked in -p mode — find workaround or use REST API)
-6. Obsidian vault setup (structure + templates)
-7. Slack setup: Vincent creates workspace + bot → Nico handles everything else
-8. Agent layer: Research Director + Ops Manager (Letta agents)
-9. Phase 0A: Consolidate chat data
-10. Status.md split: CEO vs CoS tracks
 
 ---
 
 ## Quick Commands
 _Use these shorthand commands from any surface (text, voice, Cowork, Claude Code):_
 
-- **atl [description]** — Add to list. Nico triages it into the right phase/task/subtask.
+- **atl [P#] [description]** — Add to list. Defaults to P3/unassigned if no priority given.
 - **sts** — Show current status. What's in progress, what's next.
 - **done [task]** — Mark a task complete.
 - **blocker [description]** — Flag something as blocked with reason.
-- **pri [task] [high/med/low]** — Change priority of a task.
+- **pri [task] [1-5]** — Change priority of a task.
 - **note [phase] [text]** — Add a note to a phase without creating a task.
 
-_These work conversationally — just say "atl: set up automated testing for portal" and Nico handles placement and decomposition._
+_Priority scale: P1 = critical/blocking → P2 = this week → P3 = normal → P4 = low → P5 = someday_
+_Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to sub-agent_
 
 ---
 
-## 📥 Inbox — Unprocessed Ideas
-_Quick captures that haven't been triaged yet._
+## 🔴 Active This Week
 
-- [ ] **2026-02-23** 🔴 — iMessage alert script: Claude Code sends iMessage to Vincent when waiting on approval to continue (never built — confirm if still needed) _(atl)_
-- [ ] **2026-02-21 02:15 AM** — GitHub file structure mirroring Obsidian structure _(adl)_
-- [ ] **2026-02-21 02:17 AM** — Daily note file structure in GitHub before Obsidian is installed _(adl)_
-- [ ] **2026-02-22 03:00 AM** — 50% context window warning hook (Telegram alert at 50% context) _(Apple Notes)_
-- [ ] **2026-02-22 03:00 AM** — Token command to stop massive text output _(Apple Notes)_
-- [ ] **2026-02-22 03:00 AM** — Widget boxes on M1/M3 screen for quick status access _(Apple Notes)_
-- [ ] **2026-02-22 03:00 AM** — Task list → Apple Notes writeback (Letta writes to Apple Notes) _(Apple Notes)_
-- [ ] **2026-02-22 03:00 AM** — lucavolifeos Google account (separate from lifeos.nico?) _(Apple Notes)_
-- [ ] **2026-02-22 03:00 AM** — Dan Messlier GitHub — research when search restored _(Apple Notes)_
-- [ ] **2026-02-22 03:00 AM** — "Watch vid of pa guy in hall in Philly" — personal reminder for Vincent _(Apple Notes)_
-- [ ] **2026-02-22 03:00 AM** — M1 display name: change to "Nico Agent" in System Settings → General → About → Name (requires Vincent, sudo) _(Apple Notes)_
-- [ ] **2026-02-22 03:00 AM** — Exa API key: get free tier at dashboard.exa.ai (1000/mo) — Vincent creates account, enters key via terminal _(overnight)_
-- [ ] **2026-02-23** 🔴 #1: Alert system — Claude Code notifies Vincent when waiting for input (iMessage, Telegram, or sound) _(atl)_
-- [ ] **2026-02-23** ⭐ DESIGN: Task management system overhaul — inbox model, owner lanes (Nico/Vincent/Agents), priority 1-5 rating, Obsidian as front-end, decide Apple apps role _(atl)_
-- [ ] **2026-02-23** — Context window 50% alert: script/hook to warn when context hits 50%, prompt to fork or start new session _(atl)_
-- [ ] **2026-02-23** — Quick entry for atl: need faster capture flow (voice, widget, Shortcut, or Slack 1-liner) _(atl)_
-- [ ] **2026-02-23** — Inbox model for tasks: items land in inbox first, get organized later — replaces direct-to-phase adds _(atl)_
-- [ ] **2026-02-23** — Obsidian as task/project/reminders/appointments front-end: design how vault surfaces the live list _(atl)_
-- [ ] **2026-02-23** — Apple apps evaluation: Reminders, Notes, Calendar, Mail, Numbers, Pages, Script Editor — assess for interim use (security/container benefits) _(atl)_
-- [ ] **2026-02-23** — Task priority rating system: 1 = critical → 5 = someday. Apply to all tasks. _(atl)_
-- [ ] **2026-02-23** — Bookmarked/pinned task list view in Obsidian: Vincent can open it instantly on any device _(atl)_
-- [ ] **2026-02-23** — Task owner lanes: split list into Vincent tasks / Nico tasks / Agent-delegatable tasks _(atl)_
-- [ ] **2026-02-23** — Heartbeat + cron + communication layer: research "OpenClaw"-style autonomous agent loop (heartbeat, scheduled tasks, proactive comms) _(atl)_
-- [ ] **2026-02-23** — Evaluate Claude Code /todos, /plan slash commands for task organization workflow _(atl)_
+| Priority | Owner | Task |
+|---|---|---|
+| P1 | [N] | iMessage alert script (building tonight) |
+| P1 | [N] | Master list consolidation (in progress) |
+| P1 | [V] | Create Slack workspace + bot token |
+| P2 | [N] | Vault housekeeping (consolidate Vault A→B, home dir cleanup) |
+| P2 | [N] | Obsidian vault finish (templates, Sync, CLI registration) |
+| P2 | [V] | 1Password setup (secrets management) |
+
+---
+
+## 👤 Vincent's Actions (Blocking Nico)
+
+_These require Vincent. Nothing else can proceed until done._
+
+- [ ] **P1** Create Slack workspace → copy bot token → paste in terminal to Nico
+- [ ] **P2** 1Password: create account at 1password.com, install desktop app
+- [ ] **P2** Obsidian Phase 2: manual setup (sign in, enable Sync, register CLI, enable plugins) — Nico will prep everything, Vincent flips the switches
+- [ ] **P3** Exa API key: free tier at dashboard.exa.ai (1000/mo) — optional, DuckDuckGo works now
+- [ ] **P4** Review `05-reviews/housekeeping/vault-consolidation-review.md` in Obsidian — one decision needed
+- [ ] **P5** "Watch vid of pa guy in hall in Philly" — personal reminder
+
+---
+
+## 🤖 Nico's Queue (Autonomous Work)
+
+_Nico executes without Vincent. Ordered by priority._
+
+1. **[P1]** iMessage alert script (`~/Nico/Scripts/imessage-alert.sh`)
+2. **[P1]** 50% context window alert hook
+3. **[P2]** Vault housekeeping — consolidate Vault A into CabinetAgentVault/, archive old vault, clean home dir
+4. **[P2]** task-board.md — build Obsidian dashboard snapshot
+5. **[P2]** Obsidian Phase 1 completion — copy templates, finalize vault structure
+6. **[P2]** Phase 0E remaining — metadata standards enforcement
+7. **[P3]** Phase 0A — consolidate Chat Imports, deduplicate docs
+8. **[P3]** Phase 0C — verify MCP context fix is holding
+
+---
+
+## 📥 Inbox — Unprocessed Captures
+
+_Land here first, get triaged into phases by Nico._
+
+- [ ] **2026-02-23** — GitHub file structure mirroring Obsidian structure _(atl)_
+- [ ] **2026-02-23** — Daily note file structure in GitHub before Obsidian CLI is live _(atl)_
+- [ ] **2026-02-23** — 50% context window hook: warn at 50%, prompt to fork or start new session _(atl)_
+- [ ] **2026-02-23** — Token command to stop massive text output mid-session _(atl)_
+- [ ] **2026-02-23** — Widget boxes on M1/M3 screen for quick status access _(atl)_
+- [ ] **2026-02-23** — lucavolifeos Google account — separate from lifeos.nico? Decision needed _(atl)_
+- [ ] **2026-02-23** — Dan Messlier GitHub — research when search is restored _(atl)_
+- [ ] **2026-02-23** — M1 display name: change to "Nico Agent" in System Settings (requires Vincent + sudo) _(atl)_
+- [ ] **2026-02-23** — Session logs: research how software companies structure engineering session logs _(atl)_
+- [ ] **2026-02-23** — Turning YouTube saves into Obsidian skills/notes (Research Agent scope) _(atl)_
+- [ ] **2026-02-23** — `/remote-env` slash command — what is this? Research and evaluate _(atl)_
+- [ ] **2026-02-23** — Search token cost issue: audit how much search is costing per session _(atl)_
+- [ ] **2026-02-23** — Discord audit: go through Discord chat — full perspective, hacks, community sentiment _(atl)_
+- [ ] **2026-02-23** — Update Screenshots folder — organize and clean up Logs/Screenshots/ _(atl)_
+- [ ] **2026-02-23** — Guard rails for Telegram crashing/multiple instances (911.md exists but incomplete) _(atl)_
+- [ ] **2026-02-23** — "Why so many Nico bots" — document exactly what bots/agents exist and their roles _(atl)_
+- [ ] **2026-02-23** — Where does live chat go if Claude Code disconnects mid-session? _(atl)_
+- [ ] **2026-02-23** — Caffeinate dims on M3 — investigate why M3 dims despite caffeinate _(atl)_
+- [ ] **2026-02-23** — Trash sub-folder setup: review current .trash/ structure, add sub-trash if needed _(atl)_
+- [ ] **2026-02-23** — Docker Desktop: install on M1 (needed for Phase 5 SaaS portal deployments) _(atl)_
+- [ ] **2026-02-23** — Cursor Mac-to-Mac issue — investigate _(atl)_
+- [ ] **2026-02-23** — Heartbeat + cron research: "OpenClaw"-style autonomous agent loop _(atl)_
+- [ ] **2026-02-23** — Evaluate Claude Code /todos, /plan slash commands for task workflow _(atl)_
+- [ ] **2026-02-23** — Bookmarked/pinned task-board view in Obsidian: Vincent opens instantly on any device _(atl)_
 
 ---
 
 ## Tasks
 
 ### In Progress
-_(nothing active right now — Phase 0F is #1 priority)_
+- **[P1][N]** iMessage alert script — building tonight
+- **[P1][N]** Master list consolidation — this file, in progress
 
 ---
 
-### Phase 0F: Agent Access & Communication — How Vincent Reaches Agents From Anywhere (👤 Vincent + 🤖 Cowork + 🤖 Claude Code, ~45 min)
-_Dependency: None. **#1 PRIORITY — do first. Nothing else matters if the CEO can't talk to his staff.**_
+### Phase 0-Alerts: iMessage + Context Alerts [N] P1
+_Dependency: None. Build tonight. Vincent needs to be reachable when Nico is blocked._
 
-**Why:** Vincent currently has Claude Code Desktop installed on two laptops (M3 + M1) and Cowork on M3. There's no way to reach any agent from iPhone. No communication channel exists between Vincent and agents outside of sitting in front of a specific laptop. For an AI-native company, this is the equivalent of having no phone and no email.
+- [ ] 1. **[P1][N]** Build iMessage alert script
+  - [ ] 1a. Create `~/Nico/Scripts/imessage-alert.sh` — sends iMessage via osascript to Vincent's phone number
+  - [ ] 1b. Test: M1 sends iMessage to Vincent's personal number
+  - [ ] 1c. Add usage to CLAUDE.md session protocol: "Run imessage-alert.sh when waiting for approval"
+  - [ ] 1d. Add call to `/handoff` skill for end-of-session notification
+- [ ] 2. **[P1][N]** 50% context window alert
+  - [ ] 2a. Research: can Claude Code hooks inspect token count?
+  - [ ] 2b. Build hook or script that fires at 50% context
+  - [ ] 2c. Alert method: iMessage to Vincent (uses alert script from task 1)
+  - [ ] 2d. Message: "Context at 50% — consider forking session or starting new one"
 
-**The problem has three parts:**
-1. How does Vincent reach agents from his phone?
-2. How do two Claude Code Desktop installs on different machines coexist?
-3. What's the always-on communication channel between Vincent and all agents?
+---
 
-**How the two Claude Code Desktops work:**
-- M3's Claude Code Desktop sees M3's local files ONLY
-- M1's Claude Code Desktop sees M1's local files ONLY
-- They share the same Anthropic account (billing, API) but sessions are completely independent
-- Worktrees isolate sessions on the SAME machine, not across machines
-- Cross-machine coordination happens through Git (push/pull via GitHub)
+### Phase 0-Housekeeping: Vault + Workspace Cleanup [N] P2
+_Dependency: None. Do before Phase 1 — the vault already partially exists, needs reconciliation._
 
-**Setup order: fastest wins first, then build out.**
+**Why:** Two vaults exist (`~/Nico/Vault/` and `~/Nico/CabinetAgentVault/`). CabinetAgentVault is canonical. Vault A has templates we need. Home dir has 7 stale planning docs. Memory/ has loose files that need homes.
 
-- [ ] 1. QUICK WIN: Claude Code remote sessions from phone (~5 min, Vincent)
-  - [ ] 1a. Open claude.ai/code in Safari on iPhone — can you see and launch remote sessions?
-  - [ ] 1b. Open Claude iOS app — check if it shows Claude Code session monitoring
-  - [ ] 1c. Test: start a remote session from phone, give it a task, confirm it runs
-  - [ ] 1d. **This may give you agent access from your phone TODAY with zero setup**
-- [ ] 2. QUICK WIN: Slack workspace + phone app (~10 min, Vincent)
-  - [ ] 2a. Create Slack workspace (Vincent decides name: "lucavo-lifeos", "nico-hq", or other)
+- [ ] 1. **[P2][N]** Vault consolidation
+  - [ ] 1a. Copy 6 templates from `~/Nico/Vault/05-Templates/` → `~/Nico/CabinetAgentVault/05-templates/`
+  - [ ] 1b. Verify CLAUDE.md at `CabinetAgentVault/` root is current (update if needed)
+  - [ ] 1c. Archive `~/Nico/Vault/` → move to `~/Nico/.trash/CC/2026-02-23_Vault-archived/`
+  - [ ] 1d. Update all references from `~/Nico/Vault/` to `~/Nico/CabinetAgentVault/` in CLAUDE.md and status.md
+- [ ] 2. **[P2][N]** Home dir cleanup (`~/Nico/` root level stale files)
+  - [ ] 2a. Move `NICO-FINAL-SETUP-PLAN.md` → `.trash/CC/`
+  - [ ] 2b. Move `nico-setup-plan-v4-2026-02-15.md` → `.trash/CC/`
+  - [ ] 2c. Move `nico-task-dashboard.html` → `.trash/CC/`
+  - [ ] 2d. Move `obsidian-setup-plan.md` → `.trash/CC/`
+  - [ ] 2e. Move `obsidian-final-setup-plan.md` → `.trash/CC/` (keep obsidian-final-setup-plans.md)
+  - [ ] 2f. Move `obsidian-cli-capability-audit.md` → `CabinetAgentVault/30-resources/reference/` (still useful)
+- [ ] 3. **[P2][N]** Memory/ loose files
+  - [ ] 3a. Move `yt-transcript.en.vtt` → `.trash/CC/` (raw, unneeded)
+  - [ ] 3b. Move `yt-transcript-clean.txt` → `CabinetAgentVault/30-resources/research/`
+  - [ ] 3c. Move `video-50-days-ai-agent.md` → `CabinetAgentVault/30-resources/research/`
+  - [ ] 3d. Archive `cos-plan.md` → `CabinetAgentVault/40-archive/` (superseded by status.md + this session)
+  - [ ] 3e. Review `cost-audit-48h.md` — move to vault resources or trash
+
+---
+
+### Phase 0F: Agent Access & Communication [V+N] P1
+_Dependency: None. #1 PRIORITY after Nico's overnight tasks. CEO must be able to reach agents from anywhere._
+
+**The three problems:**
+1. How does Vincent reach agents from iPhone?
+2. How do two Claude Code installs on different machines coexist?
+3. What's the always-on communication channel?
+
+**How two Claude Code Desktops work:**
+- M3 sees M3 files ONLY · M1 sees M1 files ONLY
+- Same Anthropic account (billing) but completely independent sessions
+- Cross-machine coordination = Git (push/pull via GitHub)
+
+- [ ] 1. **[P1][V]** QUICK WIN: Claude Code remote sessions from phone (~5 min)
+  - [ ] 1a. Open claude.ai/code in Safari on iPhone — can you launch remote sessions?
+  - [ ] 1b. Open Claude iOS app — check for session monitoring
+  - [ ] 1c. Test: start remote session from phone, give it a task, confirm it runs
+- [ ] 2. **[P1][V]** QUICK WIN: Slack workspace + iPhone app (~10 min)
+  - [ ] 2a. Create Slack workspace (name: your call — "lucavo-lifeos", "nico-hq", or other)
   - [ ] 2b. Install Slack on iPhone
-  - [ ] 2c. Create channels: #tasks, #status, #decisions, #dev, #lucavo, #nico-internal
-  - [ ] 2d. This gives Vincent a place to send commands from phone immediately — agent integration comes next
-- [ ] 3. Connect agents to Slack (~20 min, Cowork + Claude Code)
-  - [ ] 3a. Connect Cowork to Slack (MCP connector — platform already offers this)
+  - [ ] 2c. Create bot + copy token → paste to Nico via terminal
+- [ ] 3. **[P1][N]** Connect agents to Slack (~20 min, after token received)
+  - [ ] 3a. Connect Cowork to Slack (MCP connector)
   - [ ] 3b. Research Claude Code ↔ Slack integration (bot token vs. Slack App vs. API)
   - [ ] 3c. Implement Claude Code → Slack posting (status updates, task completions)
-  - [ ] 3d. Test: Vincent posts `atl: something` in #tasks from phone → Nico picks it up
-  - [ ] 3e. Test: agent completes task → posts to #status automatically
-- [ ] 4. SSH from phone as terminal fallback (blocked by Phase 0D)
-  - [ ] 4a. Fix SSH from M3 → M1 first (Phase 0D must complete)
-  - [ ] 4b. Install Tailscale on iPhone
-  - [ ] 4c. Install Termius on iPhone
-  - [ ] 4d. Test: SSH from phone → M1 → run `claude` in terminal
-  - [ ] 4e. This gives raw Claude Code CLI access when you need full terminal control
-- [ ] 5. Set up iMessage as escalation channel
-  - [ ] 5a. Sign in to iMessage on M1 (lifeos.nico@gmail.com Apple ID)
-  - [ ] 5b. Reserved for: urgent blockers, things that need Vincent's attention NOW
-  - [ ] 5c. Test: Claude Code sends iMessage via osascript to Vincent's phone
-- [ ] 6. LATER: Advanced multi-device options (research when basics are working)
-  - [ ] 6a. Can Claude Code Desktop on M3 SSH remote into M1 workspace? (VS Code-style remote dev)
-  - [ ] 6b. Can Cowork on M3 mount ~/Nico/ on M1 via Tailscale/SSHFS?
-  - [ ] 6c. Evaluate third-party mobile apps (Happy Coder, Claude Code Mobile IDE)
-  - [ ] 6d. Can multiple Cowork sessions exist simultaneously?
-- [ ] 7. Document the access architecture
-  - [ ] 7a. Define the access pattern per device:
-    - iPhone: [Slack for commands + claude.ai/code for sessions + SSH/Termius for terminal]
-    - M3: [Cowork + Claude Code Desktop + Slack] — sees M3 files, coordinates with M1 via Git
-    - M1: [Claude Code Desktop/CLI + Slack] — sees ~/Nico/ workspace directly
-  - [ ] 7b. Document in CLAUDE.md under "Remote Access"
-  - [ ] 7c. Document: "Two Claude Code Desktops are independent. They share an account, not sessions or files. Git is the sync layer."
+  - [ ] 3d. Create channels: #ceo-desk, #status, #tasks, #dev, #decisions, #alerts, #nico-internal, #lucavo-design
+  - [ ] 3e. Test: Vincent posts `atl: something` in #tasks from phone → Nico picks it up
+  - [ ] 3f. Test: agent completes task → posts to #status automatically
+- [ ] 4. **[P2][V]** SSH from phone (fallback — Phase 0D done, just needs iPhone setup)
+  - [ ] 4a. Tailscale already on iPhone ✅
+  - [ ] 4b. Termius already on iPhone ✅
+  - [ ] 4c. Test: SSH from phone → M1 → run `claude` in terminal
+- [ ] 5. **[P1][N]** iMessage escalation channel (see Phase 0-Alerts — building tonight)
+- [ ] 6. **[P4][N]** Advanced multi-device options (research after basics work)
+  - [ ] 6a. Can Claude Code Desktop on M3 SSH remote into M1 workspace?
+  - [ ] 6b. Can Cowork on M3 mount ~/Nico/ via Tailscale/SSHFS?
+  - [ ] 6c. Evaluate Happy Coder and other mobile Claude Code apps
+- [ ] 7. **[P2][N]** Document access architecture
+  - [ ] 7a. iPhone: Slack + claude.ai/code + SSH/Termius · M3: Cowork + Claude Code + Slack · M1: Claude Code CLI + Slack
+  - [ ] 7b. Update CLAUDE.md under "Remote Access"
 
 ---
 
-### Phase 0E: Fix Git Workflow — Enforce Branch + PR Process (🤖 Claude Code on M1 + 👤 Vincent, ~15 min)
-_Dependency: Phase 0 complete (repo exists). **Priority: HIGH — do before any more commits.**_
+### Phase 0E: Fix Git Workflow [N] P2 (Mostly Done)
+_Dependency: Phase 0 complete ✅_
 
-**Why:** CLAUDE.md says "NEVER push directly to main or dev. ALWAYS create branch: nico/{task-name}." But both Claude Code and Cowork have been pushing straight to `master` since day one, and the auto-backup script does the same every 6 hours. Two agents + one cron job all writing to `master` with no guardrails. The longer this continues, the harder it is to fix habits and the higher the risk of conflicts or bad pushes with no review step.
-
-- [x] 1. Protect `master` branch on GitHub (done 2026-02-22)
-  - [x] 1a. Branch protection enabled via `gh` CLI
-  - [x] 1b. Force pushes blocked, branch deletion blocked, enforce_admins: true
-  - [x] 1c. Decision: no required approvals (solo repo — self-approval impossible). PR habit enforced via CLAUDE.md.
-- [x] 2. Update auto-backup script (done 2026-02-22)
-  - [x] 2a-2e. Chose Option B: auto-backup.sh now pushes to `backup` branch only (force push). Never touches master.
-- [x] 3. Update agent workflow (done 2026-02-22)
-  - [x] 3a-3c. CLAUDE.md updated. PR #2 was first proper branch → PR → merge cycle.
-- [x] 4. Migrate current state (done 2026-02-22)
-  - [x] 4a-4c. Branch `nico/fix-git-workflow` created, PR #2 opened and merged.
-- [x] 5. Test (done 2026-02-22)
-  - [x] 5a. Direct push went through (admin bypass) but force push was REJECTED ✅
-  - [x] 5b. Branch → PR → merge cycle worked ✅
-  - [ ] 5c. Auto-backup runs on next cycle — confirm it follows new process
-- [ ] 6. Enforce metadata standards on all agent output
-  - [ ] 6a. PROBLEM: CLAUDE.md requires date+time, source, and version on every file/log/status update — but no agent is consistently following it
-  - [ ] 6b. Audit existing files: status.md header, decisions.md entries, session-log.md — add missing timestamps
-  - [ ] 6c. Define exact format for each document type (not just "YYYY-MM-DD HH:MM" — what time zone? What counts as "source"?)
-  - [ ] 6d. Add metadata checklist to CLAUDE.md Session Protocol — agents must verify metadata before ending a session
-  - [ ] 6e. Future: when Slack is live, build a validation check — agent posts to #status, bot verifies metadata is present before accepting
+- [x] 1. Protect master branch (done 2026-02-22)
+- [x] 2. Update auto-backup script to backup branch only (done 2026-02-22)
+- [x] 3. Update agent workflow + CLAUDE.md (done 2026-02-22)
+- [x] 4. Migrate + first proper PR cycle (done 2026-02-22)
+- [x] 5a. Direct push blocked ✅ · 5b. Branch→PR→merge works ✅
+- [ ] 5c. **[P3][N]** Verify auto-backup runs on next cycle correctly
+- [ ] 6. **[P2][N]** Enforce metadata standards
+  - [ ] 6a. Audit existing files: status.md, decisions.md, session-log.md — add missing timestamps
+  - [ ] 6b. Define exact format per document type (timezone, source label)
+  - [ ] 6c. Add metadata checklist to CLAUDE.md Session Protocol
+  - [ ] 6d. Future: Slack bot validates metadata before accepting #status posts
 
 ---
 
-### Phase 0-CRITICAL: GitHub Backup — No Redundancy Until This Is Done (👤 Vincent + 🤖 Claude Code on M1, ~5 min)
-_Dependency: None. This is the FIRST thing to do. Everything else is blocked until we have backup._
+### Phase 0C: Audit Claude Code Context Loading [N] P3 (Mostly Done)
+_Dependency: None._
 
-**Why:** CLAUDE.md, status.md, 10 phases of tasks, all session logs, all imported plans — everything exists ONLY on the M1 right now. If the M1 has any issue, we lose days of architecture and planning work.
-
-**Option A — Paste into Claude Code on M1 (recommended, ~2 min):**
-
-- [x] 1. Open Claude Code on M1 (done 2026-02-16)
-- [x] 2. Paste the ready-made prompt (done 2026-02-16)
-  - [x] 2a. Fixed git lock, committed 12 files, created private repo, pushed
-  - [x] 2b. Auto-backup every 6 hours via launchd (com.nico.workspace-backup)
-  - [x] 2c. Fixed git credential helper with `gh auth setup-git`
-- [x] 3. Verified (done 2026-02-16)
-  - [x] 3a. `gh repo view nico-workspace` — confirmed
-  - [x] 3b. `git log --oneline` — initial commit + backup script commit
-  - [x] 3c. Repo: https://github.com/lifeosnico-bot/nico-workspace
-
-**Option B — Do it manually (~5 min):**
-
-- [ ] 1. Fix any stale git state
-  - [ ] 1a. `cd ~/Nico`
-  - [ ] 1b. `rm -f .git/index.lock` (clear stale lock if exists)
-- [ ] 2. Initialize and commit
-  - [ ] 2a. `git init` (if not already initialized)
-  - [ ] 2b. `git add -A`
-  - [ ] 2c. `git commit -m "Initial workspace commit — CLAUDE.md, Memory, status.md, session logs, plans"`
-- [ ] 3. Push to GitHub
-  - [ ] 3a. `gh repo create nico-workspace --private --source=. --push`
-- [ ] 4. Verify
-  - [ ] 4a. `gh repo view nico-workspace`
-  - [ ] 4b. `git log --oneline -3`
-- [ ] 5. Set up auto-backup (optional but recommended)
-  - [ ] 5a. Create `~/Nico/Scripts/auto-backup.sh` — commits and pushes every run
-  - [ ] 5b. Create launchd plist at `~/Library/LaunchAgents/com.nico.workspace-backup.plist` — runs every 6 hours
-  - [ ] 5c. Load it: `launchctl load ~/Library/LaunchAgents/com.nico.workspace-backup.plist`
-
-**Once verified, mark this phase done and move to Phase 0A.**
+- [x] 1. Identified problem: Craft MCP loading 17.8k tokens/session (done 2026-02-16)
+- [x] 2. Disabled cloud MCP sync (done 2026-02-16)
+- [ ] 3. **[P3][N]** Verify fix
+  - [ ] 3a. Run `/context` — confirm Craft tools gone
+  - [ ] 3b. Confirm no other unexpected MCP servers loading
+- [ ] 4. **[P3][N]** Permanent fix documentation
+  - [ ] 4a. Document in CLAUDE.md: "Cloud MCP sync disabled — do not re-enable without token audit"
+- [ ] 5. **[P3][N]** Audit remaining context usage
+  - [ ] 5a. Review 13 .mcp.json plugin files — are any loading unexpectedly?
+  - [ ] 5b. Document baseline context usage in CLAUDE.md
 
 ---
 
+### Phase 0A: Consolidate Chat Data [N+V] P3
+_Dependency: None. Clean up lingering duplicate docs from Chat sessions._
 
-### LettaBot: Install + Configure on M1 (🤖 Claude Code on M1 + 👤 Vincent, ~30 min)
-_Dependency: Phase 0D (SSH must work first). **#2 PRIORITY — do immediately after SSH is fixed.**_
-
-**Why:** LettaBot wraps the existing Letta/Memo agent on M1 and adds true autonomy:
-- **Heartbeats:** M1 wakes up every X minutes and acts on its own (reflects, updates memory, checks tasks) — no human needed.
-- **Cron jobs:** M1 schedules its own recurring tasks (auto-backups, status updates, etc.).
-- **Telegram integration:** Vincent can message the M1 from his iPhone instantly — no laptop required.
-- **Proactive behavior:** Agent doesn't wait to be asked. It notices things and acts.
-
-Without LettaBot, the M1 only works when Vincent is sitting in front of a laptop typing commands. With LettaBot, the M1 becomes a true always-on autonomous agent.
-
-- [ ] 1. Clone LettaBot repo on M1
-  - [ ] 1a. SSH into M1 from M3: `ssh lifeos.nico@100.87.182.78`
-  - [ ] 1b. `git clone https://github.com/letta-ai/letta-bot ~/Nico/letta-bot`
-  - [ ] 1c. `cd ~/Nico/letta-bot && pip install -r requirements.txt` (or follow repo install instructions)
-- [ ] 2. Set up Telegram bot (Vincent does this, ~5 min)
-  - [ ] 2a. Open Telegram on iPhone
-  - [ ] 2b. Search for "BotFather" → start a chat
-  - [ ] 2c. Send `/newbot` → give it a name (e.g., "NicoAgent") → copy the token it gives you
-  - [ ] 2d. Save token — you'll need it in step 3
-- [ ] 3. Configure and run LettaBot on M1
-  - [ ] 3a. Run `letta-bot onboard` — select existing agent (agent-5a9b0e69)
-  - [ ] 3b. Select Telegram, paste token from step 2
-  - [ ] 3c. Enable heartbeats (set to 60 min to start — can adjust later)
-  - [ ] 3d. Enable cron jobs
-  - [ ] 3e. Run `letta-bot server` — confirm it starts without errors
-- [ ] 4. Test from iPhone
-  - [ ] 4a. Open Telegram on iPhone → find your NicoAgent bot
-  - [ ] 4b. Send "hello" — confirm Memo responds
-  - [ ] 4c. Send "sts" — confirm it returns current status
-  - [ ] 4d. Wait for a heartbeat (or trigger manually with `/heartbeat`) — confirm M1 acts on its own
-- [ ] 5. Set LettaBot to auto-start on M1 boot
-  - [ ] 5a. Create launchd plist: `~/Library/LaunchAgents/com.nico.letta-bot.plist`
-  - [ ] 5b. Load it: `launchctl load ~/Library/LaunchAgents/com.nico.letta-bot.plist`
-  - [ ] 5c. Test: restart M1 → confirm LettaBot starts automatically
-- [ ] 6. Verify full autonomy
-  - [ ] 6a. M1 is running LettaBot server
-  - [ ] 6b. Vincent can message from iPhone via Telegram
-  - [ ] 6c. Heartbeats are firing every 60 min
-  - [ ] 6d. M1 does NOT require Vincent to be at a laptop to function
-
-### ~~Phase 0D: Fix SSH from M3 → M1~~ ✅ COMPLETE (2026-02-21)
-- Generated ED25519 key pair on M3
-- Added M3 public key to M1 `~/.ssh/authorized_keys`
-- Verified: M3 ↔ M1 SSH communication working in both directions
-- `nico-sync` script now fully functional (M1 sync step no longer skipped)
+- [ ] 1. **[P3][V]** Confirm: is anything still in Chat that hasn't been exported?
+- [ ] 2. **[P3][N]** Deduplicate Chat Imports
+  - [ ] 2a. NICO-FINAL-SETUP-PLAN.md vs nico-setup-plan-v4 — keep best, trash duplicate
+  - [ ] 2b. obsidian-final-setup-plan.md vs obsidian-final-setup-plans.md — keep newest, trash other
+  - [ ] 2c. Move surviving files to vault (30-resources/reference/) with proper naming
+  - [ ] 2d. Add README.md to Chat Imports/ explaining what each file is/was
+- [ ] 3. **[P3][N]** Extract any decisions not yet in Key Decisions section
 
 ---
 
-### Phase 0A: Consolidate Chat Data (🤝 Vincent + Cowork, ~20 min)
-_Get all planning docs, decisions, and context from Claude Chat into locations CW and CC can access. Clean up duplicates. Single source of truth for everything._
+### Phase 0B: Secrets & Security — 1Password [V] P2
+_Dependency: Blocks any task requiring stored API keys._
 
-- [ ] 1. Audit what exists in Chat
-  - [ ] 1a. List all .md files created across Chat COS project sessions
-  - [ ] 1b. Identify which have already been imported (6 files in Chat Imports/)
-  - [ ] 1c. Identify any files still only in Chat that haven't been exported
-- [ ] 2. Deduplicate imported files
-  - [ ] 2a. Compare NICO-FINAL-SETUP-PLAN.md vs nico-setup-plan-v4-2026-02-15.md (known duplicate)
-  - [ ] 2b. Compare obsidian-final-setup-plan.md vs obsidian-final-setup-plans.md (known duplicate)
-  - [ ] 2c. Compare obsidian-setup-plan.md vs obsidian-final-setup-plan.md (older version)
-  - [ ] 2d. Keep the best version of each, move duplicates to .trash/CW/
-- [ ] 3. Create clean reference folder
-  - [ ] 3a. Rename surviving files with clear, consistent names
-  - [ ] 3b. Add a README.md to Chat Imports/ explaining what each file is
-  - [ ] 3c. Verify status.md references point to correct filenames
-- [ ] 4. Extract any decisions/context not yet captured
-  - [ ] 4a. Scan all imported docs for decisions not in status.md "Key Decisions" section
-  - [ ] 4b. Scan for tasks mentioned in plans but missing from task list
-  - [ ] 4c. Update status.md and decisions.md with anything missing
-- [ ] 5. Verify completeness
-  - [ ] 5a. Vincent confirms: is there anything from Chat sessions that didn't get exported?
-  - [ ] 5b. If yes, export and import those files
-  - [ ] 5c. Final check: everything from Chat is now in ~/Nico/ and accessible
+- [ ] 1. **[P2][V]** Create 1Password account
+  - [ ] 1a. Go to 1password.com → sign up with lifeos.nico@gmail.com (Individual, $2.99/mo)
+  - [ ] 1b. Save Secret Key safely
+  - [ ] 1c. Download + install desktop app on M1
+- [ ] 2. **[P2][N]** Install 1Password CLI (after Vincent creates account)
+  - [ ] 2a. `brew install 1password-cli`
+  - [ ] 2b. `op signin`
+  - [ ] 2c. Verify: `op vault list`
+- [ ] 3. **[P2][N]** Store secrets
+  - [ ] 3a. Anthropic API key
+  - [ ] 3b. GitHub token (if needed beyond SSH)
+  - [ ] 3c. Test retrieval
 
 ---
 
-### Phase 0B: Secrets & Security (👤 Vincent, ~8 min)
-_Dependency: everything in Phases 1-7 that touches API keys_
-
-- [ ] 1. Create 1Password account
-  - [ ] 1a. Go to https://1password.com on M1 Safari
-  - [ ] 1b. Sign up with lifeos.nico@gmail.com (Individual plan, $2.99/mo)
-  - [ ] 1c. Save Secret Key somewhere safe
-  - [ ] 1d. Download + install 1Password desktop app
-- [ ] 2. Install 1Password CLI
-  - [ ] 2a. Run `brew install 1password-cli`
-  - [ ] 2b. Run `op signin` (enter account URL, email, Secret Key, master password)
-  - [ ] 2c. Verify: `op vault list` → should show Personal vault
-- [ ] 3. Store secrets
-  - [ ] 3a. Store Anthropic API key (from console.anthropic.com)
-  - [ ] 3b. Store GitHub token (if needed beyond SSH)
-  - [ ] 3c. Test retrieval: `op read "op://Personal/Anthropic API/password"`
+### ~~LettaBot: Install + Configure on M1~~ ✅ COMPLETE (2026-02-22)
+- [x] Cloned + configured on M1
+- [x] Telegram bot set up and working
+- [x] Heartbeats enabled (60 min intervals)
+- [x] Daily briefings: 8am weekday / 10am weekend
+- [x] Auto-start on M1 boot via launchd
+- [x] Vincent can message from iPhone via Telegram
+- [ ] **[P2][N]** Guard rails for Telegram crashes / multiple instance prevention (see Inbox)
+- [ ] **[P2][N]** Reduce Telegram chatter — filter what gets posted, clean up noise
 
 ---
 
-### Phase 1: Obsidian Pre-Install (🤖 Claude Code on M1, ~14 min)
-_Run after Phase 0 is complete. Paste the prompt from NICO-FINAL-SETUP-PLAN.md into Claude Code._
+### Phase 1: Obsidian Vault Setup [N] P2 (Partially Done)
+_Dependency: Obsidian installed ✅. CabinetAgentVault exists ✅. Needs completion._
 
-- [ ] 1. Install Obsidian
-  - [ ] 1a. `brew install --cask obsidian`
-- [ ] 2. Create vault directory structure
-  - [ ] 2a. Create ~/Nico/Vault/
-  - [ ] 2b. Create folders: 00-Inbox, 01-Projects, 02-Areas, 03-Resources, 04-Archive, 05-Templates, 06-Daily, 07-Canvas
-  - [ ] 2c. Create project subfolders: Lucavo-Design, SaaS-Portal, Nico-Agent
-  - [ ] 2d. Create area subfolders: Business-Ops, Clients, Finance, Marketing, Development
-  - [ ] 2e. Create resource subfolders: Research, Tutorials, Reference, Vendors, Attachments
-  - [ ] 2f. Create 06-Daily/2026/
-- [ ] 3. Write CLAUDE.md at vault root
-  - [ ] 3a. Identity, vault structure, conventions, frontmatter schema
-  - [ ] 3b. CLI gotchas section (22.8% silent failure traps)
-  - [ ] 3c. Git workflow rules
-- [ ] 4. Create 6 templates in 05-Templates/
-  - [ ] 4a. daily-note.md
-  - [ ] 4b. project-note.md
-  - [ ] 4c. meeting-note.md
-  - [ ] 4d. research-note.md
-  - [ ] 4e. decision-note.md
-  - [ ] 4f. client-note.md
-- [ ] 5. Create seed notes
-  - [ ] 5a. 00-Home.md (vault root — navigation hub)
-  - [ ] 5b. 01-Projects/Lucavo-Design/index.md
-  - [ ] 5c. 01-Projects/SaaS-Portal/index.md
-  - [ ] 5d. 01-Projects/Nico-Agent/index.md
-  - [ ] 5e. 02-Areas/Business-Ops/index.md
-  - [ ] 5f. 02-Areas/Development/index.md
-  - [ ] 5g. 02-Areas/Clients/index.md
-- [ ] 6. Create .gitignore at vault root
-- [ ] 7. Create .obsidian/sync-ignore (exclude .git/ and node_modules/)
-- [ ] 8. Configure .obsidian settings files
-  - [ ] 8a. app.json (default view, spellcheck, new file location, attachment path)
-  - [ ] 8b. community-plugins.json (plugin list)
-  - [ ] 8c. core-plugins.json (enabled core plugins)
-  - [ ] 8d. appearance.json
-- [ ] 9. Download + install community plugins via filesystem
-  - [ ] 9a. templater-obsidian (from GitHub releases)
-  - [ ] 9b. dataview (from GitHub releases)
-  - [ ] 9c. obsidian-git (from GitHub releases)
-  - [ ] 9d. periodic-notes (from GitHub releases)
-  - [ ] 9e. calendar (from GitHub releases)
-  - [ ] 9f. obsidian-claude-code-mcp (from GitHub releases)
-- [ ] 10. Install kepano/obsidian-skills for Claude Code
-  - [ ] 10a. Clone repo to temp directory
-  - [ ] 10b. Copy skills to ~/Nico/Vault/.claude/skills/
-  - [ ] 10c. Check for known bug: backticked `!` in obsidian-bases/SKILL.md → replace backticked `!` with `<code>!</code>`
-- [ ] 11. Initialize git repo
-  - [ ] 11a. `git init` in ~/Nico/Vault/
-  - [ ] 11b. `git add .`
-  - [ ] 11c. `git commit -m "Initial vault structure"`
+**Vault path**: `~/Nico/CabinetAgentVault/` (canonical — confirmed 2026-02-23)
+
+**What exists already:**
+- Vault structure: 00-dashboard/, 01-inbox/, 05-reviews/, 05-templates/, 10-projects/, 20-areas/, 30-resources/, 40-archive/, 50-clippings/ ✅
+- CLAUDE.md at vault root ✅
+- home.md in 00-dashboard/ ✅
+- Project index files ✅
+
+**What still needs to be done:**
+- [ ] 1. **[P2][N]** Templates (copy from Vault A as part of Phase 0-Housekeeping)
+  - [ ] 1a. daily-note.md
+  - [ ] 1b. project-note.md
+  - [ ] 1c. meeting-note.md
+  - [ ] 1d. research-note.md
+  - [ ] 1e. decision-note.md
+  - [ ] 1f. client-note.md
+- [ ] 2. **[P2][N]** .obsidian settings files
+  - [ ] 2a. app.json (default view, spellcheck, new file location, attachment path)
+  - [ ] 2b. community-plugins.json
+  - [ ] 2c. core-plugins.json
+  - [ ] 2d. appearance.json
+- [ ] 3. **[P2][N]** Download + install community plugins via filesystem
+  - [ ] 3a. templater-obsidian
+  - [ ] 3b. dataview
+  - [ ] 3c. obsidian-git
+  - [ ] 3d. periodic-notes
+  - [ ] 3e. calendar
+  - [ ] 3f. obsidian-tasks-plugin (already installed per memory ✅ — verify)
+- [ ] 4. **[P2][N]** Initialize git repo in vault
+  - [ ] 4a. `git init` in CabinetAgentVault/
+  - [ ] 4b. `gh repo create nico-vault --private --source=. --push`
+- [ ] 5. **[P2][N]** Build task-board.md
+  - [ ] 5a. Create `CabinetAgentVault/00-dashboard/task-board.md`
+  - [ ] 5b. Shows: P1-P2 active tasks, Vincent's actions, Nico's queue, inbox count, last updated
+  - [ ] 5c. Nico rewrites this at every session start and end
 
 ---
 
-### Phase 2: Obsidian Manual Setup (👤 Vincent, ~5 min)
-_Claude Code will pause and tell you exactly what to do at each step._
+### Phase 2: Obsidian Manual Setup [V] P2
+_Dependency: Phase 1 complete. Claude Code preps everything, Vincent flips switches (~10 min)._
 
-- [ ] 1. Open Obsidian
-  - [ ] 1a. Launch from Applications
-  - [ ] 1b. Click "Open folder as vault" → select ~/Nico/Vault/
-- [ ] 2. Sign in + enable Early Access
-  - [ ] 2a. Settings → About → Log in with Obsidian account
-  - [ ] 2b. Toggle ON "Receive insider builds"
-  - [ ] 2c. Click "Check for updates" → install v1.12+
-  - [ ] 2d. Let Obsidian restart
-- [ ] 3. Enable CLI
-  - [ ] 3a. Settings → Command Line Interface → toggle ON "Register CLI"
-  - [ ] 3b. Cmd+Q Obsidian (full quit, not just close window)
-  - [ ] 3c. Open new Terminal window
-  - [ ] 3d. Verify: `obsidian version` → should return v1.12.x
-- [ ] 4. Enable community plugins
+- [ ] 1. **[V]** Open Obsidian → "Open folder as vault" → select `~/Nico/CabinetAgentVault/`
+- [ ] 2. **[V]** Sign in to Obsidian account (Catalyst license — lifeos.nico account)
+- [ ] 3. **[V]** Enable Obsidian Sync
+  - [ ] 3a. Settings → Sync → Log in
+  - [ ] 3b. Create new remote vault → name it "CabinetAgent"
+  - [ ] 3c. Wait for initial sync
+  - [ ] 3d. Install Obsidian on iPhone → log into same account → vault appears
+- [ ] 4. **[V]** Enable community plugins
   - [ ] 4a. Settings → Community Plugins → Turn off Restricted Mode
-  - [ ] 4b. Verify pre-installed plugins show up
-  - [ ] 4c. Enable all: Templater, Dataview, Obsidian Git, Periodic Notes, Calendar, obsidian-claude-code-mcp
-  - [ ] 4d. If any failed filesystem install, install from Browse marketplace
-- [ ] 5. Enable Obsidian Sync
-  - [ ] 5a. Settings → Sync → Log in
-  - [ ] 5b. Create new remote vault → name it "Nico"
-  - [ ] 5c. Wait for initial sync to complete
-  - [ ] 5d. Verify: iPhone Obsidian app shows Nico vault available
+  - [ ] 4b. Enable all pre-installed plugins
+- [ ] 5. **[N]** Register CLI (after Vincent enables it)
+  - [ ] 5a. Settings → Command Line Interface → toggle ON
+  - [ ] 5b. Verify: `obsidian version`
 
 ---
 
-### Phase 3: Post-Launch Verification + Git Sync (🤖 Claude Code on M1, ~15 min)
-_Run after Vincent confirms Phase 2 is done._
+### Phase 3: Post-Launch Verification [N] P2
+_Dependency: Phase 2 complete (Vincent has done manual setup)._
 
-- [ ] 1. Verify CLI
-  - [ ] 1a. `obsidian version`
-  - [ ] 1b. `obsidian vault`
-  - [ ] 1c. `obsidian files total`
-- [ ] 2. Test CLI operations
-  - [ ] 2a. `obsidian files list | head -20`
-  - [ ] 2b. `obsidian files read "01-Projects/Nico-Agent/index.md"`
-  - [ ] 2c. `obsidian search content query="SaaS" format=json matches`
-  - [ ] 2d. `obsidian tasks all todo`
-  - [ ] 2e. Create today's daily note via CLI
-  - [ ] 2f. Verify obsidian-claude-code-mcp server is running on port 22360
-  - [ ] 2g. Configure daily notes core plugin: path = 06-Daily/2026/, template = daily-note.md
-- [ ] 3. Configure Obsidian Git plugin
-  - [ ] 3a. Write data.json: auto-commit every 10 min, auto-pull every 10 min, pull on boot
-  - [ ] 3b. Verify plugin is active in Obsidian
-- [ ] 4. Push vault to GitHub
-  - [ ] 4a. `gh repo create nico-vault --private --source=. --push`
-  - [ ] 4b. Verify repo exists on GitHub
-- [ ] 5. Set up ~/Nico/ workspace git sync (NEW)
-  - [ ] 5a. Initialize git repo at ~/Nico/ (if not already)
-  - [ ] 5b. Create .gitignore (exclude .trash/, .letta/, .DS_Store, Vault/ since vault has its own repo)
-  - [ ] 5c. `gh repo create nico-workspace --private --source=. --push`
-  - [ ] 5d. This backs up: CLAUDE.md, Memory/, Logs/, Projects/ to GitHub
-  - [ ] 5e. Set up auto-commit schedule (cron or launchd) for redundant backup
-- [ ] 6. Run full smoke test
-  - [ ] 6a. Vault structure exists (ls ~/Nico/Vault/0*)
-  - [ ] 6b. Git initialized (git status in both ~/Nico/ and ~/Nico/Vault/)
-  - [ ] 6c. CLAUDE.md exists at both levels
-  - [ ] 6d. Templates exist (ls 05-Templates/)
-  - [ ] 6e. CLI responds (obsidian version)
-  - [ ] 6f. Search works (obsidian search content "Lucavo")
-  - [ ] 6g. Tasks work (obsidian tasks all todo)
-  - [ ] 6h. GitHub repos exist (gh repo list)
-- [ ] 7. Update ~/Nico/CLAUDE.md with Obsidian section
-  - [ ] 7a. Add vault location, vault name, sync info, CLI version, skills info
+- [ ] 1. **[N]** Verify CLI working
+  - [ ] 1a. `obsidian version` · `obsidian vault` · `obsidian files total`
+- [ ] 2. **[N]** Test CLI operations
+  - [ ] 2a. Files list, read, search, tasks
+  - [ ] 2b. Create today's daily note via CLI
+  - [ ] 2c. Verify obsidian-claude-code-mcp running on port 22360
+- [ ] 3. **[N]** Configure Obsidian Git plugin
+  - [ ] 3a. Auto-commit every 10 min, auto-pull every 10 min, pull on boot
+- [ ] 4. **[N]** Run smoke test
+  - [ ] 4a. Vault structure ✓ · Git initialized ✓ · CLI responds ✓ · Search works ✓ · Tasks work ✓
+- [ ] 5. **[N]** Update CLAUDE.md with Obsidian section
+  - [ ] 5a. Vault location, sync info, CLI version
 
 ---
 
 ### Phase 4: Communication & Access
-_Absorbed into Phase 0F. See Phase 0F for all device connectivity, Slack setup, and agent access tasks._
+_Absorbed into Phase 0F. See Phase 0F._
 
 ---
 
-### Phase 5: SaaS Client Portal — Scaffold (🤖 Claude Code)
-_The actual product build begins._
+### Phase 5: SaaS Client Portal — Scaffold [N] P3
+_Dependency: Phase 0B (1Password for credentials). The actual product build._
 
-- [ ] 1. Project setup
-  - [ ] 1a. Create ~/Nico/Projects/cabinet-portal/
-  - [ ] 1b. Create branch: nico/scaffold-portal
-  - [ ] 1c. Initialize Next.js app with App Router
-  - [ ] 1d. Install dependencies (Supabase client, etc.)
-- [ ] 2. Supabase configuration
-  - [ ] 2a. Create Supabase project (store credentials in 1Password)
-  - [ ] 2b. Configure Supabase client in the app
-  - [ ] 2c. Design database schema: users, projects, documents tables
+- [ ] 1. **[N]** Project setup
+  - [ ] 1a. Create `~/Nico/Projects/cabinet-portal/`
+  - [ ] 1b. Branch: `nico/scaffold-portal`
+  - [ ] 1c. Initialize Next.js with App Router
+  - [ ] 1d. Install dependencies (Supabase client)
+- [ ] 2. **[N]** Supabase configuration
+  - [ ] 2a. Create Supabase project (store in 1Password)
+  - [ ] 2b. Configure client
+  - [ ] 2c. Design schema: users, projects, documents
   - [ ] 2d. Run initial migrations
-- [ ] 3. Auth flow
-  - [ ] 3a. Login page
-  - [ ] 3b. Signup page
-  - [ ] 3c. Supabase Auth integration
-  - [ ] 3d. Protected routes / middleware
-- [ ] 4. Dashboard
-  - [ ] 4a. Dashboard layout
-  - [ ] 4b. Navigation / sidebar
-  - [ ] 4c. Project listing view
-- [ ] 5. PDF handling (placeholder)
+- [ ] 3. **[N]** Auth flow
+  - [ ] 3a. Login + Signup pages
+  - [ ] 3b. Supabase Auth integration
+  - [ ] 3c. Protected routes / middleware
+- [ ] 4. **[N]** Dashboard
+  - [ ] 4a. Layout + sidebar
+  - [ ] 4b. Project listing view
+- [ ] 5. **[N]** PDF handling (placeholder)
   - [ ] 5a. PDF upload component
   - [ ] 5b. Storage bucket in Supabase
   - [ ] 5c. Document listing view
-- [ ] 6. Ship it
-  - [ ] 6a. Push branch to GitHub
-  - [ ] 6b. Create PR
-  - [ ] 6c. Create daily note in vault summarizing what was built
-  - [ ] 6d. Update SaaS-Portal/index.md with progress
+- [ ] 6. **[N]** Ship it
+  - [ ] 6a. Push branch → open PR
+  - [ ] 6b. Create session note in vault summarizing what was built
 
 ---
 
-### Phase 6: Backup & Redundancy (🤖 Claude Code + 👤 Vincent)
-_Run alongside or after Phase 3. Ensures nothing is ever lost._
+### Phase 6: Backup & Redundancy [N+V] P3
+_Dependency: Phase 3 complete._
 
-- [ ] 1. GitHub repos (🤖 Claude Code)
-  - [ ] 1a. nico-vault (private) — Obsidian vault backup
-  - [ ] 1b. nico-workspace (private) — ~/Nico/ workspace backup (Memory, CLAUDE.md, Logs)
-  - [ ] 1c. cabinet-portal (private) — SaaS project code
-- [ ] 2. Automated backup schedule (🤖 Claude Code)
+- [ ] 1. **[N]** GitHub repos
+  - [ ] 1a. nico-vault (private) — vault backup ✅ (in progress)
+  - [ ] 1b. nico-workspace (private) — ~/Nico/ backup ✅ (exists)
+  - [ ] 1c. cabinet-portal (private) — SaaS code (Phase 5)
+- [ ] 2. **[N]** Automated backup schedule
   - [ ] 2a. Obsidian Git plugin: auto-commit vault every 10 min
-  - [ ] 2b. Cron job or launchd: auto-commit ~/Nico/ workspace daily
-  - [ ] 2c. Verify both repos are receiving pushes
-- [ ] 3. Sync verification (👤 Vincent)
-  - [ ] 3a. Obsidian Sync working M1 → M3 → iPhone
+  - [ ] 2b. Verify workspace auto-backup (every 6hrs via launchd) still working
+- [ ] 3. **[V]** Sync verification
+  - [ ] 3a. Obsidian Sync working M1 → iPhone
   - [ ] 3b. GitHub repos accessible from M3
-  - [ ] 3c. Can SSH into M1 from M3 and phone
-- [ ] 4. Disaster recovery plan
-  - [ ] 4a. Document how to restore from GitHub if M1 dies
-  - [ ] 4b. Document how to restore vault from Obsidian Sync
-  - [ ] 4c. Save recovery docs to vault (03-Resources/Reference/)
+- [ ] 4. **[N]** Disaster recovery plan
+  - [ ] 4a. Document: how to restore from GitHub if M1 dies
+  - [ ] 4b. Save to vault: `30-resources/reference/disaster-recovery.md`
 
 ---
 
-### Phase 7: LifeOS Agent Evolution (Future)
-_Dependency: Phases 0-3 complete (core infrastructure running). Scope and plan after core infrastructure is running._
+### Phase 7: LifeOS Agent Evolution [N] P4
+_Dependency: Phases 0-3 complete. Future — scope after infrastructure is stable._
 
-- [ ] 1. Define scope
-  - [ ] 1a. What does "full LifeOS agent" mean — write it down
+**Org chart (designed in cos-plan.md):**
+```
+CEO — Vincent James Imbriani
+└── Chief of Staff — Nico (Claude Code, Sonnet-4.6)
+    ├── Director of Engineering (Claude Code Task, Sonnet)
+    ├── Director of Research & Intelligence (Letta, Sonnet/Opus)
+    ├── Director of Product (Claude Code Task, Sonnet)
+    ├── Client Success Manager (Claude Code Task, Haiku)
+    └── Operations Manager (Letta, Haiku)
+```
+
+- [ ] 1. **[N]** Define full scope
+  - [ ] 1a. Write "what does full LifeOS agent mean" in vault
   - [ ] 1b. Identify first automations beyond Lucavo
-  - [ ] 1c. Define what Nico handles vs. what Vincent handles
-- [ ] 2. MCP server configuration
+- [ ] 2. **[N]** MCP server configuration
   - [ ] 2a. Evaluate which MCP servers to enable
   - [ ] 2b. Configure obsidian-claude-code-mcp (port 22360)
-  - [ ] 2c. Test MCP communication between Claude Code and Obsidian
-- [ ] 3. Multi-agent architecture via Claude Code Agent SDK
-  - [ ] 3a. Research Claude Code's agent SDK — what's available, how agents are defined
-  - [ ] 3b. Define agent roles (e.g., research agent, dev agent, ops agent, comms agent)
-  - [ ] 3c. Define what each agent has access to (tools, files, APIs)
-  - [ ] 3d. Design how Nico (Chief of Staff) delegates to and manages sub-agents
-  - [ ] 3e. Build agent registry — which agents exist, their status, their scope
-  - [ ] 3f. Set up inter-agent communication (Slack #nico-internal channel — see Phase 0F. status.md remains source of truth, Slack is the real-time layer)
-  - [ ] 3g. Test: spin up first sub-agent, have Nico assign it a task, verify handoff works
-  - [ ] 3h. Define escalation rules — when does a sub-agent escalate back to Nico or Vincent?
-- [ ] 4. Research GitHub tools for agent management
-  - [ ] 4a. Evaluate GitHub Actions — can agents trigger workflows, deploy, run tests autonomously?
-  - [ ] 4b. Evaluate GitHub Projects (v2) — can it serve as a visual board for Nico to manage agent tasks?
-  - [ ] 4c. Evaluate GitHub Issues + Labels — agent-created issues as task assignments for sub-agents?
-  - [ ] 4d. Evaluate GitHub API — what can Nico automate? (repo creation, PR management, branch protection)
-  - [ ] 4e. Evaluate gh CLI capabilities — what agent management can be done from command line?
-  - [ ] 4f. Research: are there existing GitHub-based agent orchestration patterns? (multi-agent repos, shared state via commits)
-  - [ ] 4g. Evaluate GitHub Copilot Workspace / Agent mode — does it overlap or complement our setup?
-  - [ ] 4h. Decision: which GitHub tools to adopt for Nico's agent management layer
-  - [ ] 4i. Design: how GitHub becomes the "employee management system" — agents as contributors, PRs as deliverables, Issues as assignments
+- [ ] 3. **[N]** Multi-agent architecture
+  - [ ] 3a. Research Claude Code Agent SDK
+  - [ ] 3b. Define agent roles + access scope
+  - [ ] 3c. Build agent registry (which agents exist, status, scope)
+  - [ ] 3d. Slack #nico-internal as inter-agent channel
+  - [ ] 3e. Define escalation rules: when does sub-agent escalate to Nico or Vincent?
+- [ ] 4. **[N]** Spin up agent layer
+  - [ ] 4a. Research Director (Letta agent — builds knowledge over time)
+  - [ ] 4b. Operations Manager (Letta agent — monitoring, alerts, scheduled tasks)
+  - [ ] 4c. Engineering Director pattern (Claude Code Task template — stateless per task)
+- [ ] 5. **[N]** GitHub as agent management layer
+  - [ ] 5a. Evaluate GitHub Actions for agent-triggered workflows
+  - [ ] 5b. Evaluate GitHub Projects v2 as visual board for Nico
+  - [ ] 5c. Design: agents as contributors, PRs as deliverables, Issues as assignments
 
 ---
 
-### Phase 8: External App Integrations (🤖 Claude Code + 👤 Vincent)
-_Dependency: Phase 3 complete (Obsidian vault + CLI working). Connect Vincent's existing tools into the Nico system. Each integration feeds data into Obsidian vault and/or status.md._
+### Phase 8: External App Integrations [N+V] P4
+_Dependency: Phase 3 complete. Connect external tools → Obsidian vault._
 
-- [ ] 1. TickTick integration
-  - [ ] 1a. Research TickTick API — does it have one? What can it do? (REST API, OAuth, webhooks?)
-  - [ ] 1b. If API exists: evaluate MCP server approach vs. direct API integration vs. existing connector
-  - [ ] 1c. If no API: evaluate alternatives (IFTTT, Zapier, export/import, Apple Shortcuts)
-  - [ ] 1d. Define sync direction — one-way (TickTick → Obsidian) or two-way?
-  - [ ] 1e. Define what syncs: tasks, projects, tags, due dates, completions?
-  - [ ] 1f. Map TickTick structure to Obsidian vault structure (where do tasks land?)
-  - [ ] 1g. Build the integration (MCP server, script, or automation)
-  - [ ] 1h. Test: create task in TickTick → verify it appears in Obsidian
-  - [ ] 1i. Test: complete task in status.md → verify it reflects in TickTick (if two-way)
-- [ ] 2. Apple Notes integration
-  - [ ] 2a. Research Apple Notes access — AppleScript, Shortcuts, or direct file access?
-  - [ ] 2b. Evaluate: pull existing notes into Obsidian vault, or set up ongoing sync?
-  - [ ] 2c. Build export/import pipeline (Apple Notes → 00-Inbox/ in vault)
-  - [ ] 2d. Test: note in Apple Notes → appears in Obsidian Inbox
-- [ ] 3. Apple Reminders integration
-  - [ ] 3a. Research Apple Reminders access — AppleScript, Shortcuts, EventKit, or Reminders CLI?
-  - [ ] 3b. Export all existing reminders from M3 to structured format
-  - [ ] 3c. Import into Obsidian vault as tasks (with due dates, tags, priority mapped to frontmatter)
-  - [ ] 3d. Evaluate ongoing sync — new reminders auto-create vault tasks?
-  - [ ] 3e. Test: create reminder on iPhone → verify it appears as task in vault
-- [ ] 4. M3 → M1 data migration sweep
-  - [ ] 4a. Audit M3 for scattered tasks/notes: Apple Notes, Apple Reminders, existing Obsidian vault ("Obsidian vault"), Stickies, Desktop files, Downloads
-  - [ ] 4b. Catalog what's there — list of items with source and rough category
-  - [ ] 4c. Triage: what goes to Obsidian vault (00-Inbox/)? What goes to status.md tasks? What's trash?
-  - [ ] 4d. Build migration script or workflow (AppleScript + Shortcuts + manual for anything that can't be scripted)
-  - [ ] 4e. Run migration — pull everything into ~/Nico/ on M1 via Tailscale/SSH or Obsidian Sync
-  - [ ] 4f. Verify: nothing important left scattered on M3
-  - [ ] 4g. Set up ongoing capture — Apple Shortcut on iPhone/M3 that sends quick notes straight to 00-Inbox/ via Obsidian Sync
-- [ ] 5. Future integrations (placeholder — add as needed)
-  - [ ] 5a. Google Calendar (if used)
-  - [ ] 5b. Email (if needed)
-  - [ ] 5c. Telegram (if needed beyond Slack — evaluate after Phase 4B)
+**Note: No Apple Notes or Apple Reminders integrations — Obsidian is the sole task/notes front-end.**
+
+- [ ] 1. **[N]** TickTick integration (if still in use)
+  - [ ] 1a. Research TickTick API (REST, OAuth, webhooks?)
+  - [ ] 1b. Define sync direction and what syncs
+  - [ ] 1c. Build integration → TickTick tasks appear in vault inbox
+- [ ] 2. **[N]** Google Calendar integration
+  - [ ] 2a. Gmail API access (lifeos.nico@gmail.com)
+  - [ ] 2b. Agent reads calendar before morning briefing
+  - [ ] 2c. Calendar events appear in daily notes
+- [ ] 3. **[N]** M3 → M1 data migration sweep
+  - [ ] 3a. Audit M3 for scattered content: Stickies, Desktop files, Downloads, old Obsidian vault
+  - [ ] 3b. Pull everything into CabinetAgentVault/01-inbox/ via SSH or Obsidian Sync
+  - [ ] 3c. Verify: nothing important left on M3 that isn't in vault
+- [ ] 4. **[V+N]** lucavolifeos Google account decision
+  - [ ] 4a. Separate account for business or consolidate? Vincent decides.
 
 ---
 
-### Phase 9: Research Agent (🤖 Claude Code)
-_Dependency: Phase 3 (Obsidian working) + Phase 7 Task 3 (agent SDK) + Phase 8 (integrations connected). Autonomous agent that organizes saved content from multiple sources into the Obsidian vault._
+### Phase 9: Research Agent [N] P5
+_Dependency: Phase 3 + Phase 7 Task 3 + Phase 8. Autonomous content organization into vault._
 
-- [ ] 1. Define scope and behavior
-  - [ ] 1a. What sources does it watch? (YouTube saves, Reddit saves, web clips, TickTick, Apple Notes, Obsidian Inbox)
-  - [ ] 1b. What does "organize" mean? (tag, categorize, summarize, link to projects, file into vault folders)
-  - [ ] 1c. How often does it run? (on-demand, scheduled, triggered by new content?)
-  - [ ] 1d. What's the output? (organized notes in vault with frontmatter, tags, and wikilinks)
-- [ ] 2. Build ingestion pipelines
-  - [ ] 2a. YouTube: saved videos → extract title, channel, URL, description → create research note
-  - [ ] 2b. Reddit: saved posts/comments → extract content, subreddit, URL → create research note
-  - [ ] 2c. Web clips: bookmarks, saved articles → extract content, URL, source → create research note
-  - [ ] 2d. TickTick: completed research tasks → archive to vault
-  - [ ] 2e. Apple Notes: quick captures → move to Obsidian 00-Inbox/
-  - [ ] 2f. Obsidian 00-Inbox/: unsorted notes → auto-categorize and move to correct folder
-- [ ] 3. Build organization engine
-  - [ ] 3a. Auto-tag based on content analysis (AI classification)
-  - [ ] 3b. Auto-link to related existing notes (wikilink suggestions)
-  - [ ] 3c. Auto-assign to project if content relates to Lucavo, SaaS Portal, or Nico Agent
-  - [ ] 3d. Generate summary for each piece of content
-  - [ ] 3e. Apply correct frontmatter schema (title, date, tags, status, type, source)
-- [ ] 4. Build review workflow
-  - [ ] 4a. Agent organizes content into 00-Inbox/ with proposed categorization
-  - [ ] 4b. Vincent reviews via Obsidian (mobile or desktop)
-  - [ ] 4c. Approved items get moved to final location; rejected items get re-triaged
-  - [ ] 4d. Agent learns from corrections over time (via Letta memory)
-- [ ] 5. Test end-to-end
-  - [ ] 5a. Save a YouTube video → verify it appears organized in vault
-  - [ ] 5b. Save a Reddit post → verify it appears organized in vault
-  - [ ] 5c. Drop a note in Apple Notes → verify it gets pulled into vault
-  - [ ] 5d. Check tags, links, and folder placement are correct
+- [ ] 1. **[N]** Define scope + behavior
+  - [ ] 1a. Sources: YouTube saves, Reddit saves, web clips, Obsidian Inbox
+  - [ ] 1b. Output: organized notes in vault with frontmatter, tags, wikilinks
+- [ ] 2. **[N]** Build ingestion pipelines
+  - [ ] 2a. YouTube: saved videos → research note in 30-resources/
+  - [ ] 2b. Reddit: saved posts → research note
+  - [ ] 2c. Web clips → clipping in 50-clippings/
+  - [ ] 2d. Obsidian 01-inbox/: unsorted → auto-categorize and move
+- [ ] 3. **[N]** Build organization engine
+  - [ ] 3a. Auto-tag by content analysis
+  - [ ] 3b. Auto-link to related notes (wikilinks)
+  - [ ] 3c. Auto-assign to project (Lucavo, SaaS Portal, Nico Agent)
+  - [ ] 3d. Generate executive summary (3 bullets max)
+- [ ] 4. **[N]** Build review workflow
+  - [ ] 4a. Organized items land in 01-inbox/ with proposed categorization
+  - [ ] 4b. Vincent approves/rejects via Obsidian
+  - [ ] 4c. Agent learns from corrections (via Letta memory)
 
 ---
 
 ### Completed
-- [x] Original architecture session — agent concept defined (done 2026-02-02)
-- [x] M1 factory reset + fresh macOS (done 2026-02-14)
-- [x] Apple ID: lifeos.nico@gmail.com created (done 2026-02-14)
-- [x] M1 hardened (FileVault, Location OFF, Siri OFF, etc.) (done 2026-02-14)
-- [x] Hostname set: nico-agent (done 2026-02-14)
-- [x] Sleep prevention configured (done 2026-02-14)
-- [x] Homebrew, Git, gh CLI installed on M1 (done 2026-02-14)
-- [x] Git identity: "Nico (LifeOS Agent)" configured (done 2026-02-14)
-- [x] Tailscale connected M1↔M3 (done 2026-02-14)
-- [x] SSH enabled M1↔M3 (done 2026-02-14)
-- [x] Claude Code installed (v2.1.42) + authenticated (done 2026-02-14)
-- [x] Letta/Memo connected (agent-5a9b0e69) (done 2026-02-14)
-- [x] ~/Nico workspace structure created (done 2026-02-14)
-- [x] CLAUDE.md written and configured (done 2026-02-14, updated 2026-02-16)
-- [x] Memory system initialized (status.md, decisions.md) (done 2026-02-14)
-- [x] GitHub account created + gh auth login (done 2026-02-15)
-- [x] Obsidian Catalyst License purchased ($25) (done 2026-02-15)
-- [x] Obsidian Sync upgraded (multi-vault) (done 2026-02-15)
-- [x] Full Obsidian CLI capability audit completed (done 2026-02-15)
-- [x] Vault architecture designed (PARA flat, frontmatter schema, 6 templates) (done 2026-02-15)
-- [x] Setup plan finalized (NICO-FINAL-SETUP-PLAN.md) (done 2026-02-15)
-- [x] Cowork session tracking created (session-log.md) (done 2026-02-16)
-- [x] Chat project files imported and synthesized (6 files) (done 2026-02-16)
-- [x] Trash policy established (~/.trash/{CW,CC,Chat}/) (done 2026-02-16)
-- [x] status.md consolidated as single task list (done 2026-02-16)
-- [x] Quick commands system added (adl, sts, done, blocker, pri, note) (done 2026-02-16)
-- [x] Task decomposition rules added to CLAUDE.md (done 2026-02-16)
-- [x] Dependency tracking rules added to CLAUDE.md (done 2026-02-16)
-- [x] Metadata standards added — date/time/version/source on all data (done 2026-02-16)
-- [x] Phase 0: GitHub backup — nico-workspace repo created, auto-backup every 6hrs (done 2026-02-16)
-- [x] Git credential helper fixed with `gh auth setup-git` (done 2026-02-16)
-- [x] Disabled cloud MCP connector sync (Craft tools were burning 17.8k tokens/session) (done 2026-02-16)
-
----
-
-### Phase 0C: Audit Claude Code Context Loading (🤖 Claude Code, ~15 min)
-_Dependency: None. Can run anytime._
-
-**Why:** Cloud MCP connectors from Claude desktop/web were silently syncing into Claude Code sessions, burning 17.8k tokens (9% of context) on unused Craft tools. The sync flag was disabled but may re-enable on update. Need to audit what loads, ensure nothing else is wasting tokens, and document how to control it.
-
-- [x] 1. Identify the problem (done 2026-02-16)
-  - [x] 1a. Discovered `tengu_claudeai_mcp_connectors: true` syncs claude.ai MCP integrations into CLI
-  - [x] 1b. Craft Code Youtube MCP was loading 21 tools (17.8k tokens) every session
-- [x] 2. Disable cloud MCP sync (done 2026-02-16)
-  - [x] 2a. Set `tengu_claudeai_mcp_connectors: false` in ~/.claude.json
-  - [x] 2b. Requires Claude Code restart to take effect
-- [ ] 3. Verify fix after restart
-  - [ ] 3a. Restart Claude Code session
-  - [ ] 3b. Run `/context` — confirm Craft tools no longer appear
-  - [ ] 3c. Confirm no other unexpected MCP servers loading
-- [ ] 4. Permanent fix if flag resets
-  - [ ] 4a. If Craft reappears after update: go to claude.ai → Settings → Integrations → disconnect Craft
-  - [ ] 4b. Document in CLAUDE.md: "Cloud MCP sync is disabled — do not re-enable without auditing token cost"
-- [ ] 5. Audit remaining context usage
-  - [ ] 5a. Review marketplace plugins (13 .mcp.json files in ~/.claude/plugins/) — are any loading?
-  - [ ] 5b. Check if any other hidden token sinks exist
-  - [ ] 5c. Document baseline context usage in CLAUDE.md for future reference
+- [x] Original architecture session — agent concept defined (2026-02-02)
+- [x] M1 factory reset + fresh macOS (2026-02-14)
+- [x] Apple ID: lifeos.nico@gmail.com created (2026-02-14)
+- [x] M1 hardened (FileVault, Location OFF, Siri OFF) (2026-02-14)
+- [x] Hostname set: nico-agent (2026-02-14)
+- [x] Sleep prevention configured / caffeinate (2026-02-14)
+- [x] Homebrew, Git, gh CLI installed (2026-02-14)
+- [x] Git identity: "Nico (LifeOS Agent)" configured (2026-02-14)
+- [x] Tailscale connected M1↔M3 (2026-02-14)
+- [x] SSH enabled M1↔M3 (2026-02-14)
+- [x] Claude Code installed (v2.1.42) + authenticated (2026-02-14)
+- [x] Letta/Memo connected (agent-5a9b0e69) (2026-02-14)
+- [x] ~/Nico workspace structure created (2026-02-14)
+- [x] CLAUDE.md written and configured (2026-02-14, updated ongoing)
+- [x] Memory system initialized: status.md, decisions.md (2026-02-14)
+- [x] GitHub account + gh auth login (2026-02-15)
+- [x] Obsidian Catalyst License purchased ($25) (2026-02-15)
+- [x] Obsidian Sync upgraded — multi-vault (2026-02-15)
+- [x] Obsidian CLI capability audit completed (2026-02-15)
+- [x] Vault architecture designed (PARA, frontmatter schema, templates) (2026-02-15)
+- [x] Chat project files imported (6 files in Chat Imports/) (2026-02-16)
+- [x] Trash policy established (~/.trash/{CW,CC,Chat}/) (2026-02-16)
+- [x] Quick commands system (atl, sts, done, blocker, pri, note) (2026-02-16)
+- [x] Task decomposition + dependency rules in CLAUDE.md (2026-02-16)
+- [x] Metadata standards added (2026-02-16)
+- [x] Phase 0-CRITICAL: GitHub backup — nico-workspace repo, auto-backup 6hrs (2026-02-16)
+- [x] Git credential helper fixed (2026-02-16)
+- [x] Cloud MCP connector sync disabled (17.8k tokens saved/session) (2026-02-16)
+- [x] Phase 0D: SSH M3↔M1 fully working (2026-02-21)
+- [x] Termius + Tailscale SSH from iPhone (2026-02-22)
+- [x] Passwordless sudo enabled (NOPASSWD: ALL) (2026-02-22)
+- [x] Obsidian installed (2026-02-22)
+- [x] Claude Code --dangerously-skip-permissions alias (2026-02-22)
+- [x] LettaBot: installed, Telegram working, heartbeats 60min, daily briefings 8am/10am (2026-02-22)
+- [x] Phase 0E: Branch protection, auto-backup to backup branch, PR workflow (2026-02-22)
+- [x] DuckDuckGo search script installed (~/Nico/Scripts/search.sh) (2026-02-22)
+- [x] CabinetAgentVault/ created with PARA structure (2026-02-22)
+- [x] 05-reviews/ folder established in vault for Obsidian-based doc review (2026-02-23)
+- [x] /handoff skill built (~/.claude/skills/handoff/SKILL.md) (2026-02-23)
+- [x] Task architecture plan approved (woolly-exploring-goose.md) (2026-02-23)
+- [x] No-Apple-apps decision: Obsidian is sole front-end until further notice (2026-02-23)
+- [x] Master list consolidation — all sources reconciled into this file (2026-02-23)
 
 ---
 
 ## Key Decisions (Final — Do Not Re-Ask)
-- Agent name: Nico
-- Framework: Claude Code (YOLO mode)
-- Memory: Letta + CLAUDE.md + Obsidian
-- Secrets: 1Password CLI ($3/mo)
-- Vault: "Nico" at ~/Nico/CabinetAgentVault/, PARA flat structure, empty start
-- Sync: Obsidian Sync (primary) + Git (backup)
-- SaaS stack: Next.js + Supabase
-- Git workflow: nico/{task-name}, never push main, branch protection enforced
-- Mobile: iPhone via Tailscale + Termius + Slack
-- Communication: Slack (primary — agent comms backbone), iMessage (escalation/urgent only)
-- Budget: $200-330/mo
-- Trash policy: never delete, move to ~/Nico/.trash/{CW,CC,Chat}/
-- Task list: single list in status.md, updated by CW and CC, reviewed each session
-- Backup: GitHub repos (nico-vault, nico-workspace, cabinet-portal) + Obsidian Sync + auto-commits
-- Architecture principle: build for N agents, not 2. Every infra decision must scale to 5+ concurrent agents.
-- Status.md protocol: agents read at session start, post real-time updates to Slack, write back to status.md at session end
+
+- **Agent name**: Nico
+- **Framework**: Claude Code (YOLO/dangerously-skip-permissions mode)
+- **Memory**: Letta (Memo agent) + CLAUDE.md + Obsidian vault
+- **Secrets**: 1Password CLI ($3/mo) — not yet set up
+- **Vault**: `~/Nico/CabinetAgentVault/` — canonical, PARA structure (00/10/20/30/40/50)
+- **Task front-end**: Obsidian — sole front-end until further notice. No Apple apps.
+- **Quick capture**: `atl` command (terminal) · Obsidian 01-inbox/ (drop a note)
+- **Alerts/approvals**: iMessage only (osascript from M1 to Vincent's phone)
+- **Sync**: Obsidian Sync (primary, M1→iPhone→M3) + Git (backup)
+- **SaaS stack**: Next.js + Supabase
+- **Git workflow**: `nico/{task-name}` branch → PR → merge. Never push master.
+- **Communication**: Slack (future backbone, set up when Vincent creates workspace), iMessage (alerts/approvals only)
+- **Budget**: $200-330/mo
+- **Trash policy**: Never delete. Move to `~/Nico/.trash/{CW,CC,Chat}/` with date prefix.
+- **Task list**: Single source of truth = this file. No other list exists anywhere.
+- **Architecture principle**: Build for N agents, not 2. Every decision must scale to 5+ concurrent agents.
+- **Agent model**: Hybrid — Letta for persistent roles (Research Director, Ops Manager), Claude Code Tasks for execution-only roles
+- **Billion dollar insight**: We're dogfooding the product we'll sell. Every pain point building this system is a feature request for the SaaS we'll eventually sell to other construction companies.
+
+---
 
 ## Remote Access
-- M3 → M1: ssh lifeos.nico@100.87.182.78
-- M1 Tailscale IP: 100.87.182.78
-- M3 Tailscale IP: 100.72.130.40
-- M1 username: lifeos.nico
-- M1 hostname: nico-agent
+- M3 → M1: `ssh lifeos.nico@100.87.182.78`
+- M1 Tailscale IP: 100.87.182.78 · M3 Tailscale IP: 100.72.130.40
+- M1 username: lifeos.nico · hostname: nico-agent
+- iPhone → M1: Tailscale + Termius (SSH) ✅
+
+---
 
 ## Key Files
-- ~/Nico/CLAUDE.md — master instruction file (read by Cowork + Claude Code)
-- ~/Nico/Memory/status.md — THIS FILE (current state + task list for any agent)
-- ~/Nico/Memory/decisions.md — decision log
-- ~/Nico/Memory/Sessions/Chief of Staff CW/session-log.md — Cowork session history
-- ~/Nico/Memory/Sessions/Chief of Staff CW/Chat Imports/ — files bridged from Chat
-- ~/Nico/.trash/{CW,CC,Chat}/ — soft-delete holding area (30-day review)
+- `~/Nico/CLAUDE.md` — master agent instruction file
+- `~/Nico/Memory/status.md` — THIS FILE — single source of truth
+- `~/Nico/Memory/decisions.md` — decision log
+- `~/Nico/CabinetAgentVault/` — Obsidian vault (canonical)
+- `~/Nico/CabinetAgentVault/00-dashboard/task-board.md` — Obsidian task snapshot (Nico writes at session start/end)
+- `~/Nico/CabinetAgentVault/05-reviews/` — docs for Vincent to review in Obsidian
+- `~/Nico/Scripts/imessage-alert.sh` — alert Vincent when approval needed (building tonight)
+- `~/Nico/Scripts/auto-backup.sh` — workspace backup every 6hrs
+- `~/Nico/Scripts/search.sh` — DuckDuckGo search
+- `~/.claude/skills/handoff/SKILL.md` — end-of-session handoff skill
+- `~/.claude/skills/mem/SKILL.md` — Letta sync skill
+- `~/.claude/plans/woolly-exploring-goose.md` — task architecture plan
+- `~/Nico/Memory/cos-plan.md` — CoS plan (archive to vault — superseded)
+- `~/Nico/911.md` — emergency checklist
+- `~/Nico/Memory/nico-operators-manual.md` — operators manual
 
-## Reference Plans (in Chat Imports/)
-- NICO-FINAL-SETUP-PLAN.md — master 5-phase execution plan with paste-ready prompt
-- obsidian-cli-capability-audit.md — full CLI audit (100+ commands, gotchas)
-- obsidian-final-setup-plan.md — detailed setup plan with Claude Code prompt
+---
+
+## Reference
+- GitHub: https://github.com/lifeosnico-bot/nico-workspace
+- Letta Memo agent: `agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668`
+- Letta block IDs: m1-setup `block-9172b79a` · project-overview `block-241149bc` · human-profile `block-be2c64c6` · claude-code-notes `block-a4b588f9`
