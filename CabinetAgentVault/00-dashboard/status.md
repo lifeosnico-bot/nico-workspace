@@ -1,12 +1,12 @@
 # Status
 
-**Last Updated**: 2026-02-23 13:55 EST | **Updated by**: Claude Code | **Session**: CC-7
+**Last Updated**: 2026-02-23 14:50 EST | **Updated by**: Claude Code | **Session**: CC-7
 
 ---
 
 ## Current State
 
-Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅ (mostly). Master list consolidation ✅. Vault housekeeping ✅. Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅ (statusline + Telegram). Permission prompt alert ✅ (Notification hook + Telegram).
+Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅ (mostly). Master list consolidation ✅. Vault housekeeping ✅. Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅ (statusline + Telegram). Permission prompt alert ✅ (Notification hook + Telegram). Daily note capture architecture ✅ (template + triage protocol in CLAUDE.md).
 
 **#1 PRIORITY (Nico):** Phase 0E metadata enforcement.
 **#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke) → Slack workspace + bot token.

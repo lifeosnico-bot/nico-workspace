@@ -1,5 +1,5 @@
 # Task Board
-**Last updated**: 2026-02-23 13:45 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-6 handoff
+**Last updated**: 2026-02-23 14:50 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-7 handoff
 
 _This file is rewritten by Nico at every session start and end. Do not edit manually._
 _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]]_
@@ -32,7 +32,7 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 1. 🔴 Telegram: open @BotFather → `/revoke` → get new token → paste to Nico
 2. Create Slack workspace → copy bot token → paste to Nico in terminal
-3. Obsidian: sign in, enable Sync, enable plugins (Nico preps, Vincent flips switches)
+3. Obsidian: sign in, enable Sync, register CLI, enable plugins (Nico preps, Vincent flips switches)
 4. [1Password](https://1password.com) — create account, install desktop app
 
 ---
@@ -43,8 +43,7 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 ---
 
-## ✅ Completed Recently (CC-6)
+## ✅ Completed Recently (CC-7)
 
-- 50% context window alert — statusline script + Telegram alert at 50%
-- Permission prompt alert — Notification hook fires Telegram when approval needed
-- Both tested and working
+- Daily note capture architecture — new template (Dump + Nico Processed), triage protocol added to CLAUDE.md
+- Today's daily note created at `00-dashboard/daily/2026-02-23.md`
