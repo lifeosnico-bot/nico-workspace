@@ -1,15 +1,15 @@
 # Status
 
-**Last Updated**: 2026-02-23 11:17 EST | **Updated by**: Claude Code | **Session**: session-5-morning
+**Last Updated**: 2026-02-23 12:00 EST | **Updated by**: Claude Code | **Session**: CC-5
 
 ---
 
 ## Current State
 
-Phase 0D ✅, LettaBot ✅, Phase 0E ✅, Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅. **Platform decision MADE: Slack** (future comms backbone). **Obsidian is current front-end for everything** — no Apple apps until further notice. iMessage approved for alerts/approvals only. `/handoff` skill built. Task architecture plan approved and in progress.
+Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅ (mostly — app.json, community-plugins.json, 5 plugins installed, vault git repo pushed to GitHub, templates exist). Master list consolidation ✅. Vault housekeeping ✅. Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅.
 
 **#1 PRIORITY (Vincent):** Create Slack workspace + bot token → give to Nico via terminal.
-**#1 PRIORITY (Nico):** 50% context alert hook → Obsidian Phase 1 completion.
+**#1 PRIORITY (Nico):** 50% context alert hook → Telegram bot token rotation (security) → Phase 0E metadata enforcement.
 
 ---
 
@@ -32,11 +32,11 @@ _Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to
 
 | Priority | Owner | Task |
 |---|---|---|
-| P1 | [N] | iMessage alert script (building tonight) |
-| P1 | [N] | Master list consolidation (in progress) |
+| P1 | [N] | 50% context window alert hook |
+| P1 | [N] | Telegram bot token rotation (security — exposed in compaction summaries) |
 | P1 | [V] | Create Slack workspace + bot token |
-| P2 | [N] | Vault housekeeping (consolidate Vault A→B, home dir cleanup) |
-| P2 | [N] | Obsidian vault finish (templates, Sync, CLI registration) |
+| P2 | [N] | Phase 0E — metadata standards enforcement |
+| P2 | [V] | Obsidian Phase 2 manual setup |
 | P2 | [V] | 1Password setup (secrets management) |
 
 ---
@@ -58,73 +58,78 @@ _These require Vincent. Nothing else can proceed until done._
 
 _Nico executes without Vincent. Ordered by priority._
 
-1. ~~iMessage alert script~~ ✅ Built — needs Vincent's phone number
-2. ~~Vault housekeeping~~ ✅ Done
-3. ~~task-board.md~~ ✅ Built
-4. **[P1]** 50% context window alert hook
-5. **[P2]** Obsidian Phase 1 completion — copy templates, finalize vault structure, git init vault
-6. **[P2]** Phase 0E remaining — metadata standards enforcement
-7. **[P3]** Phase 0A — consolidate Chat Imports, deduplicate docs
-8. **[P3]** Phase 0C — verify MCP context fix is holding
+1. ~~iMessage alert script~~ ✅ Built (working via Telegram, 2026-02-23)
+2. ~~Vault housekeeping~~ ✅ Done (2026-02-23)
+3. ~~task-board.md~~ ✅ Built (2026-02-23)
+4. ~~Master list consolidation~~ ✅ Done (2026-02-23)
+5. ~~Obsidian Phase 1~~ ✅ Mostly done (app.json, plugins, git repo — 2026-02-23)
+6. **[P1]** 50% context window alert hook
+7. **[P1]** Telegram bot token rotation (security)
+8. **[P2]** Phase 0E remaining — metadata standards enforcement
 9. **[P2]** LettaBot Telegram poller conflict — investigate and fix
+10. **[P3]** Obsidian Phase 1 remaining — core-plugins.json, appearance.json (minor)
+11. **[P3]** Phase 0A — consolidate Chat Imports, deduplicate docs
+12. **[P3]** Phase 0C — verify MCP context fix is holding
 
 ---
 
-## 📥 Inbox — Unprocessed Captures
+## 📥 Inbox — Unprocessed Captures (Triaged 2026-02-23 CC-5)
 
-_Land here first, get triaged into phases by Nico._
+_Land here first, get triaged into phases by Nico. Items below have been assigned P/owner but not yet moved to phases._
 
-- [ ] **2026-02-23** — GitHub file structure mirroring Obsidian structure _(atl)_
-- [ ] **2026-02-23** — Daily note file structure in GitHub before Obsidian CLI is live _(atl)_
-- [ ] **2026-02-23** — 50% context window hook: warn at 50%, prompt to fork or start new session _(atl)_
-- [ ] **2026-02-23** — Token command to stop massive text output mid-session _(atl)_
-- [ ] **2026-02-23** — Widget boxes on M1/M3 screen for quick status access _(atl)_
-- [ ] **2026-02-23** — lucavolifeos Google account — separate from lifeos.nico? Decision needed _(atl)_
-- [ ] **2026-02-23** — Dan Messlier GitHub — research when search is restored _(atl)_
-- [ ] **2026-02-23** — M1 display name: change to "Nico Agent" in System Settings (requires Vincent + sudo) _(atl)_
-- [ ] **2026-02-23** — Session logs: research how software companies structure engineering session logs _(atl)_
-- [ ] **2026-02-23** — Turning YouTube saves into Obsidian skills/notes (Research Agent scope) _(atl)_
-- [ ] **2026-02-23** — `/remote-env` slash command — what is this? Research and evaluate _(atl)_
-- [ ] **2026-02-23** — Search token cost issue: audit how much search is costing per session _(atl)_
-- [ ] **2026-02-23** — Discord audit: go through Discord chat — full perspective, hacks, community sentiment _(atl)_
-- [ ] **2026-02-23** — Update Screenshots folder — organize and clean up Logs/Screenshots/ _(atl)_
-- [ ] **2026-02-23** — Guard rails for Telegram crashing/multiple instances (911.md exists but incomplete) _(atl)_
-- [ ] **2026-02-23** — "Why so many Nico bots" — document exactly what bots/agents exist and their roles _(atl)_
-- [ ] **2026-02-23** — Where does live chat go if Claude Code disconnects mid-session? _(atl)_
-- [ ] **2026-02-23** — Caffeinate dims on M3 — investigate why M3 dims despite caffeinate _(atl)_
-- [ ] **2026-02-23** — Trash sub-folder setup: review current .trash/ structure, add sub-trash if needed _(atl)_
-- [ ] **2026-02-23** — Docker Desktop: install on M1 (needed for Phase 5 SaaS portal deployments) _(atl)_
-- [ ] **2026-02-23** — Cursor Mac-to-Mac issue — investigate _(atl)_
-- [ ] **2026-02-23** — Heartbeat + cron research: "OpenClaw"-style autonomous agent loop _(atl)_
-- [ ] **2026-02-23** — Evaluate Claude Code /todos, /plan slash commands for task workflow _(atl)_
-- [ ] **2026-02-23** — Bookmarked/pinned task-board view in Obsidian: Vincent opens instantly on any device _(atl)_
-- [ ] **2026-02-23** 🔴 — Telegram bot token: appeared in compaction summaries — confirm it has been rotated (security) _(Letta sync)_
-- [ ] **2026-02-23** — LettaBot Telegram poller conflict: getUpdates conflict / multiple pollers detected — needs resolution _(Letta sync)_
-- [ ] **2026-02-23** — Session log gap: Feb 21 CC session not logged in session-log.md — add entry _(Letta sync)_
-- [ ] **2026-02-23** — Emergency standard setup list: Vincent requested this — define what "emergency reset" looks like for the whole system _(Letta sync)_
-- [ ] **2026-02-23** — Google Workspace for lifeos.nico@gmail.com: evaluate setup (Google Drive, Calendar, Docs as business layer) _(Letta sync)_
-- [ ] **2026-02-23** — Claude Code hooks discipline: SessionStart/Stop scripts + settings.json hooks — verify still installed and working _(Letta sync)_
-- [ ] **2026-02-23** [P1] 🔴 — Final decision needed: communication channel between Claude Code and Vincent (iMessage one-way ✅, Telegram two-way via Nicolucavobot, iMessage MCP option — pick canonical) _(atl)_
-- [ ] **2026-02-23** [P1] — RULE: All files Vincent needs to review must be opened in Obsidian via `open -a Obsidian [file]`. Never open in TextEdit or plain text. All file links in terminal must be opened immediately on request, not pasted as text. _(atl)_
+### Closed (duplicate or done)
+- [x] 50% context window hook → already Phase 0-Alerts task 2
+- [x] lucavolifeos Google account → already Phase 8 task 4
+- [x] YouTube saves → Obsidian skills → already Phase 9 scope
+- [x] Telegram guard rails → already in LettaBot section
+- [x] LettaBot poller conflict → already in Nico's Queue
+- [x] Telegram bot token rotation → moved to Nico Queue P1
+- [x] Evaluate /todos /plan → adopted plan mode + todos this session (CC-5)
+- [x] Obsidian file open rule → already added to CLAUDE.md
+
+### Remaining (23 items, triaged)
+- [ ] **[P1][V]** Final comms decision: pick canonical channel (Telegram vs iMessage vs other) — partially done, needs final pick
+- [ ] **[P3][N]** Session log gap: Feb 21 CC session not logged — add entry
+- [ ] **[P3][N]** "Why so many Nico bots" — document all bots/agents and their roles
+- [ ] **[P3][N]** Claude Code hooks discipline — verify SessionStart/Stop scripts still working
+- [ ] **[P3][N]** Search token cost audit — how much is search costing per session?
+- [ ] **[P3][N]** Bookmarked/pinned task-board in Obsidian — Vincent opens instantly on any device _(Phase 2 area)_
+- [ ] **[P3][N]** Emergency standard setup list — define "emergency reset" for the whole system _(Phase 6 area)_
+- [ ] **[P4][N]** GitHub file structure mirroring Obsidian structure _(Phase 6 area)_
+- [ ] **[P4][N]** Daily note file structure in GitHub before Obsidian CLI is live _(Phase 6 area)_
+- [ ] **[P4][N]** Token command to stop massive text output mid-session _(research)_
+- [ ] **[P4][N]** `/remote-env` slash command — research and evaluate _(research)_
+- [ ] **[P4][N]** Discord audit — community sentiment, hacks _(research)_
+- [ ] **[P4][N]** Update Screenshots folder — organize Logs/Screenshots/ _(cleanup)_
+- [ ] **[P4][N]** Docker Desktop: install on M1 _(Phase 5 prereq)_
+- [ ] **[P4][V+N]** M1 display name → "Nico Agent" in System Settings _(requires Vincent)_
+- [ ] **[P4][V]** Caffeinate dims on M3 — investigate _(M3 issue, Vincent's machine)_
+- [ ] **[P4][N]** Google Workspace evaluation for lifeos.nico@gmail.com _(Phase 8 area)_
+- [ ] **[P4][N]** Where does live chat go if Claude Code disconnects? _(research)_
+- [ ] **[P5][N]** Widget boxes on M1/M3 screen for quick status _(someday)_
+- [ ] **[P5][N]** Dan Messlier GitHub — research _(someday)_
+- [ ] **[P5][N]** Session logs: research how software cos structure engineering logs _(someday)_
+- [ ] **[P5][N]** Trash sub-folder review _(current structure works)_
+- [ ] **[P5][N]** Cursor Mac-to-Mac issue — investigate _(someday)_
+- [ ] **[P5][N]** Heartbeat + cron: "OpenClaw"-style agent loop _(Phase 7 scope)_
 
 ---
 
 ## Tasks
 
 ### In Progress
-- **[P1][N]** iMessage alert script — building tonight
-- **[P1][N]** Master list consolidation — this file, in progress
+_(None — queue items above are next)_
 
 ---
 
 ### Phase 0-Alerts: iMessage + Context Alerts [N] P1
 _Dependency: None. Build tonight. Vincent needs to be reachable when Nico is blocked._
 
-- [ ] 1. **[P1][N]** Build iMessage alert script
-  - [ ] 1a. Create `~/Nico/Scripts/imessage-alert.sh` — sends iMessage via osascript to Vincent's phone number
-  - [ ] 1b. Test: M1 sends iMessage to Vincent's personal number
-  - [ ] 1c. Add usage to CLAUDE.md session protocol: "Run imessage-alert.sh when waiting for approval"
-  - [ ] 1d. Add call to `/handoff` skill for end-of-session notification
+- [x] 1. **[P1][N]** Build alert script ✅ (done 2026-02-23 — working via Telegram, imessage-alert.sh exists)
+  - [x] 1a. Create `~/Nico/Scripts/imessage-alert.sh` ✅
+  - [x] 1b. Test: alerts working via Telegram ✅
+  - [x] 1c. Add usage to CLAUDE.md session protocol ✅
+  - [x] 1d. Add call to `/handoff` skill ✅
 - [ ] 2. **[P1][N]** 50% context window alert
   - [ ] 2a. Research: can Claude Code hooks inspect token count?
   - [ ] 2b. Build hook or script that fires at 50% context
@@ -133,29 +138,8 @@ _Dependency: None. Build tonight. Vincent needs to be reachable when Nico is blo
 
 ---
 
-### Phase 0-Housekeeping: Vault + Workspace Cleanup [N] P2
-_Dependency: None. Do before Phase 1 — the vault already partially exists, needs reconciliation._
-
-**Why:** Two vaults exist (`~/Nico/Vault/` and `~/Nico/CabinetAgentVault/`). CabinetAgentVault is canonical. Vault A has templates we need. Home dir has 7 stale planning docs. Memory/ has loose files that need homes.
-
-- [ ] 1. **[P2][N]** Vault consolidation
-  - [ ] 1a. Copy 6 templates from `~/Nico/Vault/05-Templates/` → `~/Nico/CabinetAgentVault/05-templates/`
-  - [ ] 1b. Verify CLAUDE.md at `CabinetAgentVault/` root is current (update if needed)
-  - [ ] 1c. Archive `~/Nico/Vault/` → move to `~/Nico/.trash/CC/2026-02-23_Vault-archived/`
-  - [ ] 1d. Update all references from `~/Nico/Vault/` to `~/Nico/CabinetAgentVault/` in CLAUDE.md and status.md
-- [ ] 2. **[P2][N]** Home dir cleanup (`~/Nico/` root level stale files)
-  - [ ] 2a. Move `NICO-FINAL-SETUP-PLAN.md` → `.trash/CC/`
-  - [ ] 2b. Move `nico-setup-plan-v4-2026-02-15.md` → `.trash/CC/`
-  - [ ] 2c. Move `nico-task-dashboard.html` → `.trash/CC/`
-  - [ ] 2d. Move `obsidian-setup-plan.md` → `.trash/CC/`
-  - [ ] 2e. Move `obsidian-final-setup-plan.md` → `.trash/CC/` (keep obsidian-final-setup-plans.md)
-  - [ ] 2f. Move `obsidian-cli-capability-audit.md` → `CabinetAgentVault/30-resources/reference/` (still useful)
-- [ ] 3. **[P2][N]** Memory/ loose files
-  - [ ] 3a. Move `yt-transcript.en.vtt` → `.trash/CC/` (raw, unneeded)
-  - [ ] 3b. Move `yt-transcript-clean.txt` → `CabinetAgentVault/30-resources/research/`
-  - [ ] 3c. Move `video-50-days-ai-agent.md` → `CabinetAgentVault/30-resources/research/`
-  - [ ] 3d. Archive `cos-plan.md` → `CabinetAgentVault/40-archive/` (superseded by status.md + this session)
-  - [ ] 3e. Review `cost-audit-48h.md` — move to vault resources or trash
+### ~~Phase 0-Housekeeping: Vault + Workspace Cleanup~~ ✅ COMPLETE (2026-02-23)
+_Done in CC-4. Vault A archived, home dir cleaned, Memory/ loose files moved, cos-plan archived._
 
 ---
 
@@ -289,33 +273,17 @@ _Dependency: Obsidian installed ✅. CabinetAgentVault exists ✅. Needs complet
 - home.md in 00-dashboard/ ✅
 - Project index files ✅
 
+**What's done:**
+- [x] 1. Templates ✅ Already exist in 05-templates/ (done 2026-02-23)
+- [x] 2a. app.json ✅ (done 2026-02-23)
+- [x] 2b. community-plugins.json ✅ (done 2026-02-23)
+- [x] 3. Community plugins installed ✅ (5 plugins on disk, done 2026-02-23)
+- [x] 4. Git repo initialized + pushed to GitHub (nico-vault) ✅ (done 2026-02-23)
+- [x] 5. task-board.md ✅ Built (done 2026-02-23)
+
 **What still needs to be done:**
-- [ ] 1. **[P2][N]** Templates (copy from Vault A as part of Phase 0-Housekeeping)
-  - [ ] 1a. daily-note.md
-  - [ ] 1b. project-note.md
-  - [ ] 1c. meeting-note.md
-  - [ ] 1d. research-note.md
-  - [ ] 1e. decision-note.md
-  - [ ] 1f. client-note.md
-- [ ] 2. **[P2][N]** .obsidian settings files
-  - [ ] 2a. app.json (default view, spellcheck, new file location, attachment path)
-  - [ ] 2b. community-plugins.json
-  - [ ] 2c. core-plugins.json
-  - [ ] 2d. appearance.json
-- [ ] 3. **[P2][N]** Download + install community plugins via filesystem
-  - [ ] 3a. templater-obsidian
-  - [ ] 3b. dataview
-  - [ ] 3c. obsidian-git
-  - [ ] 3d. periodic-notes
-  - [ ] 3e. calendar
-  - [ ] 3f. obsidian-tasks-plugin (already installed per memory ✅ — verify)
-- [ ] 4. **[P2][N]** Initialize git repo in vault
-  - [ ] 4a. `git init` in CabinetAgentVault/
-  - [ ] 4b. `gh repo create nico-vault --private --source=. --push`
-- [ ] 5. **[P2][N]** Build task-board.md
-  - [ ] 5a. Create `CabinetAgentVault/00-dashboard/task-board.md`
-  - [ ] 5b. Shows: P1-P2 active tasks, Vincent's actions, Nico's queue, inbox count, last updated
-  - [ ] 5c. Nico rewrites this at every session start and end
+- [ ] 2c. **[P3][N]** core-plugins.json
+- [ ] 2d. **[P3][N]** appearance.json
 
 ---
 
@@ -535,6 +503,16 @@ _Dependency: Phase 3 + Phase 7 Task 3 + Phase 8. Autonomous content organization
 - [x] Task architecture plan approved (woolly-exploring-goose.md) (2026-02-23)
 - [x] No-Apple-apps decision: Obsidian is sole front-end until further notice (2026-02-23)
 - [x] Master list consolidation — all sources reconciled into this file (2026-02-23)
+- [x] Vault housekeeping — Vault A archived, home dir cleaned, Memory/ organized (2026-02-23)
+- [x] task-board.md built in 00-dashboard/ (2026-02-23)
+- [x] iMessage/Telegram alert script built (imessage-alert.sh) (2026-02-23)
+- [x] Obsidian Phase 1: app.json, community-plugins.json, 5 plugins installed (2026-02-23)
+- [x] Vault git repo created + pushed to GitHub (nico-vault) (2026-02-23)
+- [x] Templates confirmed in 05-templates/ (2026-02-23)
+- [x] status.md moved into vault, symlinked from Memory/ (2026-02-23)
+- [x] Wikilinks standard added to vault CLAUDE.md (2026-02-23)
+- [x] Files-open-in-Obsidian rule added to CLAUDE.md (2026-02-23)
+- [x] Session CC-5 audit: status.md synced with reality (2026-02-23)
 
 ---
 
@@ -576,7 +554,7 @@ _Dependency: Phase 3 + Phase 7 Task 3 + Phase 8. Autonomous content organization
 - `~/Nico/CabinetAgentVault/` — Obsidian vault (canonical)
 - `~/Nico/CabinetAgentVault/00-dashboard/task-board.md` — Obsidian task snapshot (Nico writes at session start/end)
 - `~/Nico/CabinetAgentVault/05-reviews/` — docs for Vincent to review in Obsidian
-- `~/Nico/Scripts/imessage-alert.sh` — alert Vincent when approval needed (building tonight)
+- `~/Nico/Scripts/imessage-alert.sh` — alert Vincent when approval needed (working via Telegram)
 - `~/Nico/Scripts/auto-backup.sh` — workspace backup every 6hrs
 - `~/Nico/Scripts/search.sh` — DuckDuckGo search
 - `~/.claude/skills/handoff/SKILL.md` — end-of-session handoff skill
