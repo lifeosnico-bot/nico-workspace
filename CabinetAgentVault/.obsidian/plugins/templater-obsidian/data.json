@@ -1,0 +1,5 @@
+{
+  "templates_folder": "05-templates",
+  "trigger_on_file_creation": true,
+  "command_timeout": 5
+}

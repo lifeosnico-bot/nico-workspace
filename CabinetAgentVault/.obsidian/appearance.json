@@ -1,1 +1,7 @@
-{}
+{
+  "baseFontSize": 16,
+  "interfaceFontSize": 14,
+  "accentColor": "",
+  "translucency": false,
+  "nativeMenus": null
+}

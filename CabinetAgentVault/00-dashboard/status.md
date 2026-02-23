@@ -1,12 +1,12 @@
 # Status
 
-**Last Updated**: 2026-02-23 13:45 EST | **Updated by**: Claude Code | **Session**: CC-6 (handoff)
+**Last Updated**: 2026-02-23 14:50 EST | **Updated by**: Claude Code | **Session**: CC-7
 
 ---
 
 ## Current State
 
-Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅ (mostly). Master list consolidation ✅. Vault housekeeping ✅. Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅ (statusline + Telegram). Permission prompt alert ✅ (Notification hook + Telegram).
+Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅ (mostly). Master list consolidation ✅. Vault housekeeping ✅. Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅ (statusline + Telegram). Permission prompt alert ✅ (Notification hook + Telegram). Daily note capture architecture ✅ (template + triage protocol in CLAUDE.md).
 
 **#1 PRIORITY (Nico):** Phase 0E metadata enforcement.
 **#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke) → Slack workspace + bot token.
@@ -115,6 +115,8 @@ _Land here first, get triaged into phases by Nico. Items below have been assigne
 - [x] **[P5][N]** Trash sub-folder review ✅ Vault `.trash/` configured via `trashOption: local` (done 2026-02-23)
 - [ ] **[P5][N]** Cursor Mac-to-Mac issue — investigate _(someday)_
 - [ ] **[P5][N]** Heartbeat + cron: "OpenClaw"-style agent loop _(Phase 7 scope)_
+- [ ] **[P3][N]** Revisit Obsidian Sync setup (excluded from current Obsidian setup)
+- [ ] **[P3][N]** Research how to trigger Peekaboo MCP on-demand from Claude Code — enable GUI automation without keeping it always-on (saves ~9.8k tokens). Goal: Claude Code can self-enable Peekaboo when UI interaction is needed, then disable after.
 
 ---
 
@@ -268,7 +270,7 @@ _Dependency: Blocks any task requiring stored API keys._
 
 ---
 
-### Phase 1: Obsidian Vault Setup [N] P2 (Partially Done)
+### Phase 1: Obsidian Vault Setup [N] P2 ✅ COMPLETE
 _Dependency: Obsidian installed ✅. CabinetAgentVault exists ✅. Needs completion._
 
 **Vault path**: `~/Nico/CabinetAgentVault/` (canonical — confirmed 2026-02-23)
@@ -288,8 +290,10 @@ _Dependency: Obsidian installed ✅. CabinetAgentVault exists ✅. Needs complet
 - [x] 5. task-board.md ✅ Built (done 2026-02-23)
 
 **What still needs to be done:**
-- [ ] 2c. **[P3][N]** core-plugins.json
-- [ ] 2d. **[P3][N]** appearance.json
+- [x] 2c. **[P3][N]** core-plugins.json ✅ (exists, done 2026-02-23)
+- [x] 2d. **[P3][N]** appearance.json ✅ (done 2026-02-23)
+- [x] 2e. **[N]** Plugin data.json configs (Templater, Dataview, Obsidian Git, Tasks, Calendar) ✅ (done 2026-02-23)
+- [x] 2f. **[N]** daily-notes.json (00-dashboard/daily/, template, YYYY-MM-DD format) ✅ (done 2026-02-23)
 
 ---
 
@@ -303,9 +307,9 @@ _Dependency: Phase 1 complete. Claude Code preps everything, Vincent flips switc
   - [ ] 3b. Create new remote vault → name it "CabinetAgent"
   - [ ] 3c. Wait for initial sync
   - [ ] 3d. Install Obsidian on iPhone → log into same account → vault appears
-- [ ] 4. **[V]** Enable community plugins
-  - [ ] 4a. Settings → Community Plugins → Turn off Restricted Mode
-  - [ ] 4b. Enable all pre-installed plugins
+- [x] 4. **[V]** Enable community plugins ✅ (done 2026-02-23)
+  - [x] 4a. Settings → Community Plugins → Turn off Restricted Mode ✅
+  - [x] 4b. Enable all pre-installed plugins ✅
 - [ ] 5. **[N]** Register CLI (after Vincent enables it)
   - [ ] 5a. Settings → Command Line Interface → toggle ON
   - [ ] 5b. Verify: `obsidian version`
@@ -512,7 +516,8 @@ _Dependency: Phase 3 + Phase 7 Task 3 + Phase 8. Autonomous content organization
 - [x] Vault housekeeping — Vault A archived, home dir cleaned, Memory/ organized (2026-02-23)
 - [x] task-board.md built in 00-dashboard/ (2026-02-23)
 - [x] iMessage/Telegram alert script built (imessage-alert.sh) (2026-02-23)
-- [x] Obsidian Phase 1: app.json, community-plugins.json, 5 plugins installed (2026-02-23)
+- [x] Obsidian Phase 1: app.json, community-plugins.json, 5 plugins installed, all data.json configs ✅ COMPLETE (2026-02-23)
+- [x] Obsidian Phase 2 partial: community plugins enabled by Vincent (2026-02-23)
 - [x] Vault git repo created + pushed to GitHub (nico-vault) (2026-02-23)
 - [x] Templates confirmed in 05-templates/ (2026-02-23)
 - [x] status.md moved into vault, symlinked from Memory/ (2026-02-23)
