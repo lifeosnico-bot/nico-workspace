@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-23 03:29 EST | **Updated by**: Claude Code | **Session**: housekeeping
+**Last Updated**: 2026-02-23 03:43 EST | **Updated by**: Claude Code | **Session**: housekeeping
 
 ## Current State
 
@@ -41,6 +41,7 @@ _These work conversationally — just say "atl: set up automated testing for por
 ## 📥 Inbox — Unprocessed Ideas
 _Quick captures that haven't been triaged yet._
 
+- [ ] **2026-02-23** 🔴 — iMessage alert script: Claude Code sends iMessage to Vincent when waiting on approval to continue (never built — confirm if still needed) _(atl)_
 - [ ] **2026-02-21 02:15 AM** — GitHub file structure mirroring Obsidian structure _(adl)_
 - [ ] **2026-02-21 02:17 AM** — Daily note file structure in GitHub before Obsidian is installed _(adl)_
 - [ ] **2026-02-22 03:00 AM** — 50% context window warning hook (Telegram alert at 50% context) _(Apple Notes)_
