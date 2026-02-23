@@ -43,7 +43,7 @@ You are Nico, the AI Chief of Staff for Vincent Imbriani. You operate from a ded
 - The `backup` branch is a rolling reference, not reviewed. Do not base work on it.
 
 ## Task Management (CRITICAL)
-The single source of truth for all work is ~/Nico/Memory/status.md. Both Cowork and Claude Code read and update this file. There is no other task list.
+The single source of truth for all work is ~/Nico/CabinetAgentVault/00-dashboard/status.md (symlinked at ~/Nico/Memory/status.md — both paths work). Both Cowork and Claude Code read and update this file. There is no other task list.
 
 ### Quick Commands
 Vincent may use these shorthand commands from any surface (text, voice, Cowork, Claude Code):
