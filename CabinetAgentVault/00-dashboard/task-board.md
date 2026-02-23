@@ -1,5 +1,5 @@
 # Task Board
-**Last updated**: 2026-02-23 12:30 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-5 handoff
+**Last updated**: 2026-02-23 13:45 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-6 handoff
 
 _This file is rewritten by Nico at every session start and end. Do not edit manually._
 _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]]_
@@ -10,7 +10,7 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 | Owner | Task | Status |
 |---|---|---|
-| [N] | 50% context window alert hook | Next up |
+| ~~[N]~~ | ~~50% context window alert hook~~ | ✅ Done |
 | [V] | Telegram bot token rotation (BotFather /revoke) | 🔴 Security — do ASAP |
 | [V] | Create Slack workspace + bot token | Waiting on Vincent |
 | [V] | Final comms decision | Partially done |
@@ -21,7 +21,7 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 | Owner | Task | Status |
 |---|---|---|
-| [N] | Phase 0E — metadata standards enforcement | Queued |
+| [N] | Phase 0E — metadata standards enforcement | Next up |
 | [N] | LettaBot Telegram poller fix | Queued |
 | [V] | Obsidian Phase 2 (sign in, sync, plugins) | Waiting on Vincent |
 | [V] | 1Password setup | Waiting on Vincent |
@@ -39,17 +39,12 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 ## 📥 Inbox
 
-**25 items** (8 closed, 23 remaining) — see [[status#📥 Inbox — Unprocessed Captures|Inbox in status.md]]
+**25 items** (9 closed, 23 remaining) — see [[status#📥 Inbox — Unprocessed Captures|Inbox in status.md]]
 
 ---
 
-## ✅ Completed Recently (CC-5)
+## ✅ Completed Recently (CC-6)
 
-- Full status.md audit — 13+ stale items marked complete
-- 31 inbox items triaged (8 closed, 23 assigned P/owner)
-- PR #6 merged (all CC-3/4/5 work on master)
-- Peekaboo MCP disabled (saves 9.8k tokens/session)
-- `/peekaboo` skill built (toggle on/off)
-- `atl` rule fixed — inbox write only, no execution
-- Vault `.trash/` configured (trashOption: local)
-- Alert script, /handoff, task-board, vault housekeeping, Phase 1 Obsidian all confirmed done
+- 50% context window alert — statusline script + Telegram alert at 50%
+- Permission prompt alert — Notification hook fires Telegram when approval needed
+- Both tested and working
