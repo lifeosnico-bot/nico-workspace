@@ -31,3 +31,41 @@ All Claude Code sessions logged here. Format: date, agent, summary of work done.
 ### Next (per status.md)
 - Obsidian vault setup
 - Slack workspace creation (Vincent action)
+
+## 2026-02-23 02:45 EST | Claude Code | Session CC-3
+
+### Completed
+- Peekaboo MCP verified working (screen recording permission granted)
+- Home directory cleaned — 7 stray files moved to ~/Nico/.trash/CC/ with date prefix
+- Old Vault/ trashed, CabinetAgentVault confirmed as canonical vault
+- CabinetAgentVault registered in Obsidian config + opened successfully
+- adl command renamed to atl in CLAUDE.md and status.md
+- All 7 founding setup docs read and cross-checked against status.md
+- reconciliation-report.md created (~/Nico/Memory/)
+- setup-consolidation.md created (~/Nico/Memory/) — clean state snapshot
+- 4 missing tasks added to status.md from reconciliation
+- Vault path corrected to CabinetAgentVault everywhere in status.md
+- 11 new inbox items added (task system design, Apple apps, priority rating, owner lanes, alert system, heartbeat/cron, context warning)
+- Session changes committed and pushed to GitHub branch nico/session-sync-2026-02-23
+- Lesson learned: use terminal commands before Peekaboo for anything CLI can do
+
+### Decisions
+- Canonical vault: ~/Nico/CabinetAgentVault/ (was ~/Nico/Vault/ in all old plans)
+- Skip Slack for now — focus on Apple Reminders for quick capture
+- Apple Reminders = quick capture from iPhone → flows into Nico inbox
+- Task system redesign deferred to next session (plan mode ready)
+- atl = add to list (renamed from adl)
+
+### Blockers
+- Slack workspace still not created (unblocks agent comms layer)
+- 1Password account still not created (unblocks secrets management)
+- Obsidian Sync not yet configured (unblocks iPhone vault access)
+
+### Next Session Priority
+- Plan mode: design task list architecture (inbox model, owner lanes, priority 1-5, Obsidian view, Apple Reminders integration)
+- Then implement the new task system
+
+### Notes
+- Vincent brain dumps fast — use inbox model to capture without losing anything
+- Always check status.md at session start before touching anything
+- Peekaboo = UI automation only, not a replacement for terminal commands
