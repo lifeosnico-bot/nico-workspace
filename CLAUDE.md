@@ -88,9 +88,27 @@ Apply this to:
 - Chat Imports: original creation date preserved, import date added
 
 ### Session Protocol
-1. **Session start:** Read CLAUDE.md → Read status.md → Report what's in progress and what's next
+1. **Session start:** Read CLAUDE.md → Read status.md → **Triage daily notes** → Report what's in progress and what's next
 2. **During session:** Update status.md as tasks complete. Add new items as they come up.
 3. **Session end:** Update status.md with final state. Update session-log.md (if Cowork). Ensure "Current State" and "Next action" are accurate for the next agent to pick up.
+
+### Daily Note Triage (CRITICAL)
+At every session start, read today's daily note at `00-dashboard/daily/YYYY-MM-DD.md` (and any previous days with unprocessed items in `## Dump`). For each item:
+
+- **Task** → `status.md` inbox (standard `atl` rules — add line, don't execute)
+- **Decision** → `Memory/decisions.md` with timestamp
+- **Project note** → relevant `10-projects/` file
+- **Research/link** → `30-resources/`
+- **Reminder with date** → `status.md` inbox with due date noted
+- **Random thought** → leave in daily note (don't move)
+
+After processing, move each item from `## Dump` to `## Nico Processed` with destination:
+```
+- [x] "hire someone for installs" → status.md inbox P3
+- [x] https://youtube.com/xyz → 30-resources/openclaw-research.md
+```
+
+Items left in Dump that are ambiguous: ask Vincent, don't guess.
 
 ## Architecture Principle (CRITICAL)
 Build for N agents, not 2. Every infrastructure decision must be evaluated against: "does this work with 5+ agents running simultaneously?" Single-agent shortcuts create debt that compounds as the org scales. This applies to git workflow, communication, file access, task management — everything.
