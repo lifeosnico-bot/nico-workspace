@@ -4,6 +4,17 @@
 **Prepared by:** Nico (Claude Code, M1)
 **Date:** 2026-02-22 03:00 EST
 **For:** Morning meeting with Vincent
+**Updated:** 2026-02-22 22:52 EST
+
+## UPDATE — 2026-02-22 22:52 EST
+- LettaBot stabilized (single instance). Emergency checklist: `/Users/lifeos.nico/Nico/911.md`
+- Operators Manual created: `/Users/lifeos.nico/Nico/Memory/nico-operators-manual.md`
+- Screenshots path set: `/Users/lifeos.nico/Nico/Logs/Screenshots`
+- Termius + Tailscale SSH from iPhone: DONE
+- Passwordless sudo enabled (NOPASSWD: ALL)
+- Cost audit stub: `/Users/lifeos.nico/Nico/Memory/cost-audit-48h.md`
+- Bot Map added (Nico/Memo/LettaBot/Claude Code)
+- Slack workspace + bot token still pending
 
 ---
 
