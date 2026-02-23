@@ -1,8 +1,8 @@
 # Task Board
-**Last updated**: 2026-02-23 05:30 EST | **Updated by**: Nico (Claude Code) | **Session**: session-4-consolidation
+**Last updated**: 2026-02-23 10:30 EST | **Updated by**: Nico (Claude Code) | **Session**: session-5-morning
 
 _This file is rewritten by Nico at every session start and end. Do not edit manually._
-_Source of truth: `~/Nico/Memory/status.md`_
+_Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]]_
 
 ---
 
@@ -10,9 +10,9 @@ _Source of truth: `~/Nico/Memory/status.md`_
 
 | Owner | Task | Status |
 |---|---|---|
-| [N] | iMessage alert script | Built tonight ✅ — needs phone number |
+| [N] | Alert script ([[imessage-alert]]) | ✅ Working via Telegram |
 | [V] | Create Slack workspace + bot token | Waiting on Vincent |
-| [N] | Master list consolidation | ✅ Complete |
+| [V] | [[communication-decision\|Final comms decision: Claude Code ↔ Vincent]] | P1 — decide today |
 
 ---
 
@@ -20,36 +20,46 @@ _Source of truth: `~/Nico/Memory/status.md`_
 
 | Owner | Task | Status |
 |---|---|---|
-| [N] | Vault housekeeping (consolidate, cleanup) | ✅ Done tonight |
-| [N] | task-board.md | ✅ You're reading it |
+| [N] | Vault housekeeping | ✅ Done |
+| [N] | [[task-board\|task-board.md]] | ✅ You're reading it |
 | [V] | 1Password setup | Waiting on Vincent |
 | [N] | Obsidian Phase 1 (templates, settings, git) | Next |
-| [V] | Obsidian Phase 2 (manual: sign in, sync, plugins) | After Phase 1 |
+| [V] | Obsidian Phase 2 (sign in, sync, plugins) | After Phase 1 |
 | [N] | 50% context window alert | Queued |
+| [N] | LettaBot Telegram poller fix | Queued |
 
 ---
 
 ## 👤 Vincent's Actions
 
 1. Create Slack workspace → copy bot token → paste to Nico in terminal
-2. 1Password: create account at 1password.com, install desktop app
+2. [1Password](https://1password.com) — create account, install desktop app
 3. Obsidian: sign in, enable Sync, enable plugins (Nico preps, Vincent flips switches)
-4. Confirm phone number for iMessage alerts (tell Nico your number in terminal)
+4. Decide: [[communication-decision|Claude Code ↔ Vincent comms channel]] (P1)
 
 ---
 
-## 📥 Inbox Count
+## 📥 Inbox
 
-**24 items** — captured from Apple Notes (3 notes), atl commands, and audit. All triaged into status.md Inbox section.
+**31 items** — see [[status#📥 Inbox — Unprocessed Captures|Inbox in status.md]]
 
 ---
 
-## ✅ Completed This Session (2026-02-23)
+## 🔗 Key Files
 
-- /handoff skill built
-- Task architecture plan approved + in progress
+| File | Purpose |
+|---|---|
+| [[status]] | Master task list — single source of truth |
+| [[home]] | Vault home / navigation hub |
+| [[2026-02-23_task-architecture-plan]] | Approved architecture plan |
+| [[vault-consolidation-review]] | Pending vault decision |
+
+---
+
+## ✅ Completed Recently
+
+- Alert system working (Telegram via Nicolucavobot + iMessage one-way)
+- `/handoff` skill built ([[2026-02-23_session-CC-4]])
 - Master status.md consolidated from 6 sources
-- Vault housekeeping: stale docs trashed, loose files moved
-- iMessage alert script created (needs phone number)
-- No-Apple decision applied throughout
-- 05-reviews/ folder documented as review system
+- Vault housekeeping complete
+- P1-P5 / V/N/A owner lanes live

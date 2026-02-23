@@ -52,6 +52,13 @@ assignee: "Vincent" (optional)
 - Parse stdout for "Error:" — exit codes lie (return 0 on failure)
 - CLI requires Obsidian app to be running
 
+## Linking Standard (CRITICAL)
+- Always use wikilinks `[[filename]]` inside vault files — never plain text paths
+- For display text: `[[filename|display text]]`
+- For section links: `[[filename#section|display text]]`
+- Plain text paths (`~/Nico/...`) only acceptable outside the vault (terminal, status.md)
+- Every file reference in task-board.md, session notes, and dashboard files must be a wikilink
+
 ## Key Principles
 - Capture first, organize later (Inbox → proper location)
 - One idea per note (atomic notes)
