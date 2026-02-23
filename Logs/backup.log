@@ -122,3 +122,22 @@
  create mode 100644 Memory/Sessions/session-scratch-20260223-001835.md
  create mode 100644 Memory/Sessions/session-scratch-20260223-002116.md
  create mode 100644 Memory/Sessions/session-scratch-20260223-002736.md
+[master 69a531d] auto-backup: 2026-02-23_00:43
+ 20 files changed, 848 insertions(+), 1 deletion(-)
+ create mode 100644 CabinetAgentVault/05-reviews/README.md
+ create mode 100644 CabinetAgentVault/05-reviews/housekeeping/vault-consolidation-review.md
+ create mode 100644 CabinetAgentVault/05-templates/client-note.md
+ create mode 100644 CabinetAgentVault/05-templates/daily-note.md
+ create mode 100644 CabinetAgentVault/05-templates/decision-note.md
+ create mode 100644 CabinetAgentVault/05-templates/meeting-note.md
+ create mode 100644 CabinetAgentVault/05-templates/project-note.md
+ create mode 100644 CabinetAgentVault/05-templates/research-note.md
+ create mode 100644 CabinetAgentVault/30-resources/reference/obsidian-cli-capability-audit.md
+ create mode 100644 CabinetAgentVault/CLAUDE.md
+ create mode 100644 Logs/Screenshots/obsidian-current-Obsidian--0.png
+ create mode 100644 Logs/Screenshots/obsidian-current-Obsidian--1.png
+ create mode 100644 Logs/Screenshots/obsidian-current-Obsidian--2.png
+ create mode 100644 Logs/Screenshots/obsidian-current-Obsidian--3.png
+ create mode 100644 Logs/Screenshots/obsidian-current-Obsidian--4.png
+ create mode 100644 Logs/Screenshots/obsidian-current-Obsidian--5.png
+ create mode 100644 Logs/Screenshots/obsidian-current-Obsidian-CLAUDE - Vault - Obsidian v1.11.7-6.png
