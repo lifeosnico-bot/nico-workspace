@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-23 10:12 EST | **Updated by**: Claude Code | **Session**: session-5-morning
+**Last Updated**: 2026-02-23 10:17 EST | **Updated by**: Claude Code | **Session**: session-5-morning
 
 ---
 
@@ -104,6 +104,7 @@ _Land here first, get triaged into phases by Nico._
 - [ ] **2026-02-23** — Emergency standard setup list: Vincent requested this — define what "emergency reset" looks like for the whole system _(Letta sync)_
 - [ ] **2026-02-23** — Google Workspace for lifeos.nico@gmail.com: evaluate setup (Google Drive, Calendar, Docs as business layer) _(Letta sync)_
 - [ ] **2026-02-23** — Claude Code hooks discipline: SessionStart/Stop scripts + settings.json hooks — verify still installed and working _(Letta sync)_
+- [ ] **2026-02-23** [P1] 🔴 — Final decision needed: communication channel between Claude Code and Vincent (iMessage one-way ✅, Telegram two-way via Nicolucavobot, iMessage MCP option — pick canonical) _(atl)_
 
 ---
 
@@ -590,3 +591,4 @@ _Dependency: Phase 3 + Phase 7 Task 3 + Phase 8. Autonomous content organization
 - GitHub: https://github.com/lifeosnico-bot/nico-workspace
 - Letta Memo agent: `agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668`
 - Letta block IDs: m1-setup `block-9172b79a` · project-overview `block-241149bc` · human-profile `block-be2c64c6` · claude-code-notes `block-a4b588f9`
+
