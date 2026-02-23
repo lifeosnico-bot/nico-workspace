@@ -16161,3 +16161,5 @@ Node.js v25.6.1
 [Bot] Result error: error=error, stopReason=llm_api_error, duration=54016ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992, detail=**Explaining cost differences**
 
 Letta chat and Claude Code send
+[Bot] Result error: error=error, stopReason=error, duration=40971ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
