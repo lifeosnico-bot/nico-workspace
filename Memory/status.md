@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-23 02:13 EST | **Updated by**: Claude Code (overnight session) | **Session**: TG-2
+**Last Updated**: 2026-02-23 02:19 EST | **Updated by**: Claude Code | **Session**: housekeeping
 
 ## Current State
 
@@ -52,6 +52,7 @@ _Quick captures that haven't been triaged yet._
 - [ ] **2026-02-22 03:00 AM** — "Watch vid of pa guy in hall in Philly" — personal reminder for Vincent _(Apple Notes)_
 - [ ] **2026-02-22 03:00 AM** — M1 display name: change to "Nico Agent" in System Settings → General → About → Name (requires Vincent, sudo) _(Apple Notes)_
 - [ ] **2026-02-22 03:00 AM** — Exa API key: get free tier at dashboard.exa.ai (1000/mo) — Vincent creates account, enters key via terminal _(overnight)_
+- [ ] **2026-02-23** 🔴 #1: Alert system — Claude Code notifies Vincent when waiting for input (iMessage, Telegram, or sound) _(atl)_
 - [ ] **2026-02-23** ⭐ DESIGN: Task management system overhaul — inbox model, owner lanes (Nico/Vincent/Agents), priority 1-5 rating, Obsidian as front-end, decide Apple apps role _(atl)_
 - [ ] **2026-02-23** — Context window 50% alert: script/hook to warn when context hits 50%, prompt to fork or start new session _(atl)_
 - [ ] **2026-02-23** — Quick entry for atl: need faster capture flow (voice, widget, Shortcut, or Slack 1-liner) _(atl)_
@@ -345,7 +346,7 @@ _Run after Phase 0 is complete. Paste the prompt from NICO-FINAL-SETUP-PLAN.md i
 - [ ] 10. Install kepano/obsidian-skills for Claude Code
   - [ ] 10a. Clone repo to temp directory
   - [ ] 10b. Copy skills to ~/Nico/Vault/.claude/skills/
-  - [ ] 10c. Check for known bug: backticked `!` in obsidian-bases/SKILL.md
+  - [ ] 10c. Check for known bug: backticked `!` in obsidian-bases/SKILL.md → replace backticked `!` with `<code>!</code>`
 - [ ] 11. Initialize git repo
   - [ ] 11a. `git init` in ~/Nico/Vault/
   - [ ] 11b. `git add .`
@@ -395,6 +396,8 @@ _Run after Vincent confirms Phase 2 is done._
   - [ ] 2c. `obsidian search content query="SaaS" format=json matches`
   - [ ] 2d. `obsidian tasks all todo`
   - [ ] 2e. Create today's daily note via CLI
+  - [ ] 2f. Verify obsidian-claude-code-mcp server is running on port 22360
+  - [ ] 2g. Configure daily notes core plugin: path = 06-Daily/2026/, template = daily-note.md
 - [ ] 3. Configure Obsidian Git plugin
   - [ ] 3a. Write data.json: auto-commit every 10 min, auto-pull every 10 min, pull on boot
   - [ ] 3b. Verify plugin is active in Obsidian
@@ -654,7 +657,7 @@ _Dependency: None. Can run anytime._
 - Framework: Claude Code (YOLO mode)
 - Memory: Letta + CLAUDE.md + Obsidian
 - Secrets: 1Password CLI ($3/mo)
-- Vault: "Nico" at ~/Nico/Vault/, PARA flat structure, empty start
+- Vault: "Nico" at ~/Nico/CabinetAgentVault/, PARA flat structure, empty start
 - Sync: Obsidian Sync (primary) + Git (backup)
 - SaaS stack: Next.js + Supabase
 - Git workflow: nico/{task-name}, never push main, branch protection enforced
