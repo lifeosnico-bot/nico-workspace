@@ -3,7 +3,7 @@
 # Usage: ./imessage-alert.sh "Your message here"
 # Usage: ./imessage-alert.sh (no args = default "Nico needs your attention" message)
 
-PHONE="+1XXXXXXXXXX"  # Vincent's personal phone number — replace before use
+PHONE="+15612228656"  # Vincent's personal phone number
 
 MESSAGE="${1:-"🤖 Nico needs your attention on M1. Check Claude Code session."}"
 
