@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-23 05:10 EST | **Updated by**: Claude Code | **Session**: session-4-consolidation
+**Last Updated**: 2026-02-23 04:42 EST | **Updated by**: Claude Code | **Session**: session-4-consolidation
 
 ---
 
@@ -58,14 +58,15 @@ _These require Vincent. Nothing else can proceed until done._
 
 _Nico executes without Vincent. Ordered by priority._
 
-1. **[P1]** iMessage alert script (`~/Nico/Scripts/imessage-alert.sh`)
-2. **[P1]** 50% context window alert hook
-3. **[P2]** Vault housekeeping — consolidate Vault A into CabinetAgentVault/, archive old vault, clean home dir
-4. **[P2]** task-board.md — build Obsidian dashboard snapshot
-5. **[P2]** Obsidian Phase 1 completion — copy templates, finalize vault structure
+1. ~~iMessage alert script~~ ✅ Built — needs Vincent's phone number
+2. ~~Vault housekeeping~~ ✅ Done
+3. ~~task-board.md~~ ✅ Built
+4. **[P1]** 50% context window alert hook
+5. **[P2]** Obsidian Phase 1 completion — copy templates, finalize vault structure, git init vault
 6. **[P2]** Phase 0E remaining — metadata standards enforcement
 7. **[P3]** Phase 0A — consolidate Chat Imports, deduplicate docs
 8. **[P3]** Phase 0C — verify MCP context fix is holding
+9. **[P2]** LettaBot Telegram poller conflict — investigate and fix
 
 ---
 
@@ -97,6 +98,12 @@ _Land here first, get triaged into phases by Nico._
 - [ ] **2026-02-23** — Heartbeat + cron research: "OpenClaw"-style autonomous agent loop _(atl)_
 - [ ] **2026-02-23** — Evaluate Claude Code /todos, /plan slash commands for task workflow _(atl)_
 - [ ] **2026-02-23** — Bookmarked/pinned task-board view in Obsidian: Vincent opens instantly on any device _(atl)_
+- [ ] **2026-02-23** 🔴 — Telegram bot token: appeared in compaction summaries — confirm it has been rotated (security) _(Letta sync)_
+- [ ] **2026-02-23** — LettaBot Telegram poller conflict: getUpdates conflict / multiple pollers detected — needs resolution _(Letta sync)_
+- [ ] **2026-02-23** — Session log gap: Feb 21 CC session not logged in session-log.md — add entry _(Letta sync)_
+- [ ] **2026-02-23** — Emergency standard setup list: Vincent requested this — define what "emergency reset" looks like for the whole system _(Letta sync)_
+- [ ] **2026-02-23** — Google Workspace for lifeos.nico@gmail.com: evaluate setup (Google Drive, Calendar, Docs as business layer) _(Letta sync)_
+- [ ] **2026-02-23** — Claude Code hooks discipline: SessionStart/Stop scripts + settings.json hooks — verify still installed and working _(Letta sync)_
 
 ---
 
