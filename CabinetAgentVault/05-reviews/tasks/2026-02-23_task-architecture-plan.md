@@ -23,12 +23,12 @@ Apple Notes sync needs a hard rule or it becomes a second source of truth and ca
 ### Layer 1 — CAPTURE (how tasks get in)
 All roads lead to the Inbox. Multiple entry points, one destination.
 
-| Method | How | When to use |
-|--------|-----|-------------|
-| **Siri** | "Hey Siri, remind me in Nico Inbox: [task]" | On the go, fastest |
-| **Apple Watch** | Same as Siri | When phone isn't handy |
-| **atl [text]** | Terminal command | At desk, in Claude Code |
-| **01-inbox/ in Obsidian** | Drop a note in vault | When writing a longer thought |
+| Method                    | How                                         | When to use                   |
+| ------------------------- | ------------------------------------------- | ----------------------------- |
+| **Siri**                  | "Hey Siri, remind me in Nico Inbox: [task]" | On the go, fastest            |
+| **Apple Watch**           | Same as Siri                                | When phone isn't handy        |
+| **atl [text]**            | Terminal command                            | At desk, in Claude Code       |
+| **01-inbox/ in Obsidian** | Drop a note in vault                        | When writing a longer thought |
 
 Nico pulls from Apple Reminders "Nico Inbox" list at every session start via AppleScript. Items get dated, tagged with source, and dropped into status.md Inbox section. Reminders cleared after pull.
 
