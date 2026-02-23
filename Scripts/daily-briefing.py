@@ -5,12 +5,15 @@ import subprocess
 import urllib.request
 import json
 import sys
+import os
 
 YAML_PATH = "/Users/lifeos.nico/Nico/lettabot/lettabot/lettabot.yaml"
 NICO_AGENT = "agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668"
 CHAT_ID = "8385420240"
 LETTA = "/opt/homebrew/bin/letta"
 MAX_CHARS = 4000
+KEYCHAIN_SERVICE = "letta-api-key"
+LETTA_API_KEY_ENV = "LETTA_API_KEY"
 
 BRIEFING_PROMPT = (
     "Generate a concise morning briefing. "
@@ -30,12 +33,36 @@ def get_token():
     return m.group(1)
 
 
+def get_letta_api_key():
+    """Fetch LETTA_API_KEY from environment or macOS Keychain."""
+    key = os.environ.get(LETTA_API_KEY_ENV)
+    if key:
+        return key
+    try:
+        result = subprocess.run(
+            ["/usr/bin/security", "find-generic-password", "-s", KEYCHAIN_SERVICE, "-w"],
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        if result.returncode == 0:
+            return result.stdout.strip()
+    except Exception:
+        pass
+    return None
+
+
 def get_briefing():
+    env = os.environ.copy()
+    api_key = get_letta_api_key()
+    if api_key:
+        env[LETTA_API_KEY_ENV] = api_key
     result = subprocess.run(
         [LETTA, "-p", "--agent", NICO_AGENT, BRIEFING_PROMPT],
         capture_output=True,
         text=True,
         timeout=120,
+        env=env,
     )
     text = result.stdout.strip()
     if not text and result.stderr:

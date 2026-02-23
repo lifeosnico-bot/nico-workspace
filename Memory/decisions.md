@@ -57,6 +57,13 @@ Everything else: Nico decides and executes. No approval needed for infrastructur
 - Exa free tier (1000/mo) still worth getting for the built-in web_search tool
 - Both solutions implemented/planned
 
+### Bug: Telegram handoff to wrong agent (12:44 EST | Source: Vincent + Nico)
+- Symptom: Telegram chat switched from Nico to a different Letta bot mid-thread; 10am meeting missed.
+- Last message before drop: message-e4f03278 (2026-02-22T07:57:02Z).
+- Restart/incorrect agent response: message-4845bb08 (2026-02-22T15:10:04Z) and message-0bcd6737 (agent-5f4271f9).
+- Impact: missed briefing delivery; user had to re-establish context.
+- Action: log GitHub issue in letta-ai/letta-code and record here for internal tracking.
+
 ## 2026-02-14
 
 ### Initialized Memory System

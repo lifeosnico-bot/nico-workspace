@@ -1,0 +1,219 @@
+{
+  "main": {
+    "id": "c5e290eadeed91b5",
+    "type": "split",
+    "children": [
+      {
+        "id": "8f76b0d8a4d7b96a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ddf67591b6a2c0c4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-dashboard/task-board.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "task-board"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "257f3334a7f601f3",
+    "type": "split",
+    "children": [
+      {
+        "id": "ec9a672d719090bf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fa1654097f2b6850",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "47bc13d579983827",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "list",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "39764c845955eb6d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Addedndums to 2026-02-23_task-architecture-plan"
+            }
+          },
+          {
+            "id": "052402b28fa7a18c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "02e5e5a00cc0ebe3",
+    "type": "split",
+    "children": [
+      {
+        "id": "eb4d4f5cb08bc480",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b7c2f2bf7e8585c1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Addedndums to 2026-02-23_task-architecture-plan"
+            }
+          },
+          {
+            "id": "07941fb4b46c4eba",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Addedndums to 2026-02-23_task-architecture-plan"
+            }
+          },
+          {
+            "id": "f97c69cc758a13db",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "72ca79942188524e",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "f6856a9f842278d6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Addedndums to 2026-02-23_task-architecture-plan"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "ddf67591b6a2c0c4",
+  "lastOpenFiles": [
+    "00-dashboard/status.md",
+    "05-reviews/tasks/status-master-list.md",
+    "00-dashboard/task-board.md",
+    "00-dashboard/llm-sessions/2026-02-23_session-CC-4.md",
+    "05-reviews/housekeeping/vault-consolidation-review.md",
+    "05-reviews/README.md",
+    "01-inbox/_index.md",
+    "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
+    "05-reviews/tasks/2026-02-23_task-architecture-plan.md",
+    "40-archive/2026-02-22_cos-plan-archived.md",
+    "00-dashboard/home.md",
+    "CLAUDE.md",
+    "20-areas/business-ops/_index.md",
+    "30-resources/research/yt-transcript-50-days-ai-agent.txt",
+    "30-resources/research/video-50-days-ai-agent.md",
+    "00-dashboard/llm-sessions"
+  ]
+}

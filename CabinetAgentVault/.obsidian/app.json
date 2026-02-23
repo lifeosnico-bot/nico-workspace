@@ -1,0 +1,10 @@
+{
+  "defaultViewMode": "preview",
+  "spellcheck": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "01-inbox",
+  "attachmentFolderPath": "30-resources/attachments",
+  "alwaysUpdateLinks": true,
+  "showFrontmatter": true,
+  "useMarkdownLinks": false
+}
