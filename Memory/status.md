@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-22 20:14 EST | **Updated by**: Claude Code (overnight session) | **Session**: TG-2
+**Last Updated**: 2026-02-22 20:40 EST | **Updated by**: Claude Code (overnight session) | **Session**: TG-2
 
 ## Current State
 
@@ -15,11 +15,12 @@ Phase 0D ✅, LettaBot ✅, Phase 0E ✅, Daily briefing ✅ COMPLETE. **Platfor
 2. ~~Passwordless sudo (NOPASSWD: ALL)~~ ✅ DONE (2026-02-22)
 3. ~~Obsidian installed~~ ✅ DONE (2026-02-22)
 4. ~~Claude Code --dangerously-skip-permissions alias~~ ✅ DONE (2026-02-22)
-5. Obsidian vault setup (structure + templates)
-6. Slack setup: Vincent creates workspace + bot → Nico handles everything else
-7. Agent layer: Research Director + Ops Manager (Letta agents)
-8. Phase 0A: Consolidate chat data
-9. Status.md split: CEO vs CoS tracks
+5. Fix Nico headless memory writes (tool use blocked in -p mode — find workaround or use REST API)
+6. Obsidian vault setup (structure + templates)
+7. Slack setup: Vincent creates workspace + bot → Nico handles everything else
+8. Agent layer: Research Director + Ops Manager (Letta agents)
+9. Phase 0A: Consolidate chat data
+10. Status.md split: CEO vs CoS tracks
 
 ---
 
