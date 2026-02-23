@@ -33,7 +33,7 @@ _Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to
 | Priority | Owner | Task |
 |---|---|---|
 | P1 | [N] | 50% context window alert hook |
-| P1 | [N] | Telegram bot token rotation (security — exposed in compaction summaries) |
+| P1 | [V] | Telegram bot token rotation (BotFather → /revoke → new token to Nico) |
 | P1 | [V] | Create Slack workspace + bot token |
 | P2 | [N] | Phase 0E — metadata standards enforcement |
 | P2 | [V] | Obsidian Phase 2 manual setup |
@@ -45,6 +45,7 @@ _Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to
 
 _These require Vincent. Nothing else can proceed until done._
 
+- [ ] **P1** Telegram bot token rotation: open @BotFather → `/revoke` → get new token → paste to Nico (security — old token exposed in compaction summaries)
 - [ ] **P1** Create Slack workspace → copy bot token → paste in terminal to Nico
 - [ ] **P2** 1Password: create account at 1password.com, install desktop app
 - [ ] **P2** Obsidian Phase 2: manual setup (sign in, enable Sync, register CLI, enable plugins) — Nico will prep everything, Vincent flips the switches
@@ -64,7 +65,7 @@ _Nico executes without Vincent. Ordered by priority._
 4. ~~Master list consolidation~~ ✅ Done (2026-02-23)
 5. ~~Obsidian Phase 1~~ ✅ Mostly done (app.json, plugins, git repo — 2026-02-23)
 6. **[P1]** 50% context window alert hook
-7. **[P1]** Telegram bot token rotation (security)
+7. ~~Telegram bot token rotation~~ → moved to Vincent's Actions (needs BotFather)
 8. **[P2]** Phase 0E remaining — metadata standards enforcement
 9. **[P2]** LettaBot Telegram poller conflict — investigate and fix
 10. **[P3]** Obsidian Phase 1 remaining — core-plugins.json, appearance.json (minor)
