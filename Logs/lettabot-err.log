@@ -16155,3 +16155,5 @@ Node.js v25.6.1
   description: "Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\\'",
   parameters: {}
 }
+[Bot] Result error: error=error, stopReason=llm_api_error, duration=120075ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=llm_api_error) with no response.
