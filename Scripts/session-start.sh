@@ -40,4 +40,7 @@ cat > /Users/lifeos.nico/Nico/Memory/session-scratch.md << EOF
 - First thing next session:
 EOF
 
+# Clear context alert sentinel so it fires fresh this session
+rm -f /tmp/claude-context-alert-sent
+
 echo "Session scratch initialized: $DATE $TIME"
