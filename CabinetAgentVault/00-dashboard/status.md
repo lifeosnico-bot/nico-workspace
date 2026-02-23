@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-23 12:00 EST | **Updated by**: Claude Code | **Session**: CC-5
+**Last Updated**: 2026-02-23 12:30 EST | **Updated by**: Claude Code | **Session**: CC-5 (handoff)
 
 ---
 
@@ -8,8 +8,8 @@
 
 Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅ (mostly — app.json, community-plugins.json, 5 plugins installed, vault git repo pushed to GitHub, templates exist). Master list consolidation ✅. Vault housekeeping ✅. Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅.
 
-**#1 PRIORITY (Vincent):** Create Slack workspace + bot token → give to Nico via terminal.
-**#1 PRIORITY (Nico):** 50% context alert hook → Telegram bot token rotation (security) → Phase 0E metadata enforcement.
+**#1 PRIORITY (Nico):** 50% context alert hook → Phase 0E metadata enforcement.
+**#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke) → Slack workspace + bot token.
 
 ---
 
