@@ -1,0 +1,994 @@
+Kind: captions
+Language: en
+ 
+Most Open Club videos right now are
+either first week impressions or setup
+tutorials or showing use cases after
+three days of usage. Nobody can tell you
+what happens after the first month
+because they haven't been there yet. I
+have every single day for over 50 days
+through every single iteration of this
+tool. when it was clothbot, when it was
+moldbot, which I refused to call it
+that, and when it is now open claw. I
+made the setup video that ended up in
+the official OpenClaw documentation. I
+built Claudiverse, the community
+directory of use cases, and the most
+common post on Reddit is still, I set up
+OpenClaw, but I don't know what to use
+it for. This video is the answer. 20
+real use cases from my daily life, plus
+the honest truth about what breaks, how
+it breaks, and how to deal with it.
+Quick context for anyone new. Open Claw
+is an always on AI agent that runs on
+your server, your VPS, a Mac Mini, or
+even a Raspberry Pi 247. It connects to
+your messaging apps that you already
+have on your phone like Telegram,
+WhatsApp, Discord, iMessage. If you need
+the full setup, I have a video for that
+link in the description. This video is
+about what you do with it once it's
+running. And a super important thing,
+every single prompt for every use case
+I'm about to show you is in this
+document, also linked in the
+description. It's ready for copy pasting
+and using with your own agent. Let's go
+see how it all works. Before the use
+cases, let me walk you through what 50
+days actually look like. Because the way
+you use this thing in week one is
+nothing like in week seven. Week one is
+novelty. You're asking it random
+questions, testing what it can do, kind
+of using it like a chat GPT. But one
+decision I made from day one saved me
+over and over in coming weeks. Markdown
+first. A lot of people build their
+workflows around SQLite databases,
+vector stores, custom schemas. I put
+everything in Obsidian from the start in
+plain text files. Any person can read
+them. I can read them. Any program can
+work with them. It's just plain text.
+When the next thing after open claw or
+the next iteration of open claw comes
+along, my data moves with me in 5
+seconds. No lock in, just files. I can
+do anything with them. By week three,
+you start building automations, morning
+briefings, background checks. It starts
+being more useful and you can feel it.
+In week five, when you start using it
+more and more, you hit a wall.
+Everything is in one conversation and
+everything is mixed together. Research,
+bookmarks, analytics, daily tasks, and
+there's more and more context pollution.
+And that's when I learned to separate
+contexts. I now have one Discord channel
+per workflow. This way, research doesn't
+bleed into analytics. Bookmarks don't
+pollute daily assistant tasks. And I'll
+show you the full architecture later. In
+week seven, another lesson. Not every
+channel needs the same brain. You need
+to match the model to the task. So, OPUS
+is for deep thinking and cheap models
+are good enough for routine work. And
+that's when costs stop being scary and
+crazy. And by week eight and onwards, it
+stops being a chatbot and becomes a
+system. A lesson from this is three
+important principles after 50 days that
+I would recommend everyone is to have
+everything in markdown from the
+beginning to separate context and to
+match the model to the task. Here's what
+we are covering. 20 use cases across six
+categories. And I'm going to move fast.
+Real screenshots, real conversations,
+real results. And if you only steal
+three ideas from this entire video, I'll
+tell you exactly which three closer to
+the end of the video. So stick around.
+It's going to be worth it. Most of my
+setup runs in Discord now, which wasn't
+the case from the beginning. And I'll
+show the channel architecture and model
+routing later. For now, starting with
+the things that run every single day
+without me touching anything. Every
+morning at 7 a.m., my agent scans a
+bunch of tweets from accounts I follow,
+picks the top 10, writes them to my
+Obsidian notes, appends any video ideas
+to my shipping backlog, and sends me a
+summary. I wake up when I don't need to
+scroll through the feed to know what
+happened. The most important and
+interesting part is already waiting for
+me and it's tailored to my interests or
+what I'm currently working on. So
+today's stories are about anthropic and
+open claw new Gemini model dropping and
+this is already saved in Obsidian and a
+couple video ideas are also added to a
+note in Obsidian. And the value
+compounds with time because it doesn't
+just summarize. It connects the dots.
+Like, hey, this tweet about model
+pricing connects to your video idea
+about cost optimization. That kind of
+thing. But briefings are the gateway
+drug. Everyone starts there. Let me show
+you what comes after. This is my
+favorite use case. Every morning, my
+agent fetches Wikipedia's on this day
+events, picks the most impactful
+historical event, and then generates a
+Woodcut style image showing 10 seconds
+before that event happened, like the
+iceberg approaching the Titanic or the
+apple about to fall on Newton's head,
+this kind of stuff. And then it pushes
+to my terminal e- in display in a
+mystery mode. It only shows the date and
+location and I need to guess the event.
+Sometimes it's obvious, sometimes it's a
+lesson for me. So, for example, this is
+February 1, 2003 over Texas. This is
+seconds before shuttle Columbia disaster
+when it blew up. And these are the kind
+of images that it produces. For example,
+this is just before the last public
+appearance of the Beatles on the
+rooftop. And this is the beheading of
+Mary, Queen of Scots, which changed the
+course of Europe's history. And this is
+part of my daily ritual. Now I walk past
+the display, look at the new picture,
+try to guess what it is, learn something
+new about history. Every single day, a
+new one is waiting for me. This is maybe
+less of a use case and more like part of
+my daily routine and also an important
+part of the routine. So I have two crown
+jobs that I now never think about. Every
+day at 4:00 a.m. when I'm sleeping, my
+agent updates its own skills from claw,
+updates the open claw package itself,
+restarts the gateway, and then reports
+the results. When something breaks
+during an update, it tells me. And every
+day, half an hour later, a separate
+crown job backs up everything important.
+All configuration files, workflow
+directory, chron schedules, soul file,
+memory file, skills, everything that
+defines how my agent works or who he
+even is. So if my server dies tomorrow,
+I'm back up in half an hour. Not
+rebuilding from scratch, not trying to
+remember how I configured things, just
+restore and go. And that's the whole
+point. It just runs and if something
+goes wrong, I can recover easily. And
+just as a reminder, all of the prompts
+to achieve all these tasks and use cases
+are in this gist on GitHub. So you can
+just go there, copy, paste to your agent
+and be good to go. Always on checks,
+like for example, background health
+checks. This used to feel like the
+headline feature, but now I think of it
+as background guard rails. Useful, but
+it's only one piece of the system. My
+agent runs routine heartbeat checks
+every 30 minutes, and I can define what
+it does every 30 minutes. For example,
+it scans my emails, checks my calendar,
+monitors my services, and it catches
+things I would have missed. For example,
+one time it just sent me this message
+out of the blue about a Netflix payment
+failure, and I had no idea about it. It
+found it during a routine email scan. I
+paid it five minutes later, so I could
+safely watch more TV shows, or rather, I
+don't really watch TV shows. I don't
+have time rather my kids could safely
+watch more Hrix and catches a lot of
+other things like domain renewal coming
+up or a meeting I was about to miss or a
+relevant newsletter article that it
+found during a Sunday heartbeat scan
+that connected to a video that I was
+currently working on. And none of these
+were tasks that I assigned. My agent
+just found them. it knew what I'm
+working on and the things that would
+normally fall through the cracks, that's
+exactly what gets caught by the agent.
+And an important piece of setup here is
+that the agent is in a draft only mode
+for email. It can read my inbox. It can
+flag what's important. It can even draft
+responses, but it cannot send it. I need
+to review and send the email. and and it
+doesn't happen without my approval. For
+now, there's no robust general solution
+yet for prompt injection via email. So,
+I treat inbox content as potentially
+hostile research and content creation.
+And I love the research part of working
+with Open Claw. It just appeals to me to
+do it on the go when I have ideas and I
+want to discuss it. For example, for
+this video, I told my agents to research
+what people are doing with Open Claw.
+And then it spawned five parallel sub
+agents. One searched Twitter, one
+crawled Reddit, one hit hacker news, one
+analyzed YouTube competition, and once
+create multiple different forums. They
+all ran simultaneously and produced
+massive structured research files each
+one of them with competitive analysis,
+ranked video ideas, full outlines with
+source links and it took them minutes
+not hours. The research files for this
+video alone produced by these agents are
+over 50 pages and it gave me a clear
+understanding of what people are doing
+and more importantly not yet doing with
+open quil and what I need to focus on to
+give the most value and it's not just
+for video research it's for any kind of
+research you can define how broad it
+should go how fresh the data needs to be
+is it the last seven days is it the last
+three months and then let it run and
+come back with results so you don't
+start from scratch and you have a solid
+base to start with. And speaking about
+YouTube, I have two dedicated Discord
+channels related to YouTube creation.
+The first is my YouTube analytics
+channel. It has access to all my stats
+via the API and I can query anything in
+natural language like how did my last
+five videos compare on retention or
+which topics get the most engagement or
+compare my open claw videos to my cloud
+code videos and then it slices and dices
+the data anyway I want on demand. It's
+like much more flexible than YouTube
+Studio's built-in dashboards. And it
+also synthesizes the numbers and gives
+ideas and advice based on that. You're
+not getting this from any kind of
+analytics. For example, this was just a
+random question how my last two weeks
+went. And then it gave me the view
+numbers. It showed me when I published
+the videos to understand where was the
+spike, how it goes down, where is the
+uptick, what were the key insights, what
+was the watch time which I didn't even
+ask about and what was the bottom line.
+So everything related to what I care
+about which I didn't even ask. It just
+knows and gives me the details as
+granular as I want them to be. And the
+second channel is my video idea research
+channel. Throughout the week, I drop
+links, articles, tweets, halfformed
+thoughts, what I want to include or what
+I don't want to include in the next
+video. And then the agent goes and
+enriches those snippets. It connects the
+dots across different sources and builds
+context over time. And by the time I sit
+down to work on the video, I don't start
+from scratch. I have weeks of
+accumulated organized research waiting
+for me. And this exact video is a great
+meta example of it. The research for
+this video accumulated over probably
+like three weeks, maybe even more. links
+from Reddit, insights from Discord,
+competitive analysis, audience
+paypoints, all fed over time as ideas
+came to me, as I got some data, as I got
+some numbers, and then everything got
+organized and connected by the agent so
+that I have a solid baseline to start
+with. And having those two different
+channels for YouTube are important
+because the separation matters.
+analytics context stays isolated and
+then research builds over weeks without
+polluting other conversations. Next is
+summarizing practically anything. Throw
+any URL at it like an article, a YouTube
+video, a research paper, a PDF and you
+get a summary back. And I use it
+multiple times a day. For example, let's
+summarize my last video. summarize URL
+and it goes to work. And a few seconds
+later, I get the summary. What's the
+video about? What's the core message?
+What are the key numbers? What are the
+practical steps? And from there, I can
+tell it to either expand or this is good
+enough or maybe save it to an obsidian
+node. I can do anything. Infrastructure
+and DevOps. My agent migrated me from
+the old cloudbove package to open claw.
+It found both packages running at the
+same time. It killed a zombie process
+running at 160% of CPU. It deleted the
+old system services. Fixed seven days of
+silently broken crown jobs that went
+unnoticed and all from one message, go
+fix everything. It's also connected to
+my VPS server via API and I host
+everything there. And the first time I
+connected it, it reviewed more than 20
+ups running there, flagged some
+unhealthy services,
+did some fixes, and right now I can do
+anything with it. I don't need to SSH to
+my server. I can check the health of the
+whole server or specific apps and it can
+fix the apps, restart the apps. I have
+basically like a remote control to my
+whole server just in my discord. And
+again about security, there is an allow
+list of commands that it can do. And
+there's also a deny list of commands
+that it cannot do by itself. It has to
+ask my permission first. Works pretty
+well and I haven't had any issues so
+far. It allows me also to code from my
+phone. I can tell my agent to go fix a
+bug, build a feature, create a PR, all
+from my phone while I'm away from my
+desk. And you don't need your laptop
+because your AI has your laptop. But to
+be completely honest, I do not use it
+for production as my main way of
+programming. I only use it for some
+quick fixes or simple ideas that come to
+my mind and I want to test them on the
+go. For my main workflow, I still use
+cloth code and codeex on my desktop.
+Daily life assistant. And to start with,
+what everybody is doing is email triage
+and draft replies. Beyond the proactive
+catches that I already showed you, the
+day-to-day email workflow is simple that
+it reads my inbox, flags what's
+important, and drafts responses I review
+and send. This way I can easily reply to
+an email the same day rather than during
+the weekend when I have more time to go
+through my inbox. This one is useful
+calendar and family management not just
+for myself but for family as well. For
+example, I have a group chat on WhatsApp
+this time because my wife doesn't use
+Telegram or Discord and in WhatsApp
+group I can drop messages like schedule
+dentist Thursday at 3 p.m. and it's
+done. and my wife can add events, check
+the schedule, get reminders all through
+that same group chat and chat interface.
+It is simple but it is helpful as well.
+And once it works, you start asking like
+what else can it do? Voice note
+transcription. This is something that I
+always thought I would be using on my
+phone because I can dictate stuff and
+it's there. But when I tried it, I never
+went back to listen to those messages.
+Now it can actually be done
+automatically. So for example, I send a
+voice message on WhatsApp, Telegram or
+Discord and it transcribes it with
+whisper models and responds in text.
+Quick thoughts while driving, shopping
+lists while walking, meeting notes on
+the go. I just talk and then it handles
+the rest. Then if it's something
+important, it puts it in maybe a file in
+Obsidian or sends a message or drafts an
+email so that I don't even need to go
+back to those notes. They are already
+taken care of. And more small stuff from
+daily life like find me a good coffee
+shop within walking distance. It uses
+Google Places API. So, it has access to
+ratings, reviews, walking distances from
+my home, what people like or dislike in
+that place, what are the prices. So, it
+can do much more in seconds than I would
+do myself. And it's helpful for oneoff
+searches as well. I was searching for
+snowboard boots to go snowboarding and I
+have a large foot. So, it's an issue to
+find my size. So, it searched multiple
+shops where I could buy one. It checked
+online whether they had my size and it
+gave me three options where I could go
+and buy. So I went to the first one,
+bought one which were not available
+anywhere else in the city or almost and
+took me 20 minutes for weather forecast.
+It doesn't tell me just like tomorrow
+it's going to be sunny. I have it on my
+watch but it did warn me once for
+example about -9°
+cold snap coming up which is like minus
+2 minus 3 Fahrenheit and that was quite
+helpful. And then there are reminders
+about maybe rehab exercises with snooze
+capability, meeting reminders before my
+weekly calls. These are all small things
+on their own, but they do add up and
+they are genuinely helpful in everyday
+life. Helping friends with their
+technical issues and problems. And this
+one is personal. So my friend wanted to
+set up his own open claw after watching
+my videos. and I added him to a WhatsApp
+group with my own agent and myself. And
+my agent spent three and a half hours
+guiding him step by step through the
+entire setup in a non-English language.
+NPM permissions, WhatsApp linking, demon
+configuration,
+cloud authorization, debugging, like the
+whole saga. And it was all done either
+via asking questions or posting
+screenshots in the group chat. and my
+friend would take a screenshot of an
+error. My agent would read it and
+explain the fix, tell what the next step
+is, and that's how it went. Well,
+previously I would have had to answer
+everything myself. Now, my agent
+answered 90% of the questions and I just
+added context from my own experience to
+some of the answers. After a few days
+when my friend installed his own
+instance, the questions become more rare
+and then they stopped because he
+switched to asking his own agent and I
+didn't have any technical questions from
+him in weeks and I only hear updates
+from time to time as to what kind of
+automations he's able to do. And for a
+non-technical user who runs an
+accounting company, I'm genuinely amazed
+how quickly and how far he has gone
+already. I also have a group chat with
+my wife and my agent and it adds fun to
+our conversation, some jokes or second
+opinion things that we are discussing.
+And once my wife texted in that channel
+to tell Radic to play with me when I was
+too busy talking to my agent and I left
+what I was doing and we played and the
+last part is about my evolution of how
+I'm using OpenCloud today. So migrating
+to Discord, building the knowledge base
+and some fun projects. Migrating to
+Discord is one of the biggest changes in
+my setup over the last 50 days and I
+think it's the most important thing that
+I can share with you. So, first I
+started on WhatsApp and then quickly
+moved to Telegram because it just had
+more features and was just better and
+most people started on Telegram too. But
+around week five, I started hitting a
+wall. Everything was in one
+conversation. My YouTube stats were
+mixed with my bookmarks. My research was
+mixed with my daily assistant tasks and
+context was getting polluted and it was
+hard to start finding things or getting
+back to something that I saw previously.
+So I migrated to Discord and now it's
+night and day difference. Instead of one
+conversation or multiple separate agents
+like I had before, I now have channels.
+And each channel is a dedicated
+workspace with its own context. There's
+a channel for YouTube analytics, a
+channel for video idea research, an
+inbox channel for bookmarks, a general
+channel for daily assistant stuff, and
+each one stays focused on just that one
+task and area. And the important part is
+that I can set different models per
+channel. For example, my YouTube stats
+channel can use a cheaper model because
+it's mostly data retrieval. My research
+channel uses OPUS because I need deep
+thinking during research. My inbox
+channel uses a fast cheap model because
+it's just processing links, summarizing,
+and categorizing. And that's how we keep
+costs down, matching the model to the
+task, not the other way around. and not
+overpaying for expensive models for
+tasks that can very well be done by a
+cheaper, smaller model. And switching to
+Discord wasn't about the app itself. It
+was about the architecture. I would
+prefer staying on Telegram or WhatsApp.
+But this works better. It separates
+contacts. It has cleaner conversations.
+It has better formatting.
+And you have per channel models. and you
+have lower costs because of that. And
+with this setup of channels, I always
+know where to go for what. And I'm
+careful about adding more channels. I'll
+probably have more with time, but I only
+add a new one as and when I really,
+really need it. And that's what 50 days
+looks like. You stop using the tool and
+start designing how you interact with it
+and start getting more value out of it.
+Bookmarks. Bookmarkers are fun. I used
+to use Raindrop for bookmarks. I had a
+paid subscription, a separate app,
+manual tagging, putting everything into
+folders.
+And as I was using that, I even built a
+system that was regularly pulling the
+bookmarks from Raindrop using the API
+and putting them in my Obsidian. What's
+more, I even built a skill for open claw
+to manage bookmarks from raindrop and to
+enrich them and to create tags
+automatically and to pull to obsidian
+just the whole thing. But at some point
+I realized that I don't need an
+intermediary which is raindrop. I can do
+it myself directly. So now I just drop
+any link into my Discord inbox channel
+and the agent does the rest. It
+summarizes the content. It extracts key
+information. It creates tags for every
+bookmark and over time builds a
+knowledge graph connecting related links
+all in markdown, all searchable, all
+building context over time, all in
+Obsidian. And it runs on a cheaper model
+because link processing doesn't need
+opus. and I cancel trade drop and I
+don't miss it. Obsidian and knowledge
+base. As you might have noticed already,
+most of the things that I do with my
+agent in some way or another end up in
+Obsidian. And here's where the markdown
+first thing pays off. I have almost
+3,000 notes in Obsidian. And my agent
+indexes all of them every night using
+QMD for semantic search. Semantic search
+means that I can ask questions like what
+did I decide about thumbnail design last
+month and then it finds the exact note.
+It's not keyword matching. It's semantic
+understanding what I'm asking about. So
+for example, what's the overarching
+theme in my last five videos? It lists
+the five videos and says that the
+overarching theme is making AI coding
+tools actually useful in practice. It's
+not something that can be found by
+searching for keywords. And as I work
+more and more with my agent, as I
+forward random things, random thoughts,
+random links, ideas throughout the day,
+they go into Obsidian as markdown files
+and the agent organizes them. And then
+every night at 3:00 a.m., the entire
+index rebuilds and then I have this nice
+semantic search available to me. When I
+first set this up, it took a few minutes
+to build the initial embedding index
+because it was about 3,000 or then two
+and a half thousand nodes. And now it
+updates automatically every night and it
+takes about 10 seconds. People call this
+second brain stuff. Mine is always on.
+does all the organizing for me and
+everything is in plain text files that I
+own forever. No database, just markdown
+files and semantic search on top of it.
+This one is funny. Like one day I was
+checking out my analytics on my website
+velvet sharkark.com and I noticed that
+there were many hits to a WordPress
+login page but my website is not on
+WordPress. So, I asked my agent to set
+up a honeypot on my website, like a fake
+WordPress login page that recrolls
+anyone who tries to log in. And it built
+the page, created a full pull request
+and deployed it. And when I went to this
+page, it's not a WordPress page. It's a
+fake page that you can enter anything
+you want in here and try to log in.
+Yeah, you get the idea. To be clear,
+this is purely on my own domain,
+catching bots that scan for WordPress
+admin pages and try to hack into
+WordPress uh websites. don't use this
+pattern to impersonate any real
+services. I'll probably have it for a
+few days or a couple weeks and then I'll
+get bored of it and I'll remove it. But
+it was fun to just think of something
+like type a few sentences on my phone
+and have this fun just like party trick
+life on my website. So one minute the
+agent is managing your infrastructure
+and the next it's setting up some like
+fun pranks and that's the fun part of
+it. My agent also can create diagrams
+and graphs automatically through the
+Excal MCP integration like architecture
+diagrams, flowcharts, concept maps. It
+generates them on the fly during
+conversations and then I only need to
+change a few things. Maybe move stuff
+around and maybe add a few words. Like
+for example, this chart that was
+presented earlier, it was done
+completely by my open claw instance. For
+this one, I didn't have to change
+anything at all. Oh, maybe I changed the
+colors of the models here. Nothing else.
+So if you need more than just creating
+text or some copy and you need to
+visualize a workflow, you just ask and
+it draws for you. Home automation. This
+one is in progress for me currently and
+I'm showing it because it's where my
+setup is heading next as I'm setting up
+home assistant for smart home control. I
+have two home assistant voice preview
+edition devices for voice control.
+Though full Helm automation can be
+managed through OpenClaw like light
+control, climate routines all through
+chat or voice, not even having to write
+anything. And it's closer to what Siri
+should have been than anything that
+Apple has shipped so far. So that's 20
+use cases from my daily life. But I'm
+not the only one. The community is doing
+like incredible things. People are
+running like actual businesses through
+their agents, customer quoting,
+invoicing, lead generation, deal
+closing, SEO, and people are managing
+smart homes with Home Assistant,
+controlling 3D printers, connecting
+their cars, even like their Teslas, and
+they're making phone calls through their
+voice agents, connecting robots with
+cameras, factchecking conference
+speakers in real time and even deploying
+code from the Apple Watch. I haven't
+done that yet, but sounds interesting.
+And I built cloudiverse.com
+to catalog all of it, link in the
+description. And the range is wider than
+I expected. And if 20 use cases that you
+already saw is not enough, you can find
+many more on codiviverse.com. But this
+video is about my own experience. So let
+me tell you what nobody else will. But
+before going to the honest part, if you
+installed Open Claw today and you are
+overwhelmed, start with these three
+things. One, draft only email triage
+with urgent alerts. It catches things
+that you miss. Two, a daily briefing
+that writes to a markdown file morning
+context organized automatically for you
+as you start the day. And three, one
+Discord inbox channel for bookmarks,
+drop links, agent enriches them,
+replaces a paid app immediately and
+builds your knowledge base over time,
+which is more and more valuable as you
+go. Do these three things for a week and
+you'll start getting it. Everything else
+grows from there. Okay. What doesn't
+work well? No sugar coating. Number one,
+memory loss and context compaction. My
+agent forgets things sometimes mid-con
+conversation. No warning. Like it just
+drifts away for a second. It's not there
+for a while, then replies to something
+from three sentences back and then says
+it's still there. Everything is fine.
+And this is the number one technical
+frustration that people mention
+everywhere. Silent compaction. The
+context window fills up. The agent
+compresses the conversation and
+important details disappear. The
+mitigation is to write everything to
+files. Use QMD for semantic search. Use
+compact manually before the system does
+it automatically. But it's still rough.
+Chat GPT at least warns you when context
+is getting long. Open CL just silently
+compresses and moves on. You can at
+least type a status command to see how
+much context is left, but that's not
+ideal. For example, here it shows that I
+have 35% of context used up and no
+compactions yet in this session. If I
+see that context is filling up and it's
+more than 50% I can start a new session
+and then it starts with a fresh context
+from zero. Next the cost reality I
+covered this in depth in my cost
+optimization video link in the
+description. The quick summary is that
+Opus is amazing but expensive and the
+answer is multimodel routing. use Opus
+for the real thinking and cheaper models
+for heartbeats for sub agents and my
+discount channel setup is built around
+this. Each channel uses the model that
+matches its task and you can also set
+different models for heartbeats or other
+simple tasks. And my cost calculator
+where you choose different models for
+different primary model or heartbeat
+model or sub aent model shows how much
+you can save and it's real money and you
+need to plan for it. Another problem is
+what do I use it for problem. This is
+the most common post on subreddit. It's
+what people ask in Discord. It's what
+people post on Twitter. And the harsh
+truth is that you need to realize one
+thing if you don't have workflows to
+automate. Open club won't invent them
+for you. If you don't manage your
+calendar and AI calendar manager won't
+help if you don't check email. AI email
+triage is pointless. So it can help you
+if you have what to help with and the
+people getting the most value already
+had systems. OpenClaw made their systems
+easier, faster, and automatic, but the
+systems were there. That said, this
+video is the answer to what do I use it
+for. I just showed you 20 ideas plus a
+starter pack. Pick three, start there,
+grow from there. Next is tasks that need
+babysitting. Like complex multi-step
+tasks still fail or need pushing.
+Browser automation is still flaky.
+sessions disconnect extensions drop the
+agent sometimes go silent mid tasks and
+you have to ask like hey how's it going
+it works better as an assistant than an
+autonomous agent at least for now the
+simpler the task the more reliable it is
+and the more complex the more you need
+to check in and to give more detailed
+instructions for losing context and for
+compactions it helps when you explicitly
+tell to launch sub agents. This tweet
+from Matt shows it nicely. So this is
+the main agent, the orchestrator and it
+is launching sub agents and each sub
+agent gets its own context window. So
+while doing research or performing
+tasks, those sub agents do not into your
+main context window and your main agents
+only does coordination instead of all
+the work. And this works wonderfully.
+And this is also how I do almost all my
+research where the orchestrator launches
+sub agents and then just like gathers
+all the content of all the research and
+then synthesizes the results and gives
+the final output. Next, and I will never
+stop highlighting this, security is
+real. There is no foolproof general
+solution for prompt injection yet. So, I
+treat inbox content as hostile or
+potentially hostile. And if your agent
+reads untrusted emails, someone could
+craft a message that makes your agent do
+something that you didn't want to. The
+way I solve it is not exposing anything
+to the outside world in terms of
+connectivity and having all my machines
+on tail scale. Then draft only email
+mode approval needed for destructive
+actions and running security audit
+regularly. For security audit either use
+this from claw hub cloudbot security
+check or just point your agent to this
+security page in open cloud
+documentation and tell it to implement
+and verify everything on this page. and
+if something is not done on your end to
+implement these security measures. And
+lastly, my own failures. I want to be
+specific about things that went wrong
+for me. And to be honest, most of these
+were closer to week one than week seven
+because the whole system is evolving and
+improving rapidly. But for example,
+daily update chron job was using the old
+cloudbot commands after the migration to
+open call failed silently for days. I
+didn't notice and missed a few updates
+because of just a simple package rename
+authentication debugging with my friend.
+Three plus hours of false starts,
+credential comparisons, complete
+reinstalls. The setup is sometimes
+genuinely hard. But luckily my own agent
+was doing 90% of debugging. So at least
+that helped. Context compaction hit me a
+few times in the middle of a complex
+research task. Now I'm more aware of
+that. I'm mitigating that. So I'm
+getting it less and less. The Discord
+migration itself took also some
+iteration. getting the right channel
+structure, figuring out which models
+work best where, how to set up different
+models to different channels, migrating
+context from Telegram conversations.
+All of that wasn't like super easy or
+instant. It took about a week of
+tweaking to get everything right. And
+none of this made me stop using Open
+Claw. But nobody else is telling you
+about this stuff. everything seems rosy,
+which is not always the case. Okay, so
+let's do some scoring. Let me put a
+number of it from a few different
+perspectives. In terms of setup
+difficulty, it's about seven out of 10,
+which is intentional because it's still
+a work in progress and it might be
+dangerous if someone doesn't know what
+to do. So, it's intentionally not being
+done easier. So if you know how to go
+through setup process, you are at least
+somewhat technical and you are aware of
+the dangers. Daily value once running
+and once you have your own setup
+tailored to your needs, easily nine out
+of 10. Reliability for simple workflows,
+eight out of 10. Very good. For complex,
+especially browser tasks, still hit or
+miss, five out of 10. And there's a lot
+still to improve there. Best feature, at
+least for today for me, is Discord
+channel architecture with per channel
+models. The biggest unlock is file-based
+memory with markdown first files with
+nightly semantic indexing and retrieval.
+And I'm building up my knowledge base
+day after day. And it's more and more
+useful for me with time. and it's only
+getting better. Most quietly useful is
+background heartbeat checks. You can
+start simple and as you think what else
+you might be checking every once in a
+while, you can add more to your
+heartbeats. And the biggest pain for now
+is still memory and context compaction.
+What surprised me is first that it gets
+better over time. The more context it
+has in its soul file and in its memory
+file and folder, the better it
+understands you. And after 50 days, it
+anticipates what I need. It even
+internalized like tiny style preferences
+over time, the shark emoji, the language
+switching between DMs and groups, it
+learns you over time and it can easily
+surprise you how well it learns you. So
+when you start in week one with what
+seems like a simple tool, by week three
+it feels almost like an infrastructure
+already and by week seven you reorganize
+your workflow around it and that's when
+it stopped being a chatbot for me and
+became a system. Another surprise for me
+was that it replaced more than expected.
+I expected it to replace Chat GPT, but
+it also replaced parts of Zapier,
+Raindrop, parts of YouTube Studio
+Analytics, parts of Web Analytics, and
+half of my Apple Shortcuts. And for
+personal use, I'm not paying for Zapier
+anymore. I not paying for Raindrop
+anymore. And I don't miss either of
+them. And the ecosystem is not just
+growing, it's exploding. There are
+thousands of skills on clawhub. There
+are hosted services launching for
+non-technical users, which still might
+not be the best idea, but it's there.
+And the tooling and security is maturing
+very fast. And when the security will be
+much harder and when the setup gets
+eventually easier, everyone will be
+running some version of this and the
+capability is already there. The
+onboarding isn't by design for now. So
+would I recommend open claw? Yes, but
+with some conditions. Yes, if you have
+workflows to automate and you are
+comfortable with a terminal and you
+understand the cost implications.
+Not yet. If you want something that just
+works out of the box, you are not
+technical or you expect fully autonomous
+AI that never needs babysitting and does
+stuff for you start to finish. I feel
+like we are currently using maybe 5% of
+what this can do and the ceiling is like
+absurdly high but the floor still has
+some holes in it. And if you are okay
+with this tradeoff if you like building
+towards something then this is the most
+fun like I've had with technology in
+years and I I keep having fun every day
+with it. So that's my journey 50 plus
+days every day through cloudbot to
+moldbot to open claw rebrand saga now
+open aai and foundation shift I've seen
+the community grow from a few hundred to
+tens of thousands and I've seen my bot
+fail I've seen my bot kill itself I've
+seen it forget what it was doing but
+I've also seen it migrate my server
+research the entire video with parallel
+agents, help my friend set up for 3
+hours or generate art that makes me
+smile every morning. So for me, I'm not
+going back and that's the strongest
+endorsement I can give. As always, all
+links are in the description. There are
+always all the prompts for all the use
+cases, some bonus security tips, cost
+optimization tips, my setup video if you
+want to get started, the cost
+calculator, the official documentation,
+and once you watch it and start doing
+and using those prompts, drop your
+favorite use cases in the comments. I
+want to hear what you're building, what
+you are trying or maybe failing. And
+subscribe if you want more practical
+ways to use AI. And now go build
+yourself a system and have fun doing
