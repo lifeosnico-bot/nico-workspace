@@ -164,6 +164,16 @@
               "icon": "lucide-list",
               "title": "Outline of Addedndums to 2026-02-23_task-architecture-plan"
             }
+          },
+          {
+            "id": "12873d0640ebc28f",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
           }
         ]
       }
@@ -185,6 +195,7 @@
   },
   "active": "fa1654097f2b6850",
   "lastOpenFiles": [
+    "00-dashboard/daily",
     "00-dashboard/llm-sessions/2026-02-23_session-CC-6.md",
     "00-dashboard/llm-sessions/2026-02-23_session-CC-5.md",
     "05-reviews/tasks/2026-02-23_task-architecture-plan.md",

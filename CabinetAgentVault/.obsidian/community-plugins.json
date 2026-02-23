@@ -1,7 +1,6 @@
 [
-  "obsidian-git",
+  "calendar-beta",
   "dataview",
-  "templater-obsidian",
-  "obsidian-tasks-plugin",
-  "calendar"
+  "obsidian-git",
+  "obsidian-tasks-plugin"
 ]
