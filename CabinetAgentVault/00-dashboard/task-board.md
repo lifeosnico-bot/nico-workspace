@@ -1,5 +1,5 @@
 # Task Board
-**Last updated**: 2026-02-23 10:30 EST | **Updated by**: Nico (Claude Code) | **Session**: session-5-morning
+**Last updated**: 2026-02-23 12:30 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-5 handoff
 
 _This file is rewritten by Nico at every session start and end. Do not edit manually._
 _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]]_
@@ -10,9 +10,10 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 | Owner | Task | Status |
 |---|---|---|
-| [N] | Alert script ([[imessage-alert]]) | ✅ Working via Telegram |
+| [N] | 50% context window alert hook | Next up |
+| [V] | Telegram bot token rotation (BotFather /revoke) | 🔴 Security — do ASAP |
 | [V] | Create Slack workspace + bot token | Waiting on Vincent |
-| [V] | [[communication-decision\|Final comms decision: Claude Code ↔ Vincent]] | P1 — decide today |
+| [V] | Final comms decision | Partially done |
 
 ---
 
@@ -20,46 +21,35 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 | Owner | Task | Status |
 |---|---|---|
-| [N] | Vault housekeeping | ✅ Done |
-| [N] | [[task-board\|task-board.md]] | ✅ You're reading it |
-| [V] | 1Password setup | Waiting on Vincent |
-| [N] | Obsidian Phase 1 (templates, settings, git) | Next |
-| [V] | Obsidian Phase 2 (sign in, sync, plugins) | After Phase 1 |
-| [N] | 50% context window alert | Queued |
+| [N] | Phase 0E — metadata standards enforcement | Queued |
 | [N] | LettaBot Telegram poller fix | Queued |
+| [V] | Obsidian Phase 2 (sign in, sync, plugins) | Waiting on Vincent |
+| [V] | 1Password setup | Waiting on Vincent |
 
 ---
 
 ## 👤 Vincent's Actions
 
-1. Create Slack workspace → copy bot token → paste to Nico in terminal
-2. [1Password](https://1password.com) — create account, install desktop app
+1. 🔴 Telegram: open @BotFather → `/revoke` → get new token → paste to Nico
+2. Create Slack workspace → copy bot token → paste to Nico in terminal
 3. Obsidian: sign in, enable Sync, enable plugins (Nico preps, Vincent flips switches)
-4. Decide: [[communication-decision|Claude Code ↔ Vincent comms channel]] (P1)
+4. [1Password](https://1password.com) — create account, install desktop app
 
 ---
 
 ## 📥 Inbox
 
-**31 items** — see [[status#📥 Inbox — Unprocessed Captures|Inbox in status.md]]
+**25 items** (8 closed, 23 remaining) — see [[status#📥 Inbox — Unprocessed Captures|Inbox in status.md]]
 
 ---
 
-## 🔗 Key Files
+## ✅ Completed Recently (CC-5)
 
-| File | Purpose |
-|---|---|
-| [[status]] | Master task list — single source of truth |
-| [[home]] | Vault home / navigation hub |
-| [[2026-02-23_task-architecture-plan]] | Approved architecture plan |
-| [[vault-consolidation-review]] | Pending vault decision |
-
----
-
-## ✅ Completed Recently
-
-- Alert system working (Telegram via Nicolucavobot + iMessage one-way)
-- `/handoff` skill built ([[2026-02-23_session-CC-4]])
-- Master status.md consolidated from 6 sources
-- Vault housekeeping complete
-- P1-P5 / V/N/A owner lanes live
+- Full status.md audit — 13+ stale items marked complete
+- 31 inbox items triaged (8 closed, 23 assigned P/owner)
+- PR #6 merged (all CC-3/4/5 work on master)
+- Peekaboo MCP disabled (saves 9.8k tokens/session)
+- `/peekaboo` skill built (toggle on/off)
+- `atl` rule fixed — inbox write only, no execution
+- Vault `.trash/` configured (trashOption: local)
+- Alert script, /handoff, task-board, vault housekeeping, Phase 1 Obsidian all confirmed done

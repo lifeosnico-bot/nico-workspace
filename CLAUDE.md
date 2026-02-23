@@ -47,7 +47,7 @@ The single source of truth for all work is ~/Nico/CabinetAgentVault/00-dashboard
 
 ### Quick Commands
 Vincent may use these shorthand commands from any surface (text, voice, Cowork, Claude Code):
-- **atl [description]** — Add to list. Triage into the right phase/task/subtask. Decompose immediately.
+- **atl [description]** — Add to list. Drop it into the Inbox section of status.md with date, priority (if given), and description. Do NOT execute, research, decompose, or take any action on it. Just write the line and confirm. Triage happens later.
 - **sts** — Show current status. What's in progress, what's next.
 - **done [task]** — Mark a task complete in status.md.
 - **blocker [description]** — Flag something as blocked with reason.

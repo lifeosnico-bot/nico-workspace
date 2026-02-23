@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-23 12:00 EST | **Updated by**: Claude Code | **Session**: CC-5
+**Last Updated**: 2026-02-23 12:30 EST | **Updated by**: Claude Code | **Session**: CC-5 (handoff)
 
 ---
 
@@ -8,8 +8,8 @@
 
 Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅ (mostly — app.json, community-plugins.json, 5 plugins installed, vault git repo pushed to GitHub, templates exist). Master list consolidation ✅. Vault housekeeping ✅. Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅.
 
-**#1 PRIORITY (Vincent):** Create Slack workspace + bot token → give to Nico via terminal.
-**#1 PRIORITY (Nico):** 50% context alert hook → Telegram bot token rotation (security) → Phase 0E metadata enforcement.
+**#1 PRIORITY (Nico):** 50% context alert hook → Phase 0E metadata enforcement.
+**#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke) → Slack workspace + bot token.
 
 ---
 
@@ -33,7 +33,7 @@ _Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to
 | Priority | Owner | Task |
 |---|---|---|
 | P1 | [N] | 50% context window alert hook |
-| P1 | [N] | Telegram bot token rotation (security — exposed in compaction summaries) |
+| P1 | [V] | Telegram bot token rotation (BotFather → /revoke → new token to Nico) |
 | P1 | [V] | Create Slack workspace + bot token |
 | P2 | [N] | Phase 0E — metadata standards enforcement |
 | P2 | [V] | Obsidian Phase 2 manual setup |
@@ -45,6 +45,7 @@ _Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to
 
 _These require Vincent. Nothing else can proceed until done._
 
+- [ ] **P1** Telegram bot token rotation: open @BotFather → `/revoke` → get new token → paste to Nico (security — old token exposed in compaction summaries)
 - [ ] **P1** Create Slack workspace → copy bot token → paste in terminal to Nico
 - [ ] **P2** 1Password: create account at 1password.com, install desktop app
 - [ ] **P2** Obsidian Phase 2: manual setup (sign in, enable Sync, register CLI, enable plugins) — Nico will prep everything, Vincent flips the switches
@@ -64,7 +65,7 @@ _Nico executes without Vincent. Ordered by priority._
 4. ~~Master list consolidation~~ ✅ Done (2026-02-23)
 5. ~~Obsidian Phase 1~~ ✅ Mostly done (app.json, plugins, git repo — 2026-02-23)
 6. **[P1]** 50% context window alert hook
-7. **[P1]** Telegram bot token rotation (security)
+7. ~~Telegram bot token rotation~~ → moved to Vincent's Actions (needs BotFather)
 8. **[P2]** Phase 0E remaining — metadata standards enforcement
 9. **[P2]** LettaBot Telegram poller conflict — investigate and fix
 10. **[P3]** Obsidian Phase 1 remaining — core-plugins.json, appearance.json (minor)
@@ -87,8 +88,10 @@ _Land here first, get triaged into phases by Nico. Items below have been assigne
 - [x] Evaluate /todos /plan → adopted plan mode + todos this session (CC-5)
 - [x] Obsidian file open rule → already added to CLAUDE.md
 
-### Remaining (23 items, triaged)
+### Remaining (25 items, triaged)
 - [ ] **[P1][V]** Final comms decision: pick canonical channel (Telegram vs iMessage vs other) — partially done, needs final pick
+- [ ] **[P4][N]** `/peekaboo` skill: create enable/disable toggle for Peekaboo MCP ✅ DONE (built 2026-02-23)
+- [ ] **[P4][N]** Peekaboo disabled by default — saves ~9.8k tokens/session. Re-enable via `/peekaboo on` + restart when GUI automation needed
 - [ ] **[P3][N]** Session log gap: Feb 21 CC session not logged — add entry
 - [ ] **[P3][N]** "Why so many Nico bots" — document all bots/agents and their roles
 - [ ] **[P3][N]** Claude Code hooks discipline — verify SessionStart/Stop scripts still working
@@ -109,7 +112,7 @@ _Land here first, get triaged into phases by Nico. Items below have been assigne
 - [ ] **[P5][N]** Widget boxes on M1/M3 screen for quick status _(someday)_
 - [ ] **[P5][N]** Dan Messlier GitHub — research _(someday)_
 - [ ] **[P5][N]** Session logs: research how software cos structure engineering logs _(someday)_
-- [ ] **[P5][N]** Trash sub-folder review _(current structure works)_
+- [x] **[P5][N]** Trash sub-folder review ✅ Vault `.trash/` configured via `trashOption: local` (done 2026-02-23)
 - [ ] **[P5][N]** Cursor Mac-to-Mac issue — investigate _(someday)_
 - [ ] **[P5][N]** Heartbeat + cron: "OpenClaw"-style agent loop _(Phase 7 scope)_
 

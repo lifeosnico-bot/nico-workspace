@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ddf67591b6a2c0c4",
+            "id": "9e530a0842da5f7a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-dashboard/task-board.md",
-                "mode": "source",
+                "file": "05-templates/client-note.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "task-board"
+              "title": "client-note"
             }
           }
         ]
@@ -62,20 +62,6 @@
               },
               "icon": "lucide-search",
               "title": "Search"
-            }
-          },
-          {
-            "id": "39764c845955eb6d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Addedndums to 2026-02-23_task-architecture-plan"
             }
           },
           {
@@ -197,23 +183,29 @@
       "bases:Create new base": false
     }
   },
-  "active": "ddf67591b6a2c0c4",
+  "active": "9e530a0842da5f7a",
   "lastOpenFiles": [
-    "00-dashboard/status.md",
-    "05-reviews/tasks/status-master-list.md",
-    "00-dashboard/task-board.md",
-    "00-dashboard/llm-sessions/2026-02-23_session-CC-4.md",
-    "05-reviews/housekeeping/vault-consolidation-review.md",
-    "05-reviews/README.md",
-    "01-inbox/_index.md",
-    "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
     "05-reviews/tasks/2026-02-23_task-architecture-plan.md",
-    "40-archive/2026-02-22_cos-plan-archived.md",
+    "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
+    "05-reviews/housekeeping/vault-consolidation-review.md",
+    "00-dashboard/task-board.md",
+    "00-dashboard/status.md",
     "00-dashboard/home.md",
-    "CLAUDE.md",
+    "00-dashboard/llm-sessions/2026-02-23_session-CC-4.md",
+    "01-inbox/_index.md",
+    "20-areas/development/_index.md",
     "20-areas/business-ops/_index.md",
+    "10-projects/cabinet-agent-saas/_index.md",
+    "10-projects/lucavo-design/_index.md",
+    "01-inbox/Misc Claude Code session Copy of plan mode 2-23-26..md",
+    "01-inbox/Claude plan Mode 2-23-26.md",
+    "40-archive/2026-02-22_cos-plan-archived.md",
     "30-resources/research/yt-transcript-50-days-ai-agent.txt",
     "30-resources/research/video-50-days-ai-agent.md",
-    "00-dashboard/llm-sessions"
+    "05-reviews/tasks",
+    "00-dashboard/llm-sessions",
+    "05-reviews/tasks/status-master-list.md",
+    "05-reviews/README.md",
+    "CLAUDE.md"
   ]
 }
