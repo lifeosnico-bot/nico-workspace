@@ -1,2 +1,4 @@
 Error: letta error: Missing LETTA_API_KEY
 Run 'letta' in interactive mode to authenticate or export the missing environment variable
+Error: letta error: Missing LETTA_API_KEY
+Run 'letta' in interactive mode to authenticate or export the missing environment variable
