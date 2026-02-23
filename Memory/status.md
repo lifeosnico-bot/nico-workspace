@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-23 10:44 EST | **Updated by**: Claude Code | **Session**: session-5-morning
+**Last Updated**: 2026-02-23 10:52 EST | **Updated by**: Claude Code | **Session**: session-5-morning
 
 ---
 
@@ -105,6 +105,7 @@ _Land here first, get triaged into phases by Nico._
 - [ ] **2026-02-23** — Google Workspace for lifeos.nico@gmail.com: evaluate setup (Google Drive, Calendar, Docs as business layer) _(Letta sync)_
 - [ ] **2026-02-23** — Claude Code hooks discipline: SessionStart/Stop scripts + settings.json hooks — verify still installed and working _(Letta sync)_
 - [ ] **2026-02-23** [P1] 🔴 — Final decision needed: communication channel between Claude Code and Vincent (iMessage one-way ✅, Telegram two-way via Nicolucavobot, iMessage MCP option — pick canonical) _(atl)_
+- [ ] **2026-02-23** [P1] — RULE: All files Vincent needs to review must be opened in Obsidian via `open -a Obsidian [file]`. Never open in TextEdit or plain text. All file links in terminal must be opened immediately on request, not pasted as text. _(atl)_
 
 ---
 

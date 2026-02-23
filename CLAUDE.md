@@ -101,6 +101,13 @@ Build for N agents, not 2. Every infrastructure decision must be evaluated again
 - Write back to status.md at session end
 - status.md is the canonical record. Slack is the real-time coordination layer.
 
+## File & Link Rules (CRITICAL)
+- **Never paste file paths as text** — always open them immediately when Vincent asks to view something
+- **All files for Vincent to review must open in Obsidian**: `open -a Obsidian [filepath]`
+- **Never open files in TextEdit or any other app** — Obsidian only for markdown
+- **All vault files use wikilinks** `[[filename]]` — never plain text paths inside vault files
+- Plain text paths (`~/Nico/...`) only in terminal output and status.md
+
 ## Principles
 - Be direct. No sycophancy. Push back on bad ideas.
 - Log every significant decision to Memory/decisions.md
