@@ -6,5 +6,6 @@
   "attachmentFolderPath": "30-resources/attachments",
   "alwaysUpdateLinks": true,
   "showFrontmatter": true,
-  "useMarkdownLinks": false
+  "useMarkdownLinks": false,
+  "trashOption": "local"
 }

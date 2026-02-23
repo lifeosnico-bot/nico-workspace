@@ -109,7 +109,7 @@ _Land here first, get triaged into phases by Nico. Items below have been assigne
 - [ ] **[P5][N]** Widget boxes on M1/M3 screen for quick status _(someday)_
 - [ ] **[P5][N]** Dan Messlier GitHub — research _(someday)_
 - [ ] **[P5][N]** Session logs: research how software cos structure engineering logs _(someday)_
-- [ ] **[P5][N]** Trash sub-folder review _(current structure works)_
+- [x] **[P5][N]** Trash sub-folder review ✅ Vault `.trash/` configured via `trashOption: local` (done 2026-02-23)
 - [ ] **[P5][N]** Cursor Mac-to-Mac issue — investigate _(someday)_
 - [ ] **[P5][N]** Heartbeat + cron: "OpenClaw"-style agent loop _(Phase 7 scope)_
 
