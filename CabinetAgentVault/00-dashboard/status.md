@@ -1,14 +1,14 @@
 # Status
 
-**Last Updated**: 2026-02-23 12:30 EST | **Updated by**: Claude Code | **Session**: CC-5 (handoff)
+**Last Updated**: 2026-02-23 13:45 EST | **Updated by**: Claude Code | **Session**: CC-6 (handoff)
 
 ---
 
 ## Current State
 
-Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅ (mostly — app.json, community-plugins.json, 5 plugins installed, vault git repo pushed to GitHub, templates exist). Master list consolidation ✅. Vault housekeeping ✅. Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅.
+Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅ (mostly). Master list consolidation ✅. Vault housekeeping ✅. Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅ (statusline + Telegram). Permission prompt alert ✅ (Notification hook + Telegram).
 
-**#1 PRIORITY (Nico):** 50% context alert hook → Phase 0E metadata enforcement.
+**#1 PRIORITY (Nico):** Phase 0E metadata enforcement.
 **#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke) → Slack workspace + bot token.
 
 ---
@@ -32,7 +32,7 @@ _Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to
 
 | Priority | Owner | Task |
 |---|---|---|
-| P1 | [N] | 50% context window alert hook |
+| ~~P1~~ | ~~[N]~~ | ~~50% context window alert hook~~ ✅ |
 | P1 | [V] | Telegram bot token rotation (BotFather → /revoke → new token to Nico) |
 | P1 | [V] | Create Slack workspace + bot token |
 | P2 | [N] | Phase 0E — metadata standards enforcement |
@@ -64,7 +64,7 @@ _Nico executes without Vincent. Ordered by priority._
 3. ~~task-board.md~~ ✅ Built (2026-02-23)
 4. ~~Master list consolidation~~ ✅ Done (2026-02-23)
 5. ~~Obsidian Phase 1~~ ✅ Mostly done (app.json, plugins, git repo — 2026-02-23)
-6. **[P1]** 50% context window alert hook
+6. ~~50% context window alert hook~~ ✅ Done (statusline + Telegram alert, 2026-02-23)
 7. ~~Telegram bot token rotation~~ → moved to Vincent's Actions (needs BotFather)
 8. **[P2]** Phase 0E remaining — metadata standards enforcement
 9. **[P2]** LettaBot Telegram poller conflict — investigate and fix
@@ -133,11 +133,14 @@ _Dependency: None. Build tonight. Vincent needs to be reachable when Nico is blo
   - [x] 1b. Test: alerts working via Telegram ✅
   - [x] 1c. Add usage to CLAUDE.md session protocol ✅
   - [x] 1d. Add call to `/handoff` skill ✅
-- [ ] 2. **[P1][N]** 50% context window alert
-  - [ ] 2a. Research: can Claude Code hooks inspect token count?
-  - [ ] 2b. Build hook or script that fires at 50% context
-  - [ ] 2c. Alert method: iMessage to Vincent (uses alert script from task 1)
-  - [ ] 2d. Message: "Context at 50% — consider forking session or starting new one"
+- [x] 2. **[P1][N]** 50% context window alert ✅ (done 2026-02-23)
+  - [x] 2a. Research: hooks can't inspect token count — StatusLine is the only mechanism ✅
+  - [x] 2b. Built statusline script (context-monitor.sh) — fires Telegram alert at 50% ✅
+  - [x] 2c. Alert via Telegram (uses imessage-alert.sh) ✅
+  - [x] 2d. Message: "Context window at X% — consider /compact or starting new session" ✅
+- [x] 3. **[P1][N]** Permission prompt alert ✅ (done 2026-02-23)
+  - [x] 3a. Built Notification hook (permission_prompt matcher) → Telegram alert ✅
+  - [x] 3b. 2-minute cooldown prevents spam ✅
 
 ---
 
@@ -516,6 +519,8 @@ _Dependency: Phase 3 + Phase 7 Task 3 + Phase 8. Autonomous content organization
 - [x] Wikilinks standard added to vault CLAUDE.md (2026-02-23)
 - [x] Files-open-in-Obsidian rule added to CLAUDE.md (2026-02-23)
 - [x] Session CC-5 audit: status.md synced with reality (2026-02-23)
+- [x] 50% context window alert: statusline script + Telegram alert at 50% (2026-02-23)
+- [x] Permission prompt alert: Notification hook + Telegram when approval needed (2026-02-23)
 
 ---
 
@@ -558,6 +563,8 @@ _Dependency: Phase 3 + Phase 7 Task 3 + Phase 8. Autonomous content organization
 - `~/Nico/CabinetAgentVault/00-dashboard/task-board.md` — Obsidian task snapshot (Nico writes at session start/end)
 - `~/Nico/CabinetAgentVault/05-reviews/` — docs for Vincent to review in Obsidian
 - `~/Nico/Scripts/imessage-alert.sh` — alert Vincent when approval needed (working via Telegram)
+- `~/Nico/Scripts/context-monitor.sh` — statusline: shows ctx% + alerts at 50%
+- `~/Nico/Scripts/permission-alert.sh` — Notification hook: alerts when permission prompt fires
 - `~/Nico/Scripts/auto-backup.sh` — workspace backup every 6hrs
 - `~/Nico/Scripts/search.sh` — DuckDuckGo search
 - `~/.claude/skills/handoff/SKILL.md` — end-of-session handoff skill

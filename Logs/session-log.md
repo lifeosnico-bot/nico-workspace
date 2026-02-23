@@ -135,3 +135,18 @@ All Claude Code sessions logged here. Format: date, agent, summary of work done.
 - P1: Telegram bot token rotation
 - P2: Phase 0E metadata standards enforcement
 - Blocked on Vincent: Slack workspace, 1Password, Obsidian Phase 2, comms decision
+
+## 2026-02-23 13:27–13:45 EST | Claude Code | Session CC-6
+
+### Completed
+- 50% context window alert: statusline script (context-monitor.sh) + Telegram alert at 50%
+- Permission prompt alert: Notification hook (permission-alert.sh) + Telegram when approval needed
+- Both tested and confirmed working
+- StatusLine is the only mechanism with context window metrics (hooks don't get token counts)
+
+### Decisions
+- StatusLine over hooks for context monitoring (hooks don't receive token data)
+
+### Next Session
+- P2: Phase 0E metadata standards enforcement
+- Blocked on Vincent: Telegram token rotation, Slack, 1Password, Obsidian Phase 2
