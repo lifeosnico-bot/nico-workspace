@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05-reviews/tasks/2026-02-23_task-architecture-plan.md",
+                "file": "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-02-23_task-architecture-plan"
+              "title": "Addedndums to 2026-02-23_task-architecture-plan"
             }
           }
         ]
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "05-reviews/tasks/2026-02-23_task-architecture-plan.md",
+                "file": "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2026-02-23_task-architecture-plan"
+              "title": "Backlinks for Addedndums to 2026-02-23_task-architecture-plan"
             }
           },
           {
@@ -127,12 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "05-reviews/tasks/2026-02-23_task-architecture-plan.md",
+                "file": "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2026-02-23_task-architecture-plan"
+              "title": "Outgoing links from Addedndums to 2026-02-23_task-architecture-plan"
             }
           },
           {
@@ -170,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "05-reviews/tasks/2026-02-23_task-architecture-plan.md",
+                "file": "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2026-02-23_task-architecture-plan"
+              "title": "Outline of Addedndums to 2026-02-23_task-architecture-plan"
             }
           }
         ]
@@ -197,10 +197,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "fa1654097f2b6850",
+  "active": "ddf67591b6a2c0c4",
   "lastOpenFiles": [
-    "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
     "05-reviews/tasks/2026-02-23_task-architecture-plan.md",
+    "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
     "05-reviews/README.md",
     "05-reviews/housekeeping/vault-consolidation-review.md",
     "01-inbox/_index.md",
