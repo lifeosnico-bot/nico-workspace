@@ -88,8 +88,10 @@ _Land here first, get triaged into phases by Nico. Items below have been assigne
 - [x] Evaluate /todos /plan → adopted plan mode + todos this session (CC-5)
 - [x] Obsidian file open rule → already added to CLAUDE.md
 
-### Remaining (23 items, triaged)
+### Remaining (25 items, triaged)
 - [ ] **[P1][V]** Final comms decision: pick canonical channel (Telegram vs iMessage vs other) — partially done, needs final pick
+- [ ] **[P4][N]** `/peekaboo` skill: create enable/disable toggle for Peekaboo MCP ✅ DONE (built 2026-02-23)
+- [ ] **[P4][N]** Peekaboo disabled by default — saves ~9.8k tokens/session. Re-enable via `/peekaboo on` + restart when GUI automation needed
 - [ ] **[P3][N]** Session log gap: Feb 21 CC session not logged — add entry
 - [ ] **[P3][N]** "Why so many Nico bots" — document all bots/agents and their roles
 - [ ] **[P3][N]** Claude Code hooks discipline — verify SessionStart/Stop scripts still working
