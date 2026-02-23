@@ -47,7 +47,7 @@ The single source of truth for all work is ~/Nico/Memory/status.md. Both Cowork 
 
 ### Quick Commands
 Vincent may use these shorthand commands from any surface (text, voice, Cowork, Claude Code):
-- **adl [description]** — Add to list. Triage into the right phase/task/subtask. Decompose immediately.
+- **atl [description]** — Add to list. Triage into the right phase/task/subtask. Decompose immediately.
 - **sts** — Show current status. What's in progress, what's next.
 - **done [task]** — Mark a task complete in status.md.
 - **blocker [description]** — Flag something as blocked with reason.

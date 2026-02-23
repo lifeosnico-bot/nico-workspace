@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-23 00:56 EST | **Updated by**: Claude Code (overnight session) | **Session**: TG-2
+**Last Updated**: 2026-02-23 01:06 EST | **Updated by**: Claude Code (overnight session) | **Session**: TG-2
 
 ## Current State
 
@@ -27,14 +27,14 @@ Phase 0D ✅, LettaBot ✅, Phase 0E ✅, Daily briefing ✅ COMPLETE. **Platfor
 ## Quick Commands
 _Use these shorthand commands from any surface (text, voice, Cowork, Claude Code):_
 
-- **adl [description]** — Add to list. Nico triages it into the right phase/task/subtask.
+- **atl [description]** — Add to list. Nico triages it into the right phase/task/subtask.
 - **sts** — Show current status. What's in progress, what's next.
 - **done [task]** — Mark a task complete.
 - **blocker [description]** — Flag something as blocked with reason.
 - **pri [task] [high/med/low]** — Change priority of a task.
 - **note [phase] [text]** — Add a note to a phase without creating a task.
 
-_These work conversationally — just say "adl: set up automated testing for portal" and Nico handles placement and decomposition._
+_These work conversationally — just say "atl: set up automated testing for portal" and Nico handles placement and decomposition._
 
 ---
 
@@ -95,7 +95,7 @@ _Dependency: None. **#1 PRIORITY — do first. Nothing else matters if the CEO c
   - [ ] 3a. Connect Cowork to Slack (MCP connector — platform already offers this)
   - [ ] 3b. Research Claude Code ↔ Slack integration (bot token vs. Slack App vs. API)
   - [ ] 3c. Implement Claude Code → Slack posting (status updates, task completions)
-  - [ ] 3d. Test: Vincent posts `adl: something` in #tasks from phone → Nico picks it up
+  - [ ] 3d. Test: Vincent posts `atl: something` in #tasks from phone → Nico picks it up
   - [ ] 3e. Test: agent completes task → posts to #status automatically
 - [ ] 4. SSH from phone as terminal fallback (blocked by Phase 0D)
   - [ ] 4a. Fix SSH from M3 → M1 first (Phase 0D must complete)
