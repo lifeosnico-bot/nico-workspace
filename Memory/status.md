@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-23 01:06 EST | **Updated by**: Claude Code (overnight session) | **Session**: TG-2
+**Last Updated**: 2026-02-23 01:52 EST | **Updated by**: Claude Code (overnight session) | **Session**: TG-2
 
 ## Current State
 
@@ -52,6 +52,17 @@ _Quick captures that haven't been triaged yet._
 - [ ] **2026-02-22 03:00 AM** — "Watch vid of pa guy in hall in Philly" — personal reminder for Vincent _(Apple Notes)_
 - [ ] **2026-02-22 03:00 AM** — M1 display name: change to "Nico Agent" in System Settings → General → About → Name (requires Vincent, sudo) _(Apple Notes)_
 - [ ] **2026-02-22 03:00 AM** — Exa API key: get free tier at dashboard.exa.ai (1000/mo) — Vincent creates account, enters key via terminal _(overnight)_
+- [ ] **2026-02-23** ⭐ DESIGN: Task management system overhaul — inbox model, owner lanes (Nico/Vincent/Agents), priority 1-5 rating, Obsidian as front-end, decide Apple apps role _(atl)_
+- [ ] **2026-02-23** — Context window 50% alert: script/hook to warn when context hits 50%, prompt to fork or start new session _(atl)_
+- [ ] **2026-02-23** — Quick entry for atl: need faster capture flow (voice, widget, Shortcut, or Slack 1-liner) _(atl)_
+- [ ] **2026-02-23** — Inbox model for tasks: items land in inbox first, get organized later — replaces direct-to-phase adds _(atl)_
+- [ ] **2026-02-23** — Obsidian as task/project/reminders/appointments front-end: design how vault surfaces the live list _(atl)_
+- [ ] **2026-02-23** — Apple apps evaluation: Reminders, Notes, Calendar, Mail, Numbers, Pages, Script Editor — assess for interim use (security/container benefits) _(atl)_
+- [ ] **2026-02-23** — Task priority rating system: 1 = critical → 5 = someday. Apply to all tasks. _(atl)_
+- [ ] **2026-02-23** — Bookmarked/pinned task list view in Obsidian: Vincent can open it instantly on any device _(atl)_
+- [ ] **2026-02-23** — Task owner lanes: split list into Vincent tasks / Nico tasks / Agent-delegatable tasks _(atl)_
+- [ ] **2026-02-23** — Heartbeat + cron + communication layer: research "OpenClaw"-style autonomous agent loop (heartbeat, scheduled tasks, proactive comms) _(atl)_
+- [ ] **2026-02-23** — Evaluate Claude Code /todos, /plan slash commands for task organization workflow _(atl)_
 
 ---
 

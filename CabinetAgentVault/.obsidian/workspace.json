@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05-reviews/housekeeping/vault-consolidation-review.md",
+                "file": "01-inbox/_index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "vault-consolidation-review"
+              "title": "_index"
             }
           }
         ]
@@ -74,13 +74,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "02e5e5a00cc0ebe3",
@@ -96,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "05-reviews/housekeeping/vault-consolidation-review.md",
+                "file": "01-inbox/_index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for vault-consolidation-review"
+              "title": "Backlinks for _index"
             }
           },
           {
@@ -115,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "05-reviews/housekeeping/vault-consolidation-review.md",
+                "file": "01-inbox/_index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from vault-consolidation-review"
+              "title": "Outgoing links from _index"
             }
           },
           {
@@ -158,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "05-reviews/housekeeping/vault-consolidation-review.md",
+                "file": "01-inbox/_index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of vault-consolidation-review"
+              "title": "Outline of _index"
             }
           }
         ]
@@ -187,6 +185,7 @@
   },
   "active": "ddf67591b6a2c0c4",
   "lastOpenFiles": [
+    "05-reviews/housekeeping/vault-consolidation-review.md",
     "05-reviews/README.md",
     "CLAUDE.md"
   ]
