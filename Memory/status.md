@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-23 04:42 EST | **Updated by**: Claude Code | **Session**: session-4-consolidation
+**Last Updated**: 2026-02-23 09:10 EST | **Updated by**: Claude Code | **Session**: session-5-morning
 
 ---
 
@@ -8,8 +8,8 @@
 
 Phase 0D ✅, LettaBot ✅, Phase 0E ✅, Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅. **Platform decision MADE: Slack** (future comms backbone). **Obsidian is current front-end for everything** — no Apple apps until further notice. iMessage approved for alerts/approvals only. `/handoff` skill built. Task architecture plan approved and in progress.
 
-**#1 PRIORITY (Nico — tonight):** iMessage alert script + master list consolidation + vault housekeeping.
-**#1 PRIORITY (Vincent — morning):** Create Slack workspace + bot token → give to Nico via terminal.
+**#1 PRIORITY (Vincent):** Create Slack workspace + bot token → give to Nico via terminal.
+**#1 PRIORITY (Nico):** 50% context alert hook → Obsidian Phase 1 completion.
 
 ---
 
