@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-22 16:43 EST | **Updated by**: Claude Code (overnight session) | **Session**: TG-2
+**Last Updated**: 2026-02-22 19:41 EST | **Updated by**: Claude Code (overnight session) | **Session**: TG-2
 
 ## Current State
 
@@ -10,14 +10,16 @@ Phase 0D ✅, LettaBot ✅, Phase 0E ✅, Daily briefing ✅ COMPLETE. **Platfor
 
 **Next action:** Vincent creates Slack workspace → Nico sets up all channels and integrations
 
-**Priority order (revised 2026-02-22 overnight):**
-1. Slack setup: Vincent creates workspace + bot (5 min) → Nico handles everything else
-2. Phase 0F Task 1: Test claude.ai/code remote sessions from iPhone (zero setup)
-3. Termius on iPhone + Tailscale (SSH from phone)
-4. Obsidian install + vault
-5. Agent layer: Research Director + Ops Manager (Letta agents)
-6. Phase 0A: Consolidate chat data
-7. Status.md split: CEO vs CoS tracks
+**Priority order (revised 2026-02-22 19:22 EST):**
+1. ~~Termius on iPhone + Tailscale (SSH from phone)~~ ✅ DONE (2026-02-22)
+2. ~~Passwordless sudo (NOPASSWD: ALL)~~ ✅ DONE (2026-02-22)
+3. ~~Obsidian installed~~ ✅ DONE (2026-02-22)
+4. ~~Claude Code --dangerously-skip-permissions alias~~ ✅ DONE (2026-02-22)
+5. Obsidian vault setup (structure + templates)
+6. Slack setup: Vincent creates workspace + bot → Nico handles everything else
+7. Agent layer: Research Director + Ops Manager (Letta agents)
+8. Phase 0A: Consolidate chat data
+9. Status.md split: CEO vs CoS tracks
 
 ---
 

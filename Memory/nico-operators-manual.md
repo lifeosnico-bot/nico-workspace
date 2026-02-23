@@ -37,12 +37,18 @@ pgrep -fl "lettabot"
 ```
 2) Send `ping` in Telegram.
 
-## D) Primary Interfaces
+## D) Bot Map (always the same)
+- **Nico** = the agent (same ID as Memo)
+- **Memo** = legacy name for Nico (same agent)
+- **LettaBot** = Telegram bridge only (not an agent)
+- **Claude Code** = interactive dev assistant (separate)
+
+## E) Primary Interfaces
 - **Telegram (LettaBot on M1)** = real Nico with M1 access.
 - **Claude iOS / claude.ai/code** = cloud fallback only.
 - **Letta web chat** = cloud fallback only.
 
-## E) File System Map (Quick)
+## F) File System Map (Quick)
 - `/Users/lifeos.nico/Nico/Memory/status.md`
 - `/Users/lifeos.nico/Nico/Memory/decisions.md`
 - `/Users/lifeos.nico/Nico/911.md`

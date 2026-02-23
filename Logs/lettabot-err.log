@@ -16023,3 +16023,135 @@ Node.js v25.6.1
     at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17)
 [Bot] Result error: error=error, stopReason=error, duration=6611ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
 [Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
+[Telegram] MarkdownV2 edit failed, falling back to raw text: GrammyError: Call to 'editMessageText' failed! (400: Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\')
+    at toGrammyError (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async TelegramAdapter.editMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/channels/telegram.js:481:13)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1009:37)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17) {
+  method: 'editMessageText',
+  payload: {
+    chat_id: '8385420240',
+    message_id: 569,
+    text: 'Here’s the *deep‑dive summary* based on local logs/configs\\. Short and direct:\n' +
+      '\n' +
+      '*What cost money \\(found evidence\\)*\n' +
+      '\n' +
+      '*Claude Code usage \\(Anthropic billing\\)*\n' +
+      '\n' +
+      '•   Project `/Users/lifeos.nico/Nico` used *Claude Opus 4\\.6* and *Haiku 4\\.5*\\.\n' +
+      '•   Recent session cost logged in `.claude.json`: *\\~$5\\.93*\\.\n' +
+      '•   *Email on subscription*: `vjimbriani@gmail.com`\n' +
+      '•   Billing type: *stripe\\_subscription* \\(Claude Code subscription active\\)\\.\n' +
+      '\n' +
+      '*Letta / LettaBot*\n' +
+      '\n' +
+      '•   Your report in lettabot log: *$40 spent in <48 hours* from $20 credit\\.\n' +
+      '•   That’s from *Letta API usage*, not Claude Code subscription\\.\n' +
+      '\n' +
+      '*Models we used \\(found in configs\\)*\n' +
+      '\n' +
+      '•   *Claude Opus 4\\.6* \\(most expensive\\)\n' +
+      '•   *Claude Sonnet 4\\.5*\n' +
+      '•   *Claude Haiku 4\\.5* \\(cheapest\\)\n' +
+      '\n' +
+      '*Did ChatGPT subscription activate?*\n' +
+      '\n' +
+      'No evidence in local configs/logs of *OpenAI/GPT* usage\\.\\\n' +
+      'All billing seen is *Anthropic \\+ Letta*\\.\n' +
+      '\n' +
+      '*Why Letta charges for browser search*\n' +
+      '\n' +
+      'Letta’s built‑in `web_search` uses a paid provider \\(Exa\\)\\.\\\n' +
+      'When credits are exhausted, usage costs money\\.\n' +
+      '\n' +
+      'We already installed a *free DuckDuckGo search script* \\(`~/Nico/Scripts/search.sh`\\) to avoid Exa spend\\.\n' +
+      '\n' +
+      '*Are agents charged separately?*\n' +
+      '\n' +
+      '•   *Letta agents* → charge against Letta credits\\.\n' +
+      '•   *Claude Code agents* → charge against Anthropic usage \\(subscription \\+ overage\\)\\.\n' +
+      '\n' +
+      '*What happened \\(likely\\)*\n' +
+      '\n' +
+      '•   We ran long Claude Code sessions on *Opus 4\\.6* \\(expensive\\)\\.\n' +
+      '•   LettaBot usage \\+ web\\_search burned Letta credits fast\\.\n' +
+      '•   Exa search calls consume credits quickly\\.\n' +
+      '\n' +
+      '---\n' +
+      '\n' +
+      'If you want, I can open the exact log files and show\n',
+    parse_mode: 'MarkdownV2'
+  },
+  ok: false,
+  error_code: 400,
+  description: "Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\\'",
+  parameters: {}
+}
+[Telegram] MarkdownV2 edit failed, falling back to raw text: GrammyError: Call to 'editMessageText' failed! (400: Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\')
+    at toGrammyError (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async TelegramAdapter.editMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/channels/telegram.js:481:13)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1127:25)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17) {
+  method: 'editMessageText',
+  payload: {
+    chat_id: '8385420240',
+    message_id: 569,
+    text: 'Here’s the *deep‑dive summary* based on local logs/configs\\. Short and direct:\n' +
+      '\n' +
+      '*What cost money \\(found evidence\\)*\n' +
+      '\n' +
+      '*Claude Code usage \\(Anthropic billing\\)*\n' +
+      '\n' +
+      '•   Project `/Users/lifeos.nico/Nico` used *Claude Opus 4\\.6* and *Haiku 4\\.5*\\.\n' +
+      '•   Recent session cost logged in `.claude.json`: *\\~$5\\.93*\\.\n' +
+      '•   *Email on subscription*: `vjimbriani@gmail.com`\n' +
+      '•   Billing type: *stripe\\_subscription* \\(Claude Code subscription active\\)\\.\n' +
+      '\n' +
+      '*Letta / LettaBot*\n' +
+      '\n' +
+      '•   Your report in lettabot log: *$40 spent in <48 hours* from $20 credit\\.\n' +
+      '•   That’s from *Letta API usage*, not Claude Code subscription\\.\n' +
+      '\n' +
+      '*Models we used \\(found in configs\\)*\n' +
+      '\n' +
+      '•   *Claude Opus 4\\.6* \\(most expensive\\)\n' +
+      '•   *Claude Sonnet 4\\.5*\n' +
+      '•   *Claude Haiku 4\\.5* \\(cheapest\\)\n' +
+      '\n' +
+      '*Did ChatGPT subscription activate?*\n' +
+      '\n' +
+      'No evidence in local configs/logs of *OpenAI/GPT* usage\\.\\\n' +
+      'All billing seen is *Anthropic \\+ Letta*\\.\n' +
+      '\n' +
+      '*Why Letta charges for browser search*\n' +
+      '\n' +
+      'Letta’s built‑in `web_search` uses a paid provider \\(Exa\\)\\.\\\n' +
+      'When credits are exhausted, usage costs money\\.\n' +
+      '\n' +
+      'We already installed a *free DuckDuckGo search script* \\(`~/Nico/Scripts/search.sh`\\) to avoid Exa spend\\.\n' +
+      '\n' +
+      '*Are agents charged separately?*\n' +
+      '\n' +
+      '•   *Letta agents* → charge against Letta credits\\.\n' +
+      '•   *Claude Code agents* → charge against Anthropic usage \\(subscription \\+ overage\\)\\.\n' +
+      '\n' +
+      '*What happened \\(likely\\)*\n' +
+      '\n' +
+      '•   We ran long Claude Code sessions on *Opus 4\\.6* \\(expensive\\)\\.\n' +
+      '•   LettaBot usage \\+ web\\_search burned Letta credits fast\\.\n' +
+      '•   Exa search calls consume credits quickly\\.\n' +
+      '\n' +
+      '---\n' +
+      '\n' +
+      'If you want, I can open the exact log files and show the lines\\.\n',
+    parse_mode: 'MarkdownV2'
+  },
+  ok: false,
+  error_code: 400,
+  description: "Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\\'",
+  parameters: {}
+}
