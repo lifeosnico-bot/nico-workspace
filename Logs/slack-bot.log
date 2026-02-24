@@ -1,22 +1,46 @@
 [dotenv@16.6.0] injecting env (5) from .env
-[2026-02-24T00:39:50.599Z] [INFO] [Main] Starting Claude Code Slack bot
+[2026-02-24T00:54:08.715Z] [INFO] [Main] Starting Claude Code Slack bot
 {
-  "debug": false,
+  "debug": true,
   "useBedrock": false,
   "useVertex": false
 }
-[2026-02-24T00:39:50.607Z] [INFO] [McpManager] No MCP configuration file found
+[2026-02-24T00:54:08.719Z] [INFO] [McpManager] No MCP configuration file found
 {
   "path": "/Users/lifeos.nico/Nico/Projects/slack-bot/mcp-servers.json"
 }
-[2026-02-24T00:39:51.035Z] [INFO] [Main] ⚡️ Claude Code Slack bot is running!
-[2026-02-24T00:39:51.035Z] [INFO] [Main] Configuration:
+[2026-02-24T00:54:09.132Z] [INFO] [Main] ⚡️ Claude Code Slack bot is running!
+[2026-02-24T00:54:09.132Z] [INFO] [Main] Configuration:
 {
   "usingBedrock": false,
   "usingVertex": false,
   "usingAnthropicAPI": true,
-  "debugMode": false,
+  "debugMode": true,
   "baseDirectory": "/Users/lifeos.nico/Nico/",
   "mcpServers": 0,
   "mcpServerNames": []
 }
+[2026-02-24T00:54:39.752Z] [INFO] [SlackHandler] Handling direct message event
+[2026-02-24T00:54:39.754Z] [DEBUG] [SlackHandler] Received message from Slack
+{
+  "user": "U0AGDT1CX6E",
+  "channel": "D0AGH4ZMT51",
+  "ts": "1771894479.156779",
+  "text": "Hi",
+  "fileCount": 0
+}
+[2026-02-24T00:54:39.756Z] [DEBUG] [WorkingDirectoryManager] No working directory configured
+{
+  "channelId": "D0AGH4ZMT51"
+}
+[2026-02-24T00:57:43.948Z] [INFO] [SlackHandler] Handling direct message event
+[2026-02-24T00:57:43.950Z] [DEBUG] [SlackHandler] Received message from Slack
+{
+  "user": "U0AGDT1CX6E",
+  "channel": "D0AGH4ZMT51",
+  "thread_ts": "1771894479.156779",
+  "ts": "1771894662.734149",
+  "text": "cwd / Users/lifeos.nico/Nico/",
+  "fileCount": 0
+}
+[2026-02-24T00:59:08.715Z] [DEBUG] [SlackHandler] Running session cleanup
