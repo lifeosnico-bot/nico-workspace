@@ -1,0 +1,22 @@
+[dotenv@16.6.0] injecting env (5) from .env
+[2026-02-24T00:39:50.599Z] [INFO] [Main] Starting Claude Code Slack bot
+{
+  "debug": false,
+  "useBedrock": false,
+  "useVertex": false
+}
+[2026-02-24T00:39:50.607Z] [INFO] [McpManager] No MCP configuration file found
+{
+  "path": "/Users/lifeos.nico/Nico/Projects/slack-bot/mcp-servers.json"
+}
+[2026-02-24T00:39:51.035Z] [INFO] [Main] ⚡️ Claude Code Slack bot is running!
+[2026-02-24T00:39:51.035Z] [INFO] [Main] Configuration:
+{
+  "usingBedrock": false,
+  "usingVertex": false,
+  "usingAnthropicAPI": true,
+  "debugMode": false,
+  "baseDirectory": "/Users/lifeos.nico/Nico/",
+  "mcpServers": 0,
+  "mcpServerNames": []
+}
