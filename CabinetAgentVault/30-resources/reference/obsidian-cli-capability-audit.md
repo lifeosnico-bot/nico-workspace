@@ -3,6 +3,7 @@ title: "Obsidian CLI Capability Audit"
 type: reference
 status: active
 created: 2026-02-15
+modified: 2026-02-23
 source: chat
 tags: [obsidian, cli, reference]
 ---

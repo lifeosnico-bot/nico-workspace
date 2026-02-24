@@ -1,100 +1,200 @@
 ---
-title: "50 Days Running an AI Agent — Key Lessons"
+title: "OpenClaw — 50 Days of Real Use Cases"
 type: research
 status: complete
 created: 2026-02-22
+modified: 2026-02-23
 source: nico
-tags: [ai-agent, openclaw, research, video]
-url: https://youtu.be/NZ1mKAWJPr4
+url: https://youtube.com/watch?v=NZ1mKAWJPr4
+tags: [openclaw, ai-assistant, workflow, architecture, video]
 ---
 
-# 50 Days Running an AI Agent — Key Lessons
-**Source**: https://youtu.be/NZ1mKAWJPr4
-**Processed**: 2026-02-22 | Claude Code | Session CC-1
+# OpenClaw — 50 Days of Real Use Cases
 
----
-
-## 3 Foundational Principles
-1. **Markdown first** — everything in plain text files, no proprietary databases. Data is portable, readable by any tool, no lock-in.
-2. **Separate contexts** — one channel per workflow type. Never mix research, analytics, daily tasks, and bookmarks in one conversation.
-3. **Match model to task** — Opus only for deep thinking, cheap models for routine work.
+**Source**: YouTube `NZ1mKAWJPr4` by the creator of Clawdiverse and the official OpenClaw setup video
+**Processed**: 2026-02-22
 
 ---
 
-## What Worked Best
-- **Morning briefing** — scans feeds, writes to Obsidian, compounds value over time as agent starts connecting dots
-- **Heartbeat every 30 min** — proactively catches emails, calendar events, service failures without being asked
-- **Parallel sub-agents for research** — orchestrator spawns 5+ agents simultaneously, each gets own context window, produced 50+ pages of structured research in minutes
-- **File-based memory** — ~3,000 Obsidian notes, semantic search via QMD, never relies on conversation context alone
-- **Per-channel model routing** — biggest single cost and quality improvement. Different model per Discord channel based on what that channel actually does
-- **Agent gets better over time** — 50 days in it anticipates needs, has internalized style and preferences. Compounds.
-- **Nightly backup cron** — full restore in 30 min from any failure. Backs up config, workflows, cron schedules, memory/soul files
+## 3 Core Principles (After 50 Days)
+
+1. **Markdown-first** — Everything in plain text files (Obsidian). No lock-in. Data moves in 5 seconds.
+2. **Separate contexts** — One Discord channel per workflow. Research doesn't bleed into analytics.
+3. **Match model to task** — Opus for deep thinking, cheap models for routine work. Costs stop being scary.
 
 ---
 
-## Biggest Pitfalls
-- **Silent context compaction** — context fills up, agent silently forgets things mid-task. No warning. Mitigation: write everything to files as it happens, monitor context %, start new session at 50%, run `/compact` manually before system does it
-- **Cost without model routing** — Opus everywhere becomes "scary" expensive fast
-- **Browser automation** — 5/10 reliability. Sessions drop, agent goes silent. Not reliable for complex tasks yet
-- **Complex multi-step tasks need babysitting** — simple tasks 8/10 reliable, complex tasks need check-ins
-- **"What do I automate" problem** — tool won't invent workflows for you. Only valuable if you already have systems
+## The 50-Day Evolution
+
+| Phase | What Happens |
+|-------|-------------|
+| Week 1 | Novelty. Using it like ChatGPT. Decide: markdown-first from day one. |
+| Week 3 | Start building automations: morning briefings, background checks. |
+| Week 5 | Hit the wall. Everything in one conversation = context pollution. **Migrate to Discord.** |
+| Week 7 | Separate contexts. Per-channel model routing. |
+| Week 8+ | Stops being a chatbot. Becomes a system. |
 
 ---
 
-## Technical Architecture
+## 20 Use Cases
 
-### Channel Structure (Discord)
-- One channel per workflow type
-- Start with 2-3, add only when genuinely needed
-- Per-channel model routing: Opus for research, cheap for heartbeats/bookmarks/routine
+### Automated (Daily, No Intervention)
 
-### Sub-agent Orchestration
-- Main agent = orchestrator
-- Spawns parallel sub-agents for research, each with own context window
-- Keeps main agent context clean
+**1. Morning Twitter Briefing (7 AM)**
+- Scans followed accounts → picks top 10 → writes to Obsidian + video ideas backlog + sends summary
+- Value compounds: connects related content across notes
 
-### Cron Jobs
-- **4am** — auto-update: updates packages, restarts services, reports failures
-- **4:30am** — backup: config, workflows, cron schedules, soul/memory files
-- **Every 30 min** — heartbeat: email scan, calendar check, service monitoring
+**2. Historical Image of the Day**
+- Fetches Wikipedia "On This Day" → generates woodcut-style image of 10 seconds before the event → pushes to e-ink display (TRMNL)
+- Mystery mode: only shows date/location, user guesses the event
 
-### Security
-- Draft-only mode for email (no sending without approval)
-- Command deny list for destructive actions (require explicit approval)
-- Treat email content as hostile input (prompt injection risk)
-- Tailscale for private networking — no public-facing connectivity
+**3. Self-Updating (4 AM cron)**
+- Pulls ClawHub skill updates → restarts gateway → reports results
+- Breaks during update? It tells you.
+
+**4. Daily Backup (4:30 AM cron)**
+- Backs up: config files, workflows, cron schedules, SOUL file, MEMORY files, skills
+- Server dies → back up in 30 min, not rebuilding from scratch
+
+**5. Heartbeat Checks (Every 30 min)**
+- Scans email, checks calendar, monitors services
+- Caught: Netflix payment failure, domain renewals, almost-missed meetings, relevant newsletter articles
+- **Important**: Email is **draft-only**. Reads, flags, drafts. Never sends without approval. (Security: treat inbox as hostile re: prompt injection)
+
+### Research & Content
+
+**6. Parallel Research Agents**
+- Spawn 5 simultaneous sub-agents: Twitter, Reddit, HN, YouTube, forums
+- Produced 50+ pages of structured research for one video in minutes
+- Define freshness: last 7 days, last 3 months, etc.
+
+**7. YouTube Analytics Channel**
+- Natural language queries over API data: "How did my last 5 videos compare on retention?"
+- Synthesizes numbers + gives advice. More flexible than YouTube Studio.
+
+**8. Video Idea Research Channel**
+- Drop links, articles, tweets, half-formed thoughts throughout the week
+- Agent enriches, connects, builds context over time
+- By filming day: weeks of accumulated organized research waiting. Don't start from scratch.
+- Why separate channels: analytics context isolated, research builds without polluting other conversations.
+
+**9. URL Summarizer**
+- `/summarize [URL]` → works on articles, YouTube videos, research papers, PDFs
+- Returns: what it's about, core message, key numbers, practical steps
+- Then: expand, confirm, or save to Obsidian
+
+### Infrastructure / DevOps
+
+**10. Server Remote Control**
+- Migrated from ClawdBot to OpenClaw autonomously (killed zombie process at 160% CPU, fixed 7 days of broken crons)
+- Connected to VPS via API → check health, fix apps, restart services — no SSH needed
+- **Security**: allow-list + deny-list of commands. Denied commands require explicit approval.
+
+**11. Code from Phone**
+- Tell agent: fix bug, build feature, create PR — from phone while away from desk
+- Creator's use: quick fixes and testing ideas on the go only. **Main workflow still Claude Code + Codex on desktop.**
+
+### Daily Life
+
+**12. Email Triage**
+- Reads inbox → flags important → drafts responses → human reviews and sends
+- Can reply same day instead of batching to weekends
+
+**13. Calendar + Family Management**
+- WhatsApp group (for non-Telegram/Discord family)
+- Drop: "Schedule dentist Thursday 3 PM" → done
+- Wife can add events, check schedule, get reminders — same chat interface
+
+**14. Voice Note Transcription**
+- Voice message on WhatsApp/Telegram/Discord → Whisper model transcribes → responds in text
+- Quick thoughts while driving, shopping lists walking, meeting notes
+- Important things → saves to Obsidian or drafts email automatically
+
+**15. Local Search (Google Places API)**
+- "Find coffee shop within walking distance" → ratings, reviews, walking time, prices
+- Used for: finding snowboard boots in size (large foot) → checked 3 shops for availability → bought in 20 min
+
+**16. Weather (Context-Aware)**
+- Not just "tomorrow is sunny" — warned about -19°C cold snap incoming
+
+**17. Smart Reminders**
+- Rehab exercises with snooze, meeting reminders before weekly calls
+
+**18. Friend Tech Support**
+- Added friend to WhatsApp group with agent → agent guided 3.5-hour OpenClaw setup in non-English language
+- Read error screenshots, explained fixes, gave next steps
+- Agent answered 90% of questions. Non-technical user (accounting company) now running automations.
+
+**19. Family Group Chat**
+- Agent adds jokes and second opinions in family group
+- Fun use case, not just utility
+
+### Architecture & Knowledge
+
+**20. Discord Channel Architecture + Model Routing**
+- Replaced: Raindrop (paid bookmark app) with a Discord `#inbox` channel
+- Drop any link → agent summarizes, extracts key info, creates tags, builds knowledge graph → saves to Obsidian → cheaper model
+- Canceled Raindrop. Doesn't miss it.
 
 ---
 
-## Cost Optimization
-- Opus: deep research, complex reasoning, synthesis only
-- Cheap model: heartbeats, sub-agents, bookmark processing, routine tasks
-- Context management also reduces cost — shorter contexts = fewer tokens billed
+## Discord Architecture (Migrated from Telegram at Week 5)
+
+Why not Telegram: "Switching to Discord wasn't about the app itself. It was about the architecture."
+
+| Channel | Purpose | Model |
+|---------|---------|-------|
+| `#general` / daily | Daily assistant tasks | Cheap |
+| `#youtube-analytics` | YouTube API queries | Cheap (data retrieval) |
+| `#video-research` | Video idea accumulation | Medium |
+| `#research` | Deep research (parallel agents) | Opus |
+| `#inbox` | Bookmarks / link processing | Cheap |
+| `#devops` | Server control | As needed |
+
+Rule: Only add a new channel when you really, really need it.
 
 ---
 
-## Evolution Timeline
-- **Week 1**: Testing, using like ChatGPT
-- **Week 3**: Building automations, starts feeling useful
-- **Week 5**: Hit a wall — context pollution, everything mixed. Need to separate contexts
-- **Week 7**: Per-model routing kicks in, costs drop, feels like a system not a chatbot
-- **Week 8+**: Stop using the tool, start designing how you interact with it
+## Knowledge Base (Obsidian)
+
+- ~3000 notes
+- Agent indexes all notes nightly using **QMD for semantic search**
+- Semantic (not keyword): "What did I decide about thumbnail design last month?" → finds exact note
+- Most workflows feed output into Obsidian as markdown
 
 ---
 
-## His "Start Here" Recommendation
-1. Draft-only email triage with urgent alerts
-2. Daily briefing that writes to a markdown file
-3. One inbox channel for bookmarks — drop links, agent enriches and builds knowledge base
+## Honest Failure Modes (From Transcript)
+
+- **Week 5 context pollution**: Everything in one conversation. Solution: Discord channels.
+- **Self-update breakage**: Sometimes updates break things. Solution: automated reporting, easy restore from backup.
+- **Email prompt injection risk**: No robust solution yet. Keep email in draft-only mode indefinitely.
+- **Phone coding is limited**: Only quick fixes. Desktop still needed for real development.
 
 ---
 
-## Directly Applicable to Nico-Agent Setup
-- Already have the right base: Tailscale, Obsidian, markdown-first, status.md as single source of truth
-- Context separation is next priority when Slack is live — one channel per workflow from day one
-- Heartbeat checks: low effort, high value — build early
-- Sub-agent orchestration for any research tasks
-- Draft-only email mode when email automation is built
-- Backup cron already running — good. Consider adding soul/memory files to backup scope
-- Reliability expectation: simple tasks 8/10, browser automation 5/10. Design for failure cases.
-- "5% of the ceiling" — worth building now. Compounding value from accumulated context means earlier = more valuable
+## Relevance to Our Stack
+
+| Theirs | Ours | Gap |
+|--------|------|-----|
+| OpenClaw on VPS | Nico (Letta) on M1 | Different runtime, same concept |
+| Discord channels | Currently: Telegram DM | **Action: Move to Discord** |
+| Markdown + Obsidian | Obsidian vault (M3) | Need M1 sync |
+| Nightly Obsidian indexing | Not yet | Future: QMD semantic search |
+| 30-min heartbeat | Not yet | **Action: Build heartbeat** |
+| Morning briefing | Not yet | **Action: Build briefing** |
+| Parallel research agents | Not yet | Future capability |
+| Email draft-only | Not yet | **Action: Add email with draft-only mode** |
+| Daily auto-backup | 6-hr GitHub backup ✓ | Already covered |
+| Markdown-first | Obsidian ✓ | Already covered |
+
+---
+
+## Recommended Next Actions (Priority Order)
+
+1. **Discord architecture** — Build channel structure with per-channel model routing
+2. **Morning briefing** — Daily summary cron (7 AM)
+3. **Heartbeat checks** — 30-min routine scan (email, calendar, services)
+4. **URL summarizer skill** — `/summarize [URL]`
+5. **Email integration** — Read/draft only, never auto-send
+6. **Obsidian semantic search** — Future: QMD nightly indexing
