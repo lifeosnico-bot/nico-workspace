@@ -32,10 +32,38 @@ tags: [nico, operations, reference, onboarding]
 - Ask Nico for current list status (`sts`)
 - Ensure any blockers are noted in status.md
 
-## C) Primary Interfaces
-- **Telegram (LettaBot on M1)** = real Nico with M1 access
-- **Claude Code terminal** = direct control, full access
-- **Claude iOS / claude.ai/code** = cloud fallback only (no M1 access)
+## C) System Architecture (Flow)
+
+```
+Vincent
+  |
+  +-- Telegram (LettaBot on M1) --> Nico (Letta agent w/ memory)
+  |                                   |
+  |                                   +--> updates: status.md / decisions.md / SOPs
+  |                                   |
+  |                                   +--> delegates execution -> Claude Code worker sessions
+  |
+  +-- Claude Code (terminal) ----------------> executes work (commands, file edits, subagents)
+  |
+  +-- Claude Code iOS / claude.ai/code ------> cloud fallback (guidance only; no M1 files)
+
+Filesystem (shared state): ~/Nico/...
+- status.md = canonical task list
+- decisions.md = canonical decision log
+- Logs/ = operational logs
+- CabinetAgentVault/ = Obsidian vault
+```
+
+### How work flows (recommended)
+1) Vincent sends a request to Nico (Telegram).
+2) Nico decides: do it directly (ops/memory/SOP) vs delegate to Claude Code (heavy execution).
+3) Claude Code executes and writes results into `~/Nico/...`.
+4) Nico updates status/decisions and reports back.
+
+## D) Primary Interfaces
+- **Telegram (LettaBot on M1)** = Nico interface (ops + memory)
+- **Claude Code terminal** = execution interface (full access)
+- **Claude Code iOS / claude.ai/code** = cloud fallback only (no M1 access)
 - **Obsidian** = vault access on any device via Sync
 
 ## D) Emergency Procedures
