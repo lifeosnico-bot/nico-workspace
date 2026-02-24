@@ -197,6 +197,7 @@
   },
   "active": "fa1654097f2b6850",
   "lastOpenFiles": [
+    "00-dashboard/llm-sessions/2026-02-23_session-CC-10.md",
     "00-dashboard/llm-sessions/2026-02-23_session-CC-9.md",
     "30-resources/reference/nico-operators-manual.md",
     "30-resources/reference/nico-guidebook.md",
@@ -223,7 +224,6 @@
     "00-dashboard/home.md",
     "01-inbox/_index.md",
     "20-areas/development/_index.md",
-    "20-areas/business-ops/_index.md",
     "30-resources/research/yt-transcript-50-days-ai-agent.txt",
     "05-reviews/tasks",
     "00-dashboard/llm-sessions"

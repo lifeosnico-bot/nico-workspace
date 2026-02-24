@@ -7,7 +7,7 @@ source: nico
 ---
 
 # Task Board
-**Last updated**: 2026-02-23 21:30 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-9
+**Last updated**: 2026-02-23 22:40 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-10
 
 _This file is rewritten by Nico at every session start and end. Do not edit manually._
 _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]]_
@@ -18,7 +18,6 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 | Owner | Task | Status |
 |---|---|---|
-| [N] | Build background Slack polling (#chief-of-staff) | Next up |
 | [V] | Telegram bot token rotation (BotFather /revoke) | 🔴 Security — do ASAP |
 | [V] | Final comms decision | Partially done |
 
@@ -28,7 +27,7 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 | Owner | Task | Status |
 |---|---|---|
-| [N] | Phase 0E — metadata standards enforcement | Queued |
+| [N] | Phase 0E — metadata standards enforcement | Next up |
 | [V] | Obsidian Phase 2 (sign in, sync, CLI) | Waiting on Vincent |
 | [V] | 1Password setup | Waiting on Vincent |
 
@@ -37,9 +36,9 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 ## 👤 Vincent's Actions
 
 1. 🔴 Telegram: open @BotFather → `/revoke` → get new token → paste to Nico
-2. Obsidian: sign in, enable Sync, register CLI (Nico preps, Vincent flips switches)
-3. [1Password](https://1password.com) — create account, install desktop app
-4. Rename Slack bot from "Nico" to "Slacky" (App Manifest → display_name)
+2. Rename Slack bot from "Nico" to "Slacky" (Slack app settings → App Home → display name)
+3. Obsidian: sign in, enable Sync, register CLI (Nico preps, Vincent flips switches)
+4. [1Password](https://1password.com) — create account, install desktop app
 
 ---
 
@@ -49,13 +48,10 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 ---
 
-## ✅ Completed This Session (CC-9)
+## ✅ Completed This Session (CC-10)
 
-- Slack two-way setup: workspace "Cabinet Agent", 7 channels created
-- claude-code-slack-bot cloned, configured, built (Node 22, SDK v1.0.88)
-- LaunchAgent for auto-start on boot
-- slack-post.sh + slack-read.sh scripts for Nico channel access
-- Alert scripts (context-monitor, permission-alert) wired to Slack #alerts
-- Auto-default cwd fix (no manual cwd needed after bot restart)
-- Node 25 SDK bug filed (github.com/mpociot/claude-code-slack-bot/issues/21)
-- Vincent connected from phone — two-way comms verified via #chief-of-staff
+- Background Slack polling: slack-poll.sh + slack-poll-check.py + LaunchAgent (com.nico.slack-poller)
+- New channel #vincent-to-nico created — Vincent posts, Slacky responds, poller alerts main Nico
+- context-monitor.sh updated: 📨 Slack msg indicator in statusline
+- Channel maps updated in slack-post.sh + slack-read.sh
+- Slacky ignore list added/reverted — Slacky responds everywhere including #vincent-to-nico

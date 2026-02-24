@@ -1,14 +1,14 @@
 # Status
 
-**Last Updated**: 2026-02-23 21:30 EST | **Updated by**: Claude Code | **Session**: CC-9
+**Last Updated**: 2026-02-23 22:40 EST | **Updated by**: Claude Code | **Session**: CC-10
 
 ---
 
 ## Current State
 
-Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (deep clean CC-8). Task-board ✅. iMessage alert script ✅ (Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅. Permission prompt alert ✅. Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅. All operational docs in vault ✅. Slack two-way ✅ (CC-9 — workspace "Cabinet Agent", 7 channels, slack-post.sh, slack-read.sh, LaunchAgent for bot, alert scripts wired to #alerts). Nico can read/post to Slack channels via API. Background polling not yet built.
+Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (deep clean CC-8). Task-board ✅. iMessage alert script ✅ (Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅. Permission prompt alert ✅. Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅. All operational docs in vault ✅. Slack two-way ✅ (CC-9). Background Slack polling ✅ (CC-10 — poller watches #vincent-to-nico, alerts to #alerts, statusline indicator). Slacky responds in #vincent-to-nico for two-way chat. Bot display name still "Nico" in Slack — needs rename to "Slacky" via Slack app settings (Vincent action).
 
-**#1 PRIORITY (Nico):** Build background Slack polling (watch #chief-of-staff during sessions).
+**#1 PRIORITY (Nico):** Phase 0E metadata standards enforcement.
 **#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke).
 
 ---
@@ -90,7 +90,7 @@ _Land here first, get triaged into phases by Nico. Items below have been assigne
 - [x] Obsidian file open rule → already added to CLAUDE.md
 
 ### New
-- [ ] **[P1][N]** Build background Slack polling — Nico monitors #chief-of-staff during sessions, alerts on new messages
+- [x] **[P1][N]** Build background Slack polling — Nico monitors #vincent-to-nico during sessions, alerts on new messages ✅ (done 2026-02-23)
 
 ### Remaining (25 items, triaged)
 - [ ] **[P1][V]** Final comms decision: pick canonical channel (Telegram vs iMessage vs other) — partially done, needs final pick
@@ -180,7 +180,7 @@ _Dependency: None. #1 PRIORITY after Nico's overnight tasks. CEO must be able to
   - [ ] 3a. Connect Cowork to Slack (MCP connector) — future
   - [x] 3b. Claude Code ↔ Slack: claude-code-slack-bot (Socket Mode, two-way DM) ✅
   - [x] 3c. Slack posting script (slack-post.sh) + alert hooks wired ✅
-  - [x] 3d. Channels created: #ceo-desk, #status, #tasks, #dev, #decisions, #alerts, #nico-internal ✅
+  - [x] 3d. Channels created: #ceo-desk, #status, #tasks, #dev, #decisions, #alerts, #nico-internal, #vincent-to-nico ✅
   - [ ] 3e. Test: Vincent posts `atl: something` in #tasks from phone → Nico picks it up — future
   - [x] 3f. Bot responds to DMs, posts to channels ✅
 - [ ] 4. **[P2][V]** SSH from phone (fallback — Phase 0D done, just needs iPhone setup)
@@ -533,6 +533,10 @@ _Dependency: Phase 3 + Phase 7 Task 3 + Phase 8. Autonomous content organization
 - [x] Phase 0C MCP fix verified: no Craft tools, clean settings (2026-02-23 CC-8)
 - [x] LettaBot poller conflict investigated: no conflict, single service running correctly (2026-02-23 CC-8)
 - [x] Vault frontmatter audit: 4 files fixed, 1 filename corrected, .DS_Store cleaned (2026-02-23 CC-8)
+- [x] Background Slack polling: slack-poll.sh + slack-poll-check.py + LaunchAgent, watches #vincent-to-nico, alerts #alerts + statusline (2026-02-23 CC-10)
+- [x] New channel #vincent-to-nico created — Vincent posts here, Slacky responds, poller alerts main Nico (2026-02-23 CC-10)
+- [x] Slacky ignore list added then reverted — Slacky responds in all channels including #vincent-to-nico (2026-02-23 CC-10)
+- [x] context-monitor.sh updated: shows 📨 Slack msg in statusline when poller detects new message (2026-02-23 CC-10)
 
 ---
 
@@ -578,6 +582,8 @@ _Dependency: Phase 3 + Phase 7 Task 3 + Phase 8. Autonomous content organization
 - `~/Nico/Scripts/context-monitor.sh` — statusline: shows ctx% + alerts at 50%
 - `~/Nico/Scripts/permission-alert.sh` — Notification hook: alerts when permission prompt fires
 - `~/Nico/Scripts/auto-backup.sh` — workspace backup every 6hrs
+- `~/Nico/Scripts/slack-poll.sh` — background poller for #vincent-to-nico (LaunchAgent: com.nico.slack-poller)
+- `~/Nico/Scripts/slack-poll-check.py` — python helper for poller API calls
 - `~/Nico/Scripts/search.sh` — DuckDuckGo search
 - `~/.claude/skills/handoff/SKILL.md` — end-of-session handoff skill
 - `~/.claude/skills/mem/SKILL.md` — Letta sync skill
