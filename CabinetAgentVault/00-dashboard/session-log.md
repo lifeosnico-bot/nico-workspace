@@ -177,3 +177,22 @@ All Claude Code sessions logged here. Format: date, agent, summary of work done.
 ### Next Session
 - P2: Phase 0E metadata standards enforcement
 - Blocked on Vincent: Telegram token rotation, Slack, 1Password, Obsidian Phase 2
+
+## 2026-02-23 18:20–19:20 EST | Claude Code | Session CC-8
+
+### Completed
+- Deep vault housekeeping — every file in CabinetAgentVault audited, no stray docs
+- LettaBot poller conflict closed (no conflict found)
+- Phase 0C MCP fix verified (clean settings, no Craft tools)
+- Frontmatter added to all files missing it, malformed filename fixed
+- decisions.md + session-log.md moved into vault with symlinks
+- Operators manual, guidebook, cost audit, reconciliation, setup consolidation — all in vault
+- Duplicate OpenClaw notes merged (full version kept)
+- 100% frontmatter compliance
+
+### Decisions
+- All operational docs live in the vault — Memory/ only holds symlinks and auto-generated session files
+
+### Next Session
+- P2: Phase 0E metadata standards enforcement
+- Blocked on Vincent: Telegram token rotation, Slack, 1Password, Obsidian Phase 2

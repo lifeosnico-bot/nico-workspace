@@ -1,12 +1,12 @@
 # Status
 
-**Last Updated**: 2026-02-23 18:25 EST | **Updated by**: Claude Code | **Session**: CC-8
+**Last Updated**: 2026-02-23 19:15 EST | **Updated by**: Claude Code | **Session**: CC-8
 
 ---
 
 ## Current State
 
-Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (2nd pass CC-8). Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅ (statusline + Telegram). Permission prompt alert ✅ (Notification hook + Telegram). Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅.
+Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (deep clean CC-8 — all docs organized, no strays). Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅ (statusline + Telegram). Permission prompt alert ✅ (Notification hook + Telegram). Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅. All operational docs moved into vault ✅. decisions.md + session-log.md symlinked into vault ✅.
 
 **#1 PRIORITY (Nico):** Phase 0E metadata enforcement.
 **#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke) → Slack workspace + bot token.
