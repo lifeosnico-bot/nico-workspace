@@ -1,14 +1,12 @@
 # Status
 
-**Last Updated**: 2026-02-23 23:16 EST | **Updated by**: Nico (Letta Code) | **Session**: Letta Code CLI
+**Last Updated**: 2026-02-24 15:25 EST | **Updated by**: Claude Code | **Session**: CC-11
 
 ---
 
 ## Current State
 
-Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (deep clean CC-8). Task-board ✅. iMessage alert script ✅ (Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅. Permission prompt alert ✅. Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅. All operational docs in vault ✅. Slack two-way ✅ (CC-9). Background Slack polling ✅ (CC-10 — poller watches #vincent-to-nico, alerts to #alerts, statusline indicator). Slacky responds in #vincent-to-nico for two-way chat. Bot display name still "Nico" in Slack — needs rename to "Slacky" via Slack app settings (Vincent action).
-
-Telegram sync marker posted: msg_id **730** @ **2026-02-23 23:15:50 EST** ("SYNC MARKER — 2026-02-23 23:12 EST — Telegram bridge verified running on nico-agent.")
+Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (deep clean CC-8). Task-board ✅. iMessage alert script ✅ (Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅. Permission prompt alert ✅. Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅. All operational docs in vault ✅. Slack two-way ✅ (CC-9). Background Slack polling ✅ (CC-10). Letta Code auth fixed ✅ (CC-11 — stale API key in .zshrc replaced with current token). Bot display name still "Nico" in Slack — needs rename to "Slacky" via Slack app settings (Vincent action).
 
 **#1 PRIORITY (Nico):** Phase 0E metadata standards enforcement.
 **#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke).
@@ -93,7 +91,7 @@ _Land here first, get triaged into phases by Nico. Items below have been assigne
 
 ### New
 - [x] **[P1][N]** Build background Slack polling — Nico monitors #vincent-to-nico during sessions, alerts on new messages ✅ (done 2026-02-23)
-- [ ] **[P3][N]** Troubleshoot copy and paste issues in Claude Code, including image pasting capability (added 2026-02-24)
+- [x] **[P3][N]** Troubleshoot copy and paste issues in Claude Code — resolved: Cmd+Shift+V for text paste, image paste not supported in terminal CLI (done 2026-02-24)
 
 ### Remaining (25 items, triaged)
 - [ ] **[P1][V]** Final comms decision: pick canonical channel (Telegram vs iMessage vs other) — partially done, needs final pick
@@ -540,6 +538,8 @@ _Dependency: Phase 3 + Phase 7 Task 3 + Phase 8. Autonomous content organization
 - [x] New channel #vincent-to-nico created — Vincent posts here, Slacky responds, poller alerts main Nico (2026-02-23 CC-10)
 - [x] Slacky ignore list added then reverted — Slacky responds in all channels including #vincent-to-nico (2026-02-23 CC-10)
 - [x] context-monitor.sh updated: shows 📨 Slack msg in statusline when poller detects new message (2026-02-23 CC-10)
+- [x] Letta Code auth fixed — stale API key in .zshrc replaced with current OAuth token (2026-02-24 CC-11)
+- [x] Copy/paste troubleshooting — Cmd+Shift+V for text, image paste not supported in CLI (2026-02-24 CC-11)
 
 ---
 
