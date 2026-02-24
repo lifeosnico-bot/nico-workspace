@@ -31,6 +31,7 @@ resolve_channel() {
         nico-internal)  echo "C0AGTBXAUSG" ;;
         dev)            echo "C0AH2LZ6BLZ" ;;
         alerts)         echo "C0AHJ298FNU" ;;
+        vincent-to-nico) echo "C0AGM1DR5DK" ;;
         *)              echo "" ;;
     esac
 }

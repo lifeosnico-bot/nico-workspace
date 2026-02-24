@@ -1,11 +1,9 @@
 #!/bin/bash
-# slack-poll.sh — Background poller for #chief-of-staff channel
+# slack-poll.sh — Background poller for #vincent-to-nico channel
 # Watches for new human messages and writes alerts for Claude Code statusline
 # Designed to run as a LaunchAgent (KeepAlive)
 
-set -u
-
-CHANNEL_ID="C0AGDT3GMUJ"  # #chief-of-staff
+CHANNEL_ID="C0AGM1DR5DK"  # #vincent-to-nico
 POLL_INTERVAL=15
 STATE_FILE="$HOME/Nico/.slack-poll-state"
 ALERT_FILE="$HOME/Nico/.slack-poll-alert"
@@ -14,17 +12,17 @@ ENV_FILE="$HOME/Nico/Projects/slack-bot/.env"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Load token
+SLACK_BOT_TOKEN=""
 if [ -f "$ENV_FILE" ]; then
     SLACK_BOT_TOKEN=$(grep '^SLACK_BOT_TOKEN=' "$ENV_FILE" | cut -d'=' -f2)
 fi
-if [ -z "${SLACK_BOT_TOKEN:-}" ]; then
+if [ -z "$SLACK_BOT_TOKEN" ]; then
     echo "$(date '+%Y-%m-%d %H:%M:%S') ERROR: No SLACK_BOT_TOKEN" >> "$LOG_FILE"
     exit 1
 fi
 
 # Initialize state file with current timestamp if missing
 if [ ! -f "$STATE_FILE" ]; then
-    # Use current time so we don't alert on old messages
     printf "%.6f" "$(date +%s)" > "$STATE_FILE"
 fi
 
@@ -33,109 +31,103 @@ log() {
 }
 
 POLL_COUNT=0
-
 log "Poller started (PID $$)"
 
 while true; do
     POLL_COUNT=$((POLL_COUNT + 1))
     LAST_TS=$(cat "$STATE_FILE" 2>/dev/null || echo "0")
 
-    # Fetch messages newer than last seen
-    RESPONSE=$(curl -s -m 10 \
-        -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
-        "https://slack.com/api/conversations.history?channel=$CHANNEL_ID&oldest=$LAST_TS&limit=10" 2>/dev/null) || {
-        log "WARN: curl failed"
-        sleep "$POLL_INTERVAL"
-        continue
-    }
+    # Single python call: fetch, parse, return results
+    RESULT=$(SLACK_BOT_TOKEN="$SLACK_BOT_TOKEN" CHANNEL_ID="$CHANNEL_ID" LAST_TS="$LAST_TS" python3 << 'PYEOF'
+import os, json, urllib.request, sys
 
-    # Check for rate limiting
-    if echo "$RESPONSE" | python3 -c "
-import sys, json
-d = json.load(sys.stdin)
-if d.get('error') == 'ratelimited':
-    sys.exit(2)
-if not d.get('ok'):
-    print(d.get('error','unknown'), file=sys.stderr)
+token = os.environ['SLACK_BOT_TOKEN']
+channel = os.environ['CHANNEL_ID']
+oldest = os.environ['LAST_TS']
+
+try:
+    url = f"https://slack.com/api/conversations.history?channel={channel}&oldest={oldest}&limit=10"
+    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
+    data = json.loads(urllib.request.urlopen(req, timeout=10).read())
+except Exception as e:
+    print(f"ERROR:fetch:{e}", file=sys.stderr)
     sys.exit(1)
-sys.exit(0)
-" 2>/dev/null; then
-        : # OK
-    else
-        EXIT_CODE=$?
-        if [ "$EXIT_CODE" -eq 2 ]; then
-            log "WARN: Rate limited, backing off 60s"
-            sleep 60
-            continue
-        else
-            log "WARN: API error"
-            sleep "$POLL_INTERVAL"
-            continue
-        fi
-    fi
 
-    # Process new human messages (skip bot messages)
-    RESULT=$(echo "$RESPONSE" | SLACK_BOT_TOKEN="$SLACK_BOT_TOKEN" python3 -c "
-import sys, json, os, urllib.request
+if not data.get("ok"):
+    err = data.get("error", "unknown")
+    if err == "ratelimited":
+        print("RATELIMITED")
+        sys.exit(0)
+    print(f"ERROR:api:{err}", file=sys.stderr)
+    sys.exit(1)
 
-data = json.load(sys.stdin)
-msgs = data.get('messages', [])
+msgs = data.get("messages", [])
 if not msgs:
+    print("OK")
     sys.exit(0)
 
-token = os.environ.get('SLACK_BOT_TOKEN', '')
-new_ts = '0'
+new_ts = "0"
 human_msgs = []
 
 for msg in msgs:
-    ts = msg.get('ts', '0')
+    ts = msg.get("ts", "0")
     if float(ts) > float(new_ts):
         new_ts = ts
-    # Skip bot messages (have bot_id or subtype)
-    if msg.get('bot_id') or msg.get('subtype'):
+    if msg.get("bot_id") or msg.get("subtype"):
         continue
-    uid = msg.get('user', '?')
-    text = msg.get('text', '')[:200]
-    # Resolve username
+    uid = msg.get("user", "?")
+    text = msg.get("text", "")[:200]
     try:
-        req = urllib.request.Request(
-            f'https://slack.com/api/users.info?user={uid}',
-            headers={'Authorization': f'Bearer {token}'}
+        req2 = urllib.request.Request(
+            f"https://slack.com/api/users.info?user={uid}",
+            headers={"Authorization": f"Bearer {token}"}
         )
-        resp = json.loads(urllib.request.urlopen(req).read())
-        name = resp.get('user',{}).get('real_name', uid)
+        resp = json.loads(urllib.request.urlopen(req2).read())
+        name = resp.get("user", {}).get("real_name", uid)
     except:
         name = uid
-    human_msgs.append(f'{name}: {text}')
+    human_msgs.append(f"{name}: {text}")
 
-# Output: first line is new_ts, rest are messages
-print(new_ts)
-for m in human_msgs:
-    print(m)
-" 2>/dev/null) || {
-        log "WARN: Python processing failed"
+if human_msgs:
+    print(f"NEW:{new_ts}")
+    for m in human_msgs:
+        print(m)
+else:
+    print(f"TS:{new_ts}")
+PYEOF
+    )
+    PY_EXIT=$?
+
+    if [ $PY_EXIT -ne 0 ]; then
+        log "WARN: poll failed (exit $PY_EXIT) result='$RESULT'"
         sleep "$POLL_INTERVAL"
         continue
-    }
-
-    if [ -n "$RESULT" ]; then
-        NEW_TS=$(echo "$RESULT" | head -1)
-        MESSAGES=$(echo "$RESULT" | tail -n +2)
-
-        # Update state if we got a newer timestamp
-        if [ -n "$NEW_TS" ] && [ "$NEW_TS" != "0" ]; then
-            echo "$NEW_TS" > "$STATE_FILE"
-        fi
-
-        # If there are human messages, alert
-        if [ -n "$MESSAGES" ]; then
-            log "NEW: $MESSAGES"
-            # Write alert file for statusline
-            echo "$MESSAGES" > "$ALERT_FILE"
-            # Post to #alerts
-            "$SCRIPT_DIR/slack-post.sh" "#alerts" "📨 New #chief-of-staff message: $MESSAGES" 2>/dev/null &
-        fi
     fi
+
+    FIRST_LINE=$(echo "$RESULT" | head -1)
+
+    case "$FIRST_LINE" in
+        RATELIMITED)
+            log "WARN: Rate limited, backing off 60s"
+            sleep 60
+            continue
+            ;;
+        OK)
+            # No new messages
+            ;;
+        TS:*)
+            # Only bot messages, update timestamp
+            echo "${FIRST_LINE#TS:}" > "$STATE_FILE"
+            ;;
+        NEW:*)
+            NEW_TS="${FIRST_LINE#NEW:}"
+            MESSAGES=$(echo "$RESULT" | tail -n +2)
+            echo "$NEW_TS" > "$STATE_FILE"
+            log "NEW: $MESSAGES"
+            echo "$MESSAGES" > "$ALERT_FILE"
+            "$SCRIPT_DIR/slack-post.sh" "#alerts" "📨 New #vincent-to-nico message: $MESSAGES" 2>/dev/null &
+            ;;
+    esac
 
     # Heartbeat every 20 cycles (~5 min)
     if [ $((POLL_COUNT % 20)) -eq 0 ]; then
