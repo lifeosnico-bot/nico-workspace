@@ -16163,3 +16163,15 @@ Node.js v25.6.1
 Letta chat and Claude Code send
 [Bot] Result error: error=error, stopReason=error, duration=40971ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
 [Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
+[Bot] Result error: error=error, stopReason=error, duration=0ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
+[Bot] No orphaned approvals found: No unresolved approval requests found
+[Bot] Result error: error=error, stopReason=error, duration=0ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
+[Bot] Result error: error=error, stopReason=error, duration=0ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
+[Bot] No orphaned approvals found: No unresolved approval requests found
+[Bot] Result error: error=error, stopReason=error, duration=0ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
+[Bot] Result error: error=error, stopReason=error, duration=11568ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.

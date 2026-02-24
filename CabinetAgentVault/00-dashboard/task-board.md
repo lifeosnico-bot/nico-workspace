@@ -3,11 +3,12 @@ title: "Task Board"
 type: dashboard
 status: active
 created: 2026-02-23
+modified: 2026-02-24
 source: nico
 ---
 
 # Task Board
-**Last updated**: 2026-02-23 22:40 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-10
+**Last updated**: 2026-02-24 15:25 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-11
 
 _This file is rewritten by Nico at every session start and end. Do not edit manually._
 _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]]_
@@ -44,14 +45,11 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 ## 📥 Inbox
 
-**26 items** — see [[status#📥 Inbox — Unprocessed Captures|Inbox in status.md]]
+**25 items** — see [[status#📥 Inbox — Unprocessed Captures|Inbox in status.md]]
 
 ---
 
-## ✅ Completed This Session (CC-10)
+## ✅ Completed This Session (CC-11)
 
-- Background Slack polling: slack-poll.sh + slack-poll-check.py + LaunchAgent (com.nico.slack-poller)
-- New channel #vincent-to-nico created — Vincent posts, Slacky responds, poller alerts main Nico
-- context-monitor.sh updated: 📨 Slack msg indicator in statusline
-- Channel maps updated in slack-post.sh + slack-read.sh
-- Slacky ignore list added/reverted — Slacky responds everywhere including #vincent-to-nico
+- Letta Code auth fixed — stale API key in .zshrc replaced with current OAuth token
+- Copy/paste resolved: Cmd+Shift+V for text, image paste not supported in terminal CLI
