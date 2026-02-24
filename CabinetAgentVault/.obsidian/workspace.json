@@ -197,6 +197,10 @@
   },
   "active": "9e530a0842da5f7a",
   "lastOpenFiles": [
+    "30-resources/reference/nico-guidebook.md",
+    "30-resources/reference/setup-consolidation.md",
+    "40-archive/2026-02-23_reconciliation-report.md",
+    "30-resources/reference/cost-audit-48h.md",
     "00-dashboard/session-log.md",
     "00-dashboard/decisions.md",
     "30-resources/reference/nico-operators-manual.md",
@@ -220,12 +224,8 @@
     "10-projects/cabinet-agent-saas/_index.md",
     "10-projects/lucavo-design/_index.md",
     "01-inbox/Misc Claude Code session Copy of plan mode 2-23-26..md",
-    "01-inbox/Claude plan Mode 2-23-26.md",
-    "40-archive/2026-02-22_cos-plan-archived.md",
     "30-resources/research/yt-transcript-50-days-ai-agent.txt",
-    "30-resources/research/video-50-days-ai-agent.md",
     "05-reviews/tasks",
-    "00-dashboard/llm-sessions",
-    "05-reviews/tasks/status-master-list.md"
+    "00-dashboard/llm-sessions"
   ]
 }
