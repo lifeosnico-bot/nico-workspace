@@ -16321,3 +16321,5 @@ Letta chat and Claude Code send
   description: "Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\\'",
   parameters: {}
 }
+[Bot] Result error: error=error, stopReason=error, duration=10263ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
