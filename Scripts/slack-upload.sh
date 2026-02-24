@@ -56,17 +56,10 @@ fi
 FILE_SIZE=$(stat -f%z "$FILE_PATH")
 FILENAME=$(basename "$FILE_PATH")
 
-PAYLOAD=$(FILENAME="$FILENAME" FILE_SIZE="$FILE_SIZE" python3 -c "
-import os, json
-filename = os.environ['FILENAME']
-file_size = int(os.environ['FILE_SIZE'])
-print(json.dumps({'filename': filename, 'length': file_size}))
-")
-
 GET_URL_RESPONSE=$(curl -s -X POST "https://slack.com/api/files.getUploadURLExternal" \
     -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
-    -H "Content-Type: application/json; charset=utf-8" \
-    -d "$PAYLOAD")
+    -F "filename=$FILENAME" \
+    -F "length=$FILE_SIZE")
 
 GET_URL_OK=$(echo "$GET_URL_RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin).get('ok',False))" 2>/dev/null)
 
