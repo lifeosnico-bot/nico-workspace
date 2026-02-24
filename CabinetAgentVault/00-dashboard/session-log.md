@@ -196,3 +196,23 @@ All Claude Code sessions logged here. Format: date, agent, summary of work done.
 ### Next Session
 - P2: Phase 0E metadata standards enforcement
 - Blocked on Vincent: Telegram token rotation, Slack, 1Password, Obsidian Phase 2
+
+## 2026-02-23 18:48–21:30 EST | Claude Code | Session CC-9
+
+### Completed
+- Slack two-way setup: workspace "Cabinet Agent", 7 channels, bot + scripts
+- claude-code-slack-bot with LaunchAgent (Node 22, SDK v1.0.88)
+- slack-post.sh + slack-read.sh for main Nico API access to channels
+- Alert scripts wired to Slack #alerts + Telegram
+- Auto-default cwd fix, Node 25 bug filed
+- Vincent connected from iPhone — two-way comms verified
+
+### Decisions
+- Node 22 pinned for slack-bot (Node 25 incompatible)
+- Main Nico uses Slack API directly, not through bot
+- Vincent uses #chief-of-staff to reach main Nico
+- bypassPermissions mode for bot (own machine)
+
+### Notes / Blockers
+- Background polling not yet built
+- Bot still named "Nico" — rename to "Slacky" pending
