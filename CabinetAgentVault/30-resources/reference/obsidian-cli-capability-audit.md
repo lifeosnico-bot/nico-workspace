@@ -1,3 +1,13 @@
+---
+title: "Obsidian CLI Capability Audit"
+type: reference
+status: active
+created: 2026-02-15
+modified: 2026-02-23
+source: chat
+tags: [obsidian, cli, reference]
+---
+
 # Obsidian CLI + Claude Code: Complete Capability Audit
 ### Your M1 "Claude Machine" — Second Brain Setup Guide
 **Date:** February 15, 2026 | **Obsidian Version:** 1.12.x (Early Access)

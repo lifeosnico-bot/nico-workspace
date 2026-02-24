@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05-templates/client-note.md",
+                "file": "05-reviews/housekeeping/vault-consolidation-review.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "client-note"
+              "title": "vault-consolidation-review"
             }
           }
         ]
@@ -195,19 +195,25 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fa1654097f2b6850",
+  "active": "9e530a0842da5f7a",
   "lastOpenFiles": [
-    "00-dashboard/daily/2026-02-23.md",
-    "00-dashboard/daily",
-    "00-dashboard/llm-sessions/2026-02-23_session-CC-6.md",
-    "00-dashboard/llm-sessions/2026-02-23_session-CC-5.md",
+    "00-dashboard/session-log.md",
+    "00-dashboard/decisions.md",
+    "30-resources/reference/nico-operators-manual.md",
+    "05-reviews/tasks/2026-02-23_addendums-task-architecture-plan.md",
     "05-reviews/tasks/2026-02-23_task-architecture-plan.md",
     "05-reviews/tasks/Addedndums to 2026-02-23_task-architecture-plan.md",
     "05-reviews/housekeeping/vault-consolidation-review.md",
+    "00-dashboard/llm-sessions/2026-02-23_session-CC-4.md",
+    "00-dashboard/llm-sessions/2026-02-23_session-CC-5.md",
+    "00-dashboard/llm-sessions/2026-02-23_session-CC-6.md",
+    "00-dashboard/llm-sessions/2026-02-23_session-CC-7.md",
+    "05-templates/client-note.md",
+    "00-dashboard/daily/2026-02-23.md",
+    "00-dashboard/daily",
     "00-dashboard/task-board.md",
     "00-dashboard/status.md",
     "00-dashboard/home.md",
-    "00-dashboard/llm-sessions/2026-02-23_session-CC-4.md",
     "01-inbox/_index.md",
     "20-areas/development/_index.md",
     "20-areas/business-ops/_index.md",
@@ -220,8 +226,6 @@
     "30-resources/research/video-50-days-ai-agent.md",
     "05-reviews/tasks",
     "00-dashboard/llm-sessions",
-    "05-reviews/tasks/status-master-list.md",
-    "05-reviews/README.md",
-    "CLAUDE.md"
+    "05-reviews/tasks/status-master-list.md"
   ]
 }

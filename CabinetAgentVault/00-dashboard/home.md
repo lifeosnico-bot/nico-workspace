@@ -29,4 +29,4 @@ source: nico
 ---
 
 ## Status
-> See `~/Nico/Memory/status.md` for live task list
+> See [[status]] for live task list

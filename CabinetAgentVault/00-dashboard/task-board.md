@@ -1,3 +1,11 @@
+---
+title: "Task Board"
+type: dashboard
+status: active
+created: 2026-02-23
+source: nico
+---
+
 # Task Board
 **Last updated**: 2026-02-23 14:50 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-7 handoff
 

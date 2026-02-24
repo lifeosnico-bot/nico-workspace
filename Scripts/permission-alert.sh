@@ -18,3 +18,4 @@ fi
 
 date +%s > "$COOLDOWN_FILE"
 "$SCRIPT_DIR/imessage-alert.sh" "🔔 Claude Code is waiting for your approval on M1."
+"$SCRIPT_DIR/slack-post.sh" "#alerts" "🔔 Claude Code is waiting for your approval on M1." 2>/dev/null &
