@@ -16175,3 +16175,27 @@ Letta chat and Claude Code send
 [Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
 [Bot] Result error: error=error, stopReason=error, duration=11568ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
 [Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
+[Telegram] MarkdownV2 edit failed, falling back to raw text: GrammyError: Call to 'editMessageText' failed! (400: Bad Request: can't parse entities: Character '>' is reserved and must be escaped with the preceding '\')
+    at toGrammyError (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async TelegramAdapter.editMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/channels/telegram.js:481:13)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1009:37)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17) {
+  method: 'editMessageText',
+  payload: {
+    chat_id: '8385420240',
+    message_id: 745,
+    text: 'That message is coming from your *Terminal startup \\(your `.zshrc`\\)*, not from me “taking over” terminal windows\\.\n' +
+      '\n' +
+      'What’s happening:\n' +
+      '\n' +
+      '•   At some point we added a snippet to `~/.zshrc` that prints:\n' +
+      '    \\`MACHINE: <ComputerName> \\| USER: <\n',
+    parse_mode: 'MarkdownV2'
+  },
+  ok: false,
+  error_code: 400,
+  description: "Bad Request: can't parse entities: Character '>' is reserved and must be escaped with the preceding '\\'",
+  parameters: {}
+}

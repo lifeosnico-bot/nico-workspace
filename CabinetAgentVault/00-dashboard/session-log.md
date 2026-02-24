@@ -216,3 +216,17 @@ All Claude Code sessions logged here. Format: date, agent, summary of work done.
 ### Notes / Blockers
 - Background polling not yet built
 - Bot still named "Nico" — rename to "Slacky" pending
+
+## 2026-02-24 15:06–15:25 EST | Claude Code | Session CC-11
+
+### Completed
+- Fixed Letta Code CLI auth — stale `sk-let-` API key in .zshrc replaced with current `at-let-` OAuth token
+- Resolved copy/paste confusion — Cmd+Shift+V for text, image paste not supported in terminal CLI
+- Confirmed /handoff session logging to Obsidian llm-sessions/
+
+### Decisions
+- None — maintenance/troubleshooting session
+
+### Notes / Blockers
+- Letta Code keytar (macOS Keychain) unreliable on M1 — env var in .zshrc is the working approach
+- .zshrc was subsequently modified by Letta Code to load key from Keychain instead — may need monitoring
