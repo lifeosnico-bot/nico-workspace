@@ -1,14 +1,14 @@
 # Status
 
-**Last Updated**: 2026-02-23 20:45 EST | **Updated by**: Claude Code | **Session**: CC-9
+**Last Updated**: 2026-02-23 21:30 EST | **Updated by**: Claude Code | **Session**: CC-9
 
 ---
 
 ## Current State
 
-Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (deep clean CC-8 — all docs organized, no strays). Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅ (statusline + Telegram). Permission prompt alert ✅ (Notification hook + Telegram). Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅. All operational docs moved into vault ✅. decisions.md + session-log.md symlinked into vault ✅.
+Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (deep clean CC-8). Task-board ✅. iMessage alert script ✅ (Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅. Permission prompt alert ✅. Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅. All operational docs in vault ✅. Slack two-way ✅ (CC-9 — workspace "Cabinet Agent", 7 channels, slack-post.sh, slack-read.sh, LaunchAgent for bot, alert scripts wired to #alerts). Nico can read/post to Slack channels via API. Background polling not yet built.
 
-**#1 PRIORITY (Nico):** Phase 0E metadata enforcement.
+**#1 PRIORITY (Nico):** Build background Slack polling (watch #chief-of-staff during sessions).
 **#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke).
 
 ---
