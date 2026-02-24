@@ -89,6 +89,9 @@ _Land here first, get triaged into phases by Nico. Items below have been assigne
 - [x] Evaluate /todos /plan → adopted plan mode + todos this session (CC-5)
 - [x] Obsidian file open rule → already added to CLAUDE.md
 
+### New
+- [ ] **[P1][N]** Build background Slack polling — Nico monitors #chief-of-staff during sessions, alerts on new messages
+
 ### Remaining (25 items, triaged)
 - [ ] **[P1][V]** Final comms decision: pick canonical channel (Telegram vs iMessage vs other) — partially done, needs final pick
 - [x] **[P4][N]** `/peekaboo` skill: create enable/disable toggle for Peekaboo MCP ✅ DONE (built 2026-02-23)
