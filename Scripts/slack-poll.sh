@@ -3,7 +3,7 @@
 # Watches for new human messages and writes alerts for Claude Code statusline
 # Designed to run as a LaunchAgent (KeepAlive)
 
-set -euo pipefail
+set -u
 
 CHANNEL_ID="C0AGDT3GMUJ"  # #chief-of-staff
 POLL_INTERVAL=15
@@ -32,9 +32,12 @@ log() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"
 }
 
+POLL_COUNT=0
+
 log "Poller started (PID $$)"
 
 while true; do
+    POLL_COUNT=$((POLL_COUNT + 1))
     LAST_TS=$(cat "$STATE_FILE" 2>/dev/null || echo "0")
 
     # Fetch messages newer than last seen
@@ -132,6 +135,11 @@ for m in human_msgs:
             # Post to #alerts
             "$SCRIPT_DIR/slack-post.sh" "#alerts" "📨 New #chief-of-staff message: $MESSAGES" 2>/dev/null &
         fi
+    fi
+
+    # Heartbeat every 20 cycles (~5 min)
+    if [ $((POLL_COUNT % 20)) -eq 0 ]; then
+        log "heartbeat: $POLL_COUNT polls, last_ts=$LAST_TS"
     fi
 
     sleep "$POLL_INTERVAL"
