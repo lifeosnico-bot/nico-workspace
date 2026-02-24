@@ -28,4 +28,4 @@ Nico drops review documents here. Vincent checks boxes and replies.
 
 ## Pending Reviews
 
-- [[housekeeping/vault-consolidation-review|Vault Consolidation]] — 2026-02-23 · needs decision on naming + Memory loose files
+- ~~[[housekeeping/vault-consolidation-review|Vault Consolidation]]~~ — 2026-02-23 · ✅ Complete (decided CC-4)

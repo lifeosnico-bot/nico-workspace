@@ -1,3 +1,12 @@
+---
+title: "Task & Workflow Architecture Plan"
+type: plan
+status: review
+created: 2026-02-23
+source: nico
+tags: [architecture, workflow, tasks]
+---
+
 # Plan: Task & Workflow Architecture (Bridge Phase)
 **Date:** 2026-02-23
 **Context:** Vincent is transitioning to an AI-native workflow. He needs a system that works RIGHT NOW without learning new software, while being designed to evolve toward Slack + Claude Code as the end game (which is also how Anthropic internally runs their own teams). Everything stays in markdown for portability. Apple apps are the mobile/quick-capture layer. Obsidian is the brain. Slack is the future.

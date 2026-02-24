@@ -29,5 +29,6 @@ if [ "$USED_PCT" -ge "$ALERT_THRESHOLD" ] 2>/dev/null; then
     if [ ! -f "$ALERT_SENT_FILE" ]; then
         touch "$ALERT_SENT_FILE"
         "$SCRIPT_DIR/imessage-alert.sh" "⚠️ Context window at ${USED_PCT}% — consider /compact or starting a new session."
+        "$SCRIPT_DIR/slack-post.sh" "#alerts" "⚠️ Context window at ${USED_PCT}% — consider /compact or starting a new session." 2>/dev/null &
     fi
 fi

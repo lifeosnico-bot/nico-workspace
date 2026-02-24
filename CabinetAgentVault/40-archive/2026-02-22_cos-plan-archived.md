@@ -1,3 +1,13 @@
+---
+title: "Chief of Staff Plan (Archived)"
+type: plan
+status: archived
+created: 2026-02-22
+archived: 2026-02-23
+source: nico
+tags: [cos, plan, archived]
+---
+
 # Nico — Chief of Staff Plan
 ## Lucavo: Day 1 → First Revenue
 

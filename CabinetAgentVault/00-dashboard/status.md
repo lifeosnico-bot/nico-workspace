@@ -1,12 +1,12 @@
 # Status
 
-**Last Updated**: 2026-02-23 14:50 EST | **Updated by**: Claude Code | **Session**: CC-7
+**Last Updated**: 2026-02-23 18:25 EST | **Updated by**: Claude Code | **Session**: CC-8
 
 ---
 
 ## Current State
 
-Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅ (mostly). Master list consolidation ✅. Vault housekeeping ✅. Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅ (statusline + Telegram). Permission prompt alert ✅ (Notification hook + Telegram). Daily note capture architecture ✅ (template + triage protocol in CLAUDE.md).
+Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (2nd pass CC-8). Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅ (statusline + Telegram). Permission prompt alert ✅ (Notification hook + Telegram). Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅.
 
 **#1 PRIORITY (Nico):** Phase 0E metadata enforcement.
 **#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke) → Slack workspace + bot token.
@@ -35,6 +35,7 @@ _Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to
 | ~~P1~~ | ~~[N]~~ | ~~50% context window alert hook~~ ✅ |
 | P1 | [V] | Telegram bot token rotation (BotFather → /revoke → new token to Nico) |
 | P1 | [V] | Create Slack workspace + bot token |
+| ~~P2~~ | ~~[N]~~ | ~~LettaBot Telegram poller fix~~ ✅ No conflict found (CC-8) |
 | P2 | [N] | Phase 0E — metadata standards enforcement |
 | P2 | [V] | Obsidian Phase 2 manual setup |
 | P2 | [V] | 1Password setup (secrets management) |
@@ -67,10 +68,10 @@ _Nico executes without Vincent. Ordered by priority._
 6. ~~50% context window alert hook~~ ✅ Done (statusline + Telegram alert, 2026-02-23)
 7. ~~Telegram bot token rotation~~ → moved to Vincent's Actions (needs BotFather)
 8. **[P2]** Phase 0E remaining — metadata standards enforcement
-9. **[P2]** LettaBot Telegram poller conflict — investigate and fix
-10. **[P3]** Obsidian Phase 1 remaining — core-plugins.json, appearance.json (minor)
+9. ~~LettaBot Telegram poller conflict~~ ✅ No conflict — single service, properly configured (CC-8 2026-02-23)
+10. ~~Obsidian Phase 1 remaining~~ ✅ All configs done (CC-7 2026-02-23)
 11. **[P3]** Phase 0A — consolidate Chat Imports, deduplicate docs
-12. **[P3]** Phase 0C — verify MCP context fix is holding
+12. ~~Phase 0C — verify MCP context fix~~ ✅ Verified: no Craft tools loading, GitHub plugin disabled (CC-8 2026-02-23)
 
 ---
 
@@ -90,8 +91,8 @@ _Land here first, get triaged into phases by Nico. Items below have been assigne
 
 ### Remaining (25 items, triaged)
 - [ ] **[P1][V]** Final comms decision: pick canonical channel (Telegram vs iMessage vs other) — partially done, needs final pick
-- [ ] **[P4][N]** `/peekaboo` skill: create enable/disable toggle for Peekaboo MCP ✅ DONE (built 2026-02-23)
-- [ ] **[P4][N]** Peekaboo disabled by default — saves ~9.8k tokens/session. Re-enable via `/peekaboo on` + restart when GUI automation needed
+- [x] **[P4][N]** `/peekaboo` skill: create enable/disable toggle for Peekaboo MCP ✅ DONE (built 2026-02-23)
+- [x] **[P4][N]** Peekaboo disabled by default — saves ~9.8k tokens/session ✅ (done 2026-02-23)
 - [ ] **[P3][N]** Session log gap: Feb 21 CC session not logged — add entry
 - [ ] **[P3][N]** "Why so many Nico bots" — document all bots/agents and their roles
 - [ ] **[P3][N]** Claude Code hooks discipline — verify SessionStart/Stop scripts still working
@@ -216,9 +217,9 @@ _Dependency: None._
 
 - [x] 1. Identified problem: Craft MCP loading 17.8k tokens/session (done 2026-02-16)
 - [x] 2. Disabled cloud MCP sync (done 2026-02-16)
-- [ ] 3. **[P3][N]** Verify fix
-  - [ ] 3a. Run `/context` — confirm Craft tools gone
-  - [ ] 3b. Confirm no other unexpected MCP servers loading
+- [x] 3. **[P3][N]** Verify fix ✅ (done 2026-02-23 CC-8)
+  - [x] 3a. Confirmed: no Craft tools loading, GitHub plugin disabled ✅
+  - [x] 3b. Confirmed: settings.json clean, no unexpected MCP servers ✅
 - [ ] 4. **[P3][N]** Permanent fix documentation
   - [ ] 4a. Document in CLAUDE.md: "Cloud MCP sync disabled — do not re-enable without token audit"
 - [ ] 5. **[P3][N]** Audit remaining context usage
@@ -526,6 +527,9 @@ _Dependency: Phase 3 + Phase 7 Task 3 + Phase 8. Autonomous content organization
 - [x] Session CC-5 audit: status.md synced with reality (2026-02-23)
 - [x] 50% context window alert: statusline script + Telegram alert at 50% (2026-02-23)
 - [x] Permission prompt alert: Notification hook + Telegram when approval needed (2026-02-23)
+- [x] Phase 0C MCP fix verified: no Craft tools, clean settings (2026-02-23 CC-8)
+- [x] LettaBot poller conflict investigated: no conflict, single service running correctly (2026-02-23 CC-8)
+- [x] Vault frontmatter audit: 4 files fixed, 1 filename corrected, .DS_Store cleaned (2026-02-23 CC-8)
 
 ---
 

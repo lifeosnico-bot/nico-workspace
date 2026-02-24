@@ -1,7 +1,7 @@
 ---
 title: Vault Consolidation Review
 type: decision
-status: draft
+status: complete
 created: 2026-02-23
 source: nico
 tags: [housekeeping, obsidian, vault]
@@ -145,7 +145,7 @@ These files in `~/` are old planning docs from Feb 15 setup — all superseded:
 
 > _Vincent to fill in:_
 
-- [ ] Vault B confirmed as canonical
-- [ ] Rename or keep current name?
-- [ ] Trash home dir files confirmed
-- [ ] Memory loose files — what to do with video notes?
+- [x] Vault B confirmed as canonical ✅ (decided CC-4, 2026-02-23)
+- [x] Keep current name (`CabinetAgentVault/`) ✅ (decided CC-4)
+- [x] Trash home dir files confirmed ✅ (done CC-4)
+- [x] Video notes moved to vault `30-resources/research/` ✅ (done CC-4)

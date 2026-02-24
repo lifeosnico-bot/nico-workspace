@@ -1,3 +1,13 @@
+---
+title: "50 Days Running an AI Agent — Key Lessons"
+type: research
+status: complete
+created: 2026-02-22
+source: nico
+tags: [ai-agent, openclaw, research, video]
+url: https://youtu.be/NZ1mKAWJPr4
+---
+
 # 50 Days Running an AI Agent — Key Lessons
 **Source**: https://youtu.be/NZ1mKAWJPr4
 **Processed**: 2026-02-22 | Claude Code | Session CC-1
