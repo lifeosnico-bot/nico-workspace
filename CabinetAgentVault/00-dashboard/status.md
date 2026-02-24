@@ -91,6 +91,7 @@ _Land here first, get triaged into phases by Nico. Items below have been assigne
 
 ### New
 - [x] **[P1][N]** Build background Slack polling — Nico monitors #vincent-to-nico during sessions, alerts on new messages ✅ (done 2026-02-23)
+- [ ] **[P3][N]** Troubleshoot copy and paste issues in Claude Code, including image pasting capability (added 2026-02-24)
 
 ### Remaining (25 items, triaged)
 - [ ] **[P1][V]** Final comms decision: pick canonical channel (Telegram vs iMessage vs other) — partially done, needs final pick
