@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-23 19:15 EST | **Updated by**: Claude Code | **Session**: CC-8
+**Last Updated**: 2026-02-23 20:45 EST | **Updated by**: Claude Code | **Session**: CC-9
 
 ---
 
@@ -9,7 +9,7 @@
 Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (deep clean CC-8 — all docs organized, no strays). Task-board ✅. iMessage alert script ✅ (working via Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅ (statusline + Telegram). Permission prompt alert ✅ (Notification hook + Telegram). Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅. All operational docs moved into vault ✅. decisions.md + session-log.md symlinked into vault ✅.
 
 **#1 PRIORITY (Nico):** Phase 0E metadata enforcement.
-**#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke) → Slack workspace + bot token.
+**#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke).
 
 ---
 
@@ -34,7 +34,7 @@ _Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to
 |---|---|---|
 | ~~P1~~ | ~~[N]~~ | ~~50% context window alert hook~~ ✅ |
 | P1 | [V] | Telegram bot token rotation (BotFather → /revoke → new token to Nico) |
-| P1 | [V] | Create Slack workspace + bot token |
+| ~~P1~~ | ~~[V]~~ | ~~Create Slack workspace + bot token~~ ✅ |
 | ~~P2~~ | ~~[N]~~ | ~~LettaBot Telegram poller fix~~ ✅ No conflict found (CC-8) |
 | P2 | [N] | Phase 0E — metadata standards enforcement |
 | P2 | [V] | Obsidian Phase 2 manual setup |
@@ -47,7 +47,7 @@ _Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to
 _These require Vincent. Nothing else can proceed until done._
 
 - [ ] **P1** Telegram bot token rotation: open @BotFather → `/revoke` → get new token → paste to Nico (security — old token exposed in compaction summaries)
-- [ ] **P1** Create Slack workspace → copy bot token → paste in terminal to Nico
+- [x] **P1** Create Slack workspace → copy bot token → paste in terminal to Nico ✅ (done 2026-02-23)
 - [ ] **P2** 1Password: create account at 1password.com, install desktop app
 - [ ] **P2** Obsidian Phase 2: manual setup (sign in, enable Sync, register CLI, enable plugins) — Nico will prep everything, Vincent flips the switches
 - [ ] **P3** Exa API key: free tier at dashboard.exa.ai (1000/mo) — optional, DuckDuckGo works now
@@ -169,17 +169,17 @@ _Dependency: None. #1 PRIORITY after Nico's overnight tasks. CEO must be able to
   - [ ] 1a. Open claude.ai/code in Safari on iPhone — can you launch remote sessions?
   - [ ] 1b. Open Claude iOS app — check for session monitoring
   - [ ] 1c. Test: start remote session from phone, give it a task, confirm it runs
-- [ ] 2. **[P1][V]** QUICK WIN: Slack workspace + iPhone app (~10 min)
-  - [ ] 2a. Create Slack workspace (name: your call — "lucavo-lifeos", "nico-hq", or other)
-  - [ ] 2b. Install Slack on iPhone
-  - [ ] 2c. Create bot + copy token → paste to Nico via terminal
-- [ ] 3. **[P1][N]** Connect agents to Slack (~20 min, after token received)
-  - [ ] 3a. Connect Cowork to Slack (MCP connector)
-  - [ ] 3b. Research Claude Code ↔ Slack integration (bot token vs. Slack App vs. API)
-  - [ ] 3c. Implement Claude Code → Slack posting (status updates, task completions)
-  - [ ] 3d. Create channels: #ceo-desk, #status, #tasks, #dev, #decisions, #alerts, #nico-internal, #lucavo-design
-  - [ ] 3e. Test: Vincent posts `atl: something` in #tasks from phone → Nico picks it up
-  - [ ] 3f. Test: agent completes task → posts to #status automatically
+- [x] 2. **[P1][V]** QUICK WIN: Slack workspace + iPhone app ✅ (done 2026-02-23)
+  - [x] 2a. Create Slack workspace ("Cabinet Agent") ✅
+  - [x] 2b. Install Slack on iPhone ✅
+  - [x] 2c. Create bot + copy token → paste to Nico via terminal ✅
+- [x] 3. **[P1][N]** Connect agents to Slack ✅ (done 2026-02-23)
+  - [ ] 3a. Connect Cowork to Slack (MCP connector) — future
+  - [x] 3b. Claude Code ↔ Slack: claude-code-slack-bot (Socket Mode, two-way DM) ✅
+  - [x] 3c. Slack posting script (slack-post.sh) + alert hooks wired ✅
+  - [x] 3d. Channels created: #ceo-desk, #status, #tasks, #dev, #decisions, #alerts, #nico-internal ✅
+  - [ ] 3e. Test: Vincent posts `atl: something` in #tasks from phone → Nico picks it up — future
+  - [x] 3f. Bot responds to DMs, posts to channels ✅
 - [ ] 4. **[P2][V]** SSH from phone (fallback — Phase 0D done, just needs iPhone setup)
   - [ ] 4a. Tailscale already on iPhone ✅
   - [ ] 4b. Termius already on iPhone ✅

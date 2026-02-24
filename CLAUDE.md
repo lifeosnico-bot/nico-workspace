@@ -133,10 +133,22 @@ Build for N agents, not 2. Every infrastructure decision must be evaluated again
 - When uncertain, ask — don't guess
 - Prefer simple solutions over clever ones
 
+## Slack Integration
+- **Workspace**: Cabinet Agent (cabinetagent.slack.com)
+- **Bot**: claude-code-slack-bot at `~/Nico/Projects/slack-bot/`
+- **LaunchAgent**: `com.nico.slack-bot` (auto-starts on boot, Node 22)
+- **Logs**: `~/Nico/Logs/slack-bot.log`
+- **Post to channels**: `~/Nico/Scripts/slack-post.sh "#channel" "message"`
+- **Channels**: #ceo-desk, #status, #alerts, #tasks, #dev, #decisions, #nico-internal
+- **Alert scripts** (context-monitor.sh, permission-alert.sh) post to both Telegram and Slack #alerts
+- **Known limitation**: Working directory resets on bot restart — user must send `cwd /Users/lifeos.nico/Nico/` in DM after restart
+- **Node requirement**: Must use Node 22 (`/opt/homebrew/opt/node@22/bin/node`) — Node 25 crashes the SDK CLI
+
 ## System Info
 - Machine: M1 MacBook Air (nico-agent)
 - Tailscale IP: 100.87.182.78
 - Username: lifeos.nico
 - SSH from M3: ssh lifeos.nico@100.87.182.78
 - Claude Code: v2.1.42
+- Node: v22 required for slack-bot (v25 installed but incompatible with SDK)
 - Letta Agent: agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668
