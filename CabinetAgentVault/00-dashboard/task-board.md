@@ -7,7 +7,7 @@ source: nico
 ---
 
 # Task Board
-**Last updated**: 2026-02-23 19:15 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-8
+**Last updated**: 2026-02-23 22:40 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-10
 
 _This file is rewritten by Nico at every session start and end. Do not edit manually._
 _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]]_
@@ -18,9 +18,7 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 | Owner | Task | Status |
 |---|---|---|
-| ~~[N]~~ | ~~50% context window alert hook~~ | ✅ Done |
 | [V] | Telegram bot token rotation (BotFather /revoke) | 🔴 Security — do ASAP |
-| [V] | Create Slack workspace + bot token | Waiting on Vincent |
 | [V] | Final comms decision | Partially done |
 
 ---
@@ -29,7 +27,6 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 | Owner | Task | Status |
 |---|---|---|
-| ~~[N]~~ | ~~LettaBot Telegram poller fix~~ | ✅ No conflict found (CC-8) |
 | [N] | Phase 0E — metadata standards enforcement | Next up |
 | [V] | Obsidian Phase 2 (sign in, sync, CLI) | Waiting on Vincent |
 | [V] | 1Password setup | Waiting on Vincent |
@@ -39,7 +36,7 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 ## 👤 Vincent's Actions
 
 1. 🔴 Telegram: open @BotFather → `/revoke` → get new token → paste to Nico
-2. Create Slack workspace → copy bot token → paste to Nico in terminal
+2. Rename Slack bot from "Nico" to "Slacky" (Slack app settings → App Home → display name)
 3. Obsidian: sign in, enable Sync, register CLI (Nico preps, Vincent flips switches)
 4. [1Password](https://1password.com) — create account, install desktop app
 
@@ -47,16 +44,14 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 ## 📥 Inbox
 
-**25 items** (11 closed, 21 remaining) — see [[status#📥 Inbox — Unprocessed Captures|Inbox in status.md]]
+**26 items** — see [[status#📥 Inbox — Unprocessed Captures|Inbox in status.md]]
 
 ---
 
-## ✅ Completed This Session (CC-8)
+## ✅ Completed This Session (CC-10)
 
-- Deep vault housekeeping: all operational docs organized, no stray files
-- LettaBot poller conflict closed (no issue found)
-- Phase 0C MCP context fix verified
-- decisions.md + session-log.md moved into vault with symlinks
-- Operators manual, guidebook, cost audit, reconciliation report, setup consolidation — all in vault
-- 100% frontmatter compliance across all vault content files
-- Duplicate OpenClaw video notes merged (kept full 199-line version)
+- Background Slack polling: slack-poll.sh + slack-poll-check.py + LaunchAgent (com.nico.slack-poller)
+- New channel #vincent-to-nico created — Vincent posts, Slacky responds, poller alerts main Nico
+- context-monitor.sh updated: 📨 Slack msg indicator in statusline
+- Channel maps updated in slack-post.sh + slack-read.sh
+- Slacky ignore list added/reverted — Slacky responds everywhere including #vincent-to-nico

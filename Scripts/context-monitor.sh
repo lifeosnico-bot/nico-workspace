@@ -21,8 +21,16 @@ except:
     print(0)
 " 2>/dev/null)
 
+# Check for Slack poll alerts
+SLACK_ALERT_FILE="$HOME/Nico/.slack-poll-alert"
+SLACK_TAG=""
+if [ -s "$SLACK_ALERT_FILE" ] 2>/dev/null; then
+    SLACK_TAG=" 📨 Slack msg"
+    rm -f "$SLACK_ALERT_FILE"
+fi
+
 # Build status line output
-echo "ctx: ${USED_PCT}%"
+echo "ctx: ${USED_PCT}%${SLACK_TAG}"
 
 # Fire alert at threshold (once per session)
 if [ "$USED_PCT" -ge "$ALERT_THRESHOLD" ] 2>/dev/null; then

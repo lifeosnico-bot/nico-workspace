@@ -1,0 +1,150 @@
+2026-02-23 21:42:54 Poller started (PID 76202)
+2026-02-23 21:49:53 Poller started (PID 77089)
+2026-02-23 21:50:39 Poller started (PID 77163)
+2026-02-23 21:50:43 Poller started (PID 77204)
+2026-02-23 21:53:46 NEW: Vincent: i am directly in the chief of staff channel. this is vincent
+2026-02-23 21:53 EST — Slack post to #alerts: 📨 New #chief-of-staff message: Vincent: i am directly in the chief of staff channel. this is vincent
+2026-02-23 21:54:48 heartbeat: 20 polls, last_ts=1771901622.662179
+2026-02-23 21:55:35 heartbeat: 20 polls, last_ts=1771901622.662179
+2026-02-23 21:59:42 WARN: API error
+2026-02-23 21:59:42 WARN: API error
+2026-02-23 21:59:57 heartbeat: 40 polls, last_ts=1771901622.662179
+2026-02-23 22:00:43 heartbeat: 40 polls, last_ts=1771901992.320919
+2026-02-23 22:04:49 WARN: API error
+2026-02-23 22:04:50 WARN: API error
+2026-02-23 22:04:59 Poller started (PID 79739)
+2026-02-23 22:05:04 WARN: API error
+2026-02-23 22:05:20 WARN: API error
+2026-02-23 22:05:35 WARN: API error
+2026-02-23 22:05:50 WARN: API error
+2026-02-23 22:06:05 WARN: API error
+2026-02-23 22:06:21 WARN: API error
+2026-02-23 22:06:28 Poller started (PID 80194)
+2026-02-23 22:06:36 WARN: API error
+2026-02-23 22:06:51 WARN: API error
+2026-02-23 22:07:06 WARN: API error
+2026-02-23 22:07:07 Poller started (PID 80302)
+2026-02-23 22:07:22 WARN: API error
+2026-02-23 22:07:37 WARN: API error
+2026-02-23 22:07:43 Poller started (PID 80394)
+2026-02-23 22:07:52 WARN: API error
+2026-02-23 22:08:07 WARN: API error
+2026-02-23 22:08:17 Poller started (PID 80486)
+2026-02-23 22:08:18 DEBUG: exit=0 first='OK'
+2026-02-23 22:08:33 DEBUG: exit=0 first='OK'
+2026-02-23 22:08:48 Poller started (PID 80554)
+2026-02-23 22:13:45 NEW: Vincent: Im sending a message out to claude code
+2026-02-23 22:13:45 heartbeat: 20 polls, last_ts=1771902781.198149
+2026-02-23 22:13 EST — Slack post to #alerts: 📨 New #vincent-to-nico message: Vincent: Im sending a message out to claude code
+ERROR:api:not_in_channel
+2026-02-23 22:14:15 WARN: poll failed (exit 1) result=''
+2026-02-23 22:16:16 Poller started (PID 81392)
+2026-02-23 22:17:49 Poller started (PID 81554)
+2026-02-23 22:20:55 Poller started (PID 81782)
+2026-02-23 22:21:36 Poller started (PID 81838)
+2026-02-23 22:23:04 Poller started (PID 82000)
+2026-02-23 22:23:51 Poller started (PID 82097)
+2026-02-23 22:23:51 poll 1
+2026-02-23 22:23:52 poll 1 done (exit=0)
+2026-02-23 22:24:07 poll 2
+2026-02-23 22:24:07 poll 2 done (exit=0)
+2026-02-23 22:24:22 poll 3
+2026-02-23 22:24:23 poll 3 done (exit=0)
+2026-02-23 22:24:28 Poller started (PID 82168)
+2026-02-23 22:26:17 Poller started (PID 82474)
+2026-02-23 22:27:37 Poller started (PID 82621)
+2026-02-23 22:28:19 Poller started (PID 82686)
+2026-02-23 22:28:19 tick 1
+2026-02-23 22:28:20 tock 1 (OK)
+2026-02-23 22:28:35 tick 2
+2026-02-23 22:28:35 tock 2 (OK)
+2026-02-23 22:28:50 tick 3
+2026-02-23 22:28:50 tock 3 (OK)
+2026-02-23 22:29:06 tick 4
+2026-02-23 22:29:06 tock 4 (OK)
+2026-02-23 22:29:21 tick 5
+2026-02-23 22:29:22 tock 5 (OK)
+2026-02-23 22:29:37 tick 6
+2026-02-23 22:29:37 tock 6 (OK)
+2026-02-23 22:29:52 tick 7
+2026-02-23 22:29:53 tock 7 (OK)
+2026-02-23 22:30:08 tick 8
+2026-02-23 22:30:08 tock 8 (OK)
+2026-02-23 22:30:23 tick 9
+2026-02-23 22:30:24 tock 9 (OK)
+2026-02-23 22:30:39 tick 10
+2026-02-23 22:30:40 tock 10 (OK)
+2026-02-23 22:30:55 tick 11
+2026-02-23 22:30:55 tock 11 (OK)
+2026-02-23 22:31:10 tick 12
+2026-02-23 22:31:11 tock 12 (OK)
+2026-02-23 22:31:26 tick 13
+2026-02-23 22:31:27 tock 13 (OK)
+2026-02-23 22:31:42 tick 14
+2026-02-23 22:31:42 tock 14 (OK)
+2026-02-23 22:31:57 tick 15
+2026-02-23 22:31:58 tock 15 (OK)
+2026-02-23 22:32:13 tick 16
+2026-02-23 22:32:13 tock 16 (OK)
+2026-02-23 22:32:28 tick 17
+2026-02-23 22:32:29 tock 17 (OK)
+2026-02-23 22:32:44 tick 18
+2026-02-23 22:32:45 tock 18 (OK)
+2026-02-23 22:33:00 tick 19
+2026-02-23 22:33:00 tock 19 (OK)
+2026-02-23 22:33:15 tick 20
+2026-02-23 22:33:16 tock 20 (OK)
+2026-02-23 22:33:31 tick 21
+2026-02-23 22:33:31 tock 21 (OK)
+2026-02-23 22:33:46 tick 22
+2026-02-23 22:33:47 tock 22 (OK)
+2026-02-23 22:34:02 tick 23
+2026-02-23 22:34:02 tock 23 (OK)
+2026-02-23 22:34:17 tick 24
+2026-02-23 22:34:18 tock 24 (NEW:1771904048.283619)
+2026-02-23 22:34:18 NEW: Vincent: how about now
+2026-02-23 22:34:33 tick 25
+2026-02-23 22:34:34 tock 25 (OK)
+2026-02-23 22:34:49 tick 26
+2026-02-23 22:34:49 tock 26 (OK)
+2026-02-23 22:35:04 tick 27
+2026-02-23 22:35:05 tock 27 (OK)
+2026-02-23 22:35:20 tick 28
+2026-02-23 22:35:20 tock 28 (OK)
+2026-02-23 22:35:35 tick 29
+2026-02-23 22:35:36 tock 29 (TS:1771904134.833819)
+2026-02-23 22:35:51 tick 30
+2026-02-23 22:35:51 tock 30 (OK)
+2026-02-23 22:36:07 tick 31
+2026-02-23 22:36:07 tock 31 (OK)
+2026-02-23 22:36:22 tick 32
+2026-02-23 22:36:22 tock 32 (OK)
+2026-02-23 22:36:38 tick 33
+2026-02-23 22:36:38 tock 33 (OK)
+2026-02-23 22:36:53 tick 34
+2026-02-23 22:36:53 tock 34 (OK)
+2026-02-23 22:37:08 tick 35
+2026-02-23 22:37:09 tock 35 (OK)
+2026-02-23 22:37:24 tick 36
+2026-02-23 22:37:24 tock 36 (OK)
+2026-02-23 22:37:39 tick 37
+2026-02-23 22:37:40 tock 37 (OK)
+2026-02-23 22:37:55 tick 38
+2026-02-23 22:37:56 tock 38 (NEW:1771904273.986509)
+2026-02-23 22:37:56 NEW: Vincent: sweet
+2026-02-23 22:38:11 tick 39
+2026-02-23 22:38:11 tock 39 (NEW:1771904288.392609)
+2026-02-23 22:38:11 NEW: Vincent: figured it would come thru when i finally gave up
+2026-02-23 22:38:27 tick 40
+2026-02-23 22:38:27 tock 40 (OK)
+2026-02-23 22:38:42 tick 41
+2026-02-23 22:38:43 tock 41 (OK)
+2026-02-23 22:38:58 tick 42
+2026-02-23 22:38:58 tock 42 (OK)
+2026-02-23 22:39:13 tick 43
+2026-02-23 22:39:14 tock 43 (OK)
+2026-02-23 22:39:29 tick 44
+2026-02-23 22:39:29 tock 44 (OK)
+2026-02-23 22:39:44 tick 45
+2026-02-23 22:39:45 tock 45 (OK)
+2026-02-23 22:40:00 tick 46
