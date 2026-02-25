@@ -2,3 +2,32 @@ Error: letta error: Missing LETTA_API_KEY
 Run 'letta' in interactive mode to authenticate or export the missing environment variable
 Error: letta error: Missing LETTA_API_KEY
 Run 'letta' in interactive mode to authenticate or export the missing environment variable
+Error: letta error: Error saving local project settings: Error: ENOENT: no such file or directory, mkdir '/.letta'
+    at mkdirSync (node:fs:1333:26)
+    at mkdir (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3360:3)
+    at SettingsManager.persistLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3975:15)
+    at SettingsManager.updateLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3960:31)
+    at SettingsManager.setLocalLastSession (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4061:10)
+    at handleHeadlessCommand (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:65258:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:109498:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'mkdir',
+  path: '/.letta'
+}
+Failed to persist local project settings: Error: ENOENT: no such file or directory, mkdir '/.letta'
+    at mkdirSync (node:fs:1333:26)
+    at mkdir (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3360:3)
+    at SettingsManager.persistLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3975:15)
+    at SettingsManager.updateLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3960:31)
+    at SettingsManager.setLocalLastSession (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4061:10)
+    at handleHeadlessCommand (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:65258:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:109498:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'mkdir',
+  path: '/.letta'
+}
+Error: Unexpected stop reason: error
