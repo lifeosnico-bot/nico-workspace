@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "list",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -195,7 +195,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "481eb2824fcf0e7f",
+  "active": "fa1654097f2b6850",
   "lastOpenFiles": [
     "00-dashboard/llm-sessions/2026-02-24_session-CC-11.md",
     "10-projects/nico-agent/vault-contract.md",
