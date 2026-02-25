@@ -9,22 +9,15 @@ source: nico
 
 # Nighttime Report — 2026-02-25
 
-## Overnight Plan
-- **What will run:** (not yet wired; manual until Discord/Slack heartbeat is live)
-- **What I’m trying to accomplish:** advance agent coordination architecture + Discord pilot setup steps
-- **What I will NOT touch:** any secrets, prod systems, or irreversible git actions
-
-## Inputs Needed From Vincent (Blocking)
-- Discord server creation confirmation
-- 5 channel names (or use defaults)
-
-## Risks / Guardrails
-- No bot tokens in chat
-- Bot least privilege
-
-## Morning Output Expectation
-- **You’ll get:** Morning Report (Telegram + Obsidian)
-- **If something breaks:** Telegram message with blocker + next action
-
-## Links
-- 
+## Telegram Copy
+Nighttime Report (Wed 2026-02-25)
+Overnight plan: no autonomous jobs yet (heartbeat only).
+Focus next:
+- P1 [V] Telegram bot token rotation (BotFather → /revoke → new token to Nico)
+- P2 [N] Phase 0E — metadata standards enforcement
+- P2 [V] Obsidian Phase 2 manual setup
+Blocking items:
+- **P1** Telegram bot token rotation: open @BotFather → `/revoke` → get new token → paste to Nico (security — old token exposed in compaction summaries)
+- **P2** 1Password: create account at 1password.com, install desktop app
+- **P2** Obsidian Phase 2: manual setup (sign in, enable Sync, register CLI, enable plugins) — Nico will prep everything, Vincent flips the switches
+Morning deliverable: Morning Report (Telegram + Obsidian).

@@ -9,31 +9,14 @@ source: nico
 
 # Morning Report — 2026-02-25
 
-## Overnight Summary
-- **What ran:** (not yet wired)
-- **What changed:** Created video research template + first processed note + EOD wrap up template
-- **What needs approval:** Discord pilot inputs (server name + 5 channels), then proceed with bot setup
-
-## Alerts / Failures
-- None recorded
-
-## Work Completed (Since Last Report)
-- Obsidian: created `05-templates/video-research-note.md`
-- Obsidian: created `05-templates/end-of-day-wrapup.md`
-- Obsidian: created `05-templates/morning-report.md`
-- Video note: `50-clippings/youtube/2026-02-24_multi-agent-team-openclaw-discord_youtube.md`
-
-## In Progress
-- Discord pilot planning (bot + bridge)
-
-## Blockers / Risks
-- Need Discord server name in text and the 5 starting channel names
-- Bot token must be stored locally (no token in chat)
-
-## Today’s Plan (Top 3)
-1. Confirm Discord server name + 5 channel names.
-2. Walk through Discord Developer Portal bot creation + minimal permissions.
-3. Start wiring the Discord bridge on the M1.
-
-## Links
-- https://www.youtube.com/watch?v=vxpuLIA17q4
+## Telegram Copy
+Morning Report (Wed 2026-02-25)
+Current: Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (deep clean CC-8). Task-board ✅. iMessage alert script ✅ (Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅. Permission prompt alert ✅. Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅. All operational docs in vault ✅. Slack two-way ✅ (CC-9). Background Slack polling ✅ (CC-10). Letta Code auth fixed ✅ (CC-11 — stale API key in .zshrc replaced with current token). Bot display name still "Nico" in Slack — needs rename to "Slacky" via Slack app settings (Vincent action).
+Top 3:
+- P1 [V] Telegram bot token rotation (BotFather → /revoke → new token to Nico)
+- P2 [N] Phase 0E — metadata standards enforcement
+- P2 [V] Obsidian Phase 2 manual setup
+Needs you:
+- **P1** Telegram bot token rotation: open @BotFather → `/revoke` → get new token → paste to Nico (security — old token exposed in compaction summaries)
+- **P2** 1Password: create account at 1password.com, install desktop app
+- **P2** Obsidian Phase 2: manual setup (sign in, enable Sync, register CLI, enable plugins) — Nico will prep everything, Vincent flips the switches
