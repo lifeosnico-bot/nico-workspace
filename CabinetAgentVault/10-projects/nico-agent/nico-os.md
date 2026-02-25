@@ -6,6 +6,18 @@ created: 2026-02-25
 modified: 2026-02-25
 source: nico
 tags: [nico-os, operating-system, agents]
+
+# Rating Systems
+- **P1–P5** = task priority
+- **C1–C5** = content priority (what must be processed vs can wait)
+
+C scale:
+- C1 must process now
+- C2 today
+- C3 soon
+- C4 backlog
+- C5 ignore/archive
+
 ---
 
 # Nico OS — Running List

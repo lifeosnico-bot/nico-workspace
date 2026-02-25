@@ -6,6 +6,7 @@ type: research
 status: draft
 source:
 platform: youtube
+content_rating: C3
 ---
 
 # {{title}}

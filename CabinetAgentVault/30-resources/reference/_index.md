@@ -9,3 +9,6 @@ source: nico
 
 # reference
 
+## Ratings
+- [[30-resources/reference/content-rating-system|Content Rating System (C1–C5)]]
+

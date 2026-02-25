@@ -24,6 +24,7 @@ _Use these shorthand commands from any surface (text, voice, Cowork, Claude Code
 - **note [phase] [text]** — Add a note to a phase without creating a task.
 
 _Priority scale: P1 = critical/blocking → P2 = this week → P3 = normal → P4 = low → P5 = someday_
+_Content scale: C1 = must process now → C2 = today → C3 = soon → C4 = backlog → C5 = ignore/archive_
 _Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to sub-agent_
 
 ---
