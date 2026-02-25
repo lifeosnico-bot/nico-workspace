@@ -20,3 +20,4 @@ Needs you:
 - **P1** Telegram bot token rotation: open @BotFather → `/revoke` → get new token → paste to Nico (security — old token exposed in compaction summaries)
 - **P2** 1Password: create account at 1password.com, install desktop app
 - **P2** Obsidian Phase 2: manual setup (sign in, enable Sync, register CLI, enable plugins) — Nico will prep everything, Vincent flips the switches
+Nico starts: P2 [N] Phase 0E — metadata standards enforcement

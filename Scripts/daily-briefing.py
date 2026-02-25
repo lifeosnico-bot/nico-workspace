@@ -187,6 +187,9 @@ def main():
         parts.append("Needs you:")
         parts.extend(vincent_actions)
 
+    if first_nico_action:
+        parts.append(f"Nico starts: {first_nico_action}")
+
     msg = "\n".join(parts).strip()[:MAX_CHARS]
 
     # Obsidian artifacts
