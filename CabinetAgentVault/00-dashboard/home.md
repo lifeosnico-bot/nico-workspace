@@ -30,3 +30,7 @@ source: nico
 
 ## Status
 > See [[status]] for live task list
+
+## Daily Reports
+- [[00-dashboard/daily/2026-02-25_morning-report|Morning Report (today)]]
+- [[00-dashboard/daily/2026-02-24_eod-wrapup|EOD Wrap Up (yesterday)]]
