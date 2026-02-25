@@ -9,3 +9,6 @@ source: nico
 
 # nico-agent
 
+## Active
+- [[10-projects/nico-agent/nico-os|Nico OS — Running List]]
+

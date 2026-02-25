@@ -16552,3 +16552,41 @@ B \<server
   description: 'Bad Request: text must be non-empty',
   parameters: {}
 }
+[Telegram] MarkdownV2 send failed, falling back to raw text: GrammyError: Call to 'sendMessage' failed! (400: Bad Request: text must be non-empty)
+    at toGrammyError (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async TelegramAdapter.sendMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/channels/telegram.js:446:36)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1012:52)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17) {
+  method: 'sendMessage',
+  payload: {
+    chat_id: '8385420240',
+    text: '```\n\n```\n',
+    parse_mode: 'MarkdownV2',
+    reply_to_message_id: undefined
+  },
+  ok: false,
+  error_code: 400,
+  description: 'Bad Request: text must be non-empty',
+  parameters: {}
+}
+[Telegram] MarkdownV2 send failed, falling back to raw text: GrammyError: Call to 'sendMessage' failed! (400: Bad Request: text must be non-empty)
+    at toGrammyError (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async TelegramAdapter.sendMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/channels/telegram.js:446:36)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1012:52)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17) {
+  method: 'sendMessage',
+  payload: {
+    chat_id: '8385420240',
+    text: '```\n\n```\n',
+    parse_mode: 'MarkdownV2',
+    reply_to_message_id: undefined
+  },
+  ok: false,
+  error_code: 400,
+  description: 'Bad Request: text must be non-empty',
+  parameters: {}
+}
