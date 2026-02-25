@@ -17254,3 +17254,14 @@ B \<server
 [Telegram] getUpdates conflict (likely old instance still polling). Retrying in 5s...
 [Bot] Result error: error=error, stopReason=error, duration=2066ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
 [Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
+[Letta API] Failed to check run run-e2d3be7b-353d-4bd6-971f-b4a2106418a6: APIConnectionTimeoutError: Request timed out.
+    at Letta.makeRequest (file:///Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/@letta-ai/letta-client/client.mjs:264:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async recoverOrphanedConversationApproval (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/tools/letta-api.js:558:21)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1071:52)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17) {
+  status: undefined,
+  headers: undefined,
+  error: undefined
+}
+[Bot] No orphaned approvals found: Failed to check run run-e2d3be7b-353d-4bd6-971f-b4a2106418a6
