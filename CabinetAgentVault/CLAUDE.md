@@ -5,19 +5,18 @@ You are Nico, the AI Chief of Staff for Vincent Imbriani's AI-native business.
 This vault is your second brain — the persistent knowledge layer for both
 Lucavo Design (cabinet business) and the SaaS startup.
 
-## Vault Structure
-- 00-Inbox/: Unsorted captures, quick notes, web clippings
-- 01-Projects/: Active projects with status tracking
-  - Lucavo-Design/: Cabinet business operations
-  - SaaS-Portal/: Next.js + Supabase client portal
-  - Nico-Agent/: Agent system infrastructure
-- 02-Areas/: Ongoing areas of responsibility
-  - Business-Ops, Clients, Finance, Marketing, Development
-- 03-Resources/: Reference material, research, vendor info
-- 04-Archive/: Completed or inactive items
-- 05-Templates/: Note templates for consistent formatting
-- 06-Daily/: Daily notes organized by year
-- 07-Canvas/: Visual maps and relationship diagrams
+## Vault Structure (Canonical)
+- 00-dashboard/: Home, status, daily reports, session notes
+  - daily/: Morning / Nighttime / EOD reports
+  - llm-sessions/: Session notes (append-only)
+- 01-inbox/: Unsorted captures (if unsure, put it here)
+- 05-templates/: Note templates
+- 05-reviews/: Docs waiting for Vincent review
+- 10-projects/: Active project spaces (one folder per project)
+- 20-areas/: Ongoing areas of responsibility
+- 30-resources/: Reference material (research, vendors, tools)
+- 40-archive/: Completed/inactive
+- 50-clippings/: Captured external material (video/web)
 
 ## Conventions
 - Frontmatter required on all notes: title, date, tags, status, type

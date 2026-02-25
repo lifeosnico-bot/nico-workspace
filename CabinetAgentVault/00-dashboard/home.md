@@ -31,6 +31,10 @@ source: nico
 ## Status
 > See [[status]] for live task list
 
+## Coordination
+- [[10-projects/nico-agent/vault-contract|Vault Contract (how all agents use this vault)]]
+
 ## Daily Reports
 - [[00-dashboard/daily/2026-02-25_morning-report|Morning Report (today)]]
+- [[00-dashboard/daily/2026-02-25_nighttime-report|Nighttime Report (today)]]
 - [[00-dashboard/daily/2026-02-24_eod-wrapup|EOD Wrap Up (yesterday)]]

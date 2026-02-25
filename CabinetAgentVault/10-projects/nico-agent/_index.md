@@ -11,4 +11,5 @@ source: nico
 
 ## Active
 - [[10-projects/nico-agent/nico-os|Nico OS — Running List]]
+- [[10-projects/nico-agent/vault-contract|Vault Contract — How Agents Use Obsidian]]
 
