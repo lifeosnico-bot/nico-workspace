@@ -17265,3 +17265,6 @@ B \<server
   error: undefined
 }
 [Bot] No orphaned approvals found: Failed to check run run-e2d3be7b-353d-4bd6-971f-b4a2106418a6
+[Bot] Result error: error=error, stopReason=llm_api_error, duration=574287ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f, detail=**Exploring agent communication options**
+
+I’m thinking about keeping one Telegram adapter token linked to a specific agent session and having it forward messages to another agent. That could involve editing the code to route messages correctly, especially when they come from a group chat. The simpl
