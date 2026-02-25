@@ -16780,3 +16780,202 @@ B \<server
   description: 'Bad Request: text must be non-empty',
   parameters: {}
 }
+[Telegram] MarkdownV2 edit failed, falling back to raw text: GrammyError: Call to 'editMessageText' failed! (400: Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\')
+    at toGrammyError (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async TelegramAdapter.editMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/channels/telegram.js:481:13)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1009:37)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17) {
+  method: 'editMessageText',
+  payload: {
+    chat_id: '8385420240',
+    message_id: 1006,
+    text: 'Here’s the plan for “click a link in Telegram → open the right Obsidian note” without you doing extra steps\\.\n' +
+      '\n' +
+      'Phase 1 \\(use now, zero setup\\)\n' +
+      '\n' +
+      '•   Use Obsidian Open as the HTTPS wrapper\n' +
+      '•   Pattern: [https://www\\.obsidianopen\\.com/?vault\\=CabinetAgentVault&file\\=](https://www.obsidianopen.com/?vault=CabinetAgentVault&file=)<url-encoded-path>\n' +
+      '•   Pros: immediate, works in Telegram because it’s https\n' +
+      '•   Con: third party dependency\n' +
+      '\n' +
+      'Phase 2 \\(professional, our\n',
+    parse_mode: 'MarkdownV2'
+  },
+  ok: false,
+  error_code: 400,
+  description: "Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\\'",
+  parameters: {}
+}
+[Telegram] MarkdownV2 edit failed, falling back to raw text: GrammyError: Call to 'editMessageText' failed! (400: Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\')
+    at toGrammyError (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async TelegramAdapter.editMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/channels/telegram.js:481:13)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1009:37)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17) {
+  method: 'editMessageText',
+  payload: {
+    chat_id: '8385420240',
+    message_id: 1006,
+    text: 'Here’s the plan for “click a link in Telegram → open the right Obsidian note” without you doing extra steps\\.\n' +
+      '\n' +
+      'Phase 1 \\(use now, zero setup\\)\n' +
+      '\n' +
+      '•   Use Obsidian Open as the HTTPS wrapper\n' +
+      '•   Pattern: [https://www\\.obsidianopen\\.com/?vault\\=CabinetAgentVault&file\\=](https://www.obsidianopen.com/?vault=CabinetAgentVault&file=)<url-encoded-path>\n' +
+      '•   Pros: immediate, works in Telegram because it’s https\n' +
+      '•   Con: third party dependency\n' +
+      '\n' +
+      'Phase 2 \\(professional, our own system\\)\n' +
+      'Goal: your own domain like `https://links.cabinetagent.com/home` that redirects to `obsidian://open?...`\n' +
+      '\n' +
+      'How it works\n' +
+      'Telegram \\(https link\\) → Safari opens → redirects to `obsidian://open?vault=CabinetAgentVault&file=...` → iOS hands off to Obsidian\n' +
+      '\n' +
+      'Build steps\n' +
+      '\n' +
+      '1\\.  Pick the domain/subdomain \\(recommended: links\\.cabinetagent\\.com\\)\n' +
+      '2\\.  Host a tiny redirect site \\(recommended: Cloudflare Pages or Vercel\\)\n' +
+      '3\\.  Implement routes:\n' +
+      '    •   /home → obsidian://…/00\\-dashboard/home\n' +
+      '    •   /status → obsidian://…/00\\-dashboard/status\n' +
+      '    •   /nico\\-os → obsidian://…/10\\-projects/nico\\-agent/nico\\-os\n' +
+      '    •   /vault\\-contract → obsidian://…/10\\-projects/nico\\-agent/vault\\-contract\n' +
+      '4\\.  Add a simple “tap to open\n',
+    parse_mode: 'MarkdownV2'
+  },
+  ok: false,
+  error_code: 400,
+  description: "Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\\'",
+  parameters: {}
+}
+[Telegram] MarkdownV2 edit failed, falling back to raw text: GrammyError: Call to 'editMessageText' failed! (400: Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\')
+    at toGrammyError (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async TelegramAdapter.editMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/channels/telegram.js:481:13)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1009:37)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17) {
+  method: 'editMessageText',
+  payload: {
+    chat_id: '8385420240',
+    message_id: 1006,
+    text: 'Here’s the plan for “click a link in Telegram → open the right Obsidian note” without you doing extra steps\\.\n' +
+      '\n' +
+      'Phase 1 \\(use now, zero setup\\)\n' +
+      '\n' +
+      '•   Use Obsidian Open as the HTTPS wrapper\n' +
+      '•   Pattern: [https://www\\.obsidianopen\\.com/?vault\\=CabinetAgentVault&file\\=](https://www.obsidianopen.com/?vault=CabinetAgentVault&file=)<url-encoded-path>\n' +
+      '•   Pros: immediate, works in Telegram because it’s https\n' +
+      '•   Con: third party dependency\n' +
+      '\n' +
+      'Phase 2 \\(professional, our own system\\)\n' +
+      'Goal: your own domain like `https://links.cabinetagent.com/home` that redirects to `obsidian://open?...`\n' +
+      '\n' +
+      'How it works\n' +
+      'Telegram \\(https link\\) → Safari opens → redirects to `obsidian://open?vault=CabinetAgentVault&file=...` → iOS hands off to Obsidian\n' +
+      '\n' +
+      'Build steps\n' +
+      '\n' +
+      '1\\.  Pick the domain/subdomain \\(recommended: links\\.cabinetagent\\.com\\)\n' +
+      '2\\.  Host a tiny redirect site \\(recommended: Cloudflare Pages or Vercel\\)\n' +
+      '3\\.  Implement routes:\n' +
+      '    •   /home → obsidian://…/00\\-dashboard/home\n' +
+      '    •   /status → obsidian://…/00\\-dashboard/status\n' +
+      '    •   /nico\\-os → obsidian://…/10\\-projects/nico\\-agent/nico\\-os\n' +
+      '    •   /vault\\-contract → obsidian://…/10\\-projects/nico\\-agent/vault\\-contract\n' +
+      '4\\.  Add a simple “tap to open in Obsidian” fallback button on the page \\(for iOS prompt edge cases\\)\n' +
+      '5\\.  Document the 4 links in the vault so they’re always available\n' +
+      '\n' +
+      'What I need from you to finalize Phase 2\n' +
+      '\n' +
+      '•   Which domain to use \\(cabinetagent\\.com is fine\\)\n' +
+      '•   Where DNS is managed \\(Namecheap or Cloudflare\\)\n' +
+      '\n' +
+      'If\n',
+    parse_mode: 'MarkdownV2'
+  },
+  ok: false,
+  error_code: 400,
+  description: "Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\\'",
+  parameters: {}
+}
+[Telegram] MarkdownV2 edit failed, falling back to raw text: GrammyError: Call to 'editMessageText' failed! (400: Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\')
+    at toGrammyError (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async TelegramAdapter.editMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/channels/telegram.js:481:13)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1127:25)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17) {
+  method: 'editMessageText',
+  payload: {
+    chat_id: '8385420240',
+    message_id: 1006,
+    text: 'Here’s the plan for “click a link in Telegram → open the right Obsidian note” without you doing extra steps\\.\n' +
+      '\n' +
+      'Phase 1 \\(use now, zero setup\\)\n' +
+      '\n' +
+      '•   Use Obsidian Open as the HTTPS wrapper\n' +
+      '•   Pattern: [https://www\\.obsidianopen\\.com/?vault\\=CabinetAgentVault&file\\=](https://www.obsidianopen.com/?vault=CabinetAgentVault&file=)<url-encoded-path>\n' +
+      '•   Pros: immediate, works in Telegram because it’s https\n' +
+      '•   Con: third party dependency\n' +
+      '\n' +
+      'Phase 2 \\(professional, our own system\\)\n' +
+      'Goal: your own domain like `https://links.cabinetagent.com/home` that redirects to `obsidian://open?...`\n' +
+      '\n' +
+      'How it works\n' +
+      'Telegram \\(https link\\) → Safari opens → redirects to `obsidian://open?vault=CabinetAgentVault&file=...` → iOS hands off to Obsidian\n' +
+      '\n' +
+      'Build steps\n' +
+      '\n' +
+      '1\\.  Pick the domain/subdomain \\(recommended: links\\.cabinetagent\\.com\\)\n' +
+      '2\\.  Host a tiny redirect site \\(recommended: Cloudflare Pages or Vercel\\)\n' +
+      '3\\.  Implement routes:\n' +
+      '    •   /home → obsidian://…/00\\-dashboard/home\n' +
+      '    •   /status → obsidian://…/00\\-dashboard/status\n' +
+      '    •   /nico\\-os → obsidian://…/10\\-projects/nico\\-agent/nico\\-os\n' +
+      '    •   /vault\\-contract → obsidian://…/10\\-projects/nico\\-agent/vault\\-contract\n' +
+      '4\\.  Add a simple “tap to open in Obsidian” fallback button on the page \\(for iOS prompt edge cases\\)\n' +
+      '5\\.  Document the 4 links in the vault so they’re always available\n' +
+      '\n' +
+      'What I need from you to finalize Phase 2\n' +
+      '\n' +
+      '•   Which domain to use \\(cabinetagent\\.com is fine\\)\n' +
+      '•   Where DNS is managed \\(Namecheap or Cloudflare\\)\n' +
+      '\n' +
+      'If you say “do Phase 2”, I’ll come back with the exact hosting choice, folder structure, and the exact redirect code \\(still no secrets in chat\\)\\.\n',
+    parse_mode: 'MarkdownV2'
+  },
+  ok: false,
+  error_code: 400,
+  description: "Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\\'",
+  parameters: {}
+}
+[Telegram] MarkdownV2 edit failed, falling back to raw text: GrammyError: Call to 'editMessageText' failed! (400: Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\')
+    at toGrammyError (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async TelegramAdapter.editMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/channels/telegram.js:481:13)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1009:37)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17) {
+  method: 'editMessageText',
+  payload: {
+    chat_id: '8385420240',
+    message_id: 1007,
+    text: 'Yes \\- we already have that enabled\\.\n' +
+      '\n' +
+      'That video is about *Context Repositories \\(git\\-backed memory\\)* in Letta Code\\. Our Nico agent’s memory is already a *git repo on disk* \\(the `memory/system/...` files we’ve been editing\\), and it’s versionable/auditable the same way the video shows\\.\n' +
+      '\n' +
+      'How to verify quickly on the M1\n' +
+      '\n' +
+      '•   In Letta Code: run `/memory` and you should see the *file tree* view \\(not flat “blocks”\\)\\.\n' +
+      '•   On disk: the memory lives under \\`\\~/\\.letta/agents/<agent-id>/memory/\n',
+    parse_mode: 'MarkdownV2'
+  },
+  ok: false,
+  error_code: 400,
+  description: "Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\\'",
+  parameters: {}
+}
