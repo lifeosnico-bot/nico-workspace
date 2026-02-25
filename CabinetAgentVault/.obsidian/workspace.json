@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-dashboard/llm-sessions/2026-02-24_session-CC-11.md",
+                "file": "00-dashboard/session-log.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-02-24_session-CC-11"
+              "title": "session-log"
             }
           }
         ]
@@ -197,9 +197,9 @@
   },
   "active": "481eb2824fcf0e7f",
   "lastOpenFiles": [
+    "00-dashboard/llm-sessions/2026-02-24_session-CC-11.md",
     "10-projects/nico-agent/vault-contract.md",
     "40-archive/2026-02-22_cos-plan-archived.md",
-    "00-dashboard/llm-sessions/2026-02-24_session-CC-11.md",
     "05-reviews/tasks/2026-02-23_addendums-task-architecture-plan.md",
     "05-reviews/housekeeping/vault-consolidation-review.md",
     "00-dashboard/llm-sessions/2026-02-23_session-CC-4.md",
