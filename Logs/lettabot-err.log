@@ -16324,3 +16324,35 @@ Letta chat and Claude Code send
 [Bot] Result error: error=error, stopReason=error, duration=10263ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
 [Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
 [Bot] Stream received NO DATA - possible stuck state
+[Bot] Result error: error=error, stopReason=error, duration=2414379ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
+[Letta API] Failed to check run run-ad3a137f-9f43-46f6-9288-d89ebbcae2d0: APIConnectionTimeoutError: Request timed out.
+    at Letta.makeRequest (file:///Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/@letta-ai/letta-client/client.mjs:264:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async recoverOrphanedConversationApproval (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/tools/letta-api.js:558:21)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1071:52)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17) {
+  status: undefined,
+  headers: undefined,
+  error: undefined
+}
+[Bot] No orphaned approvals found: Failed to check run run-ad3a137f-9f43-46f6-9288-d89ebbcae2d0
+[Telegram] MarkdownV2 send failed, falling back to raw text: GrammyError: Call to 'sendMessage' failed! (400: Bad Request: text must be non-empty)
+    at toGrammyError (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async TelegramAdapter.sendMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/channels/telegram.js:446:36)
+    at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1012:52)
+    at async LettaBot.processQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:783:17) {
+  method: 'sendMessage',
+  payload: {
+    chat_id: '8385420240',
+    text: '```\n\n```\n',
+    parse_mode: 'MarkdownV2',
+    reply_to_message_id: undefined
+  },
+  ok: false,
+  error_code: 400,
+  description: 'Bad Request: text must be non-empty',
+  parameters: {}
+}
