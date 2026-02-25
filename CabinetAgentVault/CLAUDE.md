@@ -12,6 +12,12 @@ Lucavo Design (cabinet business) and the SaaS startup.
 4. Do work in the correct folder lanes; if unsure, put it in `01-inbox/`
 5. If you changed state (code/config/decision/blocker), write a session note in `00-dashboard/llm-sessions/`
 
+## Morning Protocol (MANDATORY)
+1. Read `00-dashboard/status.md`
+2. Send Morning Report (Telegram + Obsidian)
+3. Set Top 3 actions + approvals needed
+4. Start the first Nico-owned action immediately (do not ask “what next”)
+
 ## Vault Structure (Canonical)
 - 00-dashboard/: Home, status, daily reports, session notes
   - daily/: Morning / Nighttime / EOD reports

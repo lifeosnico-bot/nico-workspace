@@ -173,6 +173,8 @@ def main():
     top_tasks = pick_top_tasks(status_text, 3)
     vincent_actions = pick_vincent_actions(status_text, 3)
 
+    first_nico_action = next((t for t in top_tasks if "[N]" in t), "")
+
     parts = [f"Morning Report ({day} {date_str})"]
     if current_state_line:
         parts.append(f"Current: {current_state_line}")

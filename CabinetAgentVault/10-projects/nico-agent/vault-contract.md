@@ -19,6 +19,12 @@ Prevent agent drift. Different agents can think differently, but they must leave
 4. `[[00-dashboard/daily/2026-02-25_nighttime-report|Nighttime Report (today)]]`
 5. `[[00-dashboard/daily/2026-02-24_eod-wrapup|EOD Wrap Up (yesterday)]]`
 
+## Morning Protocol (MANDATORY)
+- Read status
+- Send Morning Report
+- Set Top 3 + approvals
+- Start first Nico-owned action (no "what next")
+
 Everything else exists for audit trail + agent handoffs.
 
 ## Canonical Artifact Lanes (No Freelancing)
