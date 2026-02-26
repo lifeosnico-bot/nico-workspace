@@ -35,6 +35,6 @@ source: nico
 - [[10-projects/nico-agent/vault-contract|Vault Contract (how all agents use this vault)]]
 
 ## Daily Reports
-- [[00-dashboard/daily/2026-02-25_morning-report|Morning Report (latest)]]
+- [[00-dashboard/daily/2026-02-26_morning-report|Morning Report (latest)]]
 - [[00-dashboard/daily/2026-02-25_nighttime-report|Nighttime Report (latest)]]
 - [[00-dashboard/daily/2026-02-24_eod-wrapup|EOD Wrap Up (latest)]]
