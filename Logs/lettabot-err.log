@@ -17287,3 +17287,39 @@ I’m thinking about keeping one Telegram adapter token linked to a specific age
 [Bot] Result error: error=error, stopReason=llm_api_error, duration=3790ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
 [Bot] Warning: Agent returned terminal error (error=error, stopReason=llm_api_error) with no response.
 [Bot] No orphaned approvals found: No unresolved approval requests found
+[Bot] Result error: error=error, stopReason=llm_api_error, duration=3870ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=llm_api_error) with no response.
+[Bot] Result error: error=error, stopReason=llm_api_error, duration=4139ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=llm_api_error) with no response.
+[Bot] No orphaned approvals found: No unresolved approval requests found
+[Bot] Result error: error=error, stopReason=llm_api_error, duration=6406ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=llm_api_error) with no response.
+[Bot] Result error: error=error, stopReason=llm_api_error, duration=3755ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=llm_api_error) with no response.
+[Bot] No orphaned approvals found: No unresolved approval requests found
+[Bot] Result error: error=error, stopReason=llm_api_error, duration=4017ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=llm_api_error) with no response.
+[Bot] Result error: error=error, stopReason=llm_api_error, duration=4100ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=llm_api_error) with no response.
+[Bot] No orphaned approvals found: No unresolved approval requests found
+[Bot] Result error: error=error, stopReason=llm_api_error, duration=4283ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=llm_api_error) with no response.
+[Telegram] Bot polling error: GrammyError: Call to 'getUpdates' failed! (401: Unauthorized)
+    at toGrammyError (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Bot.fetchUpdates (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/bot.js:423:27)
+    at async Bot.loop (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/bot.js:394:33)
+    at async Bot.start (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/bot.js:315:9) {
+  method: 'getUpdates',
+  payload: {
+    offset: 851207302,
+    limit: undefined,
+    timeout: 30,
+    allowed_updates: undefined
+  },
+  ok: false,
+  error_code: 401,
+  description: 'Unauthorized',
+  parameters: {}
+}
