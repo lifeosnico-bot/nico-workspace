@@ -17282,3 +17282,8 @@ I’m thinking about keeping one Telegram adapter token linked to a specific age
 }
 [Bot] No orphaned approvals found: Failed to check run run-eb70c616-9bc3-41be-ab94-cb560061c417
 [Bot] Stream received NO DATA - possible stuck state
+[Bot] Result error: error=error, stopReason=error, duration=1984ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
+[Bot] Result error: error=error, stopReason=llm_api_error, duration=3790ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=llm_api_error) with no response.
+[Bot] No orphaned approvals found: No unresolved approval requests found
