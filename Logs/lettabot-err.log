@@ -17368,3 +17368,5 @@ I’m thinking about keeping one Telegram adapter token linked to a specific age
   description: 'Not Found',
   parameters: {}
 }
+[Bot] Directive react failed: Unsupported Telegram reaction emoji: ✅
+[Bot] Directive react failed: Unsupported Telegram reaction emoji: ✅
