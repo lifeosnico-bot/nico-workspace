@@ -17338,3 +17338,18 @@ I’m thinking about keeping one Telegram adapter token linked to a specific age
   description: 'Unauthorized',
   parameters: {}
 }
+[Telegram] Bot polling error: GrammyError: Call to 'deleteWebhook' failed! (404: Not Found)
+    at toGrammyError (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async setup.push._b (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/bot.js:293:17)
+    at async withRetries (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/bot.js:522:41)
+    at async Promise.all (index 1)
+    at async Bot.start (/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/grammy/out/bot.js:297:13) {
+  method: 'deleteWebhook',
+  payload: { drop_pending_updates: undefined },
+  ok: false,
+  error_code: 404,
+  description: 'Not Found',
+  parameters: {}
+}
