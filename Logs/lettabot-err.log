@@ -17370,3 +17370,8 @@ I’m thinking about keeping one Telegram adapter token linked to a specific age
 }
 [Bot] Directive react failed: Unsupported Telegram reaction emoji: ✅
 [Bot] Directive react failed: Unsupported Telegram reaction emoji: ✅
+[Bot] Result error: error=error, stopReason=error, duration=268706ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
+[Bot] No orphaned approvals found: No unresolved approval requests found
+[Bot] Result error: error=error, stopReason=error, duration=1321ms, conv=conv-1e78bf80-50f2-4398-af5c-d531c1b7fa3f
+[Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
