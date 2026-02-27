@@ -31,3 +31,4 @@ Failed to persist local project settings: Error: ENOENT: no such file or directo
   path: '/.letta'
 }
 Error: Unexpected stop reason: error
+Error: HTTP Error 401: Unauthorized
