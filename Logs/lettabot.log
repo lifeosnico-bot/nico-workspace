@@ -129,3 +129,62 @@ Letta updated their memory process[39m
 [01:08:34] [32mINFO[39m: [36m[Bot] Stream result: success=true, hasResponse=true, resultLen=360[39m
 [01:08:34] [32mINFO[39m: [36m[Bot] Stream message counts:[39m [90m{"data":{"reasoning":77,"assistant":86,"tool_call":5,"result":1}}[39m
 [01:08:34] [32mINFO[39m: [36m[Bot] Finished processing all messages[39m
+[01:13:33] [32mINFO[39m: [36m[Bot] Message from 8385420240 on telegram: Test[39m
+[01:13:33] [32mINFO[39m: [36m[Bot] Group message routed to batcher (debounce=5000ms, mentioned=false, instant=false)[39m
+[01:13:38] [32mINFO[39m: [36m[Bot] Group batch: 1 messages from telegram:-1003697550701[39m
+[01:13:44] [32mINFO[39m: [36m[Bot] Generating response...[39m
+[01:13:44] [32mINFO[39m: [36m[Bot] type=result {"type":"result","success":true,"result":"<actions><react emoji=\"thumbsup\" /></actions>","durationMs":5682,"conversationId":"conv-cb39b8c3-a13f-475d-ba2e-fcf03d448cd9"}[39m
+[01:13:44] [32mINFO[39m: [36m[Bot] Stream result: success=true, hasResponse=true, resultLen=45[39m
+[01:13:44] [32mINFO[39m: [36m[Bot] Stream message counts:[39m [90m{"data":{"assistant":3,"result":1}}[39m
+[01:13:45] [32mINFO[39m: [36m[Bot] Directive: reacted with 👍 (thumbsup)[39m
+[01:13:45] [32mINFO[39m: [36m[Bot] Finished processing all messages[39m
+[01:14:27] [32mINFO[39m: [36m[Bot] Message from 8385420240 on telegram: Ok so can we go back to the plan we had of setting up the librarian as the researcher and everything fell apart on Telegram[39m
+[01:14:31] [32mINFO[39m: [36m[Bot] Reasoning...[39m
+[01:14:36] [32mINFO[39m: [36m[Bot] Generating response...[39m
+[01:14:52] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01Cv4fg9xquQGMzkPQHTQ6Nc","toolName":"Skill","toolInput":{"skill":"searching-messages"},"uuid":"message-b64bd230-6340-4865-84bc-8f74848a0ff5"}[39m
+[01:14:53] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Skill (id: toolu_01Cv4f)[39m
+[01:14:53] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01GqTEeBouJ8jQfnErgCbV2G","toolName":"Bash","toolInput":{"command":"letta messages search --query \"Librarian researcher agent setup plan\" --limit 10","description":"Search for Librarian agent setup discussions"},"uuid":"message-ce7818b3-c033-433e-91d8-a31927[39m
+[01:14:53] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Bash (id: toolu_01GqTE)[39m
+[01:14:53] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01A61PppuxTVieCyJA6NCBdH","toolName":"Bash","toolInput":{"command":"letta messages search --query \"Librarian Telegram fell apart broke\" --limit 10","description":"Search for what went wrong with Librarian on Telegram"},"uuid":"message-ce7818b3-c033-433e-91d8[39m
+[01:14:53] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Bash (id: toolu_01A61P)[39m
+[01:14:53] [32mINFO[39m: [36m[Bot] Reasoning...[39m
+[01:15:00] [32mINFO[39m: [36m[Bot] Generating response...[39m
+[01:15:15] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01NgHsBYzHY3ToTmeAfHvpwb","toolName":"Bash","toolInput":{"command":"scutil --get ComputerName","description":"Verify which machine we're on"},"uuid":"message-abcfdcab-9c6e-4662-8a72-a5fd58573fb4"}[39m
+[01:15:16] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Bash (id: toolu_01NgHs)[39m
+[01:15:16] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01XDeQsYaqCCM2GsBYGAfXjN","toolName":"Bash","toolInput":{"command":"hostname","description":"Check hostname"},"uuid":"message-1af03606-720d-4ac2-bb11-979bbeca7ba5"}[39m
+[01:15:16] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Bash (id: toolu_01XDeQ)[39m
+[01:15:16] [32mINFO[39m: [36m[Bot] Reasoning...[39m
+[01:15:17] [32mINFO[39m: [36m[Bot] Generating response...[39m
+[01:15:25] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01CTKiWiWjC3vdME88MHwp1s","toolName":"Read","toolInput":{"file_path":"/Users/lifeos.nico/Nico/lettabot/lettabot/lettabot.yaml"},"uuid":"message-0f1b55f6-da72-4308-a6eb-a374c81e782e"}[39m
+[01:15:25] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Read (id: toolu_01CTKi)[39m
+[01:15:25] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01FAiovGSaETtV3nGUE9r8Ko","toolName":"Bash","toolInput":{"command":"letta agents list 2>/dev/null | head -40","description":"List all Letta agents"},"uuid":"message-0f1b55f6-da72-4308-a6eb-a374c81e782e"}[39m
+[01:15:25] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Bash (id: toolu_01FAio)[39m
+[01:15:25] [32mINFO[39m: [36m[Bot] Reasoning...[39m
+[01:15:39] [32mINFO[39m: [36m[Bot] Generating response...[39m
+[01:16:03] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01LEPV2QXP7b1378kinawYVV","toolName":"Bash","toolInput":{"command":"ls /Users/lifeos.nico/Nico/lettabot/lettabot/","description":"List LettaBot source files"},"uuid":"message-393ae69e-630f-4665-97ca-33f5bc85184a"}[39m
+[01:16:04] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Bash (id: toolu_01LEPV)[39m
+[01:16:04] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01HyYYStUKEp7653wQxh87Fi","toolName":"Grep","toolInput":{"pattern":"route|routing","path":"/Users/lifeos.nico/Nico/lettabot/lettabot/src","-i":true,"output_mode":"files_with_matches"},"uuid":"message-4a3cd1c4-a116-4fd8-addf-a2fe0dd66295"}[39m
+[01:16:04] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Grep (id: toolu_01HyYY)[39m
+[01:16:04] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_015EL8ZnErNTQkLdbvuaiq7d","toolName":"Grep","toolInput":{"pattern":"route","path":"/Users/lifeos.nico/Nico/lettabot/lettabot/src/config/types.ts","output_mode":"content","-i":true,"context":5},"uuid":"message-27cb02fc-4b09-41a3-9c9d-e921d55bd3ef"}[39m
+[01:16:04] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Grep (id: toolu_015EL8)[39m
+[01:16:04] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01GxD4ZmdQK2z5iYzjUUzwQB","toolName":"Grep","toolInput":{"pattern":"route","path":"/Users/lifeos.nico/Nico/lettabot/lettabot/src/core/gateway.ts","output_mode":"content","-i":true,"context":5},"uuid":"message-27cb02fc-4b09-41a3-9c9d-e921d55bd3ef"}[39m
+[01:16:04] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Grep (id: toolu_01GxD4)[39m
+[01:16:04] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_015MrPvCmAUszmSkyar8MTmp","toolName":"Read","toolInput":{"file_path":"/Users/lifeos.nico/Nico/lettabot/lettabot/src/core/interfaces.ts"},"uuid":"message-872e11df-1281-4855-b365-1b13d1f887cc"}[39m
+[01:16:04] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Read (id: toolu_015MrP)[39m
+[01:16:04] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01PD6RpJH3myLopEwcawX7nh","toolName":"Read","toolInput":{"file_path":"/Users/lifeos.nico/Nico/lettabot/lettabot/src/core/gateway.ts"},"uuid":"message-872e11df-1281-4855-b365-1b13d1f887cc"}[39m
+[01:16:04] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Read (id: toolu_01PD6R)[39m
+[01:16:04] [32mINFO[39m: [36m[Bot] Reasoning...[39m
+[01:16:38] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01X92fU7D27okBRqufGBMUi5","toolName":"Grep","toolInput":{"pattern":"routes|routeMap|groupRoute","path":"/Users/lifeos.nico/Nico/lettabot/lettabot/src","-i":true,"output_mode":"content","context":3},"uuid":"message-0e319a82-efd4-4711-9065-55be4fcb53cb"}[39m
+[01:16:38] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Grep (id: toolu_01X92f)[39m
+[01:16:38] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01VMjxrR82MAeBZVu65WmmxP","toolName":"Grep","toolInput":{"pattern":"group.*agent|chat_id.*agent|agentName|agent.*group","path":"/Users/lifeos.nico/Nico/lettabot/lettabot/src/channels","-i":true,"output_mode":"files_with_matches"},"uuid":"message-2c240132-b5ac-[39m
+[01:16:38] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Grep (id: toolu_01VMjx)[39m
+[01:16:38] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01Bb2WPZeCauPuNSvSJugm8k","toolName":"Bash","toolInput":{"command":"ls /Users/lifeos.nico/Nico/lettabot/lettabot/src/channels/","description":"List channel adapters"},"uuid":"message-49f2da76-0af4-4c80-9e68-18a7d6f4a13d"}[39m
+[01:16:38] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Bash (id: toolu_01Bb2W)[39m
+[01:16:38] [32mINFO[39m: [36m[Bot] type=tool_call {"type":"tool_call","toolCallId":"toolu_01XBTLvdHKL3QWYFspMcRfZT","toolName":"Grep","toolInput":{"pattern":"route|agentName|resolveAgent","path":"/Users/lifeos.nico/Nico/lettabot/lettabot/src/channels/telegram.ts","output_mode":"content","context":3},"uuid":"message-78c9b46a-aca7-47f0-8e35-d4667eabe[39m
+[01:16:38] [32mINFO[39m: [36m[Bot] >>> TOOL CALL: Grep (id: toolu_01XBTL)[39m
+[01:16:38] [32mINFO[39m: [36m[Bot] Reasoning...[39m
+[01:16:48] [32mINFO[39m: [36m[Bot] Generating response...[39m
+[01:16:52] [32mINFO[39m: [36m[Bot] type=result {"type":"result","success":true,"result":"OK, I've read through the LettaBot source. The Telegram adapter doesn't support routing specific groups to different agents on a single poller — each agent with Telegram enabled creates its own poller, which is exactly what caused the 409 conflict.\n\nThree [39m
+[01:16:52] [32mINFO[39m: [36m[Bot] Stream result: success=true, hasResponse=true, resultLen=904[39m
+[01:16:52] [32mINFO[39m: [36m[Bot] Stream message counts:[39m [90m{"data":{"reasoning":462,"assistant":207,"tool_call":17,"result":1}}[39m
+[01:16:52] [32mINFO[39m: [36m[Bot] Finished processing all messages[39m
