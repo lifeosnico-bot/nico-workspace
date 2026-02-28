@@ -36,5 +36,5 @@ source: nico
 
 ## Daily Reports
 - [[00-dashboard/daily/2026-02-27_morning-report|Morning Report (latest)]]
-- [[00-dashboard/daily/2026-02-26_nighttime-report|Nighttime Report (latest)]]
+- [[00-dashboard/daily/2026-02-27_nighttime-report|Nighttime Report (latest)]]
 - [[00-dashboard/daily/2026-02-24_eod-wrapup|EOD Wrap Up (latest)]]
