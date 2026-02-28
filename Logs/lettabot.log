@@ -244,3 +244,12 @@ Letta updated their memory process[39m
 [03:56:11] [32mINFO[39m: [36m[Bot] Stream result: success=true, hasResponse=true, resultLen=799[39m
 [03:56:11] [32mINFO[39m: [36m[Bot] Stream message counts:[39m [90m{"data":{"assistant":114,"result":1}}[39m
 [03:56:11] [32mINFO[39m: [36m[Bot] Finished processing all messages[39m
+[06:12:14] [32mINFO[39m: [36m[Bot] Message from 8385420240 on telegram: Nico did you see that letta had some major memory upgrades 
+
+https://youtu.be/R_4r_NNjg1M?si=YZqhfZUPb79-SSNq[39m
+[06:12:20] [32mINFO[39m: [36m[Bot] Reasoning...[39m
+[06:12:21] [32mINFO[39m: [36m[Bot] Generating response...[39m
+[06:12:23] [32mINFO[39m: [36m[Bot] type=result {"type":"result","success":true,"result":"I can’t open YouTube links from here. If you can paste the key notes from that video (what changed in the memory system), I’ll compare it to what we already have and tell you what needs updating.","durationMs":9842,"conversationId":"conv-cb39b8c3-a13f-475d-b[39m
+[06:12:23] [32mINFO[39m: [36m[Bot] Stream result: success=true, hasResponse=true, resultLen=195[39m
+[06:12:23] [32mINFO[39m: [36m[Bot] Stream message counts:[39m [90m{"data":{"reasoning":7,"assistant":44,"result":1}}[39m
+[06:12:24] [32mINFO[39m: [36m[Bot] Finished processing all messages[39m
