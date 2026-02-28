@@ -387,3 +387,10 @@ Starting LettaBot server...
 [06:43:03] [32mINFO[39m: [36m[Bot] Stream result: success=true, hasResponse=true, resultLen=586[39m
 [06:43:03] [32mINFO[39m: [36m[Bot] Stream message counts:[39m [90m{"data":{"assistant":143,"result":1}}[39m
 [06:43:03] [32mINFO[39m: [36m[Bot] Finished processing all messages[39m
+[06:43:57] [32mINFO[39m: [36m[Bot] Message from 8385420240 on telegram: Why does this keep happening[39m
+[06:44:07] [32mINFO[39m: [36m[Bot] Reasoning...[39m
+[06:44:58] [32mINFO[39m: [36m[Bot] Generating response...[39m
+[06:44:59] [32mINFO[39m: [36m[Bot] type=result {"type":"result","success":true,"result":"It keeps happening for 2 concrete reasons\n\nReason 1  \nWhen we tried to make Librarian separate inside Telegram we ended up with more than one listener on the same Telegram bot token  \nTelegram only allows one getUpdates poller per token so it kills one a[39m
+[06:44:59] [32mINFO[39m: [36m[Bot] Stream result: success=true, hasResponse=true, resultLen=926[39m
+[06:44:59] [32mINFO[39m: [36m[Bot] Stream message counts:[39m [90m{"data":{"reasoning":705,"assistant":182,"result":1}}[39m
+[06:45:00] [32mINFO[39m: [36m[Bot] Finished processing all messages[39m
