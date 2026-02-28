@@ -74,3 +74,25 @@ Started channel: Telegram
 [Telegram] Bot started as @Nicolucavobot
 [Telegram] DM policy: allowlist
 [Bot] Session subprocess ready (key=shared)
+[telegram] Message from 8385420240: Ping
+[Bot] Conversation ID updated: conv-cb39b8c3-a13f-475d-ba2e-fcf03d448cd9
+[Stream] type=assistant {"type":"assistant","content":"\n\nP","uuid":"05c04536-8ab9-4fff-b004-537853dded80"}
+[Bot] Generating response...
+[Stream] type=assistant {"type":"assistant","content":"ong.","uuid":"05c04536-8ab9-4fff-b004-537853dded80"}
+[Stream] type=result {"type":"result","success":true,"result":"\n\nPong.","durationMs":5849,"conversationId":"conv-cb39b8c3-a13f-475d-ba2e-fcf03d448cd9"}
+[Bot] Stream result: success=true, hasResponse=true, resultLen=7
+[Bot] Stream message counts: { assistant: 2, result: 1 }
+[Queue] Finished processing all messages
+[telegram] Message from 8385420240: So we’re back in bizness
+[Stream] type=assistant {"type":"assistant","content":"\n\nGood","uuid":"e9daf8f0-12d6-448c-85b0-16fe7e047780"}
+[Bot] Generating response...
+[Stream] type=assistant {"type":"assistant","content":".","uuid":"e9daf8f0-12d6-448c-85b0-16fe7e047780"}
+[Stream] type=assistant {"type":"assistant","content":" What","uuid":"e9daf8f0-12d6-448c-85b0-16fe7e047780"}
+[Stream] type=assistant {"type":"assistant","content":" are","uuid":"e9daf8f0-12d6-448c-85b0-16fe7e047780"}
+[Stream] type=assistant {"type":"assistant","content":" we","uuid":"e9daf8f0-12d6-448c-85b0-16fe7e047780"}
+[Stream] type=assistant {"type":"assistant","content":" working","uuid":"e9daf8f0-12d6-448c-85b0-16fe7e047780"}
+[Stream] type=assistant {"type":"assistant","content":" on?","uuid":"e9daf8f0-12d6-448c-85b0-16fe7e047780"}
+[Stream] type=result {"type":"result","success":true,"result":"\n\nGood. What are we working on?","durationMs":5865,"conversationId":"conv-cb39b8c3-a13f-475d-ba2e-fcf03d448cd9"}
+[Bot] Stream result: success=true, hasResponse=true, resultLen=31
+[Bot] Stream message counts: { assistant: 7, result: 1 }
+[Queue] Finished processing all messages
