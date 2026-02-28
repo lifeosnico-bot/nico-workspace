@@ -6,6 +6,7 @@ type: research
 status: processed
 source: https://www.youtube.com/watch?v=R_4r_NNjg1M
 platform: youtube
+content_rating: C2
 ---
 
 # Context Repositories: Git-backed Memory for Coding Agents (Deep Dive)
@@ -18,50 +19,53 @@ platform: youtube
 - There’s a concept of **progressive disclosure**: “system” memory is pinned/always in prompt; other memory can exist but not be injected by default.
 
 ## Key Steps / Key Points
-1. Check whether Context Repositories are enabled (Letta Code UI shows memory as a **file tree** vs flat blocks).
-2. Use `/memory` to view memory layout; in the video, pressing `o` opens a “memory palace” view.
-3. Run `/init` to bootstrap memory structure and optionally ingest historical CLI chat logs.
-4. Configure reflection/sleeptime settings to run memory updates periodically (e.g., on compaction).
+1. Context repositories = **git-backed memory** that syncs between server ↔ local filesystem via git pull/push.
+2. Memory edits are **tracked** (audit + rollback) and can be made with normal file editing workflows.
+3. Not all memory is equal: content under `system/` is **always injected into the system prompt** (equivalent to “attached” memory blocks / core memory).
+4. Reflection / sleep-time / background agents can update memory while you’re not watching; with git backing, you can later inspect diffs and roll back.
+5. Multi-agent memory editing can be done safely using **git worktrees** (parallel branches of the memory filesystem).
 
 ## Tools Mentioned
-- Letta Code `/memory`
-- Letta Code `/init`
-- Reflection / sleeptime agent settings
-- Git (history/commit log of memory changes)
+- Letta Code `/memory` (filesystem view)
+- Letta Code `/init` (bootstrap memory structure)
+- Reflection / sleep-time / background agents (memory updates)
+- Git: `status`, `log`, `diff`, rollback, worktrees
 
 ## Security / Risks
-- Git-backed memory improves auditability, but increases the importance of:
-  - not storing secrets in memory files
-  - keeping memory repo access controlled
-  - understanding that “automation” can still drift without explicit operating rules
+- **Never store secrets** in memory files (they will end up in git history and server-side state).
+- If you enable reflection/background memory updates, you need reviewability (git diffs) + rollback discipline.
+- “Pinned” memory (`system/`) must be kept small and high-signal; everything pinned increases prompt cost.
 
 ## Lucavo Mapping
 ### Copy
-- Treat persistent operating rules as **files** that can be edited and audited (we already do this).
-- Use git history for memory/ops changes so we can see what changed and roll back.
+- We already have this: **git-backed memory files** with required frontmatter (`description`, `limit`), versioned in `~/.letta/agents/<agent-id>/memory/`.
+- Keep durable operating rules in pinned memory (`system/`), everything else stays unpinned.
 
 ### Modify
-- Use reflection/sleeptime only after we’re happy with what it writes (avoid noisy/incorrect memories).
+- Use a *Research Director* (Librarian) as the “background/reflection” role — but do it via **agent-to-agent**, not Telegram multi-poller.
+- If we add automated memory cleanup, require: diff review + clear rollback rules.
 
 ### Skip
-- Deep ingestion of external chat logs until we explicitly choose to (cost + noise).
+- Don’t turn on aggressive auto-ingestion/reflection that writes lots of memory until our taxonomy is stable.
 
 ### Risks
-- “Toggle confusion”: if a user expects Context Repos behavior but it’s not enabled, memory ops are harder.
+- Pinned memory bloat increases cost + can reduce accuracy.
+- Multi-agent memory edits require worktree/merge discipline if we ever allow it.
 
 ## Execution Checklist
 ### Prereqs
-- [ ] Confirm whether Context Repositories are enabled for Nico.
+- [x] Context Repositories are enabled for Nico (we have `~/.letta/agents/<agent-id>/memory/` as a git repo).
 
 ### Steps
-- [ ] Verify Context Repos are enabled:
-  - In Letta Code, `/memory` should show a filesystem-style memory view.
-  - On disk, Nico memory exists at `~/.letta/agents/<agent-id>/memory/` and is git-tracked.
-- [ ] Decide whether to enable/tune reflection/sleeptime.
+- [ ] Decide policy: what belongs in pinned `system/` vs what stays out (keep pinned small).
+- [ ] Decide whether to add a dedicated *memory/reflection* agent (Librarian) and how it writes suggestions.
+- [ ] If enabling reflection writes: establish review workflow (diff → accept/reject → push).
+- [ ] (Optional) Add a lightweight “memory repo health check”: `git status` + unpushed commits + hook errors.
 
 ## Next Actions (Do Now)
-1. Confirm to Vincent: Context Repositories are already active for Nico; memory issues observed are behavior/process, not that toggle.
-2. If desired: tune reflection/sleeptime intentionally (separate decision).
+1. If the question is “did Letta ship memory upgrades?” → yes: **Context Repositories** (git-backed memory).
+2. For us: we already have the core upgrade (git-backed memory + frontmatter `limit` field). What’s left is **workflow**: how we allow background/reflection updates safely.
+3. Recommendation: implement Librarian as a *research/reflection* agent via agent-to-agent (no Telegram) first; only add a Telegram surface later (separate bot token).
 
 ## References
 - https://www.youtube.com/watch?v=R_4r_NNjg1M
