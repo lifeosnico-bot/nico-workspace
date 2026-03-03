@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-02-23 22:40 EST | **Updated by**: Claude Code | **Session**: CC-10
+**Last Updated**: 2026-03-02 23:15 EST | **Updated by**: Nico (Telegram) | **Session**: TG-02
 
 ---
 
@@ -10,6 +10,14 @@ Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+T
 
 **#1 PRIORITY (Nico):** Phase 0E metadata standards enforcement.
 **#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke).
+
+## Tight List (Open)
+- [ ] **[N]** Overnight runner scaffold + queue + schedule (PR #14 open) — *waiting merge*
+- [ ] **[N]** Add PR-opening capability to overnight runner (gated)
+- [ ] **[N]** Phase 0E — metadata standards enforcement
+- [ ] **[V]** Telegram bot token rotation (BotFather → `/revoke` → new token applied on M1)
+- [ ] **[V]** Obsidian Phase 2 manual setup (Sync + enable CLI)
+- [ ] **[V]** 1Password setup (account + desktop app)
 
 ---
 
