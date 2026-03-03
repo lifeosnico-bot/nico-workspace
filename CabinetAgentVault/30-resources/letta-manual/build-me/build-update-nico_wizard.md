@@ -48,7 +48,7 @@ tags: [letta, manual, wizard, build-me]
 - ✅ 4.4 `BroTeuvX0es` — LettaBot tutorial (done)
 - ✅ 4.5 `LKRnP-ptC4c` — Office Hours (done)
 - ✅ 4.6 `M8LNa3FKE4k` — Office Hours (done)
-- ⬜ 4.7 `fr61XHf6Zzw` — Office Hours (queued)
+- 🟨 4.7 `fr61XHf6Zzw` — Office Hours (in progress)
 - ⬜ 4.8 `YtZgsw9x8l8` — Obsidian + Letta Code (queued)
 - ⬜ 4.9 `LX-qO5o8iRQ` — Multi-agent systems (queued)
 
