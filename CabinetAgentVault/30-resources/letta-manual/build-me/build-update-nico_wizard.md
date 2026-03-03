@@ -17,6 +17,9 @@ tags: [letta, manual, wizard, build-me]
   - checklists
   - verification gates
 
+# 1.1 Mission statement (do not delete)
+- To use the most modern data available (YouTube transcripts and/or blog posts) to compare against the most documented data (GitHub and/or website docs) to consistently reconcile what system + features need to be added to Nico and future agents so they stay the best versions of themselves.
+
 # 2) Inputs (This Folder Only)
 - Folder: `30-resources/letta-manual/build-me/`
 - Transcripts:
@@ -114,11 +117,26 @@ tags: [letta, manual, wizard, build-me]
 - Add a weekly memory health check item:
   - `letta memfs status` must be clean
 
-## Doc / Blog delta check (what to reconcile)
-- Blog: https://www.letta.com/blog/context-repositories
-- Confirm in our environment:
-  - `system/` is pinned (matches blog + video)
-  - memory repo is git-backed (matches blog + video)
+## Present-day truth sources checked (documented)
+- Blog:
+  - https://www.letta.com/blog/context-repositories
+- Docs:
+  - https://docs.letta.com/letta-code/memory/
+  - https://docs.letta.com/letta-code/changelog/
+- GitHub:
+  - https://github.com/letta-ai/letta-code
+
+## Doc / GitHub deltas (video says → present-day docs/code)
+- Video: “the `system/` directory is pinned” → Docs confirm: `system/` is pinned; outside `system/` is visible but omitted.
+- Video: “must commit + push to save memory edits” → Docs explicitly state commit + push are required for memory edits to be reflected.
+- Video: “use /remember to actively direct memory updates” → Docs describe `/remember` as manual memory trigger.
+- Video: “sleep-time / reflection agents run” → Docs include `/sleeptime` configuration and explain reminder-only vs auto-launch.
+
+## Verification of our environment (commands run)
+- `letta memfs status --agent <agent-id>` expects clean (`dirty=false`, `aheadOfRemote=false`)
+- Memory repo:
+  - `~/.letta/agents/<agent-id>/memory/`
+  - `system/` contains pinned files
 
 # 4.4 (done) LettaBot Tutorial: create a personal AI assistant with memory — 2026-02-21 `BroTeuvX0es`
 
