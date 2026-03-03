@@ -46,7 +46,7 @@ tags: [letta, manual, wizard, build-me]
 - ✅ 4.2 `j1agWxBx54E` — GitHub Actions background agents (done)
 - ✅ 4.3 `R_4r_NNjg1M` — Context Repositories deep dive (done; reconciled)
 - ✅ 4.4 `BroTeuvX0es` — LettaBot tutorial (done)
-- ⬜ 4.5 `LKRnP-ptC4c` — Office Hours (queued)
+- 🟨 4.5 `LKRnP-ptC4c` — Office Hours (in progress)
 - ⬜ 4.6 `M8LNa3FKE4k` — Office Hours (queued)
 - ⬜ 4.7 `fr61XHf6Zzw` — Office Hours (queued)
 - ⬜ 4.8 `YtZgsw9x8l8` — Obsidian + Letta Code (queued)
