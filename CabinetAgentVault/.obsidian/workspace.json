@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-dashboard/status.md",
+                "file": "30-resources/letta-manual/build-me/build-update-nico_wizard.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "status"
+              "title": "build-update-nico_wizard"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 388.5
   },
   "right": {
     "id": "02e5e5a00cc0ebe3",
@@ -198,6 +197,9 @@
   },
   "active": "9e530a0842da5f7a",
   "lastOpenFiles": [
+    "30-resources/letta-manual/build-me/build-update-nico_latest-8-videos.md",
+    "30-resources/letta-manual/build-me/build-update-nico_wizard.md",
+    "00-dashboard/status.md",
     "01-inbox/vault-salvage/raw-transcripts/00_LETTA_MASTER_REFERENCE.md",
     "30-resources/letta/transcripts/00_LETTA_MASTER_REFERENCE.md",
     "30-resources/letta/transcripts/Letta_Office_Hours_Opus_46_Lettabot_Updates_Agent_File_Directory_and_More.md",
@@ -221,9 +223,6 @@
     "30-resources/letta/transcripts/Letta_Office_Hours_Message_Scheduling_GitHub_Actions_Ralph_Mode_and_the_Note_Too.md",
     "01-inbox/vault-salvage/raw-transcripts/Stateful_Agents_Meetup_Collective_Artificial_Intelligence.md",
     "30-resources/letta/transcripts/Stateful_Agents_Meetup_Collective_Artificial_Intelligence.md",
-    "01-inbox/vault-salvage/raw-transcripts/Letta_Office_Hours_Introducing_LettaBot_Claude_Subconscious_Demo.md",
-    "30-resources/letta/transcripts/Letta_Office_Hours_Introducing_LettaBot_Claude_Subconscious_Demo.md",
-    "30-resources/letta/transcripts/Letta_Discord_Office_Hours_October_2nd_2025.md",
     "01-inbox/vault-salvage/processed-research",
     "01-inbox/vault-salvage/raw-transcripts",
     "01-inbox/vault-salvage/reference-docs",

@@ -37,37 +37,63 @@ tags: [letta, manual, wizard, build-me]
 
 # 4) The Wizard (Checklist)
 
-# 4.1 Memory System (MemFS / Context Repositories)
+# 4.1 Context Repositories (Git-backed memory) — VIDEO 2026-02-25 `R_4r_NNjg1M`
 
-## Claims (Docs + videos agree)
-- MemFS / Context Repositories = **git-backed memory filesystem**.
-- `system/` folder content is **pinned** into the system prompt.
-- Non-`system/` memories are visible in the tree but not fully loaded.
+## Summary (1 paragraph)
+- Context Repositories are a rebuild of Letta Code memory: expose memory as a local, git-tracked filesystem so agents can reorganize and maintain large memory systems using normal tools (files + bash), while keeping the “true” agent state on the server.
 
-## Rules
+## Claims (what the video asserts)
+- Context Repositories = **git-based memory** for Letta Code.
+- They replace “memory tools only” workflows (memory blocks append/replace/delete) with **file + bash** workflows.
+- The agent’s state still lives on the server; the local repo is a **synced working copy**.
+- The file tree is always in context; the `system/` directory is **pinned** (always fully loaded).
+- Git tracking gives a clean “who changed what” log, which is especially useful with sleep-time / reflection agents.
+- This enables progressive disclosure: keep only the most important things pinned.
+- This enables “memory swarms”: multiple subagents can work in parallel using git worktrees, then merge.
+
+## Rules (how to operate if you adopt it)
+- Treat the memory repo like production code:
+  - make small changes
+  - commit with informative messages
+  - push so state is durable
 - Keep `system/` small and high-signal.
 - Put durable identity + operating constraints in `system/`.
-- Put transient notes/reflections outside `system/`.
+- Put large notes, transcripts, or long references outside `system/`.
+- Use the file tree as navigation (folders + filenames).
 
-## Failure modes
-- “Memory drift” happens when:
-  - we claim “done” without verification
-  - pinned memory becomes bloated/noisy
-  - memory repo stops syncing (auth/merge issues)
+## Failure modes (how it breaks)
+- Drift happens when:
+  - important preferences live only in chat history (not pinned)
+  - `system/` grows too big → context becomes noisy
+  - local memory repo stops syncing (not pushed)
+  - multiple agents write without merge discipline
+- Confusion happens when people say “saved” but it’s only local.
 
-## Verification gates
-- Gate: MemFS exists
-  - `~/.letta/agents/<agent-id>/memory/` exists
-- Gate: Git is healthy
-  - `git status` clean
-  - `git pull` works
-  - `git push` works
-- Gate: Auth helper not stale
-  - local credential helper uses current `LETTA_API_KEY`
+## Verification gates (commands that prove reality)
+- Gate: MemFS is enabled and healthy
+  - `letta memfs status --agent <agent-id>` → expects `dirty=false`, `aheadOfRemote=false`
+- Gate: Memory repo exists
+  - `ls ~/.letta/agents/<agent-id>/memory/`
+- Gate: Git sync works (memory repo)
+  - `git -C ~/.letta/agents/<agent-id>/memory status -sb`
+  - `git -C ~/.letta/agents/<agent-id>/memory pull`
+  - `git -C ~/.letta/agents/<agent-id>/memory push`
+- Gate: Pinned vs unpinned is understood
+  - pinned = `~/.letta/agents/<agent-id>/memory/system/`
 
-## Apply to Nico (fix our real pain)
-- Every “done” in status must have a verification check.
-- Add a weekly “memory repo health check” routine.
+## Apply to Nico (our concrete changes)
+- Definition of “Saved” for anything called “memory”:
+  - saved = committed + pushed (remote)
+- Default meaning of “make it a memory”:
+  - write to `memory/system/` (pinned) + commit + push
+- Add a weekly memory health check item:
+  - `letta memfs status` must be clean
+
+## Doc / Blog delta check (what to reconcile)
+- Blog: https://www.letta.com/blog/context-repositories
+- Confirm in our environment:
+  - `system/` is pinned (matches blog + video)
+  - memory repo is git-backed (matches blog + video)
 
 # 4.2 Conversations (Where did you go?)
 
