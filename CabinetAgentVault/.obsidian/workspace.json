@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "30-resources/letta-manual/build-me/build-update-nico_wizard.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.5
+    "width": 388.5,
+    "collapsed": true
   },
   "right": {
     "id": "02e5e5a00cc0ebe3",

@@ -37,7 +37,7 @@ tags: [letta, manual, wizard, build-me]
 
 # 4) The Wizard (Checklist)
 
-# 4.1 Context Repositories (Git-backed memory) — VIDEO 2026-02-25 `R_4r_NNjg1M`
+##4.1 Context Repositories (Git-backed memory) — VIDEO 2026-02-25 `R_4r_NNjg1M`
 
 ## Summary (1 paragraph)
 - Context Repositories are a rebuild of Letta Code memory: expose memory as a local, git-tracked filesystem so agents can reorganize and maintain large memory systems using normal tools (files + bash), while keeping the “true” agent state on the server.
