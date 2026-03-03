@@ -1,0 +1,1445 @@
+Kind: captions
+Language: en
+
+Hi everyone. So today I'm going to be
+
+Hi everyone. So today I'm going to be
+
+Hi everyone. So today I'm going to be
+going over the Leta Code GitHub action.
+
+going over the Leta Code GitHub action.
+
+going over the Leta Code GitHub action.
+So this makes it really easy to turn any
+
+So this makes it really easy to turn any
+
+So this makes it really easy to turn any
+existing Leta Code agent into basically
+
+existing Leta Code agent into basically
+
+existing Leta Code agent into basically
+a background agent. So you can get the
+
+a background agent. So you can get the
+
+a background agent. So you can get the
+agent to run on different issues or
+
+agent to run on different issues or
+
+agent to run on different issues or
+review PRs and it all runs inside of
+
+review PRs and it all runs inside of
+
+review PRs and it all runs inside of
+GitHub actions. So I'm going to be going
+
+GitHub actions. So I'm going to be going
+
+GitHub actions. So I'm going to be going
+through the setup and then also show you
+
+through the setup and then also show you
+
+through the setup and then also show you
+how you can actually interact with the
+
+how you can actually interact with the
+
+how you can actually interact with the
+agent and also customize the agent. So
+
+agent and also customize the agent. So
+
+agent and also customize the agent. So
+I've created a fork of our Leta Code
+
+I've created a fork of our Leta Code
+
+I've created a fork of our Leta Code
+repo. um called let code testing and I'm
+
+repo. um called let code testing and I'm
+
+repo. um called let code testing and I'm
+basically going to install the GitHub
+
+basically going to install the GitHub
+
+basically going to install the GitHub
+action into this repo so that we can use
+
+action into this repo so that we can use
+
+action into this repo so that we can use
+agents to work inside of here. And I've
+
+agents to work inside of here. And I've
+
+agents to work inside of here. And I've
+already installed Leta Code. Um I
+
+already installed Leta Code. Um I
+
+already installed Leta Code. Um I
+recommend doing this with Leta Code
+
+recommend doing this with Leta Code
+
+recommend doing this with Leta Code
+already installed since we actually
+
+already installed since we actually
+
+already installed since we actually
+recently added a new command to make it
+
+recently added a new command to make it
+
+recently added a new command to make it
+really easy to install this action. So I
+
+really easy to install this action. So I
+
+really easy to install this action. So I
+can do install GitHub app and then this
+
+can do install GitHub app and then this
+
+can do install GitHub app and then this
+is essentially a wizard that will walk
+
+is essentially a wizard that will walk
+
+is essentially a wizard that will walk
+me through the setup process. So I can
+
+me through the setup process. So I can
+
+me through the setup process. So I can
+either choose um choose doing the
+
+either choose um choose doing the
+
+either choose um choose doing the
+existing repository or in this case I'm
+
+existing repository or in this case I'm
+
+existing repository or in this case I'm
+going to do a different one. So leta
+
+going to do a different one. So leta
+
+going to do a different one. So leta
+code testing. And then oh one thing I
+
+code testing. And then oh one thing I
+
+code testing. And then oh one thing I
+forgot to mention is that you do want to
+
+forgot to mention is that you do want to
+
+forgot to mention is that you do want to
+have the GitHub CLI already installed
+
+have the GitHub CLI already installed
+
+have the GitHub CLI already installed
+and set up with um the right
+
+and set up with um the right
+
+and set up with um the right
+credentials. Um so I already have that
+
+credentials. Um so I already have that
+
+credentials. Um so I already have that
+installed so my agent will be able to
+
+installed so my agent will be able to
+
+installed so my agent will be able to
+access my repos with the GitHub CLI.
+
+access my repos with the GitHub CLI.
+
+access my repos with the GitHub CLI.
+So I selected the repo. Um and I
+
+So I selected the repo. Um and I
+
+So I selected the repo. Um and I
+actually can use my current existing
+
+actually can use my current existing
+
+actually can use my current existing
+agent. I would actually generally
+
+agent. I would actually generally
+
+agent. I would actually generally
+recommend this because your current
+
+recommend this because your current
+
+recommend this because your current
+agent probably already has a lot of
+
+agent probably already has a lot of
+
+agent probably already has a lot of
+memory and information um about your
+
+memory and information um about your
+
+memory and information um about your
+repository. So if you already have an
+
+repository. So if you already have an
+
+repository. So if you already have an
+existing agent, definitely recommend
+
+existing agent, definitely recommend
+
+existing agent, definitely recommend
+using that. Um but just for the sake of
+
+using that. Um but just for the sake of
+
+using that. Um but just for the sake of
+this demo, I'm going to just create a
+
+this demo, I'm going to just create a
+
+this demo, I'm going to just create a
+new agent so that I can kind of show you
+
+new agent so that I can kind of show you
+
+new agent so that I can kind of show you
+the process of customizing that agent
+
+the process of customizing that agent
+
+the process of customizing that agent
+and then also uh training that agent
+
+and then also uh training that agent
+
+and then also uh training that agent
+with some initial memory.
+
+with some initial memory.
+
+with some initial memory.
+And then we'll just keep the existing
+
+And then we'll just keep the existing
+
+And then we'll just keep the existing
+name. And then now it's basically just
+
+name. And then now it's basically just
+
+name. And then now it's basically just
+going to um set up this agent for me. So
+
+going to um set up this agent for me. So
+
+going to um set up this agent for me. So
+it's basically retrieving information
+
+it's basically retrieving information
+
+it's basically retrieving information
+from the repository. Um it's going to
+
+from the repository. Um it's going to
+
+from the repository. Um it's going to
+create a branch and when it's done it
+
+create a branch and when it's done it
+
+create a branch and when it's done it
+should basically um create like a a PR
+
+should basically um create like a a PR
+
+should basically um create like a a PR
+for me to um open up. So now let code
+
+for me to um open up. So now let code
+
+for me to um open up. So now let code
+has opened up this poll request for me.
+
+has opened up this poll request for me.
+
+has opened up this poll request for me.
+So this is basically a poll request
+
+So this is basically a poll request
+
+So this is basically a poll request
+that's going to add a workflow for
+
+that's going to add a workflow for
+
+that's going to add a workflow for
+enabling um calling let code agents from
+
+enabling um calling let code agents from
+
+enabling um calling let code agents from
+this repository. Um so it just kind of
+
+this repository. Um so it just kind of
+
+this repository. Um so it just kind of
+has some background on what this is and
+
+has some background on what this is and
+
+has some background on what this is and
+then also instructions on how to
+
+then also instructions on how to
+
+then also instructions on how to
+actually use let code. So you just do
+
+actually use let code. So you just do
+
+actually use let code. So you just do
+atleta code. Um so I'm just going to
+
+atleta code. Um so I'm just going to
+
+atleta code. Um so I'm just going to
+create this pull request
+
+and then merge this pull request. So now
+
+and then merge this pull request. So now
+
+and then merge this pull request. So now
+that we have let code installed, we can
+
+that we have let code installed, we can
+
+that we have let code installed, we can
+try creating an issue to use let code.
+
+try creating an issue to use let code.
+
+try creating an issue to use let code.
+So I'm just going to do something a
+
+So I'm just going to do something a
+
+So I'm just going to do something a
+little silly for the sake of the demo.
+
+little silly for the sake of the demo.
+
+little silly for the sake of the demo.
+Um so move all sub agents to use opus
+
+Um so move all sub agents to use opus
+
+Um so move all sub agents to use opus
+4.6.
+
+work on this and create a PR. So, in
+
+work on this and create a PR. So, in
+
+work on this and create a PR. So, in
+general, you're going to want to add
+
+general, you're going to want to add
+
+general, you're going to want to add
+like a lot more detail than I'm actually
+
+like a lot more detail than I'm actually
+
+like a lot more detail than I'm actually
+adding in here. Um, kind of think of it
+
+adding in here. Um, kind of think of it
+
+adding in here. Um, kind of think of it
+as like delegating a task to human. You
+
+as like delegating a task to human. You
+
+as like delegating a task to human. You
+want to ideally be as specific as you
+
+want to ideally be as specific as you
+
+want to ideally be as specific as you
+can um and be very instructive, but
+
+can um and be very instructive, but
+
+can um and be very instructive, but
+that's not always ne necessary.
+
+So now that I've tagged let a code in
+
+So now that I've tagged let a code in
+
+So now that I've tagged let a code in
+this issue, this will essentially um
+
+this issue, this will essentially um
+
+this issue, this will essentially um
+start up a GitHub action which will call
+
+start up a GitHub action which will call
+
+start up a GitHub action which will call
+the let code agent inside of that GitHub
+
+the let code agent inside of that GitHub
+
+the let code agent inside of that GitHub
+action so that the agent can essentially
+
+action so that the agent can essentially
+
+action so that the agent can essentially
+work on this issue.
+
+work on this issue.
+
+work on this issue.
+So you can see that let code is now
+
+So you can see that let code is now
+
+So you can see that let code is now
+working and I can actually go view this
+
+working and I can actually go view this
+
+working and I can actually go view this
+job run.
+
+job run.
+
+job run.
+So this is basically the GitHub action
+
+So this is basically the GitHub action
+
+So this is basically the GitHub action
+getting started um installing let code
+
+getting started um installing let code
+
+getting started um installing let code
+um invoking the Asia and stuff like
+
+um invoking the Asia and stuff like
+
+um invoking the Asia and stuff like
+that. So, if I want to view my agent's
+
+that. So, if I want to view my agent's
+
+that. So, if I want to view my agent's
+progress, I can basically click on this
+
+progress, I can basically click on this
+
+progress, I can basically click on this
+link.
+
+And then inside of this AD view, I can
+
+And then inside of this AD view, I can
+
+And then inside of this AD view, I can
+actually see what this agent's been up
+
+actually see what this agent's been up
+
+actually see what this agent's been up
+to. So, I can see the initial prompt
+
+to. So, I can see the initial prompt
+
+to. So, I can see the initial prompt
+that the agent was given. So, this is
+
+that the agent was given. So, this is
+
+that the agent was given. So, this is
+basically a bunch of built-in
+
+basically a bunch of built-in
+
+basically a bunch of built-in
+instructions that we have for the agent.
+
+instructions that we have for the agent.
+
+instructions that we have for the agent.
+So, this is like a system reminder. Um
+
+So, this is like a system reminder. Um
+
+So, this is like a system reminder. Um
+and then uh you can see that basically
+
+and then uh you can see that basically
+
+and then uh you can see that basically
+this agent realized that it's been
+
+this agent realized that it's been
+
+this agent realized that it's been
+invoked um with this trigger. So it's
+
+invoked um with this trigger. So it's
+
+invoked um with this trigger. So it's
+been asked to move all subject agents to
+
+been asked to move all subject agents to
+
+been asked to move all subject agents to
+opus 4.6. Um and then it gets like a
+
+opus 4.6. Um and then it gets like a
+
+opus 4.6. Um and then it gets like a
+bunch of details about you know what
+
+bunch of details about you know what
+
+bunch of details about you know what
+environment it's in. Um and so yeah, you
+
+environment it's in. Um and so yeah, you
+
+environment it's in. Um and so yeah, you
+can kind of see it basically like you
+
+can kind of see it basically like you
+
+can kind of see it basically like you
+know reading through all the different
+
+know reading through all the different
+
+know reading through all the different
+files in the repository to basically
+
+files in the repository to basically
+
+files in the repository to basically
+work on this task. And again, because
+
+work on this task. And again, because
+
+work on this task. And again, because
+this is just a normal Letter code agent,
+
+this is just a normal Letter code agent,
+
+this is just a normal Letter code agent,
+you can, as you always would, basically
+
+you can, as you always would, basically
+
+you can, as you always would, basically
+edit the model or like edit um even the
+
+edit the model or like edit um even the
+
+edit the model or like edit um even the
+prompts um inside of this UI. And then
+
+prompts um inside of this UI. And then
+
+prompts um inside of this UI. And then
+every single time you invoke the agent
+
+every single time you invoke the agent
+
+every single time you invoke the agent
+from an issue, it'll actually create a
+
+from an issue, it'll actually create a
+
+from an issue, it'll actually create a
+new conversation. So you can see that um
+
+new conversation. So you can see that um
+
+new conversation. So you can see that um
+these are basically the issues that
+
+these are basically the issues that
+
+these are basically the issues that
+we've had the agent work on. You can see
+
+we've had the agent work on. You can see
+
+we've had the agent work on. You can see
+the unique conversation ID. So you can
+
+the unique conversation ID. So you can
+
+the unique conversation ID. So you can
+even resume this conversation locally
+
+even resume this conversation locally
+
+even resume this conversation locally
+using this ID. Um, and if this agent
+
+using this ID. Um, and if this agent
+
+using this ID. Um, and if this agent
+creates a PR from this issue, then the
+
+creates a PR from this issue, then the
+
+creates a PR from this issue, then the
+same conversation will be continued.
+
+same conversation will be continued.
+
+same conversation will be continued.
+Versus if you trigger or invoke the
+
+Versus if you trigger or invoke the
+
+Versus if you trigger or invoke the
+agent for the first time on a PR or for
+
+agent for the first time on a PR or for
+
+agent for the first time on a PR or for
+the first time on an issue, then it'll
+
+the first time on an issue, then it'll
+
+the first time on an issue, then it'll
+create a new conversation.
+
+create a new conversation.
+
+create a new conversation.
+So, I can see that this agent's
+
+So, I can see that this agent's
+
+So, I can see that this agent's
+continuing to um make progress on this
+
+continuing to um make progress on this
+
+continuing to um make progress on this
+task and is basically updating this
+
+task and is basically updating this
+
+task and is basically updating this
+issue as it makes progress. Um, so I'm
+
+issue as it makes progress. Um, so I'm
+
+issue as it makes progress. Um, so I'm
+just going to kind of wait for it to
+
+just going to kind of wait for it to
+
+just going to kind of wait for it to
+complete. So, while we're waiting for
+
+complete. So, while we're waiting for
+
+complete. So, while we're waiting for
+this to finish, I'm actually going to
+
+this to finish, I'm actually going to
+
+this to finish, I'm actually going to
+work on customizing this agent and
+
+work on customizing this agent and
+
+work on customizing this agent and
+essentially starting up its memory. Um,
+
+essentially starting up its memory. Um,
+
+essentially starting up its memory. Um,
+we just created this agent. So, this
+
+we just created this agent. So, this
+
+we just created this agent. So, this
+agent has no memory. Um, if we look into
+
+agent has no memory. Um, if we look into
+
+agent has no memory. Um, if we look into
+the actual like core memory section, we
+
+the actual like core memory section, we
+
+the actual like core memory section, we
+can see that there's, you know, not a
+
+can see that there's, you know, not a
+
+can see that there's, you know, not a
+lot going on. Um, so I'm actually going
+
+lot going on. Um, so I'm actually going
+
+lot going on. Um, so I'm actually going
+to bring this agent locally to help it
+
+to bring this agent locally to help it
+
+to bring this agent locally to help it
+bootstrap its memory. So to use the
+
+bootstrap its memory. So to use the
+
+bootstrap its memory. So to use the
+GitHub actions agent locally, all I have
+
+GitHub actions agent locally, all I have
+
+GitHub actions agent locally, all I have
+to do is just let a d-- agent and then
+
+to do is just let a d-- agent and then
+
+to do is just let a d-- agent and then
+this agent ID.
+
+So this is the GitHub actions agent and
+
+So this is the GitHub actions agent and
+
+So this is the GitHub actions agent and
+I'm going to actually make sure that we
+
+I'm going to actually make sure that we
+
+I'm going to actually make sure that we
+have messes enabled. So this is our new
+
+have messes enabled. So this is our new
+
+have messes enabled. So this is our new
+um memory feature. This should probably
+
+um memory feature. This should probably
+
+um memory feature. This should probably
+be enabled by default actually for this
+
+be enabled by default actually for this
+
+be enabled by default actually for this
+agent. Um but I'm just going to make
+
+agent. Um but I'm just going to make
+
+agent. Um but I'm just going to make
+sure that this new memory system is
+
+sure that this new memory system is
+
+sure that this new memory system is
+enabled.
+
+enabled.
+
+enabled.
+And then now I'm basically going to go
+
+And then now I'm basically going to go
+
+And then now I'm basically going to go
+through the process of revising this
+
+through the process of revising this
+
+through the process of revising this
+agent's memory and then also adding some
+
+agent's memory and then also adding some
+
+agent's memory and then also adding some
+customization. So if we kind of look at
+
+customization. So if we kind of look at
+
+customization. So if we kind of look at
+the current state of memory, yeah,
+
+the current state of memory, yeah,
+
+the current state of memory, yeah,
+there's literally nothing. Um, so I'm
+
+there's literally nothing. Um, so I'm
+
+there's literally nothing. Um, so I'm
+just going to run init. So this is going
+
+just going to run init. So this is going
+
+just going to run init. So this is going
+to help the agent bootstrap its memory
+
+to help the agent bootstrap its memory
+
+to help the agent bootstrap its memory
+by giving it some time to actually
+
+by giving it some time to actually
+
+by giving it some time to actually
+explore the repository um, and kind of
+
+explore the repository um, and kind of
+
+explore the repository um, and kind of
+learn some new things. So I generally
+
+learn some new things. So I generally
+
+learn some new things. So I generally
+recommend running this with all agents.
+
+recommend running this with all agents.
+
+recommend running this with all agents.
+Um, you want your agents to have some
+
+Um, you want your agents to have some
+
+Um, you want your agents to have some
+time to kind of process the existing
+
+time to kind of process the existing
+
+time to kind of process the existing
+repository for memories, decide all
+
+repository for memories, decide all
+
+repository for memories, decide all
+their memory structure, and ideally it's
+
+their memory structure, and ideally it's
+
+their memory structure, and ideally it's
+like a very interactive process. So,
+
+like a very interactive process. So,
+
+like a very interactive process. So,
+this is kind of some time that you
+
+this is kind of some time that you
+
+this is kind of some time that you
+should spend with new agents to help
+
+should spend with new agents to help
+
+should spend with new agents to help
+them kind of learn about your work and
+
+them kind of learn about your work and
+
+them kind of learn about your work and
+your preferences, stuff like that. Um,
+
+your preferences, stuff like that. Um,
+
+your preferences, stuff like that. Um,
+so that that agent can be a lot more
+
+so that that agent can be a lot more
+
+so that that agent can be a lot more
+tailored to your own work. So, I'm just
+
+tailored to your own work. So, I'm just
+
+tailored to your own work. So, I'm just
+going to do a standard review. I'm going
+
+going to do a standard review. I'm going
+
+going to do a standard review. I'm going
+to skip the history analysis.
+
+to skip the history analysis.
+
+to skip the history analysis.
+Um let's do frequent tur. Okay. So my
+
+Um let's do frequent tur. Okay. So my
+
+Um let's do frequent tur. Okay. So my
+agent has created an initial set of
+
+agent has created an initial set of
+
+agent has created an initial set of
+memory um files. And then I'm actually
+
+memory um files. And then I'm actually
+
+memory um files. And then I'm actually
+also going to ask it um can you make
+
+also going to ask it um can you make
+
+also going to ask it um can you make
+sure in your persona
+
+sure in your persona
+
+sure in your persona
+to
+
+create some
+
+create some
+
+create some
+code review guidelines for yourself
+
+code review guidelines for yourself
+
+code review guidelines for yourself
+or in another file.
+
+Okay. So now it's making a new file for
+
+Okay. So now it's making a new file for
+
+Okay. So now it's making a new file for
+itself.
+
+So now that my agent has essentially um
+
+So now that my agent has essentially um
+
+So now that my agent has essentially um
+you know done this code review, I can
+
+you know done this code review, I can
+
+you know done this code review, I can
+actually go back into the ad to view
+
+actually go back into the ad to view
+
+actually go back into the ad to view
+this agent.
+
+this agent.
+
+this agent.
+And so you can see if I open up the
+
+And so you can see if I open up the
+
+And so you can see if I open up the
+memory that now it has this full um file
+
+memory that now it has this full um file
+
+memory that now it has this full um file
+tree of its memory files. Um so the
+
+tree of its memory files. Um so the
+
+tree of its memory files. Um so the
+agent the memories that the agent
+
+agent the memories that the agent
+
+agent the memories that the agent
+created locally are now actually also on
+
+created locally are now actually also on
+
+created locally are now actually also on
+the remote server. So for future issues
+
+the remote server. So for future issues
+
+the remote server. So for future issues
+where we um invoke the agent from the
+
+where we um invoke the agent from the
+
+where we um invoke the agent from the
+GitHub action again, it'll actually have
+
+GitHub action again, it'll actually have
+
+GitHub action again, it'll actually have
+all this memory that we created together
+
+all this memory that we created together
+
+all this memory that we created together
+with the agent.
+
+with the agent.
+
+with the agent.
+And of course we can always hop back to
+
+And of course we can always hop back to
+
+And of course we can always hop back to
+that original conversation. Um so one
+
+that original conversation. Um so one
+
+that original conversation. Um so one
+thing I'll note is that uh the agent
+
+thing I'll note is that uh the agent
+
+thing I'll note is that uh the agent
+will not necessarily always immediately
+
+will not necessarily always immediately
+
+will not necessarily always immediately
+see the new memories. Um since we
+
+see the new memories. Um since we
+
+see the new memories. Um since we
+sometimes will delay the recompilation
+
+sometimes will delay the recompilation
+
+sometimes will delay the recompilation
+of the system prompt to avoid cache
+
+of the system prompt to avoid cache
+
+of the system prompt to avoid cache
+evictions. Um so it's only on
+
+evictions. Um so it's only on
+
+evictions. Um so it's only on
+compactions, new conversations or
+
+compactions, new conversations or
+
+compactions, new conversations or
+message resets um that all the memory
+
+message resets um that all the memory
+
+message resets um that all the memory
+gets reflected. Uh but of course if we
+
+gets reflected. Uh but of course if we
+
+gets reflected. Uh but of course if we
+create a new issue then that will create
+
+create a new issue then that will create
+
+create a new issue then that will create
+a new conversation. So on the next run
+
+a new conversation. So on the next run
+
+a new conversation. So on the next run
+the agent will have all this memory. So
+
+the agent will have all this memory. So
+
+the agent will have all this memory. So
+it seems like this agent is spending a
+
+it seems like this agent is spending a
+
+it seems like this agent is spending a
+really long time writing tests. Um but
+
+really long time writing tests. Um but
+
+really long time writing tests. Um but
+we can just go ahead and create this PR.
+
+we can just go ahead and create this PR.
+
+we can just go ahead and create this PR.
+So I can create this
+
+And then I can basically see like oh
+
+And then I can basically see like oh
+
+And then I can basically see like oh
+these all these changes that this agent
+
+these all these changes that this agent
+
+these all these changes that this agent
+made. So basically it modified all the
+
+made. So basically it modified all the
+
+made. So basically it modified all the
+existing default um agent types or sub
+
+existing default um agent types or sub
+
+existing default um agent types or sub
+aent types and updated it to be opus
+
+aent types and updated it to be opus
+
+aent types and updated it to be opus
+which is not actually something that we
+
+which is not actually something that we
+
+which is not actually something that we
+want but just a really easy way to kind
+
+want but just a really easy way to kind
+
+want but just a really easy way to kind
+of see a simple change that the let code
+
+of see a simple change that the let code
+
+of see a simple change that the let code
+agent can make. So now that I have this
+
+agent can make. So now that I have this
+
+agent can make. So now that I have this
+PR um from the agent, I can actually go
+
+PR um from the agent, I can actually go
+
+PR um from the agent, I can actually go
+back and forth with the agent um to
+
+back and forth with the agent um to
+
+back and forth with the agent um to
+continue the same conversation by just
+
+continue the same conversation by just
+
+continue the same conversation by just
+doing um at let a code inside of this
+
+doing um at let a code inside of this
+
+doing um at let a code inside of this
+PR. But what I can also do is I can even
+
+PR. But what I can also do is I can even
+
+PR. But what I can also do is I can even
+resume the conversation with that same
+
+resume the conversation with that same
+
+resume the conversation with that same
+agent. So to resume the agent locally, I
+
+agent. So to resume the agent locally, I
+
+agent. So to resume the agent locally, I
+can actually just copy that conversation
+
+can actually just copy that conversation
+
+can actually just copy that conversation
+command.
+
+And so this is the same agent that was
+
+And so this is the same agent that was
+
+And so this is the same agent that was
+basically running inside of that GitHub
+
+basically running inside of that GitHub
+
+basically running inside of that GitHub
+actions runner. Um, so I can ask it a
+
+actions runner. Um, so I can ask it a
+
+actions runner. Um, so I can ask it a
+question like, hey, did you add any
+
+question like, hey, did you add any
+
+question like, hey, did you add any
+testing in the end?
+
+So I guess it's doing a conversation
+
+So I guess it's doing a conversation
+
+So I guess it's doing a conversation
+search to basically review um its whole
+
+search to basically review um its whole
+
+search to basically review um its whole
+trajectory.
+
+And so it says that it did run the
+
+And so it says that it did run the
+
+And so it says that it did run the
+existing tests, but it did not add any
+
+existing tests, but it did not add any
+
+existing tests, but it did not add any
+new tests. So this kind of matches up to
+
+new tests. So this kind of matches up to
+
+new tests. So this kind of matches up to
+um what we see in the PR where it
+
+um what we see in the PR where it
+
+um what we see in the PR where it
+changed a bunch of things, but it didn't
+
+changed a bunch of things, but it didn't
+
+changed a bunch of things, but it didn't
+actually add any tests. So yeah, you can
+
+actually add any tests. So yeah, you can
+
+actually add any tests. So yeah, you can
+basically um chat with the agent here.
+
+basically um chat with the agent here.
+
+basically um chat with the agent here.
+You can chat with it from in here and
+
+You can chat with it from in here and
+
+You can chat with it from in here and
+it'll be the same conversation. You can
+
+it'll be the same conversation. You can
+
+it'll be the same conversation. You can
+even talk to it from the AD though in
+
+even talk to it from the AD though in
+
+even talk to it from the AD though in
+that case it won't really have any
+
+that case it won't really have any
+
+that case it won't really have any
+environment to run inside of. Um, so I
+
+environment to run inside of. Um, so I
+
+environment to run inside of. Um, so I
+would kind of recommend using the AD for
+
+would kind of recommend using the AD for
+
+would kind of recommend using the AD for
+only viewing viewing only.
+
+So yeah, the let code GitHub action is a
+
+So yeah, the let code GitHub action is a
+
+So yeah, the let code GitHub action is a
+great way to basically interact with
+
+great way to basically interact with
+
+great way to basically interact with
+Leta Code agents um, and have them run
+
+Leta Code agents um, and have them run
+
+Leta Code agents um, and have them run
+in the background without you having to
+
+in the background without you having to
+
+in the background without you having to
+run them on your local machine. But the
+
+run them on your local machine. But the
+
+run them on your local machine. But the
+great thing about them is because
+
+great thing about them is because
+
+great thing about them is because
+they're stateful, you can actually um
+
+they're stateful, you can actually um
+
+they're stateful, you can actually um
+bring that same conversation back to
+
+bring that same conversation back to
+
+bring that same conversation back to
+your local machine to essentially
+
+your local machine to essentially
+
+your local machine to essentially
+interact with the agent or understand or
+
+interact with the agent or understand or
+
+interact with the agent or understand or
+give them feedback um for whatever that
+
+give them feedback um for whatever that
+
+give them feedback um for whatever that
+they might have been working on inside
+
+they might have been working on inside
+
+they might have been working on inside
+of the GitHub action. The let code
+
+of the GitHub action. The let code
+
+of the GitHub action. The let code
+GitHub action is a great way to just
+
+GitHub action is a great way to just
+
+GitHub action is a great way to just
+have your Letter Code agents be running
+
+have your Letter Code agents be running
+
+have your Letter Code agents be running
+in the background. And of course,
+
+in the background. And of course,
+
+in the background. And of course,
+because the agents are stateful, you can
+
+because the agents are stateful, you can
+
+because the agents are stateful, you can
+always just resume the same conversation
+
+always just resume the same conversation
+
+always just resume the same conversation
+from the Letter Code CLI to basically
+
+from the Letter Code CLI to basically
+
+from the Letter Code CLI to basically
+give the agent feedback or to understand
+
+give the agent feedback or to understand
+
+give the agent feedback or to understand
+the decisions that they made. The Letter
+
+the decisions that they made. The Letter
+
+the decisions that they made. The Letter
+Code agents running through the GitHub
+
+Code agents running through the GitHub
+
+Code agents running through the GitHub
+action will also of course have access
+
+action will also of course have access
+
+action will also of course have access
+to the same memories um that it builds
+
+to the same memories um that it builds
+
+to the same memories um that it builds
+up locally or um remotely because all
+
+up locally or um remotely because all
+
+up locally or um remotely because all
+the memories are synchronized through
+
+the memories are synchronized through
+
+the memories are synchronized through
+the context repositories. We've been
+
+the context repositories. We've been
+
+the context repositories. We've been
+using the lot of code GitHub action for
+
+using the lot of code GitHub action for
+
+using the lot of code GitHub action for
+most of our repos. So definitely
+
+most of our repos. So definitely
+
+most of our repos. So definitely
+recommend you check it out. Thanks.

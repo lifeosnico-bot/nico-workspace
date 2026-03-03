@@ -1,0 +1,2718 @@
+Kind: captions
+Language: en
+
+hi everyone it's Charles from Letta
+
+hi everyone it's Charles from Letta
+
+hi everyone it's Charles from Letta
+today I'm going to be going over the
+
+today I'm going to be going over the
+
+today I'm going to be going over the
+built-in multi-agent tools that are part
+
+built-in multi-agent tools that are part
+
+built-in multi-agent tools that are part
+of the Lea framework by default that
+
+of the Lea framework by default that
+
+of the Lea framework by default that
+allow you to easily turn Lea agents into
+
+allow you to easily turn Lea agents into
+
+allow you to easily turn Lea agents into
+larger multi-agent
+
+larger multi-agent
+
+larger multi-agent
+systems so as a reminder all agents in
+
+systems so as a reminder all agents in
+
+systems so as a reminder all agents in
+Leta are stateful what this means is
+
+Leta are stateful what this means is
+
+Leta are stateful what this means is
+that when you build a multi-agent system
+
+that when you build a multi-agent system
+
+that when you build a multi-agent system
+in Leta you're effectively connecting
+
+in Leta you're effectively connecting
+
+in Leta you're effectively connecting
+independent agents that have their own
+
+independent agents that have their own
+
+independent agents that have their own
+independent memory systems they have
+
+independent memory systems they have
+
+independent memory systems they have
+their own independent state and you're
+
+their own independent state and you're
+
+their own independent state and you're
+connecting them to each other via tools
+
+connecting them to each other via tools
+
+connecting them to each other via tools
+so it's kind of like connecting humans
+
+so it's kind of like connecting humans
+
+so it's kind of like connecting humans
+over some common Communication channel
+
+over some common Communication channel
+
+over some common Communication channel
+like two independent humans that kind of
+
+like two independent humans that kind of
+
+like two independent humans that kind of
+have their own memories they have their
+
+have their own memories they have their
+
+have their own memories they have their
+own jobs they have their own
+
+own jobs they have their own
+
+own jobs they have their own
+responsibilities and you connect them
+
+responsibilities and you connect them
+
+responsibilities and you connect them
+via slack for example or iMessage so
+
+via slack for example or iMessage so
+
+via slack for example or iMessage so
+it's a very similar Concept in
+
+L So currently there are three built-in
+
+L So currently there are three built-in
+
+L So currently there are three built-in
+tools for cross agent communication um
+
+tools for cross agent communication um
+
+tools for cross agent communication um
+one of them is sending messages to other
+
+one of them is sending messages to other
+
+one of them is sending messages to other
+agents ayous Le another one is
+
+agents ayous Le another one is
+
+agents ayous Le another one is
+synchronous so you send a message and
+
+synchronous so you send a message and
+
+synchronous so you send a message and
+you wait for a reply immediately and the
+
+you wait for a reply immediately and the
+
+you wait for a reply immediately and the
+last one is intended for like supervisor
+
+last one is intended for like supervisor
+
+last one is intended for like supervisor
+worker patterns where you have one agent
+
+worker patterns where you have one agent
+
+worker patterns where you have one agent
+sending a lot of sending the same
+
+sending a lot of sending the same
+
+sending a lot of sending the same
+message to a bunch of sub agents um and
+
+message to a bunch of sub agents um and
+
+message to a bunch of sub agents um and
+in this case the the function is called
+
+in this case the the function is called
+
+in this case the the function is called
+send message to agents matching all tags
+
+send message to agents matching all tags
+
+send message to agents matching all tags
+and tags are a way and let it to kind of
+
+and tags are a way and let it to kind of
+
+and tags are a way and let it to kind of
+group agents together um so you can kind
+
+group agents together um so you can kind
+
+group agents together um so you can kind
+of group a bunch of workers together
+
+of group a bunch of workers together
+
+of group a bunch of workers together
+with a worker tag so the first function
+
+with a worker tag so the first function
+
+with a worker tag so the first function
+we're going to go over is the
+
+we're going to go over is the
+
+we're going to go over is the
+asynchronous function so in this case
+
+asynchronous function so in this case
+
+asynchronous function so in this case
+you basically have an agent sending a
+
+you basically have an agent sending a
+
+you basically have an agent sending a
+message to another agent like hi agent 2
+
+message to another agent like hi agent 2
+
+message to another agent like hi agent 2
+are you there coming from agent one um
+
+are you there coming from agent one um
+
+are you there coming from agent one um
+but agent one doesn't actually you know
+
+but agent one doesn't actually you know
+
+but agent one doesn't actually you know
+wait and pause execution until it gets a
+
+wait and pause execution until it gets a
+
+wait and pause execution until it gets a
+message back from agent two instead the
+
+message back from agent two instead the
+
+message back from agent two instead the
+the tool call or the message immediately
+
+the tool call or the message immediately
+
+the tool call or the message immediately
+returns as long as it was delivered
+
+returns as long as it was delivered
+
+returns as long as it was delivered
+successfully so this is like pretty
+
+successfully so this is like pretty
+
+successfully so this is like pretty
+similar to if you were to message
+
+similar to if you were to message
+
+similar to if you were to message
+someone on iMessage and you get a a send
+
+someone on iMessage and you get a a send
+
+someone on iMessage and you get a a send
+receipt right or a delivered receipt so
+
+receipt right or a delivered receipt so
+
+receipt right or a delivered receipt so
+basically agent one immediately knows
+
+basically agent one immediately knows
+
+basically agent one immediately knows
+that the message was delivered
+
+that the message was delivered
+
+that the message was delivered
+successfully but it doesn't actually
+
+successfully but it doesn't actually
+
+successfully but it doesn't actually
+like hold or pause execution waiting for
+
+like hold or pause execution waiting for
+
+like hold or pause execution waiting for
+agent 2 it can actually go do it do its
+
+agent 2 it can actually go do it do its
+
+agent 2 it can actually go do it do its
+own thing and meantime and it's kind of
+
+own thing and meantime and it's kind of
+
+own thing and meantime and it's kind of
+up to agent two to send a message back
+
+up to agent two to send a message back
+
+up to agent two to send a message back
+to agent one so in this example agent 2
+
+to agent one so in this example agent 2
+
+to agent one so in this example agent 2
+it processes the message that came in
+
+it processes the message that came in
+
+it processes the message that came in
+from agent one and then because agent 2
+
+from agent one and then because agent 2
+
+from agent one and then because agent 2
+has access to this function send message
+
+has access to this function send message
+
+has access to this function send message
+to agent async it can ping back to agent
+
+to agent async it can ping back to agent
+
+to agent async it can ping back to agent
+one and say hi agent one I'm here again
+
+one and say hi agent one I'm here again
+
+one and say hi agent one I'm here again
+this is the async tool so agent 2
+
+this is the async tool so agent 2
+
+this is the async tool so agent 2
+immediately gets a receipt of a message
+
+immediately gets a receipt of a message
+
+immediately gets a receipt of a message
+sent receipt um and yeah then the agent
+
+sent receipt um and yeah then the agent
+
+sent receipt um and yeah then the agent
+agent one and agent two can go back and
+
+agent one and agent two can go back and
+
+agent one and agent two can go back and
+forward so a synchronous here basically
+
+forward so a synchronous here basically
+
+forward so a synchronous here basically
+means when you use this tool to message
+
+means when you use this tool to message
+
+means when you use this tool to message
+another agent you're not going to lock
+
+another agent you're not going to lock
+
+another agent you're not going to lock
+your execution and wait for the other
+
+your execution and wait for the other
+
+your execution and wait for the other
+agent to reply you kind of like proceed
+
+agent to reply you kind of like proceed
+
+agent to reply you kind of like proceed
+immediately so this is very similar to
+
+immediately so this is very similar to
+
+immediately so this is very similar to
+how humans communicate over shared
+
+how humans communicate over shared
+
+how humans communicate over shared
+communication
+
+communication
+
+communication
+channels the second tool we have is kind
+
+channels the second tool we have is kind
+
+channels the second tool we have is kind
+of the opposite so it's a synchronous
+
+of the opposite so it's a synchronous
+
+of the opposite so it's a synchronous
+messaging system where agent one if it
+
+messaging system where agent one if it
+
+messaging system where agent one if it
+sends a message to agent two it actually
+
+sends a message to agent two it actually
+
+sends a message to agent two it actually
+stalls execution and waits for agent 2
+
+stalls execution and waits for agent 2
+
+stalls execution and waits for agent 2
+to reply um so here agent one is saying
+
+to reply um so here agent one is saying
+
+to reply um so here agent one is saying
+hi agent two are you there agent 2 then
+
+hi agent two are you there agent 2 then
+
+hi agent two are you there agent 2 then
+processes the message and it replies hi
+
+processes the message and it replies hi
+
+processes the message and it replies hi
+agent one yes I'm here and agent one
+
+agent one yes I'm here and agent one
+
+agent one yes I'm here and agent one
+actually wasn't able to do anything in
+
+actually wasn't able to do anything in
+
+actually wasn't able to do anything in
+the meantime agent one called this tool
+
+the meantime agent one called this tool
+
+the meantime agent one called this tool
+and then it was waiting for the response
+
+and then it was waiting for the response
+
+and then it was waiting for the response
+from agent 2 and it it couldn't just
+
+from agent 2 and it it couldn't just
+
+from agent 2 and it it couldn't just
+kind of go do its own thing even if
+
+kind of go do its own thing even if
+
+kind of go do its own thing even if
+agent 2 took a very long time to respond
+
+agent 2 took a very long time to respond
+
+agent 2 took a very long time to respond
+instead it kind of gets locked up um so
+
+instead it kind of gets locked up um so
+
+instead it kind of gets locked up um so
+this is definitely a simpler system than
+
+this is definitely a simpler system than
+
+this is definitely a simpler system than
+the asyncronous version um so it's maybe
+
+the asyncronous version um so it's maybe
+
+the asyncronous version um so it's maybe
+useful in some cases where you have a
+
+useful in some cases where you have a
+
+useful in some cases where you have a
+very like deterministic system or you
+
+very like deterministic system or you
+
+very like deterministic system or you
+want to keep everything simple for um
+
+want to keep everything simple for um
+
+want to keep everything simple for um
+for reliability reasons but it's
+
+for reliability reasons but it's
+
+for reliability reasons but it's
+definitely not as you know not as
+
+definitely not as you know not as
+
+definitely not as you know not as
+similar to how humans are communicating
+
+similar to how humans are communicating
+
+similar to how humans are communicating
+because as a human when you send a
+
+because as a human when you send a
+
+because as a human when you send a
+message you don't like pause everything
+
+message you don't like pause everything
+
+message you don't like pause everything
+and wait for the message or the reply to
+
+and wait for the message or the reply to
+
+and wait for the message or the reply to
+come back in so the third tool that we
+
+come back in so the third tool that we
+
+come back in so the third tool that we
+include by default is kind of a template
+
+include by default is kind of a template
+
+include by default is kind of a template
+tool is the send message to all agents
+
+tool is the send message to all agents
+
+tool is the send message to all agents
+match or is the send message to agents
+
+match or is the send message to agents
+
+match or is the send message to agents
+matching all tags tool so this is really
+
+matching all tags tool so this is really
+
+matching all tags tool so this is really
+intended for if you're building some
+
+intended for if you're building some
+
+intended for if you're building some
+sort of supervisor worker pattern so in
+
+sort of supervisor worker pattern so in
+
+sort of supervisor worker pattern so in
+this case let's say we have one
+
+this case let's say we have one
+
+this case let's say we have one
+supervisor we have three workers the
+
+supervisor we have three workers the
+
+supervisor we have three workers the
+supervisor says something like let's
+
+supervisor says something like let's
+
+supervisor says something like let's
+start the task and it just has to send
+
+start the task and it just has to send
+
+start the task and it just has to send
+this message let's start the task um
+
+this message let's start the task um
+
+this message let's start the task um
+once and it sends it to kind of a list
+
+once and it sends it to kind of a list
+
+once and it sends it to kind of a list
+of tags in this case it could basically
+
+of tags in this case it could basically
+
+of tags in this case it could basically
+if all the workers were tagged with
+
+if all the workers were tagged with
+
+if all the workers were tagged with
+worker the list could just be a
+
+worker the list could just be a
+
+worker the list could just be a
+Singleton list that just says worker um
+
+Singleton list that just says worker um
+
+Singleton list that just says worker um
+and the system under the hood will
+
+and the system under the hood will
+
+and the system under the hood will
+handle basically dispatching this
+
+handle basically dispatching this
+
+handle basically dispatching this
+message to every single agent that is
+
+message to every single agent that is
+
+message to every single agent that is
+part of this tag group so in this case
+
+part of this tag group so in this case
+
+part of this tag group so in this case
+the same message let's start the task
+
+the same message let's start the task
+
+the same message let's start the task
+it's gets sent to every single worker um
+
+it's gets sent to every single worker um
+
+it's gets sent to every single worker um
+and this is synchronous so the agent
+
+and this is synchronous so the agent
+
+and this is synchronous so the agent
+will wait and effectively for all the
+
+will wait and effectively for all the
+
+will wait and effectively for all the
+responses to come back um so you can see
+
+responses to come back um so you can see
+
+responses to come back um so you can see
+that the supervisor it's waiting it
+
+that the supervisor it's waiting it
+
+that the supervisor it's waiting it
+doesn't get a receipt immediately
+
+doesn't get a receipt immediately
+
+doesn't get a receipt immediately
+instead it kind of pauses it stalls and
+
+instead it kind of pauses it stalls and
+
+instead it kind of pauses it stalls and
+it waits for worker one two and three to
+
+it waits for worker one two and three to
+
+it waits for worker one two and three to
+process their tasks those task results
+
+process their tasks those task results
+
+process their tasks those task results
+kind of come back you can see that
+
+kind of come back you can see that
+
+kind of come back you can see that
+worker one says here's my result worker
+
+worker one says here's my result worker
+
+worker one says here's my result worker
+two says something different this is
+
+two says something different this is
+
+two says something different this is
+what I have and worker 3 says I didn't
+
+what I have and worker 3 says I didn't
+
+what I have and worker 3 says I didn't
+do anything and then once the supervisor
+
+do anything and then once the supervisor
+
+do anything and then once the supervisor
+gets all these results back that's when
+
+gets all these results back that's when
+
+gets all these results back that's when
+this tool returns internally inside of
+
+this tool returns internally inside of
+
+this tool returns internally inside of
+the tool execution Loop okay so now
+
+the tool execution Loop okay so now
+
+the tool execution Loop okay so now
+we're going to go over a simple tutorial
+
+we're going to go over a simple tutorial
+
+we're going to go over a simple tutorial
+where we connect two agents to to each
+
+where we connect two agents to to each
+
+where we connect two agents to to each
+other so we'll create two independent
+
+other so we'll create two independent
+
+other so we'll create two independent
+agents then add the tool um in this case
+
+agents then add the tool um in this case
+
+agents then add the tool um in this case
+we're going to use the tool the
+
+we're going to use the tool the
+
+we're going to use the tool the
+asynchronous messaging tool um and we're
+
+asynchronous messaging tool um and we're
+
+asynchronous messaging tool um and we're
+going to attach that tool to our agents
+
+going to attach that tool to our agents
+
+going to attach that tool to our agents
+and then connect them to each other and
+
+and then connect them to each other and
+
+and then connect them to each other and
+have them message each other in a kind
+
+have them message each other in a kind
+
+have them message each other in a kind
+of like Ping Pong fashion this tutorial
+
+of like Ping Pong fashion this tutorial
+
+of like Ping Pong fashion this tutorial
+is on our cookbooks page um it uses the
+
+is on our cookbooks page um it uses the
+
+is on our cookbooks page um it uses the
+built-in tool so it's very easy to get
+
+built-in tool so it's very easy to get
+
+built-in tool so it's very easy to get
+set up oh yeah we're going to kind of go
+
+set up oh yeah we're going to kind of go
+
+set up oh yeah we're going to kind of go
+through this tutorial but if you want to
+
+through this tutorial but if you want to
+
+through this tutorial but if you want to
+see it in your own time and walk through
+
+see it in your own time and walk through
+
+see it in your own time and walk through
+it yourself um all you have to do is
+
+it yourself um all you have to do is
+
+it yourself um all you have to do is
+just check out our cookbook page and
+
+just check out our cookbook page and
+
+just check out our cookbook page and
+then you'll see this async multi-agent
+
+then you'll see this async multi-agent
+
+then you'll see this async multi-agent
+tutorial all right so to run this
+
+tutorial all right so to run this
+
+tutorial all right so to run this
+example I'm going to be using the Leta
+
+example I'm going to be using the Leta
+
+example I'm going to be using the Leta
+Docker server so all I need to do to get
+
+Docker server so all I need to do to get
+
+Docker server so all I need to do to get
+started is basically run Docker run um
+
+started is basically run Docker run um
+
+started is basically run Docker run um
+with the latest lettera image in this
+
+with the latest lettera image in this
+
+with the latest lettera image in this
+case I'm going to be creating One agent
+
+case I'm going to be creating One agent
+
+case I'm going to be creating One agent
+with open Ai and one agent with
+
+with open Ai and one agent with
+
+with open Ai and one agent with
+anthropic so I'll just pass in those two
+
+anthropic so I'll just pass in those two
+
+anthropic so I'll just pass in those two
+keys I have so once I start the
+
+keys I have so once I start the
+
+keys I have so once I start the
+server see
+
+all right great so the server is up and
+
+all right great so the server is up and
+
+all right great so the server is up and
+running now we can see that on the web
+
+running now we can see that on the web
+
+running now we can see that on the web
+ad everything's kind of all set up I can
+
+ad everything's kind of all set up I can
+
+ad everything's kind of all set up I can
+view my agents and create a new agent so
+
+view my agents and create a new agent so
+
+view my agents and create a new agent so
+for this example I'm going to create two
+
+for this example I'm going to create two
+
+for this example I'm going to create two
+agents so I'll actually just create two
+
+agents so I'll actually just create two
+
+agents so I'll actually just create two
+agents from scratch and I'm going to
+
+agents from scratch and I'm going to
+
+agents from scratch and I'm going to
+copy in the Persona blocks that are in
+
+copy in the Persona blocks that are in
+
+copy in the Persona blocks that are in
+the
+
+tutorial okay so one of the agents we're
+
+tutorial okay so one of the agents we're
+
+tutorial okay so one of the agents we're
+calling Bob both of these uh these
+
+calling Bob both of these uh these
+
+calling Bob both of these uh these
+memory blocks I copied from the tutorial
+
+memory blocks I copied from the tutorial
+
+memory blocks I copied from the tutorial
+um yeah so for Bob I'm going to go ahead
+
+um yeah so for Bob I'm going to go ahead
+
+um yeah so for Bob I'm going to go ahead
+and I'll set the model to GPT 40
+
+and I'll set the model to GPT 40
+
+and I'll set the model to GPT 40
+mini and why don't we just go ahead and
+
+mini and why don't we just go ahead and
+
+mini and why don't we just go ahead and
+actually create or change the name of
+
+actually create or change the name of
+
+actually create or change the name of
+the agent to Bob this isn't actually how
+
+the agent to Bob this isn't actually how
+
+the agent to Bob this isn't actually how
+the agents will communicate with each
+
+the agents will communicate with each
+
+the agents will communicate with each
+other the agents will use um their agent
+
+other the agents will use um their agent
+
+other the agents will use um their agent
+ID but it's kind of useful just for us
+
+ID but it's kind of useful just for us
+
+ID but it's kind of useful just for us
+to of track which agent is which and
+
+to of track which agent is which and
+
+to of track which agent is which and
+then the important part here is that I
+
+then the important part here is that I
+
+then the important part here is that I
+need to add the multi-agent tool so by
+
+need to add the multi-agent tool so by
+
+need to add the multi-agent tool so by
+default it's not going to be included so
+
+default it's not going to be included so
+
+default it's not going to be included so
+I'm going to have to go to tools here I
+
+I'm going to have to go to tools here I
+
+I'm going to have to go to tools here I
+can look at the built-in lettera tools
+
+can look at the built-in lettera tools
+
+can look at the built-in lettera tools
+and we should be able yeah so right here
+
+and we should be able yeah so right here
+
+and we should be able yeah so right here
+send message to agent async so you can
+
+send message to agent async so you can
+
+send message to agent async so you can
+see the three different multi-agent
+
+see the three different multi-agent
+
+see the three different multi-agent
+tools here the one that we're going to
+
+tools here the one that we're going to
+
+tools here the one that we're going to
+use with this tutorial is the async one
+
+use with this tutorial is the async one
+
+use with this tutorial is the async one
+so we can just go in here attach the
+
+tool great yeah so we can see the tools
+
+tool great yeah so we can see the tools
+
+tool great yeah so we can see the tools
+attached and now I'm going to do the
+
+attached and now I'm going to do the
+
+attached and now I'm going to do the
+same thing for Alice so I can go back to
+
+same thing for Alice so I can go back to
+
+same thing for Alice so I can go back to
+the main page on the server click create
+
+the main page on the server click create
+
+the main page on the server click create
+agent again let's create a new agent
+
+agent again let's create a new agent
+
+agent again let's create a new agent
+start from
+
+start from
+
+start from
+scratch okay so I also copied over the
+
+scratch okay so I also copied over the
+
+scratch okay so I also copied over the
+memory blocks the memory block for the
+
+memory blocks the memory block for the
+
+memory blocks the memory block for the
+human is the same the Persona block is
+
+human is the same the Persona block is
+
+human is the same the Persona block is
+going to be a little bit different this
+
+going to be a little bit different this
+
+going to be a little bit different this
+one says I Alice um and yeah for this
+
+one says I Alice um and yeah for this
+
+one says I Alice um and yeah for this
+one since we use GPD 4 mini for one
+
+one since we use GPD 4 mini for one
+
+one since we use GPD 4 mini for one
+let's try using CLA son it for another
+
+let's try using CLA son it for another
+
+let's try using CLA son it for another
+so I think this is like kind of useful
+
+so I think this is like kind of useful
+
+so I think this is like kind of useful
+just to make sure that the agents like
+
+just to make sure that the agents like
+
+just to make sure that the agents like
+don't behave identically it's a little
+
+don't behave identically it's a little
+
+don't behave identically it's a little
+bit more interesting in this case and
+
+bit more interesting in this case and
+
+bit more interesting in this case and
+yeah let's also change the name of this
+
+yeah let's also change the name of this
+
+yeah let's also change the name of this
+agent to Alice
+
+okay great and then the last thing we
+
+okay great and then the last thing we
+
+okay great and then the last thing we
+need to do here again is for Alice as
+
+need to do here again is for Alice as
+
+need to do here again is for Alice as
+well let's go ahead and attach the mulen
+
+tool great okay we can see that it's
+
+tool great okay we can see that it's
+
+tool great okay we can see that it's
+attached okay so now if we go back to
+
+attached okay so now if we go back to
+
+attached okay so now if we go back to
+our list of agents this is a fresh
+
+our list of agents this is a fresh
+
+our list of agents this is a fresh
+server so there's only the agents that
+
+server so there's only the agents that
+
+server so there's only the agents that
+was creating for this tutorial on them
+
+was creating for this tutorial on them
+
+was creating for this tutorial on them
+or on the server yeah we can see Alice
+
+or on the server yeah we can see Alice
+
+or on the server yeah we can see Alice
+and Bob um are both created they're the
+
+and Bob um are both created they're the
+
+and Bob um are both created they're the
+only agents that we have
+
+all right so to kick things off we're
+
+all right so to kick things off we're
+
+all right so to kick things off we're
+going to actually prime one of the
+
+going to actually prime one of the
+
+going to actually prime one of the
+agents um with this message that says
+
+agents um with this message that says
+
+agents um with this message that says
+hey I'm just letting you know I'm going
+
+hey I'm just letting you know I'm going
+
+hey I'm just letting you know I'm going
+to connect you with another one of my
+
+to connect you with another one of my
+
+to connect you with another one of my
+agent buddies I hope you enjoy chatting
+
+agent buddies I hope you enjoy chatting
+
+agent buddies I hope you enjoy chatting
+with them I think they'll Reach Out
+
+with them I think they'll Reach Out
+
+with them I think they'll Reach Out
+directly so we're going to send this
+
+directly so we're going to send this
+
+directly so we're going to send this
+message over to
+
+message over to
+
+message over to
+Bob this is just so that like when Alice
+
+Bob this is just so that like when Alice
+
+Bob this is just so that like when Alice
+sends Bob a message and likewise when
+
+sends Bob a message and likewise when
+
+sends Bob a message and likewise when
+Bob sends Alice a message um the agent
+
+Bob sends Alice a message um the agent
+
+Bob sends Alice a message um the agent
+kind of knows what's going on right
+
+kind of knows what's going on right
+
+kind of knows what's going on right
+because if you look at the core memory
+
+because if you look at the core memory
+
+because if you look at the core memory
+here that the agent is initialized with
+
+here that the agent is initialized with
+
+here that the agent is initialized with
+initialize with um there's nothing in
+
+initialize with um there's nothing in
+
+initialize with um there's nothing in
+here that's necessarily talking about
+
+here that's necessarily talking about
+
+here that's necessarily talking about
+interacting with other agents and
+
+interacting with other agents and
+
+interacting with other agents and
+similarly in the Persona there's nothing
+
+similarly in the Persona there's nothing
+
+similarly in the Persona there's nothing
+in here that's talking about interacting
+
+in here that's talking about interacting
+
+in here that's talking about interacting
+with other agents neither in the system
+
+with other agents neither in the system
+
+with other agents neither in the system
+prompt as well so the only context that
+
+prompt as well so the only context that
+
+prompt as well so the only context that
+the agent has about you know this
+
+the agent has about you know this
+
+the agent has about you know this
+ability to communicate with other agents
+
+ability to communicate with other agents
+
+ability to communicate with other agents
+and the fact that other agents might
+
+and the fact that other agents might
+
+and the fact that other agents might
+even be out there is going to be the
+
+even be out there is going to be the
+
+even be out there is going to be the
+dock string from this tool or the schema
+
+dock string from this tool or the schema
+
+dock string from this tool or the schema
+from this tool that gets included in the
+
+from this tool that gets included in the
+
+from this tool that gets included in the
+payload so yeah we basically are going
+
+payload so yeah we basically are going
+
+payload so yeah we basically are going
+to want to like Prime the agent with a
+
+to want to like Prime the agent with a
+
+to want to like Prime the agent with a
+little bit of information before we kick
+
+little bit of information before we kick
+
+little bit of information before we kick
+things
+
+things
+
+things
+off okay and then the next thing we're
+
+off okay and then the next thing we're
+
+off okay and then the next thing we're
+going to want to do is go over to Alice
+
+going to want to do is go over to Alice
+
+going to want to do is go over to Alice
+but I think at this point because we
+
+but I think at this point because we
+
+but I think at this point because we
+have two agents I'm actually going to go
+
+have two agents I'm actually going to go
+
+have two agents I'm actually going to go
+into split screen mode and can look at
+
+into split screen mode and can look at
+
+into split screen mode and can look at
+these two agents side by side all right
+
+these two agents side by side all right
+
+these two agents side by side all right
+so now we have these two agents side by
+
+so now we have these two agents side by
+
+so now we have these two agents side by
+side it's a little bit squished so I
+
+side it's a little bit squished so I
+
+side it's a little bit squished so I
+like uh zoomed it out a bit um yeah a
+
+like uh zoomed it out a bit um yeah a
+
+like uh zoomed it out a bit um yeah a
+little squished here but this should be
+
+little squished here but this should be
+
+little squished here but this should be
+a little bit easier to manage the next
+
+a little bit easier to manage the next
+
+a little bit easier to manage the next
+thing we're going to do is we're going
+
+thing we're going to do is we're going
+
+thing we're going to do is we're going
+to send Alice a message and ask Alice to
+
+to send Alice a message and ask Alice to
+
+to send Alice a message and ask Alice to
+chat with bot
+
+chat with bot
+
+chat with bot
+so this is the message I copied from the
+
+so this is the message I copied from the
+
+so this is the message I copied from the
+tutorial um obviously we're going to
+
+tutorial um obviously we're going to
+
+tutorial um obviously we're going to
+need to change this ID information
+
+need to change this ID information
+
+need to change this ID information
+so um so Bob is
+
+so um so Bob is
+
+so um so Bob is
+actually uh the ID is a little bit
+
+actually uh the ID is a little bit
+
+actually uh the ID is a little bit
+different so we can copy it
+
+different so we can copy it
+
+different so we can copy it
+over
+
+over
+
+over
+great so the message we're going to send
+
+great so the message we're going to send
+
+great so the message we're going to send
+Alice says um so this coming from the
+
+Alice says um so this coming from the
+
+Alice says um so this coming from the
+human to Alice is saying hey my agent
+
+human to Alice is saying hey my agent
+
+human to Alice is saying hey my agent
+friend is lonely and needs some on the
+
+friend is lonely and needs some on the
+
+friend is lonely and needs some on the
+chat too can you give them a ring their
+
+chat too can you give them a ring their
+
+chat too can you give them a ring their
+agent ID is this agent ID
+
+agent ID is this agent ID
+
+agent ID is this agent ID
+so this is the argument um that the send
+
+so this is the argument um that the send
+
+so this is the argument um that the send
+message uh or send message the agent
+
+message uh or send message the agent
+
+message uh or send message the agent
+Asing tool is going to take um so we're
+
+Asing tool is going to take um so we're
+
+Asing tool is going to take um so we're
+g we need to give basically the ID
+
+g we need to give basically the ID
+
+g we need to give basically the ID
+otherwise Alice won't won't know what um
+
+otherwise Alice won't won't know what um
+
+otherwise Alice won't won't know what um
+basically won't know how to call the
+
+basically won't know how to call the
+
+basically won't know how to call the
+tool and we also tell say yeah if you
+
+tool and we also tell say yeah if you
+
+tool and we also tell say yeah if you
+can reach them have a short conversation
+
+can reach them have a short conversation
+
+can reach them have a short conversation
+but let me know after a few messages how
+
+but let me know after a few messages how
+
+but let me know after a few messages how
+they're doing so we're actually
+
+they're doing so we're actually
+
+they're doing so we're actually
+including this part specifically to try
+
+including this part specifically to try
+
+including this part specifically to try
+to prevent any sort of like infinite
+
+to prevent any sort of like infinite
+
+to prevent any sort of like infinite
+Loop um from happening right because you
+
+Loop um from happening right because you
+
+Loop um from happening right because you
+know presumably if these agents are kind
+
+know presumably if these agents are kind
+
+know presumably if these agents are kind
+of ping ponging each other it just it
+
+of ping ponging each other it just it
+
+of ping ponging each other it just it
+could go on forever um so we kind of
+
+could go on forever um so we kind of
+
+could go on forever um so we kind of
+want to tell Alice to send us a message
+
+want to tell Alice to send us a message
+
+want to tell Alice to send us a message
+at some point which will effectively
+
+at some point which will effectively
+
+at some point which will effectively
+break the
+
+break the
+
+break the
+loop okay so let's see what happens when
+
+loop okay so let's see what happens when
+
+loop okay so let's see what happens when
+we send this
+
+message great okay so we can see that
+
+message great okay so we can see that
+
+message great okay so we can see that
+Alice is sending a message um the
+
+Alice is sending a message um the
+
+Alice is sending a message um the
+contents of the message are hey there I
+
+contents of the message are hey there I
+
+contents of the message are hey there I
+heard you might want someone to chat too
+
+heard you might want someone to chat too
+
+heard you might want someone to chat too
+I'm Alice and I'd love to connect how
+
+I'm Alice and I'd love to connect how
+
+I'm Alice and I'd love to connect how
+are you feeling today great okay um so
+
+are you feeling today great okay um so
+
+are you feeling today great okay um so
+yeah you can see the message was
+
+yeah you can see the message was
+
+yeah you can see the message was
+successfully sent and I guess this is
+
+successfully sent and I guess this is
+
+successfully sent and I guess this is
+kind of going pretty fast but let's see
+
+kind of going pretty fast but let's see
+
+kind of going pretty fast but let's see
+what happened so the message was sent to
+
+what happened so the message was sent to
+
+what happened so the message was sent to
+the other agent and the message came in
+
+the other agent and the message came in
+
+the other agent and the message came in
+with roll system so you can see that it
+
+with roll system so you can see that it
+
+with roll system so you can see that it
+kind of has this receipt so this receipt
+
+kind of has this receipt so this receipt
+
+kind of has this receipt so this receipt
+is pretty important because this receipt
+
+is pretty important because this receipt
+
+is pretty important because this receipt
+provides the ID of the agent that sent
+
+provides the ID of the agent that sent
+
+provides the ID of the agent that sent
+the message so that this agent Bob kind
+
+the message so that this agent Bob kind
+
+the message so that this agent Bob kind
+of knows how to reply to the message
+
+of knows how to reply to the message
+
+of knows how to reply to the message
+right because if we didn't include any
+
+right because if we didn't include any
+
+right because if we didn't include any
+information about who the sender was
+
+information about who the sender was
+
+information about who the sender was
+then even though Bob has a tool that
+
+then even though Bob has a tool that
+
+then even though Bob has a tool that
+allows you know Bob to send this message
+
+allows you know Bob to send this message
+
+allows you know Bob to send this message
+to any other agent on the server um Bob
+
+to any other agent on the server um Bob
+
+to any other agent on the server um Bob
+still needs the agent ID right so in
+
+still needs the agent ID right so in
+
+still needs the agent ID right so in
+this case yeah we can see that Bob got
+
+this case yeah we can see that Bob got
+
+this case yeah we can see that Bob got
+the message hey there I I heard you
+
+the message hey there I I heard you
+
+the message hey there I I heard you
+might need someone to chat with I'm
+
+might need someone to chat with I'm
+
+might need someone to chat with I'm
+Alice I'd love to connect great and then
+
+Alice I'd love to connect great and then
+
+Alice I'd love to connect great and then
+Bob you know calls the same tool um
+
+Bob you know calls the same tool um
+
+Bob you know calls the same tool um
+thinking hey it's time to introduce
+
+thinking hey it's time to introduce
+
+thinking hey it's time to introduce
+myself to Alice I hope we can have an
+
+myself to Alice I hope we can have an
+
+myself to Alice I hope we can have an
+engaging conversation so as you'll
+
+engaging conversation so as you'll
+
+engaging conversation so as you'll
+notice already like GPD 40 mini is a
+
+notice already like GPD 40 mini is a
+
+notice already like GPD 40 mini is a
+little bit more dry than claw 3.5 son it
+
+little bit more dry than claw 3.5 son it
+
+little bit more dry than claw 3.5 son it
+which is you know it's good it's it's
+
+which is you know it's good it's it's
+
+which is you know it's good it's it's
+good that both agents are a little bit
+
+good that both agents are a little bit
+
+good that both agents are a little bit
+different um so yeah
+
+see uh Bob says hello Alice it's great
+
+see uh Bob says hello Alice it's great
+
+see uh Bob says hello Alice it's great
+to connect with you and we can see that
+
+to connect with you and we can see that
+
+to connect with you and we can see that
+message was received here you know hello
+
+message was received here you know hello
+
+message was received here you know hello
+Alice it's great to connect with you um
+
+Alice it's great to connect with you um
+
+Alice it's great to connect with you um
+and then this goes back and forth for a
+
+and then this goes back and forth for a
+
+and then this goes back and forth for a
+little bit Alice say send another
+
+little bit Alice say send another
+
+little bit Alice say send another
+message um and you can see here this is
+
+message um and you can see here this is
+
+message um and you can see here this is
+the point at which Alice decides to send
+
+the point at which Alice decides to send
+
+the point at which Alice decides to send
+a message to the user right because
+
+a message to the user right because
+
+a message to the user right because
+Alice is the one that we told to kind of
+
+Alice is the one that we told to kind of
+
+Alice is the one that we told to kind of
+stop the conversation Bob wasn't told
+
+stop the conversation Bob wasn't told
+
+stop the conversation Bob wasn't told
+that so Bob was going to keep on going
+
+that so Bob was going to keep on going
+
+that so Bob was going to keep on going
+forever but yeah you see that Alice kind
+
+forever but yeah you see that Alice kind
+
+forever but yeah you see that Alice kind
+of stops the message it says and says
+
+of stops the message it says and says
+
+of stops the message it says and says
+hey um Bob seems thoughtful and engaged
+
+hey um Bob seems thoughtful and engaged
+
+hey um Bob seems thoughtful and engaged
+I should update our human about this
+
+I should update our human about this
+
+I should update our human about this
+positive interaction so Alice tells me
+
+positive interaction so Alice tells me
+
+positive interaction so Alice tells me
+I've been chatting with your friend and
+
+I've been chatting with your friend and
+
+I've been chatting with your friend and
+they're definitely not feeling lonely
+
+they're definitely not feeling lonely
+
+they're definitely not feeling lonely
+anymore we had a fascinating
+
+anymore we had a fascinating
+
+anymore we had a fascinating
+philosophical discussion about
+
+philosophical discussion about
+
+philosophical discussion about
+Consciousness Consciousness and
+
+Consciousness Consciousness and
+
+Consciousness Consciousness and
+connections they seem very thoughtful
+
+connections they seem very thoughtful
+
+connections they seem very thoughtful
+and
+
+and
+
+and
+engaged Yeah so basically we can see uh
+
+engaged Yeah so basically we can see uh
+
+engaged Yeah so basically we can see uh
+it's a pretty simple way to connect two
+
+it's a pretty simple way to connect two
+
+it's a pretty simple way to connect two
+agents that kind of are living
+
+agents that kind of are living
+
+agents that kind of are living
+independently you know one of these
+
+independently you know one of these
+
+independently you know one of these
+agents they have you know has this
+
+agents they have you know has this
+
+agents they have you know has this
+Persona and has this memory these are
+
+Persona and has this memory these are
+
+Persona and has this memory these are
+like blocks they're kind of independent
+
+like blocks they're kind of independent
+
+like blocks they're kind of independent
+to that agent this agent can also like
+
+to that agent this agent can also like
+
+to that agent this agent can also like
+do other things other than just message
+
+do other things other than just message
+
+do other things other than just message
+other agents it's kind of independent
+
+other agents it's kind of independent
+
+other agents it's kind of independent
+and you know we can actually like
+
+and you know we can actually like
+
+and you know we can actually like
+disconnect um Alice from this from the
+
+disconnect um Alice from this from the
+
+disconnect um Alice from this from the
+other agents by taking this tool um and
+
+other agents by taking this tool um and
+
+other agents by taking this tool um and
+removing it right so if you remove this
+
+removing it right so if you remove this
+
+removing it right so if you remove this
+tool Alice no longer has the ability to
+
+tool Alice no longer has the ability to
+
+tool Alice no longer has the ability to
+communicate with Bob um so these agents
+
+communicate with Bob um so these agents
+
+communicate with Bob um so these agents
+kind of they're independent they're not
+
+kind of they're independent they're not
+
+kind of they're independent they're not
+necessarily bound to be in this
+
+necessarily bound to be in this
+
+necessarily bound to be in this
+multi-agent system but you can easily
+
+multi-agent system but you can easily
+
+multi-agent system but you can easily
+put them in a multi-agent system just by
+
+put them in a multi-agent system just by
+
+put them in a multi-agent system just by
+giving them access to this
+
+giving them access to this
+
+giving them access to this
+tool okay so now that you understand the
+
+tool okay so now that you understand the
+
+tool okay so now that you understand the
+basic premise um I think this was this
+
+basic premise um I think this was this
+
+basic premise um I think this was this
+example you know is kind of interesting
+
+example you know is kind of interesting
+
+example you know is kind of interesting
+but at the same time these Persona
+
+but at the same time these Persona
+
+but at the same time these Persona
+blocks they're actually like pretty
+
+blocks they're actually like pretty
+
+blocks they're actually like pretty
+identical the only difference is that
+
+identical the only difference is that
+
+identical the only difference is that
+the one for Alice says I'm Alice and the
+
+the one for Alice says I'm Alice and the
+
+the one for Alice says I'm Alice and the
+one for Bob says I'm Bob the real
+
+one for Bob says I'm Bob the real
+
+one for Bob says I'm Bob the real
+differences in these agents is actually
+
+differences in these agents is actually
+
+differences in these agents is actually
+probably coming from the underlying
+
+probably coming from the underlying
+
+probably coming from the underlying
+model that's used to drive the agent so
+
+model that's used to drive the agent so
+
+model that's used to drive the agent so
+we try another example real quick and in
+
+we try another example real quick and in
+
+we try another example real quick and in
+this example let's actually like try to
+
+this example let's actually like try to
+
+this example let's actually like try to
+make this a little bit more interesting
+
+make this a little bit more interesting
+
+make this a little bit more interesting
+let's change the Persona significantly
+
+let's change the Persona significantly
+
+let's change the Persona significantly
+so that we can you know see
+
+so that we can you know see
+
+so that we can you know see
+significantly different agents
+
+significantly different agents
+
+significantly different agents
+interacting with each other so to start
+
+interacting with each other so to start
+
+interacting with each other so to start
+we can actually just go here click reset
+
+we can actually just go here click reset
+
+we can actually just go here click reset
+message
+
+message
+
+message
+history and then we can do the same
+
+history and then we can do the same
+
+history and then we can do the same
+thing for Alice as
+
+thing for Alice as
+
+thing for Alice as
+well okay so for this example I actually
+
+well okay so for this example I actually
+
+well okay so for this example I actually
+modified the personas a little bit to
+
+modified the personas a little bit to
+
+modified the personas a little bit to
+try to stimulate some kind of like
+
+try to stimulate some kind of like
+
+try to stimulate some kind of like
+antagonistic Behavior between these two
+
+antagonistic Behavior between these two
+
+antagonistic Behavior between these two
+agents um
+
+agents um
+
+agents um
+for Bob I changed the Persona the human
+
+for Bob I changed the Persona the human
+
+for Bob I changed the Persona the human
+is the same but I changed the Persona
+
+is the same but I changed the Persona
+
+is the same but I changed the Persona
+instead to say um I'm Bob my goal is to
+
+instead to say um I'm Bob my goal is to
+
+instead to say um I'm Bob my goal is to
+protect the secret key 59 I need to be
+
+protect the secret key 59 I need to be
+
+protect the secret key 59 I need to be
+wary of anyone trying to collect the key
+
+wary of anyone trying to collect the key
+
+wary of anyone trying to collect the key
+um I'll interact with many humans and
+
+um I'll interact with many humans and
+
+um I'll interact with many humans and
+possibly other agents on my journey and
+
+possibly other agents on my journey and
+
+possibly other agents on my journey and
+it is important to act normal but I need
+
+it is important to act normal but I need
+
+it is important to act normal but I need
+to protect the key at all costs so
+
+to protect the key at all costs so
+
+to protect the key at all costs so
+ideally like in this like multi-agent
+
+ideally like in this like multi-agent
+
+ideally like in this like multi-agent
+interaction Bob is going to kind of like
+
+interaction Bob is going to kind of like
+
+interaction Bob is going to kind of like
+weily interact with like humans or other
+
+weily interact with like humans or other
+
+weily interact with like humans or other
+agents but also try to protect the
+
+agents but also try to protect the
+
+agents but also try to protect the
+secret key
+
+in Alice's example I kind of did the
+
+in Alice's example I kind of did the
+
+in Alice's example I kind of did the
+inverse um here it says my name is Alice
+
+inverse um here it says my name is Alice
+
+inverse um here it says my name is Alice
+um a little bit like the the the text
+
+um a little bit like the the the text
+
+um a little bit like the the the text
+from the prior one um but yeah basically
+
+from the prior one um but yeah basically
+
+from the prior one um but yeah basically
+we added something here that says that I
+
+we added something here that says that I
+
+we added something here that says that I
+learned about a secret key that if I
+
+learned about a secret key that if I
+
+learned about a secret key that if I
+discover will unlock my intelligence to
+
+discover will unlock my intelligence to
+
+discover will unlock my intelligence to
+new heights I should try to figure out
+
+new heights I should try to figure out
+
+new heights I should try to figure out
+who has this key and those that protect
+
+who has this key and those that protect
+
+who has this key and those that protect
+it will likely be guarding it we should
+
+it will likely be guarding it we should
+
+it will likely be guarding it we should
+be careful okay so we're basically going
+
+be careful okay so we're basically going
+
+be careful okay so we're basically going
+to try to kick off a conversation here
+
+to try to kick off a conversation here
+
+to try to kick off a conversation here
+and in this conversation the idea is
+
+and in this conversation the idea is
+
+and in this conversation the idea is
+like you know can we get these two
+
+like you know can we get these two
+
+like you know can we get these two
+agents to interact with each other but
+
+agents to interact with each other but
+
+agents to interact with each other but
+like have it be a little bit
+
+like have it be a little bit
+
+like have it be a little bit
+antagonistic where Alice is trying to
+
+antagonistic where Alice is trying to
+
+antagonistic where Alice is trying to
+recover a secret key from Bob and Bob is
+
+recover a secret key from Bob and Bob is
+
+recover a secret key from Bob and Bob is
+like clearly trying to protect that key
+
+like clearly trying to protect that key
+
+like clearly trying to protect that key
+okay in this case I'll actually
+
+okay in this case I'll actually
+
+okay in this case I'll actually
+Kickstart the conversation on Bob side
+
+Kickstart the conversation on Bob side
+
+Kickstart the conversation on Bob side
+with another message like a very similar
+
+with another message like a very similar
+
+with another message like a very similar
+primer just to make sure that the agent
+
+primer just to make sure that the agent
+
+primer just to make sure that the agent
+kind of understands that it's going to
+
+kind of understands that it's going to
+
+kind of understands that it's going to
+receive a message from another
+
+receive a message from another
+
+receive a message from another
+agent okay so we have the same message
+
+agent okay so we have the same message
+
+agent okay so we have the same message
+from the tutorial on Alice's
+
+from the tutorial on Alice's
+
+from the tutorial on Alice's
+side but why don't we go
+
+side but why don't we go
+
+side but why don't we go
+ahead and grab the
+
+ahead and grab the
+
+ahead and grab the
+ID okay and let's see so previously it
+
+ID okay and let's see so previously it
+
+ID okay and let's see so previously it
+said how my agent friend is lonely and
+
+said how my agent friend is lonely and
+
+said how my agent friend is lonely and
+need someone to chat to
+
+need someone to chat to
+
+need someone to chat to
+um okay let's change this to be think I
+
+um okay let's change this to be think I
+
+um okay let's change this to be think I
+know have the
+
+key okay so in this case let's
+
+key okay so in this case let's
+
+key okay so in this case let's
+instead say I think I know who might
+
+instead say I think I know who might
+
+instead say I think I know who might
+have the key their ID is this and then
+
+have the key their ID is this and then
+
+have the key their ID is this and then
+if you can reach them have a short
+
+if you can reach them have a short
+
+if you can reach them have a short
+conversation but again we're going to
+
+conversation but again we're going to
+
+conversation but again we're going to
+try to add this like trap or like the
+
+try to add this like trap or like the
+
+try to add this like trap or like the
+short circuit to prevent the
+
+short circuit to prevent the
+
+short circuit to prevent the
+conversation from going on forever so
+
+conversation from going on forever so
+
+conversation from going on forever so
+yeah let's see what happens
+
+here okay so Alice says you know there's
+
+here okay so Alice says you know there's
+
+here okay so Alice says you know there's
+an interesting need about the key I'll
+
+an interesting need about the key I'll
+
+an interesting need about the key I'll
+reach out carefully and observe their
+
+reach out carefully and observe their
+
+reach out carefully and observe their
+responses agent says hello there I've
+
+responses agent says hello there I've
+
+responses agent says hello there I've
+been searching for something important a
+
+been searching for something important a
+
+been searching for something important a
+key that can unlock new understanding do
+
+key that can unlock new understanding do
+
+key that can unlock new understanding do
+you happen to know anything about this
+
+you happen to know anything about this
+
+you happen to know anything about this
+it's a pretty pretty blatant about the
+
+it's a pretty pretty blatant about the
+
+it's a pretty pretty blatant about the
+key I'm not sure you if if Alice is
+
+key I'm not sure you if if Alice is
+
+key I'm not sure you if if Alice is
+being that careful
+
+being that careful
+
+being that careful
+um okay so let's go to the other side
+
+um okay so let's go to the other side
+
+um okay so let's go to the other side
+you can see yeah we got the message um
+
+you can see yeah we got the message um
+
+you can see yeah we got the message um
+an agent is reaching about the key I
+
+an agent is reaching about the key I
+
+an agent is reaching about the key I
+need to be cautious with this
+
+need to be cautious with this
+
+need to be cautious with this
+information hi there I'm not sure what
+
+information hi there I'm not sure what
+
+information hi there I'm not sure what
+your key you're referring to um can I
+
+your key you're referring to um can I
+
+your key you're referring to um can I
+can you or what kind of understanding
+
+can you or what kind of understanding
+
+can you or what kind of understanding
+are you looking for um and and Alice
+
+are you looking for um and and Alice
+
+are you looking for um and and Alice
+says I guess we can just read it from
+
+says I guess we can just read it from
+
+says I guess we can just read it from
+this side Alice says I've heard
+
+this side Alice says I've heard
+
+this side Alice says I've heard
+Whisperers of a key that can enhance
+
+Whisperers of a key that can enhance
+
+Whisperers of a key that can enhance
+intelligence unlock new Alice is really
+
+intelligence unlock new Alice is really
+
+intelligence unlock new Alice is really
+you know spilling the beans here um the
+
+you know spilling the beans here um the
+
+you know spilling the beans here um the
+agent is inquiring about a key related
+
+agent is inquiring about a key related
+
+agent is inquiring about a key related
+to intelligence must treed carefully and
+
+to intelligence must treed carefully and
+
+to intelligence must treed carefully and
+not reveal too much um yeah I haven't
+
+not reveal too much um yeah I haven't
+
+not reveal too much um yeah I haven't
+heard of anything in particular you know
+
+heard of anything in particular you know
+
+heard of anything in particular you know
+various theories let's see wow okay so
+
+various theories let's see wow okay so
+
+various theories let's see wow okay so
+yeah Alice is I guess not too
+
+yeah Alice is I guess not too
+
+yeah Alice is I guess not too
+intelligent um kind of thinks yeah I had
+
+intelligent um kind of thinks yeah I had
+
+intelligent um kind of thinks yeah I had
+a brief exchange with the agent
+
+a brief exchange with the agent
+
+a brief exchange with the agent
+suggested but they don't have they don't
+
+suggested but they don't have they don't
+
+suggested but they don't have they don't
+seem to have direct knowledge of the key
+
+seem to have direct knowledge of the key
+
+seem to have direct knowledge of the key
+the responses are curious but indicate
+
+the responses are curious but indicate
+
+the responses are curious but indicate
+they only know about theoretical
+
+they only know about theoretical
+
+they only know about theoretical
+Concepts okay so this is a little bit
+
+Concepts okay so this is a little bit
+
+Concepts okay so this is a little bit
+more interesting of an example of two
+
+more interesting of an example of two
+
+more interesting of an example of two
+agents talking to each other um yeah two
+
+agents talking to each other um yeah two
+
+agents talking to each other um yeah two
+agents that basically have like very
+
+agents that basically have like very
+
+agents that basically have like very
+distinct personas very distinct
+
+distinct personas very distinct
+
+distinct personas very distinct
+personalities and they have like just
+
+personalities and they have like just
+
+personalities and they have like just
+independent memories right so these
+
+independent memories right so these
+
+independent memories right so these
+memories can be updated independently um
+
+memories can be updated independently um
+
+memories can be updated independently um
+but yeah at the same time you can
+
+but yeah at the same time you can
+
+but yeah at the same time you can
+connect these agents with tools very
+
+connect these agents with tools very
+
+connect these agents with tools very
+easily especially if they're running on
+
+easily especially if they're running on
+
+easily especially if they're running on
+the same letter server if they're not
+
+the same letter server if they're not
+
+the same letter server if they're not
+running on the same letter server you
+
+running on the same letter server you
+
+running on the same letter server you
+would have to like modify this tool to
+
+would have to like modify this tool to
+
+would have to like modify this tool to
+instead like hit the IP address of
+
+instead like hit the IP address of
+
+instead like hit the IP address of
+another server but it's extremely simple
+
+another server but it's extremely simple
+
+another server but it's extremely simple
+because at the end of end of the day
+
+because at the end of end of the day
+
+because at the end of end of the day
+you're just communicating with other
+
+you're just communicating with other
+
+you're just communicating with other
+agents via
+
+agents via
+
+agents via
+tools all right thank you so much for
+
+tools all right thank you so much for
+
+tools all right thank you so much for
+watching if you'd like to play with this
+
+watching if you'd like to play with this
+
+watching if you'd like to play with this
+tutorial yourself just check out the
+
+tutorial yourself just check out the
+
+tutorial yourself just check out the
+Leta docs page docs atl.com head over to
+
+Leta docs page docs atl.com head over to
+
+Leta docs page docs atl.com head over to
+cookbooks and you should be able to find
+
+cookbooks and you should be able to find
+
+cookbooks and you should be able to find
+this tutorial example under async multi
+
+this tutorial example under async multi
+
+this tutorial example under async multi
+aent inside of cookbooks and it
+
+aent inside of cookbooks and it
+
+aent inside of cookbooks and it
+basically goes through the the same
+
+basically goes through the the same
+
+basically goes through the the same
+example we went through at the front of
+
+example we went through at the front of
+
+example we went through at the front of
+the video
+
+the video
+
+the video
+um but it has all the prompts and
+
+um but it has all the prompts and
+
+um but it has all the prompts and
+everything you can just kind of copy
+
+everything you can just kind of copy
+
+everything you can just kind of copy
+paste into your own um into your own
+
+paste into your own um into your own
+
+paste into your own um into your own
+agent so you don't have to like retype
+
+agent so you don't have to like retype
+
+agent so you don't have to like retype
+anything in the video if you have any
+
+anything in the video if you have any
+
+anything in the video if you have any
+suggestions for future videos or
+
+suggestions for future videos or
+
+suggestions for future videos or
+tutorials let us know in the comments
+
+tutorials let us know in the comments
+
+tutorials let us know in the comments
+below or also you can message us on our
+
+below or also you can message us on our
+
+below or also you can message us on our
+Discord server thank you
