@@ -45,21 +45,18 @@ if ! echo "$CHECKLIST" | /usr/bin/grep -q "🟨"; then
   exit 0
 fi
 
-# Deduplicate identical consecutive pings
-if [ -f "$LAST_SENT_FILE" ]; then
-  LAST_SENT_CONTENT="$(/bin/cat "$LAST_SENT_FILE")"
-  if [ "$LAST_SENT_CONTENT" = "$CHECKLIST" ]; then
-    exit 0
-  fi
-fi
-
 /bin/mkdir -p "$STATE_DIR"
 
+NOW="$(/bin/date '+%Y-%m-%d %H:%M %Z')"
+
 # Keep message Telegram-safe: no markdown headers, no backticks.
-MSG="Wizard status ping\n\n$CHECKLIST"
+MSG="Wizard status ping ($NOW)\n\n$CHECKLIST"
 
 # Send to Vincent's Telegram DM
 /opt/homebrew/bin/npm exec lettabot-message -- send --text "$MSG" --channel telegram --chat "8385420240" >/dev/null 2>&1 || true
 
-# Record last-sent content
-printf "%s" "$CHECKLIST" > "$LAST_SENT_FILE"
+# Record last-sent content (with timestamp)
+printf "%s\n\n%s" "$NOW" "$CHECKLIST" > "$LAST_SENT_FILE"
+
+# Debug breadcrumb (launchd captures stdout)
+echo "$NOW sent wizard status ping"
