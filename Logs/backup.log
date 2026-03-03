@@ -433,3 +433,35 @@
  3 files changed, 120 insertions(+)
 [nico/overnight-runner ce0a209] auto-backup: 2026-03-02_23:22
  4 files changed, 129 insertions(+), 1 deletion(-)
+[nico/overnight-runner 9db04a7] auto-backup: 2026-03-02_23:37
+ 34 files changed, 220393 insertions(+), 1 deletion(-)
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20250303_LX-qO5o8iRQ.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20250303_LX-qO5o8iRQ.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20250303_LX-qO5o8iRQ.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260116_YtZgsw9x8l8.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260116_YtZgsw9x8l8.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260116_YtZgsw9x8l8.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260126_fr61XHf6Zzw.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260126_fr61XHf6Zzw.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260126_fr61XHf6Zzw.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260130_M8LNa3FKE4k.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260130_M8LNa3FKE4k.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260130_M8LNa3FKE4k.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260206_LKRnP-ptC4c.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260206_LKRnP-ptC4c.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260206_LKRnP-ptC4c.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260221_BroTeuvX0es.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260221_BroTeuvX0es.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260221_BroTeuvX0es.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260225_R_4r_NNjg1M.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260225_R_4r_NNjg1M.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260225_R_4r_NNjg1M.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260226_j1agWxBx54E.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260226_j1agWxBx54E.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260226_j1agWxBx54E.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260226_p7So3IM75WY.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260226_p7So3IM75WY.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260226_p7So3IM75WY.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/build-update-nico_latest-8-videos.md
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/build-update-nico_wizard.md
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/last-8-index.tsv
