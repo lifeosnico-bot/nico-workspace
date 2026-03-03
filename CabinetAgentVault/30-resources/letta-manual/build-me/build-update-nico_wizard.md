@@ -40,6 +40,21 @@ tags: [letta, manual, wizard, build-me]
 
 # 4) Videos (Latest → Oldest)
 
+## 4.0 Wizard progress checklist (update on every completion)
+
+- ✅ 4.1 `p7So3IM75WY` — MemFS Office Hours (done)
+- ✅ 4.2 `j1agWxBx54E` — GitHub Actions background agents (done)
+- ✅ 4.3 `R_4r_NNjg1M` — Context Repositories deep dive (done; reconciled)
+- ✅ 4.4 `BroTeuvX0es` — LettaBot tutorial (done)
+- ⬜ 4.5 `LKRnP-ptC4c` — Office Hours (queued)
+- ⬜ 4.6 `M8LNa3FKE4k` — Office Hours (queued)
+- ⬜ 4.7 `fr61XHf6Zzw` — Office Hours (queued)
+- ⬜ 4.8 `YtZgsw9x8l8` — Obsidian + Letta Code (queued)
+- ⬜ 4.9 `LX-qO5o8iRQ` — Multi-agent systems (queued)
+
+- Rule: only one item can be marked **in progress** at a time.
+- Rule: mark **done** only after commit + push.
+
 - Each video gets one section.
 - Status is either `pending` or `done`.
 
