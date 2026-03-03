@@ -5,6 +5,11 @@ WIZARD_FILE="/Users/lifeos.nico/Nico/CabinetAgentVault/30-resources/letta-manual
 STATE_DIR="/Users/lifeos.nico/Nico/Logs"
 LAST_SENT_FILE="$STATE_DIR/wizard-status-last.txt"
 
+# LettaBot credentials (read from local config; do NOT print)
+LETTA_CONFIG="/Users/lifeos.nico/Nico/lettabot/lettabot/lettabot.yaml"
+TELEGRAM_BOT_TOKEN="$(/usr/bin/awk '/^[[:space:]]*token:[[:space:]]*/{print $2; exit}' "$LETTA_CONFIG")"
+LETTABOT_API_KEY="$(/usr/bin/awk '/^[[:space:]]*apiKey:[[:space:]]*/{print $2; exit}' "$LETTA_CONFIG")"
+
 if [ ! -f "$WIZARD_FILE" ]; then
   exit 0
 fi
@@ -53,7 +58,7 @@ NOW="$(/bin/date '+%Y-%m-%d %H:%M %Z')"
 MSG="Wizard status ping ($NOW)\n\n$CHECKLIST"
 
 # Send to Vincent's Telegram DM
-/opt/homebrew/bin/npm exec lettabot-message -- send --text "$MSG" --channel telegram --chat "8385420240" >/dev/null 2>&1 || true
+TELEGRAM_BOT_TOKEN="$TELEGRAM_BOT_TOKEN" LETTABOT_API_KEY="$LETTABOT_API_KEY" /opt/homebrew/bin/npm exec lettabot-message -- send --text "$MSG" --channel telegram --chat "8385420240" >/dev/null 2>&1 || true
 
 # Record last-sent content (with timestamp)
 printf "%s\n\n%s" "$NOW" "$CHECKLIST" > "$LAST_SENT_FILE"
