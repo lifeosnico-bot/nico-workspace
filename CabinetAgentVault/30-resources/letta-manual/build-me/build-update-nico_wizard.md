@@ -46,7 +46,7 @@ tags: [letta, manual, wizard, build-me]
 - ✅ 4.2 `j1agWxBx54E` — GitHub Actions background agents (done)
 - ✅ 4.3 `R_4r_NNjg1M` — Context Repositories deep dive (done; reconciled)
 - ✅ 4.4 `BroTeuvX0es` — LettaBot tutorial (done)
-- 🟨 4.5 `LKRnP-ptC4c` — Office Hours (in progress)
+- ✅ 4.5 `LKRnP-ptC4c` — Office Hours (done)
 - ⬜ 4.6 `M8LNa3FKE4k` — Office Hours (queued)
 - ⬜ 4.7 `fr61XHf6Zzw` — Office Hours (queued)
 - ⬜ 4.8 `YtZgsw9x8l8` — Obsidian + Letta Code (queued)
@@ -289,8 +289,66 @@ tags: [letta, manual, wizard, build-me]
 - Define heartbeat prompt as a checklist with limits (no open-ended runs).
 - Treat saved memory as committed + pushed.
 
-# 4.5 (pending) Letta Office Hours: Opus 4.6, Lettabot Updates, Agent File Directory, and More — 2026-02-06 `LKRnP-ptC4c`
-- Status: pending
+# 4.5 (done) Letta Office Hours: Opus 4.6, LettaBot Updates, Agent File Directory, and More — 2026-02-06 `LKRnP-ptC4c`
+
+## Summary (1 paragraph)
+- Office hours covering Opus 4.6 release (and performance/cost tradeoffs), provider setup via `/connect`, model selection/refresh via `/model`, LettaBot’s role as the “personal agent” wrapper (remote channels + autonomous heartbeats/cron) with strong sandbox/security guidance, and a new/returning “Agent File Directory” concept (shareable snapshots stored in git).
+
+## Claims (what the video asserts)
+- Opus 4.6 became available (or imminently available) on the Letta API; may be available self-hosted earlier.
+- Opus 4.6 is “subagent-happy” and less token-efficient than 4.5 → can cost more because it opens more context.
+- Letta runs internal benchmarks (filesystem benchmark + skills benchmark) and tracks cost vs performance.
+- Letta Code now has expanded provider support and onboarding via `/connect` (includes Codex/OpenAI login via OAuth; mentions OpenRouter + Bedrock requests).
+- `/model` supports refreshing cached model lists (hit `R`).
+- LettaBot/“Letot” (in the transcript) is a server wrapper around a Letta Code instance, enabling remote comms channels (Signal/Telegram/WhatsApp/Discord/Slack).
+- LettaBot runs outbound-only connections (polling or outbound websockets), avoiding inbound gateway exposure.
+- LettaBot is powerful/unrestricted and is susceptible to prompt injection; recommended deployment is a sandboxed machine.
+- LettaBot supports heartbeats (autonomous “do what you want on a timer”), cron-like scheduled jobs, skills, and conversation-history search.
+- “Agent File Directory” is simplified: agent files are committed as snapshots in a git repo (not live/synced agents).
+
+## Rules (how to operate if you adopt it)
+- Treat Opus 4.6 as higher-risk on cost: expect more context opens/tool calls; monitor usage.
+- Use `/connect` for provider setup; treat provider auth as a first-class setup step.
+- If `/model` list looks stale: refresh cached models (per video: `R`).
+- For LettaBot:
+  - deploy on a dedicated sandbox machine (Mac mini / separate host)
+  - assume prompt injection risk; restrict what the bot can access
+  - prefer outbound-only networking patterns
+- Use heartbeats/cron only with tightly-scoped prompts and clear “what success looks like.”
+
+## Failure modes (how it breaks)
+- Cost blowups from token-inefficient models opening more context.
+- Provider reliability variance (video calls out OpenRouter/provider inconsistency as a known issue class).
+- Security incidents if LettaBot runs on a non-sandboxed machine with real credentials + broad filesystem access.
+- Heartbeat autonomy can create noise or unintended actions if not constrained.
+
+## Verification gates (commands that prove reality)
+- Gate: provider setup is available
+  - `/connect` shows provider toggles (Codex/OpenAI, etc.)
+- Gate: model refresh works
+  - `/model` then press `R` to refresh cached models
+- Gate: LettaBot is outbound-only
+  - confirm channel adapters use polling/outbound sockets (no inbound ports exposed)
+- Gate: heartbeat + cron are functioning
+  - verify heartbeat interval + that scheduled tasks run as expected
+
+## Apply to Nico (our concrete changes)
+- When considering Opus 4.6: treat it as an “opt-in” for expensive work (don’t default-switch blindly).
+- Keep the sandbox rule for our always-on agent machine (already aligned).
+- Keep heartbeats constrained and use watchdog pings (we just implemented one for the wizard).
+
+## Present-day truth sources checked (documented)
+- Docs:
+  - https://docs.letta.com/letta-code/memory/
+  - https://docs.letta.com/letta-code/changelog/
+- GitHub:
+  - https://github.com/letta-ai/letta-code
+  - https://github.com/letta-ai/lettabot
+
+## Doc / GitHub deltas (video says → present-day docs/code)
+- Video: `/connect` and `/model` flows exist → Docs confirm `/connect` + `/model` are core commands; details may evolve by version.
+- Video: LettaBot supports heartbeat/cron + outbound-only networking → LettaBot README confirms heartbeat + scheduling features and outbound-only design.
+- Video: Agent File Directory is git-based snapshots → needs confirmation against current Letta Code docs/changelog for the exact current command naming and repo location.
 
 # 4.6 (pending) Letta Office Hours: Introducing LettaBot + Claude Subconscious Demo — 2026-01-30 `M8LNa3FKE4k`
 - Status: pending
