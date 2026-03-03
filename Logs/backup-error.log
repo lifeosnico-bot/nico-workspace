@@ -429,3 +429,5 @@ remote: Internal Server Error
 fatal: unable to access 'https://github.com/lifeosnico-bot/nico-workspace.git/': The requested URL returned error: 500
 To https://github.com/lifeosnico-bot/nico-workspace.git
    4fb1ed2..cdd42af  HEAD -> backup
+To https://github.com/lifeosnico-bot/nico-workspace.git
+   cdd42af..0309ea8  HEAD -> backup
