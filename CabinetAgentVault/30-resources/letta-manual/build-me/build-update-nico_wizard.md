@@ -47,7 +47,7 @@ tags: [letta, manual, wizard, build-me]
 - ✅ 4.3 `R_4r_NNjg1M` — Context Repositories deep dive (done; reconciled)
 - ✅ 4.4 `BroTeuvX0es` — LettaBot tutorial (done)
 - ✅ 4.5 `LKRnP-ptC4c` — Office Hours (done)
-- ⬜ 4.6 `M8LNa3FKE4k` — Office Hours (queued)
+- ✅ 4.6 `M8LNa3FKE4k` — Office Hours (done)
 - ⬜ 4.7 `fr61XHf6Zzw` — Office Hours (queued)
 - ⬜ 4.8 `YtZgsw9x8l8` — Obsidian + Letta Code (queued)
 - ⬜ 4.9 `LX-qO5o8iRQ` — Multi-agent systems (queued)
@@ -350,8 +350,62 @@ tags: [letta, manual, wizard, build-me]
 - Video: LettaBot supports heartbeat/cron + outbound-only networking → LettaBot README confirms heartbeat + scheduling features and outbound-only design.
 - Video: Agent File Directory is git-based snapshots → needs confirmation against current Letta Code docs/changelog for the exact current command naming and repo location.
 
-# 4.6 (pending) Letta Office Hours: Introducing LettaBot + Claude Subconscious Demo — 2026-01-30 `M8LNa3FKE4k`
-- Status: pending
+# 4.6 (done) Letta Office Hours: Introducing LettaBot + Claude Subconscious Demo — 2026-01-30 `M8LNa3FKE4k`
+
+## Summary (1 paragraph)
+- Office hours focused on “Letot/LettaBot” as Letta’s Moltbot/Claudebot-style wrapper for running a Letta Code instance behind chat channels (Telegram/Slack/WhatsApp/Signal), emphasizing pairing security, outbound-only networking, and sandbox deployment. The talk also demos/mentions hooks for tool-execution gating (e.g., blocking dangerous bash commands) and discusses an adjacent “Claude Subconscious” concept that injects a Letta agent into Claude Code sessions.
+
+## Claims (what the video asserts)
+- Letot/LettaBot is Letta’s take on Claudebot/Moltbot, rebuilt specifically for Letta agents + Letta Code.
+- Multi-channel access: Signal, Telegram, WhatsApp, Slack.
+- Pairing is default / secure-by-default.
+- LettaBot can run against Letta Cloud or a self-hosted server.
+- LettaBot is safer than some alternatives by avoiding inbound gateway exposure (polling / outbound websockets).
+- It’s still dangerous: the agent can run arbitrary tool commands; prompt injection is a real risk.
+- LettaBot is oriented around a single agent; multi-agent switching/scoping is not first-class.
+- Hooks exist and can be used to implement pre-tool safety checks (example: block `rm -rf`).
+- “Identities” API is deprecated; use client-side user metadata + tags (e.g., `user:id`).
+- “Claude Subconscious” can inject a Letta agent’s messages/memory diffs into Claude Code sessions (needs evals).
+
+## Rules (how to operate if you adopt it)
+- Keep pairing on; explicitly approve who can talk to the bot.
+- Deploy on a dedicated sandbox machine/VM (don’t run wide-open on your main laptop).
+- Treat “what’s in memory” as sensitive in public channels.
+- Use channel-specific formatting guidance (Slack markdown mismatches exist).
+- Add hooks early to block/require confirmation for dangerous commands.
+
+## Failure modes (how it breaks)
+- Prompt injection / social engineering → destructive tool execution.
+- Accidental spam in group chats (WhatsApp risk) if not set to self/controlled mode.
+- Formatting mismatches by channel → unreadable output.
+- Single-agent orientation → friction if you want per-project/per-channel isolation.
+
+## Verification gates (commands that prove reality)
+- Gate: pairing works
+  - unpaired user gets pairing prompt; paired user can interact.
+- Gate: pre-tool hook blocks dangerous commands
+  - attempt a known-bad command (e.g., `rm -rf`) and confirm hook blocks.
+- Gate: confirm memory mode in use (MemFS vs legacy)
+  - `letta memfs status --agent <agent-id>` (MemFS only works via Letta API per docs).
+
+## Apply to Nico (our concrete changes)
+- Keep “sandbox machine” as non-negotiable for always-on agent ops.
+- Use hooks/guards for dangerous commands (we already implemented a watchdog lane; extend similarly for tool safety).
+- Treat multi-channel routing as an engineering problem; don’t multiplex multiple agents through a single Telegram token/poller.
+
+## Present-day truth sources checked (documented)
+- Docs:
+  - https://docs.letta.com/letta-code/memory/
+  - https://docs.letta.com/letta-code/changelog/
+- GitHub:
+  - https://github.com/letta-ai/letta-code
+  - https://github.com/letta-ai/lettabot
+
+## Doc / GitHub deltas (video says → present-day docs/code)
+- MemFS vs self-hosting: Memory docs say MemFS is Letta API only; Docker servers use legacy blocks → verify what mode the demo uses.
+- Docs changelog appears behind GitHub releases → verify “latest” features against GitHub release notes.
+- Model support naming (Opus 4.6 etc.) should be verified in `/models`.
+- “Claude Subconscious injection” is not documented as a canonical feature in the checked docs/repos → treat as demo/adjacent until confirmed.
 
 # 4.7 (pending) Letta Office Hours: Letta Chat, GitHub Action, Letta Code, and more! — 2026-01-26 `fr61XHf6Zzw`
 - Status: pending
