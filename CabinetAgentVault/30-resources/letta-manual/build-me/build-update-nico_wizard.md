@@ -95,16 +95,61 @@ tags: [letta, manual, wizard, build-me]
 - Video: memory edits require commit+push to be reflected → Docs explicitly state commit+push required.
 - Video: GitHub action install via slash command → Docs/changelog should be checked for exact command name + current behavior (confirm when we run it).
 
-# 4.2 (pending) Create stateful background agents using GitHub Actions — 2026-02-26 `j1agWxBx54E`
-- Status: pending
-- To fill:
-  - Summary
-  - Claims
-  - Rules
-  - Failure modes
-  - Verification gates
-  - Apply to Nico
-  - Doc / GitHub deltas
+# 4.2 (done) Create stateful background agents using GitHub Actions — 2026-02-26 `j1agWxBx54E`
+
+## Summary (1 paragraph)
+- This video shows the Letta Code GitHub Action workflow that turns an existing Letta Code agent into a background agent that can run inside GitHub Actions when tagged on issues/PRs, create branches + PRs, and be monitored via the ADE UI using the action run links.
+
+## Claims (what the video asserts)
+- There is a Letta Code GitHub Action that can run an agent inside GitHub Actions to work issues / review PRs.
+- Letta Code includes a wizard-like command to install/setup the GitHub action in a repo.
+- Setup flow includes:
+  - selecting a repo
+  - choosing an existing agent (recommended) or creating a new one
+  - creating a branch + opening a PR that adds the workflow files
+  - merging the PR to enable the action
+- Invoking the agent:
+  - tag Letta Code on an issue
+  - a GitHub Actions workflow runs and the agent works the task
+  - you can monitor the run and open the ADE view to see full progress
+- Each issue invocation creates a new conversation ID; if a PR is created from that issue, the conversation continues.
+
+## Rules (how to operate if you adopt it)
+- Use an existing agent when possible so the background agent already has repo memory.
+- Treat issue prompts like delegating to a human:
+  - be specific about desired outcome, constraints, and acceptance criteria
+- Use PR-based changes (branch + PR) so output is reviewable.
+- Keep GitHub CLI (`gh`) installed and authenticated wherever you run installs.
+
+## Failure modes (how it breaks)
+- Bad prompts → bad PRs (unclear scope, missing acceptance criteria).
+- Secrets exposure if tokens are mishandled in repo/workflows.
+- Confusion about conversations: each issue gets a new conversation; PR continues the same.
+
+## Verification gates (commands that prove reality)
+- Gate: workflow installed
+  - confirm repo has `.github/workflows/...` for Letta Code action
+- Gate: tagging triggers run
+  - tag agent on a test issue → confirm Actions run starts
+- Gate: agent outputs PR
+  - confirm a branch + PR are created
+- Gate: monitoring works
+  - open run link → open ADE link → see agent progress
+
+## Apply to Nico (our concrete changes)
+- Use the same "queue is canonical" discipline for background agents:
+  - background agents propose PRs; Nico promotes to canon.
+- If we adopt GitHub Actions background agents, add an explicit security checklist (tokens, permissions).
+
+## Present-day truth sources checked (documented)
+- Docs:
+  - https://docs.letta.com/letta-code/memory/
+  - https://docs.letta.com/letta-code/changelog/
+- GitHub:
+  - https://github.com/letta-ai/letta-code
+
+## Doc / GitHub deltas (video says → present-day docs/code)
+- Video: "install GitHub app" wizard exists → Changelog/docs should be used to confirm the current slash-command name and the exact install flow in the current Letta Code version.
 
 # 4.3 (done) Context Repositories: Git-backed Memory for Coding Agents (Deep Dive) — 2026-02-25 `R_4r_NNjg1M`
 
