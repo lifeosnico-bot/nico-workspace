@@ -43,16 +43,57 @@ tags: [letta, manual, wizard, build-me]
 - Each video gets one section.
 - Status is either `pending` or `done`.
 
-# 4.1 (pending) Letta Office Hours: MemFS, Letta Chat, and the future of AI agent memory — 2026-02-26 `p7So3IM75WY`
-- Status: pending
-- To fill:
-  - Summary
-  - Claims
-  - Rules
-  - Failure modes
-  - Verification gates
-  - Apply to Nico
-  - Doc / GitHub deltas
+# 4.1 (done) Letta Office Hours: MemFS, Letta Chat, and the future of AI agent memory — 2026-02-26 `p7So3IM75WY`
+
+## Summary (1 paragraph)
+- Office hours update covering Letta Code as the core local harness, MemFS as the current memory architecture shift (git-backed context repositories), and new surfaces/features like memory visualization (“memory palace”) and a slash command to install a GitHub integration for remote debugging.
+
+## Claims (what the video asserts)
+- MemFS is a git-backed memory management system (context repositories) that enables versioning and collaboration.
+- MemFS shifts from server-side memory blocks (attach/detach) to a git-like repo of markdown files.
+- Agents can manage both:
+  - pinned memory (always in system prompt)
+  - out-of-context notes (looked up later)
+- Because memory changes are git-tracked, agents can be required to write commit messages, and multiple agents can work on the same memory with conflict resolution.
+- There is a UI/surface for viewing agent memory (“memory palace”) designed for MemFS.
+- There is a slash command to install a GitHub action/integration so you can tag Letta Code on an issue/PR to do work remotely.
+
+## Rules (how to operate if you adopt it)
+- Treat MemFS as production state:
+  - changes must be committed + pushed to be durable
+  - use informative commit messages
+- Keep pinned memory high-signal; push long notes out of pinned memory and rely on the tree + lookup.
+- Use git workflow discipline if multiple agents/subagents can write memory.
+
+## Failure modes (how it breaks)
+- Confusion between server state and the local working copy (thinking local edits are “cloud saved” without push).
+- Pinned memory bloat → noisy context.
+- Parallel writers without merge discipline → conflicts or drift.
+
+## Verification gates (commands that prove reality)
+- Gate: MemFS is healthy and synced
+  - `letta memfs status --agent <agent-id>` expects `dirty=false`, `aheadOfRemote=false`
+- Gate: pinned vs unpinned hierarchy exists
+  - `ls ~/.letta/agents/<agent-id>/memory/system/`
+- Gate: memory changes are actually versioned
+  - `git -C ~/.letta/agents/<agent-id>/memory log -n 5 --oneline`
+
+## Apply to Nico (our concrete changes)
+- Enforce our definition: “Saved memory” = committed + pushed.
+- Add a monthly “pinned memory size” review (prevent bloat).
+- If we adopt GitHub remote tagging, treat it as a controlled lane (PR/issue only, with review).
+
+## Present-day truth sources checked (documented)
+- Docs:
+  - https://docs.letta.com/letta-code/memory/
+  - https://docs.letta.com/letta-code/changelog/
+- GitHub:
+  - https://github.com/letta-ai/letta-code
+
+## Doc / GitHub deltas (video says → present-day docs/code)
+- Video: MemFS is git-backed markdown repo → Docs confirm MemFS = git-backed context repo; `system/` pinned.
+- Video: memory edits require commit+push to be reflected → Docs explicitly state commit+push required.
+- Video: GitHub action install via slash command → Docs/changelog should be checked for exact command name + current behavior (confirm when we run it).
 
 # 4.2 (pending) Create stateful background agents using GitHub Actions — 2026-02-26 `j1agWxBx54E`
 - Status: pending
