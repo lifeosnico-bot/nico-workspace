@@ -37,7 +37,7 @@ tags: [letta, manual, wizard, build-me]
 
 # 4) The Wizard (Checklist)
 
-##4.1 Context Repositories (Git-backed memory) — VIDEO 2026-02-25 `R_4r_NNjg1M`
+# 4.1 Context Repositories (Git-backed memory) — VIDEO 2026-02-25 `R_4r_NNjg1M`
 
 ## Summary (1 paragraph)
 - Context Repositories are a rebuild of Letta Code memory: expose memory as a local, git-tracked filesystem so agents can reorganize and maintain large memory systems using normal tools (files + bash), while keeping the “true” agent state on the server.
@@ -95,7 +95,57 @@ tags: [letta, manual, wizard, build-me]
   - `system/` is pinned (matches blog + video)
   - memory repo is git-backed (matches blog + video)
 
-# 4.2 Conversations (Where did you go?)
+# 4.2 LettaBot Tutorial — VIDEO 2026-02-21 `BroTeuvX0es`
+
+## Summary (1 paragraph)
+- LettaBot is an open-source wrapper around Letta Code that turns a terminal coding agent into a persistent “personal agent” you can talk to over channels (Telegram/Slack/Discord), and that can run proactively via heartbeats and scheduled jobs.
+
+## Claims (what the video asserts)
+- LettaBot (and similar tools like OpenClaw) are servers/wrappers around coding CLIs.
+- The wrapper provides:
+  - channels (Telegram/Slack/Discord/etc)
+  - scheduling (cron-like jobs)
+  - heartbeats (periodic prompts)
+  - polling (e.g., checking for updates)
+  - skills/integrations management
+- Heartbeats are “triggers” that cause the agent to run on its own.
+- Pairing is used to control access (so not everyone can talk to your bot).
+
+## Rules (how to operate if you adopt it)
+- One bot token → one poller. Never run two pollers on the same Telegram token.
+- Keep secrets out of chat:
+  - never paste API keys in Telegram
+  - store secrets in files/env/1Password
+- Use pairing/allowlist for DM access.
+- Decide up front what “proactive” means:
+  - heartbeat frequency
+  - what the heartbeat prompt tells the agent to do
+
+## Failure modes (how it breaks)
+- Telegram 409 conflict when multiple processes poll the same token.
+- Noise spam if heartbeat prompts are not tightly scoped.
+- Security leakage if secrets or tokens are pasted into chat.
+- Confusion when multiple channels are enabled without clear comms lanes.
+
+## Verification gates (commands that prove reality)
+- Gate: service is single-instance
+  - `launchctl list | grep lettabot` (or your service label)
+  - confirm only one poller is running for the Telegram token
+- Gate: Telegram pairing works
+  - unpaired user gets pairing prompt
+  - paired user can message and receive replies
+- Gate: heartbeat works and is safe
+  - manual trigger (if available): send `/heartbeat`
+  - confirm output is short + scoped
+- Gate: logs exist and rotate
+  - confirm log path is configured and receiving events
+
+## Apply to Nico (our concrete changes)
+- Keep Telegram as a single lane (DM only) unless we explicitly engineer routing.
+- Define heartbeat prompt as a checklist with limits (no “open ended” runs).
+- Treat “Saved memory” as committed + pushed (already locked).
+
+# 4.3 Conversations (Where did you go?)
 
 ## Claims
 - Letta Code supports many conversations per agent.
@@ -111,7 +161,7 @@ tags: [letta, manual, wizard, build-me]
 ## Verification gates
 - Use `/resume` to confirm which conversation is active.
 
-# 4.3 Reflection / Sleep-time compute
+# 4.4 Reflection / Sleep-time compute
 
 ## Claims
 - Reflection subagents can consolidate memory.
@@ -128,7 +178,7 @@ tags: [letta, manual, wizard, build-me]
 - Reflection settings reviewed weekly.
 - Memory diffs reviewed after reflection run.
 
-# 4.4 Multi-Agent Systems (Team, without chaos)
+# 4.5 Multi-Agent Systems (Team, without chaos)
 
 ## Claims
 - Multi-agent works best with:
@@ -149,7 +199,7 @@ tags: [letta, manual, wizard, build-me]
 - Comms lane audit: only one Telegram poller per token.
 - Role audit: which agent is allowed to write which files.
 
-# 4.5 LettaBot / Comms Architecture (stability first)
+# 4.6 LettaBot / Comms Architecture (stability first)
 
 ## Rules
 - Telegram DM = Nico only (CEO desk).
