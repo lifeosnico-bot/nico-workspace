@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-03-04 03:59 EST | **Updated by**: Nico (Telegram) | **Session**: TG-03
+**Last Updated**: 2026-03-04 04:22 EST | **Updated by**: Nico (Telegram) | **Session**: TG-03
 
 ---
 
@@ -435,7 +435,7 @@ _Dependency: Phase 0E metadata standards enforcement (and token rotation) comple
 
 - [ ] 1. Upgrade overnight runner from report-only → branch + PR (gated)
 - [ ] 2. Decide: LettaBot cron vs launchd-only for scheduled work
-- [ ] 3. Fix nighttime report job (missing `Scripts/nighttime-report.py`)
+- [ ] 3. **[P2][N]** Fix nighttime report job (missing `Scripts/nighttime-report.py`)
 
 ### Phase 7: LifeOS Agent Evolution [N] P4
 _Dependency: Phases 0-3 complete. Future — scope after infrastructure is stable._
