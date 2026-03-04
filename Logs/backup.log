@@ -916,3 +916,21 @@
  4 files changed, 179 insertions(+)
 [nico/overnight-runner 4ee2c52] auto-backup: 2026-03-04_16:41
  4 files changed, 161 insertions(+)
+[nico/overnight-runner cbd4158] auto-backup: 2026-03-04_17:35
+ 25 files changed, 1034 insertions(+), 40 deletions(-)
+ delete mode 100644 CabinetAgentVault/05-reviews/tasks/2026-02-23_addendums-task-architecture-plan.md
+ create mode 100644 Logs/heartbeat-healthcheck-err.log
+ create mode 100644 Logs/phase0g-status-last.txt
+ create mode 100644 Logs/phase0g-status-ping-err.log
+ create mode 100644 Logs/phase0g-status-ping.log
+ create mode 100755 Scripts/heartbeat-healthcheck.sh
+ create mode 100755 Scripts/nighttime-report.py
+ create mode 100755 Scripts/phase0g-status-ping.sh
+ create mode 100644 ops/launchd/README.md
+ create mode 100644 ops/launchd/com.nico.heartbeat-healthcheck.plist
+ create mode 100644 ops/launchd/com.nico.nighttime-report.plist
+ create mode 100644 ops/launchd/com.nico.overnight-runner.plist
+ create mode 100644 ops/launchd/com.nico.phase0g-status-ping.plist
+ create mode 100644 ops/launchd/com.nico.wizard-status-ping.plist
+ create mode 100755 ops/launchd/install.sh
+ create mode 100755 ops/launchd/uninstall.sh

@@ -1,4 +1,4 @@
-2026-03-04 17:30 EST
+2026-03-04 17:36 EST
 
 ### Phase 0G: Overnight Autonomy (Heartbeats + Nightly Work) [N] P1
 _Dependency: None for scaffolding. Token rotation strongly recommended before hardening._
@@ -15,10 +15,17 @@ _Dependency: None for scaffolding. Token rotation strongly recommended before ha
   - Script: `~/Nico/Scripts/overnight-runner.py`
   - Vault output: `CabinetAgentVault/50-clippings/youtube/<video-id>-untriaged.md`
   - Logs: `~/Nico/Logs/overnight-runner.log` + `~/Nico/Logs/overnight-runner-err.log`
-- [ ] 🟨 **0G-3** Add 15-minute status pings (only while checklist has 🟨 items)
-- [ ] 🟨 **0G-4** Heartbeat policy: silent health-check only (no daytime chatter)
-- [ ] 🟨 **0G-5** Track launchd as code in GitHub (sanitized plists + install/uninstall scripts)
-- [ ] 🟨 **0G-6** Acceptance test: kickstart all jobs; verify correct outputs + no spam
+- [x] ✅ **0G-3** Add 15-minute status pings (only while checklist has 🟨 items)
+  - Job: `~/Library/LaunchAgents/com.nico.phase0g-status-ping.plist`
+  - Script: `~/Nico/Scripts/phase0g-status-ping.sh`
+- [x] ✅ **0G-4** Heartbeat policy: silent health-check only (no daytime chatter)
+  - Job: `~/Library/LaunchAgents/com.nico.heartbeat-healthcheck.plist`
+  - Script: `~/Nico/Scripts/heartbeat-healthcheck.sh`
+- [x] ✅ **0G-5** Track launchd as code in GitHub (sanitized plists + install/uninstall scripts)
+  - Folder: `~/Nico/ops/launchd/` (README + install/uninstall)
+- [x] ✅ **0G-6** Acceptance test: kickstart all jobs; verify correct outputs + no spam
+  - Verified: overnight runner + Phase 0G pings + heartbeat healthcheck all execute without errors
+  - Fixed: nighttime report job (missing script) now exists and runs quiet by default
 
 **Definition of Done:**
 - 2am job runs and produces expected artifacts in the vault
