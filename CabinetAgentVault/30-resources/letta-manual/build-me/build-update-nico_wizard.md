@@ -49,7 +49,7 @@ tags: [letta, manual, wizard, build-me]
 - ✅ 4.5 `LKRnP-ptC4c` — Office Hours (done)
 - ✅ 4.6 `M8LNa3FKE4k` — Office Hours (done)
 - ✅ 4.7 `fr61XHf6Zzw` — Office Hours (done)
-- ⬜ 4.8 `YtZgsw9x8l8` — Obsidian + Letta Code (queued)
+- 🟨 4.8 `YtZgsw9x8l8` — Obsidian + Letta Code (in progress)
 - ⬜ 4.9 `LX-qO5o8iRQ` — Multi-agent systems (queued)
 
 - Rule: only one item can be marked **in progress** at a time.
