@@ -50,7 +50,7 @@ tags: [letta, manual, wizard, build-me]
 - ✅ 4.6 `M8LNa3FKE4k` — Office Hours (done)
 - ✅ 4.7 `fr61XHf6Zzw` — Office Hours (done)
 - ✅ 4.8 `YtZgsw9x8l8` — Obsidian + Letta Code (done)
-- ⬜ 4.9 `LX-qO5o8iRQ` — Multi-agent systems (queued)
+- 🟨 4.9 `LX-qO5o8iRQ` — Multi-agent systems (in progress)
 
 - Rule: only one item can be marked **in progress** at a time.
 - Rule: mark **done** only after commit + push.
@@ -578,8 +578,10 @@ tags: [letta, manual, wizard, build-me]
 ## Doc / GitHub deltas (video says → present-day docs/code)
 - Video’s core claim (Obsidian = markdown files) remains true; the operational details (exact commands, safety modes) should be verified against current Letta Code docs and GitHub releases.
 
-# 4.9 (pending) Building Multi-Agent Systems with Letta — 2025-03-03 `LX-qO5o8iRQ`
-- Status: pending
+# 4.9 (in progress) Building Multi-Agent Systems with Letta — 2025-03-03 `LX-qO5o8iRQ`
+
+## Status
+- in progress (subagent draft complete; final merge + commit pending)
 
 # 5) Cross-cutting topics (not tied to one video)
 
