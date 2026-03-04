@@ -49,7 +49,7 @@ tags: [letta, manual, wizard, build-me]
 - ✅ 4.5 `LKRnP-ptC4c` — Office Hours (done)
 - ✅ 4.6 `M8LNa3FKE4k` — Office Hours (done)
 - ✅ 4.7 `fr61XHf6Zzw` — Office Hours (done)
-- 🟨 4.8 `YtZgsw9x8l8` — Obsidian + Letta Code (in progress)
+- ✅ 4.8 `YtZgsw9x8l8` — Obsidian + Letta Code (done)
 - ⬜ 4.9 `LX-qO5o8iRQ` — Multi-agent systems (queued)
 
 - Rule: only one item can be marked **in progress** at a time.
@@ -521,8 +521,62 @@ tags: [letta, manual, wizard, build-me]
 - Video: “Letta Chat + Loop (default agent) + Loop Master bootstrapping flow” → Not clearly documented in the Letta Code docs set above (treat as product/UI surface that may change; verify against current app behavior rather than assuming stability).
 - Video: step-based billing + context-window tiering advice (<100k) → Pricing docs should be treated as the source of truth for current billing/tier thresholds; confirm the current threshold and wording against the latest pricing page before codifying permanently.
 
-# 4.8 (pending) Combine Letta Code with Obsidian — 2026-01-16 `YtZgsw9x8l8`
-- Status: pending
+# 4.8 (done) Combine Letta Code with Obsidian — 2026-01-16 `YtZgsw9x8l8`
+
+## Summary
+- Use Letta Code as a stateful “knowledge gardener” over an Obsidian vault (plain markdown files). The workflow shown is: capture quickly into an Inbox, have the agent mine sources into structured reference/concept notes with dense links/MOCs, encode repeatable workflows as skills, and verify results via Obsidian’s graph/backlinks.
+
+## Claims (what the video asserts)
+- Obsidian is a natural fit for Letta Code because it’s a folder of markdown files.
+- Stateful agents improve over time by learning your vault structure and preferences.
+- A practical loop is: capture → mine → promote to evergreen concepts → link/MOC updates.
+- Skills are “procedural memory” for repeatable vault workflows.
+- YOLO mode can be dangerous (auto-applies edits).
+
+## Rules (how to operate if you adopt it)
+- Capture-first: keep an Inbox for quick ingestion; don’t block on perfect structure.
+- Prefer links over folders for meaning; use folders for lifecycle/state.
+- Keep notes small (one concept per note) so linking works.
+- Add a short “so what” line when promoting notes.
+- Be cautious with YOLO mode; supervise if enabled.
+
+## Failure modes (how it breaks)
+- YOLO mode can cause destructive/unwanted bulk edits.
+- Over-linking creates graph noise; retrieval gets worse.
+- Taxonomy drift if the agent invents new categories instead of extending MOCs.
+- Hallucinated summaries if notes aren’t grounded in sources.
+- Orphan-note explosion (notes created without links).
+
+## Verification gates (commands/checks that prove reality)
+- Gate: correct vault path
+  - confirm you’re in the intended vault folder before letting the agent edit
+- Gate: link sanity
+  - new notes have meaningful outbound links and a home MOC
+- Gate: source grounding
+  - factual claims trace back to the source (transcript/URL/quote)
+- Gate: graph sanity
+  - spot-check graph/backlinks for new orphan clusters
+
+## Apply to Nico (our concrete changes)
+- Baseline vault structure:
+  - `Inbox/` (quick capture)
+  - `MOCs/` (navigation)
+  - `Concepts/` (evergreen primitives)
+  - `Sources/` (transcripts/articles)
+- Create a skill: “Promote Inbox note”
+  - raw capture → evergreen concept note + 3 links + MOC placement + minimal metadata
+- Default output constraints in the vault:
+  - short titles, bullets, no fluff, always link to a MOC.
+
+## Present-day truth sources checked (documented)
+- Docs:
+  - https://docs.letta.com/letta-code/memory/
+  - https://docs.letta.com/letta-code/changelog/
+- GitHub:
+  - https://github.com/letta-ai/letta-code
+
+## Doc / GitHub deltas (video says → present-day docs/code)
+- Video’s core claim (Obsidian = markdown files) remains true; the operational details (exact commands, safety modes) should be verified against current Letta Code docs and GitHub releases.
 
 # 4.9 (pending) Building Multi-Agent Systems with Letta — 2025-03-03 `LX-qO5o8iRQ`
 - Status: pending
