@@ -48,7 +48,7 @@ tags: [letta, manual, wizard, build-me]
 - ✅ 4.4 `BroTeuvX0es` — LettaBot tutorial (done)
 - ✅ 4.5 `LKRnP-ptC4c` — Office Hours (done)
 - ✅ 4.6 `M8LNa3FKE4k` — Office Hours (done)
-- 🟨 4.7 `fr61XHf6Zzw` — Office Hours (in progress)
+- ✅ 4.7 `fr61XHf6Zzw` — Office Hours (done)
 - ⬜ 4.8 `YtZgsw9x8l8` — Obsidian + Letta Code (queued)
 - ⬜ 4.9 `LX-qO5o8iRQ` — Multi-agent systems (queued)
 
@@ -407,8 +407,119 @@ tags: [letta, manual, wizard, build-me]
 - Model support naming (Opus 4.6 etc.) should be verified in `/models`.
 - “Claude Subconscious injection” is not documented as a canonical feature in the checked docs/repos → treat as demo/adjacent until confirmed.
 
-# 4.7 (pending) Letta Office Hours: Letta Chat, GitHub Action, Letta Code, and more! — 2026-01-26 `fr61XHf6Zzw`
-- Status: pending
+# 4.7 (done) Letta Office Hours: Letta Chat, GitHub Action, Letta Code, and more! — 2026-01-26 `fr61XHf6Zzw`
+
+## Summary (1 paragraph)
+- Office hours covering: an early “Letta Chat” web UI for personal agents (favorites + a default “Loop” agent), a walkthrough of installing/running the Letta Code GitHub Action, and several Letta Code UX/platform updates (Conversations defaults, conversation search, deploying existing agents as subagents by `agent_id`, and the bundled “messaging agents” skill). Also includes practical ops/cost guidance (step-based billing, and keeping context windows <100k to avoid higher-tier rates).
+
+## Claims (what the video asserts)
+- Letta Chat exists as a simple front-end for “personal agent” users (non-dev-friendly) with:
+  - favorites list
+  - a default agent (“Loop”) provisioned for new users
+  - intentionally limited agent-creation UX (encourage a small number of “special” agents)
+- Letta uses an internal “scaffolding” agent (Loop Master) that iterates on Loop’s prompts/memory blocks and regression-tests behavior (including jailbreak attempts).
+- GitHub Action:
+  - is easy to install (via Letta Code or copy/paste workflow YAML)
+  - requires a repo secret for a Letta API key (`LETTA_API_KEY`)
+  - can be triggered by mentioning `@letta-code` (and supports persistent issue/PR conversations)
+  - can target a specific specialist agent via `agent_id` (recommended for repo-specific expertise)
+- Letta Code Conversations:
+  - agents can have multiple conversations; memory is shared across them
+  - default CLI behavior was changed back to “resume the same default conversation,” with explicit opt-in to new conversations
+  - `conversation_search` / message search works across the agent’s conversation history (“perfect recall” via tools)
+- Subagents / parallelism:
+  - creating brand-new agents as subagents is slower (db-heavy), while conversations are cheap
+  - you can “deploy an existing agent” as a subagent if you know the `agent_id` (including forking yourself)
+- Skills:
+  - “messaging agents” capability allows sending messages to other agents without granting them local filesystem/tool access
+  - Letta Code tool capability is attached client-side at request time (existing agents can be used in Letta Code without special migration)
+- Pricing/ops:
+  - Letta bills “per step” (not per token) for typical usage
+  - above ~100k context window you’re charged at a higher rate; set max context window under 100k (e.g. ~90k) to reduce cost
+
+## Rules (how to operate if you adopt it)
+- Conversations discipline:
+  - default: stay in the default conversation for continuity
+  - create a new conversation only when you explicitly want isolation/parallel threads (`/new` or `letta --new`)
+  - use `/resume` (or CLI `--resume/--conv`) to deliberately switch threads
+- Treat “search across history” as the first option before “add more pinned memory”:
+  - use `/search` for recall rather than bloating pinned context
+- Repo specialists:
+  - create/maintain one “keeper” agent per important repo; use that agent’s `agent_id` in GitHub Action config for consistent behavior and persistent repo knowledge
+- Subagent strategy:
+  - prefer “deploy existing agent by `agent_id`” when you want a specialist with durable memory instead of spawning a fresh generic helper
+  - keep parallelism controlled (don’t fork endlessly; gate background work with clear acceptance criteria)
+- GitHub Action hygiene:
+  - ensure workflow permissions (contents/issues/pull-requests write) match intended capabilities
+  - keep secrets in repo secrets; never paste keys into issues/comments
+- Cost hygiene:
+  - cap context window below 100k unless you explicitly need larger context (accept more compactions as the tradeoff)
+
+## Failure modes (how it breaks)
+- Conversation confusion:
+  - user thinks continuity exists but is in a new conversation; loses “where were we?” flow
+  - too many parallel conversations → hard to find the right thread without `/resume` + better summaries
+- Over-reliance on “perfect recall”:
+  - message search returns irrelevant matches; agent anchors on wrong prior thread
+- GitHub Action setup issues:
+  - missing `LETTA_API_KEY` secret, insufficient workflow permissions, or trigger mismatch → no response
+  - “works once, then resumes the wrong agent” if agent persistence metadata is misunderstood
+- Specialist agent misuse:
+  - pointing the action at a non-specialist (or wrong `agent_id`) leads to low-quality PRs/reviews
+- Parallelism hazards:
+  - self-forking (Task tool) can create coordination overhead or duplicated work without a “main thread” planner
+- Cost blowups:
+  - allowing >100k context windows by default increases per-step cost tier (even if you don’t need it)
+
+## Verification gates (commands that prove reality)
+- Gate: default conversation vs new conversation works
+  - `letta` (no flags) resumes default conversation
+  - `/new` starts a fresh conversation with shared memory
+  - `/resume` shows selector and can switch by ID
+  - CLI equivalents: `letta --new`, `letta --continue`, `letta --resume`, `letta --conv <conv-id>`
+- Gate: cross-conversation recall exists (and is usable)
+  - `/search <query>` returns hits from prior messages across conversations
+- Gate: deploy existing agent as subagent works
+  - use Task tool (or built-in subagent workflow) with a known `agent_id` and confirm it runs and returns a final result to the parent
+- Gate: GitHub Action is correctly installed + triggerable
+  - repo contains `.github/workflows/letta.yml`
+  - repo secrets include `LETTA_API_KEY`
+  - mention `@letta-code` on an issue/PR → confirm an Actions run starts and a tracking comment appears
+- Gate: cost guardrail is set
+  - in agent settings (ADE), confirm max context window configured <100k (e.g., 90k)
+
+## Apply to Nico (our concrete changes)
+- Make “conversation selection” explicit in Nico ops:
+  - default = stay in default conversation unless we say “start a new thread”
+  - when we *do* branch, we must name the intent (“parallel thread for X; will merge summary back”)
+- Add a “repo keeper” pattern to our GitHub workflows:
+  - one specialist agent per repo; GitHub Action uses that `agent_id` to avoid generic drift
+- Add a “search-first” reminder before writing new pinned memory:
+  - try `/search` (or recall subagent) before updating `system/` memory
+- Add a cost safety default:
+  - set Nico’s max context window target <100k unless explicitly overridden for a deep-dive session
+- Add a controlled self-forking rule:
+  - Nico may fork into subagents for bounded tasks, but must return: (a) outcome, (b) diff/PR link, (c) verification result
+
+## Present-day truth sources checked (documented)
+- Docs:
+  - https://docs.letta.com/letta-code/changelog/
+  - https://docs.letta.com/letta-code/slash-commands/
+  - https://docs.letta.com/letta-code/cli-reference/
+  - https://docs.letta.com/letta-code/subagents/
+  - https://docs.letta.com/letta-code/skills/
+  - https://docs.letta.com/letta-code/github-action/
+  - https://docs.letta.com/guides/build-with-letta/pricing/
+- GitHub:
+  - https://github.com/letta-ai/letta-code
+
+## Doc / GitHub deltas (video says → present-day docs/code)
+- Video: default CLI behavior reverted to “resume default conversation” → Docs confirm in changelog (0.13.4+) that `letta` resumes default; `--new` is explicit opt-in.
+- Video: “deploy existing agent as subagent by `agent_id`” → Docs confirm (Subagents doc + changelog 0.13.3).
+- Video: “messaging agents” skill shipped → Docs confirm bundled `messaging-agents` in changelog (0.13.3) and listed in Skills docs.
+- Video: GitHub Action is “easy to install” + uses `LETTA_API_KEY` secret → Docs now provide a canonical workflow + configuration table; also clarifies constraints (e.g., cannot modify workflow files, cannot approve PRs).
+- Video: “Letta Chat + Loop (default agent) + Loop Master bootstrapping flow” → Not clearly documented in the Letta Code docs set above (treat as product/UI surface that may change; verify against current app behavior rather than assuming stability).
+- Video: step-based billing + context-window tiering advice (<100k) → Pricing docs should be treated as the source of truth for current billing/tier thresholds; confirm the current threshold and wording against the latest pricing page before codifying permanently.
 
 # 4.8 (pending) Combine Letta Code with Obsidian — 2026-01-16 `YtZgsw9x8l8`
 - Status: pending
