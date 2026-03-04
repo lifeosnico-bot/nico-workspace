@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-03-02 23:15 EST | **Updated by**: Nico (Telegram) | **Session**: TG-02
+**Last Updated**: 2026-03-04 02:22 EST | **Updated by**: Nico (Telegram) | **Session**: TG-03
 
 ---
 
@@ -99,6 +99,7 @@ _Land here first, get triaged into phases by Nico. Items below have been assigne
 
 ### New
 - [x] **[P1][N]** Build background Slack polling — Nico monitors #vincent-to-nico during sessions, alerts on new messages ✅ (done 2026-02-23)
+- [ ] **[P3][N]** Pilot GitHub Actions background agent lane (tag Nico/Letta Code on issues/PRs) — choose repo + security mode first
 - [ ] **[P3][N]** Troubleshoot copy and paste issues in Claude Code, including image pasting capability (added 2026-02-24)
 
 ### Remaining (25 items, triaged)
