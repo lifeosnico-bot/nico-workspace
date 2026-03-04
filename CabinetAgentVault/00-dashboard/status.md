@@ -1,6 +1,6 @@
 # Status
 
-**Last Updated**: 2026-03-04 02:22 EST | **Updated by**: Nico (Telegram) | **Session**: TG-03
+**Last Updated**: 2026-03-04 03:53 EST | **Updated by**: Nico (Telegram) | **Session**: TG-03
 
 ---
 
@@ -401,6 +401,40 @@ _Dependency: Phase 3 complete._
   - [ ] 4b. Save to vault: `30-resources/reference/disaster-recovery.md`
 
 ---
+
+### Phase 7: Overnight Autonomy (Heartbeat + Runner) [N] P3
+_Dependency: Phase 0E metadata standards enforcement (and token rotation) complete._
+
+**Top-20 checklist (canonical):**
+- [ ] 1) Overnight runner (actual work engine)
+- [ ] 2) Cron enabled (if using LettaBot cron)
+- [ ] 3) Single task queue (one source of truth)
+- [ ] 4) Definition-of-done checks (verification gates)
+- [ ] 5) Report spec enforcement (morning/night cannot omit sections)
+- [ ] 6) Autonomy scope rules
+- [ ] 7) Auth alignment (LETTA_API_KEY / lettabot.yaml / MemFS git)
+- [ ] 8) Stable memory sync health checks
+- [ ] 9) Pinned memory policy (keep `system/` small)
+- [ ] 10) Reflection policy (sleep-time compute)
+- [ ] 11) Defragmentation routine
+- [ ] 12) Disk space monitoring
+- [ ] 13) Log location + rotation
+- [ ] 14) Comms lane rules
+- [ ] 15) Escalation channel for blockers
+- [ ] 16) Subagent policy
+- [ ] 17) Canonical Build/Update Nico manual (wizard)
+- [ ] 18) Weekly ingestion updater
+- [ ] 19) Repo workflow gates (branch-only, PR-only)
+- [ ] 20) Backup + restore drills
+
+**Current reality (as of 2026-03-04):**
+- Overnight runner exists but is report-only (no PR creation).
+- LettaBot heartbeat is enabled; cron is disabled.
+- Nighttime report LaunchAgent exists but the script is missing (errors).
+
+- [ ] 1. Upgrade overnight runner from report-only → branch + PR (gated)
+- [ ] 2. Decide: LettaBot cron vs launchd-only for scheduled work
+- [ ] 3. Fix nighttime report job (missing `Scripts/nighttime-report.py`)
 
 ### Phase 7: LifeOS Agent Evolution [N] P4
 _Dependency: Phases 0-3 complete. Future — scope after infrastructure is stable._
