@@ -20,6 +20,32 @@ Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+T
 - [ ] **[V]** Obsidian Phase 2 manual setup (Sync + enable CLI)
 - [ ] **[V]** 1Password setup (account + desktop app)
 
+### Phase 0G: Overnight Autonomy (Heartbeats + Nightly Work) [N] P1
+_Dependency: None for scaffolding. Token rotation strongly recommended before hardening._
+
+**Mission:** Nico can execute non-urgent work overnight without distracting daytime workflow.
+
+**Daily Checklist (must be ✅ by tonight):**
+- [x] ✅ **0G-1** Define overnight scope + gates (what can run overnight; what is forbidden)
+  - Allowed overnight: create vault stub notes, update local logs, run read-only scans
+  - Forbidden overnight (until later phase): git commits/PRs, memory edits, wizard edits, Slack posts, deleting/moving files
+  - User notifications: DM only on failure; otherwise silent
+- [x] ✅ **0G-2** Confirm nightly runner behavior (2am launchd) + logs + idempotency
+  - Job: `~/Library/LaunchAgents/com.nico.overnight-runner.plist`
+  - Script: `~/Nico/Scripts/overnight-runner.py`
+  - Vault output: `CabinetAgentVault/50-clippings/youtube/<video-id>-untriaged.md`
+  - Logs: `~/Nico/Logs/overnight-runner.log` + `~/Nico/Logs/overnight-runner-err.log`
+- [ ] 🟨 **0G-3** Add 15-minute status pings (only while checklist has 🟨 items)
+- [ ] 🟨 **0G-4** Heartbeat policy: silent health-check only (no daytime chatter)
+- [ ] 🟨 **0G-5** Track launchd as code in GitHub (sanitized plists + install/uninstall scripts)
+- [ ] 🟨 **0G-6** Acceptance test: kickstart all jobs; verify correct outputs + no spam
+
+**Definition of Done:**
+- 2am job runs and produces expected artifacts in the vault
+- Status pings work and are quiet when nothing is active
+- Heartbeat runs without generating noise unless there is a failure
+- launchd configs/scripts are tracked in GitHub without secrets
+
 ---
 
 ## Quick Commands
@@ -40,15 +66,15 @@ _Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to
 
 ## 🔴 Active This Week
 
-| Priority | Owner | Task |
-|---|---|---|
-| ~~P1~~ | ~~[N]~~ | ~~50% context window alert hook~~ ✅ |
-| P1 | [V] | Telegram bot token rotation (BotFather → /revoke → new token to Nico) |
-| ~~P1~~ | ~~[V]~~ | ~~Create Slack workspace + bot token~~ ✅ |
-| ~~P2~~ | ~~[N]~~ | ~~LettaBot Telegram poller fix~~ ✅ No conflict found (CC-8) |
-| P2 | [N] | Phase 0E — metadata standards enforcement |
-| P2 | [V] | Obsidian Phase 2 manual setup |
-| P2 | [V] | 1Password setup (secrets management) |
+| Priority | Owner   | Task                                                                  |
+| -------- | ------- | --------------------------------------------------------------------- |
+| ~~P1~~   | ~~[N]~~ | ~~50% context window alert hook~~ ✅                                   |
+| P1       | [V]     | Telegram bot token rotation (BotFather → /revoke → new token to Nico) |
+| ~~P1~~   | ~~[V]~~ | ~~Create Slack workspace + bot token~~ ✅                              |
+| ~~P2~~   | ~~[N]~~ | ~~LettaBot Telegram poller fix~~ ✅ No conflict found (CC-8)           |
+| P2       | [N]     | Phase 0E — metadata standards enforcement                             |
+| P2       | [V]     | Obsidian Phase 2 manual setup                                         |
+| P2       | [V]     | 1Password setup (secrets management)                                  |
 
 ---
 
@@ -60,7 +86,7 @@ _These require Vincent. Nothing else can proceed until done._
 - [x] **P1** Create Slack workspace → copy bot token → paste in terminal to Nico ✅ (done 2026-02-23)
 - [ ] **P2** 1Password: create account at 1password.com, install desktop app
 - [ ] **P2** Obsidian Phase 2: manual setup (sign in, enable Sync, register CLI, enable plugins) — Nico will prep everything, Vincent flips the switches
-- [ ] **P3** Exa API key: free tier at dashboard.exa.ai (1000/mo) — optional, DuckDuckGo works now
+- [x] **P3** Exa API key: free tier at dashboard.exa.ai (1000/mo) — optional, DuckDuckGo works now ✅ 2026-03-04
 - [ ] **P4** Review `05-reviews/housekeeping/vault-consolidation-review.md` in Obsidian — one decision needed
 - [ ] **P5** "Watch vid of pa guy in hall in Philly" — personal reminder
 
