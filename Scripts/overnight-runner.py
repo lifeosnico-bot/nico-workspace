@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 """Overnight Runner (nico-workspace)
 
-v1 behavior:
+Current behavior:
 - Load queue from ops/overnight/queue.json
 - Pick the first pending item (P1..P5, then id)
+- YouTube intake: convert untriaged YouTube links in CabinetAgentVault into per-video notes
 - Write a short report to Logs/overnight-runner.log
 
-Safety constraints (enforced by design in v1):
+Safety constraints (enforced by design):
 - No git changes
 - No PR creation
 
-Next version will add branch+PR creation behind gates.
+Future versions may add branch+PR creation behind gates.
 """
 
 from __future__ import annotations
