@@ -936,3 +936,5 @@
  create mode 100755 ops/launchd/uninstall.sh
 [nico/overnight-runner 6566ebc] auto-backup: 2026-03-04_17:50
  6 files changed, 193 insertions(+), 5 deletions(-)
+[nico/overnight-runner 551fca8] auto-backup: 2026-03-04_18:05
+ 6 files changed, 131 insertions(+), 1 deletion(-)
