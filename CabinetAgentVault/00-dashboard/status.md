@@ -12,6 +12,7 @@ Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+T
 **#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke).
 
 ## Tight List (Open)
+- [ ] **[P1][N]** Fix permissions issues with Telegram and Nico (Plan Mode + any other tool denies) *(added 2026-03-04)*
 - [ ] **[N]** Overnight runner scaffold + queue + schedule (PR #14 open) — *waiting merge*
 - [ ] **[N]** Add PR-opening capability to overnight runner (gated)
 - [ ] **[N]** Phase 0E — metadata standards enforcement
@@ -25,6 +26,7 @@ Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+T
 _Use these shorthand commands from any surface (text, voice, Cowork, Claude Code):_
 
 - **atl [P#] [description]** — Add to list. Defaults to P3/unassigned if no priority given.
+- **atl-p1 [description]** — Add to list as P1 (alias)
 - **sts** — Show current status. What's in progress, what's next.
 - **done [task]** — Mark a task complete.
 - **blocker [description]** — Flag something as blocked with reason.
