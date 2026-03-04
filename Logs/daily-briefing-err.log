@@ -2,3 +2,4 @@ Error: letta error: Missing LETTA_API_KEY
 Run 'letta' in interactive mode to authenticate or export the missing environment variable
 Error: letta error: Missing LETTA_API_KEY
 Run 'letta' in interactive mode to authenticate or export the missing environment variable
+Error: [Errno 2] No such file or directory: '/opt/homebrew/bin/letta'
