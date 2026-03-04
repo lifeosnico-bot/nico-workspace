@@ -578,10 +578,71 @@ tags: [letta, manual, wizard, build-me]
 ## Doc / GitHub deltas (video says → present-day docs/code)
 - Video’s core claim (Obsidian = markdown files) remains true; the operational details (exact commands, safety modes) should be verified against current Letta Code docs and GitHub releases.
 
-# 4.9 (in progress) Building Multi-Agent Systems with Letta — 2025-03-03 `LX-qO5o8iRQ`
+# 4.9 (done) Building Multi-Agent Systems with Letta — 2025-03-03 `LX-qO5o8iRQ`
 
-## Status
-- in progress (subagent draft complete; final merge + commit pending)
+## Summary (1 paragraph)
+- Overview of Letta’s built-in multi-agent messaging tools and the core mental model: multi-agent systems are networks of independent, stateful agents (each with their own memory + state) connected via explicit communication tools (async, sync, and supervisor→worker broadcast). The tutorial highlights orchestration discipline: priming, agent IDs/receipts, and loop prevention.
+
+## Claims (what the video asserts)
+- Letta agents are stateful, with independent memory systems and internal state.
+- Multi-agent systems are formed by connecting independent agents via tools.
+- There are three built-in cross-agent communication tools:
+  - `send_message_to_agent_async` (async, returns immediately with delivery receipt)
+  - `send_message_to_agent_and_wait_for_reply` (sync, blocks caller until reply)
+  - `send_message_to_agents_matching_all_tags` (sync broadcast to a tag group)
+- Async receipts include the sender agent ID so the recipient can reply.
+- Broadcast tool waits for all worker responses.
+- Tools must be attached/enabled; removing a tool “disconnects” agents.
+- Agents should be primed to expect cross-agent communication; schema alone may be insufficient.
+- Without stop conditions, agents can loop indefinitely.
+
+## Rules (how to operate if you adopt it)
+- Prefer async messaging for coordinator→specialist workflows.
+- Use sync messaging only when you want blocking determinism; expect the caller to stall while waiting.
+- For supervisor/worker patterns:
+  - tag workers
+  - broadcast to the tag group
+  - require bounded outputs + termination rules
+- Always include anti-loop instructions (max turns / respond once / summarize and stop).
+- Prime agents when introducing them into a multi-agent graph.
+- Treat tool attachment as an access-control boundary.
+
+## Failure modes (how it breaks)
+- Infinite ping-pong loops if stop conditions aren’t explicit.
+- Coordinator deadlock/latency with sync messages and slow/unresponsive agents.
+- Missing routing context if receipts/sender IDs aren’t included.
+- Broadcast fanout cost blowups (slowest worker dominates).
+- Role/persona conflicts can cause secrecy leaks (demo shows antagonistic goals).
+
+## Verification gates (commands/checks that prove reality)
+- Gate: multi-agent tools exist and are attached
+  - confirm the relevant tool is present on both sender and recipient
+- Gate: async receipt includes sender ID
+  - send async message A→B and verify receipt metadata supports replying
+- Gate: sync actually blocks + returns a reply
+  - send a trivial question via sync and verify a reply arrives
+- Gate: broadcast waits for all tagged workers
+  - tag 2–3 workers, broadcast, and confirm you get one response per worker
+- Gate: loop prevention works
+  - run a ping-pong test with “stop after 3 turns” and verify termination + summary
+
+## Apply to Nico (our concrete changes)
+- Standardize coordinator → specialists as async by default.
+- Make “anti-loop contract” mandatory in every cross-agent prompt.
+- Use tags to define durable worker pools (research/code/security) and broadcast only when parallelism is required.
+- Use a “handoff packet” template: objective, constraints, output format, termination rule, and what not to do.
+- Treat tool attachment as access control: only attach multi-agent tools where intended.
+
+## Present-day truth sources checked (documented)
+- Docs:
+  - https://docs.letta.com/tutorials/multi-agent
+- GitHub:
+  - https://github.com/letta-ai/letta
+
+## Doc / GitHub deltas (video says → present-day docs/code)
+- Video: “three built-in tools” → Docs confirm the same three tool names and semantics.
+- Sync tool reliability can vary by environment; verify in our deployment before depending on it for core orchestration.
+- Loop prevention is on the prompt/orchestrator (no automatic guardrail implied).
 
 # 5) Cross-cutting topics (not tied to one video)
 
