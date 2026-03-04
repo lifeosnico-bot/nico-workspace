@@ -15,6 +15,15 @@ This is a comprehensive digest of 15 YouTube videos from Letta AI's official cha
 
 ---
 
+## Incoming YouTube Links (Untriaged / Dropbox)
+
+_These links were dropped in Telegram. They are captured here so they don’t get lost. They are not yet summarized or merged into the wizard._
+
+- 2026-03-04 — https://youtu.be/sTdz6PZoAnw?si=euE3isO7CYAQkCXg
+- 2026-03-04 — https://youtube.com/watch?v=b29wl0ehrQI&lc=UgwCN0df9KhsJHANw0l4AaABAg&si=jS9EMpdJ9DTs0eYw
+- 2026-03-04 — https://youtu.be/vzCy44o3JwA?si=jJhym3VU9TKDMfbW
+- 2026-03-04 — https://youtu.be/G8tXjcseNjg?si=9m4Q3LrfcnKoU6Zo
+
 ## Video Index
 
 1. **LettaBot Tutorial: create a personal AI assistant with memory** (BroTeuvX0es)
