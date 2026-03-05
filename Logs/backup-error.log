@@ -648,3 +648,5 @@ error: RPC failed; curl 56 Recv failure: Connection reset by peer
 send-pack: unexpected disconnect while reading sideband packet
 fatal: the remote end hung up unexpectedly
 Everything up-to-date
+To https://github.com/lifeosnico-bot/nico-workspace.git
+   643babd..9f7b43b  HEAD -> backup
