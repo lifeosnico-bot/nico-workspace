@@ -584,3 +584,5 @@ To https://github.com/lifeosnico-bot/nico-workspace.git
 To https://github.com/lifeosnico-bot/nico-workspace.git
    551fca8..6c146da  HEAD -> backup
 fatal: unable to access 'https://github.com/lifeosnico-bot/nico-workspace.git/': Could not resolve host: github.com
+To https://github.com/lifeosnico-bot/nico-workspace.git
+   6c146da..55a46e4  HEAD -> backup
