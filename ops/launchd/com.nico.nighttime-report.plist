@@ -9,6 +9,7 @@
     <array>
         <string>/opt/homebrew/bin/python3</string>
         <string>/Users/lifeos.nico/Nico/Scripts/nighttime-report.py</string>
+        <string>--cerebras</string>
     </array>
 
     <key>EnvironmentVariables</key>
@@ -19,11 +20,12 @@
         <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
     </dict>
 
-    <!-- Daily at 22:30 local time -->
     <key>StartCalendarInterval</key>
     <dict>
-        <key>Hour</key><integer>22</integer>
-        <key>Minute</key><integer>30</integer>
+        <key>Hour</key>
+        <integer>22</integer>
+        <key>Minute</key>
+        <integer>30</integer>
     </dict>
 
     <key>StandardOutPath</key>

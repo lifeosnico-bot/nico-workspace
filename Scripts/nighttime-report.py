@@ -15,9 +15,12 @@ No secrets are printed.
 
 from __future__ import annotations
 
+import argparse
+import json
 import os
 import re
 import subprocess
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 
@@ -28,6 +31,10 @@ CHAT_ID = "8385420240"
 
 OVERNIGHT_ERR = STATE_DIR / "overnight-runner-err.log"
 OVERNIGHT_OUT = STATE_DIR / "overnight-runner.log"
+
+CEREBRAS_KEYCHAIN_SERVICE = "cerebras-api-key"
+CEREBRAS_KEYCHAIN_ACCOUNT = "lifeos.nico"
+CEREBRAS_API_URL = "https://api.cerebras.ai/v1/chat/completions"
 
 
 def _now() -> str:
@@ -122,7 +129,72 @@ def _send(msg: str) -> None:
     )
 
 
+def _get_cerebras_api_key() -> str | None:
+    # Prefer env var for non-interactive runs.
+    k = os.environ.get("CEREBRAS_API_KEY")
+    if k:
+        return k
+
+    # Fallback: macOS Keychain
+    try:
+        r = subprocess.run(
+            [
+                "/usr/bin/security",
+                "find-generic-password",
+                "-s",
+                CEREBRAS_KEYCHAIN_SERVICE,
+                "-a",
+                CEREBRAS_KEYCHAIN_ACCOUNT,
+                "-w",
+            ],
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        if r.returncode == 0:
+            return r.stdout.strip()
+    except Exception:
+        return None
+
+    return None
+
+
+def _cerebras_chat(prompt: str, max_tokens: int = 256) -> dict | None:
+    key = _get_cerebras_api_key()
+    if not key:
+        return None
+
+    payload = {
+        "model": "gpt-oss-120b",
+        "stream": False,
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0,
+        "max_tokens": max_tokens,
+    }
+
+    req = urllib.request.Request(
+        CEREBRAS_API_URL,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {key}",
+        },
+        method="POST",
+    )
+
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.loads(resp.read().decode("utf-8", errors="replace"))
+    except Exception:
+        return None
+
+
 def main() -> int:
+    p = argparse.ArgumentParser()
+    p.add_argument("--cerebras", action="store_true", help="Use Cerebras for the report summary")
+    p.add_argument("--force", action="store_true", help="Send a message even if there are no failures")
+    args = p.parse_args()
+
     phase0g = _extract_phase0g_block()
     open_phase0g = _phase0g_has_open_items(phase0g) if phase0g else False
 
@@ -134,29 +206,50 @@ def main() -> int:
     if _overnight_runner_has_error():
         failures.append("Overnight runner has errors")
 
-    if not open_phase0g and not failures:
+    # If nothing to say, stay silent (unless forced)
+    if not args.force and not open_phase0g and not failures:
         return 0
+
+    # Build a minimal context blob for summarization
+    context_lines: list[str] = []
+    if failures:
+        context_lines.append("Failures:")
+        for f in failures:
+            context_lines.append(f"- {f}")
+    if open_phase0g and phase0g:
+        context_lines.append("Phase 0G snapshot:")
+        context_lines.append(phase0g)
+    if OVERNIGHT_OUT.exists():
+        tail = OVERNIGHT_OUT.read_text(encoding="utf-8", errors="replace").splitlines()[-8:]
+        if tail:
+            context_lines.append("Overnight runner (tail):")
+            context_lines.extend(tail)
+
+    summary = None
+    if args.cerebras:
+        prompt = (
+            "You are Nico running a nightly health/report. Summarize the following context into:\n"
+            "- One-line status\n"
+            "- Up to 5 bullets (actionable)\n"
+            "Keep it plain text.\n\n"
+            + "\n".join(context_lines)
+        )
+        resp = _cerebras_chat(prompt, max_tokens=220)
+        if resp and resp.get("choices"):
+            msg = resp["choices"][0].get("message", {}).get("content")
+            if msg:
+                summary = str(msg).strip()
 
     lines: list[str] = []
     lines.append(f"Night check ({_now()})")
 
-    if failures:
+    if summary:
         lines.append("")
-        lines.append("Failures:")
-        for f in failures:
-            lines.append(f"- {f}")
-
-    if open_phase0g and phase0g:
+        lines.append(summary)
+    else:
+        # Fallback: send raw context
         lines.append("")
-        lines.append("Phase 0G snapshot:")
-        lines.append(phase0g)
-
-    if OVERNIGHT_OUT.exists():
-        tail = OVERNIGHT_OUT.read_text(encoding="utf-8", errors="replace").splitlines()[-4:]
-        if tail:
-            lines.append("")
-            lines.append("Overnight runner (tail):")
-            lines.extend(tail)
+        lines.extend(context_lines)
 
     _send("\n".join(lines)[:3500])
     return 0
