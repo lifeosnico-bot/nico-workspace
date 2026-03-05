@@ -94,3 +94,24 @@
 [2026-03-05 15:30:04] watchdog: detected stuck state (timeouts)
 [2026-03-05 15:30:04] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-153004)
 [2026-03-05 15:30:06] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:48:07] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:48:08] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-154807)
+[2026-03-05 15:48:10] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:49:10] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:49:10] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-154910)
+[2026-03-05 15:49:12] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:50:12] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:50:12] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-155012)
+[2026-03-05 15:50:14] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:51:15] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:51:15] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-155115)
+[2026-03-05 15:51:17] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:54:17] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:54:17] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-155417)
+[2026-03-05 15:54:19] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:55:19] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:55:19] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-155519)
+[2026-03-05 15:55:22] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:56:22] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:56:22] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-155622)
+[2026-03-05 15:56:24] watchdog: restarted com.nico.lettabot
