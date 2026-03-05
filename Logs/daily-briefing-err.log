@@ -3,3 +3,45 @@ Run 'letta' in interactive mode to authenticate or export the missing environmen
 Error: letta error: Missing LETTA_API_KEY
 Run 'letta' in interactive mode to authenticate or export the missing environment variable
 Error: [Errno 2] No such file or directory: '/opt/homebrew/bin/letta'
+Error: letta error: Error saving local project settings: Error: ENOENT: no such file or directory, mkdir '/.letta'
+    at mkdirSync (node:fs:1333:26)
+    at mkdir (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3460:3)
+    at SettingsManager.persistLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4084:15)
+    at SettingsManager.updateLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4069:31)
+    at SettingsManager.setLocalLastSession (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4170:10)
+    at handleHeadlessCommand (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:76385:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:121257:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'mkdir',
+  path: '/.letta'
+}
+Failed to persist local project settings: Error: ENOENT: no such file or directory, mkdir '/.letta'
+    at mkdirSync (node:fs:1333:26)
+    at mkdir (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3460:3)
+    at SettingsManager.persistLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4084:15)
+    at SettingsManager.updateLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4069:31)
+    at SettingsManager.setLocalLastSession (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4170:10)
+    at handleHeadlessCommand (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:76385:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:121257:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'mkdir',
+  path: '/.letta'
+}
+Transient API error before streaming (attempt 1 of 3), retrying in 1s...
+Error: {
+  "error": {
+    "error": {
+      "message_type": "error_message",
+      "run_id": "run-2c1a82ee-ff31-4bf9-8ba7-c7a63dcedfcf",
+      "error_type": "internal_error",
+      "message": "An unknown error occurred with the LLM streaming request.",
+      "detail": "CONFLICT: Cannot send a new message: The agent is waiting for approval on a tool call. Please approve or deny the pending request before continuing.",
+      "seq_id": null
+    },
+    "run_id": "run-2c1a82ee-ff31-4bf9-8ba7-c7a63dcedfcf"
+  }
+}
