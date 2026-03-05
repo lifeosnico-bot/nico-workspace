@@ -16183,3 +16183,13 @@ Emitted 'error' event on Server instance at:
 }
 
 Node.js v25.6.1
+[letta-code-sdk] CLI stderr: Failed to connect to Letta server
+[letta-code-sdk] CLI stderr: Base URL: https://api.letta.com
+Your credentials may be invalid or the server may be unreachable.
+Delete ~/.letta/settings.json then run 'letta' to re-authenticate
+[letta-code-sdk] CLI process exited with code 1
+[letta-code-sdk] CLI stderr: Failed to connect to Letta server
+[letta-code-sdk] CLI stderr: Base URL: https://api.letta.com
+[letta-code-sdk] CLI stderr: Your credentials may be invalid or the server may be unreachable.
+Delete ~/.letta/settings.json then run 'letta' to re-authenticate
+[letta-code-sdk] CLI process exited with code 1
