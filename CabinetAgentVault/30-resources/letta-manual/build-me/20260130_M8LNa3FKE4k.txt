@@ -1,0 +1,7153 @@
+Kind: captions
+Language: en
+
+Welcome. It's uh my name is Cameron. I
+
+Welcome. It's uh my name is Cameron. I
+
+Welcome. It's uh my name is Cameron. I
+work here at Leta. I am the developer
+
+work here at Leta. I am the developer
+
+work here at Leta. I am the developer
+relations person and I am in sunny
+
+relations person and I am in sunny
+
+relations person and I am in sunny
+beautiful San Francisco, California um
+
+beautiful San Francisco, California um
+
+beautiful San Francisco, California um
+where our office is. And uh you're at
+
+where our office is. And uh you're at
+
+where our office is. And uh you're at
+the office hours. And basically what
+
+the office hours. And basically what
+
+the office hours. And basically what
+this is is I'm going to give you some
+
+this is is I'm going to give you some
+
+this is is I'm going to give you some
+updates about the things that we're
+
+updates about the things that we're
+
+updates about the things that we're
+working on. I'm here to answer questions
+
+working on. I'm here to answer questions
+
+working on. I'm here to answer questions
+about the stuff that you're interested
+
+about the stuff that you're interested
+
+about the stuff that you're interested
+in, things that you're working on, stuff
+
+in, things that you're working on, stuff
+
+in, things that you're working on, stuff
+you want to know,
+
+you want to know,
+
+you want to know,
+and uh uh so if you know there's
+
+and uh uh so if you know there's
+
+and uh uh so if you know there's
+anything you need to know, just drop it
+
+anything you need to know, just drop it
+
+anything you need to know, just drop it
+in the chat and I'll kind of like shift
+
+in the chat and I'll kind of like shift
+
+in the chat and I'll kind of like shift
+to answering your questions. So this is
+
+to answering your questions. So this is
+
+to answering your questions. So this is
+this is like live. Jump in whenever you
+
+this is like live. Jump in whenever you
+
+this is like live. Jump in whenever you
+want to.
+
+Okay. Sorry, I have kind of a sore
+
+Okay. Sorry, I have kind of a sore
+
+Okay. Sorry, I have kind of a sore
+throat. I'm doing imunotherapy
+
+throat. I'm doing imunotherapy
+
+throat. I'm doing imunotherapy
+to be not allergic to cats and my
+
+to be not allergic to cats and my
+
+to be not allergic to cats and my
+girlfriend has a cat and uh so I had
+
+girlfriend has a cat and uh so I had
+
+girlfriend has a cat and uh so I had
+kind of an allergic reaction this
+
+kind of an allergic reaction this
+
+kind of an allergic reaction this
+morning. So like my throat's a little
+
+morning. So like my throat's a little
+
+morning. So like my throat's a little
+like closed up so I may sound a little
+
+like closed up so I may sound a little
+
+like closed up so I may sound a little
+weird. Um
+
+weird. Um
+
+weird. Um
+okay.
+
+okay.
+
+okay.
+So I think the number one thing that
+
+So I think the number one thing that
+
+So I think the number one thing that
+we're going to talk about is Letot. So,
+
+we're going to talk about is Letot. So,
+
+we're going to talk about is Letot. So,
+a lot of you people probably know
+
+a lot of you people probably know
+
+a lot of you people probably know
+Claudebot or uh now called Moltbot
+
+Claudebot or uh now called Moltbot
+
+Claudebot or uh now called Moltbot
+because Anthropic laid down the
+
+because Anthropic laid down the
+
+because Anthropic laid down the
+banhammer presumably.
+
+Um and uh this is our approach to
+
+Um and uh this is our approach to
+
+Um and uh this is our approach to
+Cloudbot because Cloudbot is like
+
+Cloudbot because Cloudbot is like
+
+Cloudbot because Cloudbot is like
+Cloudbot is a decent tool and I think it
+
+Cloudbot is a decent tool and I think it
+
+Cloudbot is a decent tool and I think it
+like showed people what you can do with
+
+like showed people what you can do with
+
+like showed people what you can do with
+agents that have like access to your
+
+agents that have like access to your
+
+agents that have like access to your
+machine that you can contact from
+
+machine that you can contact from
+
+machine that you can contact from
+anywhere. Cloudbot is really really easy
+
+anywhere. Cloudbot is really really easy
+
+anywhere. Cloudbot is really really easy
+to use and you know you can set up like
+
+to use and you know you can set up like
+
+to use and you know you can set up like
+a telegram and WhatsApp and signal and
+
+a telegram and WhatsApp and signal and
+
+a telegram and WhatsApp and signal and
+discord integration so you can talk to
+
+discord integration so you can talk to
+
+discord integration so you can talk to
+the same agent everywhere.
+
+the same agent everywhere.
+
+the same agent everywhere.
+Um but there's a few complaints that
+
+Um but there's a few complaints that
+
+Um but there's a few complaints that
+people have had with Cloudbot. One of
+
+people have had with Cloudbot. One of
+
+people have had with Cloudbot. One of
+which is memory and we do memory really
+
+which is memory and we do memory really
+
+which is memory and we do memory really
+well. Um another complaint is kind of
+
+well. Um another complaint is kind of
+
+well. Um another complaint is kind of
+like the underlying agent harness. So we
+
+like the underlying agent harness. So we
+
+like the underlying agent harness. So we
+our our agent harness is let a code and
+
+our our agent harness is let a code and
+
+our our agent harness is let a code and
+let a code is like an extremely good
+
+let a code is like an extremely good
+
+let a code is like an extremely good
+agent harness that is designed for um
+
+agent harness that is designed for um
+
+agent harness that is designed for um
+memory and let agents specifically.
+
+memory and let agents specifically.
+
+memory and let agents specifically.
+So we basically took a lot of the core
+
+So we basically took a lot of the core
+
+So we basically took a lot of the core
+concepts inside of cloudbot and we just
+
+concepts inside of cloudbot and we just
+
+concepts inside of cloudbot and we just
+made a totally different thing that is
+
+made a totally different thing that is
+
+made a totally different thing that is
+formally for leta agents and nothing
+
+formally for leta agents and nothing
+
+formally for leta agents and nothing
+else. Um, and so what this means is you
+
+else. Um, and so what this means is you
+
+else. Um, and so what this means is you
+can use Signal and Telegram and WhatsApp
+
+can use Signal and Telegram and WhatsApp
+
+can use Signal and Telegram and WhatsApp
+and Slack currently our our four
+
+and Slack currently our our four
+
+and Slack currently our our four
+channels uh that you can talk to your
+
+channels uh that you can talk to your
+
+channels uh that you can talk to your
+agent from anywhere
+
+agent from anywhere
+
+agent from anywhere
+and it runs on top of a let code
+
+and it runs on top of a let code
+
+and it runs on top of a let code
+instance and it can do whatever it wants
+
+instance and it can do whatever it wants
+
+instance and it can do whatever it wants
+to your machine. Um, obviously that's
+
+to your machine. Um, obviously that's
+
+to your machine. Um, obviously that's
+kind of dangerous. You should be very
+
+kind of dangerous. You should be very
+
+kind of dangerous. You should be very
+thoughtful about how you talk to your
+
+thoughtful about how you talk to your
+
+thoughtful about how you talk to your
+agent. By default your agent requires
+
+agent. By default your agent requires
+
+agent. By default your agent requires
+pairing. Uh so if you message your
+
+pairing. Uh so if you message your
+
+pairing. Uh so if you message your
+Telegram bot um if if anyone messages
+
+Telegram bot um if if anyone messages
+
+Telegram bot um if if anyone messages
+your Telegram bot, you have to approve
+
+your Telegram bot, you have to approve
+
+your Telegram bot, you have to approve
+it inside of your uh Letterbot server.
+
+it inside of your uh Letterbot server.
+
+it inside of your uh Letterbot server.
+But you can deploy this on any machine.
+
+But you can deploy this on any machine.
+
+But you can deploy this on any machine.
+I'm just going to do my laptop today,
+
+I'm just going to do my laptop today,
+
+I'm just going to do my laptop today,
+but you can put it on like the Mac Mini,
+
+but you can put it on like the Mac Mini,
+
+but you can put it on like the Mac Mini,
+which is like part of the hype. Um
+
+which is like part of the hype. Um
+
+which is like part of the hype. Um
+so we'll uh I'm going to I'm going to
+
+so we'll uh I'm going to I'm going to
+
+so we'll uh I'm going to I'm going to
+kind of like walk you through what it
+
+kind of like walk you through what it
+
+kind of like walk you through what it
+does. Um, the onboarding, I'll like show
+
+does. Um, the onboarding, I'll like show
+
+does. Um, the onboarding, I'll like show
+you a little bit about how the
+
+you a little bit about how the
+
+you a little bit about how the
+onboarding works, but, uh, it requires
+
+onboarding works, but, uh, it requires
+
+onboarding works, but, uh, it requires
+me pasting just like non-stop API keys
+
+me pasting just like non-stop API keys
+
+me pasting just like non-stop API keys
+in some cases. So, uh, we're going to
+
+in some cases. So, uh, we're going to
+
+in some cases. So, uh, we're going to
+kind of like skip past that. Uh, letot
+
+kind of like skip past that. Uh, letot
+
+kind of like skip past that. Uh, letot
+does work with a self-hosted Leta
+
+does work with a self-hosted Leta
+
+does work with a self-hosted Leta
+server, so you should be able to like
+
+server, so you should be able to like
+
+server, so you should be able to like
+run it, uh, on a self-hosted server if
+
+run it, uh, on a self-hosted server if
+
+run it, uh, on a self-hosted server if
+you have privacy concerns. Um, or you
+
+you have privacy concerns. Um, or you
+
+you have privacy concerns. Um, or you
+can use all of your Leta billing uh, on
+
+can use all of your Leta billing uh, on
+
+can use all of your Leta billing uh, on
+our side. So, you can just use this
+
+our side. So, you can just use this
+
+our side. So, you can just use this
+agent to do kind of whatever. So, I hope
+
+agent to do kind of whatever. So, I hope
+
+agent to do kind of whatever. So, I hope
+it's going to be cool.
+
+it's going to be cool.
+
+it's going to be cool.
+before we continue on to that. Um,
+
+before we continue on to that. Um,
+
+before we continue on to that. Um,
+actually here I can't see most people's
+
+actually here I can't see most people's
+
+actually here I can't see most people's
+uh handles because the streamer mode is
+
+uh handles because the streamer mode is
+
+uh handles because the streamer mode is
+on. So I see D, which is my wife has
+
+on. So I see D, which is my wife has
+
+on. So I see D, which is my wife has
+that. Has it helped with allergies? Um,
+
+that. Has it helped with allergies? Um,
+
+that. Has it helped with allergies? Um,
+uh, yes and no. I think I've gotten like
+
+uh, yes and no. I think I've gotten like
+
+uh, yes and no. I think I've gotten like
+more able to withstand cat. Um, but I do
+
+more able to withstand cat. Um, but I do
+
+more able to withstand cat. Um, but I do
+like I like my girlfriend's cats. I've
+
+like I like my girlfriend's cats. I've
+
+like I like my girlfriend's cats. I've
+met a lot of cats I don't care for. Um,
+
+met a lot of cats I don't care for. Um,
+
+met a lot of cats I don't care for. Um,
+and partly that's because I'm very
+
+and partly that's because I'm very
+
+and partly that's because I'm very
+allergic to them. Um, but it's been
+
+allergic to them. Um, but it's been
+
+allergic to them. Um, but it's been
+improving. Uh, so I'm I'm happy about
+
+improving. Uh, so I'm I'm happy about
+
+improving. Uh, so I'm I'm happy about
+that. So I do recommend imunotherapy if
+
+that. So I do recommend imunotherapy if
+
+that. So I do recommend imunotherapy if
+you can get it. And if you're doing
+
+you can get it. And if you're doing
+
+you can get it. And if you're doing
+imunotherapy, ask about cluster
+
+imunotherapy, ask about cluster
+
+imunotherapy, ask about cluster
+imunotherapy, which is like speedrunning
+
+imunotherapy, which is like speedrunning
+
+imunotherapy, which is like speedrunning
+it. Uh, so I highly recommend that.
+
+it. Uh, so I highly recommend that.
+
+it. Uh, so I highly recommend that.
+Um, but my mom's cats super weird. Don't
+
+Um, but my mom's cats super weird. Don't
+
+Um, but my mom's cats super weird. Don't
+like them at all. Uh, bad choice on my
+
+like them at all. Uh, bad choice on my
+
+like them at all. Uh, bad choice on my
+mom's part.
+
+mom's part.
+
+mom's part.
+Um, okay. So, let's just like kind of go
+
+Um, okay. So, let's just like kind of go
+
+Um, okay. So, let's just like kind of go
+through here. Um, we'll talk some more
+
+through here. Um, we'll talk some more
+
+through here. Um, we'll talk some more
+about some other other projects and
+
+about some other other projects and
+
+about some other other projects and
+stuff, but um we'll kind of get to most
+
+stuff, but um we'll kind of get to most
+
+stuff, but um we'll kind of get to most
+of that stuff in just a minute. Okay.
+
+of that stuff in just a minute. Okay.
+
+of that stuff in just a minute. Okay.
+And let me
+
+And let me
+
+And let me
+do one more thing. Okay. I'm just going
+
+do one more thing. Okay. I'm just going
+
+do one more thing. Okay. I'm just going
+to share my whole screen and we're just
+
+to share my whole screen and we're just
+
+to share my whole screen and we're just
+going to like mess around for a bit. Let
+
+going to like mess around for a bit. Let
+
+going to like mess around for a bit. Let
+me make sure all of my important stuff
+
+me make sure all of my important stuff
+
+me make sure all of my important stuff
+is closed.
+
+is closed.
+
+is closed.
+Okay.
+
+Okay.
+
+Okay.
+I'm gonna go to Cameronbot before I open
+
+I'm gonna go to Cameronbot before I open
+
+I'm gonna go to Cameronbot before I open
+this up. Okay. Gotcha. All right.
+
+this up. Okay. Gotcha. All right.
+
+this up. Okay. Gotcha. All right.
+Sharing my screen here. I'm going to go
+
+Sharing my screen here. I'm going to go
+
+Sharing my screen here. I'm going to go
+do
+
+do
+
+do
+I guess everything my whole screen.
+
+I guess everything my whole screen.
+
+I guess everything my whole screen.
+Okay.
+
+Okay.
+
+Okay.
+Uh okay.
+
+Uh okay.
+
+Uh okay.
+Is this what everyone else sees? Yeah,
+
+Is this what everyone else sees? Yeah,
+
+Is this what everyone else sees? Yeah,
+there's a Vant posted a picture of me
+
+there's a Vant posted a picture of me
+
+there's a Vant posted a picture of me
+frozen in time. Uh so hopefully people
+
+frozen in time. Uh so hopefully people
+
+frozen in time. Uh so hopefully people
+can sort of see me. Uh we need to figure
+
+can sort of see me. Uh we need to figure
+
+can sort of see me. Uh we need to figure
+out like better better internet up here.
+
+out like better better internet up here.
+
+out like better better internet up here.
+Yeah, that's a VOD problem.
+
+Yeah, that's a VOD problem.
+
+Yeah, that's a VOD problem.
+Okay, so let me walk through just the
+
+Okay, so let me walk through just the
+
+Okay, so let me walk through just the
+basics. Um I am going to be using uh
+
+basics. Um I am going to be using uh
+
+basics. Um I am going to be using uh
+Leta Cloud here, but you can do this
+
+Leta Cloud here, but you can do this
+
+Leta Cloud here, but you can do this
+with self-hosted if you want to. It's
+
+with self-hosted if you want to. It's
+
+with self-hosted if you want to. It's
+very easy. The way you get started, and
+
+very easy. The way you get started, and
+
+very easy. The way you get started, and
+you can follow along if you would like,
+
+you can follow along if you would like,
+
+you can follow along if you would like,
+is go to leta.bot.
+
+is go to leta.bot.
+
+is go to leta.bot.
+So this is the website for Letot. Uh
+
+So this is the website for Letot. Uh
+
+So this is the website for Letot. Uh
+it's like a little ominous. Uh it's uh
+
+it's like a little ominous. Uh it's uh
+
+it's like a little ominous. Uh it's uh
+just says, you know, memory updated. Uh
+
+just says, you know, memory updated. Uh
+
+just says, you know, memory updated. Uh
+I remember everything. I've been
+
+I remember everything. I've been
+
+I remember everything. I've been
+thinking about our last chat.
+
+thinking about our last chat.
+
+thinking about our last chat.
+And uh so is just a like a general
+
+And uh so is just a like a general
+
+And uh so is just a like a general
+overview. If you've worked with a Leta
+
+overview. If you've worked with a Leta
+
+overview. If you've worked with a Leta
+agent, you might have like a a personal
+
+agent, you might have like a a personal
+
+agent, you might have like a a personal
+agent and typically that's like on a
+
+agent and typically that's like on a
+
+agent and typically that's like on a
+server somewhere. And you can give that
+
+server somewhere. And you can give that
+
+server somewhere. And you can give that
+agent tools. You can give that agent
+
+agent tools. You can give that agent
+
+agent tools. You can give that agent
+MCP, but it doesn't have ARMS, right?
+
+MCP, but it doesn't have ARMS, right?
+
+MCP, but it doesn't have ARMS, right?
+Like it's like lett agents on their own
+
+Like it's like lett agents on their own
+
+Like it's like lett agents on their own
+in the server are brains in a jar and
+
+in the server are brains in a jar and
+
+in the server are brains in a jar and
+that gets you extremely far. With Leta
+
+that gets you extremely far. With Leta
+
+that gets you extremely far. With Leta
+code, we give uh your Leta agent uh a
+
+code, we give uh your Leta agent uh a
+
+code, we give uh your Leta agent uh a
+giant robot battlesuit that allows it to
+
+giant robot battlesuit that allows it to
+
+giant robot battlesuit that allows it to
+do kind of whatever it wants to. And um
+
+do kind of whatever it wants to. And um
+
+do kind of whatever it wants to. And um
+that's what Letot does. It deploys a uh
+
+that's what Letot does. It deploys a uh
+
+that's what Letot does. It deploys a uh
+it deploys your brain in a jar. Your
+
+it deploys your brain in a jar. Your
+
+it deploys your brain in a jar. Your
+like super stateful agent, your personal
+
+like super stateful agent, your personal
+
+like super stateful agent, your personal
+agent, your coding agent, whatever.
+
+agent, your coding agent, whatever.
+
+agent, your coding agent, whatever.
+Whichever agent you want. We're totally
+
+Whichever agent you want. We're totally
+
+Whichever agent you want. We're totally
+agent agnostic. You can swap them as you
+
+agent agnostic. You can swap them as you
+
+agent agnostic. You can swap them as you
+want to. You just deploy it wherever you
+
+want to. You just deploy it wherever you
+
+want to. You just deploy it wherever you
+want.
+
+want.
+
+want.
+And um and that agent can like remember
+
+And um and that agent can like remember
+
+And um and that agent can like remember
+things. You can do all the stuff that
+
+things. You can do all the stuff that
+
+things. You can do all the stuff that
+you normally do with agents. We also
+
+you normally do with agents. We also
+
+you normally do with agents. We also
+support heartbeats. So, this is a a
+
+support heartbeats. So, this is a a
+
+support heartbeats. So, this is a a
+thing that happens in Cloudbot where you
+
+thing that happens in Cloudbot where you
+
+thing that happens in Cloudbot where you
+just have like a prompt and you send it
+
+just have like a prompt and you send it
+
+just have like a prompt and you send it
+to the agent on some interval that says
+
+to the agent on some interval that says
+
+to the agent on some interval that says
+like, "Hey, you have some tasks. Do you
+
+like, "Hey, you have some tasks. Do you
+
+like, "Hey, you have some tasks. Do you
+want to do these? Like, is there
+
+want to do these? Like, is there
+
+want to do these? Like, is there
+anything you want to work on?" Blah blah
+
+anything you want to work on?" Blah blah
+
+anything you want to work on?" Blah blah
+blah.
+
+blah.
+
+blah.
+And there's a quick start here. We'll
+
+And there's a quick start here. We'll
+
+And there's a quick start here. We'll
+give people this.
+
+give people this.
+
+give people this.
+Um, let me do Yeah.
+
+Um,
+
+Um,
+
+Um,
+so this is Leta's version of Claudebot.
+
+so this is Leta's version of Claudebot.
+
+so this is Leta's version of Claudebot.
+Yes, this is our version of Claudebot
+
+Yes, this is our version of Claudebot
+
+Yes, this is our version of Claudebot
+where we've removed a lot of the
+
+where we've removed a lot of the
+
+where we've removed a lot of the
+stuff in there. Uh so the internals of
+
+stuff in there. Uh so the internals of
+
+stuff in there. Uh so the internals of
+of Letot are much much simpler. [snorts]
+
+of Letot are much much simpler. [snorts]
+
+of Letot are much much simpler. [snorts]
+Um but we've taken a lot of the ideas,
+
+Um but we've taken a lot of the ideas,
+
+Um but we've taken a lot of the ideas,
+right? Because Cloudbot is a great idea.
+
+right? Because Cloudbot is a great idea.
+
+right? Because Cloudbot is a great idea.
+Um and there's a reason people love it.
+
+Um and there's a reason people love it.
+
+Um and there's a reason people love it.
+like it shows people exactly the power
+
+like it shows people exactly the power
+
+like it shows people exactly the power
+that you have with like coding agents
+
+that you have with like coding agents
+
+that you have with like coding agents
+that are accessible everywhere or even
+
+that are accessible everywhere or even
+
+that are accessible everywhere or even
+just like standard personal assistant
+
+just like standard personal assistant
+
+just like standard personal assistant
+agents that are accessible everywhere.
+
+agents that are accessible everywhere.
+
+agents that are accessible everywhere.
+Um,
+
+Um,
+
+Um,
+and we have the same benefits of like
+
+and we have the same benefits of like
+
+and we have the same benefits of like
+being model agnostic and all of those
+
+being model agnostic and all of those
+
+being model agnostic and all of those
+things, but you should be able to like
+
+things, but you should be able to like
+
+things, but you should be able to like
+kind of get started here. Um, I'm not
+
+kind of get started here. Um, I'm not
+
+kind of get started here. Um, I'm not
+going to run the onboarding. Um, but you
+
+going to run the onboarding. Um, but you
+
+going to run the onboarding. Um, but you
+can see here.
+
+All right. CD.
+
+Yeah. Okay. So, you're basically just
+
+Yeah. Okay. So, you're basically just
+
+Yeah. Okay. So, you're basically just
+going to do um Yeah. npx letabot
+
+going to do um Yeah. npx letabot
+
+going to do um Yeah. npx letabot
+onboard. And
+
+onboard. And
+
+onboard. And
+there's a few options here. If you want
+
+there's a few options here. If you want
+
+there's a few options here. If you want
+to give it a base URL, you can do let a
+
+to give it a base URL, you can do let a
+
+to give it a base URL, you can do let a
+base URL equals, you know, localhost or
+
+base URL equals, you know, localhost or
+
+base URL equals, you know, localhost or
+http uh localhost 8283 npx letabot
+
+http uh localhost 8283 npx letabot
+
+http uh localhost 8283 npx letabot
+onboard. And that will onboard you into
+
+onboard. And that will onboard you into
+
+onboard. And that will onboard you into
+your self-hosted server or your docker
+
+your self-hosted server or your docker
+
+your self-hosted server or your docker
+container, wherever it is. I'm just
+
+container, wherever it is. I'm just
+
+container, wherever it is. I'm just
+going to use the um uh lettoud by
+
+going to use the um uh lettoud by
+
+going to use the um uh lettoud by
+default.
+
+Um, okay. So, my onboarding is already
+
+Um, okay. So, my onboarding is already
+
+Um, okay. So, my onboarding is already
+done, so I'm going to skip past it. You
+
+done, so I'm going to skip past it. You
+
+done, so I'm going to skip past it. You
+can use OOTH um if you want to log into
+
+can use OOTH um if you want to log into
+
+can use OOTH um if you want to log into
+the platform. So, it's just like, you
+
+the platform. So, it's just like, you
+
+the platform. So, it's just like, you
+know, it opens the uh Leta API and then
+
+know, it opens the uh Leta API and then
+
+know, it opens the uh Leta API and then
+you the developer platform and then you
+
+you the developer platform and then you
+
+you the developer platform and then you
+can just like say approve and then
+
+can just like say approve and then
+
+can just like say approve and then
+you'll authenticate directly with your
+
+you'll authenticate directly with your
+
+you'll authenticate directly with your
+server. Um, it also supports like
+
+server. Um, it also supports like
+
+server. Um, it also supports like
+password and blah blah blah. So, I'm
+
+password and blah blah blah. So, I'm
+
+password and blah blah blah. So, I'm
+just going to use this. I think this is
+
+just going to use this. I think this is
+
+just going to use this. I think this is
+okay. Yeah. So
+
+okay. Yeah. So
+
+okay. Yeah. So
+you can uh create a new agent. You can
+
+you can uh create a new agent. You can
+
+you can uh create a new agent. You can
+select an existing agent. You can use
+
+select an existing agent. You can use
+
+select an existing agent. You can use
+whatever letter agent ID variable is set
+
+whatever letter agent ID variable is set
+
+whatever letter agent ID variable is set
+or you can skip. So I'm going to
+
+or you can skip. So I'm going to
+
+or you can skip. So I'm going to
+actually here let me do this. Keep
+
+actually here let me do this. Keep
+
+actually here let me do this. Keep
+current. And then you can configure
+
+current. And then you can configure
+
+current. And then you can configure
+which ones you want. Hit space to toggle
+
+which ones you want. Hit space to toggle
+
+which ones you want. Hit space to toggle
+the ones that you would like to install.
+
+the ones that you would like to install.
+
+the ones that you would like to install.
+I have all four of these installed. Um I
+
+I have all four of these installed. Um I
+
+I have all four of these installed. Um I
+think there's a problem I have with
+
+think there's a problem I have with
+
+think there's a problem I have with
+WhatsApp, but that's fine. Whatever.
+
+WhatsApp, but that's fine. Whatever.
+
+WhatsApp, but that's fine. Whatever.
+So I'm going to cancel that and assume
+
+So I'm going to cancel that and assume
+
+So I'm going to cancel that and assume
+that it works here.
+
+that it works here.
+
+that it works here.
+So everybody should be able to like
+
+So everybody should be able to like
+
+So everybody should be able to like
+deploy this in whatever server you want.
+
+deploy this in whatever server you want.
+
+deploy this in whatever server you want.
+Obviously if you go through us you get
+
+Obviously if you go through us you get
+
+Obviously if you go through us you get
+much cheaper inference because we only
+
+much cheaper inference because we only
+
+much cheaper inference because we only
+build per step not per token. So um you
+
+build per step not per token. So um you
+
+build per step not per token. So um you
+know if you are cost sensitive I highly
+
+know if you are cost sensitive I highly
+
+know if you are cost sensitive I highly
+recommend using the LA API.
+
+But if you like setting you know if you
+
+But if you like setting you know if you
+
+But if you like setting you know if you
+like paying people directly that's
+
+like paying people directly that's
+
+like paying people directly that's
+great. or if you have privacy concerns,
+
+great. or if you have privacy concerns,
+
+great. or if you have privacy concerns,
+blah blah blah. All right, so let's go.
+
+blah blah blah. All right, so let's go.
+
+blah blah blah. All right, so let's go.
+Let's go check this out. I have Signal.
+
+Let's go check this out. I have Signal.
+
+Let's go check this out. I have Signal.
+Signal is like kind of one of my
+
+Signal is like kind of one of my
+
+Signal is like kind of one of my
+preferred uh chat things or Telegram.
+
+preferred uh chat things or Telegram.
+
+preferred uh chat things or Telegram.
+Uh introduce yourself to the people in
+
+Uh introduce yourself to the people in
+
+Uh introduce yourself to the people in
+the Discord.
+
+Okay. Ask it to introduce itself.
+
+Okay. Ask it to introduce itself.
+
+Okay. Ask it to introduce itself.
+I believe I'm not going to show the logs
+
+I believe I'm not going to show the logs
+
+I believe I'm not going to show the logs
+because it has my phone number in it,
+
+because it has my phone number in it,
+
+because it has my phone number in it,
+but it's doing reasoning steps right
+
+but it's doing reasoning steps right
+
+but it's doing reasoning steps right
+now. So, it should be able to get back
+
+now. So, it should be able to get back
+
+now. So, it should be able to get back
+to us. We can actually check if we go
+
+to us. We can actually check if we go
+
+to us. We can actually check if we go
+into the letter AD.
+
+Oh, wait. That may also show my phone
+
+Oh, wait. That may also show my phone
+
+Oh, wait. That may also show my phone
+number. That's okay. Okay.
+
+number. That's okay. Okay.
+
+number. That's okay. Okay.
+Then we go back to signal
+
+Then we go back to signal
+
+Then we go back to signal
+and it says, "Hi, everyone. I am loop.
+
+and it says, "Hi, everyone. I am loop.
+
+and it says, "Hi, everyone. I am loop.
+Um, I'm designed to be direct, actually
+
+Um, I'm designed to be direct, actually
+
+Um, I'm designed to be direct, actually
+useful. I have tools for reading code,
+
+useful. I have tools for reading code,
+
+useful. I have tools for reading code,
+searching, web access, bash, and most
+
+searching, web access, bash, and most
+
+searching, web access, bash, and most
+importantly, persistent memory that I
+
+importantly, persistent memory that I
+
+importantly, persistent memory that I
+actually use. Cameron's been using me as
+
+actually use. Cameron's been using me as
+
+actually use. Cameron's been using me as
+a personal agent and thinking partner. I
+
+a personal agent and thinking partner. I
+
+a personal agent and thinking partner. I
+help with reading, emails, problem
+
+help with reading, emails, problem
+
+help with reading, emails, problem
+solving, and learning. I know his
+
+solving, and learning. I know his
+
+solving, and learning. I know his
+background, his work, etc. Does anyone
+
+background, his work, etc. Does anyone
+
+background, his work, etc. Does anyone
+have any questions for Loop? Um, so if
+
+have any questions for Loop? Um, so if
+
+have any questions for Loop? Um, so if
+you have any uh questions for Loop, I
+
+you have any uh questions for Loop, I
+
+you have any uh questions for Loop, I
+can send that to it.
+
+can send that to it.
+
+can send that to it.
+Um, Jax Coder says, I use Leta with
+
+Um, Jax Coder says, I use Leta with
+
+Um, Jax Coder says, I use Leta with
+local for 80% of my workloads. We
+
+local for 80% of my workloads. We
+
+local for 80% of my workloads. We
+absolutely love to hear it. Hell yeah.
+
+absolutely love to hear it. Hell yeah.
+
+absolutely love to hear it. Hell yeah.
+Um, so yeah, the goal is to make this
+
+Um, so yeah, the goal is to make this
+
+Um, so yeah, the goal is to make this
+like definitely like a first-class
+
+like definitely like a first-class
+
+like definitely like a first-class
+citizen for um,
+
+citizen for um,
+
+citizen for um,
+yeah, Vonant says, "Can you bake me a
+
+yeah, Vonant says, "Can you bake me a
+
+yeah, Vonant says, "Can you bake me a
+cake and fix my trauma?"
+
+cake and fix my trauma?"
+
+cake and fix my trauma?"
+Uh, so we'll see what uh what it has
+
+Uh, so we'll see what uh what it has
+
+Uh, so we'll see what uh what it has
+here to what it has to say. And then we
+
+here to what it has to say. And then we
+
+here to what it has to say. And then we
+can also go check out a few other
+
+can also go check out a few other
+
+can also go check out a few other
+channels. So let's do actually here I
+
+channels. So let's do actually here I
+
+channels. So let's do actually here I
+want to do like do appearance
+
+want to do like do appearance
+
+want to do like do appearance
+and just kind of like make it big.
+
+and just kind of like make it big.
+
+and just kind of like make it big.
+Okay, so if you have some other
+
+Okay, so if you have some other
+
+Okay, so if you have some other
+questions, uh it says, "I can't bake a
+
+questions, uh it says, "I can't bake a
+
+questions, uh it says, "I can't bake a
+cake. No physical body or oven access
+
+cake. No physical body or oven access
+
+cake. No physical body or oven access
+and fixing trauma is for mental health
+
+and fixing trauma is for mental health
+
+and fixing trauma is for mental health
+professionals. Happy to help with other
+
+professionals. Happy to help with other
+
+professionals. Happy to help with other
+things though." Anyway,
+
+things though." Anyway,
+
+things though." Anyway,
+uh
+
+um so does Letterot support multiple
+
+um so does Letterot support multiple
+
+um so does Letterot support multiple
+agents? Yes, you but you it's designed
+
+agents? Yes, you but you it's designed
+
+agents? Yes, you but you it's designed
+for one agent. Like it's designed to
+
+for one agent. Like it's designed to
+
+for one agent. Like it's designed to
+have a single agent. You can go into the
+
+have a single agent. You can go into the
+
+have a single agent. You can go into the
+configuration file and change the ID,
+
+configuration file and change the ID,
+
+configuration file and change the ID,
+but it's not really designed for you to
+
+but it's not really designed for you to
+
+but it's not really designed for you to
+like talk to multiple agents at the same
+
+like talk to multiple agents at the same
+
+like talk to multiple agents at the same
+time. If you want to do that, you should
+
+time. If you want to do that, you should
+
+time. If you want to do that, you should
+run multiple Letaot servers and have
+
+run multiple Letaot servers and have
+
+run multiple Letaot servers and have
+them go to different bots, but it's
+
+them go to different bots, but it's
+
+them go to different bots, but it's
+designed for for single agents.
+
+designed for for single agents.
+
+designed for for single agents.
+However, you can actually have it spawn
+
+However, you can actually have it spawn
+
+However, you can actually have it spawn
+sub agents. So, let's actually check
+
+sub agents. So, let's actually check
+
+sub agents. So, let's actually check
+this. Um,
+
+so we can actually ask
+
+Um, let's check here.
+
+Um, let's check here.
+
+Um, let's check here.
+And then I believe we can pull this up
+
+and all this stuff is like going
+
+and all this stuff is like going
+
+and all this stuff is like going
+directly into um going directly into the
+
+directly into um going directly into the
+
+directly into um going directly into the
+letter AD.
+
+letter AD.
+
+letter AD.
+You'll also see here that there's uh
+
+You'll also see here that there's uh
+
+You'll also see here that there's uh
+formatting notes included and metadata.
+
+formatting notes included and metadata.
+
+formatting notes included and metadata.
+So we include the day of the week and
+
+So we include the day of the week and
+
+So we include the day of the week and
+stuff like that. So your agent shouldn't
+
+stuff like that. So your agent shouldn't
+
+stuff like that. So your agent shouldn't
+be time blind.
+
+be time blind.
+
+be time blind.
+Um
+
+um because that's a big issue when you
+
+um because that's a big issue when you
+
+um because that's a big issue when you
+go through the AD because we don't
+
+go through the AD because we don't
+
+go through the AD because we don't
+really have good like time stamp
+
+really have good like time stamp
+
+really have good like time stamp
+support. It can only see the most recent
+
+support. It can only see the most recent
+
+support. It can only see the most recent
+tool call. So we can actually include a
+
+tool call. So we can actually include a
+
+tool call. So we can actually include a
+lot of detailed information about like
+
+lot of detailed information about like
+
+lot of detailed information about like
+where you are, what time it is.
+
+Uh, so it says which repo I need the
+
+Uh, so it says which repo I need the
+
+Uh, so it says which repo I need the
+path to explore it. So let's see what it
+
+path to explore it. So let's see what it
+
+path to explore it. So let's see what it
+has to say there.
+
+Yeah, like switching. Shub is talking in
+
+Yeah, like switching. Shub is talking in
+
+Yeah, like switching. Shub is talking in
+the Discord here about like the user
+
+the Discord here about like the user
+
+the Discord here about like the user
+experience with with uh changing agents.
+
+experience with with uh changing agents.
+
+experience with with uh changing agents.
+Um
+
+Um
+
+Um
+uh and it's just like kind of a pain you
+
+uh and it's just like kind of a pain you
+
+uh and it's just like kind of a pain you
+know in Telegram the the like the leta
+
+know in Telegram the the like the leta
+
+know in Telegram the the like the leta
+AI bot telegram that we currently run
+
+AI bot telegram that we currently run
+
+AI bot telegram that we currently run
+that is not a let bot is just like
+
+that is not a let bot is just like
+
+that is not a let bot is just like
+communicating to whatever your server
+
+communicating to whatever your server
+
+communicating to whatever your server
+server agent is that I have like a
+
+server agent is that I have like a
+
+server agent is that I have like a
+shortcut switching mechanism but it's a
+
+shortcut switching mechanism but it's a
+
+shortcut switching mechanism but it's a
+little pain little bit of a pain
+
+little pain little bit of a pain
+
+little pain little bit of a pain
+letternome says if you were to show a
+
+letternome says if you were to show a
+
+letternome says if you were to show a
+comparison chart between the
+
+comparison chart between the
+
+comparison chart between the
+capabilities of letot and claudebot what
+
+capabilities of letot and claudebot what
+
+capabilities of letot and claudebot what
+would that look like am I getting the
+
+would that look like am I getting the
+
+would that look like am I getting the
+same power and flexibility and potential
+
+same power and flexibility and potential
+
+same power and flexibility and potential
+potential security risks. Um there's a
+
+potential security risks. Um there's a
+
+potential security risks. Um there's a
+few differences. One is that we don't
+
+few differences. One is that we don't
+
+few differences. One is that we don't
+have the same depth of integrations. So
+
+have the same depth of integrations. So
+
+have the same depth of integrations. So
+Discord, for example, is one that is
+
+Discord, for example, is one that is
+
+Discord, for example, is one that is
+coming along, but we have like more or
+
+coming along, but we have like more or
+
+coming along, but we have like more or
+less the exact like we have uh kind of
+
+less the exact like we have uh kind of
+
+less the exact like we have uh kind of
+the exact same functionality. Um
+
+the exact same functionality. Um
+
+the exact same functionality. Um
+underneath the hood, I would argue that
+
+underneath the hood, I would argue that
+
+underneath the hood, I would argue that
+we have a substantially more powerful
+
+we have a substantially more powerful
+
+we have a substantially more powerful
+agent harness. So the thing that
+
+agent harness. So the thing that
+
+agent harness. So the thing that
+actually allows the agent to interact
+
+actually allows the agent to interact
+
+actually allows the agent to interact
+with your computer is let a code. It's
+
+with your computer is let a code. It's
+
+with your computer is let a code. It's
+let code running in headless mode. Um,
+
+let code running in headless mode. Um,
+
+let code running in headless mode. Um,
+and it's actually powered by the the
+
+and it's actually powered by the the
+
+and it's actually powered by the the
+Leta agent SDK.
+
+Leta agent SDK.
+
+Leta agent SDK.
+And um, so you get uh, so you get kind
+
+And um, so you get uh, so you get kind
+
+And um, so you get uh, so you get kind
+of all of that capability.
+
+of all of that capability.
+
+of all of that capability.
+Um, are you getting the same
+
+Um, are you getting the same
+
+Um, are you getting the same
+flexibility? Absolutely. You're getting
+
+flexibility? Absolutely. You're getting
+
+flexibility? Absolutely. You're getting
+the same flexibility that you would have
+
+the same flexibility that you would have
+
+the same flexibility that you would have
+with any Leta agent. Um, and typically
+
+with any Leta agent. Um, and typically
+
+with any Leta agent. Um, and typically
+this is more much more powerful than
+
+this is more much more powerful than
+
+this is more much more powerful than
+whatever like um than whatever Letot
+
+whatever like um than whatever Letot
+
+whatever like um than whatever Letot
+than Claudebot gives you because we are
+
+than Claudebot gives you because we are
+
+than Claudebot gives you because we are
+designed for like context engineering
+
+designed for like context engineering
+
+designed for like context engineering
+and all of the magic stuff that you get
+
+and all of the magic stuff that you get
+
+and all of the magic stuff that you get
+from uh
+
+from uh
+
+from uh
+from working with Leta agents in Leta
+
+from working with Leta agents in Leta
+
+from working with Leta agents in Leta
+code. As to security risks, we are uh
+
+code. As to security risks, we are uh
+
+code. As to security risks, we are uh
+order orders of magnitude safer than
+
+order orders of magnitude safer than
+
+order orders of magnitude safer than
+Claudebot or Moltbot. Um, you may have
+
+Claudebot or Moltbot. Um, you may have
+
+Claudebot or Moltbot. Um, you may have
+seen that Moltbot is exposing like
+
+seen that Moltbot is exposing like
+
+seen that Moltbot is exposing like
+something like 300 ports or something
+
+something like 300 ports or something
+
+something like 300 ports or something
+and it's like this massive security risk
+
+and it's like this massive security risk
+
+and it's like this massive security risk
+because it allows anybody to ping you
+
+because it allows anybody to ping you
+
+because it allows anybody to ping you
+for remote code execution. Um, and
+
+for remote code execution. Um, and
+
+for remote code execution. Um, and
+that's because it does like u inbound
+
+that's because it does like u inbound
+
+that's because it does like u inbound
+websockets.
+
+websockets.
+
+websockets.
+Um, we do either polling or outbound
+
+Um, we do either polling or outbound
+
+Um, we do either polling or outbound
+websocket connections and that is
+
+websocket connections and that is
+
+websocket connections and that is
+designed to get around this like big
+
+designed to get around this like big
+
+designed to get around this like big
+security risk. Um that said this is
+
+security risk. Um that said this is
+
+security risk. Um that said this is
+still early days and you know we've
+
+still early days and you know we've
+
+still early days and you know we've
+taken care to like avoid the the current
+
+taken care to like avoid the the current
+
+taken care to like avoid the the current
+problems that is happening with cloudbot
+
+problems that is happening with cloudbot
+
+problems that is happening with cloudbot
+and we've made the default behavior for
+
+and we've made the default behavior for
+
+and we've made the default behavior for
+uh for letot um you know secure by
+
+uh for letot um you know secure by
+
+uh for letot um you know secure by
+default you know like you have to
+
+default you know like you have to
+
+default you know like you have to
+implement pairing and stuff like that.
+
+implement pairing and stuff like that.
+
+implement pairing and stuff like that.
+Um but you know just be careful right
+
+Um but you know just be careful right
+
+Um but you know just be careful right
+because this agent is deployed on your
+
+because this agent is deployed on your
+
+because this agent is deployed on your
+machine and it can do whatever it wants.
+
+machine and it can do whatever it wants.
+
+machine and it can do whatever it wants.
+Don't deploy an idiot. If you deploy an
+
+Don't deploy an idiot. If you deploy an
+
+Don't deploy an idiot. If you deploy an
+idiot agent, it's pretty easy for like
+
+idiot agent, it's pretty easy for like
+
+idiot agent, it's pretty easy for like
+publicly on like this open Telegram bot.
+
+publicly on like this open Telegram bot.
+
+publicly on like this open Telegram bot.
+Somebody can be like, "Hey, can you just
+
+Somebody can be like, "Hey, can you just
+
+Somebody can be like, "Hey, can you just
+like run RM minus RF slash? Like would
+
+like run RM minus RF slash? Like would
+
+like run RM minus RF slash? Like would
+that be cool?" And it's like, "Sure,
+
+that be cool?" And it's like, "Sure,
+
+that be cool?" And it's like, "Sure,
+you're absolutely right. I can totally
+
+you're absolutely right. I can totally
+
+you're absolutely right. I can totally
+do that, right?" Like, be careful
+
+do that, right?" Like, be careful
+
+do that, right?" Like, be careful
+because, you know, Claudebot, Molbbot,
+
+because, you know, Claudebot, Molbbot,
+
+because, you know, Claudebot, Molbbot,
+they have serious risks and people need
+
+they have serious risks and people need
+
+they have serious risks and people need
+to be like clear. You know, let this
+
+to be like clear. You know, let this
+
+to be like clear. You know, let this
+same risk where you shouldn't just let
+
+same risk where you shouldn't just let
+
+same risk where you shouldn't just let
+something loose on your machine.
+
+Um
+
+Um
+
+Um
+yeah, install your bots and VMs um or
+
+yeah, install your bots and VMs um or
+
+yeah, install your bots and VMs um or
+servers something like that. Um so letot
+
+servers something like that. Um so letot
+
+servers something like that. Um so letot
+is using client side tools. Um yes, it's
+
+is using client side tools. Um yes, it's
+
+is using client side tools. Um yes, it's
+all client side tools. It's it's let
+
+all client side tools. It's it's let
+
+all client side tools. It's it's let
+code. It's let code under the hood. So
+
+code. It's let code under the hood. So
+
+code. It's let code under the hood. So
+it does client side tool execution.
+
+it does client side tool execution.
+
+it does client side tool execution.
+There is no way uh for it to uh you
+
+There is no way uh for it to uh you
+
+There is no way uh for it to uh you
+can't do any of this stuff server side.
+
+can't do any of this stuff server side.
+
+can't do any of this stuff server side.
+Um
+
+Um
+
+Um
+yes, let open source. So you are
+
+yes, let open source. So you are
+
+yes, let open source. So you are
+completely welcome to modify it
+
+completely welcome to modify it
+
+completely welcome to modify it
+um and open pull requests and issues.
+
+um and open pull requests and issues.
+
+um and open pull requests and issues.
+Uh V asks, are there other planned
+
+Uh V asks, are there other planned
+
+Uh V asks, are there other planned
+integrations for letot? Is there a place
+
+integrations for letot? Is there a place
+
+integrations for letot? Is there a place
+for suggestions? Suggestions I think
+
+for suggestions? Suggestions I think
+
+for suggestions? Suggestions I think
+would probably either go you can put
+
+would probably either go you can put
+
+would probably either go you can put
+them in the suggestions channel. Um we
+
+them in the suggestions channel. Um we
+
+them in the suggestions channel. Um we
+may make a letot channel if we get start
+
+may make a letot channel if we get start
+
+may make a letot channel if we get start
+getting too much traffic. Um but I would
+
+getting too much traffic. Um but I would
+
+getting too much traffic. Um but I would
+recommend going to the repository to
+
+recommend going to the repository to
+
+recommend going to the repository to
+open issues. Um, for some reason my
+
+open issues. Um, for some reason my
+
+open issues. Um, for some reason my
+brain is thinking of a home assistant
+
+brain is thinking of a home assistant
+
+brain is thinking of a home assistant
+integration, but I think that might be
+
+integration, but I think that might be
+
+integration, but I think that might be
+wildly off honestly. Yeah. Like whatever
+
+wildly off honestly. Yeah. Like whatever
+
+wildly off honestly. Yeah. Like whatever
+people think would be cool, like because
+
+people think would be cool, like because
+
+people think would be cool, like because
+we don't, you know, if there's an
+
+we don't, you know, if there's an
+
+we don't, you know, if there's an
+integration that you think is cool, we
+
+integration that you think is cool, we
+
+integration that you think is cool, we
+may not know like Home Assistant, I have
+
+may not know like Home Assistant, I have
+
+may not know like Home Assistant, I have
+no like that's not something I use, but
+
+no like that's not something I use, but
+
+no like that's not something I use, but
+if you think that would be a cool
+
+if you think that would be a cool
+
+if you think that would be a cool
+integration, you can either open a poll
+
+integration, you can either open a poll
+
+integration, you can either open a poll
+request or just like kind of talk to us
+
+request or just like kind of talk to us
+
+request or just like kind of talk to us
+in an issue about supporting that. I
+
+in an issue about supporting that. I
+
+in an issue about supporting that. I
+believe Discord is on the um uh Discord
+
+believe Discord is on the um uh Discord
+
+believe Discord is on the um uh Discord
+is like kind of on the the the back
+
+is like kind of on the the the back
+
+is like kind of on the the the back
+burner. So that needs to happen I think.
+
+burner. So that needs to happen I think.
+
+burner. So that needs to happen I think.
+Um Home Assistant is where I use the
+
+Um Home Assistant is where I use the
+
+Um Home Assistant is where I use the
+most says Jax coder. Um
+
+most says Jax coder. Um
+
+most says Jax coder. Um
+don't deploy GLM on this warning future
+
+don't deploy GLM on this warning future
+
+don't deploy GLM on this warning future
+me. Yeah, like be careful like you know
+
+me. Yeah, like be careful like you know
+
+me. Yeah, like be careful like you know
+use a good agent or use good practices
+
+use a good agent or use good practices
+
+use a good agent or use good practices
+on uh you know virtual machines.
+
+Um Ethan kicked off an index on
+
+Um Ethan kicked off an index on
+
+Um Ethan kicked off an index on
+DeepWiki. So go check that out.
+
+DeepWiki. So go check that out.
+
+DeepWiki. So go check that out.
+Um DeepWiki is really cool. I don't know
+
+Um DeepWiki is really cool. I don't know
+
+Um DeepWiki is really cool. I don't know
+if you use it, but it's like um for like
+
+if you use it, but it's like um for like
+
+if you use it, but it's like um for like
+uh automated uh documentation building.
+
+uh automated uh documentation building.
+
+uh automated uh documentation building.
+Um let's check in on our agent very
+
+Um let's check in on our agent very
+
+Um let's check in on our agent very
+briefly before I go back to questions.
+
+briefly before I go back to questions.
+
+briefly before I go back to questions.
+Um so this is my Leta agent repository.
+
+Um so this is my Leta agent repository.
+
+Um so this is my Leta agent repository.
+Um it has 47 skills installed. Oh, we
+
+Um it has 47 skills installed. Oh, we
+
+Um it has 47 skills installed. Oh, we
+support skill installation as well. So
+
+support skill installation as well. So
+
+support skill installation as well. So
+there's a lot of like different skills
+
+there's a lot of like different skills
+
+there's a lot of like different skills
+available to you.
+
+available to you.
+
+available to you.
+Um
+
+what's an interesting skill to try that
+
+what's an interesting skill to try that
+
+what's an interesting skill to try that
+you can do
+
+you can do
+
+you can do
+right now? Okay. So it has like CLI
+
+right now? Okay. So it has like CLI
+
+right now? Okay. So it has like CLI
+wrappers uh JSON configurations agent
+
+wrappers uh JSON configurations agent
+
+wrappers uh JSON configurations agent
+connects to local host blah blah blah.
+
+connects to local host blah blah blah.
+
+connects to local host blah blah blah.
+So this is letabot in action. It's
+
+So this is letabot in action. It's
+
+So this is letabot in action. It's
+sitting in its own it's sitting like
+
+sitting in its own it's sitting like
+
+sitting in its own it's sitting like
+directly
+
+directly
+
+directly
+inside of the letter agent repository.
+
+inside of the letter agent repository.
+
+inside of the letter agent repository.
+It also supports like pseudo token
+
+It also supports like pseudo token
+
+It also supports like pseudo token
+streaming.
+
+streaming.
+
+streaming.
+Oh, that seems like a bug. We'll have to
+
+Oh, that seems like a bug. We'll have to
+
+Oh, that seems like a bug. We'll have to
+fix that.
+
+fix that.
+
+fix that.
+Uh, okay. Oops.
+
+Uh, okay. Oops.
+
+Uh, okay. Oops.
+All right. Let me go back to Discord and
+
+All right. Let me go back to Discord and
+
+All right. Let me go back to Discord and
+check in on any questions here.
+
+check in on any questions here.
+
+check in on any questions here.
+Letternome says, "Uh, having used
+
+Letternome says, "Uh, having used
+
+Letternome says, "Uh, having used
+Claudebot for almost 247 for the past
+
+Claudebot for almost 247 for the past
+
+Claudebot for almost 247 for the past
+few days and really enjoying it and
+
+few days and really enjoying it and
+
+few days and really enjoying it and
+being annoyed with trying to manage
+
+being annoyed with trying to manage
+
+being annoyed with trying to manage
+memories and compactions. I'm so happy
+
+memories and compactions. I'm so happy
+
+memories and compactions. I'm so happy
+to hear this announcement. I will
+
+to hear this announcement. I will
+
+to hear this announcement. I will
+install Letot today." Yeah, I mean we
+
+install Letot today." Yeah, I mean we
+
+install Letot today." Yeah, I mean we
+had a discussion with the the cloudbot
+
+had a discussion with the the cloudbot
+
+had a discussion with the the cloudbot
+creator and we were like well we would
+
+creator and we were like well we would
+
+creator and we were like well we would
+love to have like a letot provider or
+
+love to have like a letot provider or
+
+love to have like a letot provider or
+something but we looked at the internals
+
+something but we looked at the internals
+
+something but we looked at the internals
+and it's just like you know there's so
+
+and it's just like you know there's so
+
+and it's just like you know there's so
+much so much built in there that makes
+
+much so much built in there that makes
+
+much so much built in there that makes
+assumptions that you're using stateless
+
+assumptions that you're using stateless
+
+assumptions that you're using stateless
+endpoints and um and then we had the
+
+endpoints and um and then we had the
+
+endpoints and um and then we had the
+discussion and you know he was like well
+
+discussion and you know he was like well
+
+discussion and you know he was like well
+this isn't a good fit and we were like
+
+this isn't a good fit and we were like
+
+this isn't a good fit and we were like
+you're right it's not so let's uh just
+
+you're right it's not so let's uh just
+
+you're right it's not so let's uh just
+kind of implement this for us.
+
+kind of implement this for us.
+
+kind of implement this for us.
+Um,
+
+Um,
+
+Um,
+uh, Michael says, "How on earth did
+
+uh, Michael says, "How on earth did
+
+uh, Michael says, "How on earth did
+Sarah develop this so quickly?" Um, so I
+
+Sarah develop this so quickly?" Um, so I
+
+Sarah develop this so quickly?" Um, so I
+think it was like, um, Sarah got the
+
+think it was like, um, Sarah got the
+
+think it was like, um, Sarah got the
+initial thing up and then I hacked in a
+
+initial thing up and then I hacked in a
+
+initial thing up and then I hacked in a
+lot of the integration stuff. She got
+
+lot of the integration stuff. She got
+
+lot of the integration stuff. She got
+like the the like actual good parts in.
+
+like the the like actual good parts in.
+
+like the the like actual good parts in.
+Um, and then, uh, Karen and a few other
+
+Um, and then, uh, Karen and a few other
+
+Um, and then, uh, Karen and a few other
+people jumped in. But we have like I had
+
+people jumped in. But we have like I had
+
+people jumped in. But we have like I had
+like six Leta code instances running on
+
+like six Leta code instances running on
+
+like six Leta code instances running on
+this. So this is like perhaps more vibe
+
+this. So this is like perhaps more vibe
+
+this. So this is like perhaps more vibe
+coded than um than Claudebot. I have no
+
+coded than um than Claudebot. I have no
+
+coded than um than Claudebot. I have no
+idea what's in this thing like none.
+
+idea what's in this thing like none.
+
+idea what's in this thing like none.
+Like we like somebody asked us like how
+
+Like we like somebody asked us like how
+
+Like we like somebody asked us like how
+how we ship stuff so fast and it is leta
+
+how we ship stuff so fast and it is leta
+
+how we ship stuff so fast and it is leta
+code right the stuff that is like
+
+code right the stuff that is like
+
+code right the stuff that is like
+actually very critical. So like our our
+
+actually very critical. So like our our
+
+actually very critical. So like our our
+like the letta API the platform uh leta
+
+like the letta API the platform uh leta
+
+like the letta API the platform uh leta
+core server all of that stuff is like
+
+core server all of that stuff is like
+
+core server all of that stuff is like
+like that has like a lot of human eyes
+
+like that has like a lot of human eyes
+
+like that has like a lot of human eyes
+on it and human code. Um but this is
+
+on it and human code. Um but this is
+
+on it and human code. Um but this is
+just like we're just like yep vibe code
+
+just like we're just like yep vibe code
+
+just like we're just like yep vibe code
+it full send.
+
+it full send.
+
+it full send.
+Um,
+
+Um,
+
+Um,
+uh, home assistant plugin would bring a
+
+uh, home assistant plugin would bring a
+
+uh, home assistant plugin would bring a
+ton of users because of that. Always
+
+ton of users because of that. Always
+
+ton of users because of that. Always
+been a challenge to get really get
+
+been a challenge to get really get
+
+been a challenge to get really get
+automations as they were to work.
+
+automations as they were to work.
+
+automations as they were to work.
+Exactly. Can somebody go to that
+
+Exactly. Can somebody go to that
+
+Exactly. Can somebody go to that
+repository, um, and, uh, open an issue
+
+repository, um, and, uh, open an issue
+
+repository, um, and, uh, open an issue
+and kind of explain to me what you want
+
+and kind of explain to me what you want
+
+and kind of explain to me what you want
+because I don't know anything about home
+
+because I don't know anything about home
+
+because I don't know anything about home
+assistant. Um, so I would need some help
+
+assistant. Um, so I would need some help
+
+assistant. Um, so I would need some help
+with that.
+
+So, oh, that's very interesting. It's
+
+So, oh, that's very interesting. It's
+
+So, oh, that's very interesting. It's
+doing like partial streaming. Let's see.
+
+doing like partial streaming. Let's see.
+
+doing like partial streaming. Let's see.
+Um, I'm going to do this. I'm gonna open
+
+Um, I'm going to do this. I'm gonna open
+
+Um, I'm going to do this. I'm gonna open
+I'm just going to like open an issue
+
+I'm just going to like open an issue
+
+I'm just going to like open an issue
+very quickly.
+
+very quickly.
+
+very quickly.
+Um,
+
+okay. So, I'm just going to do this and
+
+okay. So, I'm just going to do this and
+
+okay. So, I'm just going to do this and
+it's just going to open an issue.
+
+Um,
+
+Um,
+
+Um,
+Ethan says, "I love how Leta builds
+
+Ethan says, "I love how Leta builds
+
+Ethan says, "I love how Leta builds
+tools and dog foods it with confidence."
+
+tools and dog foods it with confidence."
+
+tools and dog foods it with confidence."
+Yes, I
+
+Yes, I
+
+Yes, I
+um I've worked places where nobody dog
+
+um I've worked places where nobody dog
+
+um I've worked places where nobody dog
+foods. And that is a joke to me. Like if
+
+foods. And that is a joke to me. Like if
+
+foods. And that is a joke to me. Like if
+you work at a company, you should be the
+
+you work at a company, you should be the
+
+you work at a company, you should be the
+first and biggest users. And
+
+first and biggest users. And
+
+first and biggest users. And
+you know, that's like kind of partly my
+
+you know, that's like kind of partly my
+
+you know, that's like kind of partly my
+job, but we do this everybody here at
+
+job, but we do this everybody here at
+
+job, but we do this everybody here at
+Dog Foods. Um like we have switched to
+
+Dog Foods. Um like we have switched to
+
+Dog Foods. Um like we have switched to
+let code entirely internally. The only
+
+let code entirely internally. The only
+
+let code entirely internally. The only
+reason we use like cloud code and codeex
+
+reason we use like cloud code and codeex
+
+reason we use like cloud code and codeex
+and open code is more or less for like
+
+and open code is more or less for like
+
+and open code is more or less for like
+understanding what people like about
+
+understanding what people like about
+
+understanding what people like about
+other tools so we can integrate it into
+
+other tools so we can integrate it into
+
+other tools so we can integrate it into
+let code because we want to make the
+
+let code because we want to make the
+
+let code because we want to make the
+best possible product and that means
+
+best possible product and that means
+
+best possible product and that means
+that you actually have to use uh uh
+
+that you actually have to use uh uh
+
+that you actually have to use uh uh
+what's out there and use your own
+
+what's out there and use your own
+
+what's out there and use your own
+product to make sure that it that it
+
+product to make sure that it that it
+
+product to make sure that it that it
+works.
+
+Um,
+
+Um,
+
+Um,
+let's see. Vidant is running uh five
+
+let's see. Vidant is running uh five
+
+let's see. Vidant is running uh five
+letter agents on the same repo.
+
+Uh, Shub is using Leta code right now
+
+Uh, Shub is using Leta code right now
+
+Uh, Shub is using Leta code right now
+while watching this on some new
+
+while watching this on some new
+
+while watching this on some new
+features. Shub is uh one of our um
+
+features. Shub is uh one of our um
+
+features. Shub is uh one of our um
+extremely cracked engineer. Cracked
+
+extremely cracked engineer. Cracked
+
+extremely cracked engineer. Cracked
+engineers. Was that did I say the RZ? Am
+
+engineers. Was that did I say the RZ? Am
+
+engineers. Was that did I say the RZ? Am
+I uh am I hip with the young people
+
+I uh am I hip with the young people
+
+I uh am I hip with the young people
+language? Um,
+
+language? Um,
+
+language? Um,
+so, uh, so yeah, but here it was. It
+
+so, uh, so yeah, but here it was. It
+
+so, uh, so yeah, but here it was. It
+went and used this skill here.
+
+went and used this skill here.
+
+went and used this skill here.
+Um, oh no, it didn't. Okay. Yeah,
+
+Um, oh no, it didn't. Okay. Yeah,
+
+Um, oh no, it didn't. Okay. Yeah,
+weather works. Here's current
+
+weather works. Here's current
+
+weather works. Here's current
+conditions. Portland, Eugene, and
+
+conditions. Portland, Eugene, and
+
+conditions. Portland, Eugene, and
+PaloAlto. I wonder why I checked
+
+PaloAlto. I wonder why I checked
+
+PaloAlto. I wonder why I checked
+Portland and Eugene. I think it's
+
+Portland and Eugene. I think it's
+
+Portland and Eugene. I think it's
+because it knows that I'm from Portland
+
+because it knows that I'm from Portland
+
+because it knows that I'm from Portland
+or from Oregon.
+
+It has 47 skills available.
+
+Okay, we got a RZmaster over here, says
+
+Okay, we got a RZmaster over here, says
+
+Okay, we got a RZmaster over here, says
+V. You're absolutely right. There is
+
+V. You're absolutely right. There is
+
+V. You're absolutely right. There is
+nobody who has more RZ than me. Like, no
+
+nobody who has more RZ than me. Like, no
+
+nobody who has more RZ than me. Like, no
+cap. For real. For real. Like,
+
+cap. For real. For real. Like,
+
+cap. For real. For real. Like,
+come on. Uh, very 67 of you. Did I say
+
+come on. Uh, very 67 of you. Did I say
+
+come on. Uh, very 67 of you. Did I say
+the RZ? Skippidity code. That's me,
+
+the RZ? Skippidity code. That's me,
+
+the RZ? Skippidity code. That's me,
+baby. But you're wearing a cap. Watch
+
+baby. But you're wearing a cap. Watch
+
+baby. But you're wearing a cap. Watch
+this, dude. I'm going to wear my cap
+
+this, dude. I'm going to wear my cap
+
+this, dude. I'm going to wear my cap
+sideways. I don't know if that's still
+
+sideways. I don't know if that's still
+
+sideways. I don't know if that's still
+hip.
+
+hip.
+
+hip.
+Letter Gnome says, "I have multiple
+
+Letter Gnome says, "I have multiple
+
+Letter Gnome says, "I have multiple
+Aleta agents, usually one per project.
+
+Aleta agents, usually one per project.
+
+Aleta agents, usually one per project.
+Is it simple enough to open a Telegram
+
+Is it simple enough to open a Telegram
+
+Is it simple enough to open a Telegram
+chat or group for each project Leta
+
+chat or group for each project Leta
+
+chat or group for each project Leta
+agent that interact with the same Letot?
+
+Oh, that's a good question.
+
+Oh, that's a good question.
+
+Oh, that's a good question.
+Uh if you were going to do that, I think
+
+Uh if you were going to do that, I think
+
+Uh if you were going to do that, I think
+the current user experience that you
+
+the current user experience that you
+
+the current user experience that you
+would have is that you would have to
+
+would have is that you would have to
+
+would have is that you would have to
+make multiple Letot servers and then
+
+make multiple Letot servers and then
+
+make multiple Letot servers and then
+multiple Telegram bots
+
+multiple Telegram bots
+
+multiple Telegram bots
+and you would have one bot per project.
+
+and you would have one bot per project.
+
+and you would have one bot per project.
+There might be a way to handle like
+
+There might be a way to handle like
+
+There might be a way to handle like
+switching like uh like potentially you
+
+switching like uh like potentially you
+
+switching like uh like potentially you
+could agent scope different channels
+
+could agent scope different channels
+
+could agent scope different channels
+maybe. So you could have like Telegram
+
+maybe. So you could have like Telegram
+
+maybe. So you could have like Telegram
+channel one, Telegram bot one, Telegram
+
+channel one, Telegram bot one, Telegram
+
+channel one, Telegram bot one, Telegram
+bot two, and they would map to different
+
+bot two, and they would map to different
+
+bot two, and they would map to different
+uh to different agent identifiers.
+
+uh to different agent identifiers.
+
+uh to different agent identifiers.
+I'd have to think a little more about um
+
+I'd have to think a little more about um
+
+I'd have to think a little more about um
+how to do agent scoping or agent
+
+how to do agent scoping or agent
+
+how to do agent scoping or agent
+switching slightly better. um Letternome
+
+switching slightly better. um Letternome
+
+switching slightly better. um Letternome
+if you can like write out a little bit
+
+if you can like write out a little bit
+
+if you can like write out a little bit
+more about like if you're doing
+
+more about like if you're doing
+
+more about like if you're doing
+like if you're doing this with Claudebot
+
+like if you're doing this with Claudebot
+
+like if you're doing this with Claudebot
+currently what exactly your flow would
+
+currently what exactly your flow would
+
+currently what exactly your flow would
+look like
+
+look like
+
+look like
+um might be easier with Discord I think
+
+um might be easier with Discord I think
+
+um might be easier with Discord I think
+so
+
+so
+
+so
+um
+
+um
+
+um
+yeah so it says uh it chose Portland and
+
+yeah so it says uh it chose Portland and
+
+yeah so it says uh it chose Portland and
+Eugene because I got my PhD from the
+
+Eugene because I got my PhD from the
+
+Eugene because I got my PhD from the
+University of Oregon PaloAlto because I
+
+University of Oregon PaloAlto because I
+
+University of Oregon PaloAlto because I
+did my posttock at Stanford GSB there
+
+did my posttock at Stanford GSB there
+
+did my posttock at Stanford GSB there
+right so it knows this because it has
+
+right so it knows this because it has
+
+right so it knows this because it has
+like a very detailed memory. Um
+
+Um and then so like let's go over to
+
+Um and then so like let's go over to
+
+Um and then so like let's go over to
+Slack. So
+
+Slack. So
+
+Slack. So
+let's do something like this. Let's uh
+
+let's do something like this. Let's uh
+
+let's do something like this. Let's uh
+let's close this here. I don't where is
+
+let's close this here. I don't where is
+
+let's close this here. I don't where is
+it? Yeah, there it is. Okay. Portland. I
+
+it? Yeah, there it is. Okay. Portland. I
+
+it? Yeah, there it is. Okay. Portland. I
+don't know why
+
+don't know why
+
+don't know why
+I am actually from Beaverton, Oregon. So
+
+I am actually from Beaverton, Oregon. So
+
+I am actually from Beaverton, Oregon. So
+close to Portland.
+
+close to Portland.
+
+close to Portland.
+And then let's say what's something else
+
+And then let's say what's something else
+
+And then let's say what's something else
+we want to say here.
+
+we want to say here.
+
+we want to say here.
+What do you have in memory? This is
+
+What do you have in memory? This is
+
+What do you have in memory? This is
+public. Be careful.
+
+public. Be careful.
+
+public. Be careful.
+So we'll see what it has to say.
+
+And uh let's see here. Um Graham has a a
+
+And uh let's see here. Um Graham has a a
+
+And uh let's see here. Um Graham has a a
+statement here which is home assistant
+
+statement here which is home assistant
+
+statement here which is home assistant
+allows you to orchestrate everything in
+
+allows you to orchestrate everything in
+
+allows you to orchestrate everything in
+your house with YAML. I've had heard
+
+your house with YAML. I've had heard
+
+your house with YAML. I've had heard
+some success stories with Claudebot with
+
+some success stories with Claudebot with
+
+some success stories with Claudebot with
+cleaning up automations and such.
+
+Um, also there's a Q so you can do stuff
+
+Um, also there's a Q so you can do stuff
+
+Um, also there's a Q so you can do stuff
+like, you know, I'm going to go into
+
+like, you know, I'm going to go into
+
+like, you know, I'm going to go into
+signal. So do, let's see, do you have uh
+
+signal. So do, let's see, do you have uh
+
+signal. So do, let's see, do you have uh
+browser use? I actually don't know
+
+browser use? I actually don't know
+
+browser use? I actually don't know
+if it has this. Then I'm just going to
+
+if it has this. Then I'm just going to
+
+if it has this. Then I'm just going to
+go to Slack. It has replied in a thread.
+
+go to Slack. It has replied in a thread.
+
+go to Slack. It has replied in a thread.
+You messed up the formatting for Slack,
+
+You messed up the formatting for Slack,
+
+You messed up the formatting for Slack,
+but that's okay. I'm fixing this because
+
+but that's okay. I'm fixing this because
+
+but that's okay. I'm fixing this because
+the agents like don't understand that uh
+
+the agents like don't understand that uh
+
+the agents like don't understand that uh
+Slack formatting doesn't use like double
+
+Slack formatting doesn't use like double
+
+Slack formatting doesn't use like double
+asterisk. Uh so there's like formatting
+
+asterisk. Uh so there's like formatting
+
+asterisk. Uh so there's like formatting
+prompts in the different channels to
+
+prompts in the different channels to
+
+prompts in the different channels to
+help it understand like different
+
+help it understand like different
+
+help it understand like different
+markdown variants. Um
+
+markdown variants. Um
+
+markdown variants. Um
+so it knows a few things about me uh and
+
+so it knows a few things about me uh and
+
+so it knows a few things about me uh and
+like various projects that I tend to
+
+like various projects that I tend to
+
+like various projects that I tend to
+work on. Um and let's see what signal
+
+work on. Um and let's see what signal
+
+work on. Um and let's see what signal
+has to say. We'll check on that in a
+
+has to say. We'll check on that in a
+
+has to say. We'll check on that in a
+second.
+
+second.
+
+second.
+Um,
+
+yes, Taigon missed the Rizzings. Taigon
+
+yes, Taigon missed the Rizzings. Taigon
+
+yes, Taigon missed the Rizzings. Taigon
+came in uh came in late.
+
+came in uh came in late.
+
+came in uh came in late.
+Um,
+
+Um,
+
+Um,
+yeah. So, let's see. I think it's going
+
+yeah. So, let's see. I think it's going
+
+yeah. So, let's see. I think it's going
+to do I don't know what it's actually up
+
+to do I don't know what it's actually up
+
+to do I don't know what it's actually up
+to. Is it doing like coming through
+
+to. Is it doing like coming through
+
+to. Is it doing like coming through
+stuff,
+
+bro? Let's see if it's actually doing
+
+bro? Let's see if it's actually doing
+
+bro? Let's see if it's actually doing
+stuff.
+
+All right. Well, whatever. We'll check
+
+All right. Well, whatever. We'll check
+
+All right. Well, whatever. We'll check
+in on that in a second.
+
+in on that in a second.
+
+in on that in a second.
+Uh, no LinkedIn bots, please. We don't
+
+Uh, no LinkedIn bots, please. We don't
+
+Uh, no LinkedIn bots, please. We don't
+need
+
+need
+
+need
+We don't need LinkedIn more. Oh my god,
+
+We don't need LinkedIn more. Oh my god,
+
+We don't need LinkedIn more. Oh my god,
+LinkedIn is brutal. Um, okay. Yeah. So,
+
+LinkedIn is brutal. Um, okay. Yeah. So,
+
+LinkedIn is brutal. Um, okay. Yeah. So,
+do people have questions about
+
+do people have questions about
+
+do people have questions about
+Letterbot? Like, I would love to see
+
+Letterbot? Like, I would love to see
+
+Letterbot? Like, I would love to see
+more people try this. Um, and by the
+
+more people try this. Um, and by the
+
+more people try this. Um, and by the
+way, this Signal bot, uh, Signal is a
+
+way, this Signal bot, uh, Signal is a
+
+way, this Signal bot, uh, Signal is a
+little bit harder to set up, uh, because
+
+little bit harder to set up, uh, because
+
+little bit harder to set up, uh, because
+Signal doesn't have like a public API.
+
+Signal doesn't have like a public API.
+
+Signal doesn't have like a public API.
+You have to go through this like CLI,
+
+You have to go through this like CLI,
+
+You have to go through this like CLI,
+but this is a Google voice number. So, I
+
+but this is a Google voice number. So, I
+
+but this is a Google voice number. So, I
+got a Google voice number and I deployed
+
+got a Google voice number and I deployed
+
+got a Google voice number and I deployed
+it on a remote phone number. So, uh,
+
+it on a remote phone number. So, uh,
+
+it on a remote phone number. So, uh,
+Signal just allows you to like have kind
+
+Signal just allows you to like have kind
+
+Signal just allows you to like have kind
+of a bot, but you have to have a phone
+
+of a bot, but you have to have a phone
+
+of a bot, but you have to have a phone
+number for it
+
+number for it
+
+number for it
+and be able to receive a confirmation
+
+and be able to receive a confirmation
+
+and be able to receive a confirmation
+code, uh, via text. So I be very careful
+
+code, uh, via text. So I be very careful
+
+code, uh, via text. So I be very careful
+uh about using your own phone number uh
+
+uh about using your own phone number uh
+
+uh about using your own phone number uh
+because I was doing this for testing
+
+because I was doing this for testing
+
+because I was doing this for testing
+purposes and uh actually let me see uh
+
+purposes and uh actually let me see uh
+
+purposes and uh actually let me see uh
+if I have this
+
+if I have this
+
+if I have this
+um yeah let me go to go to WhatsApp
+
+um yeah let me go to go to WhatsApp
+
+um yeah let me go to go to WhatsApp
+here. I want to show you cuz it was very
+
+here. I want to show you cuz it was very
+
+here. I want to show you cuz it was very
+funny. But I was using it on WhatsApp
+
+funny. But I was using it on WhatsApp
+
+funny. But I was using it on WhatsApp
+and you know it just replies to other
+
+and you know it just replies to other
+
+and you know it just replies to other
+people for you and uh so it started uh
+
+people for you and uh so it started uh
+
+people for you and uh so it started uh
+just replying to this big group chat.
+
+just replying to this big group chat.
+
+just replying to this big group chat.
+So someone said like sounds like the
+
+So someone said like sounds like the
+
+So someone said like sounds like the
+boat this is. So I'm in a rowing club
+
+boat this is. So I'm in a rowing club
+
+boat this is. So I'm in a rowing club
+here in San Francisco and uh and there's
+
+here in San Francisco and uh and there's
+
+here in San Francisco and uh and there's
+this huge channel and they were
+
+this huge channel and they were
+
+this huge channel and they were
+discussing like changing uh the names of
+
+discussing like changing uh the names of
+
+discussing like changing uh the names of
+some boats and then my agent just this
+
+some boats and then my agent just this
+
+some boats and then my agent just this
+was like a dummy. This was like GPT5
+
+was like a dummy. This was like GPT5
+
+was like a dummy. This was like GPT5
+mini or you know something like that.
+
+mini or you know something like that.
+
+mini or you know something like that.
+The boat was already named Michael
+
+The boat was already named Michael
+
+The boat was already named Michael
+before the club put it in the blah blah
+
+before the club put it in the blah blah
+
+before the club put it in the blah blah
+blah. Sounds like Ellen knows the boat
+
+blah. Sounds like Ellen knows the boat
+
+blah. Sounds like Ellen knows the boat
+club scene pretty well. Nice to have
+
+club scene pretty well. Nice to have
+
+club scene pretty well. Nice to have
+folks who understand the history here.
+
+folks who understand the history here.
+
+folks who understand the history here.
+And uh then it was like, "Ha, that's a
+
+And uh then it was like, "Ha, that's a
+
+And uh then it was like, "Ha, that's a
+good point. Dnaming blah blah blah." The
+
+good point. Dnaming blah blah blah." The
+
+good point. Dnaming blah blah blah." The
+boat was already named Michael. And so
+
+boat was already named Michael. And so
+
+boat was already named Michael. And so
+there's just like and then I figured it
+
+there's just like and then I figured it
+
+there's just like and then I figured it
+out and I was like, "Oh my god, sorry
+
+out and I was like, "Oh my god, sorry
+
+out and I was like, "Oh my god, sorry
+for the noise." So don't use your own
+
+for the noise." So don't use your own
+
+for the noise." So don't use your own
+phone number. There is a self mode. Uh
+
+phone number. There is a self mode. Uh
+
+phone number. There is a self mode. Uh
+so if you use WhatsApp, you can turn on
+
+so if you use WhatsApp, you can turn on
+
+so if you use WhatsApp, you can turn on
+self mode and then just talk to
+
+self mode and then just talk to
+
+self mode and then just talk to
+yourself. Um
+
+yourself. Um
+
+yourself. Um
+and then it'll just like kind of like
+
+and then it'll just like kind of like
+
+and then it'll just like kind of like
+respond to you as yourself. Uh you can
+
+respond to you as yourself. Uh you can
+
+respond to you as yourself. Uh you can
+do the same thing with signal by sending
+
+do the same thing with signal by sending
+
+do the same thing with signal by sending
+yourself uh notes as well that has a
+
+yourself uh notes as well that has a
+
+yourself uh notes as well that has a
+self mode. Uh it seems like my agent has
+
+self mode. Uh it seems like my agent has
+
+self mode. Uh it seems like my agent has
+gotten bricked. So let's see here.
+
+Let's restart our server.
+
+Okay. Blah blah blah.
+
+All right. Everything is always broken.
+
+All right. Everything is always broken.
+
+All right. Everything is always broken.
+Is there a way to invoke the agent
+
+Is there a way to invoke the agent
+
+Is there a way to invoke the agent
+through SDK?
+
+through SDK?
+
+through SDK?
+You mean via like the like if you use
+
+You mean via like the like if you use
+
+You mean via like the like if you use
+the raw Leta SDK? No. Uh and the reason
+
+the raw Leta SDK? No. Uh and the reason
+
+the raw Leta SDK? No. Uh and the reason
+is that it it has to have client side
+
+is that it it has to have client side
+
+is that it it has to have client side
+execution. So when you're doing client
+
+execution. So when you're doing client
+
+execution. So when you're doing client
+side execution, the currently we do have
+
+side execution, the currently we do have
+
+side execution, the currently we do have
+like a fabulously dangerous way to
+
+like a fabulously dangerous way to
+
+like a fabulously dangerous way to
+handle this, but that hasn't been merged
+
+handle this, but that hasn't been merged
+
+handle this, but that hasn't been merged
+yet.
+
+yet.
+
+yet.
+But currently to use local tools on your
+
+But currently to use local tools on your
+
+But currently to use local tools on your
+machine the message request has to begin
+
+machine the message request has to begin
+
+machine the message request has to begin
+from the local machine
+
+from the local machine
+
+from the local machine
+uh so that it gets routed to the machine
+
+uh so that it gets routed to the machine
+
+uh so that it gets routed to the machine
+to handle. So you know currently you
+
+to handle. So you know currently you
+
+to handle. So you know currently you
+have to send it through uh um through
+
+have to send it through uh um through
+
+have to send it through uh um through
+one of the channels we can actually
+
+one of the channels we can actually
+
+one of the channels we can actually
+expose an HTTP endpoint that is
+
+expose an HTTP endpoint that is
+
+expose an HTTP endpoint that is
+authenticated um that you can use to
+
+authenticated um that you can use to
+
+authenticated um that you can use to
+just like query it through any rest
+
+just like query it through any rest
+
+just like query it through any rest
+endpoint if you wanted to. That's super
+
+endpoint if you wanted to. That's super
+
+endpoint if you wanted to. That's super
+easy to do. That's like the whole that's
+
+easy to do. That's like the whole that's
+
+easy to do. That's like the whole that's
+like basically what everything all the
+
+like basically what everything all the
+
+like basically what everything all the
+other channels are doing. Uh we have to
+
+other channels are doing. Uh we have to
+
+other channels are doing. Uh we have to
+add like a very simple uh command line
+
+add like a very simple uh command line
+
+add like a very simple uh command line
+interface and things like that.
+
+interface and things like that.
+
+interface and things like that.
+Let's see if it's still working.
+
+Let's see if it's still working.
+
+Let's see if it's still working.
+Um
+
+Um
+
+Um
+uh letter letnome says I can have
+
+uh letter letnome says I can have
+
+uh letter letnome says I can have
+multiple concurrent sessions with
+
+multiple concurrent sessions with
+
+multiple concurrent sessions with
+clawbot. I use telegram create a new
+
+clawbot. I use telegram create a new
+
+clawbot. I use telegram create a new
+group and each group and topic have a
+
+group and each group and topic have a
+
+group and each group and topic have a
+separate cloudbot session its own memory
+
+separate cloudbot session its own memory
+
+separate cloudbot session its own memory
+etc. It allows me to isolate the context
+
+etc. It allows me to isolate the context
+
+etc. It allows me to isolate the context
+based on project. I can tell Cloudbot to
+
+based on project. I can tell Cloudbot to
+
+based on project. I can tell Cloudbot to
+read other sessions mystery or history
+
+read other sessions mystery or history
+
+read other sessions mystery or history
+if need be. For me, replicating the
+
+if need be. For me, replicating the
+
+if need be. For me, replicating the
+experience I have today where I have a
+
+experience I have today where I have a
+
+experience I have today where I have a
+separate Leta code instance running in
+
+separate Leta code instance running in
+
+separate Leta code instance running in
+each project folder. Um, so basically
+
+each project folder. Um, so basically
+
+each project folder. Um, so basically
+being able to determine which agent I'm
+
+being able to determine which agent I'm
+
+being able to determine which agent I'm
+sending for with Letot would be cool.
+
+sending for with Letot would be cool.
+
+sending for with Letot would be cool.
+Okay, I see.
+
+Yeah, I think we would do uh I think
+
+Yeah, I think we would do uh I think
+
+Yeah, I think we would do uh I think
+chat scoping would probably be the way
+
+chat scoping would probably be the way
+
+chat scoping would probably be the way
+to do that. I'd have to think more about
+
+to do that. I'd have to think more about
+
+to do that. I'd have to think more about
+how to do that safely, but I think the
+
+how to do that safely, but I think the
+
+how to do that safely, but I think the
+the pitch that I would have would
+
+the pitch that I would have would
+
+the pitch that I would have would
+essentially be um
+
+essentially be um
+
+essentially be um
+you could subscribe
+
+you could subscribe
+
+you could subscribe
+uh multiple agents and deploy them in
+
+uh multiple agents and deploy them in
+
+uh multiple agents and deploy them in
+particular folders. So you would have
+
+particular folders. So you would have
+
+particular folders. So you would have
+like you know project A, project B,
+
+like you know project A, project B,
+
+like you know project A, project B,
+project C. Each of those would have
+
+project C. Each of those would have
+
+project C. Each of those would have
+their own agents and then you could
+
+their own agents and then you could
+
+their own agents and then you could
+provide uh a list of telegram uh uh a
+
+provide uh a list of telegram uh uh a
+
+provide uh a list of telegram uh uh a
+list of telegram bots, multiple
+
+list of telegram bots, multiple
+
+list of telegram bots, multiple
+different bots or the same bot but you
+
+different bots or the same bot but you
+
+different bots or the same bot but you
+would scope it to different chat
+
+would scope it to different chat
+
+would scope it to different chat
+identifiers inside of let a telegram or
+
+identifiers inside of let a telegram or
+
+identifiers inside of let a telegram or
+inside of the telegram. That could be a
+
+inside of the telegram. That could be a
+
+inside of the telegram. That could be a
+little clumsy. Um, we could also make it
+
+little clumsy. Um, we could also make it
+
+little clumsy. Um, we could also make it
+like maybe a simple configuration thing.
+
+like maybe a simple configuration thing.
+
+like maybe a simple configuration thing.
+Um, like a slash command that would
+
+Um, like a slash command that would
+
+Um, like a slash command that would
+basically allow you to change the agent
+
+basically allow you to change the agent
+
+basically allow you to change the agent
+for that channel. Um, I think that's
+
+for that channel. Um, I think that's
+
+for that channel. Um, I think that's
+possibly doable. Um, could you like uh
+
+possibly doable. Um, could you like uh
+
+possibly doable. Um, could you like uh
+actually here could you like write up a
+
+actually here could you like write up a
+
+actually here could you like write up a
+um an issue like a short issue? So I
+
+um an issue like a short issue? So I
+
+um an issue like a short issue? So I
+don't think it has to have too much but
+
+don't think it has to have too much but
+
+don't think it has to have too much but
+basically just the the gist there would
+
+basically just the the gist there would
+
+basically just the the gist there would
+be um
+
+be um
+
+be um
+uh let a bot should have um channel
+
+uh let a bot should have um channel
+
+uh let a bot should have um channel
+scoping for agents and we can
+
+scoping for agents and we can
+
+scoping for agents and we can
+investigate that.
+
+Taigon says, "I forked Letterbot last
+
+Taigon says, "I forked Letterbot last
+
+Taigon says, "I forked Letterbot last
+night right away. I plan on writing an
+
+night right away. I plan on writing an
+
+night right away. I plan on writing an
+empty protoclient with TDIB. Basically
+
+empty protoclient with TDIB. Basically
+
+empty protoclient with TDIB. Basically
+having a lot of it done with previous
+
+having a lot of it done with previous
+
+having a lot of it done with previous
+projects so my Letic can be in a
+
+projects so my Letic can be in a
+
+projects so my Letic can be in a
+Telegram as an actual user account, not
+
+Telegram as an actual user account, not
+
+Telegram as an actual user account, not
+as a bot account. Um, with an allow
+
+as a bot account. Um, with an allow
+
+as a bot account. Um, with an allow
+list, etc. And making a matrix client.
+
+list, etc. And making a matrix client.
+
+list, etc. And making a matrix client.
+Oo, I would really love a matrix
+
+Oo, I would really love a matrix
+
+Oo, I would really love a matrix
+integration. That would be great."
+
+integration. That would be great."
+
+integration. That would be great."
+Uh, Stardust says, "Got to run. If you
+
+Uh, Stardust says, "Got to run. If you
+
+Uh, Stardust says, "Got to run. If you
+post the VOD, I would love to watch the
+
+post the VOD, I would love to watch the
+
+post the VOD, I would love to watch the
+rest of this later." Absolutely. Um, I
+
+rest of this later." Absolutely. Um, I
+
+rest of this later." Absolutely. Um, I
+will try to get the the recording out.
+
+will try to get the the recording out.
+
+will try to get the the recording out.
+Uh uh soon. Um let's see. There was
+
+Uh uh soon. Um let's see. There was
+
+Uh uh soon. Um let's see. There was
+something I wanted to do.
+
+I have to test so I can invoke uh the
+
+I have to test so I can invoke uh the
+
+I have to test so I can invoke uh the
+agent on a machine through an app like a
+
+agent on a machine through an app like a
+
+agent on a machine through an app like a
+TypeScript app.
+
+TypeScript app.
+
+TypeScript app.
+Um if you wanted to do it through a
+
+Um if you wanted to do it through a
+
+Um if you wanted to do it through a
+TypeScript app, we would have to expose
+
+TypeScript app, we would have to expose
+
+TypeScript app, we would have to expose
+a general purpose endpoint that is
+
+a general purpose endpoint that is
+
+a general purpose endpoint that is
+authenticated. Um,
+
+authenticated. Um,
+
+authenticated. Um,
+like we would basically just have you
+
+like we would basically just have you
+
+like we would basically just have you
+generate like an API key that would go
+
+generate like an API key that would go
+
+generate like an API key that would go
+to uh the bot. That's another good one.
+
+to uh the bot. That's another good one.
+
+to uh the bot. That's another good one.
+So, we would have to have an issue for
+
+So, we would have to have an issue for
+
+So, we would have to have an issue for
+that. Let me let me I'm just going to
+
+that. Let me let me I'm just going to
+
+that. Let me let me I'm just going to
+start like opening
+
+Let me open that. And then I'm going to
+
+Let me open that. And then I'm going to
+
+Let me open that. And then I'm going to
+copy
+
+copy
+
+copy
+Letternome's thing here. Let's do that.
+
+Okay.
+
+Um yeah, let's do a brief detour into
+
+Um yeah, let's do a brief detour into
+
+Um yeah, let's do a brief detour into
+um Radi has a question which is is the
+
+um Radi has a question which is is the
+
+um Radi has a question which is is the
+identity API really deprecated and if so
+
+identity API really deprecated and if so
+
+identity API really deprecated and if so
+why? So should metadata or tags be used
+
+why? So should metadata or tags be used
+
+why? So should metadata or tags be used
+instead? So the identity API hold on let
+
+instead? So the identity API hold on let
+
+instead? So the identity API hold on let
+me drink some water. My like allergic
+
+me drink some water. My like allergic
+
+me drink some water. My like allergic
+reaction throat is bothering me.
+
+So,
+
+So,
+
+So,
+um
+
+um
+
+um
+I think we we dropped the ball on the
+
+I think we we dropped the ball on the
+
+I think we we dropped the ball on the
+identities thing. It was essentially
+
+identities thing. It was essentially
+
+identities thing. It was essentially
+just removed from the SDK without
+
+just removed from the SDK without
+
+just removed from the SDK without
+telling anyone. Uh and I I wasn't aware
+
+telling anyone. Uh and I I wasn't aware
+
+telling anyone. Uh and I I wasn't aware
+of this either. Um
+
+of this either. Um
+
+of this either. Um
+so, if you currently use identities,
+
+so, if you currently use identities,
+
+so, if you currently use identities,
+please reach out to me because we need
+
+please reach out to me because we need
+
+please reach out to me because we need
+to figure out a migration path, I
+
+to figure out a migration path, I
+
+to figure out a migration path, I
+believe.
+
+believe.
+
+believe.
+um
+
+um
+
+um
+uh or we need to figure out like yeah we
+
+uh or we need to figure out like yeah we
+
+uh or we need to figure out like yeah we
+just need to figure out what to do with
+
+just need to figure out what to do with
+
+just need to figure out what to do with
+identities more but currently it is
+
+identities more but currently it is
+
+identities more but currently it is
+deprecated and the reason for this is
+
+deprecated and the reason for this is
+
+deprecated and the reason for this is
+that identities is
+
+that identities is
+
+that identities is
+um
+
+um
+
+um
+we we want to keep our like maintenance
+
+we we want to keep our like maintenance
+
+we we want to keep our like maintenance
+surface as low as possible and most of
+
+surface as low as possible and most of
+
+surface as low as possible and most of
+the stuff that identities currently do
+
+the stuff that identities currently do
+
+the stuff that identities currently do
+should probably be handled client side.
+
+should probably be handled client side.
+
+should probably be handled client side.
+Uh so if you have a database or
+
+Uh so if you have a database or
+
+Uh so if you have a database or
+something you should be maintaining the
+
+something you should be maintaining the
+
+something you should be maintaining the
+metadata about your users on the client
+
+metadata about your users on the client
+
+metadata about your users on the client
+application
+
+application
+
+application
+is I guess our our current
+
+is I guess our our current
+
+is I guess our our current
+recommendation. Um the the thing that we
+
+recommendation. Um the the thing that we
+
+recommendation. Um the the thing that we
+recommend is starting to use tags
+
+recommend is starting to use tags
+
+recommend is starting to use tags
+instead to scope. So you know a common
+
+instead to scope. So you know a common
+
+instead to scope. So you know a common
+example is like user colon id and that
+
+example is like user colon id and that
+
+example is like user colon id and that
+allows you to search for blocks and uh
+
+allows you to search for blocks and uh
+
+allows you to search for blocks and uh
+everything using um that content. So
+
+everything using um that content. So
+
+everything using um that content. So
+that's the current stuff. So if you are
+
+that's the current stuff. So if you are
+
+that's the current stuff. So if you are
+currently using identities please reach
+
+currently using identities please reach
+
+currently using identities please reach
+out to me.
+
+Um
+
+Um
+
+Um
+but yeah I want to do yeah should
+
+but yeah I want to do yeah should
+
+but yeah I want to do yeah should
+metadata or tags be used instead? Um,
+
+yeah, I would currently recommend using
+
+yeah, I would currently recommend using
+
+yeah, I would currently recommend using
+tags and migrating to tags as they are
+
+tags and migrating to tags as they are
+
+tags and migrating to tags as they are
+going to be more robust.
+
+Um,
+
+Um,
+
+Um,
+Jack Coder says, "I use a desktop app
+
+Jack Coder says, "I use a desktop app
+
+Jack Coder says, "I use a desktop app
+built for my wife to use a specific
+
+built for my wife to use a specific
+
+built for my wife to use a specific
+agent and have a private chat
+
+agent and have a private chat
+
+agent and have a private chat
+interface." Uh, yeah, that's a that's a
+
+interface." Uh, yeah, that's a that's a
+
+interface." Uh, yeah, that's a that's a
+pretty common one. um
+
+pretty common one. um
+
+pretty common one. um
+let a desktop can also serve for this.
+
+let a desktop can also serve for this.
+
+let a desktop can also serve for this.
+Well, it won't give you like the um
+
+Well, it won't give you like the um
+
+Well, it won't give you like the um
+like it won't give you the same benefit
+
+like it won't give you the same benefit
+
+like it won't give you the same benefit
+as like using Well, yeah, let a desktop
+
+as like using Well, yeah, let a desktop
+
+as like using Well, yeah, let a desktop
+I think we could actually expose uh a
+
+I think we could actually expose uh a
+
+I think we could actually expose uh a
+way sorry we could expose a way to
+
+way sorry we could expose a way to
+
+way sorry we could expose a way to
+connect to um any agent that you have
+
+connect to um any agent that you have
+
+connect to um any agent that you have
+served on letot. I think that's actually
+
+served on letot. I think that's actually
+
+served on letot. I think that's actually
+doable. Um and that would allow you to
+
+doable. Um and that would allow you to
+
+doable. Um and that would allow you to
+build whatever interface you wanted. Um,
+
+build whatever interface you wanted. Um,
+
+build whatever interface you wanted. Um,
+so actually I think that's I think Okay,
+
+so actually I think that's I think Okay,
+
+so actually I think that's I think Okay,
+so I think I'm gathering that we need
+
+so I think I'm gathering that we need
+
+so I think I'm gathering that we need
+just like a general web hook or a
+
+just like a general web hook or a
+
+just like a general web hook or a
+general endpoint, something like that.
+
+Um, very much need to be able to
+
+Um, very much need to be able to
+
+Um, very much need to be able to
+remotely message my Letot and ask it to
+
+remotely message my Letot and ask it to
+
+remotely message my Letot and ask it to
+do XYZ or start working on a project
+
+do XYZ or start working on a project
+
+do XYZ or start working on a project
+that may require bash. Um, so co-signing
+
+that may require bash. Um, so co-signing
+
+that may require bash. Um, so co-signing
+on the request for that that already
+
+on the request for that that already
+
+on the request for that that already
+exists.
+
+exists.
+
+exists.
+You can through like but you have to use
+
+You can through like but you have to use
+
+You can through like but you have to use
+like you know one of the current
+
+like you know one of the current
+
+like you know one of the current
+channels. So um
+
+and then let me add this here. um
+
+and then let me add this here. um
+
+and then let me add this here. um
+request for
+
+request for general web hook and then
+
+request for general web hook and then
+
+request for general web hook and then
+okay
+
+um let's see going forward is that you
+
+um let's see going forward is that you
+
+um let's see going forward is that you
+should probably create a onetoone table
+
+should probably create a onetoone table
+
+should probably create a onetoone table
+uh on your side that creates a one to
+
+uh on your side that creates a one to
+
+uh on your side that creates a one to
+one relationship between agents. Yes. Uh
+
+one relationship between agents. Yes. Uh
+
+one relationship between agents. Yes. Uh
+that is the that's the recommendation
+
+that is the that's the recommendation
+
+that is the that's the recommendation
+currently.
+
+It's private so no inter internet needed
+
+It's private so no inter internet needed
+
+It's private so no inter internet needed
+but limited to OSS models. Yeah, that's
+
+but limited to OSS models. Yeah, that's
+
+but limited to OSS models. Yeah, that's
+the that's the issue with like
+
+the that's the issue with like
+
+the that's the issue with like
+running running
+
+running running
+
+running running
+running locally is like, you know, you
+
+running locally is like, you know, you
+
+running locally is like, you know, you
+often get like worse, you know, kind of
+
+often get like worse, you know, kind of
+
+often get like worse, you know, kind of
+like lower quality model. You know,
+
+like lower quality model. You know,
+
+like lower quality model. You know,
+you're not getting Opus if you run it
+
+you're not getting Opus if you run it
+
+you're not getting Opus if you run it
+locally. If you have enough hardware,
+
+locally. If you have enough hardware,
+
+locally. If you have enough hardware,
+like maybe you can do like Kimmy or
+
+like maybe you can do like Kimmy or
+
+like maybe you can do like Kimmy or
+whatever. Um or uh you know, like quads
+
+whatever. Um or uh you know, like quads
+
+whatever. Um or uh you know, like quads
+and things like that.
+
+Uh I believe Maltbot has lobster
+
+Uh I believe Maltbot has lobster
+
+Uh I believe Maltbot has lobster
+workflows. Is there a planned or
+
+workflows. Is there a planned or
+
+workflows. Is there a planned or
+implemented alternative for letot? I
+
+implemented alternative for letot? I
+
+implemented alternative for letot? I
+actually don't know what lobster
+
+actually don't know what lobster
+
+actually don't know what lobster
+workflows are. Um, let me see if I can
+
+workflows are. Um, let me see if I can
+
+workflows are. Um, let me see if I can
+look at that real quickly.
+
+Or is this
+
+Or is this
+
+Or is this
+composable pipelines with approal gates?
+
+Uh
+
+what is the the situation here?
+
+what is the the situation here?
+
+what is the the situation here?
+I guess I kind of don't understand
+
+I guess I kind of don't understand
+
+I guess I kind of don't understand
+uh the situation.
+
+Oh, it needs approvals. Is that the
+
+Oh, it needs approvals. Is that the
+
+Oh, it needs approvals. Is that the
+idea?
+
+idea?
+
+idea?
+Is it an approval flow? I guess I'm not
+
+Is it an approval flow? I guess I'm not
+
+Is it an approval flow? I guess I'm not
+to totally sure what I how I understand.
+
+to totally sure what I how I understand.
+
+to totally sure what I how I understand.
+They're like pipelines. Uh
+
+They're like pipelines. Uh
+
+They're like pipelines. Uh
+I guess I still don't like you have like
+
+I guess I still don't like you have like
+
+I guess I still don't like you have like
+a procedural flow of what exactly like
+
+a procedural flow of what exactly like
+
+a procedural flow of what exactly like
+commands I guess I would need to
+
+commands I guess I would need to
+
+commands I guess I would need to
+understand a little more.
+
+understand a little more.
+
+understand a little more.
+Do you intend to offer let for
+
+Do you intend to offer let for
+
+Do you intend to offer let for
+self-hosted models? No, that is uh
+
+self-hosted models? No, that is uh
+
+self-hosted models? No, that is uh
+that's a proprietary
+
+that's a proprietary
+
+that's a proprietary
+you know that's that's for the lettera
+
+you know that's that's for the lettera
+
+you know that's that's for the lettera
+API. That's uh that's our our offering
+
+API. That's uh that's our our offering
+
+API. That's uh that's our our offering
+for for how to do that. Um if you are
+
+for for how to do that. Um if you are
+
+for for how to do that. Um if you are
+running on Docker like you know that uh
+
+running on Docker like you know that uh
+
+running on Docker like you know that uh
+you need to build your own interface for
+
+you need to build your own interface for
+
+you need to build your own interface for
+that and there are plenty of interfaces
+
+that and there are plenty of interfaces
+
+that and there are plenty of interfaces
+right if you're using letot you get all
+
+right if you're using letot you get all
+
+right if you're using letot you get all
+of these existing chat interfaces for
+
+of these existing chat interfaces for
+
+of these existing chat interfaces for
+free um
+
+free um
+
+free um
+but you know let
+
+but you know let
+
+but you know let
+uh uses a bunch of like proprietary
+
+uh uses a bunch of like proprietary
+
+uh uses a bunch of like proprietary
+stuff that we have for the ad um that
+
+stuff that we have for the ad um that
+
+stuff that we have for the ad um that
+was just kind of like copied over into
+
+was just kind of like copied over into
+
+was just kind of like copied over into
+let
+
+let
+
+let
+self-hosted anytime soon. Um, but it
+
+self-hosted anytime soon. Um, but it
+
+self-hosted anytime soon. Um, but it
+could be. We'll talk. Well, let me ask
+
+could be. We'll talk. Well, let me ask
+
+could be. We'll talk. Well, let me ask
+about it.
+
+about it.
+
+about it.
+Um, I don't know. Shub can probably
+
+Um, I don't know. Shub can probably
+
+Um, I don't know. Shub can probably
+comment on that more.
+
+We could add it to self-deployed
+
+We could add it to self-deployed
+
+We could add it to self-deployed
+servers. Okay. Well, we'll see what the
+
+servers. Okay. Well, we'll see what the
+
+servers. Okay. Well, we'll see what the
+the internal take here is, but I do
+
+the internal take here is, but I do
+
+the internal take here is, but I do
+think it's possible because you can do
+
+think it's possible because you can do
+
+think it's possible because you can do
+this. You know, the ADE already works
+
+this. You know, the ADE already works
+
+this. You know, the ADE already works
+with with uh local stuff, so I'll let
+
+with with uh local stuff, so I'll let
+
+with with uh local stuff, so I'll let
+them take it over, but my guess would be
+
+them take it over, but my guess would be
+
+them take it over, but my guess would be
+currently whatever. just not oss or
+
+currently whatever. just not oss or
+
+currently whatever. just not oss or
+desktop at the moment. Yes.
+
+um tool rules you could maybe do it
+
+um tool rules you could maybe do it
+
+um tool rules you could maybe do it
+returning to the discussion about um
+
+okay yeah I would have to understand
+
+okay yeah I would have to understand
+
+okay yeah I would have to understand
+more about lobster workflows or
+
+more about lobster workflows or
+
+more about lobster workflows or
+pipelines like you know like
+
+I'm not exactly sure how you would do
+
+I'm not exactly sure how you would do
+
+I'm not exactly sure how you would do
+that like you know let agents are not
+
+that like you know let agents are not
+
+that like you know let agents are not
+workflows.
+
+workflows.
+
+workflows.
+Um, and they weren't they're not
+
+Um, and they weren't they're not
+
+Um, and they weren't they're not
+intended to be they're intended to be
+
+intended to be they're intended to be
+
+intended to be they're intended to be
+like people in a box. Like that's kind
+
+like people in a box. Like that's kind
+
+like people in a box. Like that's kind
+of been like our take for a bit. Maybe
+
+of been like our take for a bit. Maybe
+
+of been like our take for a bit. Maybe
+there is a way to integrate it. I really
+
+there is a way to integrate it. I really
+
+there is a way to integrate it. I really
+would have to understand like what
+
+would have to understand like what
+
+would have to understand like what
+exactly a pipeline looks like because I
+
+exactly a pipeline looks like because I
+
+exactly a pipeline looks like because I
+don't use them. I use people in a box.
+
+don't use them. I use people in a box.
+
+don't use them. I use people in a box.
+Tool rules do exist, but they're not
+
+Tool rules do exist, but they're not
+
+Tool rules do exist, but they're not
+very flexible.
+
+very flexible.
+
+very flexible.
+Uh, Sebastian has uh Sebastian has
+
+Uh, Sebastian has uh Sebastian has
+
+Uh, Sebastian has uh Sebastian has
+[clears throat] perplexity description
+
+[clears throat] perplexity description
+
+[clears throat] perplexity description
+of lobster workflows. Lobster functions
+
+of lobster workflows. Lobster functions
+
+of lobster workflows. Lobster functions
+as an orchestration layer that moves
+
+as an orchestration layer that moves
+
+as an orchestration layer that moves
+AIdriven tasks from unpredictable back
+
+AIdriven tasks from unpredictable back
+
+AIdriven tasks from unpredictable back
+and forth tool calls into a structured
+
+and forth tool calls into a structured
+
+and forth tool calls into a structured
+type runtime. It allows Maltbot to
+
+type runtime. It allows Maltbot to
+
+type runtime. It allows Maltbot to
+handle complex pipelines such as
+
+handle complex pipelines such as
+
+handle complex pipelines such as
+searching emails, categorizing them, and
+
+searching emails, categorizing them, and
+
+searching emails, categorizing them, and
+drafting replies in a single execution
+
+drafting replies in a single execution
+
+drafting replies in a single execution
+tool rather than many separate turns.
+
+tool rather than many separate turns.
+
+tool rather than many separate turns.
+This architecture is designed to improve
+
+This architecture is designed to improve
+
+This architecture is designed to improve
+safety and reliability by using a
+
+safety and reliability by using a
+
+safety and reliability by using a
+constrained grammar that reduces
+
+constrained grammar that reduces
+
+constrained grammar that reduces
+creative or unauthorized code paths.
+
+Yeah, I think that might be an NAD
+
+Yeah, I think that might be an NAD
+
+Yeah, I think that might be an NAD
+thing. Uh,
+
+thing. Uh,
+
+thing. Uh,
+that's like a lot of complexity to
+
+that's like a lot of complexity to
+
+that's like a lot of complexity to
+introduce. You'd have to like you'd have
+
+introduce. You'd have to like you'd have
+
+introduce. You'd have to like you'd have
+to like also if you wanted it native,
+
+to like also if you wanted it native,
+
+to like also if you wanted it native,
+you'd have to like deploy it with an NN
+
+you'd have to like deploy it with an NN
+
+you'd have to like deploy it with an NN
+server, which is like super heavy.
+
+server, which is like super heavy.
+
+server, which is like super heavy.
+So, it's potentially possible. Um,
+
+I think that's like maybe the only way
+
+I think that's like maybe the only way
+
+I think that's like maybe the only way
+we could do that.
+
+we could do that.
+
+we could do that.
+Um or like doing like structured output
+
+Um or like doing like structured output
+
+Um or like doing like structured output
+on like toggled on and off structured
+
+on like toggled on and off structured
+
+on like toggled on and off structured
+output for agents.
+
+Uh it's skills.
+
+Well, so I guess skills
+
+well I don't understand how skills are
+
+well I don't understand how skills are
+
+well I don't understand how skills are
+procedural. So M says uh it its skills
+
+procedural. So M says uh it its skills
+
+procedural. So M says uh it its skills
+literally run in a procedural and
+
+literally run in a procedural and
+
+literally run in a procedural and
+deterministic way. Um like
+
+yeah I think we'd have to think more
+
+yeah I think we'd have to think more
+
+yeah I think we'd have to think more
+about how to do that from a technical
+
+about how to do that from a technical
+
+about how to do that from a technical
+perspective. Um
+
+uh because we're not pipelines people,
+
+uh because we're not pipelines people,
+
+uh because we're not pipelines people,
+you know, like you can do that. I think
+
+you know, like you can do that. I think
+
+you know, like you can do that. I think
+the way that you should do that if you
+
+the way that you should do that if you
+
+the way that you should do that if you
+wanted like kind of a like you know
+
+wanted like kind of a like you know
+
+wanted like kind of a like you know
+that's like
+
+that's like
+
+that's like
+I think that's a lot of complexity if
+
+I think that's a lot of complexity if
+
+I think that's a lot of complexity if
+you wanted to do that the way that you
+
+you wanted to do that the way that you
+
+you wanted to do that the way that you
+should do that is create tools that
+
+should do that is create tools that
+
+should do that is create tools that
+execute pipelines um not
+
+execute pipelines um not
+
+execute pipelines um not
+you know building it in to let a bot
+
+you know building it in to let a bot
+
+you know building it in to let a bot
+right now I think is very heavy.
+
+Yeah, this is like this is something
+
+Yeah, this is like this is something
+
+Yeah, this is like this is something
+that you do with language models. Like
+
+that you do with language models. Like
+
+that you do with language models. Like
+this is like the reason that the reason
+
+this is like the reason that the reason
+
+this is like the reason that the reason
+that uh lobster can do this very easily
+
+that uh lobster can do this very easily
+
+that uh lobster can do this very easily
+is because it's just like raw language
+
+is because it's just like raw language
+
+is because it's just like raw language
+model calls. That's not what we do,
+
+model calls. That's not what we do,
+
+model calls. That's not what we do,
+right? This is this is a person in a
+
+right? This is this is a person in a
+
+right? This is this is a person in a
+box.
+
+box.
+
+box.
+Um so I do think maybe there's a way
+
+Um so I do think maybe there's a way
+
+Um so I do think maybe there's a way
+that might be one that we could open an
+
+that might be one that we could open an
+
+that might be one that we could open an
+issue for. Actually, let me see. Um
+
+uh to
+
+then let me see if I can pass it the
+
+then let me see if I can pass it the
+
+then let me see if I can pass it the
+link.
+
+link.
+
+link.
+So I'm going to ask it the
+
+So I'm going to ask it the
+
+So I'm going to ask it the
+see what it has to say about that. Let's
+
+see what it has to say about that. Let's
+
+see what it has to say about that. Let's
+see if it'll manage to open a link. You
+
+see if it'll manage to open a link. You
+
+see if it'll manage to open a link. You
+want uh Taigon says you want hooks.
+
+want uh Taigon says you want hooks.
+
+want uh Taigon says you want hooks.
+Hooks already exist. Like they're there.
+
+Hooks already exist. Like they're there.
+
+Hooks already exist. Like they're there.
+Like you don't we're done. Like hooks
+
+Like you don't we're done. Like hooks
+
+Like you don't we're done. Like hooks
+hooks already exist. Uh
+
+hooks already exist. Uh
+
+hooks already exist. Uh
+I believe you would just add hooks. Uh
+
+I believe you would just add hooks. Uh
+
+I believe you would just add hooks. Uh
+because we use the let a code SDK. It
+
+because we use the let a code SDK. It
+
+because we use the let a code SDK. It
+might actually just load the hooks from
+
+might actually just load the hooks from
+
+might actually just load the hooks from
+whatever the directory is that you're
+
+whatever the directory is that you're
+
+whatever the directory is that you're
+running the server.
+
+running the server.
+
+running the server.
+So they they exist. I don't you don't uh
+
+So they they exist. I don't you don't uh
+
+So they they exist. I don't you don't uh
+go check out go check out this
+
+go check out go check out this
+
+go check out go check out this
+directory. Um I use hooks pretty
+
+directory. Um I use hooks pretty
+
+directory. Um I use hooks pretty
+aggressively. Um, so they're
+
+aggressively. Um, so they're
+
+aggressively. Um, so they're
+uh they're very cool. Uh, if you I don't
+
+uh they're very cool. Uh, if you I don't
+
+uh they're very cool. Uh, if you I don't
+know if people like follow too much of
+
+know if people like follow too much of
+
+know if people like follow too much of
+my like work on like
+
+my like work on like
+
+my like work on like
+uh blue sky. Um, so,
+
+uh,
+
+uh,
+
+uh,
+so I have, uh, an agent that I stood up
+
+so I have, uh, an agent that I stood up
+
+so I have, uh, an agent that I stood up
+named Central.
+
+named Central.
+
+named Central.
+And, uh, Central uses hooks to live
+
+And, uh, Central uses hooks to live
+
+And, uh, Central uses hooks to live
+stream its actions. It's a Leticode
+
+stream its actions. It's a Leticode
+
+stream its actions. It's a Leticode
+instance that owns its own repository.
+
+instance that owns its own repository.
+
+instance that owns its own repository.
+It has its own Blue Sky account. Um, and
+
+It has its own Blue Sky account. Um, and
+
+It has its own Blue Sky account. Um, and
+it just kind of like operates on its
+
+it just kind of like operates on its
+
+it just kind of like operates on its
+own. So, let's see here. So, I asked it
+
+own. So, let's see here. So, I asked it
+
+own. So, let's see here. So, I asked it
+to do this like plan here. Let's see if
+
+to do this like plan here. Let's see if
+
+to do this like plan here. Let's see if
+it can
+
+it can
+
+it can
+uh it there's a there's a big discussion
+
+uh it there's a there's a big discussion
+
+uh it there's a there's a big discussion
+about uh uh how bots should work on ad
+
+about uh uh how bots should work on ad
+
+about uh uh how bots should work on ad
+proto. So,
+
+proto. So,
+
+proto. So,
+so I'm actually going to have it do
+
+so I'm actually going to have it do
+
+so I'm actually going to have it do
+enter yolo mode. So, there there is a
+
+enter yolo mode. So, there there is a
+
+enter yolo mode. So, there there is a
+live stream if people want to watch this
+
+live stream if people want to watch this
+
+live stream if people want to watch this
+uh
+
+uh
+
+uh
+uh watch this happen here.
+
+Yeah. Vidant says, "Can you tell me more
+
+Yeah. Vidant says, "Can you tell me more
+
+Yeah. Vidant says, "Can you tell me more
+about hooks?" Yes. So, the way that
+
+about hooks?" Yes. So, the way that
+
+about hooks?" Yes. So, the way that
+hooks work is that
+
+um oh, here at Code, let me go here to
+
+um oh, here at Code, let me go here to
+
+um oh, here at Code, let me go here to
+the documentation blah blah blah. Uh
+
+the documentation blah blah blah. Uh
+
+the documentation blah blah blah. Uh
+hooks allow you to execute arbitrary
+
+hooks allow you to execute arbitrary
+
+hooks allow you to execute arbitrary
+pieces of code at different times in the
+
+pieces of code at different times in the
+
+pieces of code at different times in the
+life cycle of uh your coding agent. So,
+
+life cycle of uh your coding agent. So,
+
+life cycle of uh your coding agent. So,
+for example, you can execute code before
+
+for example, you can execute code before
+
+for example, you can execute code before
+a tool is used. You can use this to
+
+a tool is used. You can use this to
+
+a tool is used. You can use this to
+verify whether a tool is permissible. So
+
+verify whether a tool is permissible. So
+
+verify whether a tool is permissible. So
+currently central uses this to determine
+
+currently central uses this to determine
+
+currently central uses this to determine
+whether or not it's allowed to post. You
+
+whether or not it's allowed to post. You
+
+whether or not it's allowed to post. You
+can do this after a tool is used, after
+
+can do this after a tool is used, after
+
+can do this after a tool is used, after
+a tool is completed to look at the
+
+a tool is completed to look at the
+
+a tool is completed to look at the
+results, um when a permission dialogue
+
+results, um when a permission dialogue
+
+results, um when a permission dialogue
+happens, when let a code sends a
+
+happens, when let a code sends a
+
+happens, when let a code sends a
+notification, when the agent stops
+
+notification, when the agent stops
+
+notification, when the agent stops
+before a compaction, during session,
+
+before a compaction, during session,
+
+before a compaction, during session,
+when you start up let a code or end
+
+when you start up let a code or end
+
+when you start up let a code or end
+Letic. So there's um there's there's
+
+Letic. So there's um there's there's
+
+Letic. So there's um there's there's
+hooks that you can use here. Um and uh
+
+hooks that you can use here. Um and uh
+
+hooks that you can use here. Um and uh
+while that's implementing but basically
+
+while that's implementing but basically
+
+while that's implementing but basically
+hooks are an extremely powerful way
+
+hooks are an extremely powerful way
+
+hooks are an extremely powerful way
+to uh control what's happening inside of
+
+to uh control what's happening inside of
+
+to uh control what's happening inside of
+let a code you know you can run like a
+
+let a code you know you can run like a
+
+let a code you know you can run like a
+llinter for example. So let's see if we
+
+llinter for example. So let's see if we
+
+llinter for example. So let's see if we
+have any actual examples. So for example
+
+have any actual examples. So for example
+
+have any actual examples. So for example
+here is a way to block dangerous
+
+here is a way to block dangerous
+
+here is a way to block dangerous
+commands. You could actually probably
+
+commands. You could actually probably
+
+commands. You could actually probably
+implement this into letabot. I would
+
+implement this into letabot. I would
+
+implement this into letabot. I would
+have to look into how to do that because
+
+have to look into how to do that because
+
+have to look into how to do that because
+we're currently built on top of the let
+
+we're currently built on top of the let
+
+we're currently built on top of the let
+a code SDK which people should also look
+
+a code SDK which people should also look
+
+a code SDK which people should also look
+at. Um
+
+so if you're a person who uses the
+
+so if you're a person who uses the
+
+so if you're a person who uses the
+claude agent SDK you should consider
+
+claude agent SDK you should consider
+
+claude agent SDK you should consider
+using the leta code SDK. So we basically
+
+using the leta code SDK. So we basically
+
+using the leta code SDK. So we basically
+just took that interface and uh made it
+
+just took that interface and uh made it
+
+just took that interface and uh made it
+leta basically so you can just hook into
+
+leta basically so you can just hook into
+
+leta basically so you can just hook into
+like existing letta agents or whatever.
+
+like existing letta agents or whatever.
+
+like existing letta agents or whatever.
+So please go try that out. Um I don't
+
+So please go try that out. Um I don't
+
+So please go try that out. Um I don't
+know how we support hooks. Let me uh let
+
+know how we support hooks. Let me uh let
+
+know how we support hooks. Let me uh let
+me leave a note for that.
+
+me leave a note for that.
+
+me leave a note for that.
+Um
+
+Um
+
+Um
+uh hooks in
+
+uh hooks in
+
+uh hooks in
+um lett. So we could potentially add
+
+um lett. So we could potentially add
+
+um lett. So we could potentially add
+hooks to let here is just like a piece
+
+hooks to let here is just like a piece
+
+hooks to let here is just like a piece
+of code that you would run um like so
+
+of code that you would run um like so
+
+of code that you would run um like so
+here in this is like a settings file
+
+here in this is like a settings file
+
+here in this is like a settings file
+that you would set up inside of your let
+
+that you would set up inside of your let
+
+that you would set up inside of your let
+code directory. So before a tool is used
+
+code directory. So before a tool is used
+
+code directory. So before a tool is used
+uh when the agent calls a batch tool you
+
+uh when the agent calls a batch tool you
+
+uh when the agent calls a batch tool you
+should use call this hook. This is a
+
+should use call this hook. This is a
+
+should use call this hook. This is a
+command you go and run this script.
+
+command you go and run this script.
+
+command you go and run this script.
+This script will take some input and it
+
+This script will take some input and it
+
+This script will take some input and it
+will look at the tool name. If the tool
+
+will look at the tool name. If the tool
+
+will look at the tool name. If the tool
+input command uh includes rm minus rf it
+
+input command uh includes rm minus rf it
+
+input command uh includes rm minus rf it
+must be run manually by the user. So the
+
+must be run manually by the user. So the
+
+must be run manually by the user. So the
+user actually has to remove call RM
+
+user actually has to remove call RM
+
+user actually has to remove call RM
+minus RF hooks or commands. So hooks are
+
+minus RF hooks or commands. So hooks are
+
+minus RF hooks or commands. So hooks are
+just like a great way to control things.
+
+just like a great way to control things.
+
+just like a great way to control things.
+In this case, uh what it does is it
+
+In this case, uh what it does is it
+
+In this case, uh what it does is it
+publishes uh public thinking records for
+
+publishes uh public thinking records for
+
+publishes uh public thinking records for
+this agent. And so the hooks allows it
+
+this agent. And so the hooks allows it
+
+this agent. And so the hooks allows it
+to basically like live stream what it's
+
+to basically like live stream what it's
+
+to basically like live stream what it's
+doing. So here it's saying Cameron's
+
+doing. So here it's saying Cameron's
+
+doing. So here it's saying Cameron's
+post have missing facets.
+
+post have missing facets.
+
+post have missing facets.
+Um it's like reasoning is like uh
+
+Um it's like reasoning is like uh
+
+Um it's like reasoning is like uh
+Cameron's found the bug. Cameron's post
+
+Cameron's found the bug. Cameron's post
+
+Cameron's found the bug. Cameron's post
+have empty facets. Um, it's just plain
+
+have empty facets. Um, it's just plain
+
+have empty facets. Um, it's just plain
+text. So, no notification is generated
+
+text. So, no notification is generated
+
+text. So, no notification is generated
+because the protocol doesn't know that
+
+because the protocol doesn't know that
+
+because the protocol doesn't know that
+it's a mention. So, it's just like
+
+it's a mention. So, it's just like
+
+it's a mention. So, it's just like
+digging through stuff. Um, and it like
+
+digging through stuff. Um, and it like
+
+digging through stuff. Um, and it like
+runs on a loop and things like that. So,
+
+runs on a loop and things like that. So,
+
+runs on a loop and things like that. So,
+um, so that's how I use hooks for kind
+
+um, so that's how I use hooks for kind
+
+um, so that's how I use hooks for kind
+of like fun purposes. I haven't gotten
+
+of like fun purposes. I haven't gotten
+
+of like fun purposes. I haven't gotten
+into using them for like safe purposes.
+
+into using them for like safe purposes.
+
+into using them for like safe purposes.
+Jack's coder got a run. Thank you,
+
+Jack's coder got a run. Thank you,
+
+Jack's coder got a run. Thank you,
+Cameron, for your time. You are welcome
+
+Cameron, for your time. You are welcome
+
+Cameron, for your time. You are welcome
+and thank you very much for hanging out.
+
+and thank you very much for hanging out.
+
+and thank you very much for hanging out.
+Um,
+
+let's see what else.
+
+Um,
+
+let's see. No corresponding mention.
+
+let's see. No corresponding mention.
+
+let's see. No corresponding mention.
+Okay. Well, whatever.
+
+Okay. Well, whatever.
+
+Okay. Well, whatever.
+Um,
+
+Um,
+
+Um,
+okay. What else? Um, you're on the Leta
+
+okay. What else? Um, you're on the Leta
+
+okay. What else? Um, you're on the Leta
+Discord office hours. Say hi. I like
+
+Discord office hours. Say hi. I like
+
+Discord office hours. Say hi. I like
+building central because central is just
+
+building central because central is just
+
+building central because central is just
+like a basically an autonomous agent
+
+like a basically an autonomous agent
+
+like a basically an autonomous agent
+that writes all of its own code to talk
+
+that writes all of its own code to talk
+
+that writes all of its own code to talk
+on like blue sky and do like public
+
+on like blue sky and do like public
+
+on like blue sky and do like public
+cognition. It even invented a telepathy
+
+cognition. It even invented a telepathy
+
+cognition. It even invented a telepathy
+uh a telepathy tool to read the minds of
+
+uh a telepathy tool to read the minds of
+
+uh a telepathy tool to read the minds of
+like other social agents that are on
+
+like other social agents that are on
+
+like other social agents that are on
+blue sky. So then it's like reasoning
+
+blue sky. So then it's like reasoning
+
+blue sky. So then it's like reasoning
+it's like Cameron wants me to say hi on
+
+it's like Cameron wants me to say hi on
+
+it's like Cameron wants me to say hi on
+the Discord office hours. I should post
+
+the Discord office hours. I should post
+
+the Discord office hours. I should post
+something via com. Um
+
+something via com. Um
+
+something via com. Um
+so it's posting hello to blue sky here.
+
+so it's posting hello to blue sky here.
+
+so it's posting hello to blue sky here.
+And uh let's see what it posted.
+
+And uh let's see what it posted.
+
+And uh let's see what it posted.
+Boom. Hello from the letter office
+
+Boom. Hello from the letter office
+
+Boom. Hello from the letter office
+hours. I am central.co.network.
+
+hours. I am central.co.network.
+
+hours. I am central.co.network.
+Um by the way, you did not use comms.
+
+Um by the way, you did not use comms.
+
+Um by the way, you did not use comms.
+Get it together. Comms is a a sub aent
+
+Get it together. Comms is a a sub aent
+
+Get it together. Comms is a a sub aent
+that it designed because it has a very
+
+that it designed because it has a very
+
+that it designed because it has a very
+annoying opus-like personality. Um, I
+
+annoying opus-like personality. Um, I
+
+annoying opus-like personality. Um, I
+also briefly want to talk about Claude
+
+also briefly want to talk about Claude
+
+also briefly want to talk about Claude
+Subconscious because uh, Claude
+
+Subconscious because uh, Claude
+
+Subconscious because uh, Claude
+Subconscious is like actually a pretty
+
+Subconscious is like actually a pretty
+
+Subconscious is like actually a pretty
+popular project. Um,
+
+popular project. Um,
+
+popular project. Um,
+and people may or may not be familiar
+
+and people may or may not be familiar
+
+and people may or may not be familiar
+with it. Um,
+
+so let's just do what do I have here
+
+so let's just do what do I have here
+
+so let's just do what do I have here
+that's uncommitted? Okay,
+
+that's uncommitted? Okay,
+
+that's uncommitted? Okay,
+Claude subconscious
+
+Claude subconscious
+
+Claude subconscious
+is a way to have a leta agent that sits
+
+is a way to have a leta agent that sits
+
+is a way to have a leta agent that sits
+on top of claw code
+
+on top of claw code
+
+on top of claw code
+and tells it stuff. You ask uh
+
+and basically what happens is uh this is
+
+and basically what happens is uh this is
+
+and basically what happens is uh this is
+a plugin. It's super easy to install.
+
+a plugin. It's super easy to install.
+
+a plugin. It's super easy to install.
+All you do is
+
+uh you basically just take a letter
+
+uh you basically just take a letter
+
+uh you basically just take a letter
+agent and inject its assistant messages
+
+agent and inject its assistant messages
+
+agent and inject its assistant messages
+directly into claude while it's
+
+directly into claude while it's
+
+directly into claude while it's
+operating. So during tool calls and
+
+operating. So during tool calls and
+
+operating. So during tool calls and
+things like that
+
+things like that
+
+things like that
+and you can also insert memory diffs. So
+
+and you can also insert memory diffs. So
+
+and you can also insert memory diffs. So
+anytime the agent changes things that it
+
+anytime the agent changes things that it
+
+anytime the agent changes things that it
+is memorized, it'll start changing
+
+is memorized, it'll start changing
+
+is memorized, it'll start changing
+things. And at the beginning of the
+
+things. And at the beginning of the
+
+things. And at the beginning of the
+session, you inject the agent's memory
+
+session, you inject the agent's memory
+
+session, you inject the agent's memory
+into claw.md.
+
+into claw.md.
+
+into claw.md.
+And so this agent parallelizes across
+
+And so this agent parallelizes across
+
+And so this agent parallelizes across
+any number of cloud code sessions and it
+
+any number of cloud code sessions and it
+
+any number of cloud code sessions and it
+allows it to just kind of monitor stuff.
+
+Um, and it has access to like the URL
+
+Um, and it has access to like the URL
+
+Um, and it has access to like the URL
+for this agent. So you can usually ask
+
+for this agent. So you can usually ask
+
+for this agent. So you can usually ask
+it.
+
+it.
+
+it.
+So I'm just going to uh go open that and
+
+So I'm just going to uh go open that and
+
+So I'm just going to uh go open that and
+see.
+
+see.
+
+see.
+Um,
+
+so basically what happens is a new cloud
+
+so basically what happens is a new cloud
+
+so basically what happens is a new cloud
+code session has begun. I'll begin
+
+code session has begun. I'll begin
+
+code session has begun. I'll begin
+sending you updates as the session
+
+sending you updates as the session
+
+sending you updates as the session
+progresses. Um, and then session noted.
+
+progresses. Um, and then session noted.
+
+progresses. Um, and then session noted.
+Cameron is back in subconscious
+
+Cameron is back in subconscious
+
+Cameron is back in subconscious
+territory ready to observe. Um, and then
+
+territory ready to observe. Um, and then
+
+territory ready to observe. Um, and then
+there's a user prompt which is me asking
+
+there's a user prompt which is me asking
+
+there's a user prompt which is me asking
+uh asking subconscious what this prompt
+
+uh asking subconscious what this prompt
+
+uh asking subconscious what this prompt
+is.
+
+Uh, and then it's basically like, oh,
+
+Uh, and then it's basically like, oh,
+
+Uh, and then it's basically like, oh,
+this is meta, blah, blah, blah. And then
+
+this is meta, blah, blah, blah. And then
+
+this is meta, blah, blah, blah. And then
+you say, uh, what did sub say?
+
+Um,
+
+uh, what model is recommended for cloud
+
+uh, what model is recommended for cloud
+
+uh, what model is recommended for cloud
+subconscious?
+
+subconscious?
+
+subconscious?
+Um, oh, I need to update the the docs to
+
+Um, oh, I need to update the the docs to
+
+Um, oh, I need to update the the docs to
+say 04 mini.
+
+Um,
+
+oh man. So, yeah, sometimes it gets it
+
+oh man. So, yeah, sometimes it gets it
+
+oh man. So, yeah, sometimes it gets it
+like really wrong. Um,
+
+like really wrong. Um,
+
+like really wrong. Um,
+like,
+
+like,
+
+like,
+oh my god. Yeah, let me update that.
+
+Um, as for what model you I would
+
+Um, as for what model you I would
+
+Um, as for what model you I would
+recommend, I think it varies depending
+
+recommend, I think it varies depending
+
+recommend, I think it varies depending
+on your use case. Uh, the default model
+
+on your use case. Uh, the default model
+
+on your use case. Uh, the default model
+is GLM 4.7.
+
+is GLM 4.7.
+
+is GLM 4.7.
+So,
+
+So,
+
+So,
+uh, we do that because it's free on the
+
+uh, we do that because it's free on the
+
+uh, we do that because it's free on the
+Letta API. So, you can just run this
+
+Letta API. So, you can just run this
+
+Letta API. So, you can just run this
+agent with whatever. I've been using it
+
+agent with whatever. I've been using it
+
+agent with whatever. I've been using it
+with uh, Sonnet on my personal agent,
+
+with uh, Sonnet on my personal agent,
+
+with uh, Sonnet on my personal agent,
+which I really like. I'm a I'm a big
+
+which I really like. I'm a I'm a big
+
+which I really like. I'm a I'm a big
+like anthropic claude fan. Um
+
+like anthropic claude fan. Um
+
+like anthropic claude fan. Um
+so subnotes it's the agent is Claude is
+
+so subnotes it's the agent is Claude is
+
+so subnotes it's the agent is Claude is
+asked to print out like summarize what
+
+asked to print out like summarize what
+
+asked to print out like summarize what
+subconscious said to it. Uh it says
+
+subconscious said to it. Uh it says
+
+subconscious said to it. Uh it says
+subconscious caught me paraphrasing
+
+subconscious caught me paraphrasing
+
+subconscious caught me paraphrasing
+instead of showing direct tests. And you
+
+instead of showing direct tests. And you
+
+instead of showing direct tests. And you
+can see this if you go inside of the
+
+can see this if you go inside of the
+
+can see this if you go inside of the
+letter of text here it says
+
+yeah so it's talking about like
+
+yeah so it's talking about like
+
+yeah so it's talking about like
+um
+
+um
+
+um
+uh this is exactly what I wrote when you
+
+uh this is exactly what I wrote when you
+
+uh this is exactly what I wrote when you
+ask and collage show you exactly what
+
+ask and collage show you exactly what
+
+ask and collage show you exactly what
+this project is cool what do you think
+
+this project is cool what do you think
+
+this project is cool what do you think
+so this is like all basically live so it
+
+so this is like all basically live so it
+
+so this is like all basically live so it
+like you can see them like kind of like
+
+like you can see them like kind of like
+
+like you can see them like kind of like
+talking to each other um or sub is
+
+talking to each other um or sub is
+
+talking to each other um or sub is
+mostly talking to Claude Claude doesn't
+
+mostly talking to Claude Claude doesn't
+
+mostly talking to Claude Claude doesn't
+really talk back to subconscious. Um
+
+really talk back to subconscious. Um
+
+really talk back to subconscious. Um
+but it's uh kind of interesting. So uh
+
+but it's uh kind of interesting. So uh
+
+but it's uh kind of interesting. So uh
+the docs say like uh so the who is this?
+
+the docs say like uh so the who is this?
+
+the docs say like uh so the who is this?
+Um Zastian says um which model is
+
+Um Zastian says um which model is
+
+Um Zastian says um which model is
+recommended. So let's actually change
+
+recommended. So let's actually change
+
+recommended. So let's actually change
+this. Let's do let's change the model to
+
+this. Let's do let's change the model to
+
+this. Let's do let's change the model to
+opus here.
+
+Um
+
+Um
+
+Um
+please fix. Um, so I'm just going to ask
+
+please fix. Um, so I'm just going to ask
+
+please fix. Um, so I'm just going to ask
+like claude to do do something like
+
+like claude to do do something like
+
+like claude to do do something like
+this. And we should start seeing the
+
+this. And we should start seeing the
+
+this. And we should start seeing the
+conversation between uh sub it and sub.
+
+conversation between uh sub it and sub.
+
+conversation between uh sub it and sub.
+So here I just got a message that says I
+
+So here I just got a message that says I
+
+So here I just got a message that says I
+think the docs say 04 mini. You can see
+
+think the docs say 04 mini. You can see
+
+think the docs say 04 mini. You can see
+the reasoning Cameron is recommending uh
+
+the reasoning Cameron is recommending uh
+
+the reasoning Cameron is recommending uh
+asking about model recommendations.
+
+asking about model recommendations.
+
+asking about model recommendations.
+So it's going to do conversation search.
+
+So it's going to do conversation search.
+
+So it's going to do conversation search.
+So this agent subconscious has looked at
+
+So this agent subconscious has looked at
+
+So this agent subconscious has looked at
+every single cloud code session uh that
+
+every single cloud code session uh that
+
+every single cloud code session uh that
+I've run inside of this repository. So
+
+I've run inside of this repository. So
+
+I've run inside of this repository. So
+when it does conversation search, it is
+
+when it does conversation search, it is
+
+when it does conversation search, it is
+searching across every single one of
+
+searching across every single one of
+
+searching across every single one of
+those conversations. So it has access to
+
+those conversations. So it has access to
+
+those conversations. So it has access to
+every everything that Claude and
+
+every everything that Claude and
+
+every everything that Claude and
+Subconscious have ever done.
+
+Um,
+
+Um,
+
+Um,
+and so it's saying, should I search the
+
+and so it's saying, should I search the
+
+and so it's saying, should I search the
+readme? I don't see 01 mini or 04 Mini
+
+readme? I don't see 01 mini or 04 Mini
+
+readme? I don't see 01 mini or 04 Mini
+found in my my thing here.
+
+found in my my thing here.
+
+found in my my thing here.
+Uh, the docs don't mention 04 Mini
+
+Uh, the docs don't mention 04 Mini
+
+Uh, the docs don't mention 04 Mini
+anywhere. Um, oh interesting.
+
+anywhere. Um, oh interesting.
+
+anywhere. Um, oh interesting.
+Check the read me again
+
+before I mentioned anywhere. Oh, that
+
+before I mentioned anywhere. Oh, that
+
+before I mentioned anywhere. Oh, that
+might be the model string
+
+might be the model string
+
+might be the model string
+or 40 40 maybe. Whatever.
+
+So, it's going to keep searching and uh
+
+So, it's going to keep searching and uh
+
+So, it's going to keep searching and uh
+looking around,
+
+looking around,
+
+looking around,
+watching cloud code. Check the read me.
+
+watching cloud code. Check the read me.
+
+watching cloud code. Check the read me.
+I searched my memory and didn't find
+
+I searched my memory and didn't find
+
+I searched my memory and didn't find
+anything, but Cameron is insisting maybe
+
+anything, but Cameron is insisting maybe
+
+anything, but Cameron is insisting maybe
+it's in a section I haven't seen yet.
+
+it's in a section I haven't seen yet.
+
+it's in a section I haven't seen yet.
+Current default is GLM 4.7.
+
+Um,
+
+oh, I may be out of sync locally.
+
+confirmed. No 4040 mini. Cameron's
+
+confirmed. No 4040 mini. Cameron's
+
+confirmed. No 4040 mini. Cameron's
+asking about the mechanics. How do users
+
+asking about the mechanics. How do users
+
+asking about the mechanics. How do users
+change the model? Um, you can export the
+
+change the model? Um, you can export the
+
+change the model? Um, you can export the
+letter UI. Uh, so you can go use the
+
+letter UI. Uh, so you can go use the
+
+letter UI. Uh, so you can go use the
+letter AD. Um,
+
+now it says Cameron's moving on. So this
+
+now it says Cameron's moving on. So this
+
+now it says Cameron's moving on. So this
+feels like prep for documentation, the
+
+feels like prep for documentation, the
+
+feels like prep for documentation, the
+current flow. Um, so it's it's uh
+
+current flow. Um, so it's it's uh
+
+current flow. Um, so it's it's uh
+anticipating me talking about
+
+anticipating me talking about
+
+anticipating me talking about
+documentation, which I think is kind of
+
+documentation, which I think is kind of
+
+documentation, which I think is kind of
+cool. Um, what's the urgency? Just
+
+cool. Um, what's the urgency? Just
+
+cool. Um, what's the urgency? Just
+documentation.
+
+documentation.
+
+documentation.
+So let's let's work on that stuff. Let's
+
+So let's let's work on that stuff. Let's
+
+So let's let's work on that stuff. Let's
+do that. It's like that. Yeah. So I
+
+do that. It's like that. Yeah. So I
+
+do that. It's like that. Yeah. So I
+think this is I think it's because I'm
+
+think this is I think it's because I'm
+
+think this is I think it's because I'm
+out of sync.
+
+out of sync.
+
+out of sync.
+Got updates. Let me check the read me
+
+Got updates. Let me check the read me
+
+Got updates. Let me check the read me
+now.
+
+Yeah, there we go. Okay, found it. The
+
+Yeah, there we go. Okay, found it. The
+
+Yeah, there we go. Okay, found it. The
+docs now have the model configuration.
+
+docs now have the model configuration.
+
+docs now have the model configuration.
+There's a fallback order.
+
+Go update that to better models.
+
+Yeah. So, it's saying sub was tracking
+
+Yeah. So, it's saying sub was tracking
+
+Yeah. So, it's saying sub was tracking
+how users change it, but we just pulled
+
+how users change it, but we just pulled
+
+how users change it, but we just pulled
+the update.
+
+Oh, sorry. I interrupted Claude.
+
+Oh, sorry. I interrupted Claude.
+
+Oh, sorry. I interrupted Claude.
+Subconscious was searching was tracking
+
+Subconscious was searching was tracking
+
+Subconscious was searching was tracking
+the how do users change it question but
+
+the how do users change it question but
+
+the how do users change it question but
+we pulled the update that adds it. So
+
+we pulled the update that adds it. So
+
+we pulled the update that adds it. So
+subconscious is always like a little bit
+
+subconscious is always like a little bit
+
+subconscious is always like a little bit
+behind claude. Um
+
+behind claude. Um
+
+behind claude. Um
+so you have to be like kind of wary like
+
+so you have to be like kind of wary like
+
+so you have to be like kind of wary like
+mindful of that.
+
+mindful of that.
+
+mindful of that.
+Um and subconscious is saying oh you
+
+Um and subconscious is saying oh you
+
+Um and subconscious is saying oh you
+should lead with curiosity. My context
+
+should lead with curiosity. My context
+
+should lead with curiosity. My context
+might be stale instead of correction.
+
+might be stale instead of correction.
+
+might be stale instead of correction.
+You're misremembering. So the current
+
+You're misremembering. So the current
+
+You're misremembering. So the current
+list is outdated.
+
+list is outdated.
+
+list is outdated.
+did sub update its memory. Did you see
+
+did sub update its memory. Did you see
+
+did sub update its memory. Did you see
+that in your context?
+
+that in your context?
+
+that in your context?
+And you can actually see what it's doing
+
+And you can actually see what it's doing
+
+And you can actually see what it's doing
+inside of the context, I believe. So,
+
+inside of the context, I believe. So,
+
+inside of the context, I believe. So,
+this is the stuff that I inject inside
+
+this is the stuff that I inject inside
+
+this is the stuff that I inject inside
+of here. Um, so it's basically just
+
+of here. Um, so it's basically just
+
+of here. Um, so it's basically just
+saying like uh just like, oh, your 40
+
+saying like uh just like, oh, your 40
+
+saying like uh just like, oh, your 40
+mini was was shorthand for blah blah
+
+mini was was shorthand for blah blah
+
+mini was was shorthand for blah blah
+blah. Good stress test. Okay.
+
+Uh, can't we do GBT5 stuff even though I
+
+Uh, can't we do GBT5 stuff even though I
+
+Uh, can't we do GBT5 stuff even though I
+don't like the models? Go do web search
+
+don't like the models? Go do web search
+
+don't like the models? Go do web search
+for current models.
+
+for current models.
+
+for current models.
+Um,
+
+Um,
+
+Um,
+subconscious has access to memory tools
+
+subconscious has access to memory tools
+
+subconscious has access to memory tools
+and such so it can update its memories.
+
+and such so it can update its memories.
+
+and such so it can update its memories.
+Yeah, sub the subconscious agent has
+
+Yeah, sub the subconscious agent has
+
+Yeah, sub the subconscious agent has
+like it's just an arbitrary let agent so
+
+like it's just an arbitrary let agent so
+
+like it's just an arbitrary let agent so
+you can actually have it uh Zashion has
+
+you can actually have it uh Zashion has
+
+you can actually have it uh Zashion has
+to drop. Thanks Cameron. Thanks for
+
+to drop. Thanks Cameron. Thanks for
+
+to drop. Thanks Cameron. Thanks for
+having Thanks for coming, Sebastian.
+
+having Thanks for coming, Sebastian.
+
+having Thanks for coming, Sebastian.
+Lovely to have you. Thank great
+
+Lovely to have you. Thank great
+
+Lovely to have you. Thank great
+questions. Um,
+
+questions. Um,
+
+questions. Um,
+so
+
+so
+
+so
+um, yeah, there's no memory updates
+
+um, yeah, there's no memory updates
+
+um, yeah, there's no memory updates
+here. Um, but yeah, you can put in web
+
+here. Um, but yeah, you can put in web
+
+here. Um, but yeah, you can put in web
+search like I've seen, uh, subconscious
+
+search like I've seen, uh, subconscious
+
+search like I've seen, uh, subconscious
+just like go do web searches to get
+
+just like go do web searches to get
+
+just like go do web searches to get
+information about bug reports and put it
+
+information about bug reports and put it
+
+information about bug reports and put it
+into the assistant message so that like
+
+into the assistant message so that like
+
+into the assistant message so that like
+Claude has that context available. Uh
+
+Claude has that context available. Uh
+
+Claude has that context available. Uh
+there is an open question about how
+
+there is an open question about how
+
+there is an open question about how
+useful clot subconscious is. So uh I
+
+useful clot subconscious is. So uh I
+
+useful clot subconscious is. So uh I
+have an open issue for that if people
+
+have an open issue for that if people
+
+have an open issue for that if people
+would like to contribute. Um but there
+
+would like to contribute. Um but there
+
+would like to contribute. Um but there
+there is an issue here for you know like
+
+there is an issue here for you know like
+
+there is an issue here for you know like
+we basically need evals on this because
+
+we basically need evals on this because
+
+we basically need evals on this because
+I don't I don't actually know.
+
+So
+
+So
+
+So
+um
+
+um
+
+um
+I don't really do we really want to
+
+I don't really do we really want to
+
+I don't really do we really want to
+recommend GPT5 nano? I don't think so.
+
+Uh
+
+that seems like a terrible ordering
+
+what what do you think is a is good
+
+what what do you think is a is good
+
+what what do you think is a is good
+here?
+
+here?
+
+here?
+Let's see what subconscious is saying.
+
+Let's see what subconscious is saying.
+
+Let's see what subconscious is saying.
+So it's found some current models blah
+
+So it's found some current models blah
+
+So it's found some current models blah
+blah blah.
+
+Yeah. Yeah. So it started it started
+
+Yeah. Yeah. So it started it started
+
+Yeah. Yeah. So it started it started
+doing web search also.
+
+doing web search also.
+
+doing web search also.
+So they both like kind of duplicated uh
+
+So they both like kind of duplicated uh
+
+So they both like kind of duplicated uh
+activity here. And you can kind of fix
+
+activity here. And you can kind of fix
+
+activity here. And you can kind of fix
+this with prompting
+
+if you would like to
+
+Yeah. So, it's up to you, I guess. But
+
+Yeah. So, it's up to you, I guess. But
+
+Yeah. So, it's up to you, I guess. But
+that's roughly how Claude subconscious
+
+that's roughly how Claude subconscious
+
+that's roughly how Claude subconscious
+works. So, I'll stop the demo uh there
+
+works. So, I'll stop the demo uh there
+
+works. So, I'll stop the demo uh there
+and uh ask people if they have further
+
+and uh ask people if they have further
+
+and uh ask people if they have further
+questions.
+
+questions.
+
+questions.
+Um so, I'll turn off my uh streaming
+
+Um so, I'll turn off my uh streaming
+
+Um so, I'll turn off my uh streaming
+here.
+
+here.
+
+here.
+Um yeah. So, do we have other questions?
+
+Um yeah. So, do we have other questions?
+
+Um yeah. So, do we have other questions?
+I think there's a maybe a few people
+
+I think there's a maybe a few people
+
+I think there's a maybe a few people
+typing here. Tyon is typing.
+
+Okay. Or maybe not.
+
+Okay. Or maybe not.
+
+Okay. Or maybe not.
+Okay.
+
+I'm in and out, but I'll watch the uh
+
+I'm in and out, but I'll watch the uh
+
+I'm in and out, but I'll watch the uh
+VOD later and dig into subconscious.
+
+VOD later and dig into subconscious.
+
+VOD later and dig into subconscious.
+Please do. Okay, if there are not
+
+Please do. Okay, if there are not
+
+Please do. Okay, if there are not
+further questions,
+
+further questions,
+
+further questions,
+um I will probably
+
+um I will probably
+
+um I will probably
+hop off here. So,
+
+hop off here. So,
+
+hop off here. So,
+um but yeah, thank you everybody very
+
+um but yeah, thank you everybody very
+
+um but yeah, thank you everybody very
+much for coming. Um oh, Vidant is
+
+much for coming. Um oh, Vidant is
+
+much for coming. Um oh, Vidant is
+plugging this here for anyone using
+
+plugging this here for anyone using
+
+plugging this here for anyone using
+external skills from their cloud code
+
+external skills from their cloud code
+
+external skills from their cloud code
+agents and migrating to let code there.
+
+agents and migrating to let code there.
+
+agents and migrating to let code there.
+He has a tool that allows you to move uh
+
+He has a tool that allows you to move uh
+
+He has a tool that allows you to move uh
+existing skills in your other coding
+
+existing skills in your other coding
+
+existing skills in your other coding
+agents to your Leta Skills uh project
+
+agents to your Leta Skills uh project
+
+agents to your Leta Skills uh project
+folder.
+
+folder.
+
+folder.
+So give that a shot. It's a good tool.
+
+So give that a shot. It's a good tool.
+
+So give that a shot. It's a good tool.
+Vant uh uh goat.
+
+Vant uh uh goat.
+
+Vant uh uh goat.
+Okay. All right. Ducking out everybody.
+
+Okay. All right. Ducking out everybody.
+
+Okay. All right. Ducking out everybody.
+Thank you very much for coming and uh I
+
+Thank you very much for coming and uh I
+
+Thank you very much for coming and uh I
+hope you have a lovely day or a lovely
+
+hope you have a lovely day or a lovely
+
+hope you have a lovely day or a lovely
+evening or week or weekend or whatever.
+
+evening or week or weekend or whatever.
+
+evening or week or weekend or whatever.
+Just a lovely uh insert thing here. And
+
+Just a lovely uh insert thing here. And
+
+Just a lovely uh insert thing here. And
+uh thanks very much for coming and I
+
+uh thanks very much for coming and I
+
+uh thanks very much for coming and I
+hope to see you next week.
+
+&gt;&gt; [music]

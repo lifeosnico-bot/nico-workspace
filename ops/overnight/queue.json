@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-03-02 17:16 EST",
+  "updatedBy": "Nico (Telegram)",
+  "defaults": {
+    "timezone": "America/New_York",
+    "schedule": { "hour": 2, "minute": 0 },
+    "baseBranch": "master",
+    "branchPrefix": "nico/overnight"
+  },
+  "items": [
+    {
+      "id": "OVR-0001",
+      "priority": "P2",
+      "status": "pending",
+      "title": "Phase 0E metadata standards enforcement",
+      "scope": "vault+workspace",
+      "gates": ["no_secrets", "branch_only", "pr_required"],
+      "notes": "Define enforcement rules + implement checks."
+    },
+    {
+      "id": "OVR-0002",
+      "priority": "P2",
+      "status": "pending",
+      "title": "Overnight runner: open PR with report",
+      "scope": "workspace",
+      "gates": ["no_secrets", "branch_only", "pr_required"],
+      "notes": "Runner reads queue, generates report, opens PR."
+    }
+  ]
+}

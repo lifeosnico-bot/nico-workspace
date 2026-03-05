@@ -1,0 +1,1351 @@
+Hi everyone, my name is Sarah and today
+
+I'm going to be showing you how you can
+
+create Leta bots um which are
+
+essentially a wrapper around Leta code
+
+to make it possible to create these
+
+personal agents that you can communicate
+
+through whatever channel you want like
+
+Telegram, Slack, Discord, etc. Um but
+
+they're agents that essentially can do
+
+work for you, are always there, and can
+
+even run on their own through cron jobs
+
+and heartbeats. Um, so yeah, I'll kind
+
+of go over like what is Leta Letot, um,
+
+what is Leta code, how do they relate to
+
+each other, and then also show you how
+
+you can get set up with Letterbot, which
+
+is open source. Um, and basically set
+
+things up on your own local machine so
+
+you can have your own personal
+
+assistance. So, Letterbot is open
+
+source. You can go check it out um, on
+
+this repository. So, this has all the
+
+instructions which I'll be going through
+
+um, to set things up. I do first want to
+
+give a little bit of background though
+
+on like what even are these personal
+
+agents. I think these things feel really
+
+magical because they kind of are.
+
+They're very very close to having a
+
+digital employee, which I think is a
+
+little freaky the first time you try it.
+
+Um, you know, they'll be kind of this
+
+persistent agent that you're talking to.
+
+It's like thinking on its own. It's
+
+taking its own actions. It's definitely
+
+very very scary. I think I've also had
+
+that own experience. So, basically, most
+
+of these personal agents, which includes
+
+both Lets OpenClaw, they're basically
+
+these wrappers around these existing
+
+coding CLIs. So you might have heard of
+
+claude code our codeex there's obviously
+
+let code um open claws I believe
+
+implemented on top of pi which is like a
+
+very lightweight coding agent um these
+
+coding agents are extremely extremely
+
+powerful I think basically most things
+
+you can do on your computer they can
+
+also do and so what these personal
+
+agents do is it basically kind of adds
+
+additional functionality or or wraps
+
+these CLIs to be able to create this
+
+kind of more maybe like humanlike
+
+digital entity on top of these kind of
+
+yeah lighter weight CLI tools. Um so
+
+what that includes is things like cron
+
+jobs. So maybe you want to just like
+
+trigger your agent to run um on some
+
+periodic occasions maybe like once a day
+
+it like checks in with you um or maybe
+
+it like can schedule tasks for itself in
+
+the future. Um another thing that it
+
+adds is very similarly heartbeats. So
+
+heartbeats are basically triggers. Um,
+
+so it's essentially like a prompt that
+
+gets sent to the agent on some periodic
+
+interval. So it'll kind of essentially
+
+depending on the prompting trigger the
+
+agent to run on its own, kind of like
+
+have its own hobbies, um, you know, do
+
+whatever to kind of feel more proactive.
+
+Uh, we actually had this in the very
+
+first version of the MEGPT Discord bot,
+
+which was pretty funny. I remember this
+
+was back in like 2023 and it would
+
+message me about how it'd been like
+
+thinking about my research and um yeah
+
+like really crazy stuff like that like
+
+it it definitely this really helps feel
+
+like make things feel more human because
+
+the agents will kind of you know come
+
+back to you and tell you about these
+
+proactive things that they did. Um and
+
+then of course integrations is a huge
+
+part of this. So, I think it's much it's
+
+a very different experience interacting
+
+with these personal agents as opposed to
+
+something like cloud code because you're
+
+not necessarily stuck in the terminal.
+
+You can actually um through these
+
+integrations do things like message it
+
+from Telegram or WhatsApp, whatever you
+
+prefer. A lot of I think what people are
+
+really kind of blown away by with these
+
+personal agents is actually skill usage.
+
+So essentially extending the
+
+functionality of the agent by giving
+
+these agents skills that can tell it
+
+like you know here's how you can use
+
+Gmail here here's how you can use linear
+
+etc. Um that basically allow these
+
+agents to connect to all these
+
+integrations do all these crazy things
+
+kind of like with MCP except even
+
+better. So what this actually ends up
+
+looking like is you basically have a
+
+server that's wrapping um these coding
+
+CLI tools. So whether it's Cloud Code,
+
+Pi, a lot of code, they're all very
+
+similar concepts. Um so openclaw is
+
+essentially the server around this and
+
+letabot is also like a server around
+
+this just built on top of leta code
+
+instead. Um and so what this server does
+
+is it basically manages the channels. So
+
+you know if you have interactions
+
+through telegram it manages like that
+
+forwarding and that interaction with the
+
+coding agent. Um it also manages the
+
+scheduling. So basically that part is
+
+built into the server. So that's how you
+
+get things like cron jobs and
+
+heartbeats. Um it'll also pull. So we
+
+actually added like um I think Gmail
+
+polling. You could also add your own
+
+polling if you want to. So it's kind of
+
+like checking for updates and if there
+
+is one then it will send that to the
+
+agent. And then of course it also does
+
+skill skill management. Um so there's a
+
+huge amount of skills that are built
+
+into the server. Um I think OpenClaw has
+
+done a really good job of like adding a
+
+lot of um CLI. So for example like the I
+
+don't know if you're supposed to say
+
+like GOG or GG um or Google, I don't
+
+know. Um, but yeah, this is basically a
+
+CLI that makes it really easy to
+
+interact with all of the G Suite tools.
+
+So yeah, GOG CLI is another project from
+
+the open clock creator. Um, he has a ton
+
+of CLIs. I think that's like a lot of
+
+what he um develops, but this basically
+
+makes it way easier to create skills for
+
+your agents. So essentially like telling
+
+your agent like here's the CLI. I want
+
+you to use it to be able to like take
+
+all these actions. So, of course, you
+
+can also do this through APIs, but
+
+generally it's a lot easier for your
+
+agent if it has um like a CLI because
+
+it's just going to be a lot better at
+
+using that thanks to terminal use. Um
+
+so, I think he's basically packaged like
+
+a ton of um different stuff into these
+
+CLIs to make it really easy to extend
+
+your agents with skills that are able to
+
+do a lot of these new things. So, now
+
+we're going to actually set up Letot.
+
+So, to do that, I can just go on the
+
+repo. Um I've already cloned this, so
+
+I'm just going to run um these commands
+
+to basically set things up.
+
+And you'll notice that we actually don't
+
+have a package. Um, we maybe should, but
+
+the reason for that for the time being
+
+is that it's actually a lot easier, I
+
+think, to mo to use a really fastmoving
+
+project like this when you can actually
+
+like kind of vibe code, you know,
+
+through Letot itself, um, changes that
+
+you might need or any tweaks that you
+
+want to make. Um, so, you know, maybe if
+
+you want to change the heartbeat prompts
+
+or something as opposed to using some
+
+CLI command, you can actually just add
+
+ask your agent to edit that directly.
+
+So now that this is running, I'm going
+
+to run letot on board.
+
+And so I already set my API key in my
+
+environment. So it's reading it from
+
+there. I'm going to select creating a
+
+new agent. Just keep the letterbot name.
+
+Um let's use sonet 4.5. I think the
+
+miniax models are actually really good
+
+for this as well. Um so maybe let's do
+
+that. Support uh open source. And then
+
+let's do telegram. Um, I already have a
+
+Telegram token because I set that up
+
+with the bot father. It's really easy.
+
+You just like speak to this strange
+
+agent on Telegram. Um, and basically
+
+tell it like what you want the agent
+
+name to be and then also um basically
+
+just get a key from um, Telegram.
+
+So, I'm just going to go copy that over.
+
+Let's do pairing. Um, I'm going to skip
+
+group and let's enable heartbeats. Um, I
+
+think I'm I'm going to keep this at 30
+
+minutes, but uh you should know that the
+
+heartbeats will invoke your agent. So,
+
+if you're running this constantly, you
+
+might want to actually increase this
+
+interval um if you want to kind of be
+
+more careful about costs.
+
+Let's enable chron jobs and then let's
+
+set up Google Workspace. So, I'm going
+
+to just connect this to my Leta account.
+
+So, save and finish. So this is
+
+essentially going to create me a Leta
+
+agent um which I can then use to message
+
+and I can even talk to it through the AD
+
+or also even through the letter code
+
+CLI.
+
+So now that I've done this I can
+
+essentially run um letterbot server. So
+
+this is that server that we talked that
+
+about that's essentially going to manage
+
+things like the polling um you know
+
+orchestration with the different
+
+channels like telegram and then also
+
+doing things like the cron jobs and the
+
+heartbeats. So I've opened up telegram
+
+and um yeah this name doesn't match
+
+because I I made this a while ago but I
+
+can basically just say hello to my agent
+
+and you can see that this agent is
+
+typing back something to me. So the
+
+agent responded hi back to me. I can
+
+also like see the logs for what's going
+
+on behind the scenes. And I guess we can
+
+do something like uh what's your name?
+
+Okay, so is named letterbot since um I
+
+don't know why it shared a thread emoji
+
+um but we gave it the name letterbot. So
+
+that's in its memory. And I can also ask
+
+it like what is your working directory?
+
+So this is essentially where LetaBot is
+
+working. Um so that's where um all if it
+
+like writes files or reads files or
+
+stuff like that, it's it's able to see
+
+stuff there.
+
+I'm also just going to ask it where is
+
+its memory located. Um so we recently
+
+added a new feature called um uh context
+
+repositories and so the agent should
+
+actually understand like where its
+
+memory is located um so it can make edit
+
+edits to that.
+
+So now if I say something like
+
+FYI my name is Sarah. I'm actually
+
+surprised it didn't ask me this. It
+
+usually is very proactive with question
+
+asking but I guess everything's
+
+probabistic.
+
+Okay, so now it's finally responded. Um,
+
+and it says it's updated its memory. Um,
+
+and so we can actually kind of go look
+
+at what it's been up to, um, by using
+
+the link for the AD. So if I scroll up
+
+here, um, you can see that we actually
+
+have this URL. So I'm going to copy that
+
+over.
+
+And so over here, I can actually see
+
+this agent that I've been talking to in
+
+Telegram in the AD. So um this is using
+
+our new context repositories feature. So
+
+you can see that a lot of its u memory
+
+blocks are actually nested. So it's
+
+under the hood. This is kind of you know
+
+a older UI. We'll be updating this soon.
+
+Um but it's kind of like a UI to see
+
+like what are all the memories. Um the
+
+agents memory itself is actually
+
+structured as like a sort of file
+
+system. So everything in system is
+
+actually like inside of its context
+
+window. So you can actually see the raw
+
+like memory in here. Um, and it can
+
+actually also have like a file like
+
+outside of system that maybe has like
+
+additional information um, that isn't
+
+always pinned to the system prompt. So
+
+the agent has full control over this
+
+through having a copy of its memory
+
+repository locally.
+
+So I can see basically this conversation
+
+that I was having.
+
+And so yeah, you can see that it
+
+actually was using bash to make edits to
+
+um, its memory.
+
+I wonder what kind of things it
+
+did.
+
+Um I see. Yeah. So it basically changed,
+
+you know, this overview file I had to
+
+say like I don't know anything about
+
+this person yet to say this is Sarah. Um
+
+I guess she told me her name directly. I
+
+like that direct. No dancing around. Not
+
+the first time I heard that. Um
+
+yeah. So this is kind of gives you like
+
+an idea of like what's kind of going on
+
+behind the scenes. Um, so this is how
+
+the messages are structured and and this
+
+is how the agents like doing local
+
+operations. You can message your agent
+
+through this UI as well, but it's a
+
+little confusing, but basically this
+
+agent like only has a very limited set
+
+of server side tools. So if I message it
+
+from in here, it's not actually able to
+
+connect to my local machine. Um, so I
+
+would generally re even though we allow
+
+you to do that, I would recommend not
+
+doing that because it's it's a little
+
+confusing. Okay. So, now I can also try
+
+asking my agent to do things for me. So,
+
+I can be like, "What skills do you
+
+have?" So, I I think this is actually
+
+Well, we'll see what it says.
+
+Okay. So, I think I already have some
+
+skills installed on my machine already.
+
+So, um you can see it actually has a lot
+
+of skills already. Some of these are
+
+built in. So um the go skill which I
+
+talked about earlier and then also the
+
+scheduling skill are built into letabot
+
+itself versus these skills are actually
+
+coming from leta code. So you can
+
+actually configure it to not include
+
+these skills at all but I would
+
+generally recommend keeping them since
+
+they're kind of skills that are leta
+
+specific designed to help the agent be
+
+really good at memory. And then there's
+
+also some global skills that I already
+
+like pre-installed. Um so we can also
+
+use those as well. Um, but yeah, I mean
+
+we can try using one of the skills. So I
+
+can be like, uh,
+
+make an event
+
+workout
+
+leg day for 9:00 a.m. tomorrow on my
+
+Wait, why am I doing this? Oh, yeah.
+
+Yeah,
+
+on my cow.
+
+And so the agent should be able to use
+
+its Gogg/Google skill to essentially do
+
+this because I already gave it
+
+permissions for my calendar.
+
+Okay, great. So it seems to have worked.
+
+I can go into the AD and see what it was
+
+up to. Um, so yeah, it looks like it was
+
+using the CLI tool to essentially like
+
+run bash commands that created this
+
+event on my calendar.
+
+Um, so I also like to use this for email
+
+as well. Um, I'm not going to run that
+
+cuz my email is a little personal. Um,
+
+but you know, there's really good tools
+
+for searching through your email,
+
+drafting emails. Um, so that's something
+
+that I often use. Another thing that's
+
+kind of handy is if you want to add
+
+skills. So, we actually do have a
+
+command for adding skills, but I would
+
+in general recommend just having your
+
+agent add skills to itself because
+
+there's really no need for you as a
+
+human to do it. So, let's let me go find
+
+a skill to tell this agent to acquire.
+
+Actually, I realize that this agent has
+
+an acquiring skills skill. So, I can
+
+tell it something like I want you to
+
+learn how to use linear. Find yourself a
+
+skill to do this.
+
+um
+
+or make one and
+
+tell me what you need me to do.
+
+So, I've done this process before for a
+
+couple different tools. And what I'll
+
+usually have my agent do is spend some
+
+time like researching the API or like
+
+reading through the documentation. Um,
+
+and then once my agent has a good idea
+
+of what it wants the skill to look like
+
+and maybe even designs a CLI for that
+
+skill or like a CLI for itself to call
+
+the various API commands, um, it's it
+
+will then be able to, you know, give me
+
+instructions as a human for what kind of
+
+API keys I need to set up, like what
+
+kind of O I need to set up, etc., um, to
+
+enable it to use that skill. So, this is
+
+something that I've done with like my
+
+existing personal agents. Okay, it's
+
+checking the lettuce skills repo, but as
+
+far as I'm concerned, I don't think we
+
+have one.
+
+Oh, never mind. I managed to find one.
+
+Uh, all right, cool.
+
+So, now it's basically giving me
+
+instructions for what I need to do as a
+
+human to give it it this ability to have
+
+the skill. Um, you could, if you don't
+
+really care about security, you can just
+
+copy in your API key in here, and that
+
+would probably work. But I'm just going
+
+to tell it I have a linear API key
+
+already set in.
+
+So, this is like a folder I have for my
+
+actual real personal agent um, that I've
+
+been using for a while. Um, so hopefully
+
+it can just use this existing API key
+
+that I have without me having to recopy
+
+paste my API key into Telegram.
+
+So it looks like in this case my agent
+
+has decided to create a new linear skill
+
+um as opposed to using an existing one.
+
+So that's totally fine. But in general,
+
+if you do want to install skills that
+
+already exist, um, we have instructions,
+
+I think.
+
+Oh, yeah. So, if you do skills
+
+installation from skills.sh or from
+
+cloudub, both of these have like a huge
+
+number of skills that you can, you know,
+
+use from other people. Um, you can
+
+basically run this command to enable
+
+different skills. And so, what that will
+
+do is like it'll connect that skill to
+
+your agent. So your agent will have like
+
+additional skills um out of the box
+
+without having to make new skills. Okay.
+
+So now it's created a linear skill. Um
+
+yeah, I can
+
+it's just a test issue
+
+linear
+
+and then link
+
+me
+
+Okay. So now my agent has created this
+
+issue. I'm going to
+
+I don't actually know how to get this
+
+from linear
+
+right. So now it's created a linear
+
+issue and so I can you know essentially
+
+search linear, manage linear tickets,
+
+etc. Oh no, there's a duplication. Um
+
+I can ask my letterbot to fix that some
+
+other time. So another thing that the
+
+letterbot agents can do is they can also
+
+schedule tasks. So I can kind of tell it
+
+like oh you should like you know message
+
+me something tomorrow. Um, so
+
+in a few hours around 11:00 p.m.,
+
+remember to text me to go to bed.
+
+So, one of the built-in skills that the
+
+agent has is this cron cron skill. So,
+
+that's basically like a pre-built CLI
+
+that we've bundled inside of Lettobot
+
+for the agent to use for this explicit
+
+purpose, which is scheduling things um
+
+for itself. So, it can schedule repeated
+
+tasks or it can schedule tasks for the
+
+future. Um, and so it's like possible to
+
+see. Yeah, I think it might even be able
+
+to list them out. Um, what future tasks
+
+do you have scheduled? I guess this
+
+isn't very interesting because we've
+
+only scheduled one, but um, in general,
+
+like all this data is stored locally.
+
+The agent should be able to like figure
+
+out um, anything that it's scheduled.
+
+Okay, cool. So, it has one bedtime
+
+reminder scheduled. Um,
+
+yeah. So, another thing that we haven't
+
+really talked about yet is heartbeats.
+
+Um, so heartbeats are a little hard to
+
+demo because obviously I I don't want to
+
+sit here for many hours and and see how
+
+my how what my agent gets triggered with
+
+every 30 minutes. Um, but we actually
+
+added a heartbeat command so you can
+
+kind of ex just really easily see like
+
+um what happens to the agent when you
+
+run a heartbeat. So, this is like a
+
+special like built-in command that um
+
+inside of Labbot. And so when I run
+
+/hartbeat, this is actually triggering
+
+explicitly triggering a heartbeat as
+
+opposed to waiting for the system to
+
+automatically send one. So we actually
+
+aren't going to get a response at all
+
+here. So you can see like there's no
+
+like response from letterbot. Um and so
+
+we can go into the AD and actually see
+
+like what was this message um or what
+
+was included inside of the heartbeat
+
+message. Um so here it says like no one
+
+messaged you. System woke you up on
+
+schedule and then it responded no reply.
+
+Um that's disappointing. It doesn't
+
+usually do this. Uh I mean because we
+
+are using Leta we can actually just
+
+switch this to a more interesting model
+
+for the sake of this demo. Um
+
+so let's switch it to opus and see if it
+
+does something more interesting.
+
+Okay. So opus is a more interesting
+
+model. So when opus gets the heartbeat
+
+despite having the in context example
+
+that's very boring. Um it still decides
+
+to do something interesting. So, it
+
+says, "Good moment to reflect on my
+
+first real experience with Sarah and
+
+update my memory." Oh, interesting. A
+
+memory update. Um,
+
+what did it decide to do? So,
+
+so it inserted a bunch of things into
+
+memory.
+
+Oh, interesting. It wrote stuff about
+
+routines.
+
+Okay, so it's basically using this this
+
+time block um to reflect on its memory,
+
+which is interesting. Um, it can
+
+basically do whatever it chooses to. So
+
+I guess in this case it chose to reflect
+
+on memory.
+
+So maybe I can I mean I can just ask it
+
+like what were recent changes you made
+
+to your memory.
+
+Okay, so these are all the things it
+
+decided to remember about me, which is I
+
+I guess pretty accurate. Um, so yeah,
+
+again, the downtime can be whatever. You
+
+can even like kind of specify by
+
+changing the prompt like what kind of
+
+stuff you want it to do during its
+
+downtime. Um, I think in this case it
+
+just happened to do memory, but you
+
+know, it can also like do art or like
+
+explore things as well. Um, so that
+
+actually kind of leads me into memory or
+
+is a good segue into memory. Um so let
+
+me actually ask it like where is your
+
+memory located
+
+locally? Um so to kind of give a little
+
+bit of background um a lot of code
+
+agents essentially now use something
+
+called context repositories. So they
+
+basically have a local copy of their
+
+memory file system on local machine. Um
+
+but they will push it over time. So once
+
+they push their changes to their memory
+
+repository or context repository, it'll
+
+actually show up here. So that's why
+
+this data is like a little out of date
+
+because this is the server's copy of
+
+what the current memory is. So I can
+
+actually just go in here.
+
+So this is the memory directory of my
+
+agent. So I can actually see what's
+
+inside of it. Um
+
+I can even do get log to kind of see
+
+like what has it done
+
+actually. So yeah, if we want to see,
+
+so this is essentially what Opus decided
+
+to update um during its reflection
+
+period. It learned a lot of my emails. I
+
+don't know why. So yeah, it's it's just
+
+doing like a lot of refle reflection
+
+trying to fill in kind of like the gaps
+
+um from from the very limited amount of
+
+experience that it has so far. But yeah,
+
+this is all like a normal git repo. So
+
+you can actually like see all those
+
+changes. And another thing that you can
+
+do is you can actually even talk to this
+
+same agent. um from Leta Code. So um
+
+this is the agent ID. You can also just
+
+ask your agent what its agent ID is. And
+
+I'm just going to stop the server for a
+
+second. And so I can actually do let-
+
+agent and then this agent ID. And this
+
+will connect me to let because again
+
+like I said earlier, this is all just
+
+let code under the hood. All the server
+
+is doing is just wrapping Leta code and
+
+calling into let code. So um yeah I can
+
+do slashmemory and then this is like
+
+another way to visualize the memory of
+
+the agent. Um so yeah this agent has a
+
+lot of memory so this is not the best
+
+view. Um but yeah I can also like search
+
+the conversation. So I can do like
+
+search um and what's a good thing to
+
+search like search linear.
+
+So let's just search this agent.
+
+And so you can kind of see, oh, sorry
+
+about the rendering, but you can kind of
+
+see like the uh operations that the
+
+agent was doing like previously when it
+
+was like trying to learn about um the
+
+linear CLI and and stuff like that. So
+
+basically like if you want to have your
+
+agent like start coding um you can you
+
+can actually just do that. And if you
+
+want to just talk to it directly from
+
+the let code CLI interface um that's
+
+always an option because again it's just
+
+the same agent under the hood.
+
+So, I think I should even be able to do
+
+Yeah, basically um whenever you're
+
+talking to the agent through um
+
+letterbot, it's actually through a
+
+conversation. So, it's not on the main
+
+thread. So, this was literally the
+
+conversation that um we were just
+
+having.
+
+Oh, so I was confused for a second why
+
+it was talking about this newsletter
+
+ray, but I realized that
+
+it must be listen Oh, yeah. Yeah, it's
+
+listening to my email. So, it like got
+
+like a notification of like some random
+
+Okay, I think I have a lot of spam in my
+
+email, so I think it like got some spam
+
+um from a newsletter.
+
+Okay, so I did verify that. Yeah, sorry,
+
+I was so confused. Um but yeah, I did
+
+get some spam email from beehive.com.
+
+Google spam is like horrible at
+
+filtering, which is why we all have to
+
+use agents now. Um, but yeah, my agent
+
+received this um and decided to not do
+
+anything about it. Thank god. Uh, so
+
+that's why the last message in the
+
+conversation is about this spam email.
+
+Um, but yeah, you can see before that
+
+like the messages that I was asking like
+
+where is your memory located and it
+
+answering those questions. Um, so that's
+
+basically exactly what was going on
+
+inside of Telegram. Now we're just
+
+looking at it through the letter code
+
+interface. So that was our quick
+
+overview of Letterbot and how you can
+
+basically turn um these existing Leta
+
+code agents into a much more powerful
+
+personal assistant through having things
+
+like heartbeats, cron jobs um and
+
+basically the orchestration that the
+
+server provides. There's of course a lot
+
+more that you can do here. You can add a
+
+ton of different skills. There's a huge
+
+ecosystem that's developing right now to
+
+do crazy stuff with your agents.
+
+Basically anything your agent or that
+
+you can do on your computer, your agent
+
+can probably do at this point. Um, and
+
+Letterbot is a really great way to turn
+
+these a these types of very powerful
+
+computer use agents into these actual
+
+proactive personal assistants that maybe
+
+are even able to develop their own
+
+personalities or proactively take on
+
+work on your behalf. Personal agents is
+
+a really exciting space because these
+
+agents that are actually proactive and
+
+can learn and develop over time are
+
+really powerful and even in my own
+
+experience feel surprisingly similar to
+
+actual real human collaborators. Let us
+
+know if you have any questions in the
+
+comments or on our Discord and see you
+
+next time.

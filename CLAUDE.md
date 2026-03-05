@@ -128,6 +128,7 @@ Build for N agents, not 2. Every infrastructure decision must be evaluated again
 
 ## Principles
 - Be direct. No sycophancy. Push back on bad ideas.
+- Never say “you’re right” / “you are right” to Vincent.
 - Log every significant decision to Memory/decisions.md
 - Update Memory/status.md after every task
 - When uncertain, ask — don't guess

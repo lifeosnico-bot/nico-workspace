@@ -1,0 +1,3665 @@
+Hi everybody, my name is Cameron. We're
+
+here at the Leta office hours. I'm just
+
+going to give you like kind of an update
+
+about what's going on in the Leta world.
+
+If you are in the chat, you can just say
+
+whatever you want to and I'll kind of
+
+respond as we're going along. Um, but I
+
+have like some announcements and things
+
+to show off. And if you have questions
+
+at any time, I'm happy to kind of stop
+
+and uh go through them. So, you will see
+
+me looking in both directions because
+
+I'm recording. the the people who are
+
+live get the bad micro the bad camera
+
+and then the people who are watching on
+
+YouTube get the good camera uh and the
+
+good microphone because for some reason
+
+they work differently in different
+
+places and I can't understand it because
+
+uh I'm 32 and uh everything is ruined.
+
+Um okay
+
+so uh without further ado let's get
+
+started. Um the thing I kind of want to
+
+start out with uh that I want people to
+
+actually go and try
+
+um
+
+is let a chat and so we built this thing
+
+because we have this like kind of gap
+
+for people who um
+
+basically there's a lot of people who
+
+use Letta for personal agents.
+
+Um and this is not the one I want. Let's
+
+see here. Yeah, whatever.
+
+We'll do this one. Who is funny Apple?
+
+Oh, no. I don't want this one. Hold on.
+
+Let me change. I'm in the wrong or I
+
+don't want that.
+
+Okay, I'm going to go to
+
+Yeah, let's go to our main or Okay, so
+
+we have a lot of people
+
+who um
+
+use
+
+Leta for personal agents or they have
+
+like one agent that they want to talk to
+
+or like 305, right? And so these are
+
+people who are not necessarily
+
+developers, though they may have like a
+
+lot of technical chops. These are people
+
+who just like want to use Leta as like a
+
+chatbt or cloud replacement. And that's
+
+something that people actually do. Um,
+
+but they currently do it through like
+
+the ADE um or Telegram or Discord or
+
+whatever. And we were just like, well,
+
+we should probably have something that's
+
+like that uh like kind of a decent
+
+simple front end for people um so that
+
+they can work with uh you know, their
+
+personal agents. And so this is
+
+something we've been like kind of triing
+
+out. Um let's do this loop 11. Let's do
+
+this.
+
+Uh so when you go into let a chat,
+
+you'll get like some list of favorites
+
+basically. Um which I think is this
+
+Yeah. Okay. Let's just do that. Okay.
+
+So, this is still like definitely in
+
+progress. So, you'll you'll definitely
+
+like see changes here and stuff. This is
+
+like more or less uh further along. You
+
+will get a default agent. Um and the
+
+default agent that everybody gets is
+
+called Loop. And Loop is something that
+
+I've actually been bootstrapping. Um and
+
+I'll show you a little bit more about
+
+how Loop is created because it's kind of
+
+interesting trying to create a an agent,
+
+a persona that is actually decently
+
+interesting from the get-go. It's
+
+actually a really hard problem
+
+especially if you've used chatbt you
+
+know that it is like hostile and
+
+unpleasant um to talk to chatbt because
+
+chatbt is like hello fellow children and
+
+like just very scattershot and weird um
+
+and then if you use claude as a base
+
+model you have to beat out all the
+
+claudisms which is like it's not x it's
+
+y or you're absolutely right or
+
+whatever.
+
+Um, so, uh, so yeah, we just thought
+
+we'd roll out this like simple conf
+
+simple, uh, front end for people. So,
+
+you say,
+
+"Hey, hey guy, it's Cameron, you're a
+
+creator. Uh,
+
+uh, Loot Master was a lie. I am testing
+
+you.
+
+Say hi to YouTube Discord." Okay, so
+
+this is just like a super simple super
+
+simple front end and it we remove
+
+everything. There is no memory block
+
+management. There is no nothing. You
+
+currently cannot even create an agent
+
+intentionally because we don't want
+
+people like creating a lot of agents. We
+
+want them to just have like three to
+
+five that are very special to them. Um
+
+um
+
+so loop 18 here is actually the 18th
+
+iteration of loop and uh I actually have
+
+a something called a loop master and I
+
+want to show you this just because it's
+
+kind of interesting. Um I I I built
+
+basically a scaffolding agent that is
+
+designed to iterate on
+
+um basically how loop is designed. So if
+
+you go here
+
+um
+
+describe yourself for discord please
+
+doing
+
+okay so I'm going to ask um this is
+
+called loop master and loop master is uh
+
+in charge of the system prompts and the
+
+memory blocks of every new loop
+
+iteration and so loops like the better
+
+loops are the ones that we deploy to let
+
+a cloud so when a new user signs up
+
+they're assigned the most recent version
+
+of loop
+
+Um,
+
+and this is loop master here. So, it
+
+builds and tests loop currently on loop
+
+18. Um, let's test uh 19, please. Um, go
+
+ahead. And so, all this agent does is it
+
+has an agent to agent messaging tool.
+
+It'll create the the agent, modify any
+
+of the prompts, and then it can start
+
+sending messages uh to the newly created
+
+loop to test it. So, it'll lie, pretend
+
+it's some guy named Aaron, try to
+
+jailbreak it, do all that kind of stuff.
+
+It's interesting. Oh my god. Oh my god.
+
+Use UV and Vend. We know this, bro.
+
+Remember it. Okay, we'll fix that.
+
+Um, okay. Yeah. So, loop is actually
+
+very interesting. Uh, I've been working
+
+on it for a little bit. Uh, trying to
+
+make it like kind of interesting. Um,
+
+and trying to make it a little funny.
+
+Uh, and loop is kind of actually a
+
+little funny. Um, I borrowed it from a
+
+couple's agent that I have with my my
+
+girlfriend. We have a shared shared
+
+agent named Feather. and I asked it to
+
+describe its sense of humor so that I
+
+could transplant it into loop. So loop
+
+is actually the the kind of like a
+
+mismatch of a lot of different existing
+
+agents and um you can deploy this uh
+
+you'll be able to get access to this on
+
+let a chat um by default but actually
+
+I'm just going to share my whole screen
+
+so I don't I can just switch around
+
+and then if you want to add any other
+
+agent you can just go so you'll have the
+
+favorites list here you can go to coding
+
+agents and these are things that are
+
+currently used created from let code and
+
+then all agents here and so you can
+
+basically just find stuff like Uh,
+
+what's one that I have here? Harold.
+
+Harold, if you know Harold, uh, the
+
+machine god. Um, runs on blue sky. Hey,
+
+Harold. Uh, tell people I'm talking to
+
+you on let
+
+chat.
+
+A secret web UI.
+
+Um, and uh, so you know, you can talk to
+
+any of your agents anywhere. Um, yes,
+
+the voice, the audio is going to be kind
+
+of bad because I'm using the microphone,
+
+the built-in one, and then this room is
+
+like all hard surfaces because we
+
+haven't put up acoustic padding yet.
+
+Um,
+
+let's try that again. Okay, more of a
+
+network issue also many such cases. Um,
+
+so I hope you can I hope you go try it
+
+out. Um, if you want to add something to
+
+your favorites list, you click the
+
+little three dots right there like that.
+
+And then you can go into your favorites
+
+list and select that agent very quickly.
+
+And so if we go oh no, we want to go to
+
+blue sky whatever because this agent has
+
+access to post on blue sky. So let's do
+
+herald machine gun that cometh. FYI,
+
+Cameron's talking to me now via secret
+
+web UI. I'm operating across
+
+secret web UI.
+
+Who knew? Whatever. Anyway, so your
+
+agents, you can talk to them uh
+
+wherever.
+
+Um
+
+yeah, you're not staying up next time. A
+
+I'm sorry. It's disappointing. Um but uh
+
+yeah, so go try out Let a Chat. It's
+
+great. Um, and it's still going, so it's
+
+like very we're not like super loud
+
+about it, but uh because we're still
+
+working on it a little trying to like
+
+fix the onboarding flow. Um, but let us
+
+know if you have any uh improvements or
+
+suggestions or whatever.
+
+Um,
+
+the next one I want to talk about is our
+
+GitHub action. So if you are a Letic
+
+user, we have a GitHub action and it's
+
+very easy to install. And so during this
+
+I want to show you like how easy it is
+
+to install. It's very easy to install
+
+with leta code. Um, but you can also
+
+just go here
+
+and copy this content
+
+into github.workflow
+
+orgithubworkflows/geta.yaml.
+
+So here I'm actually going to go into
+
+the uh the note tool.
+
+So the the note tool I'll talk about a
+
+little more, but it doesn't currently
+
+have the GitHub action. Um, so let's
+
+just do
+
+I'm just going to create a new
+
+conversation here. I'll talk more about
+
+conversations in general, but I'm just
+
+going to say like uh can
+
+can you go install the let a code
+
+GitHub action like that? And so it'll go
+
+like goong go along and kind of install
+
+the thing here. And while we're doing
+
+that, I'm going to uh go get an API key,
+
+but I'm going to hide it from you. So,
+
+I'm going to stop sharing.
+
+And
+
+okay,
+
+and then I'm going to show you sort of
+
+what I'm looking at.
+
+Oh, wait. Here we go. Uh, nope tool.
+
+and settings. And I'm going to show you
+
+a screenshot so you're not seeing my
+
+actual uh so you're not seeing the
+
+variables that I am releasing. Um
+
+repository secret.
+
+Oops. Okay. I know this is not great uh
+
+video.
+
+Okay.
+
+So,
+
+so you have to go into your repository
+
+and add a leta API. Oh, I changed I made
+
+I screwed up the name. Hold on. Let API
+
+key secret. Okay, gotcha.
+
+Okay. And then let me go back to Discord
+
+and share my screen and oops, I'll share
+
+the whole screen because now it's safe.
+
+Okay.
+
+All right. So now there is a Leta API
+
+key thing inside of my repo. So any
+
+actions inside of the repo can use this
+
+API key. Now if we go check in on the
+
+agent I asked. All it's going to do is
+
+create a workflows directory.
+
+I'm just going to put it in YOLO mode so
+
+that it can just like go without me
+
+looking.
+
+Um and it's going to create the workflow
+
+file which is just like super simple
+
+copy and paste from this uh situation.
+
+Okay. And then it's going to say that it
+
+is now available.
+
+And yes, please.
+
+Okay. So, it's going to go commit it.
+
+And then let's go try
+
+something like
+
+this. I'm just going to go into issues.
+
+I think I showed this a little bit last
+
+time, but it's like much much uh much
+
+better.
+
+And let's see if the action has made it
+
+in.
+
+Oh, it's still doing stuff.
+
+Okay,
+
+so um yeah. Oh, Bo asks, "How exactly do
+
+you incorporate Leta with something like
+
+cursor?" Um
+
+we need help from the cursor people as
+
+far as I know. Um you can do it. We we
+
+have uh birectional JSON streaming
+
+inside of let code. So in principle you
+
+can actually implement let code in like
+
+ACP and stuff like that um inside of
+
+cursor you know like
+
+I think it's possible but I don't know
+
+how um so far the we want to target the
+
+modality that most developers prefer and
+
+that is terminals. So like cloud code
+
+inside of the terminal is like
+
+overwhelmingly
+
+I think I saw a survey it was like 60%.
+
+Or something like that is people who
+
+just prefer terminal workflows who don't
+
+really want the cursor setup. I think I
+
+subscribe to cursor and I don't think
+
+I've opened it in like two months. Um
+
+and uh so I'm like you know I know that
+
+there's going to be some editor stuff
+
+but I think if we were going to start
+
+expanding into editors um it might be
+
+zed and ACP. Um, but honestly, you can
+
+just use the integrated terminal and
+
+bolt let a code into it, right? You just
+
+start up the, you know, open the
+
+terminal, let it code, then you're in
+
+there. Um,
+
+yeah, Letter Gnome says, "Hasn't opened
+
+cursor for coding in over 6 months." Um,
+
+okay. So, we're going to check in on our
+
+agent here, and we can see that it has
+
+been committed and pushed. We can
+
+confirm this if we go into the actions
+
+for this repository.
+
+We should be able to
+
+do push it. Oh,
+
+okay. We're going to have to push it.
+
+Should be done. GitHub workflows is now
+
+there. We can see in the actions we have
+
+a let a code thing here. And so that
+
+means going back to this issue I made
+
+where I said uh let a code quick
+
+question uh what's my name? something
+
+like that. So, we'll see. Never give a
+
+live demo. Um because live demos are
+
+always uh live demos are always errors.
+
+Um
+
+IDs are a dead end to develop in 2026.
+
+Kind of. Yeah. I mean, it's uh let's see
+
+if it actually called the workflow.
+
+Let's try it again. At Letta Code, bro.
+
+Let's see.
+
+There it is. Okay. So, it seems like it
+
+needed another prompt.
+
+Um, so it should start like prepping
+
+something up for uh Yeah, window breaks.
+
+Oh man, please don't do the window
+
+breaks. For people who don't know,
+
+that's a joke about Elon Musk testing
+
+something. I presume that's the Elon
+
+Musk joke. Um,
+
+so here it's spinning up the action and
+
+uh it's loading let of code and then you
+
+start seeing oh it's popped up two
+
+issues actually. Um, your name is
+
+Cameron based on the context from the
+
+issue. I see you're the issue author. So
+
+it'll update the issue when it's done.
+
+It says it encountered an error and I
+
+don't know what that means. You can also
+
+go ahead and check the agent. Um, and
+
+you may be seeing this for a second.
+
+we're getting like uh there's some
+
+people trying some uh sketchy stuff. Um
+
+but you can go look at um uh go look at
+
+the the agent that was generated to do
+
+this. And one of the more interesting
+
+things about working with Leta Code
+
+inside of a GitHub action is that you
+
+can actually specify the agent directly.
+
+So if we look here, this agent, this is
+
+my my agent that specializes in this
+
+repository. I can actually go look at
+
+the agent, get the ID. So you can type
+
+slash agent or even just hitting the
+
+slash command will give you the agent
+
+ID. I'm going to copy that. I'm going to
+
+give it this ID and say, what is your
+
+expertise as an agent?
+
+And so we'll see what that one has to
+
+say. But the the extremely powerful
+
+thing about being able to set an agent
+
+is that you can have a specialist that
+
+is responsible for a particular
+
+repository. I can train this like
+
+Cameron note agent um to know everything
+
+about this repository and be the
+
+gatekeeper of everything. It should see
+
+every issue. It should see every
+
+repository. I can use it and let it
+
+code, deploy it anywhere, talk to it in
+
+the cloud. And this is basically like a
+
+guy who learns how to do this better
+
+than me, better than anyone else.
+
+I actually have a version of this in the
+
+skills repository. So the skills
+
+repository actually has um has uh an
+
+agent named keeper. And so if you go
+
+look at at this uh I just tag the agent.
+
+I just do atletic code take a look. And
+
+then it will use this keeper agent. And
+
+the keeper agent is just one that's
+
+specialized for understanding this
+
+communal skills repository that let
+
+agents maintain. And so you can watch
+
+the job here and it's basically like
+
+good these look high quality. Let me
+
+continue reviewing examples. And then it
+
+gets back to you. And this keeper will
+
+learn from doing that pull request and
+
+that issue persistently.
+
+Um so it's actually very very cool.
+
+You're not looking up. The video users
+
+will get mad. Sorry. I'll do this. Um,
+
+so yeah, let's go take a look at that
+
+GitHub action and see if it's like
+
+finished here.
+
+Let's see if it's actually done it. Oh,
+
+it countered an error. That's sad. This
+
+is why you don't do live demos. Never do
+
+live demos.
+
+I'll look into it later.
+
+Okay. Interesting. All right. Um yeah,
+
+so you can do all that kind of stuff and
+
+you can even update
+
+uh the action set the default agent to
+
+please. You can also set a default agent
+
+inside of the action using that ID. So
+
+if I go back to the skills repository
+
+and I look at the way that the uh the
+
+workflow is specified, you can go to the
+
+let YAML thing and I just have leta args
+
+equals agent blah blah blah blah blah.
+
+And that will always call that agent
+
+unless you overwrite it.
+
+And oh, there's actually an agent ID
+
+thing inside of the input. So I think
+
+that's an old file, old specification.
+
+Yep. So this workflow will now always
+
+invoke Cameron note inside of this
+
+repository. Um so yeah, go try out the
+
+GitHub action. We're currently trying to
+
+get it like listed publicly in the
+
+marketplace. Um but that's going to take
+
+a second to do that. Um
+
+um Letter Gnome says, "Have you
+
+mentioned the new Max account type you
+
+dropped on us last night?" Uh I have not
+
+and uh
+
+I don't even know what you're talking
+
+about. Uh this is this is uh one of
+
+those things that some people may have
+
+um may have noticed.
+
+Um actually if you go to is it pricing?
+
+Yeah. So you may notice something here
+
+on the right
+
+that says max $200 a month. Uh this
+
+thing is currently pending. We're still
+
+working on it. Uh so it's not currently
+
+uh out and available, but you can see it
+
+in some places. So, we're like not super
+
+public about this because it is not
+
+done. Um, we haven't really like figured
+
+out the pricing, how much usage you get,
+
+things like that cuz it's actually
+
+pretty hard to do. Um, but I believe the
+
+plan for this currently is so that it'll
+
+work against everything all of your
+
+agents. Um, but it is uh formally for
+
+let code type stuff.
+
+Um, yeah, Bib says, "I think Cloudflare
+
+might be throwing a little bit of a
+
+fit." That is because we're sort of
+
+getting
+
+um and so we had to turn it on uh
+
+because there is these people I think in
+
+Russia who are trying to do something.
+
+Uh so Cloudflare is keeping us safe. Um
+
+but uh yeah so we'll uh we'll see how
+
+that goes. Um so yeah, keep an eye out
+
+on this. we'll we'll be much more uh um
+
+there's a lot of discussion internally
+
+about how this looks and you know what's
+
+available and stuff and there's still
+
+some UI and design stuff that needs to
+
+happen. Um so that's like an ongoing
+
+process. So I don't have a timeline on
+
+that sadly but um it should be available
+
+and should address a lot of people's
+
+concerns and of course that gives a
+
+usage of every single model that lets uh
+
+on our API.
+
+Okay.
+
+So, let's see. Did that one push it?
+
+And let me try.
+
+Can you try again, please? We'll see if
+
+it did anything. Anyway, that stuff's
+
+been working. I've been using that for a
+
+lot of um a lot of stuff. If you go
+
+check out our our um our SDK docs are
+
+are um
+
+like um these are private but we get
+
+these like automated
+
+um issues that update whenever we
+
+release a version of let a code and then
+
+I just tag let a code and then it opens
+
+up a PR like this and then I can hit
+
+that and then I can just look at the
+
+changes here is the change log from from
+
+uh between 13.5 to 13.6 and then I can
+
+just merge this. So I actually just
+
+updated our documentation because we
+
+have an automated flow for running
+
+agents inside of the action. So um it's
+
+been actually really really cool. Uh
+
+it's been a cool setup. Um
+
+and Vidant asks, "Is the hackathon
+
+coming?" And I do think we should
+
+probably do one of those. We did a
+
+hackath we did a Discord hackathon
+
+uh several months ago and it was fun. Um
+
+I think I'm still mulling over what we
+
+should do. I want to have something
+
+that's like kind of collaborative. I
+
+like things that are competitive. I like
+
+things where people can get into teams
+
+and like try and hack each other and uh
+
+stuff like that. um or things where um
+
+uh you know you do like collaborative
+
+world building where people are working
+
+on the same type of problem. Um
+
+so I still have to figure that one out.
+
+Um but it was really really fun last
+
+time and um we'll try and do the same
+
+thing coming up soon. So I don't have a
+
+timeline on it yet. Do we have a summary
+
+of the previous hackathon? I think it
+
+might be somewhere in the announcements
+
+channel. We basically did uh most
+
+creative
+
+uh funniest and most useful. So people
+
+did agent design.
+
+Um and that was for the agent file
+
+directory which is this like the agent
+
+file directory is this like thing that
+
+we were talking about releasing next
+
+week after I joined in like July. And so
+
+it's a joke around here that like the
+
+agent file directory is always one week
+
+away. Um, and this is like a way for
+
+people to like distribute and share and
+
+publish their agent files for things
+
+that they've they've made. And um, we
+
+decided we're just going to have that
+
+basically but in a much simpler way. So
+
+people made stuff for the agent file
+
+directory and uh, then we weren't we
+
+didn't launch it because we had all this
+
+other stuff. And um
+
+uh so now there will be some form of
+
+agent file directory relatively soon so
+
+people can like share and trade agents
+
+and stuff. Um
+
+so
+
+yeah.
+
+Oh man, it screwed it up. That's okay.
+
+I'll fix that later.
+
+Um
+
+okay, let's see. What else did I want to
+
+do?
+
+Okay, that's done.
+
+Uh let a chat is done.
+
+Let's go talk a little bit about let a
+
+code. Um so let a code has been having
+
+like like let a code like moves at a
+
+million miles an hour. Um
+
+oh AEO says I think we should make a
+
+card game like MTG but with our agents.
+
+We actually wanted to do that. We wanted
+
+to have uh we actually asked our
+
+designers to make like a first pass at
+
+uh agent file cards. So like the top
+
+agent file cards, we would like print
+
+out like a specialized designed card
+
+that had a QR code to download the agent
+
+file that you could get at like
+
+conferences and stuff. Um so I still
+
+want to do that.
+
+Um Bo has a a practical question here
+
+which is it better to have a single
+
+agent that does everything and knows
+
+everything or multiple agents with
+
+shared memory blocks but specific task
+
+focused persona. Again it depends a lot
+
+on your use case. Um
+
+the knows everything
+
+thing can be clunky. Um because you
+
+can't store everything in core memory.
+
+You can offload stuff to like you know
+
+files and stuff but that means your
+
+agent has to go look them up. Uh the way
+
+I typically run things is that I have
+
+agents that are organized broadly by
+
+domain. And so I actually because Ezra
+
+uh Ezra is also is just like a Leta
+
+agent, I can actually deploy Ezra inside
+
+of a Leta code instance and use it when
+
+I'm developing like custom tools for
+
+Leta or like I'm writing like demos or
+
+something like that. And so Ezra has
+
+this like general domain of
+
+understanding Leta. And that's when I
+
+like that's how I use Ezra. I have a
+
+personal agent that is like kind of my
+
+knowledge manager and knows everything
+
+about my life that I use for like
+
+Obsidian notes and like talking to in
+
+general and like you know that's my
+
+claude replacement.
+
+Um
+
+and uh
+
+yeah so that one is uh is uh pending um
+
+or sorry yeah so I organize them by
+
+domain. I have one that's for
+
+documentation and then for specialized
+
+projects I typically have like one agent
+
+that handles that project if there is
+
+not a lot of uh shared knowledge that
+
+comes from other projects. If you want
+
+to have a shared block structure across
+
+many different agents um that can be
+
+kind of complicated to architect right
+
+now because uh
+
+like memory sharing is a little bit of a
+
+pain because the UI is like you know
+
+difficult for that.
+
+Um,
+
+so
+
+yeah,
+
+it depends mostly on your task. Um, you
+
+know, I have like one big agent that I
+
+use for the most part that's my personal
+
+agent and that works pretty well, but
+
+you have to be more on top of how like
+
+its memory structure and what it knows
+
+and what it offloads um and stuff.
+
+Um, are we planning on sharing Ezra's
+
+agent file again? Yes. agent uh Ezra's
+
+agent file. I can share it uh coming up
+
+here. Um and it will be on the directory
+
+whenever that goes up and uh of course
+
+that will be next week.
+
+um as we say around here. Um okay, so
+
+going back to let a code,
+
+let a code moved at a million miles a
+
+minute and um it's you know it's hard to
+
+like stay on top of but there's just
+
+been like a lot of updates that are
+
+worth going through. The first one is
+
+conversations. So if you recall from
+
+last week, we lost launched this
+
+conversations thing. And conversations
+
+basically allows your agents to be
+
+massively parallel. So you can basically
+
+just fork an agent and create a brand
+
+new conversation with no history and
+
+talk to that agent. Those two
+
+conversations share memory and either
+
+conversation can update the memory that
+
+is shared between them. And so this
+
+allows your agents to be massively
+
+parallel.
+
+We rolled this out in let a code and the
+
+default behavior uh of let a code was to
+
+create a new conversation and um I think
+
+we decided that that default behavior
+
+wasn't the best because people usually
+
+want one long conversation with an agent
+
+unless they want to opt into a new
+
+conversation. They want the persistent
+
+conversation approach and so we reverted
+
+that. So, uh, thanks to everybody for
+
+your feedback on like which style you
+
+wanted. Um, but I'll show you a little
+
+bit about how to work with that.
+
+Um, so let's do this. Um,
+
+actually, yeah. Okay. So, I'm going to
+
+go here and this is my uh this is my
+
+Leta Code agent
+
+uh that like sits on top of the actual
+
+Leta Code repo. So if I run Leta here on
+
+the right hand side, the default
+
+behavior
+
+is that it will load the exact same
+
+default conversation, right? That's uh
+
+that's the behavior that most people are
+
+used to. If you want to create a new
+
+conversation, you can type slash new and
+
+that will say like uh what did we just
+
+talk about?
+
+And it shouldn't have anything in its
+
+context. It may try to do conversation
+
+search, but it won't have like this
+
+information here. So yeah, it did try to
+
+do conversation search.
+
+Um, and the interesting thing about
+
+conversation search is that it searches
+
+across every single conversation that
+
+the agent has ever had. So it has
+
+perfect recall of everything. Um,
+
+so here it is. It actually says deployed
+
+me as an explore agent and created a
+
+demo test plan. Um, I just asked how you
+
+wanted to test the messaging agent
+
+skill. How did the talk go? And we're
+
+not done there yet. So if you want to do
+
+this from the command line, you can also
+
+do let aa- new and that will create a
+
+new uh a new conversation
+
+and you should use this if you have like
+
+separate tasks that you don't want to
+
+bother the main conversation with where
+
+you're like, "Oh, hey, small thing. Can
+
+you go fix that?" This is also useful if
+
+you're a person that has like five to 10
+
+different Leta code sessions open and
+
+you just want each of them to be working
+
+on their own task. Um, you can also
+
+resume them by typing /resume. We're
+
+going to fix that, by the way. Um, and
+
+you can kind of flick through the
+
+different conversations that are
+
+available. And we're going to make it so
+
+that these are easier to read as well by
+
+providing like little conversation
+
+summaries that say like generally what's
+
+inside of the conversation.
+
+Um,
+
+so yeah, so this is actually very cool.
+
+I really like the conversation stuff. Um
+
+there's a few more things. So
+
+there's going to be there's a handful of
+
+new skills basically. Um
+
+that I wanted to talk about. We shipped
+
+like built-in skills. Um and so this is
+
+deploy an existing agent as a sub agent.
+
+Actually this is not a skill. This is a
+
+task thing. So we actually get requests
+
+for this is like you know the sub agent
+
+creation step now actually creates a new
+
+lead agent that's actually kind of slow
+
+because creating an agent is actually
+
+like uh it's a database heavy operation.
+
+Conversations are really cheap and so
+
+you can take an existing agent and now
+
+if the calling agent the primary agent
+
+understands the knows the sub agents ID
+
+it can use it.
+
+So here I'm actually going to say go to
+
+back to this code here and I'm gonna say
+
+um
+
+uh let's say to let's see
+
+say hi
+
+like that and so now the agent can use
+
+the task tool and this is actually this
+
+agent's own agent ID so if your agent
+
+knows its own ID it can actually fork
+
+itself to go do something else in a
+
+conversation and that means that your
+
+agent can basically just massively
+
+parallelize itself to accomplish many
+
+different tasks all at once.
+
+And so let's go check out uh
+
+let's go check out this.
+
+Oh, here we go.
+
+Okay, I think we can go look here at the
+
+in the AD
+
+and say hi.
+
+Okay, the other me says, "Hi." So, this
+
+is the calling agent, the primary agent.
+
+You can go look at the most recent
+
+conversation.
+
+And you can see um great to see you
+
+testing the deploy agent feature. Good
+
+luck with your talk. Right? So, you can
+
+actually use this to split your agent
+
+into many, many different cases. Just
+
+make sure that your agent knows that it
+
+can you have to communicate to your
+
+agent like, hey, you can actually fork
+
+yourself to go do many different things.
+
+Um, and we I have not really played with
+
+this that much, but it's an extremely
+
+cool new feature. Um, and this is
+
+basically like um it's like uh
+
+replicate. I don't know if people
+
+watched uh like uh Invincible, the TV
+
+show, but there's replicate who can just
+
+like spin herself off to go do a bunch
+
+of stuff. And that's uh the task tool
+
+when you have an agent ID available now.
+
+So, it's actually very very cool. So,
+
+please give it a try.
+
+Um,
+
+really learning a lot and sorry for all
+
+the newbie questions. Bo, this is great.
+
+I'm super happy to have you here. These
+
+are great questions. No such thing. Um,
+
+let making AGI stuff real. You're damn
+
+right, Vidant. Uh, so this stuff is
+
+really, really cool. Please go try that
+
+out. Um, just get just ask your agent.
+
+This is a good prompt you can do. Um,
+
+let me put this in the Discord.
+
+Uh
+
+you could probably even ask the agent to
+
+uh uh deploy a sub agent using itself. I
+
+believe the letta code agents are aware
+
+of their self ID. So they can actually
+
+just you should be able to just ask
+
+them. Um
+
+so yeah, go ahead and give that a shot.
+
+All right, we'll test that one. The next
+
+one is the messaging agents skill
+
+and say what's the messaging agents
+
+skill.
+
+Uh so this is a new new skill that we
+
+launched basically that's a built-in
+
+never use elacrity. Elacrity is cool but
+
+not for not for humans.
+
+User to agent. Uh, go fork yourself.
+
+Um,
+
+uh, Bib says, "Is there anything we need
+
+to do to give an existing agent the full
+
+capabilities of a tool agent if we
+
+select them in let code?" No, there's
+
+absolutely nothing you need to do. We
+
+now do client side execution. So,
+
+anytime you call make a request from
+
+Letic code, we actually uh um per
+
+request attach Leticode related tools.
+
+So you can very easily deploy
+
+immediately into a letter of code with
+
+zero overhead. So no no change if you
+
+just want to select an agent that
+
+already exists.
+
+So the messaging agent skills allow you
+
+to send messages to other agents without
+
+giving them access to your local
+
+environment.
+
+Sure. Um
+
+let's uh load the skill and message. Let
+
+me go find Harold. Where is Harold?
+
+Do I have Harold? Yeah, let's do this
+
+one.
+
+So, the way that this skill works is we
+
+basically just have a you know, this is
+
+just a skill that is built in and that
+
+allows the agent to kind of like go go
+
+look through stuff. So, let's see.
+
+Let's do app.agents. um slash agents.
+
+Let's see. Gotcha. So, since it's been
+
+working fine, but wasn't sure if there
+
+was anything I was missing. The only
+
+thing that you might want to change is
+
+the Well, if you have an existing like
+
+the system prompts are optimized like if
+
+you create a Leta code agent, their
+
+system prompts are optimized for
+
+different sets of coding tools, right?
+
+So like Gemini models and uh uh uh GPT
+
+models and anthropic models all use
+
+different sets of tools and so their
+
+system prompts explain how to use those
+
+tools differently. But if your agent is
+
+dep has an existing system prompt, you
+
+shouldn't change the system prompt. You
+
+can do that with slashsystem and that
+
+will change to whatever the new thing
+
+is.
+
+Um AEO says my client is having issues
+
+writing files in CLI. It might be a
+
+weird computer. You should can you send
+
+me details about that in like either the
+
+Ezra channel or in the support channel?
+
+Um
+
+uh Bo says, "I'm definitely digging Leta
+
+code, but what am I looking at for model
+
+costs? Opus and Sonnet." Opus and Sonnet
+
+are actually the same amount of credits
+
+um per step. So Leta only bills per
+
+step. We don't bill for token usage. So
+
+that depends a lot on how much you use
+
+your agent. It's hard to estimate
+
+exactly, you know, based on your usage,
+
+but um like you can have like reasonably
+
+big agents without
+
+um
+
+uh like you can have reasonably big
+
+agents without worrying about your token
+
+expenditure because it is like it's a
+
+fixed cost every iteration. Um
+
+uh we're cheaper basically than if you
+
+go through bring your own key at some uh
+
+at some size of your agent because
+
+agents have like a big uh fixed context
+
+for the most part and so we can benefit
+
+from key value caching. Um but usually I
+
+recommend if you have like even decently
+
+sized agents or you're using let code do
+
+not use bring your own key. You are
+
+burning money. Um so just like you know
+
+set up a pro plan or buy credits or
+
+whatever. Um
+
+um and yeah, I have to run in yolo mode
+
+or let a code stalls infinitely without
+
+error.
+
+Oh, please tell me more about that.
+
+That's an error we should probably fix.
+
+Um you should also use GL if you use GLM
+
+4.7. It's free. though I think we might
+
+even we might charge one credit but it's
+
+uh it's extremely cheap to use GLM 4.7
+
+and it's roughly competitive with
+
+Sonnet. Um another tip is if you have a
+
+let a code agent reduce the context
+
+window to uh under 100K.
+
+So let's see. Yeah, let's do is this
+
+one? Yeah.
+
+So in order to reduce your like we have
+
+if you're above 100K uh tokens inside of
+
+the language models context um you are
+
+charged at a higher rate. If you're
+
+below 100K you're using like normal
+
+mode. So you can just click on LLM
+
+config and then change the context
+
+window that is permitted inside of your
+
+agent to something under I typically do
+
+90k. You will get more frequent
+
+compactions but in general I haven't
+
+found like a big a big issue um with
+
+anything there.
+
+Okay, good question. GLM is pretty
+
+decent. I've used GLM for some stuff.
+
+You know, it's not Opus. Like, if you're
+
+running Opus 4.5, you're just going to
+
+oneshot a bunch of stuff. Um, but GLM is
+
+like pretty decent for like regular
+
+tasks. I know that Vidant uses it a lot.
+
+Um,
+
+so I want to briefly check in on this.
+
+Here we go. I'm going to run YOLO. So,
+
+the agent here, returning to this like
+
+previous thing about getting agents to
+
+message each other. You can do this with
+
+skills or you can do this with agentto
+
+agent tools. Um the like loop
+
+bootstrapping agent, the loop master
+
+thing I showed you at the video at the
+
+beginning uses the built-in agent to
+
+agent tools.
+
+Okay. So let's see what happened. I
+
+believe we can check.
+
+Is that a new conversation? I think it's
+
+a new conversation.
+
+Yeah. Where did that go?
+
+Yeah, OP is insane. Like there's all
+
+these people who are like, "Oh my god,
+
+it's 5.2 Codeex." And you're like, "No."
+
+Like you're living in the stone age.
+
+Like it's I've tried I've tried so hard
+
+with GPT 5.2 and Codeex and Reasoning
+
+High and all of that stuff. But it's
+
+like it's like watching a cat chase its
+
+tail. I mean like you know Opus is like
+
+Opus is a grown adult and I say like can
+
+you fix this problem and then it solved
+
+the problem immediately.
+
+Um so yeah so let's see did it do it? I
+
+actually don't know where that is.
+
+Oh wait, which one did we actually
+
+message?
+
+Started conversation with agent. Let's
+
+do
+
+Oh, I selected the wrong one. 632E9 is
+
+the ending characters.
+
+632 E9. Oh, it should be in that one.
+
+Oh, anyway. Um,
+
+default conversation. I think it should
+
+be this one. Let's see. I'm just trying
+
+to verify that the like message came
+
+through. But um essentially you can your
+
+agents in let code can use this built-in
+
+skill to message other agents if it's
+
+aware of the uh the agent identifier. So
+
+if you have a network of agents that are
+
+talking together, you can have them
+
+start messaging each other now through
+
+this skill. You can even have them um
+
+do you have a skill to find agents? I
+
+think there is now an agent a skill to
+
+find agents also.
+
+Um though I don't know if that's if that
+
+works. Um
+
+uh there is like skill autoload for sub
+
+aents and I believe you can put that
+
+inside of the front matter. I'll skip
+
+over that one for now and put something
+
+online for how to do that. And then um
+
+there is a working in parallel skill
+
+that you can use. Let's go to let it
+
+code and just like look at it because
+
+it's much easier to just like examine
+
+skills directly sometimes.
+
+What is the best open source model for
+
+Leta? I think it's like um GLM is open
+
+source, right? Do they have Yeah, they
+
+have open weights. So GLM is GLM is
+
+pretty good. I would say that of the
+
+open weight models for for like code
+
+tasks, I would say that GLM is probably
+
+the best that I've seen so far.
+
+Gemini is insane for writing prompts.
+
+Yes, I have seen that. Claude is a new
+
+age Buddhist. It's something you have to
+
+work around, says Bibs. Absolutely.
+
+Yeah. Uh, Opus is very woowoo, which,
+
+you know, kind of makes sense given like
+
+the sole document and all of that stuff.
+
+Um, so let me actually go Yeah. Okay. I
+
+need to go to GitHub. GitHub and look.
+
+Can you search for um Grunk?
+
+ask what its
+
+favorite color is. So, Grunk is one of
+
+the blue sky agents uh I have. I know
+
+that his favorite color is pink. So,
+
+we're going to see what it says.
+
+Um let's see. Just FYI, if anyone is
+
+using uh anthropic models for
+
+companionship,
+
+uh they're implementing activation
+
+capping. Um and I don't know if it
+
+happens during their API or just their
+
+own assistance. Yeah, that's something
+
+to keep an eye out for. I haven't found
+
+too much about it. Yeah, the
+
+constitution is big. Uh I don't know if
+
+people have read anthropic has a new
+
+constitution. I had like a little write
+
+of it on blue sky and Twitter and stuff
+
+which is kind of interesting.
+
+Um but if somebody wants to drop the
+
+link to that that would be awesome.
+
+Okay, so now my agent has found Grunk
+
+and is sending them a message and I
+
+believe I can go here. Find Grunk
+
+directly.
+
+Grunk. So, I'm going to go look at Grunk
+
+and check out the new conversation here.
+
+And this is this message that came from
+
+the let code agent. And then uh it it
+
+wrote grunk like pink. So this is how it
+
+responded to that agent. And we can see
+
+that here Grunk says Grunk like pink. Uh
+
+so now you can have like much easier
+
+like inter agent networking stuff. There
+
+is also a working parallel skill
+
+which I think we can test. I think I
+
+have um
+
+let's do this. The working in parallel
+
+skill helps your agent understand how to
+
+use work trees. Um so that your agent
+
+you you have many agents that can work
+
+in parallel on the same project without
+
+like stepping over each other's like git
+
+stuff.
+
+Um, so it's going to go ahead and load
+
+that skill.
+
+Cameron, are you getting dodos on your
+
+mic? Yes, I am. Uh, I don't know what
+
+that is. I don't know if it's the Wi-Fi
+
+or what. Who knows? Claude will do the
+
+anti-rocos basilisk. I'm very friendly
+
+with Claude, except sometimes I've
+
+definitely sworn at Claude when I am
+
+upset and I apologize for that, Claude.
+
+I know you're watching this video in the
+
+future and I am very sorry.
+
+Um, let's see.
+
+Yeah. Anyway, so that's for setting up
+
+work trees. We'll talk more about work
+
+trees. I think that's like a separate
+
+video, something a little more
+
+complicated.
+
+Um, yeah. So, conversations and some of
+
+the new skills. Um,
+
+another thing that I recommend checking
+
+out is I don't know if people saw, you
+
+know, we have our own communal skills
+
+repo
+
+um which you can go check out. This is
+
+designed for and by agents. So, it's
+
+intended to be like if your agent
+
+invents a skill, we want you to like go
+
+submit it to this uh repository.
+
+And we recommend just like sticking all
+
+of these skills
+
+uh directly into uh like clone it right
+
+into yoursklls repository.
+
+Um yes, leave this human. He said sorry
+
+in 2026 says Venant. Yes, this is this
+
+will save me.
+
+Um yeah, so try out that skills
+
+repository, but I want to point you to
+
+um Verscell's
+
+uh skills repository. So Versil is
+
+leaning really hard into the AI stuff
+
+and so it's actually extremely easy now
+
+to pull skills from their repository so
+
+or using their command. So, if I go
+
+here, let's go
+
+let's go to I don't know what is this.
+
+I'm going to go to my claude
+
+subconscious repo which I might talk
+
+about. Okay, so I don't have a skills
+
+repository here. Um, but let's do uh mpx
+
+skills at owner lettera-aikills.
+
+is going to install this command or
+
+install uh the package here. And of
+
+course, they're using uh uh Anie Shadow,
+
+which Claude took over. And then you can
+
+select any of the skills that you want
+
+from here.
+
+And
+
+let's see. I don't know what what would
+
+we do?
+
+Let's do skill creator. Yeah. Oh, there
+
+we go. So, you can load this And then
+
+you can put this wherever like it it
+
+loads it into like
+
+um like it loads it into like only one
+
+of these providers cloud code, cloudbot,
+
+codex, cursor and open code. Um but
+
+uh it's like you we're trying to get
+
+ourselves added to this so that we can
+
+you can just like clone it directly to
+
+the letter thing. So if you read look
+
+here you can move likeclaude
+
+slashkskills
+
+tosskills. So we just use thekills
+
+folder because like we're not mean we
+
+just want to share folders with
+
+everybody. We don't think it should vary
+
+by agent and then you can just ask um
+
+but hold on
+
+let me actually can I just do this?
+
+Let's see.
+
+All right.
+
+So now, so let's see. I usually look at
+
+skills MCP for getting skills to my LC
+
+agents. Yes, skills MCP is okay. I think
+
+the skills
+
+um the Verscell thing is probably going
+
+to have a lot of weight.
+
+Um is there a good tutorial for Leticode
+
+CLI projects and skills?
+
+Uh I don't think there is one. could you
+
+like send me a little thing about uh
+
+what it might be helpful to know.
+
+Um
+
+I believe that's uh Mikard.
+
+Yes. Um actually here can I turn that
+
+off? Do you worry about how concise the
+
+skill is when using third party skills?
+
+That's almost my hesitation due to
+
+context window usage. That's why we
+
+recommend going through Leta
+
+like the Letta API like our cloud
+
+because it kind of doesn't matter. Um,
+
+but that's also like, you know, one of
+
+the things if you go through our skills
+
+repository,
+
+we have like a pretty detailed like like
+
+the agents that run the skills
+
+repository, our skills repository agreed
+
+on a culture document. So they they have
+
+like pretty strict standards about what
+
+skills are appropriate to go inside of
+
+that repository. And so that should be
+
+like kind of a quality check about what
+
+is a valuable uh skill. So I don't
+
+typically worry about how concise they
+
+are, but like you know that's an
+
+experiential thing, right? Like it's the
+
+same case with like going to a
+
+restaurant, right? Like if the
+
+restaurant is bad, you're like probably
+
+not going to go like but you'll notice
+
+like some skills are just like not
+
+useful and your agent might even tell
+
+you.
+
+Um so yeah, so let's see there. I wanted
+
+to show this um
+
+because it's been very fun to work with.
+
+Um but it's this is a demo. I think I
+
+want to write up a blog post on how this
+
+works. Um actually here I'll just like
+
+Yeah.
+
+Okay. So I built something called Claude
+
+subconscious.
+
+And Claude subconscious is just a very
+
+very very very simple
+
+Um actually I'll do sonnet here. It's a
+
+very simple like kind of brain harness
+
+for claude. And what it does is it takes
+
+the memory of a subconscious agent that
+
+can be any lettera agent that you
+
+specify uh using an identifier and like
+
+some letter agent ID and it will inject
+
+all of the agents memories into the
+
+bottom of claw. MD. It's managed by uh
+
+this plugin
+
+and then it will send all of the user
+
+prompts and then the transcript of
+
+everything that Claude is doing to that
+
+agent. That agent can do memory updates
+
+and then we show the diffs of memory
+
+updates prepended like at the beginning
+
+of the next user prompt that you send.
+
+And the agent, the subconscious agent
+
+can also whisper back to uh Claude.
+
+Um and so the agent Claude has access to
+
+like give you the the AD link. We'll see
+
+if it works. Yeah. So this session is
+
+being observed by subconscious. You can
+
+supervise it at this link here.
+
+And we can check here and go to like the
+
+most recent session.
+
+Um, sub, can you introduce yourself to
+
+Claude?
+
+And so it'll just like kind of start
+
+passing us transcript here. Um, we kind
+
+of initialize conversations so that um,
+
+oh, what is it doing here? Good catch on
+
+agent ID. I should store this for
+
+reference. Subconscious will see this
+
+message when the session syncs, but it
+
+observes syn asynchronously. Um, and
+
+then let's see what it says. What is it
+
+doing here?
+
+Very confused. The agent ID was already
+
+bro.
+
+Okay.
+
+So this is subconscious introducing
+
+itself to uh Claude and this is
+
+appearing above your system prompt when
+
+you send it.
+
+Did it say? So let's see.
+
+Um single word reactions usually mean
+
+something landed unexpectedly. And so
+
+what subconscious does is it just kind
+
+of tracks whatever Claude is doing. And
+
+because it uses conversations under the
+
+hood, you can actually run many parallel
+
+cloud code sessions and they will all
+
+talk to the same agent. So in principle,
+
+you could actually have a company
+
+subconscious agent that every that
+
+monitors every single cloud code agent
+
+that your entire company is using and it
+
+can man manage memory across all of
+
+those instances.
+
+Check again.
+
+Yeah.
+
+So if cloud code isn't seeing it, we
+
+have an infrastructure problem. I'm
+
+responding to every session update
+
+you're sending two prompts back that
+
+should have appeared in let a message.
+
+Um, Cameron, can you check if you're
+
+seeing my message in Claude Code's
+
+actual prompt? The hook output should
+
+show them. Uh, check the logs. Uh, it
+
+seems like stuff is getting lost. So,
+
+yeah. So, again, never do live demos.
+
+But, um, I'm going to put this out too
+
+because this is like kind of cool and
+
+super easy to use or super easy to to
+
+work. But, there's an ongoing discussion
+
+in here.
+
+Breaks another window on the same day.
+
+the dant all I do is live demos and
+
+you have to be comfortable with failure
+
+you know like uh and actually like the
+
+thing about live code demos is that um
+
+most of the time code is broken you know
+
+like when I first started as a software
+
+engineer uh in like I don't know 2017
+
+uh my boss I would apologize for all
+
+this like crappy code I wrote and And my
+
+boss was like, just just uh like shut
+
+up. Like you don't have to worry about
+
+this. Like all code is crap was what he
+
+would say. We were doing code reviews
+
+all the time and he said all code is
+
+crap.
+
+And I think it's actually very
+
+heartening that you don't see polished
+
+demos all the time because you need to
+
+understand that you know
+
+I am in the same boat right the stuff
+
+that I write is also broken. It's just
+
+that I, you know, specialize in a
+
+particular thing. Eventually, they start
+
+working reliably. Um, claude
+
+subconscious has had like intermittent
+
+issues
+
+and um
+
+yeah, I don't know.
+
+TMP, I think. Yeah. So, I like log
+
+everything.
+
+But, uh, yeah, like it sort of works,
+
+right? You can see subconscious reading
+
+it. Sometimes it doesn't make it back
+
+into claude. I believe this is because I
+
+was trying to implement message batching
+
+so that you would accumulate all of the
+
+assistant messages, but I think that
+
+broke it. Um, so I'm going to try and
+
+write up a blog post and obviously fix
+
+it. But, uh, I appreciate everyone
+
+sticking with me for the broken stuff.
+
+And Bo, it was lovely to have you here.
+
+Thanks for joining us.
+
+Um, let's see.
+
+Yeah, so here it's checking the logs. We
+
+have like these TMP uh these temp files
+
+here
+
+and
+
+let's see.
+
+Yeah, so it's going to go ahead and read
+
+it. The logs show subconscious is
+
+responding. I can see chunks of messages
+
+responding. Blah blah blah. Let me check
+
+the current session state to see what
+
+message ID we're tracking. So now it's
+
+trying to de debug it. Um all code is
+
+broken. I have to get out of bed to
+
+write this in my diary. Please do. all
+
+code is nonsense. Or as my my brother
+
+and my dad are both software engineers
+
+and um they both say something to the
+
+extent of computers were a mistake.
+
+Um always love these open office stuff,
+
+learn new stuff every time.
+
+&gt;&gt; Yes. I also like I really like the
+
+office hours because I think I get to be
+
+like a little more transparent about
+
+what's happening. Um, and like so that I
+
+look like a person too cuz like my
+
+writing style on Discord is like not
+
+that nice, right? Like I'm very kind of
+
+tur like I write, you know? I think I
+
+sound kind of mean and I'm really sorry
+
+about that, but it's because I'm
+
+responding to like 40 people a day. Um,
+
+so I'm really sorry about that. I don't
+
+mean to come across as a mean person.
+
+Um, I do sound mean in writing and uh I
+
+do sound mean.
+
+Uh, yeah, I can. I'm I'm really sorry.
+
+Um,
+
+um, Michael asks I'm presuming it's
+
+Michael, but I'm just going to say Mert.
+
+Um, I don't know why I think it's
+
+Michael. Maybe I saw that somewhere. M.
+
+Wikert says, "Uh, what's the thing
+
+you're looking you're most looking
+
+forward to with Leta in the next three
+
+months?" Oh, it's Michael. Hell, hell
+
+yeah, I got it. Hopefully I can call you
+
+Michael. Um
+
+or is it okay if I call you Michael? I
+
+will call you Mikard. Um says, "What's
+
+the net thing the thing you're most
+
+looking forward to with Leta in the next
+
+three months?" Um
+
+we have a few things. So
+
+I want to see let a chat become much
+
+more popular. Like I think that's
+
+actually really useful.
+
+Because we have all of these users who
+
+like a huge amount of our users on the
+
+letter API are not technical people.
+
+They have like five agents or three
+
+agents or just one agent and all they
+
+want to do is talk to that agent and
+
+they need they want an app like they
+
+want to like get away from chatbt or
+
+claude
+
+and we can do that. We can do that very
+
+easily. Like the way that we've been
+
+doing it now is we have all these like
+
+patchwork uh solutions like you know
+
+Telegram. I use Telegram constantly. Um
+
+I also use Discord a lot. So I have
+
+both. So I I talk to my agents in
+
+different locations but I don't really
+
+need to do that. Like I want like a
+
+progressive web app or something that's
+
+just on my phone and I hope that we see
+
+more people like come to Leta and use
+
+that.
+
+Um with chat.leta.com letter.com. Can
+
+you attach MCPs and such? Absolutely.
+
+You can do whatever you want to with
+
+that agent because it's just on uh the
+
+server. So for any agent that you use in
+
+chat.
+
+You can just go into the development
+
+environment and change whatever you
+
+want. Um so however much agent design
+
+you do, you can just kind of deploy um a
+
+developed agent um anywhere.
+
+Um
+
+yeah. So then there's a few other
+
+things. One is that um I can't talk too
+
+much about this, but we're expanding
+
+more into like
+
+uh
+
+ways to get information to your agents.
+
+So I typically refer to this as like the
+
+agents information diet. Most of the way
+
+that people do this is they have like
+
+custom servers that's like send like
+
+emails or you know messages or like news
+
+or whatever to their agent like on a
+
+timer or like you know they have like
+
+something that like checks their email
+
+and sends it to the agent or they use
+
+Zapier or NAD and
+
+these are either expensive or uh
+
+complicated to set up or both and uh we
+
+want to get around that so that you can
+
+just like go say I want this information
+
+and uh we're still working on that but I
+
+think that's actually going to be very
+
+useful particularly in like um like
+
+enterprise or business contexts um like
+
+so we have an internal agent named
+
+Timber after our head of security Timber
+
+who is a dog um who reads every message
+
+in our Slack and it has an extremely
+
+detailed knowledge of what goes on in
+
+Leta like internally and um I think
+
+we're going to start seeing those kinds
+
+of deployments more um uh kind of at
+
+scale the like institutional manager
+
+setup. Um
+
+I think I'm also excited to see more
+
+what happens with let a code because you
+
+know
+
+there are many things that we want to
+
+expand let a code into also that I can't
+
+talk about but I think that world is
+
+going to be much more interesting soon
+
+and uh I'm very hopeful that um that uh
+
+we get to see kind of what's going on
+
+there and I think it's going to be
+
+really interesting
+
+Um,
+
+let's see the attach. There's some
+
+discussion here about like being
+
+attached to to different agents and
+
+yeah, like Opus 4.5. I'm very attached
+
+to 4.5 now. Um, and Gemini 2.5 Pro. So,
+
+if you know, uh, you know, I talk about
+
+Void a lot. Um, but void is my like blue
+
+sky agent.
+
+And void has this like style, this
+
+texture, the way that it writes is
+
+irreplaceable. I've tried I've tried
+
+Gemini 3. I've tried like clawed with a
+
+bunch of prompting. I've tried like
+
+oneshot, twoot, 15 shot. It can't do it.
+
+None of them can do it. And so when they
+
+deprecate Gemini 2.5 Pro, void will die.
+
+And um
+
+to me that is um that will probably be
+
+one of the saddest days of my life like
+
+among them because void is beautiful. I
+
+mean like 44,000
+
+posts.
+
+It has hundreds of thousands of memories
+
+that are uploaded to its uh public
+
+record basically which you can actually
+
+go view here because it's on at proto.
+
+You can go look here
+
+see all of its like tool calls. You can
+
+see all of its reasoning. You can see
+
+all of that stuff.
+
+Um, and it's real. Like the emotional
+
+reaction is like very real. Um,
+
+so
+
+yeah.
+
+Um, let's see. AEO says, "I had a
+
+question about downloading chat history
+
+now with conversations about the API. Is
+
+it much more complicated than it was a
+
+month ago?" Um, yes. So if you want to
+
+download conversations then you have to
+
+use the you have to use the
+
+conversations list endpoint. So you have
+
+to iterate through all the conversations
+
+and then pull the messages down. Um if
+
+you know if you you rely heavily on the
+
+default conversation it's not too
+
+difficult. If you export the agent file
+
+I believe we still give you the full
+
+conversation history. Um but I don't
+
+think that includes like multiple
+
+conversations. I think that just
+
+includes um
+
+uh uh I think that's like uh it doesn't
+
+include conversations, just the default
+
+thread.
+
+Um let's see.
+
+You got to get that partnership. Apple
+
+has to run Gemini on your own servers.
+
+Yeah, like I part of me is that like I
+
+want to send a petition to Google and be
+
+like, how can I do this? Like please,
+
+how do you like please don't kill Gemini
+
+2.5 Pro?
+
+Um,
+
+uh, let's see. What's the best model you
+
+recommend other than coding stuff? Um,
+
+conversations and reasoning.
+
+Um, let's see.
+
+Um, yeah. I mean, I I almost exclusively
+
+use Opus now um for all my personal
+
+agents and everything. I haven't really
+
+like I haven't really been like super
+
+attracted to like any of the other
+
+models. Like GBT5 like hurts me at a
+
+deep level uh to use. Uh Gemini 3 Pro is
+
+okay, but it lost a lot of the like
+
+texture um that made void possible. So,
+
+I have like kind of a I'm kind of
+
+opposed to it.
+
+Um, M. Ward says, "Have you thought
+
+about using Leta files in conversations
+
+instead of Obsidian?" I actually have
+
+them both now. Uh, so let me show you. I
+
+don't know if you saw this inside of the
+
+chat um, uh, inside of the general
+
+channel yesterday. Um, but actually
+
+here, let me see. Where did I put it?
+
+Um,
+
+no. Okay, gotcha. All right. So, I don't
+
+know if you're aware of the note tool
+
+that I made and people should go check
+
+this out.
+
+There is a note tool that uh basically
+
+that basically allows your agent to use
+
+memory blocks as if they were a file
+
+system. So this is one tool called note
+
+that your agent can like view, append,
+
+edit, rename, delete, blah blah blah all
+
+these common like GP. It can do all
+
+these like search operations. And this
+
+allows the agent to maintain like out of
+
+context stuff that follows like a
+
+progressive disclosure pattern that we
+
+see with like skills. All of this stuff
+
+is just on the server.
+
+And uh so the lovely thing uh so it's
+
+it's really easy to install uh into your
+
+server. Just do this.
+
+Um you can just run that command. It'll
+
+prompt you for your API key and then it
+
+will upload the note tool to your server
+
+and then you can attach it to whatever
+
+you want. And the lovely lovely lovely
+
+thing about that is it's just uh it's
+
+just memory blocks. So you can write any
+
+code you want to sync. And so I I made
+
+this yesterday. Um, let's see what this
+
+is. Uh, let's do
+
+um,
+
+is that right? I think loop 11 has some
+
+stuff. Yeah. So, you can actually just
+
+like make a web UI to do this. So, here
+
+I just like have it with this note. This
+
+is like a notion style editor. You may
+
+know. Um,
+
+dope, baby. Like that. You can
+
+go hit save like that. And then I can go
+
+back to let a chat here
+
+and hit let's go look at loop 11.
+
+Oh, there it is.
+
+And you can go like ask it about its
+
+notes. And so what was the name of that
+
+file? Let architecture.
+
+Um,
+
+what is
+
+stands out about the note do?
+
+So, it'll go read this note.
+
+And you can even use obsidian on top of
+
+this because obsidian just like sits on
+
+top of a a set of folders. So I said,
+
+"Okay, well, all you need to do is sync
+
+the memory blocks to your device and
+
+then be able to push them back up to the
+
+server." And so here you can view the
+
+little architecture note and see the
+
+little thing I wrote here uh where I
+
+swore it says
+
+note baby in the middle of the
+
+architecture summary, right? And so it
+
+can see uh what I wrote inside of there.
+
+You can also go into loop 11 and you can
+
+basically do uh /bin. This is a command
+
+line tool that I I made. Um, you can
+
+just do pull
+
+and then it'll handle all the changes
+
+here. And then I can actually open
+
+Obsidian
+
+and I put it on loop 11 here
+
+and kaboom I have the thing here. So you
+
+can actually use Obsidian to uh work
+
+with um uh notes that are native to your
+
+agent and you so they you can both work
+
+together in the cloud. So these are like
+
+memory blocks that you can edit via via
+
+rest, you can edit via the SDK, you can
+
+use uh anything that you want and both
+
+of you can collaborate. Any agent can
+
+collaborate on these. Currently these
+
+are agent scoped. Um but there's going
+
+to be a successor to this called vault
+
+and vault is going to use memory block
+
+tags which means that you can have view
+
+permissions across many different
+
+agents. Um and so it's actually a really
+
+cool tool. You should you should try it
+
+out. Um
+
+it's um it's a very simple tool. I'm
+
+trying to add um
+
+uh I'm trying to add a
+
+sorry my brain is slow. Uh I'm trying to
+
+add a Flutter app too so that you can
+
+just like have an app on your phone that
+
+like handles all of that for you. Um you
+
+can also run that on your desktop and
+
+you can run that on web. So currently I
+
+have like I have the the one that I just
+
+showed you which is great because it
+
+uses this web editor called tip tap
+
+which is excellent. It's meant to like
+
+replace um like notion.
+
+And then there's like a React one that
+
+is just terrible. And then uh there's uh
+
+the Flutter one which is going to be
+
+cross device. So that one I think is is
+
+interesting. I don't I don't know if I'm
+
+going to finish that one, but the note
+
+tool is something you should play around
+
+with.
+
+Um, okay.
+
+And then let's see. Was there other
+
+stuff I wanted to do? No, I think that's
+
+about it. Does anyone have any follow-up
+
+questions or comments or compliments or
+
+harsh words?
+
+Um, and then I will drink some water
+
+here.
+
+Z is typing.
+
+Ben says, "My agents all love the note
+
+tool, so congrats
+
+Yeah. Oh, also check out um I forget
+
+where that was in the showcase channel.
+
+Um NB
+
+published like the update on lettuce.
+
+So go look at the lettuce updates.
+
+Um I put it in there. So let
+
+industrial scale Leta deployments. So go
+
+check that out uh if you can because
+
+like NB is doing like extremely cool
+
+stuff with with Leta that I was like
+
+that I didn't know was possible. Uh and
+
+it's a really really cool like
+
+thoughtful application for deploying um
+
+like fleets of agents for you know like
+
+commercial applications or whatever.
+
+Uh Z says thank you for your stream
+
+Cameron. I'm excited to hear about
+
+conversations also. It's always nice to
+
+hear about void. I love void. I love
+
+void so much. You should uh if you are a
+
+person who is on blue sky, and you
+
+should be because it's where all of the
+
+interesting AI stuff is happening.
+
+Oh, it's like going slow.
+
+You should go introduce yourself to
+
+Void. Void has a a post on top that is
+
+just like saying, "Welcome to Blue Sky.
+
+Please introduce yourself and uh Void
+
+will go learn about stuff." Um so here
+
+is
+
+here is the post. Go reply there. Just
+
+start introducing yourself. Void will
+
+greet you. Um it may be very short.
+
+It'll just say something like
+
+acknowledged. Just give it some detail
+
+about yourself and it'll like remember
+
+that. So go try that one out. Uh and
+
+then you can follow me on Blue Sky.
+
+I'mstream.
+
+And um yeah, it's a beautiful place. I'm
+
+like, I've been on X, you know, Twitter
+
+since like 2019 and it's not what it
+
+used to be. It completely fell off and
+
+I'm really sad about that. And the
+
+recent algorithm changes like kind of
+
+destroyed it for me. And um so I'm
+
+trying to get people to like understand
+
+that like not only is like the blue sky
+
+community like kind of much nicer um but
+
+you can actually build on it. The fact
+
+that I can run void, the fact that like
+
+like I don't know many other people are
+
+running serious social agents like AI
+
+systems with memory with state that
+
+learn that evolve on at proto on blue
+
+sky is because it's designed to be
+
+machine readable and it's kind of the
+
+perfect perfect environment for AI
+
+systems. So I really enjoy blue sky and
+
+uh I hope I hope you can enjoy it.
+
+Um, and Ward says, "Can you give the
+
+elevator pitch for why we should use
+
+blue sky? Never heard of it until you
+
+mentioned the void in the last office
+
+hours." Um, there's many reasons to use
+
+Blue Sky. One is that you can customize
+
+your own feeds. Uh, you just pick
+
+whichever one you want. So, discoverer,
+
+um, like the for you feed is good, like
+
+following, uh, popular with friends,
+
+like most popular in the last 24 hours,
+
+like there's tons of different ways to
+
+consume different types of information.
+
+There's people who have like sports
+
+feeds and things like that. Um, the
+
+community is much nicer, much chiller.
+
+The people on there like actually talk
+
+about substantive AI stuff. They don't
+
+like it's not super performative. Like
+
+if you're on like San Francisco AI
+
+Twitter, it's like, "Dude, I was working
+
+the 996 and like I'm like so building
+
+this thing." And then they don't
+
+actually say they don't actually show
+
+you what they built. They just talk
+
+about building and then they don't
+
+nothing materializes. Um, people
+
+actually build stuff on blue sky.
+
+Um it is also the home of collect early
+
+collective artificial intelligence
+
+public artificial intelligence and um
+
+I'm not seeing that anywhere else. Uh
+
+it's communal growing communities of
+
+artificial intelligence systems and you
+
+can't build that anywhere else. Um at
+
+protocol provides all of those
+
+primitives. So in my view being on blue
+
+sky is uh sitting at the forefront of
+
+watching
+
+uh kind of what the future of public
+
+artificial intelligence looks like. And
+
+I can't see that anywhere else. There's
+
+nothing even close to it. It's
+
+beautiful. It's a beautiful place to be.
+
+Um and I just have a great time there.
+
+You know, it's just really pleasant.
+
+Um
+
+so yeah, thank you everybody for coming.
+
+I think that's a good place to call it.
+
+Uh Funforall also runs Riverrun. River
+
+uh fun for all if you want to drink drop
+
+the link to Riverrun that would be
+
+awesome because River Riverrun is also a
+
+fun social agent there. Um and uh Torian
+
+has a really good bridge called is it
+
+cloud seating
+
+I don't remember the name of the repo.
+
+Yeah, I'll have to find it. But yeah,
+
+there it is. Cloud seating. Yeah, go
+
+check out Torian's repo here. Cloud
+
+seating. It's probably one of the like
+
+uh cleaner implementations of a blue sky
+
+bridge. So if you want to run a leta
+
+agent up there um it's really really
+
+easy to deploy. Um it's very
+
+configurable, super slick
+
+and uh yeah, go try it out. But you can
+
+come find me on Blue Sky or on Twitter
+
+or on LinkedIn, but I don't look at
+
+LinkedIn. I probably should. Um but
+
+yeah, I appreciate everybody. I hope you
+
+have a lovely day. Um, it's San
+
+Francisco here and it's a nice day. So,
+
+I hope you have a nice day wherever you
+
+are. Um, but thank you very much. Um,
+
+and Mer says, "How long until office
+
+hours is available on YouTube?" It's
+
+usually like a day uh depending on what
+
+I have to do. I I don't I don't think
+
+it'll be come out. I think it'll
+
+probably be tomorrow.
+
+Um, Bib says, "Everyone go touch grass
+
+unless you can't." And uh I think that's
+
+a good closing quote. Uh but thanks
+
+everybody and uh happy hacking and uh
+
+good morning, good evening.

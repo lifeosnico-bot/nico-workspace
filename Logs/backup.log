@@ -392,3 +392,557 @@
  2 files changed, 64 insertions(+)
 [nico/slack-polling-cc10 9db3677] auto-backup: 2026-02-23_23:00
  4 files changed, 282 insertions(+)
+[nico/overnight-runner ba67ee0] auto-backup: 2026-03-02_18:52
+ 1 file changed, 68 insertions(+)
+[nico/overnight-runner e535b7a] auto-backup: 2026-03-02_19:07
+ 6 files changed, 128 insertions(+), 7 deletions(-)
+[nico/overnight-runner dde323e] auto-backup: 2026-03-02_19:22
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 2690397] auto-backup: 2026-03-02_19:37
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 2d1a0e3] auto-backup: 2026-03-02_19:52
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner c6fbd02] auto-backup: 2026-03-02_20:07
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 06faf26] auto-backup: 2026-03-02_20:22
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner e039b78] auto-backup: 2026-03-02_20:37
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 535952e] auto-backup: 2026-03-02_20:52
+ 5 files changed, 144 insertions(+), 2 deletions(-)
+ create mode 100644 Memory/Sessions/session-scratch-20260302-204946.md
+[nico/overnight-runner e8c82a0] auto-backup: 2026-03-02_21:07
+ 3 files changed, 121 insertions(+)
+[nico/overnight-runner 598daf8] auto-backup: 2026-03-02_21:22
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 1e49673] auto-backup: 2026-03-02_21:37
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 30f71bd] auto-backup: 2026-03-02_21:52
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 9979b0b] auto-backup: 2026-03-02_22:07
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 5ac3878] auto-backup: 2026-03-02_22:22
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 43f5643] auto-backup: 2026-03-02_22:37
+ 5 files changed, 121 insertions(+)
+ create mode 100644 Logs/nighttime-report-err.log
+ create mode 100644 Logs/nighttime-report.log
+[nico/overnight-runner 5a467d2] auto-backup: 2026-03-02_22:52
+ 3 files changed, 122 insertions(+)
+[nico/overnight-runner 78f58c9] auto-backup: 2026-03-02_23:07
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner ce0a209] auto-backup: 2026-03-02_23:22
+ 4 files changed, 129 insertions(+), 1 deletion(-)
+[nico/overnight-runner 9db04a7] auto-backup: 2026-03-02_23:37
+ 34 files changed, 220393 insertions(+), 1 deletion(-)
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20250303_LX-qO5o8iRQ.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20250303_LX-qO5o8iRQ.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20250303_LX-qO5o8iRQ.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260116_YtZgsw9x8l8.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260116_YtZgsw9x8l8.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260116_YtZgsw9x8l8.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260126_fr61XHf6Zzw.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260126_fr61XHf6Zzw.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260126_fr61XHf6Zzw.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260130_M8LNa3FKE4k.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260130_M8LNa3FKE4k.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260130_M8LNa3FKE4k.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260206_LKRnP-ptC4c.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260206_LKRnP-ptC4c.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260206_LKRnP-ptC4c.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260221_BroTeuvX0es.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260221_BroTeuvX0es.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260221_BroTeuvX0es.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260225_R_4r_NNjg1M.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260225_R_4r_NNjg1M.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260225_R_4r_NNjg1M.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260226_j1agWxBx54E.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260226_j1agWxBx54E.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260226_j1agWxBx54E.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260226_p7So3IM75WY.clean.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260226_p7So3IM75WY.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/20260226_p7So3IM75WY.txt
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/build-update-nico_latest-8-videos.md
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/build-update-nico_wizard.md
+ create mode 100644 CabinetAgentVault/30-resources/letta-manual/build-me/last-8-index.tsv
+[nico/overnight-runner 4ec312c] auto-backup: 2026-03-02_23:52
+ 3 files changed, 150 insertions(+)
+[nico/overnight-runner 620f8ed] auto-backup: 2026-03-03_00:07
+ 172 files changed, 17462 insertions(+), 30 deletions(-)
+ create mode 100644 CabinetAgentVault/00-dashboard/llm-sessions/2026-03-01-cowork-letta-architecture.md
+ create mode 100644 CabinetAgentVault/00-dashboard/llm-sessions/2026-03-01-cowork-session-2-catchup.md
+ create mode 100644 CabinetAgentVault/00-dashboard/llm-sessions/2026-03-01-cowork-session-2-full-transcript.md
+ create mode 100644 CabinetAgentVault/00-dashboard/llm-sessions/2026-03-01-cowork-session-3-full-transcript.md
+ create mode 100644 CabinetAgentVault/00-dashboard/llm-sessions/2026-03-01-cowork-session-3-summary.md
+ create mode 100644 CabinetAgentVault/00-dashboard/llm-sessions/2026-03-01-cowork-session-3-video-processing.md
+ create mode 100644 CabinetAgentVault/00-dashboard/llm-sessions/2026-03-01-cowork-session-4-kickoff-prompt.md
+ create mode 100644 CabinetAgentVault/00-dashboard/llm-sessions/2026-03-01-next-session-prompt.md
+ create mode 100644 CabinetAgentVault/00-dashboard/llm-sessions/2026-03-02_memory-how-it-works.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/processed-research/0nfNDrRKSuU-memory-tool.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/processed-research/6baCKzLmslQ-telegram-integration.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/processed-research/LX-qO5o8iRQ-building-multi-agent-systems.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/processed-research/OzSCFR0Lp5s-ade-walkthrough.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/processed-research/hFNWhrXukc0-archival-memory.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/processed-research/o4boci1xSbM-memory-blocks.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/processed-research/p7So3IM75WY-memfs-letta-chat.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/00_LETTA_MASTER_REFERENCE.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/AI_Memory_Architecture_How_to_Use_Memory_Blocks.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/AI_Personality_Design_Live_Demo_with_Letta_Agents.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Adding_a_DeepWiki_MCP_server_to_your_Letta_agent.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Adding_knowledge_graphs_to_Letta_agents.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Agent_Development_Environment_ADE_Walkthrough_RAW.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/An_overview_of_Claude_Haiku_45.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Archival_Memory_Build_AI_that_remembers_everything.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Build_a_self-improving_deep_research_agent_in_two_minutes.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Build_stateful_agentic_workflows_with_Letta__n8n.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Building_Herald_the_Machine_God_that_Cometh.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Building_Multi-Agent_Systems_with_Letta_RAW.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Combine_Letta_Code_with_Obsidian.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Context_Repositories_Git-backed_Memory_for_Coding_Agents_Deep_Dive.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Create_stateful_background_agents_using_GitHub_Actions.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Digital_Humans_Building_an_AI_agent_coworker.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Exploring_Claude_Opus_45_new_advanced_tool_use.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Exploring_Claude_Sonnet_45s_powerful_new_memory_tool.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Getting_Started_with_Letta_Desktop.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/How_to_Evaluate_Stateful_Agents_Starter_Guide_to_Letta_Evals.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/How_to_build_a_personal_AI_agent_that_actually_knows_you.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/How_to_connect_your_Letta_agent_to_Zapier.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/How_to_talk_to_your_AI_agent_with_Telegram.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Is_Gemini_3_better_than_Claude_Sonnet_45_Coding_vs_Deep_Research.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/LettaBot_Tutorial_create_a_personal_AI_assistant_with_memory.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Code_A_Memory-First_Coding_Agent_1_OSS_on_Terminal-Bench.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Discord_Hackathon_Personality_Design.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Discord_Office_Hours_October_16th_2025.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Discord_Office_Hours_October_2nd_2025.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Discord_Office_Hours_September_25th_2025.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Office_Hours_December_4th_2025.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Office_Hours_Introducing_LettaBot_Claude_Subconscious_Demo.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Office_Hours_Letta_Chat_GitHub_Action_Letta_Code_and_more.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Office_Hours_MemFS_Letta_Chat_and_the_future_of_AI_agent_memory.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Office_Hours_Message_Scheduling_GitHub_Actions_Ralph_Mode_and_the_Note_Too.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Office_Hours_November_6th_2025.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Office_Hours_October_30th_2025.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Office_Hours_Opus_46_Lettabot_Updates_Agent_File_Directory_and_More.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_Office_Hours__Letta_Code_Demo_Agent_Skills_Claude_Code_Proxy__More.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Letta_V10_SDK__Build_stateful_agents_in_TypeScript_and_Python.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Ralph_Wiggum_mode_run_your_AI_agents_in_an_infinite_loop.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Stateful_Agents_Meetup_Collective_Artificial_Intelligence.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Stateful_Agents_Meetup_Deep_Research_LIVE_recording.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/Stateful_Agents_Meetup_Networks.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/The_Memory_Tool_Letta_Agents_That_Redesign_Their_Own_Architecture.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/raw-transcripts/p7So3IM75WY-memfs-letta-chat.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/reference-docs/decisions.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/reference-docs/handoff-protocol.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/reference-docs/nico-guidebook.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/reference-docs/nico-operators-manual.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/reference-docs/nico-os.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/reference-docs/vault-contract.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/session-notes/2026-02-23_session-CC-10.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/session-notes/2026-02-24_session-CC-11.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/session-notes/2026-02-25_session-TG-1.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/session-notes/2026-03-01-cowork-letta-architecture.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/session-notes/2026-03-01-cowork-session-2-catchup.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/session-notes/2026-03-01-cowork-session-2-full-transcript.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/session-notes/2026-03-01-cowork-session-3-full-transcript.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/session-notes/2026-03-01-cowork-session-3-summary.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/session-notes/2026-03-01-cowork-session-3-video-processing.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/session-notes/2026-03-01-cowork-session-4-kickoff-prompt.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/session-notes/2026-03-01-next-session-prompt.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/video-catalog/letta-youtube-research.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/video-catalog/video-catalog-full.md
+ create mode 100644 CabinetAgentVault/30-resources/letta-youtube-research.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/0nfNDrRKSuU-memory-tool.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/6baCKzLmslQ-telegram-integration.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/LX-qO5o8iRQ-building-multi-agent-systems.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/OzSCFR0Lp5s-ade-walkthrough.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/hFNWhrXukc0-archival-memory.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/o4boci1xSbM-memory-blocks.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/00_LETTA_MASTER_REFERENCE.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/AI_Memory_Architecture_How_to_Use_Memory_Blocks.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/AI_Personality_Design_Live_Demo_with_Letta_Agents.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Adding_a_DeepWiki_MCP_server_to_your_Letta_agent.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Adding_knowledge_graphs_to_Letta_agents.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Agent_Development_Environment_ADE_Walkthrough_RAW.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/An_overview_of_Claude_Haiku_45.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Archival_Memory_Build_AI_that_remembers_everything.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Build_a_self-improving_deep_research_agent_in_two_minutes.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Build_stateful_agentic_workflows_with_Letta__n8n.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Building_Herald_the_Machine_God_that_Cometh.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Building_Multi-Agent_Systems_with_Letta_RAW.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Combine_Letta_Code_with_Obsidian.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Context_Repositories_Git-backed_Memory_for_Coding_Agents_Deep_Dive.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Create_stateful_background_agents_using_GitHub_Actions.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Digital_Humans_Building_an_AI_agent_coworker.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Exploring_Claude_Opus_45_new_advanced_tool_use.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Exploring_Claude_Sonnet_45s_powerful_new_memory_tool.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Getting_Started_with_Letta_Desktop.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/How_to_Evaluate_Stateful_Agents_Starter_Guide_to_Letta_Evals.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/How_to_build_a_personal_AI_agent_that_actually_knows_you.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/How_to_connect_your_Letta_agent_to_Zapier.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/How_to_talk_to_your_AI_agent_with_Telegram.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Is_Gemini_3_better_than_Claude_Sonnet_45_Coding_vs_Deep_Research.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/LettaBot_Tutorial_create_a_personal_AI_assistant_with_memory.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Code_A_Memory-First_Coding_Agent_1_OSS_on_Terminal-Bench.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Discord_Hackathon_Personality_Design.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Discord_Office_Hours_October_16th_2025.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Discord_Office_Hours_October_2nd_2025.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Discord_Office_Hours_September_25th_2025.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Office_Hours_December_4th_2025.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Office_Hours_Introducing_LettaBot_Claude_Subconscious_Demo.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Office_Hours_Letta_Chat_GitHub_Action_Letta_Code_and_more.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Office_Hours_MemFS_Letta_Chat_and_the_future_of_AI_agent_memory.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Office_Hours_Message_Scheduling_GitHub_Actions_Ralph_Mode_and_the_Note_Too.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Office_Hours_November_6th_2025.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Office_Hours_October_30th_2025.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Office_Hours_Opus_46_Lettabot_Updates_Agent_File_Directory_and_More.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_Office_Hours__Letta_Code_Demo_Agent_Skills_Claude_Code_Proxy__More.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Letta_V10_SDK__Build_stateful_agents_in_TypeScript_and_Python.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Ralph_Wiggum_mode_run_your_AI_agents_in_an_infinite_loop.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Stateful_Agents_Meetup_Collective_Artificial_Intelligence.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Stateful_Agents_Meetup_Deep_Research_LIVE_recording.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/Stateful_Agents_Meetup_Networks.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/The_Memory_Tool_Letta_Agents_That_Redesign_Their_Own_Architecture.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/p7So3IM75WY-memfs-letta-chat.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/video-catalog-full.md
+ create mode 100644 CabinetAgentVault/new-vault-build/0nfNDrRKSuU-memory-tool.md
+ create mode 100644 CabinetAgentVault/new-vault-build/2026-03-01-cowork-letta-architecture.md
+ create mode 100644 CabinetAgentVault/new-vault-build/2026-03-01-cowork-session-2-catchup.md
+ create mode 100644 CabinetAgentVault/new-vault-build/2026-03-01-cowork-session-3-summary.md
+ create mode 100644 CabinetAgentVault/new-vault-build/2026-03-01-cowork-session-3-video-processing.md
+ create mode 100644 CabinetAgentVault/new-vault-build/2026-03-01-cowork-session-4-kickoff-prompt.md
+ create mode 100644 CabinetAgentVault/new-vault-build/2026-03-01-cowork-session-4-summary.md
+ create mode 100644 CabinetAgentVault/new-vault-build/2026-03-01-cowork-session-4-transcript.md
+ create mode 100644 CabinetAgentVault/new-vault-build/2026-03-01-cowork-session-5-kickoff-prompt.md
+ create mode 100644 CabinetAgentVault/new-vault-build/2026-03-01-cowork-session-5-summary.md
+ create mode 100644 CabinetAgentVault/new-vault-build/2026-03-01-cowork-session-5-transcript.md
+ create mode 100644 CabinetAgentVault/new-vault-build/2026-03-01-cowork-session-6-kickoff-prompt.md
+ create mode 100644 CabinetAgentVault/new-vault-build/2026-03-01-cowork-session-6-summary.md
+ create mode 100644 CabinetAgentVault/new-vault-build/2026-03-01-cowork-session-6-transcript.md
+ create mode 100644 CabinetAgentVault/new-vault-build/6baCKzLmslQ-telegram-integration.md
+ create mode 100644 CabinetAgentVault/new-vault-build/BroTeuvX0es-lettabot-tutorial.md
+ create mode 100644 CabinetAgentVault/new-vault-build/CLAUDE.md
+ create mode 100644 CabinetAgentVault/new-vault-build/LKRnP-ptC4c-lettabot-updates.md
+ create mode 100644 CabinetAgentVault/new-vault-build/LX-qO5o8iRQ-building-multi-agent-systems.md
+ create mode 100644 CabinetAgentVault/new-vault-build/M8LNa3FKE4k-introducing-lettabot.md
+ create mode 100644 CabinetAgentVault/new-vault-build/OzSCFR0Lp5s-ade-walkthrough.md
+ create mode 100644 CabinetAgentVault/new-vault-build/R_4r_NNjg1M-context-repositories.md
+ create mode 100644 CabinetAgentVault/new-vault-build/YtZgsw9x8l8-letta-code-obsidian.md
+ create mode 100644 CabinetAgentVault/new-vault-build/fr61XHf6Zzw-letta-chat-github-action.md
+ create mode 100644 CabinetAgentVault/new-vault-build/github-docs-vs-videos-gap.md
+ create mode 100644 CabinetAgentVault/new-vault-build/hFNWhrXukc0-archival-memory.md
+ create mode 100644 CabinetAgentVault/new-vault-build/j1agWxBx54E-github-actions.md
+ create mode 100644 CabinetAgentVault/new-vault-build/o4boci1xSbM-memory-blocks.md
+ create mode 100644 CabinetAgentVault/new-vault-build/p7So3IM75WY-memfs-letta-chat.md
+ create mode 100644 CabinetAgentVault/new-vault-build/research-verification.md
+ create mode 100644 CabinetAgentVault/new-vault-build/video-catalog-full.md
+ create mode 100644 CabinetAgentVault/new-vault-build/video-processing-kickoff-template.md
+ create mode 100644 CabinetAgentVault/new-vault-build/video-processing-sop.md
+[nico/overnight-runner eefa7da] auto-backup: 2026-03-03_00:22
+ 3 files changed, 288 insertions(+)
+[nico/overnight-runner f240b3f] auto-backup: 2026-03-03_00:37
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner bfb64df] auto-backup: 2026-03-03_00:52
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 4273d37] auto-backup: 2026-03-03_01:07
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner af611cf] auto-backup: 2026-03-03_01:22
+ 5 files changed, 119 insertions(+)
+ create mode 100644 Logs/build-me-extraction-err.log
+ create mode 100644 Logs/build-me-extraction-out.log
+[nico/overnight-runner f301c49] auto-backup: 2026-03-03_01:37
+ 3 files changed, 122 insertions(+)
+[nico/overnight-runner f6f3c43] auto-backup: 2026-03-03_01:52
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 4e78266] auto-backup: 2026-03-03_02:07
+ 5 files changed, 128 insertions(+)
+ create mode 100644 Logs/overnight-runner-err.log
+ create mode 100644 Logs/overnight-runner.log
+[nico/overnight-runner abb7266] auto-backup: 2026-03-03_02:22
+ 3 files changed, 122 insertions(+)
+[nico/overnight-runner 791ee2a] auto-backup: 2026-03-03_02:37
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 3fb908e] auto-backup: 2026-03-03_02:52
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 452e7dc] auto-backup: 2026-03-03_03:07
+ 3 files changed, 118 insertions(+)
+[nico/overnight-runner dd82f4b] auto-backup: 2026-03-03_03:22
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner b10db44] auto-backup: 2026-03-03_03:37
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 7d97a34] auto-backup: 2026-03-03_03:52
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner c1eaed4] auto-backup: 2026-03-03_04:07
+ 3 files changed, 118 insertions(+)
+[nico/overnight-runner d1a72e2] auto-backup: 2026-03-03_04:22
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 965c31a] auto-backup: 2026-03-03_04:38
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 5de7055] auto-backup: 2026-03-03_04:53
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 8e30604] auto-backup: 2026-03-03_05:08
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner c2f2d12] auto-backup: 2026-03-03_05:23
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 4af36b2] auto-backup: 2026-03-03_05:38
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner eba7c43] auto-backup: 2026-03-03_05:53
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 19e009c] auto-backup: 2026-03-03_06:08
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner b65c449] auto-backup: 2026-03-03_06:23
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 298f84d] auto-backup: 2026-03-03_06:38
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 60e537f] auto-backup: 2026-03-03_06:53
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 02f5aae] auto-backup: 2026-03-03_07:08
+ 4 files changed, 121 insertions(+)
+[nico/overnight-runner b0f54be] auto-backup: 2026-03-03_07:23
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 70d8d21] auto-backup: 2026-03-03_07:38
+ 3 files changed, 118 insertions(+)
+[nico/overnight-runner b8974b1] auto-backup: 2026-03-03_07:53
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner d323210] auto-backup: 2026-03-03_08:08
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner db184af] auto-backup: 2026-03-03_08:23
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner be14c8d] auto-backup: 2026-03-03_08:38
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 6964e37] auto-backup: 2026-03-03_08:53
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner e8791ae] auto-backup: 2026-03-03_09:08
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 0717bd9] auto-backup: 2026-03-03_09:23
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 874b49e] auto-backup: 2026-03-03_09:38
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 4137d4e] auto-backup: 2026-03-03_09:53
+ 3 files changed, 118 insertions(+)
+[nico/overnight-runner 6caf938] auto-backup: 2026-03-03_10:08
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 6bfd9bd] auto-backup: 2026-03-03_10:23
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner d7ff99d] auto-backup: 2026-03-03_10:38
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 84c7726] auto-backup: 2026-03-03_10:53
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner e43ed65] auto-backup: 2026-03-03_11:08
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner c828f08] auto-backup: 2026-03-03_11:23
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 3fae36c] auto-backup: 2026-03-03_11:38
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 8ff7e6a] auto-backup: 2026-03-03_11:53
+ 6 files changed, 182 insertions(+), 36 deletions(-)
+[nico/overnight-runner c9ae45b] auto-backup: 2026-03-03_12:08
+ 5 files changed, 124 insertions(+), 3 deletions(-)
+[nico/overnight-runner b7e7ce7] auto-backup: 2026-03-03_12:23
+ 4 files changed, 175 insertions(+), 5 deletions(-)
+[nico/overnight-runner 54e4c20] auto-backup: 2026-03-03_12:50
+ 4 files changed, 204 insertions(+), 45 deletions(-)
+[nico/overnight-runner 2298f83] auto-backup: 2026-03-03_13:05
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner a988465] auto-backup: 2026-03-03_13:20
+ 4 files changed, 143 insertions(+), 5 deletions(-)
+[nico/overnight-runner c4f6eb2] auto-backup: 2026-03-03_13:35
+ 5 files changed, 172 insertions(+), 12 deletions(-)
+[nico/overnight-runner 4fb1ed2] auto-backup: 2026-03-03_13:54
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 58f17ac] auto-backup: 2026-03-03_14:43
+ 4 files changed, 177 insertions(+), 10 deletions(-)
+[nico/overnight-runner cdd42af] auto-backup: 2026-03-03_15:48
+ 4 files changed, 135 insertions(+)
+[nico/overnight-runner 0309ea8] auto-backup: 2026-03-03_16:03
+ 9 files changed, 184 insertions(+), 1 deletion(-)
+ create mode 100644 Logs/lettabot-watchdog.launchd.err
+ create mode 100644 Logs/lettabot-watchdog.launchd.out
+ create mode 100644 Logs/wizard-status-ping-err.log
+ create mode 100644 Logs/wizard-status-ping.log
+ create mode 100755 Scripts/lettabot-watchdog.sh
+[nico/overnight-runner 3e6a0d9] auto-backup: 2026-03-03_16:18
+ 3 files changed, 125 insertions(+)
+[nico/overnight-runner faac584] auto-backup: 2026-03-03_16:53
+ 4 files changed, 121 insertions(+)
+[nico/overnight-runner fd84f97] auto-backup: 2026-03-03_17:35
+ 6 files changed, 187 insertions(+), 4 deletions(-)
+[nico/overnight-runner 1140644] auto-backup: 2026-03-03_17:50
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner bca2565] auto-backup: 2026-03-03_18:05
+ 6 files changed, 201 insertions(+), 5 deletions(-)
+ create mode 100644 Memory/Sessions/session-scratch-20260303-175246.md
+[nico/overnight-runner 24851ce] auto-backup: 2026-03-03_18:20
+ 5 files changed, 126 insertions(+), 5 deletions(-)
+[nico/overnight-runner 5915f85] auto-backup: 2026-03-03_18:35
+ 5 files changed, 122 insertions(+), 1 deletion(-)
+[nico/overnight-runner f6e05c8] auto-backup: 2026-03-03_18:50
+ 5 files changed, 122 insertions(+), 1 deletion(-)
+[nico/overnight-runner 1c6989d] auto-backup: 2026-03-03_19:05
+ 6 files changed, 236 insertions(+), 4 deletions(-)
+[nico/overnight-runner 3504755] auto-backup: 2026-03-03_19:20
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner d690ea0] auto-backup: 2026-03-03_19:35
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner a8706e1] auto-backup: 2026-03-03_19:50
+ 5 files changed, 124 insertions(+), 4 deletions(-)
+[nico/overnight-runner 25dc796] auto-backup: 2026-03-03_20:05
+ 5 files changed, 122 insertions(+), 1 deletion(-)
+[nico/overnight-runner 53f9335] auto-backup: 2026-03-03_20:20
+ 5 files changed, 122 insertions(+), 1 deletion(-)
+[nico/overnight-runner 115f78f] auto-backup: 2026-03-03_20:35
+ 6 files changed, 179 insertions(+), 4 deletions(-)
+[nico/overnight-runner 5d88fc4] auto-backup: 2026-03-03_20:50
+ 5 files changed, 126 insertions(+), 6 deletions(-)
+[nico/overnight-runner 753a456] auto-backup: 2026-03-03_21:05
+ 5 files changed, 122 insertions(+), 1 deletion(-)
+[nico/overnight-runner 5c19c53] auto-backup: 2026-03-03_21:20
+ 5 files changed, 122 insertions(+), 1 deletion(-)
+[nico/overnight-runner d74e777] auto-backup: 2026-03-03_21:35
+ 5 files changed, 122 insertions(+), 1 deletion(-)
+[nico/overnight-runner d11e6ae] auto-backup: 2026-03-03_21:50
+ 5 files changed, 122 insertions(+), 1 deletion(-)
+[nico/overnight-runner 3ebebdb] auto-backup: 2026-03-03_22:05
+ 5 files changed, 122 insertions(+), 1 deletion(-)
+[nico/overnight-runner 37ad3c4] auto-backup: 2026-03-03_22:20
+ 5 files changed, 122 insertions(+), 1 deletion(-)
+[nico/overnight-runner af01f54] auto-backup: 2026-03-03_22:35
+ 6 files changed, 122 insertions(+), 1 deletion(-)
+[nico/overnight-runner e4962b1] auto-backup: 2026-03-04_01:15
+ 10 files changed, 182 insertions(+), 2 deletions(-)
+ create mode 100644 Logs/memfs-autosync.launchd.err
+ create mode 100644 Logs/memfs-autosync.launchd.out
+ create mode 100755 Scripts/memfs-autosync.sh
+[nico/overnight-runner b037906] auto-backup: 2026-03-04_01:46
+ 6 files changed, 126 insertions(+), 2 deletions(-)
+[nico/overnight-runner 1eba3d0] auto-backup: 2026-03-04_02:12
+ 5 files changed, 184 insertions(+), 5 deletions(-)
+[nico/overnight-runner 6fb3653] auto-backup: 2026-03-04_02:27
+ 4 files changed, 122 insertions(+), 1 deletion(-)
+[nico/overnight-runner 461f9f9] auto-backup: 2026-03-04_02:42
+ 3 files changed, 118 insertions(+)
+[nico/overnight-runner 0ab8eb3] auto-backup: 2026-03-04_02:57
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 9ff384d] auto-backup: 2026-03-04_03:12
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner d539c16] auto-backup: 2026-03-04_03:27
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner b557437] auto-backup: 2026-03-04_03:42
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 3c6662c] auto-backup: 2026-03-04_03:57
+ 4 files changed, 155 insertions(+), 1 deletion(-)
+[nico/overnight-runner eab4e6e] auto-backup: 2026-03-04_04:12
+ 4 files changed, 122 insertions(+), 1 deletion(-)
+[nico/overnight-runner d0e5d69] auto-backup: 2026-03-04_04:27
+ 4 files changed, 122 insertions(+), 2 deletions(-)
+[nico/overnight-runner ef2ea23] auto-backup: 2026-03-04_04:42
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 6b8bdcb] auto-backup: 2026-03-04_04:57
+ 3 files changed, 118 insertions(+)
+[nico/overnight-runner d5d61e3] auto-backup: 2026-03-04_05:12
+ 5 files changed, 254 insertions(+), 1 deletion(-)
+ create mode 100644 CabinetAgentVault/05-reviews/tasks/2026-03-04_telegram-misc-list.md
+[nico/overnight-runner 5367601] auto-backup: 2026-03-04_05:27
+ 3 files changed, 121 insertions(+)
+[nico/overnight-runner 8abe213] auto-backup: 2026-03-04_05:42
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 6213dd7] auto-backup: 2026-03-04_05:57
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 75e1e2d] auto-backup: 2026-03-04_06:12
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner e06bd13] auto-backup: 2026-03-04_06:27
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 0320de7] auto-backup: 2026-03-04_06:42
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 0b6ce7f] auto-backup: 2026-03-04_06:57
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner e01fb84] auto-backup: 2026-03-04_07:12
+ 4 files changed, 121 insertions(+)
+[nico/overnight-runner 3d309cc] auto-backup: 2026-03-04_07:27
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner f37d02f] auto-backup: 2026-03-04_07:42
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner ee26056] auto-backup: 2026-03-04_07:57
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 39d7d4d] auto-backup: 2026-03-04_08:12
+ 3 files changed, 118 insertions(+)
+[nico/overnight-runner a3605a7] auto-backup: 2026-03-04_08:27
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 2dafb2e] auto-backup: 2026-03-04_08:42
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 602b616] auto-backup: 2026-03-04_08:58
+ 4 files changed, 124 insertions(+), 5 deletions(-)
+[nico/overnight-runner e6deb04] auto-backup: 2026-03-04_09:13
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 2445792] auto-backup: 2026-03-04_10:56
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 0e37f0f] auto-backup: 2026-03-04_11:11
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner fa3404e] auto-backup: 2026-03-04_11:26
+ 3 files changed, 120 insertions(+)
+[nico/overnight-runner 0032bce] auto-backup: 2026-03-04_11:41
+ 4 files changed, 129 insertions(+)
+[nico/overnight-runner 5790dcc] auto-backup: 2026-03-04_12:25
+ 5 files changed, 608 insertions(+)
+ create mode 100644 Logs/lettabot-watchdog.log
+[nico/overnight-runner 564be17] auto-backup: 2026-03-04_12:40
+ 4 files changed, 164 insertions(+)
+[nico/overnight-runner 68ba18b] auto-backup: 2026-03-04_12:55
+ 5 files changed, 234 insertions(+), 3 deletions(-)
+[nico/overnight-runner 8bff0ec] auto-backup: 2026-03-04_13:15
+ 10 files changed, 417 insertions(+), 8 deletions(-)
+ create mode 100644 CabinetAgentVault/50-clippings/youtube/G8tXjcseNjg-untriaged.md
+ create mode 100644 CabinetAgentVault/50-clippings/youtube/b29wl0ehrQI-untriaged.md
+ create mode 100644 CabinetAgentVault/50-clippings/youtube/sTdz6PZoAnw-untriaged.md
+ create mode 100644 CabinetAgentVault/50-clippings/youtube/vzCy44o3JwA-untriaged.md
+[nico/overnight-runner a8e3c77] auto-backup: 2026-03-04_13:30
+ 4 files changed, 200 insertions(+)
+[nico/overnight-runner 9d2888b] auto-backup: 2026-03-04_13:45
+ 5 files changed, 192 insertions(+)
+[nico/overnight-runner 0f428b4] auto-backup: 2026-03-04_14:00
+ 6 files changed, 264 insertions(+), 13 deletions(-)
+[nico/overnight-runner 9d872a4] auto-backup: 2026-03-04_14:56
+ 5 files changed, 544 insertions(+)
+[nico/overnight-runner 2099c9d] auto-backup: 2026-03-04_15:11
+ 4 files changed, 132 insertions(+), 12 deletions(-)
+[nico/overnight-runner 29c98f5] auto-backup: 2026-03-04_15:26
+ 6 files changed, 166 insertions(+), 2 deletions(-)
+ create mode 100644 Memory/Sessions/session-scratch-20260304-151536.md
+ create mode 100644 Memory/Sessions/session-scratch-20260304-151826.md
+[nico/overnight-runner b1e23f3] auto-backup: 2026-03-04_15:45
+ 4 files changed, 141 insertions(+)
+[nico/overnight-runner 471db17] auto-backup: 2026-03-04_16:00
+ 4 files changed, 145 insertions(+)
+[nico/overnight-runner 969e47b] auto-backup: 2026-03-04_16:26
+ 4 files changed, 179 insertions(+)
+[nico/overnight-runner 4ee2c52] auto-backup: 2026-03-04_16:41
+ 4 files changed, 161 insertions(+)
+[nico/overnight-runner cbd4158] auto-backup: 2026-03-04_17:35
+ 25 files changed, 1034 insertions(+), 40 deletions(-)
+ delete mode 100644 CabinetAgentVault/05-reviews/tasks/2026-02-23_addendums-task-architecture-plan.md
+ create mode 100644 Logs/heartbeat-healthcheck-err.log
+ create mode 100644 Logs/phase0g-status-last.txt
+ create mode 100644 Logs/phase0g-status-ping-err.log
+ create mode 100644 Logs/phase0g-status-ping.log
+ create mode 100755 Scripts/heartbeat-healthcheck.sh
+ create mode 100755 Scripts/nighttime-report.py
+ create mode 100755 Scripts/phase0g-status-ping.sh
+ create mode 100644 ops/launchd/README.md
+ create mode 100644 ops/launchd/com.nico.heartbeat-healthcheck.plist
+ create mode 100644 ops/launchd/com.nico.nighttime-report.plist
+ create mode 100644 ops/launchd/com.nico.overnight-runner.plist
+ create mode 100644 ops/launchd/com.nico.phase0g-status-ping.plist
+ create mode 100644 ops/launchd/com.nico.wizard-status-ping.plist
+ create mode 100755 ops/launchd/install.sh
+ create mode 100755 ops/launchd/uninstall.sh
+[nico/overnight-runner 6566ebc] auto-backup: 2026-03-04_17:50
+ 6 files changed, 193 insertions(+), 5 deletions(-)
+[nico/overnight-runner 551fca8] auto-backup: 2026-03-04_18:05
+ 6 files changed, 131 insertions(+), 1 deletion(-)
+[nico/overnight-runner 6c146da] auto-backup: 2026-03-04_18:21
+ 6 files changed, 150 insertions(+), 1 deletion(-)
+[nico/overnight-runner bceb79e] auto-backup: 2026-03-04_18:53
+ 5 files changed, 126 insertions(+), 1 deletion(-)
+[nico/overnight-runner 55a46e4] auto-backup: 2026-03-04_19:15
+ 5 files changed, 121 insertions(+), 1 deletion(-)
+[nico/overnight-runner 7e17fe8] auto-backup: 2026-03-04_19:30
+ 6 files changed, 136 insertions(+), 1 deletion(-)

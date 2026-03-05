@@ -1,0 +1,105 @@
+2026-03-04 19:31 EST
+
+### Phase 0G: Overnight Autonomy (Heartbeats + Nightly Work) [N] P1
+_Dependency: None for scaffolding. Token rotation strongly recommended before hardening._
+
+**Mission:** Nico can execute non-urgent work overnight without distracting daytime workflow.
+
+**Daily Checklist (must be ✅ by tonight):**
+- [x] ✅ **0G-1** Define overnight scope + gates (what can run overnight; what is forbidden)
+  - Allowed overnight: create vault stub notes, update local logs, run read-only scans
+  - Forbidden overnight (until later phase): git commits/PRs, memory edits, wizard edits, Slack posts, deleting/moving files
+  - User notifications: DM only on failure; otherwise silent
+- [x] ✅ **0G-2** Confirm nightly runner behavior (2am launchd) + logs + idempotency
+  - Job: `~/Library/LaunchAgents/com.nico.overnight-runner.plist`
+  - Script: `~/Nico/Scripts/overnight-runner.py`
+  - Vault output: `CabinetAgentVault/50-clippings/youtube/<video-id>-untriaged.md`
+  - Logs: `~/Nico/Logs/overnight-runner.log` + `~/Nico/Logs/overnight-runner-err.log`
+- [x] ✅ **0G-3** Add 15-minute status pings (only while checklist has 🟨 items)
+  - Job: `~/Library/LaunchAgents/com.nico.phase0g-status-ping.plist`
+  - Script: `~/Nico/Scripts/phase0g-status-ping.sh`
+- [x] ✅ **0G-4** Heartbeat policy: silent health-check only (no daytime chatter)
+  - Job: `~/Library/LaunchAgents/com.nico.heartbeat-healthcheck.plist`
+  - Script: `~/Nico/Scripts/heartbeat-healthcheck.sh`
+- [x] ✅ **0G-5** Track launchd as code in GitHub (sanitized plists + install/uninstall scripts)
+  - Folder: `~/Nico/ops/launchd/` (README + install/uninstall)
+- [x] ✅ **0G-6** Acceptance test: kickstart all jobs; verify correct outputs + no spam
+  - Verified: overnight runner + Phase 0G pings + heartbeat healthcheck all execute without errors
+  - Fixed: nighttime report job (missing script) now exists and runs quiet by default
+
+**Definition of Done:**
+- 2am job runs and produces expected artifacts in the vault
+- Status pings work and are quiet when nothing is active
+- Heartbeat runs without generating noise unless there is a failure
+- launchd configs/scripts are tracked in GitHub without secrets
+
+---
+
+## Quick Commands
+_Use these shorthand commands from any surface (text, voice, Cowork, Claude Code):_
+
+- **atl [P#] [description]** — Add to list. Defaults to P3/unassigned if no priority given.
+- **atl-p1 [description]** — Add to list as P1 (alias)
+- **sts** — Show current status. What's in progress, what's next.
+- **done [task]** — Mark a task complete.
+- **blocker [description]** — Flag something as blocked with reason.
+- **pri [task] [1-5]** — Change priority of a task.
+- **note [phase] [text]** — Add a note to a phase without creating a task.
+
+_Priority scale: P1 = critical/blocking → P2 = this week → P3 = normal → P4 = low → P5 = someday_
+_Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to sub-agent_
+
+---
+
+## 🔴 Active This Week
+
+| Priority | Owner   | Task                                                                  |
+| -------- | ------- | --------------------------------------------------------------------- |
+| ~~P1~~   | ~~[N]~~ | ~~50% context window alert hook~~ ✅                                   |
+| P1       | [V]     | Telegram bot token rotation (BotFather → /revoke → new token to Nico) |
+| ~~P1~~   | ~~[V]~~ | ~~Create Slack workspace + bot token~~ ✅                              |
+| ~~P2~~   | ~~[N]~~ | ~~LettaBot Telegram poller fix~~ ✅ No conflict found (CC-8)           |
+| P2       | [N]     | Phase 0E — metadata standards enforcement                             |
+| P2       | [V]     | Obsidian Phase 2 manual setup                                         |
+| P2       | [V]     | 1Password setup (secrets management)                                  |
+
+---
+
+## 👤 Vincent's Actions (Blocking Nico)
+
+_These require Vincent. Nothing else can proceed until done._
+
+- [ ] **P1** Telegram bot token rotation: open @BotFather → `/revoke` → get new token → paste to Nico (security — old token exposed in compaction summaries)
+- [x] **P1** Create Slack workspace → copy bot token → paste in terminal to Nico ✅ (done 2026-02-23)
+- [ ] **[P1][N]** Add Telegram memory command cheat sheet to master list + pinned memory
+- [ ] **[P3][N]** Pilot GitHub Actions background agent lane (tag Nico/Letta Code on issues/PRs) — choose repo + security mode first
+- [ ] **P2** 1Password: create account at 1password.com, install desktop app
+- [ ] **P2** Obsidian Phase 2: manual setup (sign in, enable Sync, register CLI, enable plugins) — Nico will prep everything, Vincent flips the switches
+- [x] **P3** Exa API key: free tier at dashboard.exa.ai (1000/mo) — optional, DuckDuckGo works now ✅ 2026-03-04
+- [ ] **P4** Review `05-reviews/housekeeping/vault-consolidation-review.md` in Obsidian — one decision needed
+- [ ] **P5** "Watch vid of pa guy in hall in Philly" — personal reminder
+
+---
+
+## 🤖 Nico's Queue (Autonomous Work)
+
+_Nico executes without Vincent. Ordered by priority._
+
+1. ~~iMessage alert script~~ ✅ Built (working via Telegram, 2026-02-23)
+2. ~~Vault housekeeping~~ ✅ Done (2026-02-23)
+3. ~~task-board.md~~ ✅ Built (2026-02-23)
+4. ~~Master list consolidation~~ ✅ Done (2026-02-23)
+5. ~~Obsidian Phase 1~~ ✅ Mostly done (app.json, plugins, git repo — 2026-02-23)
+6. ~~50% context window alert hook~~ ✅ Done (statusline + Telegram alert, 2026-02-23)
+7. ~~Telegram bot token rotation~~ → moved to Vincent's Actions (needs BotFather)
+8. **[P2]** Phase 0E remaining — metadata standards enforcement
+9. ~~LettaBot Telegram poller conflict~~ ✅ No conflict — single service, properly configured (CC-8 2026-02-23)
+10. ~~Obsidian Phase 1 remaining~~ ✅ All configs done (CC-7 2026-02-23)
+11. **[P3]** Phase 0A — consolidate Chat Imports, deduplicate docs
+12. ~~Phase 0C — verify MCP context fix~~ ✅ Verified: no Craft tools loading, GitHub plugin disabled (CC-8 2026-02-23)
+
+---
+
+## 📥 Inbox — Unprocessed Captures (Triaged 2026-02-23 CC-5)
+
+_Land here first, get triaged into phases by Nico. Items below have been assigned P/owner but not yet moved to phases._

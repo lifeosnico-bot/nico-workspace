@@ -1,0 +1,2395 @@
+Hey everyone, Charles from Letto here.
+
+So today I'm going to be going over
+
+context repositories. It's a brand new
+
+feature we just shipped in Leticode a
+
+few days ago and yeah, it's a pretty big
+
+feature. It's a very kind of fundamental
+
+overhaul to the way memory works inside
+
+of Leticode. Uh and we're super excited
+
+about it. I think it basically makes
+
+your agents much more capable at
+
+maintaining a very large memory system
+
+and then also making very big
+
+significant changes to the memory. So
+
+what we've noticed is for agents that
+
+have context repositories enabled
+
+basically they're able to much more
+
+easily like reorganize their memory um
+
+in very significant ways and then they
+
+generally seem to be much better at also
+
+making good memories. So in this video
+
+I'm going to go over the blog post that
+
+we released and this is more of just
+
+explaining like what context
+
+repositories are, how they work, why
+
+it's different from the previous system
+
+um called memory blocks and I'm also
+
+going to go over a demo. So, if you're
+
+interested in just the demo part, um
+
+check the time stamps in the description
+
+and you can just jump ahead to that. But
+
+I'm going to start with the blog first
+
+since uh context repositories are very
+
+different from memory blocks. Um they
+
+connect so they they are related to each
+
+other, but it's a significant enough
+
+change that I think it it's for those
+
+that are interested, it's um worth
+
+diving into the details of how it works
+
+and what makes it so much better. A
+
+truss from the future teleporting back
+
+into the beginning of the video. Uh, and
+
+I kind of just wanted to quickly
+
+showcase like what context repositories
+
+actually looks like. Um, so if you're
+
+interested in just jumping to the actual
+
+like implementation details, um, you
+
+know, what does it look like to see kind
+
+of like the layout of your context and
+
+then also I think more importantly kind
+
+of see these edits that are happening
+
+that are like kind of these getbacked
+
+edits. So yeah, all the memory edits are
+
+now tracked and you can kind of see all
+
+the all the changes your memory agents
+
+are making um to the memory in a very
+
+clean way. So yeah, if you kind of want
+
+to just see what this looks like in
+
+practice, u jump ahead. I'll leave
+
+timestamps in the description and what
+
+I'm going to do immediately next is go
+
+over the blog post. Um but yeah, again,
+
+if you're interested just in the
+
+implementation, just in how it works, um
+
+go ahead and like jump ahead till later
+
+in the video. Okay, so firstly, what
+
+even is a context repository? Uh
+
+basically it's git based memory. So it's
+
+memory that is tracked through git and
+
+it is edited through more natural like
+
+bash and file editing tools as opposed
+
+to specific memory tools which is the
+
+way that memory blocks works. Okay.
+
+Okay, so a very important thing to call
+
+out here is that context repositories it
+
+exposes the memory as files to the agent
+
+but it's not like the memory is just
+
+files in let code context repositories
+
+it is taking all the memories of the
+
+agent that actually are stored in memory
+
+blocks and it's kind of transplanting it
+
+onto the machine that you're on so that
+
+the agent can manipulate the memory much
+
+more easily. Uh so this is really all
+
+about putting memory that lives with the
+
+agent. It's kind of like the server side
+
+state. So it is very it's like not if
+
+your computer caches on fire and you
+
+know your context repository kind of
+
+vanishes because your hard drive is
+
+destroyed. It's not like you lost your
+
+agent. The agent is kind of still living
+
+in the API server and has all its
+
+memories. It's more that the the
+
+memories have all kind of been
+
+synchronized into the local file system.
+
+And through being synchronized to the
+
+local file system, uh you get a lot of
+
+nice properties. Uh so yeah that's
+
+basically what the blog post is about.
+
+Okay so to kind of illustrate the
+
+concrete difference between like the
+
+expressiveness of memory tools and more
+
+general computer use tools like bash. Uh
+
+let's justam imagine this example of you
+
+know an agent that maybe has been
+
+chatting like my personal agent. So it
+
+maybe has a ton of memories about me and
+
+in all of those memories my name is
+
+Charles. So there's all these instances
+
+of you know Charles did this, Charles
+
+did that, Charles likes this, Charles
+
+doesn't like this. Now let's say one day
+
+I tell my agent actually um I don't want
+
+to be called Charles, I want to be
+
+called Optimus Prime. Okay, so in the
+
+more traditional framework um this sort
+
+of operation is going to be done through
+
+a string replace tool. So the agent is
+
+going to call a tool like string replace
+
+um or sorry memory replace and it's
+
+going to take an old string and a new
+
+string and then generally this will also
+
+in like let us system it takes some sort
+
+of path um either like a path or a
+
+label.
+
+Okay, so imagine we have this memory
+
+block or this memory fragment or memory
+
+file or whatever you want to call it,
+
+but there's some sort of like piece of
+
+memory and it's in token space and it
+
+says Charles really likes Cyberpunk Edge
+
+Runners. And the agent now is going to
+
+call memory replace on this block um the
+
+block ID, you know, it could be an ID,
+
+it could be a a path, you know, whatever
+
+it is, it's going to call replace
+
+Charles with Optimus Prime. And this
+
+will execute on the server or wherever,
+
+you know, these memories are stored. And
+
+the output of this is going to be now
+
+the new memory is Optimus Prime really
+
+likes cyberpunk catch runners. And sure
+
+this is okay. I mean this is like
+
+basically the way that uh megpt works.
+
+You know this the original research
+
+paper we wrote a while ago. Um this is
+
+kind of the way that like memory works
+
+in basically all the modern chatbot
+
+systems. It's all like the mem GPT style
+
+memory where there's some sort of like
+
+memory bank. Um, and you can think of
+
+those as memory blocks in Leta. And the
+
+agent, it kind of has control of those
+
+memory blocks. Um, it can either append,
+
+replace, uh, delete. In this case, it's
+
+going to do a memory replace to replace
+
+Charles with Optimus Prime. Okay. So,
+
+where does this break down? Well, you
+
+know, this kind of works if or it's like
+
+very easy to conceptualize if there is
+
+only like one memory. Um, but you can
+
+imagine like, you know, if an agent is
+
+maintaining a very good memory system
+
+and it's learning a lot about me. If
+
+we've been chatting for a very long
+
+time, you know, it's not just going to
+
+have one file or one like memory block
+
+about preferences. It's also going to
+
+know a lot about like maybe my style, my
+
+location that I generally am in, my
+
+appearance, my hobbies, my friends. You
+
+know, this can kind of go on forever.
+
+Um, and you can have, let's say you have
+
+like n total different files or
+
+different memory blocks. And these are
+
+all just for me, right? There's like
+
+there going to be a ton of stuff from
+
+the agent itself, um, for like other
+
+things like organizations, work, you
+
+know, whatever. So now what's going to
+
+happen here is the agent is actually
+
+going to have to like call this tool
+
+memory replace a bunch of times. It's
+
+going to have to call it end times. Um,
+
+so instead of just calling it once, the
+
+agent's going to have to call it end
+
+times. And like agents, you know, these
+
+days they have the ability to do
+
+parallel tool calling. So sure, you
+
+know, the agent can kind of call a bunch
+
+of tools in parallel,
+
+you know, it can call them on different
+
+files. U, but at the same time, this is
+
+like limited. It's not like an agent
+
+that's going to dump 100 parallel tool
+
+calls uh at once. And then it's also
+
+just like kind of redundant, right? I
+
+think you know realistically what you'd
+
+want to do is you'd want to like support
+
+maybe the memory replace function it
+
+this memory tool it has like a wildcard
+
+operator and then the wild card operator
+
+allows you to like match into like
+
+everything inside of humans. Um so you
+
+know you you can potentially make like
+
+the memory tools much more complex to
+
+make it a lot easier to do like these
+
+batch operations. Okay, so maybe you're
+
+thinking, you know,
+
+that doesn't sound that bad. Like, was
+
+this really going to ever happen? Um,
+
+I'm not convinced that this is, you
+
+know, what you're about to show me with
+
+like bash is going to be better than
+
+like this memory place tool. Uh, I think
+
+another example I can give you is let's
+
+imagine, you know, this friends folder.
+
+Yeah, let's imagine this friends folder
+
+has, you know, Bob, Alice, and like a p
+
+total friends. And let's say I'm super
+
+popular and I have like 1,000 friends.
+
+Um well, you know what happens if the
+
+agent decides one day, you know, I
+
+actually think that each of these
+
+friends, you know, they're starting to
+
+maybe they're directly interacting with
+
+me and now I don't want it to be like
+
+human and then friends as this like nest
+
+organization. Instead, actually, I want
+
+to give every single person in friends
+
+their own human like directory, right?
+
+Okay. So to be concrete, basically we're
+
+trying to like unpack friends and pull
+
+it out. And we want to basically say
+
+that like now there Oh, and actually
+
+let's change this. Oops.
+
+So now it's not human, it's humans. And
+
+then I also want to say that like Alice
+
+and Bob, they they're not just like
+
+friends of Charles, they got their own
+
+dedicated top level memory organization.
+
+Um, so it's going to be Alice, Bob,
+
+Charles, and then maybe like a bunch of
+
+other friends. Okay, maybe let's say
+
+there's a thousand of them. They're all
+
+going to get unpacked into the humans
+
+directory. Okay, so maybe now you're
+
+starting to see like the potential
+
+problem here. Like what is going to be
+
+involved in this case if we only have a
+
+tool called memory replace? Okay, well
+
+now you know the agent is going to have
+
+to do like a bunch of label edits. So
+
+let's say this memory block you know
+
+human/prefs
+
+this is actually represented as you know
+
+a label in the database as human
+
+for/pres
+
+and let's say that you can actually
+
+replace labels and in in um and in leta
+
+when you use memory blocks uh there's
+
+actually a memory tool and the memory
+
+tool I think just look like this it's
+
+kind of the memory omni tool and you
+
+have the ability to change the label so
+
+you have the ability to kind of like say
+
+okay I'm going to make the old label
+
+this and then And the new label is this.
+
+But notice immediately there's kind of
+
+this like very disturbing thing that
+
+happened which is that you know all I
+
+did was at a high level concept level I
+
+decided you know we don't it's no longer
+
+just human it's humans. We have many
+
+different humans. Um but the
+
+organization here like how many like
+
+kind of atomic operations happened? Well
+
+we did an unpacking of the P friends you
+
+know to the top and then we also renamed
+
+this human to humans. So that's like P
+
+operations to unpack and then it is one
+
+operation to go from human to humans. So
+
+it's kind of like P plus one. But if the
+
+way that we can kind of like change the
+
+directory structure or like the
+
+organizational structure is actually
+
+through modifying the labels with this
+
+memory tool, you're actually going to
+
+have to do many more than just like P
+
+plus one operations because you're going
+
+to have to touch every single memory
+
+that's inside of human. Like just
+
+because we modified the directory or
+
+it's not really like a real directory,
+
+it's more like a concept directory. Just
+
+because we modified that one directory,
+
+we are having to touch every single
+
+memory, right? Okay. So that actually
+
+like seems pretty problematic. Um and I
+
+I would actually kind of agree that like
+
+you know it is a problem if an agent
+
+can't do this efficiently. And I think
+
+what ends up happening when agents can't
+
+really do this efficiently is the agent
+
+kind of like is aware of its kind of
+
+limitations in some way. What seems like
+
+it should be a simple renaming ends up
+
+becoming like way too complex. Uh I
+
+think with with memory blocks what you
+
+see is that the agents just never do
+
+this like the agents never do this like
+
+really big um reorganization you know
+
+really big but just changing like a
+
+label here and there um because because
+
+it's actually just like very expensive
+
+to do something that should be pretty
+
+simple and when I say it should be
+
+pretty simple you know what do I mean
+
+well if you're familiar with Unix um or
+
+kind of like the terminal tools you know
+
+that you can do these things you can do
+
+the command called MB to kind of like
+
+rename a directory. So if we were able
+
+to express memory mutation operations
+
+with bash, then we could do things like
+
+this. So yeah, we could basically just
+
+do a single command um to change the
+
+directory name or you know, again, it's
+
+not like necessarily real directory.
+
+It's kind of a virtual concept
+
+directory, but we can change it from
+
+human to humans with a single bash
+
+command. with the old system of memory
+
+blocks. Uh this actually ends up being
+
+like a very complex amount of like
+
+memory operations with the memory tool.
+
+But if you can modify your memories
+
+through bash, it allows you to do things
+
+like you know the unpacking. The
+
+unpacking also would be a very simple
+
+bash command. You can do unpacking, you
+
+can do reorganization. Uh all these
+
+things are like really really simple. Um
+
+they're kind of like as simple as they
+
+could potentially be. You can kind of
+
+express everything through code. Um, so
+
+all of your memory operations can just
+
+be expressed much more cleanly through
+
+through code. So yeah, that's kind of
+
+what we're saying this part of the blog
+
+post. Basically, what context
+
+repositories allows you to do is kind of
+
+like unfold the virtual memory or kind
+
+of like the remote memory state, put it
+
+into a local file system purely so that
+
+the agent can like manipulate it very
+
+easily. And yeah, again back to the
+
+analogy of kind of a human, you know,
+
+like myself as a human, I generally work
+
+on um this computer, this MacBook I'm
+
+recording from, but I also use like a
+
+lot of different computers. I use like
+
+remote computers, you know, my phone is
+
+a computer, but it's not like, you know,
+
+my memories or myself are living on
+
+those computers or those devices. It's
+
+not like if I lose my phone, I kind of
+
+like lose a fragment of my identity or
+
+like my memories. Instead, like I have
+
+my memories stored inside my brain and
+
+then I use all these devices. And I
+
+think you want to think about agents,
+
+especially stateful agents that uh you
+
+think about more like humans. Uh you
+
+want to think about it in a similar way
+
+with some of these other coding tools or
+
+coding agents. They treat memory like
+
+literally just as local files. And I
+
+think that's kind of like the wrong way
+
+to think about it. It's more that you do
+
+want the memory to become synchronized
+
+with local files so that you can edit it
+
+very easily and do like very very
+
+powerful operations on it. Um but the
+
+memory is still kind of like remote.
+
+Okay. Okay. And then the other very
+
+important part of context repositories
+
+is that they are gitbacked. And this is
+
+the way that we do the synchronization
+
+between the server and uh the local file
+
+system where kind of the memory gets
+
+like transplanted onto um it's all done
+
+via git. So like when you are kind of
+
+pulling down the memory so the agent can
+
+edit it um that's basically just a git
+
+pull. That's all managed by the let code
+
+harness but under the hood it's all
+
+using git. And this has a lot of nice
+
+properties. I think the most relevant
+
+property if you're using Leta code as a
+
+ver as a um personal agent is that all
+
+the memory changes, they're all now
+
+going to be tracked. So let's say you're
+
+using Leta Code and you have a sleep
+
+time um or like reflection agent
+
+enabled, you're actually going to be
+
+able to see all the changes to your
+
+memory that happened when you like
+
+basically weren't looking. So you can
+
+see like what your agent did to your
+
+memory or what sorry I guess what the
+
+agent did to its own memory. And because
+
+it's Git, you can also like roll it
+
+back. You can also have like many
+
+parallel agents all working on the
+
+memory together. And the way that would
+
+work was through git work trees. So
+
+basically by tracking the memory that is
+
+uh that is virtual but sync local it
+
+basically allows you to do a lot of
+
+really really cool things with these
+
+background or sleep time agents. Okay.
+
+So the other important thing to take
+
+away in the blog post is that not all
+
+memories are treated equally. We kind of
+
+had this concept with memory blocks in
+
+that like an agent could create memory
+
+blocks and then it could detach the
+
+memory blocks and then basically like
+
+every memory block um that is attached
+
+is going to be in context. So things
+
+like you know the personality of your
+
+agent you'd always want that to be
+
+attached because you know if the
+
+personality of your agent gets detached
+
+it's not going to be in context. So the
+
+agent like won't act the way you expect,
+
+right? It's not the personality won't
+
+like influence the behavior if it's
+
+just, you know, remote somewhere where
+
+the agent can see it if it like looks it
+
+up. So we have the exact same concept in
+
+context repositories. And the way it
+
+works is that in this virtualized file
+
+system that gets synced down through git
+
+onto the local machine for the agent to
+
+edit, everything that is inside kind of
+
+the system folder, these are all things
+
+that are going to be injected into the
+
+system prompt. So this is the equivalent
+
+of core memory. This is the equivalent
+
+of attached memory blocks, right? So
+
+everything in here, this is always going
+
+to be visible to the agent. It also
+
+means that this is actually all going to
+
+be finite context. You cannot just have
+
+an infinite infinite amount of things
+
+mounted inside of system. But then the
+
+kind of the benefit of this way of doing
+
+progressive disclosure versus the memory
+
+block system is that it allows you to
+
+organize everything that's not inside of
+
+the context window very cleanly. So the
+
+agent will be still be able to see like
+
+all of these memories that are outside
+
+of its context window but everything
+
+that's outside of system these are not
+
+actually going to be injected into the
+
+system prompt only the kind of like
+
+highle tree outline will be. So the
+
+agent if it had this exact you know
+
+context repository memory structure it
+
+would know everything inside of coding
+
+style it's going to see all the time. So
+
+this is always visible but this project
+
+timeline that's inside of history it's
+
+not going to immediately see what's in
+
+here. it would have to like go fetch it
+
+or go read it. And this pairs very very
+
+nicely with the whole mutating memory
+
+with bash because you could imagine like
+
+an agent can basically decide maybe
+
+there's many different humans. Um it can
+
+it can decide like hey I'm no longer
+
+working with this person or maybe this
+
+person I haven't chatted with in a very
+
+long time and I it it used to be very
+
+important for me to like see all this
+
+stuff about them but now I like don't
+
+need to see it. I can kind of like
+
+remove this. I'm not going to delete it.
+
+I'm not gonna like lose it forever, but
+
+I'm just gonna like move this folder
+
+from here to here. And if we do that,
+
+then it no longer is like polluting the
+
+context window. Um, but the agent's like
+
+still very aware of it. Okay, so the
+
+other parts of this blog I'm go over
+
+quickly because I'm actually going to
+
+like showcase it in a demo. But yeah,
+
+basically as I was saying earlier, one
+
+really cool thing about context
+
+repositories is that they allow you to
+
+have these like multi- aent memory
+
+swarms where you can basically have like
+
+many different parallel sub aents in let
+
+code that are all doing edits to memory.
+
+And we actually have an example inside
+
+of the init tool. So if you run init
+
+inside of let code and that's kind of
+
+like it's a it's a pre-built command
+
+that will kind of bootstrap your memory
+
+system. So I I'll show that to you guys.
+
+Um, but if you run that, there's
+
+actually a new thing inside of let code
+
+where Leta Code will see if you've used
+
+cloud code before. It'll see if you've
+
+used codecs before and it'll ask you,
+
+hey, do you want me to like go process
+
+your old codecs or like cloud code
+
+history and try to like learn something
+
+about you? And the way that will work is
+
+it actually will spawn like concurrent
+
+memory sub agents. Each of these memory
+
+sub agents is going to be modifying its
+
+own work tree of memory. it will kind of
+
+check out a work tree um off of like the
+
+main memory and it will work on these
+
+work trees and then those work trees
+
+will kind of get merged as a natural way
+
+to kind of take all the changes that the
+
+different memory agents have made
+
+combine them all and then push it back
+
+to the server to kind of synchronize the
+
+memory back into the agent's brain and
+
+yeah basically there's a lot of built-in
+
+skills inside of let code for doing sort
+
+of memory management so the memory
+
+initialization memory reflection um so
+
+this is the one I'll show you guys today
+
+this whole background ground codeex
+
+cloud code injection thing I think kind
+
+of deserves its own video because
+
+firstly it takes a long time. Um the
+
+memories are really rich. So I think
+
+this kind of this I'll say this for a
+
+different video but the reflection one
+
+I'll I'll show you guys today. And then
+
+there's also a def fragmentation skill
+
+which is the idea that maybe your memory
+
+like ends up getting kind of messy. You
+
+want to occasionally like clean up the
+
+memory, like maybe there's some
+
+duplication here and there that wasn't
+
+caught in real time, but you want to say
+
+like, hey, let's like let's take some
+
+dedicated time to actually clean up this
+
+memory, make it very like concise, and
+
+then maybe also like reevaluate what's
+
+inside of system and what's not inside
+
+of system and kind of move things
+
+around.
+
+Okay, so to briefly show you guys what
+
+kind of memory system looks like, I'm
+
+actually going to load up an old agent.
+
+So this is kind of my daily driver. So
+
+yeah, this agent is Big Chungus the
+
+second. This is kind of uh my main
+
+personal agent that I do a lot of like
+
+dev work with and yeah the the way to
+
+check if context repositories is enabled
+
+is you do for slashmemory
+
+um you hit enter and if context
+
+repositories is enabled what you'll see
+
+is this like file tree uh view of memory
+
+as opposed to if it's not enabled you're
+
+going to see like a block view of
+
+memory. So the way to basically check do
+
+I have um context repositories turned on
+
+is you just do for/memory and then look
+
+for this file system view. You you'll be
+
+able to tell if it's this view or the
+
+other view. Okay. So the other thing
+
+you'll be able to do if you have context
+
+repositories enabled is you should be
+
+able to tap O or like the press O on
+
+your keyboard. Um O for open when you're
+
+on the memory view page. So yeah,
+
+basically when you're on this page, you
+
+know, hit O um for open in browser and
+
+then a browser window should open,
+
+you'll get this local static file
+
+rendering of the memory. So you'll be
+
+able to see kind of like what's in
+
+system, what's in core, the tools, and
+
+then you'll also be able to see uh what
+
+I'll get into later kind of like this
+
+full git history because again context
+
+repositories another really big
+
+advantage over memory blocks is that
+
+they are git tracked. So you can see
+
+like every single change that happened
+
+versus memory blocks weren't natively
+
+like tracked. So you'd have to actually
+
+like implement your own system without
+
+memory blocks to see uh kind of a change
+
+log of like which agent edited which
+
+memory, what did they change versus with
+
+context repositories, it comes like
+
+baked in because it's all git. Okay. So
+
+the way I'm actually demo this is I'm
+
+going to start from scratch. I'm going
+
+to create a brand new agent. If you want
+
+to follow along, uh the way you would do
+
+that is make sure you install leta code
+
+then you run you you can run leta to
+
+follow along with me. Uh basically the
+
+first time you run leta you're going to
+
+be prompted to log in and ooth and once
+
+you do that there are some like free
+
+models you can use uh you can also
+
+connect your own API keys um to use your
+
+own like codeex account or use you know
+
+anthropic API keys things like that.
+
+Okay, so I created a brand new agent. I
+
+actually um renamed this agent to
+
+context repost example just so it's a
+
+little bit more clear what we're doing.
+
+And yeah, if you want to change the
+
+model, um I'm actually going to change
+
+the model here to change the reasoning
+
+setting to be high
+
+for/model
+
+46. I'm going to set it to high. Okay,
+
+so this is a completely uh brand new
+
+agent. If you look at the memory system
+
+with for/memory, it's super bare bones.
+
+Uh, it's basically one memory about
+
+myself, the human, one memory about
+
+itself. So, not much here at all. Um,
+
+kind of bare bones, which is good
+
+because we're going to run the init
+
+command to get started. Okay, so you can
+
+tell like I ran the init command. Uh,
+
+the way this actually works is the agent
+
+has a built-in initializing memory
+
+skill. It loads that skill and yeah, the
+
+agent actually is looking for um
+
+historical session data from cloud and
+
+codeex.
+
+I'm going to let all that run.
+
+Okay. Okay. And the agent actually also
+
+asked like, you know, how long do you
+
+want me to go for? Um, do you want me to
+
+do like a very extensive memory
+
+initialization? Uh, or do you want me to
+
+do something kind of quick? Um, I'm
+
+actually just going to do something
+
+quick for the sake of this video.
+
+Then it's also asking like, am I Charles
+
+Packer? That is me.
+
+And then it's it's also asking me, you
+
+know, I found the cloud code and the
+
+codeex history. Um, do you want me to
+
+analyze it so I can learn from your
+
+preferences? This actually takes a
+
+while. Uh, so I'm going to again, for
+
+the sake of this video, I'm going to
+
+skip it. But this is like super cool.
+
+Um, I think, you know, if you're running
+
+this yourself and you have that session
+
+data, I would definitely recommend
+
+hitting yes, um, the results are like
+
+really, really cool. I think the
+
+memories that come out of searching
+
+through like your history, if you do use
+
+cloud code or you do use codeex, uh, the
+
+memories are really impressive. Um, so I
+
+would definitely recommend doing that,
+
+but I'm going to skip that for now for
+
+the sake of this demo. Okay, I'm
+
+actually just going to put the put the
+
+Asian in YOLO mode. Let this run um, for
+
+a bit.
+
+Okay, so skipping ahead a bit, um you
+
+can see that like you can see that code
+
+is starting to make a lot of changes to
+
+its own memory. Um you can see that all
+
+these changes are happening inside of
+
+the locally synced copy of the memory.
+
+So I think if you had run this
+
+previously without context repositories
+
+enabled, what you'd see is the agent
+
+would be doing a lot of calls to like a
+
+memory tool. So it' be doing like memory
+
+insert, memory replace. Instead, it's
+
+making a lot of calls to like the
+
+standard file editing tools. So, it's
+
+using like bash, write, you know, edit.
+
+It's basically not using any specialized
+
+memory tools at all. It's just using the
+
+same tools that it would use to edit
+
+files on the computer, but it's editing
+
+its memory files inside of the context
+
+repository that are actually kind of
+
+like a local git sync of a remote kind
+
+of uh source of truth memory that with
+
+the source of truth memory that's living
+
+on the server. that's actually what's
+
+getting like put into the system prompt
+
+and everything. Um, but the agent is
+
+actually able to, you know, make much
+
+easier changes to that memory when it
+
+does it locally on this kind of like git
+
+copy as opposed to using like these
+
+these very uh specific memory tools. All
+
+right, so it's finally finished. Um, it
+
+looks like that took 5 minutes. U so
+
+yeah, not a ton of time. Um, kind of
+
+like right on target for I think what
+
+the light review does. And if you'd
+
+answer the question like how do you want
+
+to do this? Do you want me to go like
+
+really deep? Um, it would definitely
+
+take a lot more than 5 minutes. And if
+
+you were ingesting those codec files or
+
+those cloud code files um yeah it also
+
+probably took uh a little bit longer
+
+than five minutes. Okay. But you can see
+
+we started with just human and persona I
+
+believe. Um but now it's like kind of
+
+fully been broken down into a bunch of
+
+different like subfolders. Uh we have
+
+the human which has identity then has
+
+preferences memory workflow um has a
+
+bunch of stuff. And again I think the
+
+the coolest way to look at this is to
+
+use what we call the memory palace. Um,
+
+so to get there, you just see
+
+for/memory.
+
+Just hit O. So yeah, we can see kind of
+
+everything here. Uh, again, it's a
+
+little bit harder to read though. Um, so
+
+let's hit O. All right. So we're inside
+
+the memory palace. Um, you have a full
+
+breakdown of the context window. You can
+
+see system is taking like 10,00 tokens.
+
+Um, then tools. So you know, there's a
+
+decent amount of tools attached to lot
+
+of code by default. It's a very powerful
+
+harness. 1K tokens. And then the
+
+messages. So this me the messages
+
+includes like all the stuff it was just
+
+doing like the tool calls all the files
+
+to the memory system and so yeah the
+
+memory is actually not that large yet.
+
+Um so we can look at the files and yeah
+
+we can basically see like the full
+
+breakdown of what's in context and
+
+what's external. So the agent actually
+
+in this case has not put anything in
+
+external memory and I think that's
+
+probably pretty fair because a lot of
+
+the stuff you know that it's learning up
+
+front probably makes sense to it's
+
+really not that much information yet so
+
+it makes sense to like keep internally.
+
+I think what you should see is as the
+
+agent like learns more and more about
+
+you um and it continually is doing
+
+things like defragging its own memory
+
+system uh eventually you know things
+
+should start building up instead of
+
+external memory right because the thing
+
+about context repositories again not
+
+everything is treated uh equally. So
+
+stuff that's inside of the system
+
+folder, kind of this virtual folder. Um
+
+it's going inside of core memory. So
+
+it's getting pinned to the context
+
+window. And then stuff that's outside of
+
+system, it's visible to the agent as in
+
+like the agent can kind of see the
+
+directory tree, but the agent isn't
+
+going to see the contents of the memory
+
+by default. It has to like call a read
+
+on the local memory um to kind of like
+
+or the local sync of the memory to see
+
+what the memory contents actually are.
+
+Okay, so let's actually see if there's
+
+anything interesting in here. Okay, so
+
+it's clearly learning about like how to
+
+use the repo. uh it kind of has changed
+
+what its role is now. It says I am
+
+Charles's long-term coding collaborator
+
+on Leticode TypeScript CLI tool that I
+
+myself am an instance of. That's pretty
+
+funny. Um yeah, also you know these this
+
+is a markdown rendering. Um so like the
+
+actual file looks like this. We were
+
+looking at like the pretty version of
+
+it. Um I'm a stateful agent. I can make
+
+context. You know this is all true. Um
+
+okay that's cool. And yeah I think this
+
+is another pretty cool thing. Um it
+
+identified from the repo that it's using
+
+conventional commits. So kind of like
+
+wrote down a bunch of examples of like
+
+how commits or like the commits are
+
+written here.
+
+It has a lot of you has other
+
+information on like how the repo is
+
+published. Um
+
+it's kind of done a dissection of the
+
+way the source code is organized. So to
+
+be very clear like none of this
+
+information is actually inside of like
+
+the flat readme. Um it's not inside of
+
+our claw.md or agents.mmd that says
+
+inside of let code. This is all kind of
+
+generated like on the fly by the agent
+
+looking around the the repo. So yeah,
+
+what one thing um to point out is if you
+
+had done the version of this
+
+initialization and again you can run the
+
+initialization as much as many times as
+
+you want. You can run it you can run it
+
+once quickly and then run it again later
+
+um with the extended version on. But if
+
+you had done the version that pulls from
+
+like the claude and codeex uh chat
+
+history and you have like a very long
+
+you know you're a very heavy user of
+
+codeex CLI for example and you import
+
+that data or you let let a code look at
+
+it um I think what you'll notice is
+
+actually something like this you know
+
+this is very basic here it just it
+
+decided that my preferences are short
+
+direct um skip pleasantries you know
+
+this is actually not really from any
+
+data this was just pulled from the
+
+question it asked me directly um but
+
+what you'll see if you ingest your old
+
+uh chat logs is this stuff it becomes
+
+really detailed because an agent from
+
+all of your chat history with clock on
+
+codeex can actually like really infer a
+
+lot about how you work and kind of
+
+determine you know uh what what gets you
+
+frustrated like how generally you want
+
+things to to be done um yeah it's it's
+
+really cool so would recommend trying
+
+that out and yeah we'll make a separate
+
+video kind of covering that specifically
+
+but I think one of the coolest things
+
+here is the the fact that all these
+
+changes because they were done locally
+
+uh by the agent using bash. The agent
+
+committed everything. It made all the
+
+changes. It kind of like committed all
+
+those changes and then it pushed it to
+
+its remote uh you know ground truth
+
+state. We actually have like a full
+
+commit log of what happened. So the
+
+agent actually wrote this commit when it
+
+like redid its memory that says it
+
+actually tagged it with conventional
+
+commit and it explode flat memory. It's
+
+a 17 file hierarchical structure or 17
+
+file hierarchal structure. Um, and it,
+
+you know, kind of lays out what it did.
+
+It, you know, puts a little tag on it
+
+saying it was the co-author. Um, and
+
+yeah, you can basically see that it
+
+deleted the top level human block. Um,
+
+and then it also deleted the personal
+
+block and then it kind of blew this up
+
+into something much more nested with a
+
+lot more detail. So yeah, because
+
+context repository is get backed, you
+
+get all of this uh, really cool version
+
+control functionality from git. I think
+
+the last thing I want to show in this
+
+demo is something that I think is pretty
+
+important to do if you're using let code
+
+as your primary coding agent. It is to
+
+turn on or tune the reflection settings.
+
+So you can do this by going um typing in
+
+sleep time.
+
+And this is going to determine how often
+
+a background uh reflection agent um or
+
+what we call sleeptime agent will run
+
+and kind of reflect on your conversation
+
+and decide to write that into memory.
+
+There are a few different ways this can
+
+work. Um, firstly, you can turn it off.
+
+So, if you don't really care that much
+
+about memory, um, you really want to
+
+conserve tokens and you don't want
+
+anything running um, in the background,
+
+uh, you can just turn this off. Um, you
+
+can also have it be like every n steps.
+
+So, this is actually going to be like
+
+really low, every two steps. I
+
+definitely wouldn't recommend doing
+
+that, but you could have like every 30
+
+steps. So, like every 30 uh, messages in
+
+the transcript, a background reflection
+
+agent will get launched. I actually
+
+think probably the best way to set this
+
+up is to use the compaction events. So
+
+this would be every single time the
+
+context is compacted or kind of a
+
+summarization happens then a sleep timer
+
+or reflection agent gets launched. And I
+
+think this is actually a pretty natural
+
+way or it's a pretty natural time to run
+
+the sort of agent because the context is
+
+getting evicted. Something like sonnet
+
+with a 200k context window that is a lot
+
+of tokens. So I think generally it's
+
+kind of like a a reasonable balance of
+
+like how frequently you want to run this
+
+thing. And then the two different
+
+options here for how to run it is you
+
+can either have it be a reminder or
+
+force. The difference between these two
+
+is the reminder. Actually the way it
+
+works is it every end steps or on a
+
+comma action event the front the the
+
+main agent is going to be reminded hey
+
+why don't you run a background sleep
+
+time reflection agent. Why don't you run
+
+one in the background and it will kind
+
+of like uh look over things that have
+
+happened recently and update it memory
+
+and then the other way to do this is you
+
+force auto launch. In this case, there's
+
+no reminder and the the reflection agent
+
+will just get launched automatically. So
+
+yeah, I I think this is kind of
+
+subjective which one you want to choose.
+
+Um, if you want something closest to the
+
+old style of sleeptime compute, you
+
+probably want to do a step count. And
+
+you would set the step count to maybe be
+
+20, um, 25, 50 even. And then you would
+
+have it be auto launch. So, because one
+
+thing that can happen with, uh, the
+
+reminder version is if the reminder
+
+comes in, when it's not when it's not
+
+forced, the the main agent actually
+
+might decide like, hey, I'm not going to
+
+do this. Like, if the agent is actually
+
+like pretty dumb, like if your main
+
+agent is using a really bad model, it
+
+might not even like understand that
+
+reminder. it might just completely
+
+ignore it if it's doing something else,
+
+right? Uh if you want to really optimize
+
+for reliability, like you always want
+
+the sleep time agent running, then would
+
+definitely recommend turning this on
+
+forced and then also probably setting
+
+this to compaction event. Okay, but for
+
+the purposes of this demo, I want to
+
+show you what happens when a sleepet
+
+time agent runs uh in the background
+
+because it's going to actually mutate
+
+the memory and it's going to push it and
+
+we can look at that inside of the inside
+
+of the memory pal. Um, I'm going to, for
+
+the sake of this video, change the
+
+trigger to be step comp based. I'm going
+
+to set the step comp to be pretty low.
+
+I'm set to five. And then I'm going to
+
+set it to be a reminder because if it's
+
+a reminder, it's a little bit more
+
+visible uh to to you, the user. So, I
+
+think it's a little bit easier to
+
+understand what's going on in a in a
+
+demo context. Okay. So, I updated the
+
+sleep time settings and now all I need
+
+to do is just uh spend five turns or
+
+five steps chatting with the agent. And
+
+I'm going to try to introduce some sort
+
+of like new information um that
+
+definitely is like going to be useful
+
+for the agent to write to memory. Okay.
+
+So I'm just saying uh yeah just wanted
+
+to chat a bit. Nothing to do workwise.
+
+Okay. So something you know kind of
+
+random. Um I'm wondering about
+
+differences in kind of wood. Why is some
+
+wood super plasticky? I I'm
+
+intentionally like saying something kind
+
+of weird just because that way it will
+
+clearly be written to like the memory as
+
+a preference.
+
+Okay, so it's telling me that it's not
+
+about the wood itself, it's about the
+
+finish.
+
+Okay, so just continuing this
+
+conversation about the wood thing. Um,
+
+the idea is that, you know, probably
+
+like the the reflection agent is going
+
+to decide to write into its memory that
+
+I have some sort of like fascination
+
+with wood.
+
+Okay, so yeah, I've been thinking about
+
+getting into woodworking.
+
+Okay, so I think we're getting pretty
+
+close. I think this next message should
+
+be what triggers it.
+
+So now continuing to talk about would
+
+hopefully
+
+Here we go. Okay. Okay. So what happened
+
+here is the agent got a reminder um kind
+
+of a system reminder that's hidden from
+
+the main transcript. And the reminder
+
+was uh hey you know consider launching a
+
+reflection sub aent so that the
+
+reflection sub aent can run in the
+
+background and take anything that's
+
+happened in the recent conversation and
+
+write it into memory. And the way
+
+background sub aents work in let code is
+
+generally speaking if let code launches
+
+a sub aent the sub aent is blocking. So
+
+the so this is what would happen if the
+
+main agent launches like an explore sub
+
+aent to explore parts of the repo. it
+
+generally will launch it not in the
+
+background. It'll launch it in the
+
+foreground and then it kind of is like
+
+waiting for the agent to finish. Once
+
+the agent finishes exploring, it tells
+
+it like what the result of the
+
+exploration is and then the main agent
+
+can continue. The sub agent tool, which
+
+is also called the task tool, it
+
+actually has the option to dispatch
+
+agents in the background. And the
+
+reminder about this reflection uh does
+
+encourage the agent to dispatch the the
+
+the reflection agent in the background,
+
+right? Because this reflection sub
+
+agent, it's kind of like an auxiliary
+
+task. it's not really related to this
+
+generally would be like coding but in
+
+this case like this random conversation
+
+we're having about wood. Uh so there's
+
+no need for like the the main agent to
+
+stall on this. Instead it's better for
+
+the reflection to just get dispatched.
+
+But the way this works in let code is a
+
+reflection agent or any background sub
+
+agent that gets run uh this is actually
+
+event based. So right now nothing is
+
+happening in the terminal. um I've
+
+stopped replying, but once the sub agent
+
+finishes running, the result of it will
+
+actually like trigger um it'll trigger
+
+like a new input to the agent. So the
+
+agent kind of like will get an event
+
+notification effectively and it'll be
+
+able to see what happened. So you can
+
+actually open up the AD and then you'll
+
+be able to see the sub agent working and
+
+it looks like it is getting close to
+
+finishing. Um so yeah, I'm going to go
+
+back because we'll be able to see the
+
+notification come in. Okay, so we're
+
+waiting for it to work. Um, and again,
+
+the way I got to that, um, was I just
+
+copied this link, put it into my
+
+browser, and I could kind of see the
+
+subision working. Um, but yeah, once it
+
+finishes, what it's going to do is it's
+
+going to like edit the memory. If it if
+
+it deems that something interesting has
+
+happened, it's going to commit it and
+
+it's going to push it. And I think
+
+actually it also does this in a work
+
+tree just in case there's like many
+
+parallel sub aents working on the memory
+
+at the same time. But yeah, once it
+
+pushes the memory, uh, then it kind of
+
+sends a message or it kind of indicates
+
+it's completed to the main agent. And
+
+yeah, so we're basically going to see in
+
+a few moments, um, there should be a
+
+notification that kind of pops in to let
+
+a code letting the main agent that I was
+
+chatting with about wood know that the
+
+reflection is finished. Okay, so the the
+
+ping just came in. You can see that it
+
+kind of like auto started. We didn't
+
+have to send any new input.
+
+Okay. And then I kind of like made an
+
+initial comment because um I did kind of
+
+stop the conversation. But if I
+
+continued the conversation then this
+
+would have been like a natural it would
+
+have like been naturally injected or
+
+naturally accued. Uh so yeah we could
+
+have continued the conversation and then
+
+like you know we could have done it for
+
+like 30 minutes and then like once the
+
+message came in it wouldn't have
+
+necessarily interrupted the
+
+conversation. It would have just like it
+
+would have just let the agent know very
+
+naturally that it the reflection had
+
+finished running. All right. All right,
+
+so back to the memory files. So we can
+
+see um core memory is now 4K tokens. Um
+
+I guess that was a lot of that was
+
+actually like the initial work where the
+
+main agent kind of like split it up from
+
+two files into many files. Um but yeah,
+
+if we go in and we look at actually
+
+let's jump into history, we can now see
+
+that a reflection agent. So it got kind
+
+of got tagged with reflection. It ran on
+
+the background um while we were having
+
+our conversation about wood. And I'm
+
+gonna guess Yeah, it well you can
+
+actually a really cool thing about this
+
+is it's all git, right? So it's it's
+
+doing the thing where like in the get
+
+commit message it kind of indicates at a
+
+very high level what was this change to
+
+memory that just happened. So if we open
+
+this up we can see that the the
+
+reflection sub agent it ran it said it
+
+reviewed messages from this date to this
+
+date the update summary was that it
+
+added a human interest memory
+
+documenting the woodworking interest. Uh
+
+it said that the user likes dark woods.
+
+That is kind of what I said. I like yeah
+
+all this is accurate. I like smooth
+
+shapes, natural finishes. And it says
+
+that it was prompted by a casual
+
+conversation about woodworking
+
+aesthetics. You can also see that the
+
+sub agent, it actually tagged uh its
+
+commit. So it basically said that hey my
+
+agent ID, the sub agent is this and this
+
+the parent agent that spawned me is
+
+this. Uh so this is all like very useful
+
+information. If you ever like want to
+
+know, hey, what happened here? Like what
+
+was the reasoning behind this message?
+
+Like what did the agent actually do u
+
+when it was making these memory edits?
+
+Well, you can just go into the AD uh or
+
+use the API and just like grab this
+
+agent ID and you can look at exactly
+
+what it's doing. And yeah, so you can
+
+see that basically there was one file
+
+change. It was 14 lines of insert of
+
+insertions, description, personal
+
+interest in hobbies, and you can see
+
+that as of 2026, February 20, February
+
+21st, um interested in getting into
+
+woodworking, and it also said that I
+
+have aesthetic preferences about liking
+
+dark woods, um attracted to smooth,
+
+organic shapes. So yeah, I think that's
+
+a good place to stop. Hopefully that
+
+gave you a pretty good idea of how
+
+context repositories works. And yeah, if
+
+you want to try it out, it's in the
+
+latest Letter code version. Download
+
+Leta Code, grab the latest version, you
+
+know, get your agent to generate some
+
+memories, do some reflection, and then
+
+for/memory and hit O to pop open this
+
+context palace. And yeah, you'll
+
+basically be able to see all of the
+
+memories inside of your context
+
+repository. And then also all of the
+
+changes that have been made. Um, so
+
+yeah, I I I think this is like the
+
+coolest part, being able to see these
+
+reflection agents that run in the
+
+background and then see like exactly
+
+what they were doing at the time if you
+
+want to open their agent ID. Um, and
+
+then yeah, basically seeing like all
+
+these incremental changes happening to
+
+memory u in this sort of git viewer. So
+
+yeah, hope you enjoyed. Let us know what
+
+you think. Catch us on Discord and yeah,
+
+have fun with it. See you.
