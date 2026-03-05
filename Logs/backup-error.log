@@ -636,3 +636,7 @@ To https://github.com/lifeosnico-bot/nico-workspace.git
    3887c93..a553c40  HEAD -> backup
 To https://github.com/lifeosnico-bot/nico-workspace.git
    a553c40..5456d87  HEAD -> backup
+error: RPC failed; curl 56 Recv failure: Connection reset by peer
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
