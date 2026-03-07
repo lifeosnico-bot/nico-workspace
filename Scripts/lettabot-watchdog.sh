@@ -6,6 +6,7 @@ OUT_LOG="/Users/lifeos.nico/Nico/Logs/lettabot-watchdog.log"
 AGENT_STATE="/Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json"
 LETTABOT_PLIST="/Users/lifeos.nico/Library/LaunchAgents/com.nico.lettabot.plist"
 LETTABOT_LABEL="com.nico.lettabot"
+API_PORT="8088"
 
 STAMP() { date '+%Y-%m-%d %H:%M:%S'; }
 
@@ -66,14 +67,14 @@ sleep 2
 
 # Wait for the API port to be released to avoid EADDRINUSE restart loops.
 for _ in {1..10}; do
-  if ! lsof -nP -iTCP:8080 -sTCP:LISTEN >/dev/null 2>&1; then
+  if ! lsof -nP -iTCP:${API_PORT} -sTCP:LISTEN >/dev/null 2>&1; then
     break
   fi
   sleep 1
 done
 
 # Last resort: if still listening, kill the lingering main process.
-if lsof -nP -iTCP:8080 -sTCP:LISTEN >/dev/null 2>&1; then
+if lsof -nP -iTCP:${API_PORT} -sTCP:LISTEN >/dev/null 2>&1; then
   pkill -f "/Users/lifeos.nico/Nico/lettabot/lettabot/dist/main.js" 2>/dev/null || true
   sleep 2
 fi
