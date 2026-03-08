@@ -1,8 +1,8 @@
 {
-  "baseFontSize": 16,
+  "baseFontSize": 18,
   "accentColor": "",
   "translucency": false,
   "nativeMenus": null,
-  "showRibbon": true,
+  "showRibbon": false,
   "baseFontSizeAction": true
 }
