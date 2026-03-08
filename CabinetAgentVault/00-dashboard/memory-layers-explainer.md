@@ -18,36 +18,76 @@ Use today’s findings to make memory behavior predictable and debuggable.
 - The writes were identical across those 4 agents and contained generic bootstrap content (`human.md`, `persona.md`, small config).
 - Main takeaway: this is a **target-routing issue**, not a data-loss issue.
 
-## Memory layers (plain language)
-1. **Live Context Window**
-   - What the model can currently “see” in this active conversation.
-2. **Pinned Agent Memory (Core + system files)**
-   - Persistent instructions and memory files for one specific agent ID.
-3. **External/Recall Memory**
-   - Searchable long-term message history and recalled context.
-4. **Conversation History Store**
-   - Session transcripts/messages that can be summarized and recalled.
-5. **Local Agent Memory Repos on Disk**
-   - One folder per `agent-id` under `~/.letta/agents/`.
+## Folder hierarchy (the important parts)
+```text
+/Users/lifeos.nico/
+├─ .letta/
+│  └─ agents/
+│     ├─ agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668/   <-- MAIN NICO AGENT
+│     │  └─ memory/
+│     │     ├─ system/
+│     │     │  ├─ human.md
+│     │     │  ├─ persona.md
+│     │     │  ├─ operations.md
+│     │     │  ├─ ai-assistant/
+│     │     │  └─ project/
+│     │     └─ .git/
+│     ├─ agent-<other-id-1>/
+│     │  └─ memory/
+│     │     └─ system/...
+│     ├─ agent-<other-id-2>/
+│     │  └─ memory/
+│     │     └─ system/...
+│     └─ ... (many other local agent memory folders)
+│
+└─ Nico/
+   └─ CabinetAgentVault/
+      └─ 00-dashboard/
+         ├─ ops-index.md
+         ├─ status.md
+         ├─ task-board.md
+         ├─ decisions.md
+         └─ llm-sessions/
+```
 
-## Critical rule
-Memory is **agent-scoped**. If a write lands on the wrong `agent-id`, the data exists but your main Nico agent will not use it.
+## Who uses what
+- **Letta/Nico memory** uses: `~/.letta/agents/<agent-id>/memory/system/*.md`
+- **Claude session docs / operational docs** use: `~/Nico/CabinetAgentVault/00-dashboard/...`
+- These are related systems, but different storage layers.
 
-## Flow chart
+## Slash commands and where they write
+- `/handoff` (current workflow): writes session outputs into Obsidian vault docs (`00-dashboard/llm-sessions/`, `session-index`, etc.)
+- Memory updates ("make it a memory"): should write to **main Nico agent memory** under `agent-5a9b.../memory/system/`
+- Problem today: some writes targeted other local agent IDs instead.
+
+## Deterministic write path (required rule)
+1. Identify target first: `agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668`
+2. Write memory only under that agent path
+3. Verify changed file + timestamp
+4. Confirm content
+5. Persist (commit/push) when needed
+
+## Interaction flow (simple)
 ```mermaid
 flowchart TD
-    A[Input: Message / Command / Automation] --> B{Which agent-id is targeted?}
-    B -->|Main Nico agent-5a9b...| C[Write to Nico memory layers]
-    B -->|Other agent-id| D[Write to other agent memory only]
+    A[User request] --> B{Request type}
 
-    C --> E[Pinned memory updated]
-    C --> F[Recall/conversation context available]
-    E --> G[Commit + Push]
-    F --> G
-    G --> H[Visible across machines/sessions]
+    B -->|Session docs / task logs| C[Write to Obsidian vault]
+    C --> C1[CabinetAgentVault/00-dashboard/*]
 
-    D --> I[Data exists but not in main Nico]
-    I --> J[Looks like "sync happened" but wrong target]
+    B -->|Memory update| D[Write to Letta memory]
+    D --> D1[.letta/agents/agent-5a9b.../memory/system/*]
+
+    B -->|Slash command| E[Command workflow runs]
+    E --> F{Expected output target}
+    F -->|Docs| C
+    F -->|Memory| D
+
+    D1 --> G[Verify correct agent-id + file changed]
+    C1 --> H[Verify note exists in ops-index/session-index paths]
+
+    G --> I[Deterministic state]
+    H --> I
 ```
 
 ## Verification commands (copy/paste)
@@ -85,12 +125,13 @@ PY`
 ## Quick mental model
 - Letta is multi-agent.
 - Each agent is its own memory namespace.
-- “Synced” is only true for Nico when the write lands on `agent-5a9b...` and is persisted.
+- Obsidian session docs are not the same storage as Letta memory.
+- “Synced” is only true for Nico when write target is `agent-5a9b...` and persistence is verified.
 
 ## Operational checkpoint
 Before accepting any “memory synced” claim, verify:
 1. Correct `agent-id`
 2. File changed in that agent memory
 3. Content is what was expected
-4. Commit/push state is clean
+4. Persisted state is clean
 5. Main Nico can read/use it

@@ -208,6 +208,12 @@
   },
   "active": "3a53fa4e699de6d0",
   "lastOpenFiles": [
+    "20-areas/Agno M1/agno-vs-letta-comparison copy.html",
+    "20-areas/Agno M1/agno-vs-letta-comparison copy.jsx",
+    "20-areas/Agno M1/agent-cos-architecture copy.jsx",
+    "01-inbox/vault-salvage/reference-docs/letta-knowledge-pipeline.sh",
+    "30-resources/letta/letta-knowledge-pipeline.sh",
+    "00-dashboard/daily/2026-03-08.md",
     "00-dashboard/memory-layers-explainer.md",
     "00-dashboard/ops-index.md",
     "00-dashboard/llm-sessions/session-index.md",
@@ -232,17 +238,11 @@
     "00-dashboard/session-log.md",
     "00-dashboard/llm-sessions/2026-02-23_session-CC-10.md",
     "00-dashboard/llm-sessions/2026-03-01-cowork-session-3-video-processing.md",
-    "00-dashboard/llm-sessions/2026-03-01-cowork-session-4-kickoff-prompt.md",
-    "00-dashboard/llm-sessions/2026-03-01-next-session-prompt.md",
     "01-inbox/vault-salvage/processed-research",
     "01-inbox/vault-salvage/raw-transcripts",
     "01-inbox/vault-salvage/reference-docs",
     "01-inbox/vault-salvage/session-notes",
     "01-inbox/vault-salvage/video-catalog",
-    "30-resources/letta/transcripts",
-    "30-resources/letta/github",
-    "30-resources/letta/docs",
-    "01-inbox/vault-salvage",
-    "30-resources/letta"
+    "30-resources/letta/transcripts"
   ]
 }
