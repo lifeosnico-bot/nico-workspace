@@ -74,6 +74,23 @@ Everything else: Nico decides and executes. No approval needed for infrastructur
 - Impact: missed briefing delivery; user had to re-establish context.
 - Action: log GitHub issue in letta-ai/letta-code and record here for internal tracking.
 
+## 2026-03-08
+
+### Session Architecture: Single Source of Truth for Sessions (15:56 EST | Source: Nico CC-12)
+- Eliminated duplicate session state by removing mutable `session-log.md` as a second session record.
+- Canonical session data now lives in one place only, with generated views derived from it.
+- Added auto-generated `session-index.md` under `llm-sessions/` as a derived navigation view, not a second source of truth.
+- Added `ops-index.md` as the central manifest that links canonical data sources and derived views.
+- Updated `/handoff` skill behavior: regenerate the session index from canonical data instead of appending to a parallel log.
+
+### Architecture Rule: Canonical State vs Immutable Record vs Derived View (15:56 EST | Source: Nico CC-12)
+- Never maintain two mutable copies of the same operational data.
+- Every operational surface must be classified as one of:
+  1. Canonical state (single writable source)
+  2. Immutable record (append-only history)
+  3. Derived view (regenerated from canonical/record)
+- Enforcement standard: if two files require manual sync, architecture is incorrect and must be refactored.
+
 ## 2026-02-14
 
 ### Initialized Memory System

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-dashboard/llm-sessions/session-index.md",
+                "file": "00-dashboard/2026-03-08_master-task-rollup.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "session-index"
+              "title": "2026-03-08_master-task-rollup"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.5
+    "width": 388.5,
+    "collapsed": true
   },
   "right": {
     "id": "02e5e5a00cc0ebe3",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "00-dashboard/llm-sessions/session-index.md",
+                "file": "00-dashboard/2026-03-08_master-task-rollup.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for session-index"
+              "title": "Backlinks for 2026-03-08_master-task-rollup"
             }
           },
           {
@@ -113,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "00-dashboard/llm-sessions/session-index.md",
+                "file": "00-dashboard/2026-03-08_master-task-rollup.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from session-index"
+              "title": "Outgoing links from 2026-03-08_master-task-rollup"
             }
           },
           {
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00-dashboard/llm-sessions/session-index.md",
+                "file": "00-dashboard/2026-03-08_master-task-rollup.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of session-index"
+              "title": "Outline of 2026-03-08_master-task-rollup"
             }
           },
           {
@@ -198,12 +199,15 @@
   },
   "active": "3d549a2ad669d023",
   "lastOpenFiles": [
-    "00-dashboard/ops-index.md",
-    "00-dashboard/status.md",
-    "00-dashboard/2026-03-08_master-task-rollup.md",
-    "00-dashboard/llm-sessions/session-index.md",
-    "05-reviews/housekeeping/vault-consolidation-review.md",
+    "00-dashboard/llm-sessions/2026-03-08_session-CC-12.md",
     "00-dashboard/daily/March 7 2026.md",
+    "00-dashboard/llm-sessions/session-index.md",
+    "00-dashboard/status.md",
+    "00-dashboard/home.md",
+    "00-dashboard/decisions.md",
+    "00-dashboard/ops-index.md",
+    "00-dashboard/2026-03-08_master-task-rollup.md",
+    "05-reviews/housekeeping/vault-consolidation-review.md",
     "50-clippings/linqapp-untriaged.md",
     "50-clippings/youtube/RRZ4iHS55Ik-untriaged.md",
     "50-clippings/youtube/AQADMwxrG4JSaUV-untriaged.md",
@@ -221,9 +225,6 @@
     "00-dashboard/llm-sessions/2026-03-01-cowork-session-4-kickoff-prompt.md",
     "00-dashboard/llm-sessions/2026-03-01-next-session-prompt.md",
     "00-dashboard/llm-sessions/2026-03-02_memory-how-it-works.md",
-    "00-dashboard/decisions.md",
-    "00-dashboard/home.md",
-    "30-resources/letta-manual/build-me/build-update-nico_wizard.md",
     "01-inbox/vault-salvage/processed-research",
     "01-inbox/vault-salvage/raw-transcripts",
     "01-inbox/vault-salvage/reference-docs",
