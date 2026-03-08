@@ -9,6 +9,8 @@ LETTABOT_LABEL="com.nico.lettabot"
 API_PORT="8088"
 STATE_FILE="/Users/lifeos.nico/Nico/Logs/lettabot-watchdog.state"
 RESTART_COOLDOWN_SECS=300
+# Number of consecutive restarts before clearing conversationId
+CLEAR_CONV_THRESHOLD=3
 
 STAMP() { date '+%Y-%m-%d %H:%M:%S'; }
 
@@ -20,13 +22,18 @@ fi
 # Look at the most recent tail only to avoid slow scans.
 TAIL="$(tail -n 350 "$LOG_FILE" 2>/dev/null || true)"
 
-# Load persistent state (last restart timestamp)
+# Load persistent state (last restart timestamp + consecutive restart count)
 LAST_RESTART_TS=0
+CONSECUTIVE_RESTARTS=0
 if [[ -f "$STATE_FILE" ]]; then
-  LAST_RESTART_TS="$(cat "$STATE_FILE" 2>/dev/null || echo 0)"
+  LAST_RESTART_TS="$(head -1 "$STATE_FILE" 2>/dev/null || echo 0)"
+  CONSECUTIVE_RESTARTS="$(sed -n '2p' "$STATE_FILE" 2>/dev/null || echo 0)"
 fi
 if ! [[ "$LAST_RESTART_TS" =~ ^[0-9]+$ ]]; then
   LAST_RESTART_TS=0
+fi
+if ! [[ "$CONSECUTIVE_RESTARTS" =~ ^[0-9]+$ ]]; then
+  CONSECUTIVE_RESTARTS=0
 fi
 
 # Detect known stuck states.
@@ -55,6 +62,11 @@ elif echo "$TAIL" | grep -qE 'llm_api_error|APIConnectionTimeoutError|Request ti
     exit 0
   fi
 else
+  # No stuck state detected — reset consecutive restart counter
+  if [[ "$CONSECUTIVE_RESTARTS" -gt 0 ]]; then
+    echo "$LAST_RESTART_TS" > "$STATE_FILE"
+    echo "0" >> "$STATE_FILE"
+  fi
   exit 0
 fi
 
@@ -69,11 +81,17 @@ if (( NOW_TS - LAST_RESTART_TS < RESTART_COOLDOWN_SECS )); then
   exit 0
 fi
 
-# Backup and clear conversationId (this forces a fresh conversation thread).
-if [[ -f "$AGENT_STATE" ]]; then
-  BAK="$AGENT_STATE.bak-$(date '+%Y%m%d-%H%M%S')"
-  cp "$AGENT_STATE" "$BAK"
-  python3 - <<'PY'
+# Increment consecutive restart counter
+CONSECUTIVE_RESTARTS=$((CONSECUTIVE_RESTARTS + 1))
+
+# Only clear conversationId after multiple consecutive restarts.
+# This preserves tool context on transient failures while still recovering
+# from genuinely stuck conversations.
+if [[ "$CONSECUTIVE_RESTARTS" -ge "$CLEAR_CONV_THRESHOLD" ]]; then
+  if [[ -f "$AGENT_STATE" ]]; then
+    BAK="$AGENT_STATE.bak-$(date '+%Y%m%d-%H%M%S')"
+    cp "$AGENT_STATE" "$BAK"
+    python3 - <<'PY'
 import json
 p='/Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json'
 obj=json.load(open(p))
@@ -81,17 +99,24 @@ for name in list(obj.get('agents', {}).keys()):
     obj['agents'][name].pop('conversationId', None)
 json.dump(obj, open(p, 'w'), indent=2)
 PY
-  echo "[$(STAMP)] watchdog: cleared conversationId (backup: $BAK)" >> "$OUT_LOG"
+    echo "[$(STAMP)] watchdog: cleared conversationId after $CONSECUTIVE_RESTARTS consecutive restarts (backup: $BAK)" >> "$OUT_LOG"
+  fi
+  # Reset counter after clearing
+  CONSECUTIVE_RESTARTS=0
 else
-  echo "[$(STAMP)] watchdog: missing agent state file: $AGENT_STATE" >> "$OUT_LOG"
+  echo "[$(STAMP)] watchdog: restart $CONSECUTIVE_RESTARTS/$CLEAR_CONV_THRESHOLD (preserving conversationId)" >> "$OUT_LOG"
 fi
 
 # Restart LettaBot
 launchctl bootout "gui/$(id -u)/$LETTABOT_LABEL" 2>/dev/null || true
 sleep 2
 
+# Kill any orphaned letta-code CLI subprocesses that hold resources
+pkill -f "letta-code.*--conversation" 2>/dev/null || true
+sleep 1
+
 # Wait for the API port to be released to avoid EADDRINUSE restart loops.
-for _ in {1..10}; do
+for _ in {1..15}; do
   if ! lsof -nP -iTCP:${API_PORT} -sTCP:LISTEN >/dev/null 2>&1; then
     break
   fi
@@ -101,12 +126,13 @@ done
 # Last resort: if still listening, kill the lingering main process.
 if lsof -nP -iTCP:${API_PORT} -sTCP:LISTEN >/dev/null 2>&1; then
   pkill -f "/Users/lifeos.nico/Nico/lettabot/lettabot/dist/main.js" 2>/dev/null || true
-  sleep 2
+  sleep 3
 fi
 
 launchctl bootstrap "gui/$(id -u)" "$LETTABOT_PLIST"
 
-# Persist restart timestamp for cooldown checks.
+# Persist restart timestamp + consecutive restart count
 echo "$NOW_TS" > "$STATE_FILE"
+echo "$CONSECUTIVE_RESTARTS" >> "$STATE_FILE"
 
-echo "[$(STAMP)] watchdog: restarted $LETTABOT_LABEL" >> "$OUT_LOG"
+echo "[$(STAMP)] watchdog: restarted $LETTABOT_LABEL (consecutive: $CONSECUTIVE_RESTARTS)" >> "$OUT_LOG"
