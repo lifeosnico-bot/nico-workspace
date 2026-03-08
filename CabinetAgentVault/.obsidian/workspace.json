@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.5,
-    "collapsed": true
+    "width": 388.5
   },
   "right": {
     "id": "02e5e5a00cc0ebe3",
@@ -197,7 +196,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "3d549a2ad669d023",
+  "active": "fa1654097f2b6850",
   "lastOpenFiles": [
     "00-dashboard/llm-sessions/session-index.md",
     "00-dashboard/llm-sessions/2026-03-08_session-CC-12.md",
