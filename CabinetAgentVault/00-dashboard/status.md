@@ -256,7 +256,7 @@ _Dependency: Phase 0 complete ✅_
 - [x] 5a. Direct push blocked ✅ · 5b. Branch→PR→merge works ✅
 - [ ] 5c. **[P3][N]** Verify auto-backup runs on next cycle correctly
 - [ ] 6. **[P2][N]** Enforce metadata standards
-  - [ ] 6a. Audit existing files: status.md, decisions.md, session-log.md — add missing timestamps
+  - [ ] 6a. Audit existing files: status.md, decisions.md, session-index.md — add missing timestamps
   - [ ] 6b. Define exact format per document type (timezone, source label)
   - [ ] 6c. Add metadata checklist to CLAUDE.md Session Protocol
   - [ ] 6d. Future: Slack bot validates metadata before accepting #status posts

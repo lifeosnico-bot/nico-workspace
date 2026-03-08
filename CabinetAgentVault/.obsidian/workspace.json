@@ -11,10 +11,14 @@
             "id": "3d549a2ad669d023",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "00-dashboard/2026-03-08_master-task-rollup.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "2026-03-08_master-task-rollup"
             }
           }
         ]
@@ -74,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.5
+    "width": 388.5,
+    "collapsed": true
   },
   "right": {
     "id": "02e5e5a00cc0ebe3",
@@ -191,7 +196,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fa1654097f2b6850",
+  "active": "3d549a2ad669d023",
   "lastOpenFiles": [
     "00-dashboard/ops-index.md",
     "00-dashboard/llm-sessions/session-index.md",
