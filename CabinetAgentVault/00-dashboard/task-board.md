@@ -3,27 +3,29 @@ title: "Task Board"
 type: dashboard
 status: active
 created: 2026-02-23
+modified: 2026-03-08
 source: nico
 ---
 
 # Task Board
-**Last updated**: 2026-02-23 22:40 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-10
+**Last updated**: 2026-03-08 15:30 EST | **Updated by**: Nico (Claude Code) | **Session**: CC-12
 
 _This file is rewritten by Nico at every session start and end. Do not edit manually._
-_Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]]_
+_Source of truth: [[status]] · Central manifest: [[ops-index]]_
 
 ---
 
-## 🔴 P1 — Critical
+## P1 — Critical
 
 | Owner | Task | Status |
 |---|---|---|
-| [V] | Telegram bot token rotation (BotFather /revoke) | 🔴 Security — do ASAP |
-| [V] | Final comms decision | Partially done |
+| [N] | Fix permissions issues with Telegram and Nico | Open |
+| [N] | Overnight runner scaffold + queue + schedule | PR #14 open — waiting merge |
+| [V] | Telegram bot token rotation (BotFather /revoke) | Waiting on Vincent |
 
 ---
 
-## 🟠 P2 — This Week
+## P2 — This Week
 
 | Owner | Task | Status |
 |---|---|---|
@@ -33,25 +35,24 @@ _Source of truth: [[status]] · Full plans: [[2026-02-23_task-architecture-plan]
 
 ---
 
-## 👤 Vincent's Actions
+## Vincent's Actions
 
-1. 🔴 Telegram: open @BotFather → `/revoke` → get new token → paste to Nico
-2. Rename Slack bot from "Nico" to "Slacky" (Slack app settings → App Home → display name)
-3. Obsidian: sign in, enable Sync, register CLI (Nico preps, Vincent flips switches)
-4. [1Password](https://1password.com) — create account, install desktop app
-
----
-
-## 📥 Inbox
-
-**26 items** — see [[status#📥 Inbox — Unprocessed Captures|Inbox in status.md]]
+1. Telegram: open @BotFather → `/revoke` → get new token → paste to Nico
+2. Rename Slack bot from "Nico" to "Slacky" (Slack app settings)
+3. Obsidian: sign in, enable Sync, register CLI
+4. 1Password — create account, install desktop app
 
 ---
 
-## ✅ Completed This Session (CC-10)
+## Inbox
 
-- Background Slack polling: slack-poll.sh + slack-poll-check.py + LaunchAgent (com.nico.slack-poller)
-- New channel #vincent-to-nico created — Vincent posts, Slacky responds, poller alerts main Nico
-- context-monitor.sh updated: 📨 Slack msg indicator in statusline
-- Channel maps updated in slack-post.sh + slack-read.sh
-- Slacky ignore list added/reverted — Slacky responds everywhere including #vincent-to-nico
+**~25 items** — see [[status#Inbox — Unprocessed Captures|Inbox in status.md]]
+
+---
+
+## Completed This Session (CC-12)
+
+- Single-source-of-truth refactor: session-log.md → auto-generated session-index.md
+- Created ops-index.md (central manifest for all canonical data sources)
+- Updated /handoff skill (removed manual log step, added index regeneration)
+- Updated CLAUDE.md and status.md references

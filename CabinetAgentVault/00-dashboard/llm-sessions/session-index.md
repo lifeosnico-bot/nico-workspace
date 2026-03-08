@@ -28,3 +28,4 @@ source: Claude Code
 | 2026-03-01 | [[2026-03-01-cowork-session-4-kickoff-prompt\|Cowork 4 Kickoff]] | cowork | Session 4 kickoff prompt |
 | 2026-03-01 | [[2026-03-01-next-session-prompt\|Next Session Prompt]] | note | Letta video processing and setup prompt |
 | 2026-03-02 | [[2026-03-02_memory-how-it-works\|Memory How-To]] | telegram | Memory system explanation |
+| 2026-03-08 | [[2026-03-08_session-CC-12\|CC-12]] | code | Single-source-of-truth refactor, ops-index.md, session-index.md |

@@ -1,12 +1,12 @@
 # Status
 
-**Last Updated**: 2026-03-04 17:32 EST | **Updated by**: Nico (CLI) | **Session**: TG-03
+**Last Updated**: 2026-03-08 15:58 EST | **Updated by**: Nico | **Session**: CC-12 follow-up
 
 ---
 
 ## Current State
 
-Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (deep clean CC-8). Task-board ✅. iMessage alert script ✅ (Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅. Permission prompt alert ✅. Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅. All operational docs in vault ✅. Slack two-way ✅ (CC-9). Background Slack polling ✅ (CC-10 — poller watches #vincent-to-nico, alerts to #alerts, statusline indicator). Slacky responds in #vincent-to-nico for two-way chat. Bot display name still "Nico" in Slack — needs rename to "Slacky" via Slack app settings (Vincent action).
+Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (deep clean CC-8). Task-board ✅. iMessage alert script ✅ (Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅. Permission prompt alert ✅. Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅. All operational docs in vault ✅. Slack two-way ✅ (CC-9). Background Slack polling ✅ (CC-10). Single-source-of-truth refactor ✅ (CC-12 — session-log.md replaced by auto-generated session-index.md, ops-index.md created as central manifest, /handoff skill updated to regenerate index).
 
 **#1 PRIORITY (Nico):** Phase 0E metadata standards enforcement.
 **#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke).
