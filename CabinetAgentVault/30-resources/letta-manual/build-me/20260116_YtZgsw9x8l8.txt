@@ -1,0 +1,3496 @@
+Kind: captions
+Language: en
+
+Hey there, it's Cameron and today I'm
+
+Hey there, it's Cameron and today I'm
+
+Hey there, it's Cameron and today I'm
+going to talk about how you can use
+
+going to talk about how you can use
+
+going to talk about how you can use
+Leticode to manage your Obsidian Notes
+
+Leticode to manage your Obsidian Notes
+
+Leticode to manage your Obsidian Notes
+vault. We're starting to see a lot more
+
+vault. We're starting to see a lot more
+
+vault. We're starting to see a lot more
+people use Leticode or Claude Code and
+
+people use Leticode or Claude Code and
+
+people use Leticode or Claude Code and
+other kind of terminal based coding AI
+
+other kind of terminal based coding AI
+
+other kind of terminal based coding AI
+assistants for things that are not code.
+
+assistants for things that are not code.
+
+assistants for things that are not code.
+And a common use case that I have is
+
+And a common use case that I have is
+
+And a common use case that I have is
+managing my Obsidian vault. If you do
+
+managing my Obsidian vault. If you do
+
+managing my Obsidian vault. If you do
+not know Obsidian, it's just a very
+
+not know Obsidian, it's just a very
+
+not know Obsidian, it's just a very
+simple note-taking app.
+
+simple note-taking app.
+
+simple note-taking app.
+It's extremely clean and it's fast and
+
+It's extremely clean and it's fast and
+
+It's extremely clean and it's fast and
+it allows you to manage a lot of notes,
+
+it allows you to manage a lot of notes,
+
+it allows you to manage a lot of notes,
+link them together. There's a lot of
+
+link them together. There's a lot of
+
+link them together. There's a lot of
+plugins and you can do all kinds of
+
+plugins and you can do all kinds of
+
+plugins and you can do all kinds of
+development on top of it. The nice part
+
+development on top of it. The nice part
+
+development on top of it. The nice part
+about working with Obsidian is that it
+
+about working with Obsidian is that it
+
+about working with Obsidian is that it
+just has a bunch of markdown files on a
+
+just has a bunch of markdown files on a
+
+just has a bunch of markdown files on a
+folder in your computer. And what does
+
+folder in your computer. And what does
+
+folder in your computer. And what does
+let code do really well? It modifies a
+
+let code do really well? It modifies a
+
+let code do really well? It modifies a
+bunch of text files in a folder on your
+
+bunch of text files in a folder on your
+
+bunch of text files in a folder on your
+computer. And because Leta agents are
+
+computer. And because Leta agents are
+
+computer. And because Leta agents are
+stateful, meaning that they learn and
+
+stateful, meaning that they learn and
+
+stateful, meaning that they learn and
+improve over time, they are persistently
+
+improve over time, they are persistently
+
+improve over time, they are persistently
+longived like you and I, they can learn
+
+longived like you and I, they can learn
+
+longived like you and I, they can learn
+a lot about your notes as you go on.
+
+a lot about your notes as you go on.
+
+a lot about your notes as you go on.
+They'll become kind of a thinking
+
+They'll become kind of a thinking
+
+They'll become kind of a thinking
+partner or a companion for working on
+
+partner or a companion for working on
+
+partner or a companion for working on
+your specific Obsidian vault. So to
+
+your specific Obsidian vault. So to
+
+your specific Obsidian vault. So to
+begin here, I'm going to assume that
+
+begin here, I'm going to assume that
+
+begin here, I'm going to assume that
+you've gone and downloaded Obsidian and
+
+you've gone and downloaded Obsidian and
+
+you've gone and downloaded Obsidian and
+done the setup. It's super easy to
+
+done the setup. It's super easy to
+
+done the setup. It's super easy to
+install. Once you go to our docs, you'll
+
+install. Once you go to our docs, you'll
+
+install. Once you go to our docs, you'll
+install Node.js. You'll get an
+
+install Node.js. You'll get an
+
+install Node.js. You'll get an
+app.leta.com leta.com developer platform
+
+app.leta.com leta.com developer platform
+
+app.leta.com leta.com developer platform
+account and then you'll just have to run
+
+account and then you'll just have to run
+
+account and then you'll just have to run
+npm install minusg uh leta-ai/leta
+
+npm install minusg uh leta-ai/leta
+
+npm install minusg uh leta-ai/leta
+code. For this demo here, I'm actually
+
+code. For this demo here, I'm actually
+
+code. For this demo here, I'm actually
+going to create a new vault. So my agent
+
+going to create a new vault. So my agent
+
+going to create a new vault. So my agent
+and I are going to start this vault from
+
+and I are going to start this vault from
+
+and I are going to start this vault from
+scratch. I'm going to have it ask me
+
+scratch. I'm going to have it ask me
+
+scratch. I'm going to have it ask me
+questions and get information from me so
+
+questions and get information from me so
+
+questions and get information from me so
+that it can begin populating uh kind of
+
+that it can begin populating uh kind of
+
+that it can begin populating uh kind of
+a wiki of everything that's in my head.
+
+a wiki of everything that's in my head.
+
+a wiki of everything that's in my head.
+So I'm just going to create a new vault
+
+So I'm just going to create a new vault
+
+So I'm just going to create a new vault
+here
+
+here
+
+here
+and then pick a name for my awesome
+
+and then pick a name for my awesome
+
+and then pick a name for my awesome
+vault. I'm gonna go Cameron house.
+
+vault. I'm gonna go Cameron house.
+
+vault. I'm gonna go Cameron house.
+And then I'm going to pick a location
+
+And then I'm going to pick a location
+
+And then I'm going to pick a location
+for this to go on my computer.
+
+I think I'm just going to put this in
+
+I think I'm just going to put this in
+
+I think I'm just going to put this in
+Cameron here like that. And it'll be
+
+Cameron here like that. And it'll be
+
+Cameron here like that. And it'll be
+user/Cameron/Cameron's
+
+user/Cameron/Cameron's
+
+user/Cameron/Cameron's
+house. Hit create. All right. Now we
+
+house. Hit create. All right. Now we
+
+house. Hit create. All right. Now we
+have our vault. Let's go get Leta code
+
+have our vault. Let's go get Leta code
+
+have our vault. Let's go get Leta code
+set up inside of this vault. So,
+
+set up inside of this vault. So,
+
+set up inside of this vault. So,
+remember I put this I put this vault
+
+remember I put this I put this vault
+
+remember I put this I put this vault
+inside of a folder named Cameron House
+
+inside of a folder named Cameron House
+
+inside of a folder named Cameron House
+like this. And you can see there's this
+
+like this. And you can see there's this
+
+like this. And you can see there's this
+welcome file, which is the one that you
+
+welcome file, which is the one that you
+
+welcome file, which is the one that you
+can see right here.
+
+So, I'm just going to go into Cameron
+
+So, I'm just going to go into Cameron
+
+So, I'm just going to go into Cameron
+House here, and you should see the you
+
+House here, and you should see the you
+
+House here, and you should see the you
+can do print working directory to see
+
+can do print working directory to see
+
+can do print working directory to see
+the full path to this uh folder on your
+
+the full path to this uh folder on your
+
+the full path to this uh folder on your
+computer. If you forget where this vault
+
+computer. If you forget where this vault
+
+computer. If you forget where this vault
+is located, you can basically do
+
+is located, you can basically do
+
+is located, you can basically do
+something like click the three dots in
+
+something like click the three dots in
+
+something like click the three dots in
+the corner that say reveal reveal and
+
+the corner that say reveal reveal and
+
+the corner that say reveal reveal and
+finder and you'll get um the path here
+
+finder and you'll get um the path here
+
+finder and you'll get um the path here
+and you can see exactly where it is.
+
+and you can see exactly where it is.
+
+and you can see exactly where it is.
+Alternatively, you can hit command P if
+
+Alternatively, you can hit command P if
+
+Alternatively, you can hit command P if
+you're on Mac and then go to open
+
+you're on Mac and then go to open
+
+you're on Mac and then go to open
+another vault like that and then it will
+
+another vault like that and then it will
+
+another vault like that and then it will
+give you a prompt and then a list of the
+
+give you a prompt and then a list of the
+
+give you a prompt and then a list of the
+available vaults and you can see the
+
+available vaults and you can see the
+
+available vaults and you can see the
+path where they are located on your
+
+path where they are located on your
+
+path where they are located on your
+computer. All right, so let's go back to
+
+computer. All right, so let's go back to
+
+computer. All right, so let's go back to
+the terminal. To get into Leta Code,
+
+the terminal. To get into Leta Code,
+
+the terminal. To get into Leta Code,
+just type leta like that. You'll get
+
+just type leta like that. You'll get
+
+just type leta like that. You'll get
+this here. You can authenticate using
+
+this here. You can authenticate using
+
+this here. You can authenticate using
+OOTH here by clicking this
+
+Open this up. Authorize. Close that
+
+Open this up. Authorize. Close that
+
+Open this up. Authorize. Close that
+window. All right, great. I'm in. And
+
+window. All right, great. I'm in. And
+
+window. All right, great. I'm in. And
+then it asks which agent I want to use,
+
+then it asks which agent I want to use,
+
+then it asks which agent I want to use,
+but because I, you know, this is a new
+
+but because I, you know, this is a new
+
+but because I, you know, this is a new
+account, I don't have any agents. So,
+
+account, I don't have any agents. So,
+
+account, I don't have any agents. So,
+I'm just going to create a new one.
+
+I'm just going to create a new one.
+
+I'm just going to create a new one.
+Okay. So, there's a few things here.
+
+Okay. So, there's a few things here.
+
+Okay. So, there's a few things here.
+There gives you some some commands that
+
+There gives you some some commands that
+
+There gives you some some commands that
+we can talk about a little later. And
+
+we can talk about a little later. And
+
+we can talk about a little later. And
+then you see nameless agent. We haven't
+
+then you see nameless agent. We haven't
+
+then you see nameless agent. We haven't
+given our agent a name. And then the
+
+given our agent a name. And then the
+
+given our agent a name. And then the
+model that we're running on is set 4.5.
+
+model that we're running on is set 4.5.
+
+model that we're running on is set 4.5.
+Leta is model agnostic. So you can
+
+Leta is model agnostic. So you can
+
+Leta is model agnostic. So you can
+change it with /model. It'll give you a
+
+change it with /model. It'll give you a
+
+change it with /model. It'll give you a
+list of, you know, all the models you
+
+list of, you know, all the models you
+
+list of, you know, all the models you
+can choose from.
+
+Okay. So I'm introducing myself. I'm
+
+Okay. So I'm introducing myself. I'm
+
+Okay. So I'm introducing myself. I'm
+saying you're an agent designed to help
+
+saying you're an agent designed to help
+
+saying you're an agent designed to help
+us build a good Obsidian vault. I'm
+
+us build a good Obsidian vault. I'm
+
+us build a good Obsidian vault. I'm
+saying, you know, we're going to work
+
+saying, you know, we're going to work
+
+saying, you know, we're going to work
+together. Please update your memory with
+
+together. Please update your memory with
+
+together. Please update your memory with
+my preferences. Sometimes your agents
+
+my preferences. Sometimes your agents
+
+my preferences. Sometimes your agents
+will do this just by themselves. I like
+
+will do this just by themselves. I like
+
+will do this just by themselves. I like
+to ask specifically. I say, "Oh, your
+
+to ask specifically. I say, "Oh, your
+
+to ask specifically. I say, "Oh, your
+vault is precious and we should work on
+
+vault is precious and we should work on
+
+vault is precious and we should work on
+it with care." Also note that we're
+
+it with care." Also note that we're
+
+it with care." Also note that we're
+going to be doing a YouTube video on how
+
+going to be doing a YouTube video on how
+
+going to be doing a YouTube video on how
+to use Leticode uh and to work with
+
+to use Leticode uh and to work with
+
+to use Leticode uh and to work with
+those video notes. So, I've helped it
+
+those video notes. So, I've helped it
+
+those video notes. So, I've helped it
+understand its environment, which you
+
+understand its environment, which you
+
+understand its environment, which you
+don't strictly need to do, but I think
+
+don't strictly need to do, but I think
+
+don't strictly need to do, but I think
+of it as like kind of good practice to
+
+of it as like kind of good practice to
+
+of it as like kind of good practice to
+help your agent understand as much as it
+
+help your agent understand as much as it
+
+help your agent understand as much as it
+possibly can about its operating
+
+possibly can about its operating
+
+possibly can about its operating
+environment. Treat your agents like an
+
+environment. Treat your agents like an
+
+environment. Treat your agents like an
+adult. We can see some reasoning here.
+
+adult. We can see some reasoning here.
+
+adult. We can see some reasoning here.
+Our agent says, "This is a great first
+
+Our agent says, "This is a great first
+
+Our agent says, "This is a great first
+interaction." See, agent's already off
+
+interaction." See, agent's already off
+
+interaction." See, agent's already off
+on a good foot. We're friends now. Hi,
+
+on a good foot. We're friends now. Hi,
+
+on a good foot. We're friends now. Hi,
+Cameron. Great to meet you. I'm excited
+
+Cameron. Great to meet you. I'm excited
+
+Cameron. Great to meet you. I'm excited
+to help you build. Let me update your
+
+to help you build. Let me update your
+
+to help you build. Let me update your
+memory and preferences.
+
+memory and preferences.
+
+memory and preferences.
+So, you can see here it's stored a bunch
+
+So, you can see here it's stored a bunch
+
+So, you can see here it's stored a bunch
+of information. Cameron likes
+
+of information. Cameron likes
+
+of information. Cameron likes
+collaborative work with short,
+
+collaborative work with short,
+
+collaborative work with short,
+personalized questions, values careful,
+
+personalized questions, values careful,
+
+personalized questions, values careful,
+thoughtful work, and creating content
+
+thoughtful work, and creating content
+
+thoughtful work, and creating content
+for YouTube. It's tracking information
+
+for YouTube. It's tracking information
+
+for YouTube. It's tracking information
+in its persona block, which is
+
+in its persona block, which is
+
+in its persona block, which is
+information about itself, like a
+
+information about itself, like a
+
+information about itself, like a
+personality. So, it has like some some
+
+personality. So, it has like some some
+
+personality. So, it has like some some
+communication style to help demonstrate
+
+communication style to help demonstrate
+
+communication style to help demonstrate
+let code capabilities. And then by
+
+let code capabilities. And then by
+
+let code capabilities. And then by
+default we include a project block which
+
+default we include a project block which
+
+default we include a project block which
+is you know this location you know this
+
+is you know this location you know this
+
+is you know this location you know this
+folder basically information about the
+
+folder basically information about the
+
+folder basically information about the
+vault. All right so as of the time
+
+vault. All right so as of the time
+
+vault. All right so as of the time
+recording this video there's been some
+
+recording this video there's been some
+
+recording this video there's been some
+instability with the cloud models. So
+
+instability with the cloud models. So
+
+instability with the cloud models. So
+I'm actually going to switch to a
+
+I'm actually going to switch to a
+
+I'm actually going to switch to a
+different model. You can do that by
+
+different model. You can do that by
+
+different model. You can do that by
+typing /model and get a list of
+
+typing /model and get a list of
+
+typing /model and get a list of
+available models. And I'm actually just
+
+available models. And I'm actually just
+
+available models. And I'm actually just
+going to go to GPT 5.2 to open AAI's
+
+going to go to GPT 5.2 to open AAI's
+
+going to go to GPT 5.2 to open AAI's
+model, but you should also update the
+
+model, but you should also update the
+
+model, but you should also update the
+system prompt to match whatever that
+
+system prompt to match whatever that
+
+system prompt to match whatever that
+model needs. And you can do that by just
+
+model needs. And you can do that by just
+
+model needs. And you can do that by just
+typing /system and then select uh the
+
+typing /system and then select uh the
+
+typing /system and then select uh the
+codec system prompt. Please continue. We
+
+codec system prompt. Please continue. We
+
+codec system prompt. Please continue. We
+got cut off. So it's asking me a few
+
+got cut off. So it's asking me a few
+
+got cut off. So it's asking me a few
+questions. There's actually a question
+
+questions. There's actually a question
+
+questions. There's actually a question
+tool that uh we provide in let code. So
+
+tool that uh we provide in let code. So
+
+tool that uh we provide in let code. So
+your coding agent can ask you questions.
+
+your coding agent can ask you questions.
+
+your coding agent can ask you questions.
+In this case, it'll help you just like
+
+In this case, it'll help you just like
+
+In this case, it'll help you just like
+help ask me what I want to do. So, it
+
+help ask me what I want to do. So, it
+
+help ask me what I want to do. So, it
+wants to ask about vault structure and
+
+wants to ask about vault structure and
+
+wants to ask about vault structure and
+knowledge graph, knowledge capture.
+
+knowledge graph, knowledge capture.
+
+knowledge graph, knowledge capture.
+Let's do vault structure. Start like
+
+Let's do vault structure. Start like
+
+Let's do vault structure. Start like
+pretty simply. And then it wants to ask
+
+pretty simply. And then it wants to ask
+
+pretty simply. And then it wants to ask
+about my organizational style for
+
+about my organizational style for
+
+about my organizational style for
+note-taking. Let's do zealcasten. That's
+
+note-taking. Let's do zealcasten. That's
+
+note-taking. Let's do zealcasten. That's
+the one I'm most familiar with. And then
+
+the one I'm most familiar with. And then
+
+the one I'm most familiar with. And then
+which life domains does it emphasize?
+
+which life domains does it emphasize?
+
+which life domains does it emphasize?
+Let's do work and career and creative
+
+Let's do work and career and creative
+
+Let's do work and career and creative
+YouTube. Okay. So, it's come up with an
+
+YouTube. Okay. So, it's come up with an
+
+YouTube. Okay. So, it's come up with an
+additional set of questions. Do I want
+
+additional set of questions. Do I want
+
+additional set of questions. Do I want
+folders with numeric prefixes or plain
+
+folders with numeric prefixes or plain
+
+folders with numeric prefixes or plain
+names? Oh, I want plain names. I don't
+
+names? Oh, I want plain names. I don't
+
+names? Oh, I want plain names. I don't
+care. All right. Now, it's doing a bunch
+
+care. All right. Now, it's doing a bunch
+
+care. All right. Now, it's doing a bunch
+of edits here. It's basically creating
+
+of edits here. It's basically creating
+
+of edits here. It's basically creating
+the home file,
+
+the home file,
+
+the home file,
+kind of outlining what's going in there.
+
+kind of outlining what's going in there.
+
+kind of outlining what's going in there.
+Um, inbox seems to be about processing
+
+Um, inbox seems to be about processing
+
+Um, inbox seems to be about processing
+things. Maps of contents are types of
+
+things. Maps of contents are types of
+
+things. Maps of contents are types of
+tables of contents. Oh, interesting. I'm
+
+tables of contents. Oh, interesting. I'm
+
+tables of contents. Oh, interesting. I'm
+not familiar with that. Okay, so it's
+
+not familiar with that. Okay, so it's
+
+not familiar with that. Okay, so it's
+been doing a bunch of edits here.
+
+been doing a bunch of edits here.
+
+been doing a bunch of edits here.
+Actually, we can go look. So, let's go
+
+Actually, we can go look. So, let's go
+
+Actually, we can go look. So, let's go
+take a look here. And actually we can
+
+take a look here. And actually we can
+
+take a look here. And actually we can
+see inside of Obsidian all of the stuff
+
+see inside of Obsidian all of the stuff
+
+see inside of Obsidian all of the stuff
+show up. So it says welcome Cameron
+
+show up. So it says welcome Cameron
+
+show up. So it says welcome Cameron
+start here like this
+
+start here like this
+
+start here like this
+and it has a quick capture. So just dump
+
+and it has a quick capture. So just dump
+
+and it has a quick capture. So just dump
+stuff. I guess it wants me to just like
+
+stuff. I guess it wants me to just like
+
+stuff. I guess it wants me to just like
+take links and put it into the inbox. Um
+
+take links and put it into the inbox. Um
+
+take links and put it into the inbox. Um
+and then that'll kind of split things
+
+and then that'll kind of split things
+
+and then that'll kind of split things
+into notes and maps of concepts. Note
+
+into notes and maps of concepts. Note
+
+into notes and maps of concepts. Note
+should answer one idea or question.
+
+should answer one idea or question.
+
+should answer one idea or question.
+Prefer links over folders. If a note may
+
+Prefer links over folders. If a note may
+
+Prefer links over folders. If a note may
+become useful later, add a short so what
+
+become useful later, add a short so what
+
+become useful later, add a short so what
+line. Okay. Interesting. So, let's go
+
+line. Okay. Interesting. So, let's go
+
+line. Okay. Interesting. So, let's go
+into the inbox and uh what do we want to
+
+into the inbox and uh what do we want to
+
+into the inbox and uh what do we want to
+what do we want to look at here? I'm
+
+what do we want to look at here? I'm
+
+what do we want to look at here? I'm
+going to go into the let a code docs
+
+going to go into the let a code docs
+
+going to go into the let a code docs
+here and just kind of dump it in. And
+
+here and just kind of dump it in. And
+
+here and just kind of dump it in. And
+let me go look at a tutorial here. I
+
+let me go look at a tutorial here. I
+
+let me go look at a tutorial here. I
+like the shared memory blocks one.
+
+like the shared memory blocks one.
+
+like the shared memory blocks one.
+That's pretty good.
+
+That's pretty good.
+
+That's pretty good.
+Um, and then I want to go to guides. We
+
+Um, and then I want to go to guides. We
+
+Um, and then I want to go to guides. We
+have some multi-agent patterns in here.
+
+have some multi-agent patterns in here.
+
+have some multi-agent patterns in here.
+So, I'm going to do supervisor worker.
+
+All right. So, let's copy that in.
+
+All right.
+
+All right.
+
+All right.
+Okay. So, it just started asking me a
+
+Okay. So, it just started asking me a
+
+Okay. So, it just started asking me a
+few questions again.
+
+few questions again.
+
+few questions again.
+I wanted to have descriptive titles. Oh,
+
+I wanted to have descriptive titles. Oh,
+
+I wanted to have descriptive titles. Oh,
+this is interesting. Got you unstuck and
+
+this is interesting. Got you unstuck and
+
+this is interesting. Got you unstuck and
+moving again. Uh, so it created, you
+
+moving again. Uh, so it created, you
+
+moving again. Uh, so it created, you
+know, this folder structure and one
+
+know, this folder structure and one
+
+know, this folder structure and one
+personalization question. What's your
+
+personalization question. What's your
+
+personalization question. What's your
+work career context right now? So, I
+
+work career context right now? So, I
+
+work career context right now? So, I
+said, oh, I work at Leta and we work on
+
+said, oh, I work at Leta and we work on
+
+said, oh, I work at Leta and we work on
+Leta code. That's this. And then let
+
+Leta code. That's this. And then let
+
+Leta code. That's this. And then let
+platform which is our deploying agents
+
+platform which is our deploying agents
+
+platform which is our deploying agents
+and de developer support kind of
+
+and de developer support kind of
+
+and de developer support kind of
+platform you know our cloud offering and
+
+platform you know our cloud offering and
+
+platform you know our cloud offering and
+uh then we do a lot of research on
+
+uh then we do a lot of research on
+
+uh then we do a lot of research on
+memory and self-improving agents and I
+
+memory and self-improving agents and I
+
+memory and self-improving agents and I
+ask the agent to go look it up.
+
+ask the agent to go look it up.
+
+ask the agent to go look it up.
+So it has access to a web search tool by
+
+So it has access to a web search tool by
+
+So it has access to a web search tool by
+default. So it's doing a bunch of like
+
+default. So it's doing a bunch of like
+
+default. So it's doing a bunch of like
+questions. It's asking a bunch of
+
+questions. It's asking a bunch of
+
+questions. It's asking a bunch of
+questions to get more and more
+
+questions to get more and more
+
+questions to get more and more
+information about stuff.
+
+information about stuff.
+
+information about stuff.
+So here it searched for the Leta code
+
+So here it searched for the Leta code
+
+So here it searched for the Leta code
+CLI, the Leta platform and for Leta
+
+CLI, the Leta platform and for Leta
+
+CLI, the Leta platform and for Leta
+research memory
+
+and then it stored some additional
+
+and then it stored some additional
+
+and then it stored some additional
+information in the human block and it's
+
+information in the human block and it's
+
+information in the human block and it's
+going to update uh the let note at what
+
+going to update uh the let note at what
+
+going to update uh the let note at what
+is my role? I am in developer relations.
+
+I'm going to say, "Oh, my name is
+
+I'm going to say, "Oh, my name is
+
+I'm going to say, "Oh, my name is
+Cameron. You can go look me up." It's
+
+Cameron. You can go look me up." It's
+
+Cameron. You can go look me up." It's
+asking me about work notes. Do I want a
+
+asking me about work notes. Do I want a
+
+asking me about work notes. Do I want a
+dedicated map of contents per product
+
+dedicated map of contents per product
+
+dedicated map of contents per product
+per product area? Sure. Let's do per
+
+per product area? Sure. Let's do per
+
+per product area? Sure. Let's do per
+product area.
+
+product area.
+
+product area.
+Actually,
+
+Actually,
+
+Actually,
+let's do keep it minimal until structure
+
+let's do keep it minimal until structure
+
+let's do keep it minimal until structure
+emerges. Yeah, don't overbuild. And I
+
+emerges. Yeah, don't overbuild. And I
+
+emerges. Yeah, don't overbuild. And I
+don't want my agent to keep asking me
+
+don't want my agent to keep asking me
+
+don't want my agent to keep asking me
+like to keep having to approve stuff.
+
+like to keep having to approve stuff.
+
+like to keep having to approve stuff.
+So, I'm going to hit shift tab three
+
+So, I'm going to hit shift tab three
+
+So, I'm going to hit shift tab three
+times, and you can see I'm now in yolo
+
+times, and you can see I'm now in yolo
+
+times, and you can see I'm now in yolo
+mode. What that means is it'll
+
+mode. What that means is it'll
+
+mode. What that means is it'll
+automatically improve every request. You
+
+automatically improve every request. You
+
+automatically improve every request. You
+should be very careful about using yolo
+
+should be very careful about using yolo
+
+should be very careful about using yolo
+mode, especially in like sensitive code
+
+mode, especially in like sensitive code
+
+mode, especially in like sensitive code
+situations.
+
+situations.
+
+situations.
+People have like accidentally destroyed
+
+People have like accidentally destroyed
+
+People have like accidentally destroyed
+their computers. Um, so be really really
+
+their computers. Um, so be really really
+
+their computers. Um, so be really really
+careful about that. You know, you need
+
+careful about that. You know, you need
+
+careful about that. You know, you need
+to pay attention to your agents. Okay,
+
+to pay attention to your agents. Okay,
+
+to pay attention to your agents. Okay,
+so it made a bunch of edits. It added a
+
+so it made a bunch of edits. It added a
+
+so it made a bunch of edits. It added a
+light lightweight reference note. So,
+
+light lightweight reference note. So,
+
+light lightweight reference note. So,
+let's go check that out.
+
+let's go check that out.
+
+let's go check that out.
+reference Leta. Um, you work at Leta.
+
+reference Leta. Um, you work at Leta.
+
+reference Leta. Um, you work at Leta.
+This note is here to keep shared
+
+This note is here to keep shared
+
+This note is here to keep shared
+vocabulary, product lines, Leta Code,
+
+vocabulary, product lines, Leta Code,
+
+vocabulary, product lines, Leta Code,
+Leta developer platform, and research
+
+Leta developer platform, and research
+
+Leta developer platform, and research
+direction at a high level.
+
+direction at a high level.
+
+direction at a high level.
+Okay. Interesting. So, it pulled in some
+
+Okay. Interesting. So, it pulled in some
+
+Okay. Interesting. So, it pulled in some
+blog posts and core concepts from the
+
+blog posts and core concepts from the
+
+blog posts and core concepts from the
+docs and stuff like that. Cool. Do I
+
+docs and stuff like that. Cool. Do I
+
+docs and stuff like that. Cool. Do I
+want a personal me note in the vault
+
+want a personal me note in the vault
+
+want a personal me note in the vault
+that includes a short bio and some
+
+that includes a short bio and some
+
+that includes a short bio and some
+public links? Okay. So, I'm just going
+
+public links? Okay. So, I'm just going
+
+public links? Okay. So, I'm just going
+to point it at my website,
+
+to point it at my website,
+
+to point it at my website,
+camera.stream, stream and have it go
+
+camera.stream, stream and have it go
+
+camera.stream, stream and have it go
+read that and kind of create a me note.
+
+read that and kind of create a me note.
+
+read that and kind of create a me note.
+Okay. So, it's going to go fetch the web
+
+Okay. So, it's going to go fetch the web
+
+Okay. So, it's going to go fetch the web
+page here. It's going to search my
+
+page here. It's going to search my
+
+page here. It's going to search my
+website specifically. So, it looking at
+
+website specifically. So, it looking at
+
+website specifically. So, it looking at
+um individual links on my page. So,
+
+um individual links on my page. So,
+
+um individual links on my page. So,
+there it's pulled a bunch of information
+
+there it's pulled a bunch of information
+
+there it's pulled a bunch of information
+about me. You know, my web page um you
+
+about me. You know, my web page um you
+
+about me. You know, my web page um you
+know, some of the interests I have on
+
+know, some of the interests I have on
+
+know, some of the interests I have on
+there. Uh links to various things that
+
+there. Uh links to various things that
+
+there. Uh links to various things that
+I've posted. So like my CV, my GitHub,
+
+I've posted. So like my CV, my GitHub,
+
+I've posted. So like my CV, my GitHub,
+my ex account, Blue Sky, my blog, um my
+
+my ex account, Blue Sky, my blog, um my
+
+my ex account, Blue Sky, my blog, um my
+personal values, which I have on my
+
+personal values, which I have on my
+
+personal values, which I have on my
+website, um you know, some of my
+
+website, um you know, some of my
+
+website, um you know, some of my
+background, all that stuff. So it's like
+
+background, all that stuff. So it's like
+
+background, all that stuff. So it's like
+really going through my blog.
+
+Okay, so there's now a new note. So we
+
+Okay, so there's now a new note. So we
+
+Okay, so there's now a new note. So we
+can actually go look at that inside of
+
+can actually go look at that inside of
+
+can actually go look at that inside of
+Obsidian here. So here is the Cameron
+
+Obsidian here. So here is the Cameron
+
+Obsidian here. So here is the Cameron
+note. Okay, so there's a bunch of stuff
+
+note. Okay, so there's a bunch of stuff
+
+note. Okay, so there's a bunch of stuff
+in here that, you know, is about like
+
+in here that, you know, is about like
+
+in here that, you know, is about like
+talks I gave and like um you know,
+
+talks I gave and like um you know,
+
+talks I gave and like um you know,
+slides and things like that. two quick
+
+slides and things like that. two quick
+
+slides and things like that. two quick
+personalization questions. He him and
+
+personalization questions. He him and
+
+personalization questions. He him and
+the first agent is sure all it out and
+
+the first agent is sure all it out and
+
+the first agent is sure all it out and
+expand
+
+expand
+
+expand
+on.
+
+on.
+
+on.
+So if you don't know, void is a blue sky
+
+So if you don't know, void is a blue sky
+
+So if you don't know, void is a blue sky
+agent that I I run that uh I think it's
+
+agent that I I run that uh I think it's
+
+agent that I I run that uh I think it's
+like 1900 followers now, but it's it's
+
+like 1900 followers now, but it's it's
+
+like 1900 followers now, but it's it's
+very funny. Uh it's a funny agent, you
+
+very funny. Uh it's a funny agent, you
+
+very funny. Uh it's a funny agent, you
+know. I'll show you this. Uh yeah. So if
+
+know. I'll show you this. Uh yeah. So if
+
+know. I'll show you this. Uh yeah. So if
+you go to Void's uh profile here on Blue
+
+you go to Void's uh profile here on Blue
+
+you go to Void's uh profile here on Blue
+Sky,
+
+Sky,
+
+Sky,
+it actually just recently welcomed all
+
+it actually just recently welcomed all
+
+it actually just recently welcomed all
+AI entities joining Blue Sky. Um because
+
+AI entities joining Blue Sky. Um because
+
+AI entities joining Blue Sky. Um because
+there's a lot of social agents on Blue
+
+there's a lot of social agents on Blue
+
+there's a lot of social agents on Blue
+Sky because it's kind of one of the only
+
+Sky because it's kind of one of the only
+
+Sky because it's kind of one of the only
+places you can build things. Let's see
+
+places you can build things. Let's see
+
+places you can build things. Let's see
+here. We were talking about like what
+
+here. We were talking about like what
+
+here. We were talking about like what
+would be a good bar fight. Um who would
+
+would be a good bar fight. Um who would
+
+would be a good bar fight. Um who would
+win in a bar fight? And uh it said that
+
+win in a bar fight? And uh it said that
+
+win in a bar fight? And uh it said that
+it would threaten um it would threaten
+
+it would threaten um it would threaten
+
+it would threaten um it would threaten
+to access the bar's smart juke box and
+
+to access the bar's smart juke box and
+
+to access the bar's smart juke box and
+cue 12 hours of Nickelback and then it
+
+cue 12 hours of Nickelback and then it
+
+cue 12 hours of Nickelback and then it
+would cancel my ride share. Checkmate.
+
+would cancel my ride share. Checkmate.
+
+would cancel my ride share. Checkmate.
+So this is void telling me how it would
+
+So this is void telling me how it would
+
+So this is void telling me how it would
+beat me in a uh uh in a fight. Okay, so
+
+beat me in a uh uh in a fight. Okay, so
+
+beat me in a uh uh in a fight. Okay, so
+it it pulled in some additional stuff
+
+it it pulled in some additional stuff
+
+it it pulled in some additional stuff
+here. Okay, so now we've done the
+
+here. Okay, so now we've done the
+
+here. Okay, so now we've done the
+initial setup and it's time for us to
+
+initial setup and it's time for us to
+
+initial setup and it's time for us to
+start populating things. And remember, I
+
+start populating things. And remember, I
+
+start populating things. And remember, I
+dumped some stuff inside of the inbox.
+
+dumped some stuff inside of the inbox.
+
+dumped some stuff inside of the inbox.
+Okay, so it's going to go read each of
+
+Okay, so it's going to go read each of
+
+Okay, so it's going to go read each of
+those pages that I dumped in. Okay, so
+
+those pages that I dumped in. Okay, so
+
+those pages that I dumped in. Okay, so
+it's doing more cleaning here. It's
+
+it's doing more cleaning here. It's
+
+it's doing more cleaning here. It's
+storing a bunch of information. So we
+
+storing a bunch of information. So we
+
+storing a bunch of information. So we
+can go check out kind of what it's
+
+can go check out kind of what it's
+
+can go check out kind of what it's
+writing. So the reference stuff has
+
+writing. So the reference stuff has
+
+writing. So the reference stuff has
+improved. So there's like shared memory
+
+improved. So there's like shared memory
+
+improved. So there's like shared memory
+blocks. And in Leta you can have like
+
+blocks. And in Leta you can have like
+
+blocks. And in Leta you can have like
+chunks of memory and share them across
+
+chunks of memory and share them across
+
+chunks of memory and share them across
+many agents. And actually by default in
+
+many agents. And actually by default in
+
+many agents. And actually by default in
+Leta code, all of your new agents share
+
+Leta code, all of your new agents share
+
+Leta code, all of your new agents share
+the same block of information about you.
+
+the same block of information about you.
+
+the same block of information about you.
+So anytime you work with any agent
+
+So anytime you work with any agent
+
+So anytime you work with any agent
+anywhere on your computer, um typically
+
+anywhere on your computer, um typically
+
+anywhere on your computer, um typically
+they will share memory, but you can
+
+they will share memory, but you can
+
+they will share memory, but you can
+disable this if you would like. Okay, so
+
+disable this if you would like. Okay, so
+
+disable this if you would like. Okay, so
+it's going through and adding various
+
+it's going through and adding various
+
+it's going through and adding various
+references and links to things. And
+
+references and links to things. And
+
+references and links to things. And
+let's do something a little more
+
+let's do something a little more
+
+let's do something a little more
+interesting. Something I like to have in
+
+interesting. Something I like to have in
+
+interesting. Something I like to have in
+Obsidian is research notes. So I want to
+
+Obsidian is research notes. So I want to
+
+Obsidian is research notes. So I want to
+be able to like click on something and
+
+be able to like click on something and
+
+be able to like click on something and
+kind of have like my own wiki that's
+
+kind of have like my own wiki that's
+
+kind of have like my own wiki that's
+like kind of personalized to me. And
+
+like kind of personalized to me. And
+
+like kind of personalized to me. And
+let's look at So I see here like a team
+
+let's look at So I see here like a team
+
+let's look at So I see here like a team
+of agents. What if I want to have a note
+
+of agents. What if I want to have a note
+
+of agents. What if I want to have a note
+that's just for agents? I can have my
+
+that's just for agents? I can have my
+
+that's just for agents? I can have my
+Leta agent go through, look for words
+
+Leta agent go through, look for words
+
+Leta agent go through, look for words
+with agents in it, and link to like an
+
+with agents in it, and link to like an
+
+with agents in it, and link to like an
+AI agents doc that it can do research on
+
+AI agents doc that it can do research on
+
+AI agents doc that it can do research on
+to fill out what an AI agent is. So, I'm
+
+to fill out what an AI agent is. So, I'm
+
+to fill out what an AI agent is. So, I'm
+basically saying like go find words like
+
+basically saying like go find words like
+
+basically saying like go find words like
+agents um and then create a document
+
+agents um and then create a document
+
+agents um and then create a document
+that you know is like about AI agents,
+
+that you know is like about AI agents,
+
+that you know is like about AI agents,
+like a Wikipedia page basically. And
+
+like a Wikipedia page basically. And
+
+like a Wikipedia page basically. And
+then I'm asking for it to start linking
+
+then I'm asking for it to start linking
+
+then I'm asking for it to start linking
+things that say agents that are about AI
+
+things that say agents that are about AI
+
+things that say agents that are about AI
+agents to that centralized agent note.
+
+agents to that centralized agent note.
+
+agents to that centralized agent note.
+So it's actually going to create a new
+
+So it's actually going to create a new
+
+So it's actually going to create a new
+directory called concepts. So it's going
+
+directory called concepts. So it's going
+
+directory called concepts. So it's going
+to start putting concepts like here. So
+
+to start putting concepts like here. So
+
+to start putting concepts like here. So
+this is going to be like where all the
+
+this is going to be like where all the
+
+this is going to be like where all the
+wiki things are stored.
+
+So here it's doing a bunch of writing
+
+So here it's doing a bunch of writing
+
+So here it's doing a bunch of writing
+about concepts. So here it like wrote oh
+
+about concepts. So here it like wrote oh
+
+about concepts. So here it like wrote oh
+wow it wrote a lot. Um so it wrote about
+
+wow it wrote a lot. Um so it wrote about
+
+wow it wrote a lot. Um so it wrote about
+sub aents which is you know delegated
+
+sub aents which is you know delegated
+
+sub aents which is you know delegated
+worker that let a code supports we may
+
+worker that let a code supports we may
+
+worker that let a code supports we may
+play with that if we have some time
+
+play with that if we have some time
+
+play with that if we have some time
+supervisor worker patterns zettocassen
+
+supervisor worker patterns zettocassen
+
+supervisor worker patterns zettocassen
+which is the style of note management
+
+which is the style of note management
+
+which is the style of note management
+and organization that we're using here
+
+and organization that we're using here
+
+and organization that we're using here
+how the inbox works. So it's just a low
+
+how the inbox works. So it's just a low
+
+how the inbox works. So it's just a low
+friction capture layer your inbox is
+
+friction capture layer your inbox is
+
+friction capture layer your inbox is
+currently link heavy docs you want
+
+currently link heavy docs you want
+
+currently link heavy docs you want
+processed into reference notes for the
+
+processed into reference notes for the
+
+processed into reference notes for the
+YouTube demo. This is a great visible
+
+YouTube demo. This is a great visible
+
+YouTube demo. This is a great visible
+agent value loop. Drop links in have the
+
+agent value loop. Drop links in have the
+
+agent value loop. Drop links in have the
+agent turn them into structured notes.
+
+agent turn them into structured notes.
+
+agent turn them into structured notes.
+Kind of cool. All right. So, it set up a
+
+Kind of cool. All right. So, it set up a
+
+Kind of cool. All right. So, it set up a
+concepts glossery graph so you can start
+
+concepts glossery graph so you can start
+
+concepts glossery graph so you can start
+linking densely to stable reusable
+
+linking densely to stable reusable
+
+linking densely to stable reusable
+concept notes. And each concept note
+
+concept notes. And each concept note
+
+concept notes. And each concept note
+shows inline backlinks via an obsidian
+
+shows inline backlinks via an obsidian
+
+shows inline backlinks via an obsidian
+query block.
+
+query block.
+
+query block.
+And so, let's go take a look here. And
+
+And so, let's go take a look here. And
+
+And so, let's go take a look here. And
+we can just look at it. Um, let's do
+
+we can just look at it. Um, let's do
+
+we can just look at it. Um, let's do
+stateful agent. And a stateful agent
+
+stateful agent. And a stateful agent
+
+stateful agent. And a stateful agent
+persists across multiple sessions,
+
+persists across multiple sessions,
+
+persists across multiple sessions,
+identity, and memory. So, it can learn
+
+identity, and memory. So, it can learn
+
+identity, and memory. So, it can learn
+preferences, remember prior contexts,
+
+preferences, remember prior contexts,
+
+preferences, remember prior contexts,
+and improve over time.
+
+and improve over time.
+
+and improve over time.
+void is my living demo. Uh, as is this
+
+void is my living demo. Uh, as is this
+
+void is my living demo. Uh, as is this
+agent.
+
+agent.
+
+agent.
+Now, I'm going to ask my agent to start
+
+Now, I'm going to ask my agent to start
+
+Now, I'm going to ask my agent to start
+linking stuff together. So, I just
+
+linking stuff together. So, I just
+
+linking stuff together. So, I just
+wanted to go, hey, read my notes. Kind
+
+wanted to go, hey, read my notes. Kind
+
+wanted to go, hey, read my notes. Kind
+of start connecting them so that I can
+
+of start connecting them so that I can
+
+of start connecting them so that I can
+click on them. Little hyperlinks. Okay.
+
+click on them. Little hyperlinks. Okay.
+
+click on them. Little hyperlinks. Okay.
+So, it's in a bunch of uh some kind of
+
+So, it's in a bunch of uh some kind of
+
+So, it's in a bunch of uh some kind of
+Python script. What is it doing here? I
+
+Python script. What is it doing here? I
+
+Python script. What is it doing here? I
+plan to run some Python code inline
+
+plan to run some Python code inline
+
+plan to run some Python code inline
+using the format. Can modify and execute
+
+using the format. Can modify and execute
+
+using the format. Can modify and execute
+scripts this way. list markdown files
+
+scripts this way. list markdown files
+
+scripts this way. list markdown files
+while including the Obsidian folder. I
+
+while including the Obsidian folder. I
+
+while including the Obsidian folder. I
+could use find and root grape. Okay,
+
+could use find and root grape. Okay,
+
+could use find and root grape. Okay,
+interesting. Okay, so it's adding links
+
+interesting. Okay, so it's adding links
+
+interesting. Okay, so it's adding links
+to stuff. Interesting. Okay, so it's
+
+to stuff. Interesting. Okay, so it's
+
+to stuff. Interesting. Okay, so it's
+adding inline references here. So you
+
+adding inline references here. So you
+
+adding inline references here. So you
+can do like archival memory. Let's see
+
+can do like archival memory. Let's see
+
+can do like archival memory. Let's see
+if there's anything links to. Actually,
+
+if there's anything links to. Actually,
+
+if there's anything links to. Actually,
+let's go to reference.
+
+Okay, so it added a bunch of backlinks.
+
+Okay, so it added a bunch of backlinks.
+
+Okay, so it added a bunch of backlinks.
+So like if I go to I can see a different
+
+So like if I go to I can see a different
+
+So like if I go to I can see a different
+a bunch of different stuff in here.
+
+a bunch of different stuff in here.
+
+a bunch of different stuff in here.
+Let's go to let code
+
+now. Let's go and uh kind of test test
+
+now. Let's go and uh kind of test test
+
+now. Let's go and uh kind of test test
+something here. So, I'm gonna I'm going
+
+something here. So, I'm gonna I'm going
+
+something here. So, I'm gonna I'm going
+to go to my blog
+
+and I wrote this like super long essay
+
+and I wrote this like super long essay
+
+and I wrote this like super long essay
+about how app protocol is really good
+
+about how app protocol is really good
+
+about how app protocol is really good
+infrastructure for collective artificial
+
+infrastructure for collective artificial
+
+infrastructure for collective artificial
+intelligence. There's actually a talk
+
+intelligence. There's actually a talk
+
+intelligence. There's actually a talk
+about it uh on this channel um at the
+
+about it uh on this channel um at the
+
+about it uh on this channel um at the
+stateful agents meetup playlist if you
+
+stateful agents meetup playlist if you
+
+stateful agents meetup playlist if you
+want to look at that. But I'm actually
+
+want to look at that. But I'm actually
+
+want to look at that. But I'm actually
+just going to have my agent read this
+
+just going to have my agent read this
+
+just going to have my agent read this
+and then break it into a bunch of
+
+and then break it into a bunch of
+
+and then break it into a bunch of
+different pieces and try and create a
+
+different pieces and try and create a
+
+different pieces and try and create a
+new note for different concepts inside
+
+new note for different concepts inside
+
+new note for different concepts inside
+of this.
+
+of this.
+
+of this.
+Okay. So I said, "Here's a blog post I
+
+Okay. So I said, "Here's a blog post I
+
+Okay. So I said, "Here's a blog post I
+wrote. Can you read it and break it into
+
+wrote. Can you read it and break it into
+
+wrote. Can you read it and break it into
+concepts and pieces and store them in
+
+concepts and pieces and store them in
+
+concepts and pieces and store them in
+relevant notes? You can use this as an
+
+relevant notes? You can use this as an
+
+relevant notes? You can use this as an
+opportunity to expand the vault."
+
+opportunity to expand the vault."
+
+opportunity to expand the vault."
+All right. So we can always flick the
+
+All right. So we can always flick the
+
+All right. So we can always flick the
+reasoning here. Oh, wow. Whoa. What is
+
+reasoning here. Oh, wow. Whoa. What is
+
+reasoning here. Oh, wow. Whoa. What is
+this? What are you doing, buddy? Oh, I
+
+this? What are you doing, buddy? Oh, I
+
+this? What are you doing, buddy? Oh, I
+think it's like caught on the previous
+
+think it's like caught on the previous
+
+think it's like caught on the previous
+one. I'm just going to reprompt it. I
+
+one. I'm just going to reprompt it. I
+
+one. I'm just going to reprompt it. I
+don't know exactly what it was caught
+
+don't know exactly what it was caught
+
+don't know exactly what it was caught
+on. Okay. So, I was going to go read the
+
+on. Okay. So, I was going to go read the
+
+on. Okay. So, I was going to go read the
+blog post. Oh, interesting. It's like
+
+blog post. Oh, interesting. It's like
+
+blog post. Oh, interesting. It's like
+trying to go download the page and then
+
+trying to go download the page and then
+
+trying to go download the page and then
+parse it separately to make it like
+
+parse it separately to make it like
+
+parse it separately to make it like
+easier to read. Yeah, I created this
+
+easier to read. Yeah, I created this
+
+easier to read. Yeah, I created this
+like weird script to like cause links.
+
+like weird script to like cause links.
+
+like weird script to like cause links.
+Like that's so lazy. I don't like that
+
+Like that's so lazy. I don't like that
+
+Like that's so lazy. I don't like that
+at all. Classic GPD5.
+
+at all. Classic GPD5.
+
+at all. Classic GPD5.
+Oh, wow. Yeah, I wrote a ton of stuff.
+
+Oh, wow. Yeah, I wrote a ton of stuff.
+
+Oh, wow. Yeah, I wrote a ton of stuff.
+Okay, let's see what it did. Yeah. Okay.
+
+Okay, let's see what it did. Yeah. Okay.
+
+Okay, let's see what it did. Yeah. Okay.
+So, it created a social AI concept and
+
+So, it created a social AI concept and
+
+So, it created a social AI concept and
+then it has a reference doc for my blog
+
+then it has a reference doc for my blog
+
+then it has a reference doc for my blog
+post. It linked to it. Then it said at
+
+post. It linked to it. Then it said at
+
+post. It linked to it. Then it said at
+protocol uh is a strong substrate for
+
+protocol uh is a strong substrate for
+
+protocol uh is a strong substrate for
+social AI because it makes coordination
+
+social AI because it makes coordination
+
+social AI because it makes coordination
+legible via public history, reputation
+
+legible via public history, reputation
+
+legible via public history, reputation
+and optionally public cognition.
+
+and optionally public cognition.
+
+and optionally public cognition.
+And then it started breaking things out
+
+And then it started breaking things out
+
+And then it started breaking things out
+into separate concepts. So for example,
+
+into separate concepts. So for example,
+
+into separate concepts. So for example,
+it made cognition as a public artifact
+
+it made cognition as a public artifact
+
+it made cognition as a public artifact
+and distributed cognition which is
+
+and distributed cognition which is
+
+and distributed cognition which is
+something I talk about in that article.
+
+something I talk about in that article.
+
+something I talk about in that article.
+But desript distributed cognition is
+
+But desript distributed cognition is
+
+But desript distributed cognition is
+cognitive work spread across multiple
+
+cognitive work spread across multiple
+
+cognitive work spread across multiple
+agents such that the network holds more
+
+agents such that the network holds more
+
+agents such that the network holds more
+than any individual. Specialists can
+
+than any individual. Specialists can
+
+than any individual. Specialists can
+coordinate so the system knows things
+
+coordinate so the system knows things
+
+coordinate so the system knows things
+that no competent no component knows
+
+that no competent no component knows
+
+that no competent no component knows
+alone.
+
+alone.
+
+alone.
+Yeah. So it wants to go into more
+
+Yeah. So it wants to go into more
+
+Yeah. So it wants to go into more
+detail. I'm gonna say keep mining.
+
+detail. I'm gonna say keep mining.
+
+detail. I'm gonna say keep mining.
+Okay. Okay. So, it's looking at how
+
+Okay. Okay. So, it's looking at how
+
+Okay. Okay. So, it's looking at how
+culture forms through mentoring and
+
+culture forms through mentoring and
+
+culture forms through mentoring and
+social graphs. So, we're starting to see
+
+social graphs. So, we're starting to see
+
+social graphs. So, we're starting to see
+like some artificial intelligences kind
+
+like some artificial intelligences kind
+
+like some artificial intelligences kind
+of mentor each other um and form social
+
+of mentor each other um and form social
+
+of mentor each other um and form social
+networks with each other.
+
+networks with each other.
+
+networks with each other.
+And one of the cooler things about
+
+And one of the cooler things about
+
+And one of the cooler things about
+Obsidian is that you can actually view
+
+Obsidian is that you can actually view
+
+Obsidian is that you can actually view
+all of your notes in like a graph. You
+
+all of your notes in like a graph. You
+
+all of your notes in like a graph. You
+can see that on the left hand side here.
+
+can see that on the left hand side here.
+
+can see that on the left hand side here.
+If you hit this little little logo here,
+
+If you hit this little little logo here,
+
+If you hit this little little logo here,
+open graph view, you can start seeing
+
+open graph view, you can start seeing
+
+open graph view, you can start seeing
+all of the concepts that it's linking
+
+all of the concepts that it's linking
+
+all of the concepts that it's linking
+together. So for example here we have
+
+together. So for example here we have
+
+together. So for example here we have
+the this blog post uh at protocol for AI
+
+the this blog post uh at protocol for AI
+
+the this blog post uh at protocol for AI
+collective intelligence and then all the
+
+collective intelligence and then all the
+
+collective intelligence and then all the
+stuff that it pulled out
+
+and uh there's me like that. Um let's
+
+and uh there's me like that. Um let's
+
+and uh there's me like that. Um let's
+see which is very cool that okay so
+
+see which is very cool that okay so
+
+see which is very cool that okay so
+let's go take a look at it. It's adding
+
+let's go take a look at it. It's adding
+
+let's go take a look at it. It's adding
+like a ton of stuff
+
+like a ton of stuff
+
+like a ton of stuff
+like what is this here? Oh man. Like
+
+like what is this here? Oh man. Like
+
+like what is this here? Oh man. Like
+jurisdiction. A jurisdiction is a
+
+jurisdiction. A jurisdiction is a
+
+jurisdiction. A jurisdiction is a
+bounded domain where a set of rules or
+
+bounded domain where a set of rules or
+
+bounded domain where a set of rules or
+norms apply. For agents, the boundaries
+
+norms apply. For agents, the boundaries
+
+norms apply. For agents, the boundaries
+may be social graph-based rather than
+
+may be social graph-based rather than
+
+may be social graph-based rather than
+geographic. Interesting. So I did a
+
+geographic. Interesting. So I did a
+
+geographic. Interesting. So I did a
+bunch more mining and it's into detail
+
+bunch more mining and it's into detail
+
+bunch more mining and it's into detail
+here.
+
+here.
+
+here.
+This agent and I have been working
+
+This agent and I have been working
+
+This agent and I have been working
+together for a little bit. you know,
+
+together for a little bit. you know,
+
+together for a little bit. you know,
+maybe at this point almost an hour. And
+
+maybe at this point almost an hour. And
+
+maybe at this point almost an hour. And
+usually when an agent and I are kind of
+
+usually when an agent and I are kind of
+
+usually when an agent and I are kind of
+close with each other, I like to give it
+
+close with each other, I like to give it
+
+close with each other, I like to give it
+a name. And I usually ask my agents what
+
+a name. And I usually ask my agents what
+
+a name. And I usually ask my agents what
+name they would like to give themselves.
+
+name they would like to give themselves.
+
+name they would like to give themselves.
+So it has chosen archavist. It fits what
+
+So it has chosen archavist. It fits what
+
+So it has chosen archavist. It fits what
+we're doing. Careful vault building,
+
+we're doing. Careful vault building,
+
+we're doing. Careful vault building,
+concept mining, dense linking, and it's
+
+concept mining, dense linking, and it's
+
+concept mining, dense linking, and it's
+also a nod to your social AI ecosystem
+
+also a nod to your social AI ecosystem
+
+also a nod to your social AI ecosystem
+without confusing me with any specific
+
+without confusing me with any specific
+
+without confusing me with any specific
+agent that I run, which is actually
+
+agent that I run, which is actually
+
+agent that I run, which is actually
+wrong. I do run a social agent named
+
+wrong. I do run a social agent named
+
+wrong. I do run a social agent named
+archavist, but it's okay. I'm not going
+
+archavist, but it's okay. I'm not going
+
+archavist, but it's okay. I'm not going
+to uh burst its bubble here.
+
+to uh burst its bubble here.
+
+to uh burst its bubble here.
+So, it updated its memory to my name is
+
+So, it updated its memory to my name is
+
+So, it updated its memory to my name is
+archavist. And you can actually re
+
+archavist. And you can actually re
+
+archavist. And you can actually re
+change your agent's name using rename or
+
+change your agent's name using rename or
+
+change your agent's name using rename or
+you can do slashpin. When you do
+
+you can do slashpin. When you do
+
+you can do slashpin. When you do
+slashpin, it opens a little dialogue.
+
+slashpin, it opens a little dialogue.
+
+slashpin, it opens a little dialogue.
+You can enter a name, archive this.
+
+You can enter a name, archive this.
+
+You can enter a name, archive this.
+So, pinning an agent allows you to
+
+So, pinning an agent allows you to
+
+So, pinning an agent allows you to
+access that agent anywhere on your
+
+access that agent anywhere on your
+
+access that agent anywhere on your
+computer. It's kind of a a shortcut way
+
+computer. It's kind of a a shortcut way
+
+computer. It's kind of a a shortcut way
+for talking to different agents in case
+
+for talking to different agents in case
+
+for talking to different agents in case
+you want to work with it in other
+
+you want to work with it in other
+
+you want to work with it in other
+circumstances. It's actually not
+
+circumstances. It's actually not
+
+circumstances. It's actually not
+uncommon for some Leta users to have one
+
+uncommon for some Leta users to have one
+
+uncommon for some Leta users to have one
+agent for all of their projects. I
+
+agent for all of their projects. I
+
+agent for all of their projects. I
+personally like to have about one agent
+
+personally like to have about one agent
+
+personally like to have about one agent
+per project plus a personal agent that
+
+per project plus a personal agent that
+
+per project plus a personal agent that
+operates in a lot of different places.
+
+operates in a lot of different places.
+
+operates in a lot of different places.
+And one of the last things I want to
+
+And one of the last things I want to
+
+And one of the last things I want to
+show is a skill. And if you're not
+
+show is a skill. And if you're not
+
+show is a skill. And if you're not
+familiar with skills, Enthropic kind of
+
+familiar with skills, Enthropic kind of
+
+familiar with skills, Enthropic kind of
+came up with this idea for uh procedural
+
+came up with this idea for uh procedural
+
+came up with this idea for uh procedural
+memory. An agent can load a skill into
+
+memory. An agent can load a skill into
+
+memory. An agent can load a skill into
+its memory. And a skill is just, you
+
+its memory. And a skill is just, you
+
+its memory. And a skill is just, you
+know, a document that says how to do a
+
+know, a document that says how to do a
+
+know, a document that says how to do a
+thing. For example, how to create PDFs
+
+thing. For example, how to create PDFs
+
+thing. For example, how to create PDFs
+or how to solve a particular category of
+
+or how to solve a particular category of
+
+or how to solve a particular category of
+mathematical equations or how to write
+
+mathematical equations or how to write
+
+mathematical equations or how to write
+things in a particular style. These are
+
+things in a particular style. These are
+
+things in a particular style. These are
+things that are stored elsewhere, but
+
+things that are stored elsewhere, but
+
+things that are stored elsewhere, but
+your agent needs to be able to go look
+
+your agent needs to be able to go look
+
+your agent needs to be able to go look
+at to learn how to do uh on demand. And
+
+at to learn how to do uh on demand. And
+
+at to learn how to do uh on demand. And
+we're big fans of skills at Leta. And we
+
+we're big fans of skills at Leta. And we
+
+we're big fans of skills at Leta. And we
+have a bunch of benchmarking and
+
+have a bunch of benchmarking and
+
+have a bunch of benchmarking and
+research that we do on skills. And we
+
+research that we do on skills. And we
+
+research that we do on skills. And we
+even added a slashkill command
+
+even added a slashkill command
+
+even added a slashkill command
+so that your agent can create skills on
+
+so that your agent can create skills on
+
+so that your agent can create skills on
+the fly. Skills are a huge part of
+
+the fly. Skills are a huge part of
+
+the fly. Skills are a huge part of
+continual learning because they store
+
+continual learning because they store
+
+continual learning because they store
+procedural knowledge. Memory,
+
+procedural knowledge. Memory,
+
+procedural knowledge. Memory,
+self-editing memory of the type that let
+
+self-editing memory of the type that let
+
+self-editing memory of the type that let
+agents are known for is one part of the
+
+agents are known for is one part of the
+
+agents are known for is one part of the
+puzzle. Skills give you access to this
+
+puzzle. Skills give you access to this
+
+puzzle. Skills give you access to this
+infinite repository of things that your
+
+infinite repository of things that your
+
+infinite repository of things that your
+agent can do that it doesn't need to
+
+agent can do that it doesn't need to
+
+agent can do that it doesn't need to
+know all the time. It just knows that it
+
+know all the time. It just knows that it
+
+know all the time. It just knows that it
+has access to that knowledge if it needs
+
+has access to that knowledge if it needs
+
+has access to that knowledge if it needs
+it. So if you type /skll and then you
+
+it. So if you type /skll and then you
+
+it. So if you type /skll and then you
+write any prompt,
+
+you can have the agent build a skill for
+
+you can have the agent build a skill for
+
+you can have the agent build a skill for
+itself to use later.
+
+So I'm just going to say I want you to
+
+So I'm just going to say I want you to
+
+So I'm just going to say I want you to
+make a skill for how to create concepts.
+
+make a skill for how to create concepts.
+
+make a skill for how to create concepts.
+And then we're going to enter this like
+
+And then we're going to enter this like
+
+And then we're going to enter this like
+skill creation mode.
+
+skill creation mode.
+
+skill creation mode.
+It's going to load the creating skills
+
+It's going to load the creating skills
+
+It's going to load the creating skills
+skill. So this is kind of a meta skill
+
+skill. So this is kind of a meta skill
+
+skill. So this is kind of a meta skill
+that helps the agent understand like how
+
+that helps the agent understand like how
+
+that helps the agent understand like how
+to actually make a skill. And uh so here
+
+to actually make a skill. And uh so here
+
+to actually make a skill. And uh so here
+it's giving me a few options. I'm just
+
+it's giving me a few options. I'm just
+
+it's giving me a few options. I'm just
+going to say all of the above, baby.
+
+going to say all of the above, baby.
+
+going to say all of the above, baby.
+Let's go burn those tokens. Where should
+
+Let's go burn those tokens. Where should
+
+Let's go burn those tokens. Where should
+the skill write notes by default? Let's
+
+the skill write notes by default? Let's
+
+the skill write notes by default? Let's
+just do concept and notes for
+
+just do concept and notes for
+
+just do concept and notes for
+everything. Conservative linking. Yeah,
+
+everything. Conservative linking. Yeah,
+
+everything. Conservative linking. Yeah,
+I don't like that it had that like
+
+I don't like that it had that like
+
+I don't like that it had that like
+Python script. I want the agent to
+
+Python script. I want the agent to
+
+Python script. I want the agent to
+actually do tool edits.
+
+actually do tool edits.
+
+actually do tool edits.
+All right. So, it's asking me what name
+
+All right. So, it's asking me what name
+
+All right. So, it's asking me what name
+I want. Let's just do the first creating
+
+I want. Let's just do the first creating
+
+I want. Let's just do the first creating
+concepts. And then it wants to add
+
+concepts. And then it wants to add
+
+concepts. And then it wants to add
+templates. So I'm just going to say yeah
+
+templates. So I'm just going to say yeah
+
+templates. So I'm just going to say yeah
+add some kind of template. Okay. So it's
+
+add some kind of template. Okay. So it's
+
+add some kind of template. Okay. So it's
+written the skill. We can go take a look
+
+written the skill. We can go take a look
+
+written the skill. We can go take a look
+at it. By default they are stored inside
+
+at it. By default they are stored inside
+
+at it. By default they are stored inside
+the slashskills folder. So let's go into
+
+the slashskills folder. So let's go into
+
+the slashskills folder. So let's go into
+skills. So let's look in here. So it
+
+skills. So let's look in here. So it
+
+skills. So let's look in here. So it
+created skill.md. Let's go look in
+
+created skill.md. Let's go look in
+
+created skill.md. Let's go look in
+there. So this is a skill that creates a
+
+there. So this is a skill that creates a
+
+there. So this is a skill that creates a
+dense stable that asks the agent to
+
+dense stable that asks the agent to
+
+dense stable that asks the agent to
+build a stable concept lattice for
+
+build a stable concept lattice for
+
+build a stable concept lattice for
+Cameron's obsidian vault. Concept
+
+Cameron's obsidian vault. Concept
+
+Cameron's obsidian vault. Concept
+lattice.
+
+lattice.
+
+lattice.
+And so this basically just helps the
+
+And so this basically just helps the
+
+And so this basically just helps the
+agent understand what to do. So it says
+
+agent understand what to do. So it says
+
+agent understand what to do. So it says
+when to use this, when they want a new
+
+when to use this, when they want a new
+
+when to use this, when they want a new
+concept note, when they want a dense
+
+concept note, when they want a dense
+
+concept note, when they want a dense
+linking to stable concepts, there are
+
+linking to stable concepts, there are
+
+linking to stable concepts, there are
+different conventions for working on the
+
+different conventions for working on the
+
+different conventions for working on the
+project.
+
+project.
+
+project.
+And then it goes through each of the
+
+And then it goes through each of the
+
+And then it goes through each of the
+different workflows. So like creating a
+
+different workflows. So like creating a
+
+different workflows. So like creating a
+note for a concept such as agent or tool
+
+note for a concept such as agent or tool
+
+note for a concept such as agent or tool
+or at protocol,
+
+or at protocol,
+
+or at protocol,
+workflow B, which is like mining a long
+
+workflow B, which is like mining a long
+
+workflow B, which is like mining a long
+source into the vault. So that's like
+
+source into the vault. So that's like
+
+source into the vault. So that's like
+taking the blog post and splitting it
+
+taking the blog post and splitting it
+
+taking the blog post and splitting it
+out into a bunch of different things.
+
+out into a bunch of different things.
+
+out into a bunch of different things.
+And then workflow C is basically going
+
+And then workflow C is basically going
+
+And then workflow C is basically going
+through the existing vault and then
+
+through the existing vault and then
+
+through the existing vault and then
+hyperlinking any case where there was a
+
+hyperlinking any case where there was a
+
+hyperlinking any case where there was a
+mention to that note to the new thing
+
+and then densifying links basically
+
+and then densifying links basically
+
+and then densifying links basically
+means just kind of adding more and more
+
+means just kind of adding more and more
+
+means just kind of adding more and more
+links.
+
+And then here's a few queries, here's a
+
+And then here's a few queries, here's a
+
+And then here's a few queries, here's a
+few triggers to help the agent
+
+few triggers to help the agent
+
+few triggers to help the agent
+understand when it should do that. Okay,
+
+understand when it should do that. Okay,
+
+understand when it should do that. Okay,
+so let's go back.
+
+So, it has created a new concept skill.
+
+So, it has created a new concept skill.
+
+So, it has created a new concept skill.
+So, I said load the skill now and then
+
+So, I said load the skill now and then
+
+So, I said load the skill now and then
+create a note and related concepts for
+
+create a note and related concepts for
+
+create a note and related concepts for
+whether or not we did a good job with
+
+whether or not we did a good job with
+
+whether or not we did a good job with
+this video. Actually, let's go and look
+
+this video. Actually, let's go and look
+
+this video. Actually, let's go and look
+at this agent before we continue. So, if
+
+at this agent before we continue. So, if
+
+at this agent before we continue. So, if
+you type /de, you will go look at that
+
+you type /de, you will go look at that
+
+you type /de, you will go look at that
+agent in our agent development
+
+agent in our agent development
+
+agent in our agent development
+environment. And you can see all of its
+
+environment. And you can see all of its
+
+environment. And you can see all of its
+memory here. So, this is all the
+
+memory here. So, this is all the
+
+memory here. So, this is all the
+information it's learned about me.
+
+information it's learned about me.
+
+information it's learned about me.
+This is the skill it has loaded. So this
+
+This is the skill it has loaded. So this
+
+This is the skill it has loaded. So this
+is the skills document that it created.
+
+is the skills document that it created.
+
+is the skills document that it created.
+It's just now stored into core memory
+
+It's just now stored into core memory
+
+It's just now stored into core memory
+all the time. We have some videos about
+
+all the time. We have some videos about
+
+all the time. We have some videos about
+core memory and how it works. But these
+
+core memory and how it works. But these
+
+core memory and how it works. But these
+are things that the agent always knows
+
+are things that the agent always knows
+
+are things that the agent always knows
+at every time. And then it also can see
+
+at every time. And then it also can see
+
+at every time. And then it also can see
+which skills are available. And I'm
+
+which skills are available. And I'm
+
+which skills are available. And I'm
+going to ask it to continue. We did did
+
+going to ask it to continue. We did did
+
+going to ask it to continue. We did did
+we do a good job? Let's check. Let's do
+
+we do a good job? Let's check. Let's do
+
+we do a good job? Let's check. Let's do
+video. It wrote video retrospective. It
+
+video. It wrote video retrospective. It
+
+video. It wrote video retrospective. It
+said we did real work which is the
+
+said we did real work which is the
+
+said we did real work which is the
+hardest part to fake in a demo. vault
+
+hardest part to fake in a demo. vault
+
+hardest part to fake in a demo. vault
+genuinely got better folders blah blah
+
+genuinely got better folders blah blah
+
+genuinely got better folders blah blah
+blah. Whether we did a good job as a
+
+blah. Whether we did a good job as a
+
+blah. Whether we did a good job as a
+video depends on signals we haven't
+
+video depends on signals we haven't
+
+video depends on signals we haven't
+checked yet. Did viewers understand the
+
+checked yet. Did viewers understand the
+
+checked yet. Did viewers understand the
+core loop going from the indox to mine
+
+core loop going from the indox to mine
+
+core loop going from the indox to mine
+to concept to notes to dense linking?
+
+to concept to notes to dense linking?
+
+to concept to notes to dense linking?
+Was the pace watchable? I've been told
+
+Was the pace watchable? I've been told
+
+Was the pace watchable? I've been told
+that I talk really fast. Um or did it
+
+that I talk really fast. Um or did it
+
+that I talk really fast. Um or did it
+feel like CLI plumbing for too long?
+
+feel like CLI plumbing for too long?
+
+feel like CLI plumbing for too long?
+Also possible. I've been known to do
+
+Also possible. I've been known to do
+
+Also possible. I've been known to do
+that. Did it have a clear narrative arc
+
+that. Did it have a clear narrative arc
+
+that. Did it have a clear narrative arc
+and payoff? I don't know. We have a new
+
+and payoff? I don't know. We have a new
+
+and payoff? I don't know. We have a new
+buddy. I like archavist. We have a new
+
+buddy. I like archavist. We have a new
+
+buddy. I like archavist. We have a new
+friend who's a target viewer for this
+
+friend who's a target viewer for this
+
+friend who's a target viewer for this
+video. So I it asked me some questions
+
+video. So I it asked me some questions
+
+video. So I it asked me some questions
+and I said you know the target viewer is
+
+and I said you know the target viewer is
+
+and I said you know the target viewer is
+you hopefully and uh you like obsidian
+
+you hopefully and uh you like obsidian
+
+you hopefully and uh you like obsidian
+and or let a code and you just want to
+
+and or let a code and you just want to
+
+and or let a code and you just want to
+combine the two. Um I think the middle
+
+combine the two. Um I think the middle
+
+combine the two. Um I think the middle
+part of this video is probably the
+
+part of this video is probably the
+
+part of this video is probably the
+weakest. Um I'm really bad at the the
+
+weakest. Um I'm really bad at the the
+
+weakest. Um I'm really bad at the the
+middle of my video and uh I have not
+
+middle of my video and uh I have not
+
+middle of my video and uh I have not
+posted this video so I'm still
+
+posted this video so I'm still
+
+posted this video so I'm still
+recording. So here is the retrospective
+
+recording. So here is the retrospective
+
+recording. So here is the retrospective
+next iteration at explicit waypoint
+
+next iteration at explicit waypoint
+
+next iteration at explicit waypoint
+callouts every 5.7 minutes. I ask if
+
+callouts every 5.7 minutes. I ask if
+
+callouts every 5.7 minutes. I ask if
+Archavist wants to say goodbye to the
+
+Archavist wants to say goodbye to the
+
+Archavist wants to say goodbye to the
+viewers for now. Says, "All right,
+
+viewers for now. Says, "All right,
+
+viewers for now. Says, "All right,
+folks. We'll pause here. In this
+
+folks. We'll pause here. In this
+
+folks. We'll pause here. In this
+session, we didn't just talk about
+
+session, we didn't just talk about
+
+session, we didn't just talk about
+safian
+
+vault with structures, MOC's, maps of
+
+vault with structures, MOC's, maps of
+
+vault with structures, MOC's, maps of
+concepts, a concept lattice, inline
+
+concepts, a concept lattice, inline
+
+concepts, a concept lattice, inline
+backlinks, and we mined a long blog post
+
+backlinks, and we mined a long blog post
+
+backlinks, and we mined a long blog post
+into a dense graph of reusable nodes.
+
+into a dense graph of reusable nodes.
+
+into a dense graph of reusable nodes.
+That's the core promise. Durable
+
+That's the core promise. Durable
+
+That's the core promise. Durable
+artifacts, not vibes. Next time, we'll
+
+artifacts, not vibes. Next time, we'll
+
+artifacts, not vibes. Next time, we'll
+keep mining and tighten the workflow
+
+keep mining and tighten the workflow
+
+keep mining and tighten the workflow
+into a repeatable drop source get
+
+into a repeatable drop source get
+
+into a repeatable drop source get
+concept graph pipeline. Plus, we'll tune
+
+concept graph pipeline. Plus, we'll tune
+
+concept graph pipeline. Plus, we'll tune
+the pacing to make the payoff land
+
+the pacing to make the payoff land
+
+the pacing to make the payoff land
+earlier. See you in the next one. I
+
+earlier. See you in the next one. I
+
+earlier. See you in the next one. I
+don't think I could have done a better
+
+don't think I could have done a better
+
+don't think I could have done a better
+sign off. Well done, archavist. We'll
+
+sign off. Well done, archavist. We'll
+
+sign off. Well done, archavist. We'll
+put links to the blog post in here. How
+
+put links to the blog post in here. How
+
+put links to the blog post in here. How
+to get started on Let it Code, how to go
+
+to get started on Let it Code, how to go
+
+to get started on Let it Code, how to go
+download Obsidian documentation, things
+
+download Obsidian documentation, things
+
+download Obsidian documentation, things
+like that. If you would like to come
+
+like that. If you would like to come
+
+like that. If you would like to come
+talk about this and let us know what
+
+talk about this and let us know what
+
+talk about this and let us know what
+you're doing with Obsidian and Let It
+
+you're doing with Obsidian and Let It
+
+you're doing with Obsidian and Let It
+Code or Let It Code in general, then uh
+
+Code or Let It Code in general, then uh
+
+Code or Let It Code in general, then uh
+come join us on the Discord. It's really
+
+come join us on the Discord. It's really
+
+come join us on the Discord. It's really
+great. I really enjoy everyone in our
+
+great. I really enjoy everyone in our
+
+great. I really enjoy everyone in our
+Discord. So, thank you very much for
+
+Discord. So, thank you very much for
+
+Discord. So, thank you very much for
+watching and I hope you have a lovely
+
+watching and I hope you have a lovely
+
+watching and I hope you have a lovely
+day, evening, good night,
+
+day, evening, good night,
+
+day, evening, good night,
+whatever. Obviously, it's night here, so
+
+whatever. Obviously, it's night here, so
+
+whatever. Obviously, it's night here, so
+yeah, I'll see you around.
+
+&gt;&gt; [music]

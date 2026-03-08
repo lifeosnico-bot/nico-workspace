@@ -1,15 +1,57 @@
 # Status
 
-**Last Updated**: 2026-02-23 22:40 EST | **Updated by**: Claude Code | **Session**: CC-10
+**Last Updated**: 2026-03-08 15:58 EST | **Updated by**: Nico | **Session**: CC-12 follow-up
 
 ---
 
 ## Current State
 
-Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (deep clean CC-8). Task-board ✅. iMessage alert script ✅ (Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅. Permission prompt alert ✅. Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅. All operational docs in vault ✅. Slack two-way ✅ (CC-9). Background Slack polling ✅ (CC-10 — poller watches #vincent-to-nico, alerts to #alerts, statusline indicator). Slacky responds in #vincent-to-nico for two-way chat. Bot display name still "Nico" in Slack — needs rename to "Slacky" via Slack app settings (Vincent action).
+Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+Tailscale ✅, Passwordless sudo ✅, Obsidian installed ✅, Obsidian Phase 1 ✅. Master list consolidation ✅. Vault housekeeping ✅ (deep clean CC-8). Task-board ✅. iMessage alert script ✅ (Telegram). /handoff skill ✅. Task architecture plan approved ✅. 50% context alert ✅. Permission prompt alert ✅. Daily note capture architecture ✅. Phase 0C MCP fix verified ✅. Vault frontmatter audit ✅. All operational docs in vault ✅. Slack two-way ✅ (CC-9). Background Slack polling ✅ (CC-10). Single-source-of-truth refactor ✅ (CC-12 — session-log.md replaced by auto-generated session-index.md, ops-index.md created as central manifest, /handoff skill updated to regenerate index).
 
 **#1 PRIORITY (Nico):** Phase 0E metadata standards enforcement.
 **#1 PRIORITY (Vincent):** Telegram bot token rotation (BotFather /revoke).
+
+## Tight List (Open)
+- [ ] **[P1][N]** Fix permissions issues with Telegram and Nico (Plan Mode + any other tool denies) *(added 2026-03-04)*
+- [ ] **[N]** Overnight runner scaffold + queue + schedule (PR #14 open) — *waiting merge*
+- [ ] **[N]** Add PR-opening capability to overnight runner (gated)
+- [ ] **[N]** Phase 0E — metadata standards enforcement
+- [ ] **[V]** Telegram bot token rotation (BotFather → `/revoke` → new token applied on M1)
+- [ ] **[V]** Obsidian Phase 2 manual setup (Sync + enable CLI)
+- [ ] **[V]** 1Password setup (account + desktop app)
+
+### Phase 0G: Overnight Autonomy (Heartbeats + Nightly Work) [N] P1
+_Dependency: None for scaffolding. Token rotation strongly recommended before hardening._
+
+**Mission:** Nico can execute non-urgent work overnight without distracting daytime workflow.
+
+**Daily Checklist (must be ✅ by tonight):**
+- [x] ✅ **0G-1** Define overnight scope + gates (what can run overnight; what is forbidden)
+  - Allowed overnight: create vault stub notes, update local logs, run read-only scans
+  - Forbidden overnight (until later phase): git commits/PRs, memory edits, wizard edits, Slack posts, deleting/moving files
+  - User notifications: DM only on failure; otherwise silent
+- [x] ✅ **0G-2** Confirm nightly runner behavior (2am launchd) + logs + idempotency
+  - Job: `~/Library/LaunchAgents/com.nico.overnight-runner.plist`
+  - Script: `~/Nico/Scripts/overnight-runner.py`
+  - Vault output: `CabinetAgentVault/50-clippings/youtube/<video-id>-untriaged.md`
+  - Logs: `~/Nico/Logs/overnight-runner.log` + `~/Nico/Logs/overnight-runner-err.log`
+- [x] ✅ **0G-3** Add 15-minute status pings (only while checklist has 🟨 items)
+  - Job: `~/Library/LaunchAgents/com.nico.phase0g-status-ping.plist`
+  - Script: `~/Nico/Scripts/phase0g-status-ping.sh`
+- [x] ✅ **0G-4** Heartbeat policy: silent health-check only (no daytime chatter)
+  - Job: `~/Library/LaunchAgents/com.nico.heartbeat-healthcheck.plist`
+  - Script: `~/Nico/Scripts/heartbeat-healthcheck.sh`
+- [x] ✅ **0G-5** Track launchd as code in GitHub (sanitized plists + install/uninstall scripts)
+  - Folder: `~/Nico/ops/launchd/` (README + install/uninstall)
+- [x] ✅ **0G-6** Acceptance test: kickstart all jobs; verify correct outputs + no spam
+  - Verified: overnight runner + Phase 0G pings + heartbeat healthcheck all execute without errors
+  - Fixed: nighttime report job (missing script) now exists and runs quiet by default
+
+**Definition of Done:**
+- 2am job runs and produces expected artifacts in the vault
+- Status pings work and are quiet when nothing is active
+- Heartbeat runs without generating noise unless there is a failure
+- launchd configs/scripts are tracked in GitHub without secrets
 
 ---
 
@@ -17,6 +59,7 @@ Phase 0D ✅, LettaBot ✅, Phase 0E ✅ (mostly), Daily briefing ✅, Termius+T
 _Use these shorthand commands from any surface (text, voice, Cowork, Claude Code):_
 
 - **atl [P#] [description]** — Add to list. Defaults to P3/unassigned if no priority given.
+- **atl-p1 [description]** — Add to list as P1 (alias)
 - **sts** — Show current status. What's in progress, what's next.
 - **done [task]** — Mark a task complete.
 - **blocker [description]** — Flag something as blocked with reason.
@@ -30,15 +73,15 @@ _Owner tags: [V] = Vincent must do · [N] = Nico handles · [A] = delegatable to
 
 ## 🔴 Active This Week
 
-| Priority | Owner | Task |
-|---|---|---|
-| ~~P1~~ | ~~[N]~~ | ~~50% context window alert hook~~ ✅ |
-| P1 | [V] | Telegram bot token rotation (BotFather → /revoke → new token to Nico) |
-| ~~P1~~ | ~~[V]~~ | ~~Create Slack workspace + bot token~~ ✅ |
-| ~~P2~~ | ~~[N]~~ | ~~LettaBot Telegram poller fix~~ ✅ No conflict found (CC-8) |
-| P2 | [N] | Phase 0E — metadata standards enforcement |
-| P2 | [V] | Obsidian Phase 2 manual setup |
-| P2 | [V] | 1Password setup (secrets management) |
+| Priority | Owner   | Task                                                                  |
+| -------- | ------- | --------------------------------------------------------------------- |
+| ~~P1~~   | ~~[N]~~ | ~~50% context window alert hook~~ ✅                                   |
+| P1       | [V]     | Telegram bot token rotation (BotFather → /revoke → new token to Nico) |
+| ~~P1~~   | ~~[V]~~ | ~~Create Slack workspace + bot token~~ ✅                              |
+| ~~P2~~   | ~~[N]~~ | ~~LettaBot Telegram poller fix~~ ✅ No conflict found (CC-8)           |
+| P2       | [N]     | Phase 0E — metadata standards enforcement                             |
+| P2       | [V]     | Obsidian Phase 2 manual setup                                         |
+| P2       | [V]     | 1Password setup (secrets management)                                  |
 
 ---
 
@@ -48,9 +91,11 @@ _These require Vincent. Nothing else can proceed until done._
 
 - [ ] **P1** Telegram bot token rotation: open @BotFather → `/revoke` → get new token → paste to Nico (security — old token exposed in compaction summaries)
 - [x] **P1** Create Slack workspace → copy bot token → paste in terminal to Nico ✅ (done 2026-02-23)
+- [ ] **[P1][N]** Add Telegram memory command cheat sheet to master list + pinned memory
+- [ ] **[P3][N]** Pilot GitHub Actions background agent lane (tag Nico/Letta Code on issues/PRs) — choose repo + security mode first
 - [ ] **P2** 1Password: create account at 1password.com, install desktop app
 - [ ] **P2** Obsidian Phase 2: manual setup (sign in, enable Sync, register CLI, enable plugins) — Nico will prep everything, Vincent flips the switches
-- [ ] **P3** Exa API key: free tier at dashboard.exa.ai (1000/mo) — optional, DuckDuckGo works now
+- [x] **P3** Exa API key: free tier at dashboard.exa.ai (1000/mo) — optional, DuckDuckGo works now ✅ 2026-03-04
 - [ ] **P4** Review `05-reviews/housekeeping/vault-consolidation-review.md` in Obsidian — one decision needed
 - [ ] **P5** "Watch vid of pa guy in hall in Philly" — personal reminder
 
@@ -91,6 +136,8 @@ _Land here first, get triaged into phases by Nico. Items below have been assigne
 
 ### New
 - [x] **[P1][N]** Build background Slack polling — Nico monitors #vincent-to-nico during sessions, alerts on new messages ✅ (done 2026-02-23)
+- [ ] **[P1][N]** Add Telegram memory command cheat sheet to master list + pinned memory
+- [ ] **[P3][N]** Pilot GitHub Actions background agent lane (tag Nico/Letta Code on issues/PRs) — choose repo + security mode first
 - [ ] **[P3][N]** Troubleshoot copy and paste issues in Claude Code, including image pasting capability (added 2026-02-24)
 
 ### Remaining (25 items, triaged)
@@ -209,7 +256,7 @@ _Dependency: Phase 0 complete ✅_
 - [x] 5a. Direct push blocked ✅ · 5b. Branch→PR→merge works ✅
 - [ ] 5c. **[P3][N]** Verify auto-backup runs on next cycle correctly
 - [ ] 6. **[P2][N]** Enforce metadata standards
-  - [ ] 6a. Audit existing files: status.md, decisions.md, session-log.md — add missing timestamps
+  - [ ] 6a. Audit existing files: status.md, decisions.md, session-index.md — add missing timestamps
   - [ ] 6b. Define exact format per document type (timezone, source label)
   - [ ] 6c. Add metadata checklist to CLAUDE.md Session Protocol
   - [ ] 6d. Future: Slack bot validates metadata before accepting #status posts
@@ -321,6 +368,40 @@ _Dependency: Phase 1 complete. Claude Code preps everything, Vincent flips switc
 
 ---
 
+### Phase 7: Overnight Autonomy (Heartbeat + Runner) [N] P3
+_Dependency: Phase 0E metadata standards enforcement (and token rotation) complete._
+
+**Top-20 checklist (canonical):**
+- [ ] 1) Overnight runner (actual work engine)
+- [ ] 2) Cron enabled (if using LettaBot cron)
+- [ ] 3) Single task queue (one source of truth)
+- [ ] 4) Definition-of-done checks (verification gates)
+- [ ] 5) Report spec enforcement (morning/night cannot omit sections)
+- [ ] 6) Autonomy scope rules
+- [ ] 7) Auth alignment (LETTA_API_KEY / lettabot.yaml / MemFS git)
+- [ ] 8) Stable memory sync health checks
+- [ ] 9) Pinned memory policy (keep `system/` small)
+- [ ] 10) Reflection policy (sleep-time compute)
+- [ ] 11) Defragmentation routine
+- [ ] 12) Disk space monitoring
+- [ ] 13) Log location + rotation
+- [ ] 14) Comms lane rules
+- [ ] 15) Escalation channel for blockers
+- [ ] 16) Subagent policy
+- [ ] 17) Canonical Build/Update Nico manual (wizard)
+- [ ] 18) Weekly ingestion updater
+- [ ] 19) Repo workflow gates (branch-only, PR-only)
+- [ ] 20) Backup + restore drills
+
+**Current reality (as of 2026-03-04):**
+- Overnight runner exists but is report-only (no PR creation).
+- LettaBot heartbeat is enabled; cron is disabled.
+- Nighttime report LaunchAgent exists but the script is missing (errors).
+
+- [ ] 1. Upgrade overnight runner from report-only → branch + PR (gated)
+- [ ] 2. Decide: LettaBot cron vs launchd-only for scheduled work
+- [ ] 3. **[P2][N]** Fix nighttime report job (missing `Scripts/nighttime-report.py`)
+
 ### Phase 3: Post-Launch Verification [N] P2
 _Dependency: Phase 2 complete (Vincent has done manual setup)._
 
@@ -392,6 +473,40 @@ _Dependency: Phase 3 complete._
   - [ ] 4b. Save to vault: `30-resources/reference/disaster-recovery.md`
 
 ---
+
+### Phase 7: Overnight Autonomy (Heartbeat + Runner) [N] P3
+_Dependency: Phase 0E metadata standards enforcement (and token rotation) complete._
+
+**Top-20 checklist (canonical):**
+- [ ] 1) Overnight runner (actual work engine)
+- [ ] 2) Cron enabled (if using LettaBot cron)
+- [ ] 3) Single task queue (one source of truth)
+- [ ] 4) Definition-of-done checks (verification gates)
+- [ ] 5) Report spec enforcement (morning/night cannot omit sections)
+- [ ] 6) Autonomy scope rules
+- [ ] 7) Auth alignment (LETTA_API_KEY / lettabot.yaml / MemFS git)
+- [ ] 8) Stable memory sync health checks
+- [ ] 9) Pinned memory policy (keep `system/` small)
+- [ ] 10) Reflection policy (sleep-time compute)
+- [ ] 11) Defragmentation routine
+- [ ] 12) Disk space monitoring
+- [ ] 13) Log location + rotation
+- [ ] 14) Comms lane rules
+- [ ] 15) Escalation channel for blockers
+- [ ] 16) Subagent policy
+- [ ] 17) Canonical Build/Update Nico manual (wizard)
+- [ ] 18) Weekly ingestion updater
+- [ ] 19) Repo workflow gates (branch-only, PR-only)
+- [ ] 20) Backup + restore drills
+
+**Current reality (as of 2026-03-04):**
+- Overnight runner exists but is report-only (no PR creation).
+- LettaBot heartbeat is enabled; cron is disabled.
+- Nighttime report LaunchAgent exists but the script is missing (errors).
+
+- [ ] 1. Upgrade overnight runner from report-only → branch + PR (gated)
+- [ ] 2. Decide: LettaBot cron vs launchd-only for scheduled work
+- [ ] 3. **[P2][N]** Fix nighttime report job (missing `Scripts/nighttime-report.py`)
 
 ### Phase 7: LifeOS Agent Evolution [N] P4
 _Dependency: Phases 0-3 complete. Future — scope after infrastructure is stable._

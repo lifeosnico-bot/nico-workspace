@@ -12,8 +12,16 @@
 # Obsidian vault has its own repo — don't double-track
 Vault/
 
+# Embedded repos live here (tracked independently)
+Projects/slack-bot/
+lettabot/lettabot/
+
 # Node
 node_modules/
+
+# Python
+__pycache__/
+*.pyc
 
 # Environment files
 .env

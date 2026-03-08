@@ -16163,3 +16163,78 @@ Node.js v25.6.1
 Letta chat and Claude Code send
 [Bot] Result error: error=error, stopReason=error, duration=40971ms, conv=conv-b21e321c-d19c-4577-9476-dd15acb7c992
 [Bot] Warning: Agent returned terminal error (error=error, stopReason=error) with no response.
+node:events:486
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:2016:16)
+    at listenInCluster (node:net:2073:12)
+    at node:net:2282:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:2052:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '127.0.0.1',
+  port: 8080
+}
+
+Node.js v25.6.1
+[letta-code-sdk] CLI stderr: Failed to connect to Letta server
+[letta-code-sdk] CLI stderr: Base URL: https://api.letta.com
+Your credentials may be invalid or the server may be unreachable.
+Delete ~/.letta/settings.json then run 'letta' to re-authenticate
+[letta-code-sdk] CLI process exited with code 1
+[letta-code-sdk] CLI stderr: Failed to connect to Letta server
+[letta-code-sdk] CLI stderr: Base URL: https://api.letta.com
+[letta-code-sdk] CLI stderr: Your credentials may be invalid or the server may be unreachable.
+Delete ~/.letta/settings.json then run 'letta' to re-authenticate
+[letta-code-sdk] CLI process exited with code 1
+node:events:486
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:2016:16)
+    at listenInCluster (node:net:2073:12)
+    at node:net:2282:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:2052:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '127.0.0.1',
+  port: 8080
+}
+
+Node.js v25.6.1
+node:events:486
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:1025:11)
+    at Socket._write (node:net:1037:8)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at SubprocessTransport.write (file:///Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/@letta-ai/letta-code-sdk/dist/index.js:234:24)
+    at Session.send (file:///Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/@letta-ai/letta-code-sdk/dist/index.js:450:26)
+    at LettaBot.runSession (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:867:51)
+Emitted 'error' event on Socket instance at:
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  errno: -32,
+  code: 'EPIPE',
+  syscall: 'write'
+}
+
+Node.js v25.6.1

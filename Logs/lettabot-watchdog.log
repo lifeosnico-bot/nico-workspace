@@ -1,0 +1,180 @@
+[2026-03-04 11:44:25] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 11:44:25] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-114425)
+[2026-03-04 11:44:27] watchdog: restarted com.nico.lettabot
+[2026-03-04 11:45:27] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 11:45:27] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-114527)
+[2026-03-04 11:45:30] watchdog: restarted com.nico.lettabot
+[2026-03-04 11:46:30] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 11:46:30] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-114630)
+[2026-03-04 11:46:32] watchdog: restarted com.nico.lettabot
+[2026-03-04 12:15:58] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 12:15:58] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-121558)
+[2026-03-04 12:16:00] watchdog: restarted com.nico.lettabot
+[2026-03-04 14:51:18] watchdog: detected stuck state (timeouts)
+[2026-03-04 14:51:18] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-145118)
+[2026-03-04 14:51:21] watchdog: restarted com.nico.lettabot
+[2026-03-04 14:52:21] watchdog: detected stuck state (timeouts)
+[2026-03-04 14:52:21] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-145221)
+[2026-03-04 14:52:23] watchdog: restarted com.nico.lettabot
+[2026-03-04 14:53:23] watchdog: detected stuck state (timeouts)
+[2026-03-04 14:53:23] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-145323)
+[2026-03-04 14:53:25] watchdog: restarted com.nico.lettabot
+[2026-03-04 14:54:25] watchdog: detected stuck state (timeouts)
+[2026-03-04 14:54:25] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-145425)
+[2026-03-04 14:54:27] watchdog: restarted com.nico.lettabot
+[2026-03-04 20:29:38] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 20:29:38] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-202938)
+[2026-03-04 20:29:40] watchdog: restarted com.nico.lettabot
+[2026-03-04 20:30:40] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 20:30:40] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-203040)
+[2026-03-04 20:30:42] watchdog: restarted com.nico.lettabot
+[2026-03-04 20:31:42] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 20:31:42] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-203142)
+[2026-03-04 20:31:44] watchdog: restarted com.nico.lettabot
+[2026-03-04 20:32:44] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 20:32:44] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-203244)
+[2026-03-04 20:32:47] watchdog: restarted com.nico.lettabot
+[2026-03-04 20:42:47] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 20:42:47] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-204247)
+[2026-03-04 20:42:49] watchdog: restarted com.nico.lettabot
+[2026-03-04 20:43:49] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 20:43:49] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-204349)
+[2026-03-04 20:43:52] watchdog: restarted com.nico.lettabot
+[2026-03-04 20:44:52] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 20:44:52] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-204452)
+[2026-03-04 20:44:54] watchdog: restarted com.nico.lettabot
+[2026-03-04 20:49:54] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 20:49:54] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-204954)
+[2026-03-04 20:49:56] watchdog: restarted com.nico.lettabot
+[2026-03-04 20:50:56] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 20:50:56] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-205056)
+[2026-03-04 20:50:58] watchdog: restarted com.nico.lettabot
+[2026-03-04 20:51:59] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 20:51:59] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-205159)
+[2026-03-04 20:52:01] watchdog: restarted com.nico.lettabot
+[2026-03-04 20:53:01] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 20:53:01] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-205301)
+[2026-03-04 20:53:03] watchdog: restarted com.nico.lettabot
+[2026-03-04 21:46:06] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 21:46:06] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-214606)
+[2026-03-04 21:46:08] watchdog: restarted com.nico.lettabot
+[2026-03-04 21:47:08] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 21:47:08] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-214708)
+[2026-03-04 21:47:10] watchdog: restarted com.nico.lettabot
+[2026-03-04 21:48:10] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 21:48:10] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-214810)
+[2026-03-04 21:48:13] watchdog: restarted com.nico.lettabot
+[2026-03-04 21:49:13] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-04 21:49:13] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-214913)
+[2026-03-04 21:49:15] watchdog: restarted com.nico.lettabot
+[2026-03-04 22:48:48] watchdog: detected stuck state (timeouts)
+[2026-03-04 22:48:48] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-224848)
+[2026-03-04 22:48:50] watchdog: restarted com.nico.lettabot
+[2026-03-04 22:49:51] watchdog: detected stuck state (timeouts)
+[2026-03-04 22:49:51] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-224951)
+[2026-03-04 22:49:53] watchdog: restarted com.nico.lettabot
+[2026-03-04 23:35:03] watchdog: detected stuck state (timeouts)
+[2026-03-04 23:35:03] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-233503)
+[2026-03-04 23:35:05] watchdog: restarted com.nico.lettabot
+[2026-03-04 23:36:05] watchdog: detected stuck state (timeouts)
+[2026-03-04 23:36:05] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-233605)
+[2026-03-04 23:36:09] watchdog: restarted com.nico.lettabot
+[2026-03-04 23:37:10] watchdog: detected stuck state (timeouts)
+[2026-03-04 23:37:10] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-233710)
+[2026-03-04 23:37:12] watchdog: restarted com.nico.lettabot
+[2026-03-04 23:38:12] watchdog: detected stuck state (timeouts)
+[2026-03-04 23:38:12] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260304-233812)
+[2026-03-04 23:38:14] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:28:00] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:28:00] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-152800)
+[2026-03-05 15:28:02] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:29:02] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:29:02] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-152902)
+[2026-03-05 15:29:04] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:30:04] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:30:04] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-153004)
+[2026-03-05 15:30:06] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:48:07] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:48:08] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-154807)
+[2026-03-05 15:48:10] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:49:10] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:49:10] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-154910)
+[2026-03-05 15:49:12] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:50:12] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:50:12] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-155012)
+[2026-03-05 15:50:14] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:51:15] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:51:15] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-155115)
+[2026-03-05 15:51:17] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:54:17] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:54:17] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-155417)
+[2026-03-05 15:54:19] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:55:19] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:55:19] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-155519)
+[2026-03-05 15:55:22] watchdog: restarted com.nico.lettabot
+[2026-03-05 15:56:22] watchdog: detected stuck state (timeouts)
+[2026-03-05 15:56:22] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-155622)
+[2026-03-05 15:56:24] watchdog: restarted com.nico.lettabot
+[2026-03-05 16:02:23] watchdog: detected stuck state (timeouts)
+[2026-03-05 16:02:23] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-160223)
+[2026-03-05 16:02:25] watchdog: restarted com.nico.lettabot
+[2026-03-05 22:36:55] watchdog: detected stuck state (timeouts)
+[2026-03-05 22:36:55] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-223655)
+[2026-03-05 22:36:57] watchdog: restarted com.nico.lettabot
+[2026-03-05 22:37:57] watchdog: detected stuck state (timeouts)
+[2026-03-05 22:37:57] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-223757)
+[2026-03-05 22:37:59] watchdog: restarted com.nico.lettabot
+[2026-03-05 22:38:59] watchdog: detected stuck state (timeouts)
+[2026-03-05 22:38:59] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-223859)
+[2026-03-05 22:39:01] watchdog: restarted com.nico.lettabot
+[2026-03-05 22:40:01] watchdog: detected stuck state (timeouts)
+[2026-03-05 22:40:01] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-224001)
+[2026-03-05 22:40:04] watchdog: restarted com.nico.lettabot
+[2026-03-05 23:15:06] watchdog: detected stuck state (timeouts)
+[2026-03-05 23:15:06] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-231506)
+[2026-03-05 23:15:08] watchdog: restarted com.nico.lettabot
+[2026-03-05 23:16:08] watchdog: detected stuck state (timeouts)
+[2026-03-05 23:16:08] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-231608)
+[2026-03-05 23:16:10] watchdog: restarted com.nico.lettabot
+[2026-03-05 23:17:10] watchdog: detected stuck state (timeouts)
+[2026-03-05 23:17:10] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-231710)
+[2026-03-05 23:17:12] watchdog: restarted com.nico.lettabot
+[2026-03-05 23:18:12] watchdog: detected stuck state (timeouts)
+[2026-03-05 23:18:12] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-231812)
+[2026-03-05 23:18:15] watchdog: restarted com.nico.lettabot
+[2026-03-05 23:19:15] watchdog: detected stuck state (timeouts)
+[2026-03-05 23:19:15] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-231915)
+[2026-03-05 23:19:17] watchdog: restarted com.nico.lettabot
+[2026-03-05 23:20:17] watchdog: detected stuck state (timeouts)
+[2026-03-05 23:20:17] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260305-232017)
+[2026-03-05 23:20:19] watchdog: restarted com.nico.lettabot
+[2026-03-06 02:24:44] watchdog: detected stuck state (timeouts)
+[2026-03-06 02:24:44] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260306-022444)
+[2026-03-06 02:41:32] watchdog: restarted com.nico.lettabot
+[2026-03-06 04:43:46] watchdog: detected stuck state (timeouts)
+[2026-03-06 04:43:46] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260306-044346)
+[2026-03-06 04:43:48] watchdog: restarted com.nico.lettabot
+[2026-03-06 07:10:37] watchdog: detected stuck state (timeouts)
+[2026-03-06 07:10:37] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260306-071037)
+[2026-03-06 07:10:39] watchdog: restarted com.nico.lettabot
+[2026-03-06 09:11:57] watchdog: detected stuck state (timeouts)
+[2026-03-06 09:11:57] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260306-091157)
+[2026-03-06 09:11:59] watchdog: restarted com.nico.lettabot
+[2026-03-06 16:30:18] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-06 16:30:18] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260306-163018)
+[2026-03-06 16:30:20] watchdog: restarted com.nico.lettabot
+[2026-03-06 16:31:20] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-06 16:31:20] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260306-163120)
+[2026-03-06 16:31:22] watchdog: restarted com.nico.lettabot
+[2026-03-06 17:16:11] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-06 17:16:11] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260306-171611)
+[2026-03-06 17:16:13] watchdog: restarted com.nico.lettabot
+[2026-03-06 17:19:44] watchdog: detected stuck state (approval_or_conflict)
+[2026-03-06 17:19:44] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260306-171944)
+[2026-03-06 17:19:46] watchdog: restarted com.nico.lettabot
+[2026-03-06 17:21:51] watchdog: detected stuck state (timeouts)
+[2026-03-06 17:21:51] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260306-172151)
+[2026-03-06 17:21:54] watchdog: restarted com.nico.lettabot
+[2026-03-06 17:22:54] watchdog: detected stuck state (timeouts)
+[2026-03-06 17:22:54] watchdog: cleared conversationId (backup: /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json.bak-20260306-172254)
+[2026-03-06 17:22:56] watchdog: restarted com.nico.lettabot
