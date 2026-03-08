@@ -55,6 +55,25 @@ Use today’s findings to make memory behavior predictable and debuggable.
 - **Claude session docs / operational docs** use: `~/Nico/CabinetAgentVault/00-dashboard/...`
 - These are related systems, but different storage layers.
 
+## Where MemFS fits (important)
+- MemFS is the git-backed memory filesystem for Letta agent memory.
+- For main Nico, MemFS path is:
+  - `/Users/lifeos.nico/.letta/agents/agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668/memory`
+- MemFS autosync on M1 (installed) handles periodic commit/push of memory changes:
+  - Script: `~/Nico/Scripts/memfs-autosync.sh`
+  - LaunchAgent: `~/Library/LaunchAgents/com.nico.memfs-autosync.plist`
+  - Log: `~/Nico/Logs/memfs-autosync.log`
+
+### MemFS quick checks
+- Check job loaded:
+  - `launchctl print gui/$(id -u)/com.nico.memfs-autosync | grep -E "state =|last exit code ="`
+- Check recent autosync log lines:
+  - `tail -n 40 ~/Nico/Logs/memfs-autosync.log`
+- Check if main Nico memory repo is clean:
+  - `git -C /Users/lifeos.nico/.letta/agents/agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668/memory status`
+- Check latest memory commits:
+  - `git -C /Users/lifeos.nico/.letta/agents/agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668/memory log --oneline -n 10`
+
 ## Slash commands and where they write
 - `/handoff` (current workflow): writes session outputs into Obsidian vault docs (`00-dashboard/llm-sessions/`, `session-index`, etc.)
 - Memory updates ("make it a memory"): should write to **main Nico agent memory** under `agent-5a9b.../memory/system/`
@@ -135,3 +154,54 @@ Before accepting any “memory synced” claim, verify:
 3. Content is what was expected
 4. Persisted state is clean
 5. Main Nico can read/use it
+
+## Simple 1-5 map (quick version)
+
+### 1) Start with the command
+- If you run a **slash command** like `/handoff`, first ask: "Is this supposed to create docs or memory?"
+
+### 2) Route by output type
+- **Docs output** → Obsidian vault (`CabinetAgentVault/00-dashboard/...`)
+- **Memory output** → Letta main Nico memory (`agent-5a9b.../memory/system/...`)
+
+### 3) Verify the write landed
+- Docs: confirm file exists in `00-dashboard` / `llm-sessions`
+- Memory: confirm file changed under `agent-5a9b...`
+
+### 4) Verify content
+- Open the file and check expected text actually exists
+
+### 5) Mark as synced only after verification
+- If write landed in another agent folder, treat as wrong target and re-route
+
+## Diagram: 1-5 command routing
+```mermaid
+flowchart LR
+    S1[1) Run command
+Example: /handoff] --> S2{2) What output type?}
+    S2 -->|Docs| S3A[3) Verify docs path
+CabinetAgentVault/00-dashboard/*]
+    S2 -->|Memory| S3B[3) Verify memory path
+.letta/agents/agent-5a9b.../memory/system/*]
+    S3A --> S4A[4) Open file and verify content]
+    S3B --> S4B[4) Open file and verify content]
+    S4A --> S5[5) Mark synced only if target+content are correct]
+    S4B --> S5
+```
+
+## Diagram: folder interaction at a glance
+```mermaid
+flowchart TD
+    U[You run a command] --> R{Router: docs or memory?}
+    R --> D[Docs lane]
+    R --> M[Memory lane]
+
+    D --> D1[/Users/lifeos.nico/Nico/CabinetAgentVault/00-dashboard/]
+    D1 --> D2[status.md, task-board.md, llm-sessions/, ops-index.md]
+
+    M --> M1[/Users/lifeos.nico/.letta/agents/agent-5a9b.../memory/system/]
+    M1 --> M2[human.md, persona.md, operations.md, project/*]
+
+    D2 --> V[Verification]
+    M2 --> V
+```

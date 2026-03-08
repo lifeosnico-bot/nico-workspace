@@ -1493,3 +1493,12 @@
  create mode 100644 CabinetAgentVault/00-dashboard/memory-layers-explainer.md
 [nico/ssot-session-data c7ace14] auto-backup: 2026-03-08_18:02
  8 files changed, 153 insertions(+), 14 deletions(-)
+[nico/ssot-session-data 069bd1a] auto-backup: 2026-03-08_18:17
+ 16 files changed, 2133 insertions(+), 41 deletions(-)
+ create mode 100644 CabinetAgentVault/.obsidian/hotkeys.json
+ create mode 100644 CabinetAgentVault/00-dashboard/daily/2026-03-08.md
+ create mode 100644 CabinetAgentVault/01-inbox/vault-salvage/reference-docs/letta-knowledge-pipeline.sh
+ create mode 100644 CabinetAgentVault/20-areas/Agno M1/agent-cos-architecture copy.jsx
+ create mode 100644 CabinetAgentVault/20-areas/Agno M1/agno-vs-letta-comparison copy.html
+ create mode 100644 CabinetAgentVault/20-areas/Agno M1/agno-vs-letta-comparison copy.jsx
+ create mode 100644 CabinetAgentVault/30-resources/letta/letta-knowledge-pipeline.sh
