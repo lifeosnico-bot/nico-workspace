@@ -7,6 +7,8 @@ AGENT_STATE="/Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json"
 LETTABOT_PLIST="/Users/lifeos.nico/Library/LaunchAgents/com.nico.lettabot.plist"
 LETTABOT_LABEL="com.nico.lettabot"
 API_PORT="8088"
+STATE_FILE="/Users/lifeos.nico/Nico/Logs/lettabot-watchdog.state"
+RESTART_COOLDOWN_SECS=300
 
 STAMP() { date '+%Y-%m-%d %H:%M:%S'; }
 
@@ -18,6 +20,15 @@ fi
 # Look at the most recent tail only to avoid slow scans.
 TAIL="$(tail -n 350 "$LOG_FILE" 2>/dev/null || true)"
 
+# Load persistent state (last restart timestamp)
+LAST_RESTART_TS=0
+if [[ -f "$STATE_FILE" ]]; then
+  LAST_RESTART_TS="$(cat "$STATE_FILE" 2>/dev/null || echo 0)"
+fi
+if ! [[ "$LAST_RESTART_TS" =~ ^[0-9]+$ ]]; then
+  LAST_RESTART_TS=0
+fi
+
 # Detect known stuck states.
 # 1) Approval block that is actually blocking delivery
 # 2) Conflict: cannot send a new message
@@ -27,7 +38,13 @@ TAIL="$(tail -n 350 "$LOG_FILE" 2>/dev/null || true)"
 # "Pending approval detected at session startup" is an *expected* recovery path.
 # Treating it as "stuck" causes a restart loop where the bot gets killed before
 # it can finish recovering and reply.
-if echo "$TAIL" | grep -qE 'waiting for approval|PENDING_APPROVAL|CONFLICT: Cannot send a new message'; then
+
+CONFLICT_COUNT=$(echo "$TAIL" | grep -E 'CONFLICT: Cannot send a new message' | wc -l | tr -d ' ')
+APPROVAL_COUNT=$(echo "$TAIL" | grep -E 'waiting for approval|PENDING_APPROVAL' | wc -l | tr -d ' ')
+
+# Require stronger evidence before restarting for conflict/approval paths.
+# Single stale conflict lines in the log tail should not trigger a reboot.
+if [[ "${CONFLICT_COUNT:-0}" -ge 2 ]] || [[ "${APPROVAL_COUNT:-0}" -ge 3 ]]; then
   REASON="approval_or_conflict"
 elif echo "$TAIL" | grep -qE 'llm_api_error|APIConnectionTimeoutError|Request timed out'; then
   # Only treat as stuck if we see it multiple times in the tail
@@ -43,6 +60,14 @@ fi
 
 # If we get here, we think it's stuck.
 echo "[$(STAMP)] watchdog: detected stuck state ($REASON)" >> "$OUT_LOG"
+
+# Cooldown guard to prevent restart thrash loops.
+NOW_TS=$(date +%s)
+if (( NOW_TS - LAST_RESTART_TS < RESTART_COOLDOWN_SECS )); then
+  REMAINING=$((RESTART_COOLDOWN_SECS - (NOW_TS - LAST_RESTART_TS)))
+  echo "[$(STAMP)] watchdog: cooldown active (${REMAINING}s remaining), skipping restart" >> "$OUT_LOG"
+  exit 0
+fi
 
 # Backup and clear conversationId (this forces a fresh conversation thread).
 if [[ -f "$AGENT_STATE" ]]; then
@@ -80,5 +105,8 @@ if lsof -nP -iTCP:${API_PORT} -sTCP:LISTEN >/dev/null 2>&1; then
 fi
 
 launchctl bootstrap "gui/$(id -u)" "$LETTABOT_PLIST"
+
+# Persist restart timestamp for cooldown checks.
+echo "$NOW_TS" > "$STATE_FILE"
 
 echo "[$(STAMP)] watchdog: restarted $LETTABOT_LABEL" >> "$OUT_LOG"
