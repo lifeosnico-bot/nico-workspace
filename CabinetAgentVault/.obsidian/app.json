@@ -8,5 +8,10 @@
   "alwaysUpdateLinks": true,
   "showFrontmatter": true,
   "useMarkdownLinks": false,
-  "trashOption": "local"
+  "trashOption": "local",
+  "propertiesInDocument": "hidden",
+  "openBehavior": "daily",
+  "showUnsupportedFiles": true,
+  "deleteUnlinkedAttachments": "always",
+  "uriCallbacks": true
 }
