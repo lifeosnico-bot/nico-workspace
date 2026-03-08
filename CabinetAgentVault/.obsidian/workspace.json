@@ -193,6 +193,8 @@
   },
   "active": "fa1654097f2b6850",
   "lastOpenFiles": [
+    "00-dashboard/ops-index.md",
+    "00-dashboard/llm-sessions/session-index.md",
     "00-dashboard/2026-03-08_master-task-rollup.md",
     "05-reviews/housekeeping/vault-consolidation-review.md",
     "00-dashboard/daily/March 7 2026.md",
@@ -217,8 +219,6 @@
     "00-dashboard/decisions.md",
     "00-dashboard/home.md",
     "30-resources/letta-manual/build-me/build-update-nico_wizard.md",
-    "30-resources/letta-manual/build-me/build-update-nico_latest-8-videos.md",
-    "01-inbox/vault-salvage/raw-transcripts/00_LETTA_MASTER_REFERENCE.md",
     "01-inbox/vault-salvage/processed-research",
     "01-inbox/vault-salvage/raw-transcripts",
     "01-inbox/vault-salvage/reference-docs",

@@ -81,7 +81,7 @@ Every file, log entry, and status update MUST include:
 
 Apply this to:
 - status.md header: `Last Updated: YYYY-MM-DD HH:MM | Updated by: [source]`
-- session-log.md: each session gets start time and end time
+- Session files in `llm-sessions/`: frontmatter includes `created`, `platform`
 - Completed tasks: append `(done YYYY-MM-DD)` when marked [x]
 - All files in the vault: frontmatter includes `date`, `modified`, `source`
 - decisions.md: each decision gets a timestamp
@@ -90,7 +90,7 @@ Apply this to:
 ### Session Protocol
 1. **Session start:** Read CLAUDE.md → Read status.md → **Triage daily notes** → Report what's in progress and what's next
 2. **During session:** Update status.md as tasks complete. Add new items as they come up.
-3. **Session end:** Update status.md with final state. Update session-log.md (if Cowork). Ensure "Current State" and "Next action" are accurate for the next agent to pick up.
+3. **Session end:** Update status.md with final state. Run `/handoff` (writes session note to `llm-sessions/` and regenerates `session-index.md`). Ensure "Current State" and "Next action" are accurate for the next agent to pick up.
 
 ### Daily Note Triage (CRITICAL)
 At every session start, read today's daily note at `00-dashboard/daily/YYYY-MM-DD.md` (and any previous days with unprocessed items in `## Dump`). For each item:
