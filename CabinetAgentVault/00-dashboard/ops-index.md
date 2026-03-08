@@ -2,8 +2,8 @@
 title: "Ops Index"
 type: index
 status: active
-created: 2026-03-08
-modified: 2026-03-08
+created: 2026-03-08 15:20
+modified: 2026-03-08 15:20
 source: Claude Code
 ---
 
