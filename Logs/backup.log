@@ -1488,3 +1488,6 @@
  8 files changed, 247 insertions(+), 4 deletions(-)
 [nico/ssot-session-data b053863] auto-backup: 2026-03-08_17:32
  6 files changed, 150 insertions(+), 1 deletion(-)
+[nico/ssot-session-data b71604b] auto-backup: 2026-03-08_17:47
+ 8 files changed, 257 insertions(+), 13 deletions(-)
+ create mode 100644 CabinetAgentVault/00-dashboard/memory-layers-explainer.md

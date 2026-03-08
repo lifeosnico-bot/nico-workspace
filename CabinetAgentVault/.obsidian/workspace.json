@@ -20,8 +20,19 @@
               "icon": "lucide-file",
               "title": "memory-layers-explainer"
             }
+          },
+          {
+            "id": "3a53fa4e699de6d0",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -95,7 +106,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "00-dashboard/memory-layers-explainer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +115,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for memory-layers-explainer"
+              "title": "Backlinks"
             }
           },
           {
@@ -114,12 +124,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "00-dashboard/memory-layers-explainer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from memory-layers-explainer"
+              "title": "Outgoing links"
             }
           },
           {
@@ -157,13 +166,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00-dashboard/memory-layers-explainer.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of memory-layers-explainer"
+              "title": "Outline"
             }
           },
           {
@@ -194,13 +202,14 @@
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
       "obsidian-git:Open Git source control": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "markdown-importer:Open format converter": false
     }
   },
-  "active": "3d549a2ad669d023",
+  "active": "3a53fa4e699de6d0",
   "lastOpenFiles": [
-    "00-dashboard/ops-index.md",
     "00-dashboard/memory-layers-explainer.md",
+    "00-dashboard/ops-index.md",
     "00-dashboard/llm-sessions/session-index.md",
     "00-dashboard/llm-sessions/2026-03-08_session-CC-12.md",
     "00-dashboard/2026-03-08_master-task-rollup.md",
