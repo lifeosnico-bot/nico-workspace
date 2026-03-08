@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-dashboard/llm-sessions/session-index.md",
+                "file": "00-dashboard/ops-index.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "session-index"
+              "title": "ops-index"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.5
+    "width": 388.5,
+    "collapsed": true
   },
   "right": {
     "id": "02e5e5a00cc0ebe3",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "00-dashboard/llm-sessions/session-index.md",
+                "file": "00-dashboard/ops-index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for session-index"
+              "title": "Backlinks for ops-index"
             }
           },
           {
@@ -113,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "00-dashboard/llm-sessions/session-index.md",
+                "file": "00-dashboard/ops-index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from session-index"
+              "title": "Outgoing links from ops-index"
             }
           },
           {
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00-dashboard/llm-sessions/session-index.md",
+                "file": "00-dashboard/ops-index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of session-index"
+              "title": "Outline of ops-index"
             }
           },
           {
@@ -198,10 +199,10 @@
   },
   "active": "3d549a2ad669d023",
   "lastOpenFiles": [
+    "00-dashboard/llm-sessions/session-index.md",
     "00-dashboard/llm-sessions/2026-03-08_session-CC-12.md",
     "00-dashboard/2026-03-08_master-task-rollup.md",
     "00-dashboard/daily/March 7 2026.md",
-    "00-dashboard/llm-sessions/session-index.md",
     "00-dashboard/status.md",
     "00-dashboard/home.md",
     "00-dashboard/decisions.md",
