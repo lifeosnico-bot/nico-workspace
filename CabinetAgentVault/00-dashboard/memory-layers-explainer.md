@@ -205,3 +205,94 @@ flowchart TD
     D2 --> V[Verification]
     M2 --> V
 ```
+
+## Top-down model (Vincent + Lucavo context)
+
+### 1) Three systems working together
+- **System A: Live session brain**
+  - Current chat/context window (what Nico can reason with right now).
+- **System B: Persistent memory (Letta/Nico)**
+  - Agent-scoped long-term memory for behavior, identity, and durable context.
+- **System C: Operating docs (Obsidian vault)**
+  - Company runtime docs: tasks, decisions, session records, SOP flow.
+
+### 2) Important memory objects (examples)
+- Founder profile and working style
+- Lucavo mission and transition target
+- Operating guardrails (security, machine verification, execution discipline)
+- Canonical ops entrypoint (`ops-index`)
+- Operational truth files (`status.md`, `decisions.md`, `llm-sessions`)
+
+### 3) Storage map (where each object lives)
+- **Letta persistent memory (Nico):**
+  - `/Users/lifeos.nico/.letta/agents/agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668/memory/system/*`
+- **Obsidian operating docs:**
+  - `/Users/lifeos.nico/Nico/CabinetAgentVault/00-dashboard/*`
+
+### 4) Slash commands in this model
+- Slash commands are **workflow routers**.
+- `/handoff` writes session outputs into Obsidian docs.
+- Memory-intent actions (e.g., “make it a memory”) must target main Nico Letta memory (`agent-5a9b...`).
+- Wrong agent-id target = write succeeded technically, failed operationally.
+
+### 5) MemFS in this model
+- MemFS is the git-backed filesystem for Letta memory.
+- Flow:
+  1. memory file write
+  2. commit/push via autosync
+  3. cloud/server sync
+  4. available in future sessions
+- Key caveat: if step 1 hits wrong agent folder, autosync still works but data lands in the wrong brain.
+
+### 6) Deterministic protocol (required)
+1. Confirm target `agent-id` = `agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668`
+2. Write
+3. Verify changed file path in that agent memory
+4. Verify content
+5. Verify MemFS sync state
+6. Verify Nico can read/use it
+7. Then mark as synced
+
+### 7) Why confusion happened today
+- Correct data was written to wrong agent folders.
+- Architecture was functional, routing was not.
+- Rule going forward: **correct content + wrong target = failure**.
+
+## Diagram: top-down system view
+```mermaid
+flowchart TD
+    A[User request] --> B{What should this change?}
+
+    B -->|Operational docs| C[Obsidian lane]
+    C --> C1[CabinetAgentVault/00-dashboard/*]
+
+    B -->|Persistent memory| D[Letta lane]
+    D --> D1[.letta/agents/agent-5a9b.../memory/system/*]
+    D1 --> D2[MemFS autosync commit/push]
+
+    A --> E[Slash command workflow]
+    E --> B
+
+    C1 --> F[Verify file + content]
+    D2 --> G[Verify agent-id + file + content]
+
+    F --> H[Deterministic success]
+    G --> H
+```
+
+## Diagram: deterministic sync gate
+```mermaid
+flowchart LR
+    S1[Target agent-id?] --> S2[Write performed?]
+    S2 --> S3[Correct file changed?]
+    S3 --> S4[Content matches intent?]
+    S4 --> S5[MemFS sync clean?]
+    S5 --> S6[Nico can read/use?]
+    S6 --> PASS[Synced = TRUE]
+
+    S1 -.wrong id.-> FAIL[Synced = FALSE]
+    S3 -.wrong file.-> FAIL
+    S4 -.wrong content.-> FAIL
+    S5 -.dirty/failed push.-> FAIL
+    S6 -.not visible.-> FAIL
+```
