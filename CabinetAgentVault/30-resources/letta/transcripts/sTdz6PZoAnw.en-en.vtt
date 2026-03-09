@@ -1,0 +1,3934 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.008 --> 00:00:01.248
+All right,
+
+00:00:01.528 --> 00:00:04.210
+welcome to day seven of Missing Semester.
+
+00:00:04.831 --> 00:00:07.492
+Today we're going to talk about agentic coding,
+
+00:00:07.913 --> 00:00:15.118
+so continuing some of the topics on AI-powered development that we were covering in the Development Environment and Tools lecture last week.
+
+00:00:15.638 --> 00:00:21.602
+So last time in that lecture we talked about some AI-assisted coding like autocomplete and inline chat.
+
+00:00:21.982 --> 00:00:26.205
+Today we're going to be talking about something that I think is much more sophisticated and new,
+
+00:00:26.225 --> 00:00:28.607
+a different form factor than what existed,
+
+00:00:28.647 --> 00:00:28.767
+say,
+
+00:00:28.807 --> 00:00:29.347
+five years ago.
+
+00:00:31.020 --> 00:00:32.181
+which is coding agents.
+
+00:00:32.941 --> 00:00:33.081
+And
+
+00:00:33.902 --> 00:00:35.903
+I think right at the start of this lecture,
+
+00:00:36.223 --> 00:00:38.564
+I'm going to show you a demo of how these things work,
+
+00:00:39.445 --> 00:00:44.227
+and then we'll talk about how they work under the hood,
+
+00:00:44.587 --> 00:00:45.608
+and then talk about basics,
+
+00:00:45.609 --> 00:00:46.749
+and then more advanced topics.
+
+00:00:46.809 --> 00:00:47.849
+So that's the plan for today.
+
+00:00:49.330 --> 00:00:50.370
+So for the initial demo,
+
+00:00:50.811 --> 00:00:56.174
+I'm going to actually continue with the example we were doing during the development environment and tools lecture.
+
+00:00:56.934 --> 00:00:57.514
+So recall,
+
+00:00:57.554 --> 00:00:59.395
+I'll actually bring up the code here on the screen.
+
+00:01:01.732 --> 00:01:04.734
+So recall that we were working on this little script to...
+
+00:01:05.194 --> 00:01:05.354
+Oh,
+
+00:01:05.414 --> 00:01:06.495
+it's not what I wanted.
+
+00:01:06.915 --> 00:01:07.475
+One second,
+
+00:01:07.476 --> 00:01:08.856
+I need to do a little bit of setup.
+
+00:01:21.263 --> 00:01:21.383
+Okay,
+
+00:01:21.743 --> 00:01:30.067
+so recall that we were working on this script to download a page from the course website and extract all the links from it.
+
+00:01:30.328 --> 00:01:31.148
+And this is where we're at.
+
+00:01:31.308 --> 00:01:32.969
+So pretty simple little Python script.
+
+00:01:33.509 --> 00:01:39.792
+And suppose we wanted to take this script we hacked together and turn it into a slightly nicer command line program.
+
+00:01:40.172 --> 00:01:43.714
+Maybe we want to do things like add some argument parsing,
+
+00:01:44.074 --> 00:01:46.455
+make this a page we want to fetch the contents from,
+
+00:01:46.515 --> 00:01:47.455
+a command line argument,
+
+00:01:47.535 --> 00:01:48.135
+things like that.
+
+00:01:48.616 --> 00:01:52.077
+So we can ask a coding agent to just do this entire task for us end-to-end.
+
+00:01:53.278 --> 00:01:54.698
+And so in today's lecture,
+
+00:01:54.738 --> 00:01:56.159
+I'm going to use Claude Code,
+
+00:01:56.439 --> 00:01:58.200
+which is one particular coding agent.
+
+00:01:58.456 --> 00:01:59.876
+There are a bunch of other tools out there.
+
+00:01:59.916 --> 00:02:02.957
+We have a recommended software section at the bottom of today's lecture notes.
+
+00:02:03.397 --> 00:02:05.338
+And they're both command line coding agents,
+
+00:02:05.698 --> 00:02:08.319
+which I at least personally prefer to use at this time.
+
+00:02:08.619 --> 00:02:11.079
+There's also coding agents built into IDEs.
+
+00:02:11.199 --> 00:02:13.440
+So if you're using something like VS Code or Cursor,
+
+00:02:13.720 --> 00:02:18.021
+you can access roughly the same type of functionality within the IDE.
+
+00:02:19.702 --> 00:02:21.802
+And so here I've started up Claude Code.
+
+00:02:21.842 --> 00:02:26.804
+I just opened up a terminal in my directory where I have my code,
+
+00:02:27.124 --> 00:02:27.584
+and I type.
+
+00:02:27.908 --> 00:02:31.990
+Claude, and this brings up this command line interface to Claude Code.
+
+00:02:32.430 --> 00:02:39.653
+And a coding agent is basically just a conversational AI model with access to some tools that will help it write code.
+
+00:02:40.093 --> 00:02:42.314
+So if you've used something like ChatGPT before,
+
+00:02:42.315 --> 00:02:43.574
+this is like roughly ChatGPT,
+
+00:02:44.135 --> 00:02:49.037
+except the AI model can do things like read and write files and execute shell commands on your computer.
+
+00:02:50.457 --> 00:02:55.899
+And then sometimes these models are specially tuned to be able to be particularly effective at writing software.
+
+00:02:56.940 --> 00:02:57.180
+And so
+
+00:02:57.632 --> 00:03:00.073
+I have this dl.py script in this directory,
+
+00:03:00.773 --> 00:03:05.434
+and I can go ahead and just give natural language input to the coding agent and say something like,
+
+00:03:05.894 --> 00:03:08.215
+turn the script I wrote...
+
+00:03:08.315 --> 00:03:08.435
+here,
+
+00:03:08.455 --> 00:03:09.455
+I typoed this on purpose,
+
+00:03:09.456 --> 00:03:10.296
+I'll just leave it that way.
+
+00:03:11.736 --> 00:03:12.576
+Turn the script I wrote,
+
+00:03:12.596 --> 00:03:13.276
+dl.py,
+
+00:03:13.396 --> 00:03:17.178
+into a proper command line program,
+
+00:03:17.858 --> 00:03:20.058
+use argparse for argument parsing,
+
+00:03:22.359 --> 00:03:25.700
+and maybe I wanted to make it nicer in some other ways like some things I'm missing here
+
+00:03:26.036 --> 00:03:26.156
+Oh,
+
+00:03:26.196 --> 00:03:27.557
+I guess I have type annotations here,
+
+00:03:27.558 --> 00:03:27.917
+but I can say,
+
+00:03:27.957 --> 00:03:28.157
+like,
+
+00:03:28.557 --> 00:03:32.440
+make sure it has proper type annotations,
+
+00:03:32.680 --> 00:03:35.841
+check that it works using mypy.
+
+00:03:36.222 --> 00:03:37.822
+So I want to check the type annotations,
+
+00:03:38.443 --> 00:03:40.404
+make sure it passes type checking.
+
+00:03:42.865 --> 00:03:44.386
+So I can give it a command like this,
+
+00:03:44.686 --> 00:03:46.367
+and then it starts thinking.
+
+00:03:46.987 --> 00:03:49.169
+And then let me just explain its output.
+
+00:03:49.189 --> 00:03:50.589
+So it gives some textual output,
+
+00:03:50.649 --> 00:03:52.691
+like ChatGPT can say text back to you.
+
+00:03:53.531 --> 00:03:55.172
+But then it can also invoke tools.
+
+00:03:55.616 --> 00:03:58.957
+So this model decided to read the file dl.py.
+
+00:03:58.977 --> 00:04:00.918
+That's a reasonable way to get started with this task.
+
+00:04:02.258 --> 00:04:04.058
+And this is a pretty easy task.
+
+00:04:04.479 --> 00:04:09.460
+So it just updates this dl.py and in one shot writes all the code.
+
+00:04:09.840 --> 00:04:12.021
+So I can go in here and see what changes it's made.
+
+00:04:13.761 --> 00:04:14.241
+As we can see,
+
+00:04:14.242 --> 00:04:15.502
+it's written some more functions.
+
+00:04:15.602 --> 00:04:19.303
+And now it has this main function that has the command line argument parsing and stuff.
+
+00:04:19.743 --> 00:04:21.683
+So it's just done the entire task I asked it to do.
+
+00:04:23.976 --> 00:04:26.699
+And it's continuing to follow my instructions.
+
+00:04:26.700 --> 00:04:32.604
+So recall that I told it to make sure it has type annotations and that the type checker says that everything is good.
+
+00:04:32.964 --> 00:04:35.687
+And so here it's trying to invoke the next command.
+
+00:04:35.688 --> 00:04:40.591
+So it's using the shell and invoking mypy and giving it as an argument the path to the script.
+
+00:04:41.692 --> 00:04:42.673
+And one thing we noticed here,
+
+00:04:42.974 --> 00:04:44.215
+when it was editing files,
+
+00:04:44.275 --> 00:04:45.756
+it didn't ask me for permissions.
+
+00:04:45.757 --> 00:04:47.137
+It just went ahead and edited stuff.
+
+00:04:47.438 --> 00:04:49.820
+That's because I have my coding agent configured in this way.
+
+00:04:50.192 --> 00:04:51.535
+Because I find that if you need to,
+
+00:04:51.876 --> 00:04:54.681
+if it's asking for permissions for every single little change it makes to files,
+
+00:04:54.682 --> 00:04:55.343
+it's kind of annoying.
+
+00:04:55.663 --> 00:04:57.427
+I want it to be able to operate more autonomously.
+
+00:04:58.129 --> 00:04:58.610
+And generally,
+
+00:04:58.611 --> 00:04:59.672
+I track everything in Git.
+
+00:05:00.552 --> 00:05:03.795
+So I can let the coding agent make a whole bunch of changes and then review them at once later.
+
+00:05:04.395 --> 00:05:07.097
+But for other tools that the coding agent wants to invoke,
+
+00:05:07.437 --> 00:05:08.018
+like bash,
+
+00:05:09.459 --> 00:05:13.982
+I want to make sure I'm actually checking every single command that it runs and making sure that it's safe.
+
+00:05:14.702 --> 00:05:17.564
+We won't get into the details of agent security today,
+
+00:05:17.644 --> 00:05:21.487
+but there are some security concerns if you let these things run fully autonomously.
+
+00:05:21.947 --> 00:05:24.950
+And they might do things like invoke a command that you don't want it to invoke.
+
+00:05:24.970 --> 00:05:28.252
+It might say delete a file that you care about or much more dangerous things than that.
+
+00:05:28.664 --> 00:05:35.507
+At least I personally recommend that you run them in this mode where you have to approve individual tool calls that can do things like mutate your computer state.
+
+00:05:36.987 --> 00:05:38.168
+So I've approved that tool call.
+
+00:05:38.169 --> 00:05:40.069
+The agent harness ran the tool.
+
+00:05:40.089 --> 00:05:42.050
+It gave the results back to the AI model.
+
+00:05:42.490 --> 00:05:44.431
+The model said that everything looks good.
+
+00:05:44.711 --> 00:05:50.533
+And then it's deciding to continue along and wants to run the script and make sure it seems to be working.
+
+00:05:50.553 --> 00:05:51.974
+So it's doing some more things here.
+
+00:05:53.174 --> 00:05:53.854
+And there we go.
+
+00:05:54.135 --> 00:05:56.375
+It has completed the task I asked it to complete.
+
+00:05:58.032 --> 00:05:59.493
+So that's what an AI...
+
+00:06:00.414 --> 00:06:00.594
+Yeah,
+
+00:06:00.614 --> 00:06:00.934
+question?
+
+00:06:11.163 --> 00:06:11.283
+Yeah,
+
+00:06:11.303 --> 00:06:11.863
+so the question is,
+
+00:06:11.864 --> 00:06:11.984
+like,
+
+00:06:11.985 --> 00:06:14.426
+this is using some hosted AI service in the background.
+
+00:06:14.427 --> 00:06:16.367
+Can you limit how much money you're spending?
+
+00:06:17.588 --> 00:06:18.249
+The answer is,
+
+00:06:18.289 --> 00:06:18.449
+yeah,
+
+00:06:18.509 --> 00:06:18.669
+yes,
+
+00:06:18.709 --> 00:06:19.069
+you can.
+
+00:06:19.129 --> 00:06:22.052
+It depends on the tool exactly what the configuration knobs are.
+
+00:06:22.448 --> 00:06:22.828
+Generally,
+
+00:06:22.829 --> 00:06:26.932
+you can select which AI model you want to use and then like higher capacity models,
+
+00:06:26.952 --> 00:06:28.974
+which might be better at solving harder tasks,
+
+00:06:29.355 --> 00:06:30.436
+will be more expensive.
+
+00:06:30.896 --> 00:06:33.859
+And then smaller and faster models will be cheaper.
+
+00:06:33.939 --> 00:06:35.120
+So that's one control you have.
+
+00:06:35.401 --> 00:06:37.222
+And certain services actually slightly limit spend.
+
+00:06:37.242 --> 00:06:37.663
+Like you can say,
+
+00:06:37.664 --> 00:06:38.364
+I want to spend at most,
+
+00:06:38.464 --> 00:06:38.704
+whatever,
+
+00:06:38.764 --> 00:06:39.605
+$10 this month.
+
+00:06:40.906 --> 00:06:44.590
+Yeah.
+
+00:06:44.591 --> 00:06:44.710
+Yeah.
+
+00:06:44.711 --> 00:06:45.490
+So the question is,
+
+00:06:45.491 --> 00:06:46.391
+do I limit spending?
+
+00:06:47.364 --> 00:06:48.204
+At least personally,
+
+00:06:48.304 --> 00:06:48.605
+I don't.
+
+00:06:48.625 --> 00:06:50.085
+I keep an eye on the usage.
+
+00:06:50.225 --> 00:06:51.126
+So in Claude Code,
+
+00:06:51.127 --> 00:06:51.626
+for example,
+
+00:06:51.666 --> 00:06:53.006
+there's a slash cost command.
+
+00:06:53.427 --> 00:06:57.588
+And this thing we've done so far has cost us about 19 cents.
+
+00:06:58.169 --> 00:07:00.950
+So I'll keep an eye on this and make sure things are not getting too unreasonable.
+
+00:07:02.570 --> 00:07:03.691
+I think if you're a student,
+
+00:07:03.951 --> 00:07:08.673
+one decent way to get started might be go for one of the subscription plans that's $20 a month,
+
+00:07:08.873 --> 00:07:11.134
+and then they have some amount of usage included with that.
+
+00:07:11.674 --> 00:07:14.956
+And then if you're going above that amount of usage and think about how you're using AI.
+
+00:07:15.016 --> 00:07:16.016
+I know that
+
+00:07:16.216 --> 00:07:17.097
+In a lot of companies,
+
+00:07:17.417 --> 00:07:24.783
+people are finding these tools are loved by engineers and increase productivity enough that compared to the cost of the engineer's time,
+
+00:07:24.863 --> 00:07:26.345
+the tool cost is relatively low.
+
+00:07:26.705 --> 00:07:28.446
+And so I know a lot of people who are spending a lot,
+
+00:07:28.486 --> 00:07:31.048
+like several hundred dollars a month in AI usage,
+
+00:07:31.088 --> 00:07:33.130
+but it's fine for their purposes.
+
+00:07:44.219 --> 00:07:44.340
+Yeah,
+
+00:07:44.341 --> 00:07:44.580
+question.
+
+00:07:44.581 --> 00:07:44.700
+Yeah.
+
+00:07:45.540 --> 00:07:49.343
+Coding agents cost money and they also require internet to first approximation,
+
+00:07:49.423 --> 00:07:49.663
+yes.
+
+00:07:50.724 --> 00:07:55.287
+You can also use coding agents that run locally and use models that run on your own laptop.
+
+00:07:56.207 --> 00:07:57.428
+There are trade-offs there.
+
+00:07:57.628 --> 00:08:00.090
+You have to use much lower capacity models unless you have...
+
+00:08:01.191 --> 00:08:04.012
+You basically have to use much lower capacity models than the one I'm using in this demo,
+
+00:08:04.113 --> 00:08:04.693
+for example.
+
+00:08:05.133 --> 00:08:07.054
+And then they might work okay for simple tasks,
+
+00:08:07.095 --> 00:08:08.175
+but for harder things,
+
+00:08:08.636 --> 00:08:09.516
+they don't really work that well.
+
+00:08:10.817 --> 00:08:10.937
+And
+
+00:08:11.818 --> 00:08:13.119
+I think for practically today,
+
+00:08:13.120 --> 00:08:15.180
+it makes sense to use one of the hosted models and pay for it.
+
+00:08:21.566 --> 00:08:21.686
+Yeah,
+
+00:08:21.687 --> 00:08:23.807
+the question is about subscription versus pay once.
+
+00:08:23.808 --> 00:08:27.089
+I think they're all subscription because inference costs just depend on usage.
+
+00:08:28.029 --> 00:08:30.350
+And then the pricing models vary and you can Google them and find it.
+
+00:08:30.351 --> 00:08:33.051
+I think we don't want to spend too much time in this lecture talking about pricing.
+
+00:08:33.052 --> 00:08:35.992
+We're going to talk about what are coding agents conceptually,
+
+00:08:36.012 --> 00:08:36.873
+how to use them effectively,
+
+00:08:36.933 --> 00:08:37.413
+and so on.
+
+00:08:40.954 --> 00:08:41.094
+Cool.
+
+00:08:41.194 --> 00:08:42.695
+So in this example,
+
+00:08:42.755 --> 00:08:44.796
+I've shown you a very high level overview of it.
+
+00:08:44.916 --> 00:08:46.397
+demonstration of using a coding agent,
+
+00:08:46.717 --> 00:08:48.058
+show it how we can talk to the tool.
+
+00:08:48.338 --> 00:08:49.319
+Here it did everything correctly.
+
+00:08:49.399 --> 00:08:50.540
+So I just did this one shot thing.
+
+00:08:50.700 --> 00:08:51.621
+I gave it an instruction.
+
+00:08:51.941 --> 00:08:52.781
+It did a bunch of stuff,
+
+00:08:52.861 --> 00:08:54.002
+including calling tools,
+
+00:08:54.042 --> 00:08:54.783
+looking at the results,
+
+00:08:54.803 --> 00:08:55.523
+calling more tools,
+
+00:08:55.524 --> 00:08:56.424
+depending on what happened.
+
+00:08:56.904 --> 00:08:58.805
+And eventually just coming back to me and saying,
+
+00:08:58.845 --> 00:08:59.046
+okay,
+
+00:08:59.066 --> 00:09:00.026
+I did the thing you asked for,
+
+00:09:00.166 --> 00:09:00.807
+and the end.
+
+00:09:01.827 --> 00:09:04.009
+You can also do multi-turn interactions with these things.
+
+00:09:04.309 --> 00:09:07.171
+I can actually remove the type annotations,
+
+00:09:07.711 --> 00:09:08.952
+and it will keep going.
+
+00:09:09.112 --> 00:09:11.934
+It has the context from the rest of the previous conversation,
+
+00:09:12.355 --> 00:09:14.216
+and I can send a follow-up messages like this.
+
+00:09:14.456 --> 00:09:15.817
+And now this is a kind of silly thing.
+
+00:09:15.818 --> 00:09:16.938
+It's kind of making our program worse.
+
+00:09:16.958 --> 00:09:17.899
+But it did the thing.
+
+00:09:18.679 --> 00:09:19.340
+More practically,
+
+00:09:19.420 --> 00:09:21.181
+you would iterate on the thing you're working on.
+
+00:09:21.722 --> 00:09:25.284
+If you were working on a feature where you didn't exactly know what the spec of the feature should be,
+
+00:09:25.645 --> 00:09:26.946
+you might give it some rough description.
+
+00:09:27.026 --> 00:09:27.626
+It does a thing.
+
+00:09:27.686 --> 00:09:28.687
+Then you judge the results.
+
+00:09:28.688 --> 00:09:28.927
+It's like,
+
+00:09:28.928 --> 00:09:29.047
+oh,
+
+00:09:29.187 --> 00:09:29.447
+actually,
+
+00:09:29.487 --> 00:09:31.029
+I want you to tweak it in this way or that way.
+
+00:09:31.489 --> 00:09:33.831
+And you can use these tools in this iterative manner.
+
+00:09:37.073 --> 00:09:39.935
+Another thing you can do is if the coding agent goes wrong,
+
+00:09:40.972 --> 00:09:42.793
+either if it does the wrong thing and gets confused,
+
+00:09:42.813 --> 00:09:47.296
+or if you see it going off the rails and it's kind of thinking a lot or calling tools in a nonsensical way,
+
+00:09:47.596 --> 00:09:48.596
+you can even interrupt it,
+
+00:09:48.616 --> 00:09:49.437
+like with Control-C,
+
+00:09:49.577 --> 00:09:50.077
+for example,
+
+00:09:50.097 --> 00:09:51.018
+in this tool I'm using,
+
+00:09:51.338 --> 00:09:53.059
+and then give it a follow-up message.
+
+00:09:53.479 --> 00:09:54.500
+So if it was calling,
+
+00:09:54.900 --> 00:09:55.020
+say,
+
+00:09:55.180 --> 00:09:55.780
+the wrong tool,
+
+00:09:55.800 --> 00:09:58.762
+like maybe I had mypy installed in some funny location and it couldn't find it,
+
+00:09:59.042 --> 00:10:00.103
+I could just interrupt it and be like,
+
+00:10:00.143 --> 00:10:00.383
+actually,
+
+00:10:00.503 --> 00:10:01.263
+mypy is here.
+
+00:10:01.424 --> 00:10:02.044
+Call it this way.
+
+00:10:02.591 --> 00:10:03.011
+for example.
+
+00:10:04.352 --> 00:10:10.637
+So any questions about that?
+
+00:10:10.638 --> 00:10:10.758
+Yeah.
+
+00:10:16.302 --> 00:10:16.422
+Yeah.
+
+00:10:16.442 --> 00:10:17.023
+So the question is,
+
+00:10:17.024 --> 00:10:20.445
+can you hard code things like don't touch this file or don't touch this part of the file?
+
+00:10:21.506 --> 00:10:23.428
+In the particular tool I'm using,
+
+00:10:23.488 --> 00:10:26.891
+I think you can't hard code not being able to touch a particular part of a file.
+
+00:10:27.251 --> 00:10:29.272
+The way I would approach something like that practically,
+
+00:10:29.273 --> 00:10:30.854
+I think it's just like keep track of everything in Git,
+
+00:10:30.954 --> 00:10:31.714
+see what it changes.
+
+00:10:32.495 --> 00:10:34.036
+like if it changes a thing you didn't want to change,
+
+00:10:34.096 --> 00:10:34.497
+revert it.
+
+00:10:34.717 --> 00:10:36.598
+You can also give it natural language instructions.
+
+00:10:36.939 --> 00:10:37.619
+Like you can say,
+
+00:10:38.100 --> 00:10:42.143
+remove all the type annotations except for in this function or like don't change this chunk of the code.
+
+00:10:42.483 --> 00:10:46.266
+And it generally does a decent job of respecting those instructions.
+
+00:10:47.868 --> 00:10:54.233
+Yeah.
+
+00:10:54.234 --> 00:10:54.333
+Yeah.
+
+00:10:54.334 --> 00:10:54.813
+So the question is,
+
+00:10:54.814 --> 00:10:56.995
+do I have experience with test-driven development using the agent?
+
+00:10:57.436 --> 00:10:58.496
+And the answer is yes.
+
+00:10:58.536 --> 00:11:00.998
+I think we will get to that a little bit bit later in the lecture.
+
+00:11:01.803 --> 00:11:03.604
+TLDR is a pretty good way to use these tools.
+
+00:11:03.984 --> 00:11:06.886
+Either write the test yourself and then tell the agent to do the thing,
+
+00:11:06.926 --> 00:11:08.947
+like implement the feature such that it passes the tests,
+
+00:11:09.367 --> 00:11:12.329
+or you can even use the coding agent to help you write the test to begin with,
+
+00:11:12.629 --> 00:11:14.950
+and then you can ask it to implement the feature that passes the tests.
+
+00:11:15.811 --> 00:11:17.472
+These things work really well with feedback loops.
+
+00:11:17.932 --> 00:11:21.374
+So if you can set them up so that it's like,
+
+00:11:21.414 --> 00:11:21.574
+okay,
+
+00:11:21.594 --> 00:11:23.015
+maybe you have some code that doesn't compile,
+
+00:11:23.016 --> 00:11:24.195
+or some code that doesn't type check,
+
+00:11:24.196 --> 00:11:24.956
+or something like that,
+
+00:11:25.216 --> 00:11:25.656
+you can say,
+
+00:11:26.076 --> 00:11:26.697
+here's the error,
+
+00:11:26.997 --> 00:11:28.638
+here's what you can run to reproduce the error,
+
+00:11:28.818 --> 00:11:30.619
+and keep working at it until you fix it.
+
+00:11:31.027 --> 00:11:32.848
+And that works well with test-driven development as well.
+
+00:11:38.429 --> 00:11:38.569
+Okay,
+
+00:11:38.749 --> 00:11:42.430
+so we're going to talk a lot more about practically how to use these tools in different use cases and stuff.
+
+00:11:42.790 --> 00:11:51.293
+But one topic I wanted to cover today was talking a little bit about how the underlying AI models and also how these agent harnesses work.
+
+00:11:51.833 --> 00:11:51.973
+Now,
+
+00:11:52.333 --> 00:11:54.414
+this is like a very deep area of research.
+
+00:11:54.494 --> 00:11:58.975
+I'm obviously not going to cover this topic in its entirety in whatever.
+
+00:11:59.275 --> 00:12:00.896
+the 10 minutes I'm planning on spending on it.
+
+00:12:00.996 --> 00:12:04.698
+I could spend an entire semester going into in-depth on the topic,
+
+00:12:05.118 --> 00:12:15.444
+but I think I'm going to try to cover it at just the right level of abstraction such that you learn the aspects of these tools you need in order to be able to use them effectively.
+
+00:12:15.764 --> 00:12:18.406
+So I'm not going to teach you how to re-implement one of these things on your own,
+
+00:12:18.826 --> 00:12:28.351
+but I will try to share a little bit about how they work so that you understand what they're good at and their limitations and why people have implemented certain features and agent harnesses and topics like that.
+
+00:12:31.439 --> 00:12:31.559
+So
+
+00:12:33.460 --> 00:12:36.360
+AI coding agents consist of roughly,
+
+00:12:36.500 --> 00:12:38.721
+I'd break them down into two main parts.
+
+00:12:39.261 --> 00:12:41.302
+There's an underlying language model,
+
+00:12:42.042 --> 00:12:45.283
+and then wrapping that language model is an agent harness.
+
+00:12:45.823 --> 00:12:46.123
+And so
+
+00:12:47.223 --> 00:12:49.744
+I don't know how much background everybody has on language models.
+
+00:12:50.044 --> 00:12:54.445
+Maybe raise your hand if you've used ChatGPT or any kind of AI language model before.
+
+00:12:54.965 --> 00:12:55.126
+Okay,
+
+00:12:55.166 --> 00:12:55.346
+great.
+
+00:12:55.546 --> 00:12:55.766
+Okay,
+
+00:12:55.806 --> 00:12:56.946
+so most of the hands went up.
+
+00:13:00.803 --> 00:13:01.624
+Language models,
+
+00:13:01.744 --> 00:13:03.826
+or sometimes called large language models,
+
+00:13:04.146 --> 00:13:08.109
+can be thought of as modeling a probability distribution of completion strings.
+
+00:13:08.950 --> 00:13:10.731
+Let's call those y.
+
+00:13:11.212 --> 00:13:16.176
+Modeling completion strings as a function of prompt strings,
+
+00:13:16.316 --> 00:13:17.077
+which we'll call x.
+
+00:13:17.078 --> 00:13:17.497
+So completions,
+
+00:13:17.557 --> 00:13:22.301
+completions y,
+
+00:13:23.402 --> 00:13:24.383
+and prompts x.
+
+00:13:24.384 --> 00:13:28.767
+So it's just this.
+
+00:13:29.891 --> 00:13:32.052
+conditional generative model that will tell us,
+
+00:13:32.512 --> 00:13:33.753
+given a particular input,
+
+00:13:33.813 --> 00:13:34.873
+a sequence of strings,
+
+00:13:35.273 --> 00:13:40.155
+what is the probability distribution over output strings that correspond to that sequence of inputs.
+
+00:13:40.635 --> 00:13:42.496
+And then when we use these models,
+
+00:13:42.696 --> 00:13:46.578
+and then so we can say like model this as a distribution,
+
+00:13:46.718 --> 00:13:47.858
+I'll write it as pi theta,
+
+00:13:47.898 --> 00:13:53.581
+this parameterized distribution of completions y given prompts x.
+
+00:13:54.161 --> 00:13:55.622
+And then when we use these things,
+
+00:13:55.702 --> 00:13:57.462
+we sample from this distribution,
+
+00:13:59.067 --> 00:14:06.550
+You can sample strings y hat from this pi theta given inputs.
+
+00:14:07.210 --> 00:14:09.011
+And that is it.
+
+00:14:09.691 --> 00:14:11.552
+That's all an AI language model is.
+
+00:14:11.572 --> 00:14:16.494
+And there's a lot of work that goes into finding a good probability distribution that does something useful.
+
+00:14:16.914 --> 00:14:17.615
+But then in practice,
+
+00:14:17.616 --> 00:14:22.257
+how you use them is you give them a bunch of text or strings or tokens as input.
+
+00:14:22.557 --> 00:14:24.418
+And then they give you back a bunch of text as output.
+
+00:14:25.218 --> 00:14:27.659
+And then everything else is built on top of that core primitive.
+
+00:14:28.135 --> 00:14:33.198
+One other detail to note here is that in practice these things have a limited context window.
+
+00:14:41.903 --> 00:14:47.846
+And basically that means that the length of this string and the length of the string have bounds.
+
+00:14:51.829 --> 00:14:52.109
+All right,
+
+00:14:53.670 --> 00:14:55.391
+so then building on top of this...
+
+00:14:55.755 --> 00:14:57.804
+Like how does something like ChatGPT work?
+
+00:14:57.864 --> 00:14:59.391
+Like how does conversational chat work?
+
+00:15:07.327 --> 00:15:10.230
+I think you could probably imagine how you could use this for single turn chat.
+
+00:15:10.250 --> 00:15:12.872
+Like you give it a question here and you get an answer here.
+
+00:15:13.112 --> 00:15:14.833
+Like how would you do follow-up questions?
+
+00:15:14.934 --> 00:15:15.434
+Any ideas?
+
+00:15:15.974 --> 00:15:17.376
+If you wanted multi-turn chat.
+
+00:15:19.818 --> 00:15:32.148
+So the way these things work is they use turn markers and you give your entire conversation history as the input to the model and it gives you the next thing,
+
+00:15:32.149 --> 00:15:33.028
+the model's output.
+
+00:15:33.953 --> 00:15:36.135
+as the output from the probability distribution.
+
+00:15:36.615 --> 00:15:40.457
+So you might give it as an input something like the user says,
+
+00:15:40.458 --> 00:15:40.798
+I don't know,
+
+00:15:40.818 --> 00:15:43.720
+like can't write out long questions on the blackboard,
+
+00:15:43.760 --> 00:15:46.982
+but like what is one plus one?
+
+00:15:46.983 --> 00:15:49.444
+And then the assistant might say,
+
+00:15:52.466 --> 00:15:53.887
+so in the first query,
+
+00:15:54.007 --> 00:15:55.668
+when you sample from the probability distribution,
+
+00:15:56.008 --> 00:15:57.289
+like this is your first X,
+
+00:15:58.129 --> 00:16:00.271
+and then this thing is your first Y hat.
+
+00:16:01.432 --> 00:16:03.213
+And then if you want to ask a follow-up question,
+
+00:16:07.802 --> 00:16:10.144
+So I'm writing a dependent query here on purpose.
+
+00:16:10.164 --> 00:16:17.287
+Like what if you replaced the ones with twos?
+
+00:16:23.191 --> 00:16:25.452
+So this query on its own is not super meaningful.
+
+00:16:25.492 --> 00:16:28.173
+You need the context to be able to answer this thing correctly.
+
+00:16:28.674 --> 00:16:35.037
+And so the way a conversational chat app handles something like this is that it will sample Oh.
+
+00:16:35.101 --> 00:16:43.168
+from the large language model again with this whole thing as being the prompt with some special encoding of these things as turn markers.
+
+00:16:43.169 --> 00:16:44.149
+So the user said this,
+
+00:16:44.209 --> 00:16:45.810
+the language model output was this,
+
+00:16:45.830 --> 00:16:46.671
+now the user said this,
+
+00:16:47.091 --> 00:16:48.833
+and that will generate the next thing.
+
+00:16:52.796 --> 00:16:56.039
+So this will be your next output.
+
+00:16:56.820 --> 00:16:57.020
+Okay,
+
+00:16:57.021 --> 00:16:59.982
+so we've gone from this primitive of large language models,
+
+00:17:00.022 --> 00:17:02.665
+which you can think of as a probability distribution to
+
+00:17:03.217 --> 00:17:05.038
+how you use them for multi-turn chat.
+
+00:17:07.660 --> 00:17:13.224
+And next we will talk about how you build something like an agent harness,
+
+00:17:16.667 --> 00:17:17.748
+building on top of that idea.
+
+00:17:18.948 --> 00:17:20.890
+So any questions about that so far?
+
+00:17:25.053 --> 00:17:25.233
+Cool.
+
+00:17:25.713 --> 00:17:28.636
+So one more idea you can add is,
+
+00:17:28.956 --> 00:17:30.437
+like here we added turn markers.
+
+00:17:30.737 --> 00:17:34.258
+Now we can add some special interpretation of the outputs from the LLM.
+
+00:17:35.098 --> 00:17:42.200
+And we can say the model can output things like assistant and then some text.
+
+00:17:45.581 --> 00:17:51.443
+But we can also have outputs that are like call a tool.
+
+00:17:52.003 --> 00:17:58.705
+So we will train a language model such that it can output requests to do things on your machine.
+
+00:17:59.085 --> 00:17:59.745
+So it might be...
+
+00:18:05.247 --> 00:18:08.388
+So an example of this is something like the things we gave up here.
+
+00:18:08.769 --> 00:18:11.570
+An example of a tool call might be a request to run,
+
+00:18:12.650 --> 00:18:13.030
+I don't know,
+
+00:18:13.090 --> 00:18:13.931
+like mypy,
+
+00:18:16.192 --> 00:18:16.992
+dl.py.
+
+00:18:20.454 --> 00:18:23.075
+And then we will have some code that wraps the language model,
+
+00:18:23.295 --> 00:18:25.096
+kind of like in our conversational chat app,
+
+00:18:25.097 --> 00:18:28.137
+we had this thing which would build our follow-up inputs by
+
+00:18:28.493 --> 00:18:30.534
+concatenating together the entire message history,
+
+00:18:31.354 --> 00:18:32.855
+we will have an agent harness,
+
+00:18:38.937 --> 00:18:40.338
+also sometimes called scaffolding,
+
+00:18:40.878 --> 00:18:43.039
+which will interpret these outputs.
+
+00:18:43.859 --> 00:18:45.980
+So this is a y-hat from the LLM.
+
+00:18:46.340 --> 00:18:47.721
+It'll interpret these outputs.
+
+00:18:48.221 --> 00:18:54.844
+It will actually execute them on the machine and then feed them back into the language model as a subsequent input.
+
+00:18:55.404 --> 00:18:56.885
+So it will do the thing.
+
+00:18:57.245 --> 00:19:00.547
+And then maybe there's all this textual output from the mypy tool.
+
+00:19:00.607 --> 00:19:03.428
+Like it says like checking dl.py,
+
+00:19:04.669 --> 00:19:04.889
+blah,
+
+00:19:04.909 --> 00:19:05.109
+blah.
+
+00:19:05.189 --> 00:19:07.250
+Maybe it says like error line one,
+
+00:19:09.292 --> 00:19:10.172
+expected int,
+
+00:19:10.252 --> 00:19:10.452
+blah,
+
+00:19:10.453 --> 00:19:10.652
+blah.
+
+00:19:11.973 --> 00:19:16.576
+And you will take all this output and actually just stick it in as another input to the LLM.
+
+00:19:16.996 --> 00:19:23.039
+So this forms a subsequent component of the X that you'll feed into the LLM.
+
+00:19:23.239 --> 00:19:23.359
+Yeah,
+
+00:19:23.439 --> 00:19:23.759
+question?
+
+00:19:37.541 --> 00:19:38.062
+So the question is,
+
+00:19:38.063 --> 00:19:39.362
+what exactly is the agent harness?
+
+00:19:39.743 --> 00:19:40.903
+It does a number of things.
+
+00:19:41.403 --> 00:19:44.005
+It will implement the aspect of the code,
+
+00:19:44.045 --> 00:19:46.566
+which runs calls to the LLM in a loop,
+
+00:19:47.206 --> 00:19:48.087
+takes the outputs.
+
+00:19:48.327 --> 00:19:49.127
+If there are tool calls,
+
+00:19:49.147 --> 00:19:50.568
+it will actually dispatch the tool call.
+
+00:19:50.569 --> 00:19:52.409
+It will actually execute this thing on your machine.
+
+00:19:52.769 --> 00:19:59.272
+It will get the text that this thing produces and feed it back to the language model and have it produce another output.
+
+00:19:59.873 --> 00:20:00.153
+And so...
+
+00:20:03.338 --> 00:20:03.477
+Yeah,
+
+00:20:03.478 --> 00:20:04.839
+so those are the two main things it does.
+
+00:20:05.339 --> 00:20:06.399
+So roughly,
+
+00:20:06.520 --> 00:20:09.601
+agent harnesses will take in your user input,
+
+00:20:10.082 --> 00:20:11.101
+then in a for loop,
+
+00:20:11.723 --> 00:20:12.463
+call the agent.
+
+00:20:12.703 --> 00:20:13.903
+If it requests a tool call,
+
+00:20:13.905 --> 00:20:14.924
+it will execute the tool,
+
+00:20:15.245 --> 00:20:17.565
+feed the input back into the language model,
+
+00:20:18.325 --> 00:20:19.726
+have it generate another completion.
+
+00:20:19.766 --> 00:20:20.727
+If it's another tool call,
+
+00:20:21.068 --> 00:20:22.309
+it will execute the tool,
+
+00:20:23.168 --> 00:20:30.892
+feed back the results to the language model and produce another completion and so on until the language model outputs textual output for the user,
+
+00:20:31.474 --> 00:20:32.053
+at which point...
+
+00:20:32.489 --> 00:20:48.905
+it will say like okay I'm done, control's back to the user and then you can proceed and so you'll have tool implementations like you might have in your coding agent tools like bash so you can have your agent execute
+
+00:20:48.965 --> 00:20:59.214
+bash scripts you might have things like file edit like file read write and so on and together those combination of tools
+
+00:20:59.537 --> 00:21:05.100
+lets the underlying AI model actually make changes to things on your machine and like develop code in some intelligent way.
+
+00:21:05.439 --> 00:21:06.761
+Doing things like being able to run tests,
+
+00:21:07.140 --> 00:21:08.822
+see what happens when you run the test,
+
+00:21:09.082 --> 00:21:11.703
+and take that into account when deciding what actions to take in the future.
+
+00:21:12.142 --> 00:21:12.263
+Oh,
+
+00:21:12.264 --> 00:21:13.103
+is there a question in the back?
+
+00:21:14.823 --> 00:21:14.984
+Okay.
+
+00:21:19.805 --> 00:21:22.306
+So these are the main primitives.
+
+00:21:22.367 --> 00:21:27.428
+Like there's a language model that's modeling a probability distribution over strings or tokens at the heart.
+
+00:21:27.870 --> 00:21:28.550
+And then there's this.
+
+00:21:28.934 --> 00:21:31.255
+agent harness that will call the LLM in a loop,
+
+00:21:31.294 --> 00:21:32.355
+do repeated samplings,
+
+00:21:32.636 --> 00:21:35.277
+and also dispatch requests to execute tools,
+
+00:21:35.537 --> 00:21:39.080
+actually run them and feed the results back to the language model to drive things forward.
+
+00:21:41.220 --> 00:21:42.502
+Usually when you type in a query,
+
+00:21:42.881 --> 00:21:45.102
+it'll run a bunch of tools and kind of under the hood,
+
+00:21:45.483 --> 00:21:47.244
+it's sampling from this language model many,
+
+00:21:47.264 --> 00:21:47.824
+many times.
+
+00:21:49.226 --> 00:21:49.345
+Yeah,
+
+00:21:49.446 --> 00:21:49.805
+question?
+
+00:22:00.105 --> 00:22:00.226
+Yeah,
+
+00:22:00.226 --> 00:22:00.765
+so the question is,
+
+00:22:00.766 --> 00:22:07.129
+is there a well-understood interface between the agent harness and the underlying language model so that you can have them interop?
+
+00:22:07.629 --> 00:22:08.290
+And yes,
+
+00:22:08.330 --> 00:22:09.989
+there are some commonly used interfaces.
+
+00:22:11.491 --> 00:22:14.292
+It's not perfectly standardized and everybody's using the same thing,
+
+00:22:14.371 --> 00:22:16.912
+but there's a good amount of interop these days.
+
+00:22:17.312 --> 00:22:18.174
+So for example,
+
+00:22:18.754 --> 00:22:21.514
+there are open source agent harnesses like OpenCode,
+
+00:22:21.915 --> 00:22:24.756
+and then you can have them work with different underlying language models.
+
+00:22:24.897 --> 00:22:27.938
+They can work with the Anthropic models and they can work with the OpenAI models and so on.
+
+00:22:30.610 --> 00:22:30.729
+Yeah,
+
+00:22:30.790 --> 00:22:31.069
+question.
+
+00:22:48.943 --> 00:22:49.082
+Yeah,
+
+00:22:49.162 --> 00:22:56.207
+so you're pointing out that the language model is this probabilistic thing and the agent harness is probably like the code you write in the harness itself is deterministic,
+
+00:22:56.267 --> 00:22:57.488
+like how do these things relate?
+
+00:22:57.928 --> 00:22:59.350
+So they relate through sampling.
+
+00:22:59.734 --> 00:23:01.155
+When the agent harness calls to the LLM,
+
+00:23:01.175 --> 00:23:03.795
+it's sampling an output string and then doing things based on that.
+
+00:23:04.315 --> 00:23:07.397
+So you will call into the language model,
+
+00:23:07.398 --> 00:23:09.138
+it'll output something like run this command,
+
+00:23:09.158 --> 00:23:10.718
+and then you will run the command and continue.
+
+00:23:11.958 --> 00:23:13.300
+Related to the non-determinism,
+
+00:23:13.959 --> 00:23:16.241
+this language model is trained in a smart way,
+
+00:23:16.301 --> 00:23:19.182
+but it's not intelligent in the same way that people are intelligent.
+
+00:23:19.443 --> 00:23:21.362
+It will sometimes output things that are not quite right.
+
+00:23:21.382 --> 00:23:27.186
+So it'll call commands that don't actually exist on your computer or use these file read-write tools.
+
+00:23:27.345 --> 00:23:29.407
+to write incorrect code or things like that.
+
+00:23:30.107 --> 00:23:30.847
+But in practice,
+
+00:23:30.848 --> 00:23:32.146
+these things tend to work reasonably well.
+
+00:23:32.427 --> 00:23:33.007
+And as you use them,
+
+00:23:33.027 --> 00:23:36.869
+you'll build intuition for what they're good at and what they're not yet good enough to do.
+
+00:23:52.693 --> 00:23:52.812
+Yeah.
+
+00:23:52.813 --> 00:23:52.892
+Yeah.
+
+00:23:52.893 --> 00:23:53.632
+So we already did.
+
+00:23:53.672 --> 00:23:53.793
+Yeah.
+
+00:23:53.832 --> 00:23:55.893
+So now that we've talked about how these things work,
+
+00:23:56.153 --> 00:24:01.017
+We can go back and look at this example again and understand it from the lens of how things work under the hood.
+
+00:24:01.738 --> 00:24:04.420
+So here I've booted up my agent harness.
+
+00:24:05.761 --> 00:24:06.963
+In this particular case,
+
+00:24:07.082 --> 00:24:09.024
+I'm using the Claude Code agent harness,
+
+00:24:09.064 --> 00:24:10.105
+which is developed by Anthropic.
+
+00:24:10.486 --> 00:24:11.246
+And under the hood,
+
+00:24:11.266 --> 00:24:14.889
+it's using Anthropic's Opus 4.5 large language model.
+
+00:24:15.611 --> 00:24:17.091
+I gave it the first query here.
+
+00:24:17.391 --> 00:24:19.873
+So that's like the initial user query up in the top right.
+
+00:24:20.994 --> 00:24:24.297
+The model here outputted some intermediate text.
+
+00:24:24.553 --> 00:24:25.874
+and then decided to call a tool.
+
+00:24:25.954 --> 00:24:30.478
+So this LLM called the read file tool with an argument dl.py.
+
+00:24:30.939 --> 00:24:32.220
+That went to the agent harness.
+
+00:24:32.241 --> 00:24:34.382
+It interpreted that language model output as like,
+
+00:24:34.383 --> 00:24:34.482
+oh,
+
+00:24:34.483 --> 00:24:36.203
+the language model is asking to call a tool.
+
+00:24:36.684 --> 00:24:39.686
+It actually executed the file read operation on my file system,
+
+00:24:40.107 --> 00:24:44.630
+produced that data which corresponds to the contents of the file,
+
+00:24:45.111 --> 00:24:48.874
+and then fed that back in as additional input to the language model.
+
+00:24:49.354 --> 00:24:50.696
+And so again,
+
+00:24:50.877 --> 00:24:52.237
+think about the example in the top right.
+
+00:24:52.521 --> 00:24:54.963
+This is adding more and more stuff into that X.
+
+00:24:55.004 --> 00:24:56.684
+Like we kind of have this X that we start off with,
+
+00:24:56.944 --> 00:25:03.790
+and we're appending more and more things to this conversation history up until the most recent message or data we're passing into the LM.
+
+00:25:06.428 --> 00:25:07.128
+in this example.
+
+00:25:07.388 --> 00:25:14.451
+So like the last thing sent to the LLM right here will be the contents of that file.
+
+00:25:14.992 --> 00:25:16.052
+So then the model,
+
+00:25:16.572 --> 00:25:17.433
+we run inference,
+
+00:25:17.434 --> 00:25:18.313
+we sample from the model,
+
+00:25:18.813 --> 00:25:21.034
+and now the model decides to output some more text.
+
+00:25:21.094 --> 00:25:22.395
+It's giving me an update on what's going on.
+
+00:25:22.675 --> 00:25:24.896
+And it also outputs a request to call another tool.
+
+00:25:25.656 --> 00:25:27.377
+This time it's the file write tool.
+
+00:25:27.977 --> 00:25:29.978
+And in this particular agent harness,
+
+00:25:29.979 --> 00:25:31.859
+and I think is fairly commonly done.
+
+00:25:32.231 --> 00:25:33.231
+the file write tool,
+
+00:25:33.251 --> 00:25:34.612
+like there are a couple different interfaces,
+
+00:25:34.932 --> 00:25:38.114
+and the model can actually supply a diff which is applied to the file.
+
+00:25:38.414 --> 00:25:39.954
+So again the model emits a diff,
+
+00:25:40.595 --> 00:25:41.615
+so it's just a chunk of text,
+
+00:25:41.835 --> 00:25:42.896
+and then the agent harness,
+
+00:25:42.976 --> 00:25:43.936
+in this case Claude Code,
+
+00:25:44.156 --> 00:25:47.578
+will interpret that diff and apply it to the file on my file system.
+
+00:25:51.139 --> 00:25:52.300
+So then it's done that,
+
+00:25:52.500 --> 00:25:54.121
+it's outputted some more intermediate text.
+
+00:25:54.901 --> 00:25:58.263
+Yeah there's this file update operation.
+
+00:25:59.143 --> 00:26:26.431
+has a return value which is like it's like oh the operation was successful so that was given back to the model here we run another pass of inference the model decides to call another tool this time it's calling mypy so the type checker so then the agent harness interprets that runs the type checker produces the outputs uh from the tool so this time it's like success no issues found that gets passed back in to the model we run another pass of LLM inference and so on and there's like one more tool call here before it finally emits the like I am done with my my turn,
+
+00:26:26.471 --> 00:26:27.651
+here's the final text output.
+
+00:26:27.951 --> 00:26:29.011
+and control goes back to the user.
+
+00:26:29.652 --> 00:26:34.814
+So like a whole bunch of LLM inference steps happening in here and a whole bunch of tool calls happening in here for a single user prompt,
+
+00:26:34.815 --> 00:26:34.934
+right?
+
+00:26:44.918 --> 00:26:45.058
+Cool,
+
+00:26:45.138 --> 00:26:49.180
+and then just a brief note on privacy while we're talking about how these things work under the hood.
+
+00:26:49.500 --> 00:26:51.380
+So as we talked about a little bit earlier,
+
+00:26:52.701 --> 00:26:54.202
+these higher capacity language models,
+
+00:26:54.203 --> 00:26:56.102
+which tend to be better at doing these complex tasks,
+
+00:26:56.582 --> 00:26:57.703
+need pretty beefy.
+
+00:26:58.163 --> 00:26:59.904
+hardware to run inference,
+
+00:26:59.905 --> 00:27:02.005
+like to sample from that probability distribution.
+
+00:27:02.606 --> 00:27:04.447
+And so these things run in the cloud for the most part.
+
+00:27:04.847 --> 00:27:05.947
+And when you're using these things,
+
+00:27:05.987 --> 00:27:08.149
+like unless you have some kind of special agreement with the provider,
+
+00:27:09.109 --> 00:27:10.170
+you are sending them your data.
+
+00:27:10.250 --> 00:27:11.931
+They may train on the data and things like that.
+
+00:27:11.971 --> 00:27:13.271
+So if privacy is a concern,
+
+00:27:13.832 --> 00:27:16.753
+look into the details of the terms and conditions or find some setup that works for you.
+
+00:27:18.975 --> 00:27:19.235
+All right.
+
+00:27:19.295 --> 00:27:23.157
+So let's spend the rest of this lecture talking a little bit about use cases.
+
+00:27:23.677 --> 00:27:24.798
+And I think I'll try to spend...
+
+00:27:25.318 --> 00:27:25.438
+Yeah,
+
+00:27:25.498 --> 00:27:25.838
+question.
+
+00:27:29.839 --> 00:27:29.959
+Yeah,
+
+00:27:29.960 --> 00:27:30.500
+so the question is,
+
+00:27:30.501 --> 00:27:32.561
+is Claude the LLM and the agent harness both?
+
+00:27:33.342 --> 00:27:34.883
+The answer is there are a couple different setups.
+
+00:27:36.023 --> 00:27:36.624
+In this case,
+
+00:27:36.984 --> 00:27:40.647
+a component to the agent harness can be thought of as running in the Cloud along with the model,
+
+00:27:40.687 --> 00:27:42.088
+which is definitely running in the Cloud here.
+
+00:27:42.668 --> 00:27:46.271
+You can also find open source agent harnesses where the harness will run entirely locally,
+
+00:27:46.691 --> 00:27:50.814
+but all the LLM inference steps will end up sending data to the Cloud for inference.
+
+00:27:54.276 --> 00:27:54.396
+Yeah,
+
+00:27:54.636 --> 00:27:54.776
+cool.
+
+00:27:55.417 --> 00:27:55.577
+Okay,
+
+00:27:55.657 --> 00:27:58.419
+so we've already given one example of how to use a coding agent.
+
+00:27:58.559 --> 00:27:59.880
+to implement a new feature,
+
+00:28:00.960 --> 00:28:05.163
+you can be pretty specific with how you give instructions to these things.
+
+00:28:05.164 --> 00:28:07.024
+You can also be open-ended and iterate from there.
+
+00:28:07.524 --> 00:28:08.424
+So for example,
+
+00:28:08.445 --> 00:28:09.525
+I can go into the
+
+00:28:09.885 --> 00:28:12.467
+Git repo for the class website,
+
+00:28:12.468 --> 00:28:13.587
+the missing semester website,
+
+00:28:13.807 --> 00:28:15.729
+and I'll boot up Claude and I can say something like,
+
+00:28:15.849 --> 00:28:16.829
+make it look retro.
+
+00:28:17.449 --> 00:28:18.170
+We can see what happens.
+
+00:28:18.171 --> 00:28:19.090
+This will take a minute or two.
+
+00:28:19.351 --> 00:28:20.371
+So we'll come back to this one.
+
+00:28:22.993 --> 00:28:27.335
+Another great use case for coding agents is using them them to fix issues in your code.
+
+00:28:27.699 --> 00:28:28.999
+So if you have a compiler issue,
+
+00:28:29.040 --> 00:28:30.221
+like your code doesn't compile,
+
+00:28:30.421 --> 00:28:31.502
+if you have a linter issue,
+
+00:28:31.682 --> 00:28:33.323
+we'll cover linters in more detail on Friday,
+
+00:28:33.603 --> 00:28:37.686
+but if you have a tool that checks for various types of errors in your code and it's complaining,
+
+00:28:38.246 --> 00:28:40.728
+you can ask a coding agent to fix the issue for you.
+
+00:28:42.329 --> 00:28:43.450
+And if you have unit tests,
+
+00:28:43.451 --> 00:28:44.691
+or if you have a bug in your code,
+
+00:28:45.291 --> 00:28:50.975
+one great way to at least take a first shot at solving that bug is to construct a test for the bug.
+
+00:28:51.696 --> 00:28:53.937
+This is a great software engineering practice in general.
+
+00:28:53.997 --> 00:28:55.098
+If there's something wrong with your code,
+
+00:28:55.398 --> 00:28:56.039
+write a test.
+
+00:28:56.223 --> 00:28:59.605
+So you can later use that as a regression test to make sure things don't go wrong in the future.
+
+00:29:01.306 --> 00:29:02.606
+And then once you have a test,
+
+00:29:02.607 --> 00:29:03.527
+you can tell the coding agent,
+
+00:29:03.547 --> 00:29:03.687
+like,
+
+00:29:03.688 --> 00:29:03.787
+hey,
+
+00:29:03.788 --> 00:29:04.548
+this test is failing,
+
+00:29:04.568 --> 00:29:07.049
+like figure out what the issue is and make the test pass.
+
+00:29:07.589 --> 00:29:09.050
+And so as a quick demo of this,
+
+00:29:09.350 --> 00:29:14.893
+it's a little bit hard to demo because like I want to work in a real code base and then you don't have context on the code base.
+
+00:29:15.894 --> 00:29:17.174
+But I will,
+
+00:29:17.294 --> 00:29:18.695
+so don't worry about all the details here,
+
+00:29:18.696 --> 00:29:23.258
+but but we'll try to show you at a high level how things are working.
+
+00:29:25.259 --> 00:29:25.439
+Okay.
+
+00:29:25.819 --> 00:29:25.939
+So
+
+00:29:26.779 --> 00:29:27.960
+I have a code base here,
+
+00:29:28.020 --> 00:29:28.960
+don't worry about the details,
+
+00:29:29.240 --> 00:29:31.401
+and I noticed an issue with the code.
+
+00:29:31.781 --> 00:29:33.141
+And in this particular case,
+
+00:29:33.301 --> 00:29:35.462
+I hand wrote a unit test for that issue.
+
+00:29:36.102 --> 00:29:37.422
+And so if I run this test,
+
+00:29:38.823 --> 00:29:40.103
+I'll see that the test fails.
+
+00:29:41.923 --> 00:29:46.385
+You can also use the coding agent to try to take the initial crack at writing the test.
+
+00:29:46.465 --> 00:29:47.685
+Like you could boot up the agent and say,
+
+00:29:48.025 --> 00:29:48.185
+hey,
+
+00:29:48.265 --> 00:29:49.565
+like when I use the code in this way,
+
+00:29:49.585 --> 00:29:50.186
+like things go wrong,
+
+00:29:50.187 --> 00:29:51.306
+can you write a test for it?
+
+00:29:51.706 --> 00:29:53.587
+But then once you have a test that you're happy with,
+
+00:29:53.847 --> 00:29:55.207
+you can boot up your coding agent.
+
+00:29:55.723 --> 00:29:57.626
+and I'm going to copy paste this command.
+
+00:29:58.868 --> 00:30:02.192
+You can boot up your coding agent and say something like,
+
+00:30:03.054 --> 00:30:03.715
+there's a bug.
+
+00:30:05.085 --> 00:30:08.186
+I wrote a test for it.
+
+00:30:08.726 --> 00:30:15.528
+You can run it with this command to reproduce the issue,
+
+00:30:16.008 --> 00:30:16.528
+fix the bug.
+
+00:30:17.689 --> 00:30:21.810
+And then just like a human developer would do in this case,
+
+00:30:21.870 --> 00:30:24.491
+like you'd first run the test to reproduce the bug.
+
+00:30:24.492 --> 00:30:25.491
+And that's what the agent's doing.
+
+00:30:25.492 --> 00:30:30.632
+So it's calling bash with this thing I gave it to run that particular test I just wrote.
+
+00:30:31.893 --> 00:30:32.593
+And then it looks at...
+
+00:30:32.653 --> 00:30:33.874
+the output and sees like,
+
+00:30:33.875 --> 00:30:33.994
+yes,
+
+00:30:34.074 --> 00:30:35.075
+this is indeed failing.
+
+00:30:35.475 --> 00:30:39.158
+That output on its own is not super informative or it's like on its own,
+
+00:30:39.198 --> 00:30:40.379
+not enough to fix the bug.
+
+00:30:40.639 --> 00:30:42.301
+You need to actually read and understand the code.
+
+00:30:42.561 --> 00:30:43.982
+So that's what the agent's doing next.
+
+00:30:44.202 --> 00:30:48.566
+These things are actually pretty good at traversing code bases and like understanding code,
+
+00:30:48.686 --> 00:30:50.607
+whatever understanding means for AI models.
+
+00:30:50.968 --> 00:30:51.528
+So we can see like,
+
+00:30:51.529 --> 00:30:51.668
+okay,
+
+00:30:51.669 --> 00:30:52.489
+it's reading files.
+
+00:30:52.849 --> 00:30:54.451
+It's here's another tool that it has.
+
+00:30:54.452 --> 00:30:55.592
+It has a search tool,
+
+00:30:55.992 --> 00:30:59.274
+which lets it search with a regex pattern for different things that match this pattern.
+
+00:30:59.655 --> 00:31:00.576
+It's reading more files,
+
+00:31:00.616 --> 00:31:00.936
+searching,
+
+00:31:00.996 --> 00:31:01.236
+reading,
+
+00:31:01.296 --> 00:31:01.576
+searching,
+
+00:31:01.636 --> 00:31:01.877
+reading,
+
+00:31:01.937 --> 00:31:02.257
+thinking.
+
+00:31:02.837 --> 00:31:03.117
+And
+
+00:31:04.078 --> 00:31:05.219
+I think in this particular case,
+
+00:31:05.239 --> 00:31:08.042
+the bug is simple enough that it should just,
+
+00:31:08.422 --> 00:31:09.082
+in one shot,
+
+00:31:09.122 --> 00:31:09.643
+fix the bug.
+
+00:31:13.306 --> 00:31:18.791
+Another thing that makes these coding agents a little bit hard to demo is that they're not the fastest things.
+
+00:31:18.951 --> 00:31:20.652
+And this is something that a lot of people are working on.
+
+00:31:20.653 --> 00:31:20.792
+Like,
+
+00:31:20.793 --> 00:31:23.595
+how do you make agents that are really good and effective at what they do,
+
+00:31:23.596 --> 00:31:24.716
+but also run faster?
+
+00:31:25.016 --> 00:31:25.697
+Like here we're seeing,
+
+00:31:25.897 --> 00:31:26.017
+oh,
+
+00:31:26.018 --> 00:31:28.519
+it's been like one whole minute this thing is running.
+
+00:31:29.360 --> 00:31:29.560
+But yeah,
+
+00:31:29.561 --> 00:31:30.781
+it makes demos a little bit trickier.
+
+00:31:32.017 --> 00:31:34.538
+can't fast forward this behavior because I wanted to do a live demo.
+
+00:31:35.018 --> 00:31:35.298
+But okay,
+
+00:31:35.299 --> 00:31:35.938
+now the model's saying,
+
+00:31:36.078 --> 00:31:36.198
+oh,
+
+00:31:36.278 --> 00:31:37.379
+here's what I think the bug is.
+
+00:31:37.739 --> 00:31:37.899
+Here,
+
+00:31:37.900 --> 00:31:38.919
+I'm going to fix it in this way.
+
+00:31:39.299 --> 00:31:40.259
+And then it tries to,
+
+00:31:40.459 --> 00:31:40.839
+on its own,
+
+00:31:41.120 --> 00:31:42.200
+run the test again to see,
+
+00:31:42.360 --> 00:31:43.500
+did I indeed fix the bug?
+
+00:31:44.340 --> 00:31:46.781
+So we can approve that request to execute a tool.
+
+00:31:47.981 --> 00:31:48.662
+And then we find,
+
+00:31:48.822 --> 00:31:48.942
+oh,
+
+00:31:48.943 --> 00:31:49.862
+the test passes now.
+
+00:31:50.302 --> 00:31:50.902
+And then here,
+
+00:31:50.903 --> 00:31:53.483
+the model's doing some other intelligent stuff.
+
+00:31:53.643 --> 00:31:54.023
+Generally,
+
+00:31:54.423 --> 00:31:55.644
+when you fix a bug in your code,
+
+00:31:55.844 --> 00:32:00.005
+you want to make sure that the test you just wrote to catch that bug indeed passes.
+
+00:32:00.025 --> 00:32:00.285
+But then,
+
+00:32:00.725 --> 00:32:01.966
+you should run the rest of the test,
+
+00:32:02.006 --> 00:32:03.867
+make sure you didn't break something else in the code base.
+
+00:32:04.187 --> 00:32:06.548
+So then the agent's going and doing other useful things like that.
+
+00:32:13.872 --> 00:32:14.112
+And then,
+
+00:32:14.132 --> 00:32:14.313
+okay,
+
+00:32:14.353 --> 00:32:15.853
+now the agent's done thinking and working,
+
+00:32:16.154 --> 00:32:17.534
+it's made the changes to run the test,
+
+00:32:17.574 --> 00:32:19.035
+and it's giving me a summary of what it did.
+
+00:32:19.295 --> 00:32:21.597
+And I can even say something like commit the changes,
+
+00:32:22.297 --> 00:32:26.119
+and it will create a git commit for me with some useful commit message and so on.
+
+00:32:29.681 --> 00:32:29.801
+Yeah,
+
+00:32:29.802 --> 00:32:31.782
+we can see these things are actually trained pretty well.
+
+00:32:31.862 --> 00:32:35.003
+It's learned that it should not just make up a commit message.
+
+00:32:35.043 --> 00:32:37.004
+You want to follow the style of the repository.
+
+00:32:37.384 --> 00:32:38.445
+So it's actually looking at,
+
+00:32:38.505 --> 00:32:38.645
+okay,
+
+00:32:38.646 --> 00:32:41.526
+it's looking at git status to see what stage for commit and what's changed.
+
+00:32:42.266 --> 00:32:45.327
+It's looking at a git diff to make sure what changes is the thing it did,
+
+00:32:45.407 --> 00:32:47.208
+not some other changes that I'd made in the past.
+
+00:32:47.528 --> 00:32:48.909
+And then it's looking at the git log,
+
+00:32:48.949 --> 00:32:51.050
+like what do the recent commit messages look like,
+
+00:32:51.290 --> 00:32:52.650
+so it can try to match the style.
+
+00:32:53.551 --> 00:32:54.771
+And then it writes this commit message,
+
+00:32:54.791 --> 00:32:56.372
+which actually looks pretty reasonable and says,
+
+00:32:56.373 --> 00:32:56.492
+like,
+
+00:32:56.493 --> 00:32:56.612
+oh,
+
+00:32:56.732 --> 00:32:58.373
+this fixes this GitHub issue and so on.
+
+00:32:59.889 --> 00:33:11.152
+question in the back.
+
+00:33:22.196 --> 00:33:22.316
+Yeah,
+
+00:33:22.317 --> 00:33:22.936
+so the question is,
+
+00:33:22.956 --> 00:33:25.937
+does the prompt you gave the coding agent and the underlying LLM
+
+00:33:26.297 --> 00:33:27.978
+affect the quality of the code,
+
+00:33:27.998 --> 00:33:29.178
+how verbose the code is,
+
+00:33:29.179 --> 00:33:30.419
+how long it takes to do the task,
+
+00:33:30.439 --> 00:33:30.819
+and so on.
+
+00:33:31.039 --> 00:33:32.200
+And the answer is absolutely,
+
+00:33:32.400 --> 00:33:32.620
+yes.
+
+00:33:33.000 --> 00:33:36.821
+It's a little bit more of an art than a science at this point to prompt LLMs well.
+
+00:33:38.202 --> 00:33:38.382
+Also,
+
+00:33:38.402 --> 00:33:40.303
+the underlying models are continually improving.
+
+00:33:40.703 --> 00:33:43.404
+So it might have been the case that if you use a model from two years ago,
+
+00:33:43.444 --> 00:33:44.625
+which nobody really uses now,
+
+00:33:44.685 --> 00:33:45.945
+but if you use a really old model,
+
+00:33:46.305 --> 00:33:48.146
+maybe you can still get it to complete a task like this,
+
+00:33:48.147 --> 00:33:49.887
+but you have to be really descriptive in how to do it.
+
+00:33:50.387 --> 00:33:51.448
+And now you can just be like,
+
+00:33:51.588 --> 00:33:52.028
+there's a bug,
+
+00:33:52.088 --> 00:33:52.448
+fix it,
+
+00:33:52.528 --> 00:33:53.729
+and it'll figure things out.
+
+00:33:55.621 --> 00:33:55.861
+But yeah,
+
+00:33:56.101 --> 00:33:58.402
+I think there's a lot of resources.
+
+00:33:58.422 --> 00:34:00.242
+I think we've linked some in the notes and we can link more.
+
+00:34:00.502 --> 00:34:05.284
+A lot of resources on how to effectively prompt these tools to do various classes of tasks.
+
+00:34:05.564 --> 00:34:07.665
+How do you get it to implement a sophisticated feature?
+
+00:34:08.145 --> 00:34:10.085
+And there are various patterns people follow.
+
+00:34:10.765 --> 00:34:12.326
+For silly things like this,
+
+00:34:12.866 --> 00:34:13.846
+make my thing look retro,
+
+00:34:15.567 --> 00:34:17.407
+all I said was make it look retro and it's going and doing the thing.
+
+00:34:17.427 --> 00:34:18.308
+But for any of the complex,
+
+00:34:18.388 --> 00:34:19.068
+serious feature,
+
+00:34:19.308 --> 00:34:22.209
+you might have a really long prompt that's paragraphs and paragraphs long.
+
+00:34:22.565 --> 00:34:26.068
+Or maybe you want to follow a software development practice closer to what people do in industry.
+
+00:34:26.288 --> 00:34:32.712
+Maybe you want to put on your product designer hat and put on your product manager hat and write a whole PRD,
+
+00:34:32.772 --> 00:34:33.813
+a product requirements doc,
+
+00:34:34.273 --> 00:34:36.715
+and then you can give a huge markdown doc to a coding agent and be like,
+
+00:34:36.716 --> 00:34:36.835
+hey,
+
+00:34:36.855 --> 00:34:37.435
+here's a PRD.
+
+00:34:38.016 --> 00:34:38.296
+Read it,
+
+00:34:38.336 --> 00:34:38.896
+understand it,
+
+00:34:38.916 --> 00:34:39.957
+make an implementation plan,
+
+00:34:39.958 --> 00:34:40.778
+and then implement it.
+
+00:34:41.658 --> 00:34:45.821
+So there are different advanced patterns you can follow like that to do more sophisticated things.
+
+00:34:50.505 --> 00:34:50.665
+Yeah,
+
+00:34:50.725 --> 00:34:51.025
+question.
+
+00:34:56.105 --> 00:34:56.566
+[inaudible question]
+
+00:34:58.671 --> 00:34:58.791
+Yeah,
+
+00:34:58.792 --> 00:34:59.291
+so the question is,
+
+00:34:59.292 --> 00:35:00.772
+if you start the coding agent in a directory,
+
+00:35:00.832 --> 00:35:02.914
+does it see everything in that directory and subdirectories?
+
+00:35:03.754 --> 00:35:04.755
+To first approximation,
+
+00:35:04.815 --> 00:35:05.055
+yes.
+
+00:35:05.856 --> 00:35:09.138
+Some of these agents also can request to see things outside of the directory.
+
+00:35:10.159 --> 00:35:12.120
+There's a lot of,
+
+00:35:12.121 --> 00:35:12.861
+the space is pretty new.
+
+00:35:12.862 --> 00:35:13.961
+There are a lot of different tools out there.
+
+00:35:14.342 --> 00:35:16.283
+And like some of these details vary between the tools.
+
+00:35:16.284 --> 00:35:16.563
+But yeah,
+
+00:35:16.823 --> 00:35:17.244
+basically,
+
+00:35:17.444 --> 00:35:17.664
+yes,
+
+00:35:18.304 --> 00:35:20.986
+you will want to operate at the level of a Git repository generally.
+
+00:35:26.210 --> 00:35:26.330
+Cool.
+
+00:35:26.430 --> 00:35:28.191
+So we saw this end-to-end example of...
+
+00:35:28.679 --> 00:35:31.060
+fixing a bug given a failing test.
+
+00:35:31.541 --> 00:35:32.922
+We can also just for fun see,
+
+00:35:33.162 --> 00:35:34.162
+oh this is still thinking,
+
+00:35:34.883 --> 00:35:36.263
+making our course website look retro.
+
+00:35:36.264 --> 00:35:37.764
+All right.
+
+00:35:39.886 --> 00:35:40.026
+Yeah,
+
+00:35:40.486 --> 00:35:42.267
+let's not commit and push that change.
+
+00:35:43.428 --> 00:35:43.668
+But yeah,
+
+00:35:43.669 --> 00:35:45.989
+these things can actually be pretty useful for creative work too.
+
+00:35:46.629 --> 00:35:48.070
+If you read the lecture notes for today,
+
+00:35:49.351 --> 00:35:51.973
+in part just to like kind of dog food this technology,
+
+00:35:52.293 --> 00:35:55.975
+we used Claude Code to work on a number of changes related to our course website.
+
+00:35:56.639 --> 00:36:01.522
+We needed to do some refactoring when we pulled this lecture out from the previous development environment lecture into its own lecture.
+
+00:36:01.842 --> 00:36:03.543
+And we just asked Claude Code to do that for us.
+
+00:36:03.563 --> 00:36:04.424
+It did a decent job,
+
+00:36:04.544 --> 00:36:05.304
+didn't get it perfect.
+
+00:36:05.584 --> 00:36:11.087
+You can see the linked GitHub pull request to see what the agent did and what I had to do manually to fix things up afterwards.
+
+00:36:11.408 --> 00:36:15.430
+It didn't carry over all the exercises and put them in quite the right place.
+
+00:36:15.450 --> 00:36:17.411
+Some of them just disappeared and I had to restore them.
+
+00:36:19.132 --> 00:36:20.593
+We also implemented things like...
+
+00:36:20.853 --> 00:36:21.774
+Here,
+
+00:36:21.775 --> 00:36:24.075
+let me get rid of these changes.
+
+00:36:24.603 --> 00:36:26.104
+We also implemented things like our
+
+00:36:26.724 --> 00:36:29.126
+Tufte-style sidenotes using Claude Code.
+
+00:36:29.127 --> 00:36:29.406
+So yeah,
+
+00:36:29.486 --> 00:36:31.468
+I think Jon didn't write a single line of that code himself.
+
+00:36:31.469 --> 00:36:33.149
+It was all just like vibe coding with Claude Code.
+
+00:36:33.609 --> 00:36:33.909
+And yeah,
+
+00:36:33.910 --> 00:36:35.090
+so for this kind of creative work,
+
+00:36:35.370 --> 00:36:43.876
+just telling the agent to do something with like some high level description and then just looking at the results and then giving it feedback to make tweaks can actually be super effective.
+
+00:36:44.076 --> 00:36:48.939
+Like I know a lot of people who do front-end design and web design and things like that using these agents these days.
+
+00:36:55.355 --> 00:36:55.475
+Cool.
+
+00:36:55.476 --> 00:36:56.636
+So we're talking through use cases.
+
+00:36:56.976 --> 00:36:58.656
+I think we have about 10 minutes left.
+
+00:36:58.737 --> 00:37:02.718
+So I'm not going to demo every single use case that we have in our notes.
+
+00:37:02.738 --> 00:37:03.038
+And also,
+
+00:37:03.178 --> 00:37:06.440
+I'm sure you can come up with many more use cases beyond what we've written in our notes.
+
+00:37:06.720 --> 00:37:08.481
+But I'll briefly talk through them.
+
+00:37:08.861 --> 00:37:13.403
+And then I want to spend the last bit of the lecture on more advanced topics related to agents.
+
+00:37:14.503 --> 00:37:19.085
+So some of the things that are very useful to do with coding agents include things like refactoring.
+
+00:37:19.346 --> 00:37:20.046
+So as I mentioned,
+
+00:37:20.047 --> 00:37:22.527
+we used Claude Code to actually refactor our lecture notes.
+
+00:37:22.791 --> 00:37:24.933
+but you can also use these tools to refactor code.
+
+00:37:25.773 --> 00:37:27.674
+These agents are really good at code review.
+
+00:37:27.975 --> 00:37:29.756
+So if someone sends you a GitHub pull request,
+
+00:37:29.976 --> 00:37:31.717
+or even if you just want to use it for yourself,
+
+00:37:32.598 --> 00:37:33.699
+you can just ask the agent,
+
+00:37:33.979 --> 00:37:35.020
+review this code.
+
+00:37:35.080 --> 00:37:37.982
+Just that level of guidance is already pretty good to get useful feedback.
+
+00:37:38.782 --> 00:37:43.446
+You can also give it more specific guidance to get a more tailored response.
+
+00:37:43.786 --> 00:37:45.667
+So one thing I've used these tools for a lot,
+
+00:37:45.668 --> 00:37:47.849
+and actually used them to catch some very subtle bugs,
+
+00:37:48.249 --> 00:37:51.051
+is in situations where I've done performance optimization,
+
+00:37:51.291 --> 00:37:56.475
+or other kind of refactoring where I wanted the code to be semantically equivalent before and after the change.
+
+00:37:56.836 --> 00:37:57.236
+But yeah,
+
+00:37:57.237 --> 00:38:00.118
+I was making like stylistic changes or performance improvements or things like that.
+
+00:38:00.659 --> 00:38:05.463
+And the coding agent's actually pretty decent at reasoning about code and reasoning about deltas between code.
+
+00:38:05.464 --> 00:38:06.424
+And it was able to point out like,
+
+00:38:06.425 --> 00:38:06.544
+oh,
+
+00:38:06.545 --> 00:38:07.245
+you made this change.
+
+00:38:07.505 --> 00:38:07.745
+And like,
+
+00:38:07.765 --> 00:38:07.885
+oh,
+
+00:38:07.886 --> 00:38:08.786
+in this particular case,
+
+00:38:08.787 --> 00:38:09.867
+the behavior is actually different.
+
+00:38:09.868 --> 00:38:11.048
+And then I could go and fix that bug.
+
+00:38:12.569 --> 00:38:13.810
+So really useful for code review.
+
+00:38:15.451 --> 00:38:18.274
+These agents are great for codebase understanding too.
+
+00:38:18.614 --> 00:38:19.094
+So I know like...
+
+00:38:19.695 --> 00:38:22.636
+I know at least a decent chunk of the audience here is just getting into computer science.
+
+00:38:22.656 --> 00:38:24.757
+You're probably working on smaller repositories right now.
+
+00:38:25.097 --> 00:38:29.398
+But if you want to contribute to an open source project on GitHub or dive into a larger code base,
+
+00:38:29.418 --> 00:38:31.879
+like say you're doing a UROP and you're working on your lab's code base,
+
+00:38:32.199 --> 00:38:36.040
+these agents are really good at navigating code bases and understanding them and explaining them to you.
+
+00:38:36.380 --> 00:38:38.781
+So you can even go into a fresh code base and just be like,
+
+00:38:38.801 --> 00:38:40.001
+explain this code base to me.
+
+00:38:40.281 --> 00:38:41.662
+Or if you're looking for particular things,
+
+00:38:41.842 --> 00:38:44.563
+maybe you start a UROP and your UROP mentor says,
+
+00:38:44.643 --> 00:38:44.763
+oh,
+
+00:38:44.764 --> 00:38:45.703
+go work on this feature.
+
+00:38:46.223 --> 00:38:49.724
+even to know what files to modify can take a lot of thought and understanding,
+
+00:38:49.785 --> 00:38:49.965
+right?
+
+00:38:50.265 --> 00:38:52.286
+But these coding agents are pretty good at helping you with that.
+
+00:38:54.146 --> 00:38:56.307
+Another quick one I'll demo,
+
+00:38:56.827 --> 00:38:58.888
+I'm tying this back to some of our earlier lectures.
+
+00:38:59.148 --> 00:39:01.249
+So because these coding agents can call tools,
+
+00:39:02.030 --> 00:39:03.890
+you can use them kind of sort of like a shell.
+
+00:39:04.371 --> 00:39:10.493
+And so I actually use this these days because memorizing shell commands and all their flags and stuff like that can be challenging.
+
+00:39:11.033 --> 00:39:11.834
+And instead,
+
+00:39:11.835 --> 00:39:14.435
+you can just explain in natural language or coding agent.
+
+00:39:14.955 --> 00:39:30.163
+how what you want it to do so like suppose I want to use a command to find all the Python files in this directory that have uh renaming imports I can say like use ag so this is a command line tool to find all Python files
+
+00:39:30.243 --> 00:39:44.491
+that do renaming imports so this is like from something import something as something or just import something as something in Python it's just a particular pattern I'm looking for but like typing this out myself is way harder
+
+00:39:44.831 --> 00:39:53.867
+like remembering that like ag has this --python flag or like how exactly to format regexes or things like that and so you just talk to your coding agent and have it behave like your shell.
+
+00:39:54.836 --> 00:39:57.618
+And you can give it follow-ups like ignore the lib directory.
+
+00:39:57.678 --> 00:40:01.401
+So this is searching for both code I wrote and code in this library directory.
+
+00:40:01.402 --> 00:40:02.942
+So maybe I just want to search the code I wrote.
+
+00:40:03.202 --> 00:40:04.563
+So you can give it a follow-up like that.
+
+00:40:04.864 --> 00:40:06.205
+It'll generate the right shell command,
+
+00:40:06.225 --> 00:40:06.785
+run it for you,
+
+00:40:06.805 --> 00:40:08.286
+and even summarize the results for you.
+
+00:40:09.507 --> 00:40:11.068
+So I think it's a pretty great use case.
+
+00:40:11.489 --> 00:40:11.629
+Yeah,
+
+00:40:11.669 --> 00:40:17.853
+question?
+
+00:40:17.854 --> 00:40:17.933
+Yeah,
+
+00:40:17.934 --> 00:40:18.414
+so the question is,
+
+00:40:18.415 --> 00:40:20.535
+will you get in trouble for using these tools on school stuff?
+
+00:40:21.372 --> 00:40:24.294
+please ask your instructor and see if it's okay to use these tools.
+
+00:40:24.335 --> 00:40:25.516
+I think it just varies by class.
+
+00:40:25.896 --> 00:40:28.878
+I've seen some classes that prohibit use of any AI coding tools.
+
+00:40:29.239 --> 00:40:31.380
+So like no AI autocomplete,
+
+00:40:31.381 --> 00:40:32.101
+no inline chat.
+
+00:40:32.102 --> 00:40:34.623
+So not even the simpler features we talked about in that previous lecture.
+
+00:40:34.823 --> 00:40:36.184
+And then obviously no coding agents.
+
+00:40:36.505 --> 00:40:37.746
+And then I've seen other classes that are like,
+
+00:40:37.766 --> 00:40:37.926
+yeah,
+
+00:40:37.966 --> 00:40:39.147
+use whatever tools you want to use.
+
+00:40:39.287 --> 00:40:41.609
+Yeah.
+
+00:40:41.789 --> 00:40:43.511
+So please follow the rules.
+
+00:40:44.672 --> 00:40:45.712
+Don't cheat on your your homework.
+
+00:40:48.135 --> 00:40:49.676
+I also think some of these
+
+00:40:50.372 --> 00:40:50.812
+companies,
+
+00:40:50.872 --> 00:40:52.693
+I think like Anthropic and OpenAI and others,
+
+00:40:52.973 --> 00:40:56.874
+have released special features or modes of their software for schoolwork.
+
+00:40:57.174 --> 00:40:59.494
+So you can use them in a mode where they won't give you an answer,
+
+00:40:59.495 --> 00:41:01.135
+but will act a little bit more like TAs.
+
+00:41:01.535 --> 00:41:04.236
+Or if you just want to prioritize your own understanding,
+
+00:41:04.576 --> 00:41:06.976
+you can ask the tool for a hint.
+
+00:41:07.137 --> 00:41:08.437
+Even if it doesn't have a special mode for this,
+
+00:41:08.457 --> 00:41:08.917
+you can be like,
+
+00:41:09.217 --> 00:41:10.277
+there's a bug in the code,
+
+00:41:10.297 --> 00:41:11.278
+don't tell me what the bug is,
+
+00:41:11.279 --> 00:41:12.618
+but point me in the right direction.
+
+00:41:12.918 --> 00:41:14.519
+And they kind of sort of work okay for that.
+
+00:41:15.159 --> 00:41:15.419
+So yeah,
+
+00:41:15.420 --> 00:41:16.759
+you can use them as a replacement TA.
+
+00:41:19.800 --> 00:41:19.920
+Cool.
+
+00:41:20.224 --> 00:41:20.904
+And then finally,
+
+00:41:20.924 --> 00:41:22.385
+I think we're not going to talk about this in depth,
+
+00:41:22.665 --> 00:41:25.047
+but you can use coding agents for what's called vibe coding.
+
+00:41:25.267 --> 00:41:35.592
+So these things are pretty powerful tools and you can actually implement entire projects like start to finish without writing a single character of code yourself just by like chatting with your language model in English.
+
+00:41:37.013 --> 00:41:40.395
+I think that make the site look retro is a small example of that.
+
+00:41:43.137 --> 00:41:43.277
+Okay,
+
+00:41:43.278 --> 00:41:45.918
+so any questions about those use cases of coding agents?
+
+00:41:51.988 --> 00:41:52.688
+vibe coding.
+
+00:41:55.349 --> 00:41:55.489
+Cool.
+
+00:41:55.969 --> 00:42:00.630
+So now let's talk a little bit about more advanced functionality of these agents.
+
+00:42:01.091 --> 00:42:05.772
+And I'm also going to tie back some of this to what we talked about earlier with how these things work under the hood.
+
+00:42:07.512 --> 00:42:11.133
+So maybe I'll write these down on the blackboard.
+
+00:42:13.474 --> 00:42:17.895
+A couple of features that most of these pieces of software have.
+
+00:42:32.464 --> 00:42:35.485
+Starting from the simplest of the advanced features.
+
+00:42:35.805 --> 00:42:40.247
+So one thing you might find yourself doing often is typing out the same command to these agents.
+
+00:42:40.547 --> 00:42:47.050
+Like say you're working on a particular project and you have a particular way you want the agent to do code review for pull requests people send to your project.
+
+00:42:47.370 --> 00:42:47.650
+Because like,
+
+00:42:47.651 --> 00:42:55.294
+oh here are project guidelines and oh your review should focus on code quality and it should also focus on correctness,
+
+00:42:55.554 --> 00:42:58.795
+but don't worry about security because security is less relevant in this project.
+
+00:42:59.915 --> 00:43:00.216
+You might...
+
+00:43:02.484 --> 00:43:06.766
+find yourself frequently giving this prompt as an input to your language model or to your coding agent.
+
+00:43:07.046 --> 00:43:11.448
+And so usually these things have some functionality where you can just save a whole prompt,
+
+00:43:11.488 --> 00:43:12.348
+just like a bunch of text,
+
+00:43:13.109 --> 00:43:19.291
+and invoke it more easily later so you don't have to have a text file somewhere where you copy-paste from it into the coding agent.
+
+00:43:26.534 --> 00:43:30.816
+Another feature that I think is really useful is parallel agents.
+
+00:43:31.680 --> 00:43:33.421
+In some coding agent harnesses,
+
+00:43:33.422 --> 00:43:34.641
+this is actually a built-in feature.
+
+00:43:34.981 --> 00:43:35.641
+In other cases,
+
+00:43:35.642 --> 00:43:37.362
+this is just a workflow that you can follow.
+
+00:43:37.882 --> 00:43:38.522
+But as we've seen,
+
+00:43:38.622 --> 00:43:40.363
+even in the examples we've gone through today,
+
+00:43:40.723 --> 00:43:41.843
+even fairly simple things,
+
+00:43:41.863 --> 00:43:44.444
+these models can take a couple of minutes to think and work.
+
+00:43:45.304 --> 00:43:47.145
+If you give them much more advanced features to work on,
+
+00:43:47.405 --> 00:43:51.406
+I've seen situations where the model goes off and works on a code base for 20 minutes,
+
+00:43:51.446 --> 00:43:52.366
+30 minutes.
+
+00:43:52.386 --> 00:43:54.547
+You don't want to just sit there and stare at it while it's doing that.
+
+00:43:55.067 --> 00:43:57.808
+What you can do is actually just boot up multiple copies of agents.
+
+00:43:58.068 --> 00:43:58.608
+Like you might have.
+
+00:43:58.748 --> 00:43:59.508
+a bug you want to fix,
+
+00:43:59.689 --> 00:44:00.849
+and also a feature you want to write,
+
+00:44:00.869 --> 00:44:02.230
+and also another feature you want to write.
+
+00:44:02.450 --> 00:44:03.971
+And you can do all of these in parallel.
+
+00:44:04.571 --> 00:44:06.712
+So even in this lecture,
+
+00:44:06.713 --> 00:44:08.093
+I actually had different agents running.
+
+00:44:08.413 --> 00:44:08.893
+In this case,
+
+00:44:08.894 --> 00:44:10.074
+it was on different repositories.
+
+00:44:10.094 --> 00:44:12.856
+I had one Claude working on making the course website retro,
+
+00:44:13.016 --> 00:44:16.117
+while I had another Claude working on fixing a bug in my code base.
+
+00:44:16.798 --> 00:44:23.621
+But one particular tool that's really useful when you want to have multiple agents running on the same code base is something called git worktrees.
+
+00:44:25.943 --> 00:44:28.404
+So if you just boot up multiple Claudes,
+
+00:44:28.604 --> 00:44:29.144
+for example,
+
+00:44:29.244 --> 00:44:30.165
+on the same directory,
+
+00:44:30.545 --> 00:44:31.586
+and they're editing files,
+
+00:44:31.606 --> 00:44:32.766
+they're going to conflict with each other,
+
+00:44:32.826 --> 00:44:33.026
+right?
+
+00:44:33.407 --> 00:44:37.048
+So what's really handy is you have completely isolated copies of your code base.
+
+00:44:37.569 --> 00:44:38.909
+And if you're working in a Git repo,
+
+00:44:39.290 --> 00:44:41.551
+Git Worktree is a really useful tool for doing that.
+
+00:44:41.971 --> 00:44:42.091
+So
+
+00:44:42.451 --> 00:44:44.933
+Git Worktree lets you create separate checkouts.
+
+00:44:45.033 --> 00:44:45.573
+So I'm just gonna like
+
+00:44:46.153 --> 00:44:47.014
+Git Worktree.
+
+00:44:47.674 --> 00:44:51.476
+I'm not gonna explain this whole command in detail to you can do Git help Worktree to see the details.
+
+00:44:52.396 --> 00:44:59.040
+What this command does is it creates this new directory for me and also a new branch at the same place where I currently am here.
+
+00:44:59.800 --> 00:45:05.363
+And so now I can boot up one Claude in here and go here.
+
+00:45:05.743 --> 00:45:08.025
+And here's an entire other copy of my repository.
+
+00:45:08.045 --> 00:45:11.186
+And I can boot up another Claude there and I can give them different tasks to do.
+
+00:45:11.667 --> 00:45:16.169
+I can commit these things to their separate branches and I can merge them all together later when I'm done.
+
+00:45:18.771 --> 00:45:21.332
+So parallel agents and git worktrees go really well together.
+
+00:45:27.763 --> 00:45:29.864
+There's this other thing I think someone earlier was asking about,
+
+00:45:30.064 --> 00:45:34.047
+like is there standardized protocol to connect together agent harnesses and
+
+00:45:34.427 --> 00:45:35.748
+LLMs? Kind of related to that,
+
+00:45:35.768 --> 00:45:38.410
+there's a standardized protocol called Model Context Protocol,
+
+00:45:38.891 --> 00:45:43.374
+which is for connecting agent harnesses with tools.
+
+00:45:43.834 --> 00:45:48.277
+So there are various open source things and also some like hosted things,
+
+00:45:48.657 --> 00:45:49.098
+where you can,
+
+00:45:49.158 --> 00:45:49.738
+for example,
+
+00:45:50.018 --> 00:45:52.160
+connect your coding agent to Notion.
+
+00:45:52.456 --> 00:45:54.097
+So then you can just talk to Claude and be like,
+
+00:45:54.117 --> 00:45:54.237
+oh,
+
+00:45:54.497 --> 00:45:55.917
+here's a URL for a Notion doc.
+
+00:45:56.977 --> 00:45:57.177
+Like,
+
+00:45:57.578 --> 00:45:57.998
+fill it in,
+
+00:45:58.118 --> 00:45:58.258
+like,
+
+00:45:58.318 --> 00:45:59.038
+read the stuff in there,
+
+00:45:59.078 --> 00:45:59.218
+like,
+
+00:45:59.258 --> 00:46:01.259
+improve the implementation plan I've written in there,
+
+00:46:01.519 --> 00:46:01.839
+and then,
+
+00:46:01.919 --> 00:46:02.099
+like,
+
+00:46:02.379 --> 00:46:03.960
+implement the feature in my code base.
+
+00:46:04.200 --> 00:46:06.120
+So you can read and write to Notion,
+
+00:46:06.160 --> 00:46:06.640
+for example,
+
+00:46:06.680 --> 00:46:07.961
+with the Notion MCP connector.
+
+00:46:08.461 --> 00:46:13.142
+So this is just a way to connect your coding agent harness to other tools.
+
+00:46:15.803 --> 00:46:17.324
+And then there are a bunch of features.
+
+00:46:25.644 --> 00:46:28.925
+in coding agents that are related to context management.
+
+00:46:29.426 --> 00:46:34.368
+So recall that we mentioned that the underlying AI models have a limited context window.
+
+00:46:35.648 --> 00:46:35.968
+Generally,
+
+00:46:35.969 --> 00:46:37.309
+the models have some fixed window.
+
+00:46:37.310 --> 00:46:37.729
+It might be like,
+
+00:46:37.730 --> 00:46:37.829
+oh,
+
+00:46:37.830 --> 00:46:42.271
+this model only supports inputs up to 100,000 tokens or something like that.
+
+00:46:42.551 --> 00:46:43.431
+And then in practice,
+
+00:46:43.451 --> 00:46:45.292
+if you give a ton of input to a model,
+
+00:46:45.772 --> 00:46:47.913
+even if it's technically within the context window,
+
+00:46:48.273 --> 00:46:51.274
+it's just a harder task for the model to deal with all of that input.
+
+00:46:51.675 --> 00:46:54.796
+So you get these things like having a polluted or like...
+
+00:46:55.696 --> 00:46:56.857
+a polluted context.
+
+00:46:57.217 --> 00:47:01.999
+And so if you can effectively manage what you're giving as input to the underlying AI model,
+
+00:47:02.059 --> 00:47:03.359
+it'll generally perform better.
+
+00:47:04.060 --> 00:47:09.822
+And so some things that these agent harnesses support is basics like clearing the context window.
+
+00:47:10.262 --> 00:47:11.222
+Normally when we chat,
+
+00:47:11.262 --> 00:47:14.064
+we're just appending more and more messages to our message history.
+
+00:47:14.544 --> 00:47:15.584
+And with coding agents,
+
+00:47:15.804 --> 00:47:23.347
+we also have all our tool calls and the resulting outputs from those tool calls as getting appended to our message history,
+
+00:47:23.547 --> 00:47:24.808
+or also known as context.
+
+00:47:25.496 --> 00:47:28.258
+And so if we're working on one task in our coding agent,
+
+00:47:28.278 --> 00:47:31.241
+and then we want to do something else that's unrelated to what we were doing before,
+
+00:47:31.581 --> 00:47:34.143
+you can actually kill the agent and start it again.
+
+00:47:34.463 --> 00:47:36.885
+Or they generally have a command just clear the context window.
+
+00:47:37.165 --> 00:47:38.026
+So you're starting fresh.
+
+00:47:42.350 --> 00:47:46.353
+Another handy thing that these things can generally do is rewind the conversation.
+
+00:47:46.813 --> 00:47:48.054
+So say you were chatting with the agent,
+
+00:47:48.094 --> 00:47:49.415
+and then you asked it to do something,
+
+00:47:49.435 --> 00:47:50.396
+and you changed your mind.
+
+00:47:50.917 --> 00:47:54.980
+One way you could handle that is by interrupting the agent and just giving it a follow-up instruction.
+
+00:47:55.336 --> 00:47:59.917
+But then all the stuff it's done so far since your last message is in the context window now,
+
+00:48:00.437 --> 00:48:02.958
+and it's confusing and not very useful to have it there.
+
+00:48:03.298 --> 00:48:04.038
+And so instead,
+
+00:48:04.559 --> 00:48:12.161
+these agent harnesses generally have a command you can use to basically pop messages off the end of the message history and just go back in time.
+
+00:48:12.162 --> 00:48:12.641
+So it's like,
+
+00:48:13.001 --> 00:48:14.021
+pretend the stuff never happened,
+
+00:48:14.041 --> 00:48:15.042
+delete it from the context.
+
+00:48:15.502 --> 00:48:16.002
+And again,
+
+00:48:16.042 --> 00:48:19.203
+that'll help you keep a smaller context window to keep your LLM more focused.
+
+00:48:22.804 --> 00:48:23.584
+Any questions about these?
+
+00:48:31.495 --> 00:48:34.917
+Another feature related to context management that these things support is compaction.
+
+00:48:35.398 --> 00:48:42.002
+So how do you do things like support unlimited length conversations if your underlying AI model has a fixed context window?
+
+00:48:42.363 --> 00:48:42.683
+Generally,
+
+00:48:42.963 --> 00:48:51.569
+the way that works both in conversational chat tools like ChatGPT and in coding agent harnesses like Claude Code is that once your conversation history grows really long,
+
+00:48:53.010 --> 00:48:55.352
+the agent will either automatically or on demand
+
+00:48:55.752 --> 00:48:57.853
+compress the stuff in the prefix of the history,
+
+00:48:59.173 --> 00:49:01.014
+and that'll shrink the context window.
+
+00:49:01.574 --> 00:49:02.274
+And so I could even,
+
+00:49:02.694 --> 00:49:03.734
+if some of these sessions open,
+
+00:49:04.295 --> 00:49:05.035
+in Claude Code,
+
+00:49:05.036 --> 00:49:05.615
+for example,
+
+00:49:06.155 --> 00:49:10.156
+I can call the slash compact command.
+
+00:49:10.716 --> 00:49:16.298
+And that actually just uses an LLM to take my message history and summarize it into a smaller message history.
+
+00:49:16.678 --> 00:49:19.759
+And that replaces the prefix of my context with the summary.
+
+00:49:20.219 --> 00:49:22.000
+And that lets me keep conversing with my agent.
+
+00:49:24.476 --> 00:49:24.776
+Generally,
+
+00:49:24.777 --> 00:49:26.017
+these tools will do this automatically,
+
+00:49:26.037 --> 00:49:32.359
+but if you found that you've been talking with the agent for a while and the context is getting too long for it to perform effectively,
+
+00:49:32.439 --> 00:49:33.559
+you can call this manually.
+
+00:49:34.179 --> 00:49:34.879
+And so we can see here,
+
+00:49:34.899 --> 00:49:35.400
+for example,
+
+00:49:35.440 --> 00:49:38.521
+this will actually show us what this compacted context is.
+
+00:49:39.001 --> 00:49:40.741
+And we're not going to look at this in detail right now,
+
+00:49:41.301 --> 00:49:43.742
+but I recommend you try running a coding agent,
+
+00:49:43.782 --> 00:49:44.723
+have a little bit of back and forth,
+
+00:49:44.743 --> 00:49:45.563
+have it call some tools,
+
+00:49:45.843 --> 00:49:48.924
+and then compact the history and just look at what the LLM summary looks like.
+
+00:49:57.750 --> 00:50:02.473
+The next thing kind of related to context management is something called LLMs.txt.
+
+00:50:03.274 --> 00:50:08.718
+So the underlying AI models used in coding agents are fixed or frozen in time,
+
+00:50:09.058 --> 00:50:10.919
+and they get updated from time to time.
+
+00:50:10.920 --> 00:50:12.400
+But at any given moment,
+
+00:50:12.720 --> 00:50:16.883
+the model is frozen and it's trained on some data that existed at the time the model was trained,
+
+00:50:17.284 --> 00:50:20.526
+but it's not necessarily up to date on everything that's happened since.
+
+00:50:20.846 --> 00:50:21.366
+So generally,
+
+00:50:22.267 --> 00:50:24.288
+language models have something called a knowledge cutoff.
+
+00:50:24.908 --> 00:50:26.750
+And then if you ask your coding agent,
+
+00:50:26.770 --> 00:50:27.310
+for example,
+
+00:50:27.650 --> 00:50:30.692
+to implement a feature using a library that came out yesterday,
+
+00:50:31.072 --> 00:50:33.253
+the model will know nothing about that library.
+
+00:50:33.614 --> 00:50:34.954
+And so how do you handle that?
+
+00:50:36.275 --> 00:50:39.157
+And so the way you handle that is that at inference time,
+
+00:50:39.317 --> 00:50:42.779
+you give to the model in the model context information about the library.
+
+00:50:44.720 --> 00:50:47.182
+And so there's a...
+
+00:50:48.362 --> 00:50:51.284
+These language models can generally fetch code from the internet.
+
+00:50:51.705 --> 00:50:51.965
+And so
+
+00:50:53.166 --> 00:50:54.687
+I don't have a library in mind at the moment,
+
+00:50:54.707 --> 00:50:55.688
+but I can be like,
+
+00:50:58.971 --> 00:51:06.137
+fetch missing.csail.mit.edu and give me a summary of the class schedule.
+
+00:51:08.198 --> 00:51:09.619
+So you could be like,
+
+00:51:09.900 --> 00:51:11.561
+here's a URL for a library I want to use,
+
+00:51:11.861 --> 00:51:13.282
+read the library documentation,
+
+00:51:13.623 --> 00:51:15.424
+and then write some code that does xyz.
+
+00:51:15.844 --> 00:51:17.346
+And it'll fetch the website.
+
+00:51:18.450 --> 00:51:21.452
+among the set of tools that this coding agent has as a web fetch tool,
+
+00:51:22.013 --> 00:51:24.515
+and it will get that into its context window,
+
+00:51:24.595 --> 00:51:26.696
+and now it can do things based on that information.
+
+00:51:27.136 --> 00:51:33.741
+And so where llms.txt comes in is that llms.txt is a proposed standard for formatting information for LLMs.
+
+00:51:34.862 --> 00:51:37.344
+Normally when these coding agents fetch things from a website,
+
+00:51:37.564 --> 00:51:38.965
+and this can be set up in a number of ways,
+
+00:51:39.426 --> 00:51:45.230
+but if you were to say fetch the raw HTML and give all that to the agent and to the underlying LLM,
+
+00:51:45.810 --> 00:51:49.352
+HTML is pretty verbose and there's a bunch of information there that's not that useful to the model.
+
+00:51:50.452 --> 00:51:51.072
+In this case,
+
+00:51:51.512 --> 00:51:58.095
+all the styling information or our analytics or things like that are not things that are relevant to what this model is trying to do.
+
+00:51:59.136 --> 00:52:04.978
+And so LLMs.txt is a standard to have plain text files that are meant to be consumed by LLMs at inference time.
+
+00:52:05.438 --> 00:52:06.719
+And a lot of libraries,
+
+00:52:06.759 --> 00:52:09.320
+especially the more AI-related ones or the more forward-thinking ones,
+
+00:52:09.680 --> 00:52:11.381
+will publish an LLMs.txt.
+
+00:52:11.661 --> 00:52:14.602
+And so we can look at an example here.
+
+00:52:16.955 --> 00:52:19.556
+Like here's the pydantic ai llms.txt,
+
+00:52:19.876 --> 00:52:27.159
+and we see that this is way more usable than if the model were to fetch the contents of this page in HTML.
+
+00:52:28.420 --> 00:52:29.200
+And in particular,
+
+00:52:29.260 --> 00:52:30.340
+it's way more compact,
+
+00:52:30.341 --> 00:52:32.161
+so you're using less of your context,
+
+00:52:32.481 --> 00:52:33.722
+and the model's able to perform better.
+
+00:52:47.294 --> 00:52:50.297
+There's another kind of standard-ish thing called agents.md.
+
+00:52:50.917 --> 00:52:59.766
+And this is a file that you put in your Git repository or in your project where the setup is that whenever you boot up the coding agent,
+
+00:52:59.966 --> 00:53:02.228
+it will read the entire contents of this file.
+
+00:53:02.748 --> 00:53:03.249
+For Claude,
+
+00:53:03.269 --> 00:53:04.970
+this is a claude.md file.
+
+00:53:05.551 --> 00:53:06.472
+If you want to see an example,
+
+00:53:06.473 --> 00:53:12.117
+we actually have one in the lecture notes or in the repository for this class.
+
+00:53:15.826 --> 00:53:17.367
+Here's our agent.md file.
+
+00:53:18.228 --> 00:53:23.451
+And so if you find yourself needing to give your coding agent instructions on how to do basic things in your repository,
+
+00:53:23.772 --> 00:53:26.774
+like when you boot these things up without anything else in their context,
+
+00:53:26.794 --> 00:53:28.315
+if the context starts out entirely empty,
+
+00:53:28.695 --> 00:53:30.597
+it knows nothing about your repository,
+
+00:53:30.677 --> 00:53:30.877
+right?
+
+00:53:31.197 --> 00:53:32.858
+So if you have certain practices you follow,
+
+00:53:32.898 --> 00:53:33.238
+or it's like,
+
+00:53:33.258 --> 00:53:33.459
+oh,
+
+00:53:33.839 --> 00:53:35.480
+run this command to run the type checker,
+
+00:53:35.560 --> 00:53:36.941
+run this command to run the unit test,
+
+00:53:36.981 --> 00:53:37.401
+and so on.
+
+00:53:38.402 --> 00:53:42.245
+Instead of having to supply that information to the coding agent every time you boot it up,
+
+00:53:42.865 --> 00:53:43.245
+This is,
+
+00:53:43.626 --> 00:53:43.846
+you can.
+
+00:53:44.126 --> 00:53:45.887
+This is kind of related to reusable prompts too,
+
+00:53:45.907 --> 00:53:48.288
+but this is like every time you boot up your coding agent,
+
+00:53:48.528 --> 00:53:50.969
+just dump this into the prefix of the context.
+
+00:53:52.930 --> 00:53:57.652
+So these things are really useful for repositories you're working on for a long time with coding agents.
+
+00:54:04.414 --> 00:54:09.156
+Another concept that these agent harnesses support related to context management is something called skills.
+
+00:54:09.696 --> 00:54:13.498
+So things like agent.md came first and skills was almost a follow up to this.
+
+00:54:13.858 --> 00:54:19.841
+So one thing people found was this really helpful to dump a whole bunch of information in here so that whenever you boot up your coding agent,
+
+00:54:20.021 --> 00:54:21.982
+it knows everything it needs to about your project.
+
+00:54:22.643 --> 00:54:24.064
+But there's also a downside here.
+
+00:54:24.065 --> 00:54:25.604
+If you have a really big Agents.md,
+
+00:54:26.005 --> 00:54:32.308
+you're filling up a large chunk of your context window for your underlying LLM before you're even getting started talking to it.
+
+00:54:32.748 --> 00:54:36.270
+And so people found that in these Agent.md files,
+
+00:54:36.610 --> 00:54:38.651
+there was information about a whole bunch of different topics,
+
+00:54:39.032 --> 00:54:40.212
+but at any given time,
+
+00:54:40.232 --> 00:54:43.374
+a coding agent might not need all that information in its context.
+
+00:54:43.722 --> 00:54:46.907
+And so there's this neat trick to add one level of indirection.
+
+00:54:47.228 --> 00:54:50.272
+So instead of supplying all the information upfront in Agents.md,
+
+00:54:50.693 --> 00:54:51.294
+you can say like,
+
+00:54:51.625 --> 00:54:54.127
+Here's an overview of the different things you can look at.
+
+00:54:54.367 --> 00:54:57.789
+Like see this document for our development practices and like code quality standards.
+
+00:54:58.089 --> 00:54:59.850
+See this document for like how to run the tests.
+
+00:55:00.150 --> 00:55:02.712
+See this document for how you should write documentation and so on.
+
+00:55:03.172 --> 00:55:06.214
+So you have that small amount of information supplied to the agent up front.
+
+00:55:06.594 --> 00:55:12.918
+And then in basically a separate file that the agent can open up and look at and load into its context window on demand,
+
+00:55:12.958 --> 00:55:13.999
+roughly as a tool call,
+
+00:55:14.739 --> 00:55:17.801
+you have all the follow-up information on each of the topics.
+
+00:55:28.781 --> 00:55:36.688
+And I think the final topic I want to talk about in terms of context management in coding agents is the concept of sub-agents.
+
+00:55:37.229 --> 00:55:37.589
+And so it's like,
+
+00:55:37.590 --> 00:55:38.370
+if you have one agent,
+
+00:55:38.371 --> 00:55:39.731
+why don't you have more than one agent?
+
+00:55:40.151 --> 00:55:42.013
+And why might you want something like that?
+
+00:55:42.293 --> 00:55:42.453
+Well,
+
+00:55:42.454 --> 00:55:45.075
+it's in part related to context management.
+
+00:55:46.517 --> 00:55:50.640
+If you have a coding agent that's trying to do some task and it can identify a sub-task to do,
+
+00:55:51.021 --> 00:55:53.683
+instead of doing that all kind of in line in the same coding agent,
+
+00:55:54.023 --> 00:55:55.725
+if it can spawn up a different agent.
+
+00:55:55.989 --> 00:55:58.490
+and give it as a prompt just like the subtask you want it to do,
+
+00:55:58.791 --> 00:55:59.791
+then it can go do its thing,
+
+00:56:00.111 --> 00:56:00.391
+finish,
+
+00:56:00.432 --> 00:56:02.533
+and then return control back to the parent agent.
+
+00:56:02.913 --> 00:56:07.395
+And then the parent agent's context is not polluted with all the details of what the subagent did.
+
+00:56:08.156 --> 00:56:09.557
+That might sound a little bit abstract,
+
+00:56:09.977 --> 00:56:11.898
+but these things are...
+
+00:56:12.018 --> 00:56:14.919
+You can write your own subagents for these coding agents,
+
+00:56:15.320 --> 00:56:19.982
+and they're also used in implementing components of these agents sometimes.
+
+00:56:20.342 --> 00:56:20.463
+So,
+
+00:56:20.603 --> 00:56:21.203
+for example,
+
+00:56:21.803 --> 00:56:24.765
+some coding agents implement the WebFetch tool.
+
+00:56:25.149 --> 00:56:26.429
+actually as a sub-agent.
+
+00:56:26.850 --> 00:56:29.850
+So when the parent agent wants to fetch contents of a web page,
+
+00:56:30.090 --> 00:56:31.091
+and as we mentioned earlier,
+
+00:56:31.431 --> 00:56:37.633
+loading the entire HTML contents of a web page into the context window of a language model might not be the best idea because there's a lot of stuff there.
+
+00:56:38.053 --> 00:56:38.393
+But instead,
+
+00:56:38.413 --> 00:56:40.013
+if you can spin up another agent,
+
+00:56:40.253 --> 00:56:40.553
+tell it,
+
+00:56:40.733 --> 00:56:41.534
+fetch this website,
+
+00:56:41.694 --> 00:56:43.814
+and summarize this aspect of it for me,
+
+00:56:44.094 --> 00:56:46.235
+then it'll filter out just the relevant information.
+
+00:56:46.615 --> 00:56:50.836
+And then that relevant information will be put into the context of the parent agent.
+
+00:56:51.296 --> 00:56:52.997
+And that way you keep your context window smaller.
+
+00:56:54.305 --> 00:56:59.950
+This also enables some nice things like these agents generally have support for parallel tool calls and parallel subagents.
+
+00:57:00.330 --> 00:57:02.472
+So maybe there's several things you want to do in parallel.
+
+00:57:02.512 --> 00:57:06.375
+Like maybe you've written a subagent that has a really great prompt for doing code review.
+
+00:57:06.695 --> 00:57:11.439
+And maybe you've written another subagent that has a really great prompt for fixing issues related to type checking.
+
+00:57:11.799 --> 00:57:15.602
+And maybe you work on a feature and then you spin off both of these subagents in parallel.
+
+00:57:15.603 --> 00:57:16.563
+This is something that Claude Code,
+
+00:57:16.564 --> 00:57:17.003
+for example,
+
+00:57:17.043 --> 00:57:17.304
+can do.
+
+00:57:17.664 --> 00:57:19.826
+And then they'll both do their thing at the same time.
+
+00:57:20.126 --> 00:57:21.027
+And then when they're both done,
+
+00:57:21.028 --> 00:57:22.228
+the parent agent can continue.
+
+00:57:22.688 --> 00:57:23.829
+And so this can also speed you up.
+
+00:57:30.641 --> 00:57:30.861
+So yeah,
+
+00:57:30.862 --> 00:57:33.462
+I just talked through these things instead of giving demos of each of them.
+
+00:57:33.782 --> 00:57:37.204
+I think in the lecture notes we have a couple more concrete examples of these things,
+
+00:57:37.604 --> 00:57:40.305
+but at a high level we wanted to familiarize you with the concepts,
+
+00:57:40.625 --> 00:57:43.627
+and then you can either go through this on your own or follow our exercises,
+
+00:57:43.628 --> 00:57:45.267
+which will walk you through a bunch of these,
+
+00:57:45.828 --> 00:57:47.989
+to really learn how to use these in practice.
+
+00:57:50.450 --> 00:57:53.691
+So any questions about these more advanced features of coding agents?
+
+00:58:08.553 --> 00:58:08.673
+Yeah,
+
+00:58:08.713 --> 00:58:11.534
+so the question is when a language model starts in compaction,
+
+00:58:11.734 --> 00:58:15.055
+is the general advice to let it do compaction or open up a new session?
+
+00:58:15.455 --> 00:58:16.816
+I think this is one of the many things that's like,
+
+00:58:16.876 --> 00:58:18.516
+it's a little bit more of an art than a science.
+
+00:58:19.356 --> 00:58:21.557
+I think if you're continuing along the same thread,
+
+00:58:21.837 --> 00:58:26.778
+like the LLM summarization that produces the compacted context is pretty decent.
+
+00:58:26.899 --> 00:58:28.459
+So if you're still working on the same thing,
+
+00:58:28.519 --> 00:58:29.239
+like just keep going.
+
+00:58:29.579 --> 00:58:30.800
+If you're doing something unrelated,
+
+00:58:30.840 --> 00:58:34.201
+like clear the context instead of just keeping a bunch of useless context around,
+
+00:58:34.241 --> 00:58:34.981
+even if it's a summary.
+
+00:58:40.729 --> 00:58:40.849
+Cool.
+
+00:58:42.090 --> 00:58:44.051
+And then just as a final note before we wrap up,
+
+00:58:44.351 --> 00:58:46.992
+just wanted to say these tools are really powerful,
+
+00:58:47.833 --> 00:58:50.794
+but AI is not magic and AI tools can make mistakes.
+
+00:58:51.595 --> 00:58:51.775
+They're,
+
+00:58:51.955 --> 00:58:52.515
+I think,
+
+00:58:52.615 --> 00:58:55.177
+hopefully to some degree demystified LLMs a little bit.
+
+00:58:55.457 --> 00:58:57.238
+They're just these probabilistic models that,
+
+00:58:57.378 --> 00:58:58.659
+given a bunch of input tokens,
+
+00:58:58.979 --> 00:59:01.420
+give you the conditional probability on the things that come next.
+
+00:59:01.680 --> 00:59:02.221
+That's all they are.
+
+00:59:02.222 --> 00:59:05.783
+And there's a bunch of clever techniques that go into training a good pi theta there.
+
+00:59:06.623 --> 00:59:07.604
+But yeah,
+
+00:59:07.605 --> 00:59:09.765
+LLMs are not intelligent in the same way that humans are.
+
+00:59:10.105 --> 00:59:10.385
+And so,
+
+00:59:10.965 --> 00:59:11.105
+yeah,
+
+00:59:11.125 --> 00:59:15.507
+make sure you review any output from your AI in terms of looking for correctness and security bugs.
+
+00:59:15.887 --> 00:59:16.027
+Like,
+
+00:59:16.147 --> 00:59:17.227
+at least in my personal usage,
+
+00:59:17.247 --> 00:59:21.068
+I've had many situations where the AI generates some code that looks reasonable at first glance.
+
+00:59:21.528 --> 00:59:23.769
+And it's just subtly wrong.
+
+00:59:23.770 --> 00:59:25.249
+And it takes a lot of time to find the bug.
+
+00:59:25.850 --> 00:59:30.031
+And sometimes verifying code can actually be harder than just writing the correct code yourself.
+
+00:59:30.451 --> 00:59:30.731
+So for,
+
+00:59:30.751 --> 00:59:30.871
+like,
+
+00:59:30.911 --> 00:59:31.731
+really critical things,
+
+00:59:31.831 --> 00:59:36.393
+oftentimes I will just do the thing myself instead of even trying to call an AI tool to do the task.
+
+00:59:37.813 --> 00:59:39.154
+There are also many other things that can go wrong,
+
+00:59:39.254 --> 00:59:41.256
+as I'm sure you'll experience if you start using these tools.
+
+00:59:41.696 --> 00:59:43.238
+Like the AI can just like go off the rails,
+
+00:59:43.239 --> 00:59:44.158
+go down rabbit holes.
+
+00:59:44.439 --> 00:59:45.700
+It can like try to gaslight you.
+
+00:59:45.760 --> 00:59:46.961
+Sometimes it'll like be wrong.
+
+00:59:47.041 --> 00:59:48.442
+But if you try to tell it it's wrong,
+
+00:59:48.502 --> 00:59:49.823
+it'll just like keep insisting that it's right.
+
+00:59:50.043 --> 00:59:51.144
+And you can get really confused.
+
+00:59:52.262 --> 00:59:53.923
+It can get stuck in debugging spirals.
+
+00:59:53.924 --> 00:59:55.023
+So it'll be trying to fix code,
+
+00:59:55.043 --> 00:59:55.563
+run the test.
+
+00:59:55.923 --> 00:59:56.563
+It'll fix the code,
+
+00:59:56.564 --> 00:59:57.003
+run the test,
+
+00:59:57.004 --> 00:59:58.144
+and it's like fail every time.
+
+00:59:58.145 --> 00:59:59.344
+It'll make your code worse and worse.
+
+00:59:59.684 --> 01:00:01.325
+So you kind of do have to keep an eye on these things.
+
+01:00:02.305 --> 01:00:02.505
+And so,
+
+01:00:02.506 --> 01:00:02.625
+yeah,
+
+01:00:02.626 --> 01:00:04.406
+a lot of potential downsides and things to be aware of.
+
+01:00:04.906 --> 01:00:06.406
+And at a high level,
+
+01:00:06.426 --> 01:00:10.167
+I think it's still valuable to have computer science and programming skills yourself.
+
+01:00:10.648 --> 01:00:13.669
+We're far from the point where computer scientists are obsolete.
+
+01:00:15.449 --> 01:00:16.029
+But at the same time,
+
+01:00:16.030 --> 01:00:18.390
+these are really powerful tools and worth learning.
+
+01:00:20.182 --> 01:00:22.446
+So that is all I have for you today on agentic coding.
+
+01:00:22.847 --> 01:00:28.197
+And I highly recommend you go through some of the exercises on this topic to learn how to use these powerful tools in practice.
+
+01:00:30.161 --> 01:00:30.662
+See you all tomorrow.
+
