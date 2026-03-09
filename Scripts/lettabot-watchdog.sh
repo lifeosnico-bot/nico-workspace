@@ -6,7 +6,17 @@ OUT_LOG="/Users/lifeos.nico/Nico/Logs/lettabot-watchdog.log"
 AGENT_STATE="/Users/lifeos.nico/Nico/lettabot/lettabot/lettabot-agent.json"
 LETTABOT_PLIST="/Users/lifeos.nico/Library/LaunchAgents/com.nico.lettabot.plist"
 LETTABOT_LABEL="com.nico.lettabot"
-API_PORT="8088"
+IS_CONTAINER=0
+if [[ -n "${RAILWAY_ENVIRONMENT:-}" || -n "${RENDER:-}" || -n "${FLY_APP_NAME:-}" || -n "${DOCKER_DEPLOY:-}" ]]; then
+  IS_CONTAINER=1
+fi
+if [[ -n "${PORT:-}" ]]; then
+  API_PORT="${PORT}"
+elif [[ "$IS_CONTAINER" -eq 1 ]]; then
+  API_PORT="8080"
+else
+  API_PORT="8088"
+fi
 STATE_FILE="/Users/lifeos.nico/Nico/Logs/lettabot-watchdog.state"
 RESTART_COOLDOWN_SECS=300
 # Number of consecutive restarts before clearing conversationId
@@ -125,6 +135,10 @@ done
 
 # Last resort: if still listening, kill the lingering main process.
 if lsof -nP -iTCP:${API_PORT} -sTCP:LISTEN >/dev/null 2>&1; then
+  OWNER="$(lsof -nP -iTCP:${API_PORT} -sTCP:LISTEN | tail -n +2 | head -n 1 || true)"
+  if [[ -n "$OWNER" ]]; then
+    echo "[$(STAMP)] watchdog: port ${API_PORT} still occupied by: $OWNER" >> "$OUT_LOG"
+  fi
   pkill -f "/Users/lifeos.nico/Nico/lettabot/lettabot/dist/main.js" 2>/dev/null || true
   sleep 3
 fi
