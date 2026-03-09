@@ -1542,3 +1542,6 @@
  7 files changed, 233 insertions(+), 1 deletion(-)
 [nico/ssot-session-data 45e1873] auto-backup: 2026-03-09_01:01
  7 files changed, 212 insertions(+), 1 deletion(-)
+[nico/ssot-session-data 11bdee7] auto-backup: 2026-03-09_01:16
+ 9 files changed, 236 insertions(+), 4 deletions(-)
+ create mode 100644 CabinetAgentVault/00-dashboard/task-tracker/overnight-setup-checklist.md
