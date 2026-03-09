@@ -1,0 +1,368 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.320 --> 00:00:09.760
+There's a fundamental truth about LLMs, large&nbsp;
+language models. They are frozen in time. They&nbsp;&nbsp;
+
+00:00:09.760 --> 00:00:16.000
+know everything about our world up until&nbsp;
+their training cutoff date and absolutely&nbsp;&nbsp;
+
+00:00:16.000 --> 00:00:21.680
+nothing about what happened 5 minutes ago. Nor&nbsp;
+do they know anything about your private data,&nbsp;&nbsp;
+
+00:00:21.680 --> 00:00:28.240
+your internal wikis, your proprietary codebase. And&nbsp;
+if we do want an LLM to know any of that stuff,&nbsp;&nbsp;
+
+00:00:28.240 --> 00:00:36.000
+well, we have to solve the problem of context&nbsp;
+injection. How do we get the right data into the&nbsp;&nbsp;
+
+00:00:36.000 --> 00:00:43.280
+model at the right time? And there have been two&nbsp;
+very different ways to handle this. Now, the first&nbsp;&nbsp;
+
+00:00:43.280 --> 00:00:52.000
+is really what we can think of as the engineering&nbsp;
+approach. It's RAG, retrieval augmented generation.&nbsp;&nbsp;
+
+00:00:52.000 --> 00:01:01.680
+So here we've got an LLM and we've also got an&nbsp;
+input prompt from the user. Now ahead of time&nbsp;&nbsp;
+
+00:01:01.680 --> 00:01:09.040
+we take some of the documents that we want to give&nbsp;
+to this LLM. So these are documents that could be&nbsp;&nbsp;
+
+00:01:09.040 --> 00:01:19.200
+PDFs or code files or entire books and we chunk&nbsp;
+them. We break them up into smaller chunks and&nbsp;&nbsp;
+
+00:01:19.200 --> 00:01:27.360
+we pass them through to an embedding model and&nbsp;
+the embedding model takes those chunks and it&nbsp;&nbsp;
+
+00:01:27.360 --> 00:01:38.800
+turns them into vectors and those vectors are then&nbsp;
+stored in a dedicated vector database. Now when a&nbsp;&nbsp;
+
+00:01:38.800 --> 00:01:47.920
+user asks a question, it performs a semantic&nbsp;
+search to retrieve the most relevant chunks&nbsp;&nbsp;
+
+00:01:47.920 --> 00:01:54.560
+and then inject them into the context window.&nbsp;
+So now the context window has the user prompt,&nbsp;&nbsp;
+
+00:01:54.560 --> 00:02:03.360
+but it also has all of these chunks that we have&nbsp;
+taken from the vector database and together this&nbsp;&nbsp;
+
+00:02:03.360 --> 00:02:10.240
+forms the context window. Now this works but&nbsp;
+it does rely on something. It relies on the&nbsp;&nbsp;
+
+00:02:10.240 --> 00:02:15.600
+hope that your retrieval logic actually found&nbsp;
+the right information in the vector database.&nbsp;&nbsp;
+
+00:02:15.600 --> 00:02:23.680
+Now the the second approach is really a bit more&nbsp;
+of a brute force approach and that one is called&nbsp;&nbsp;
+
+00:02:23.680 --> 00:02:31.440
+long context. Now this is really the model native&nbsp;
+solution because you skip the database here and&nbsp;&nbsp;
+
+00:02:31.440 --> 00:02:38.160
+you skip the embedding model. All you do is you&nbsp;
+take your documents and you just well you put them&nbsp;&nbsp;
+
+00:02:38.160 --> 00:02:44.400
+straight into the context window and then you let&nbsp;
+the model's attention mechanism actually do the&nbsp;&nbsp;
+
+00:02:44.400 --> 00:02:50.800
+heavy lifting of finding the answer. Now for a&nbsp;
+long time this kind of brute force method wasn't&nbsp;&nbsp;
+
+00:02:50.800 --> 00:02:58.720
+really much of an option because initially context&nbsp;
+windows were tiny. Early LLMs had context windows&nbsp;&nbsp;
+
+00:02:58.720 --> 00:03:06.240
+that could maybe store what like 4K of tokens.&nbsp;
+You couldn't fit a novel in there, let alone a&nbsp;&nbsp;
+
+00:03:06.240 --> 00:03:14.240
+corporate knowledge base. You basically had to use&nbsp;
+RAG. But today's models have much larger context&nbsp;&nbsp;
+
+00:03:14.240 --> 00:03:21.840
+windows. Some of them have, you know, a million&nbsp;
+tokens plus. And to put that into perspective,&nbsp;&nbsp;
+
+00:03:21.840 --> 00:03:29.120
+a million tokens is roughly 700,000 words. and you&nbsp;
+could fit the entire Lord of the Rings series into&nbsp;&nbsp;
+
+00:03:29.120 --> 00:03:36.240
+the prompt and still have room for The Hobbit. So,&nbsp;
+this massive jump in capacity forces us to ask a&nbsp;&nbsp;
+
+00:03:36.240 --> 00:03:43.600
+difficult question about our architecture. Because&nbsp;
+if we can simply command A, command C, command V,&nbsp;&nbsp;
+
+00:03:43.600 --> 00:03:49.200
+all of our documentation into the models context&nbsp;
+window, do we really need the overhead of&nbsp;&nbsp;
+
+00:03:49.200 --> 00:03:56.640
+embedding models and vector data stores? Is RAG
+becoming an unnecessary complexity layer? Well,&nbsp;&nbsp;
+
+00:03:56.640 --> 00:04:03.440
+if we accept that we can fit whatever data we&nbsp;
+need into the context window, then the argument&nbsp;&nbsp;
+
+00:04:03.440 --> 00:04:11.520
+for doing so basically boils down to one word,&nbsp;
+simplicity. And let me give you three reasons why&nbsp;&nbsp;
+
+00:04:11.520 --> 00:04:20.000
+stuffing the context window directly may indeed be&nbsp;
+the way to go. And reason number one is collapsing&nbsp;&nbsp;
+
+00:04:20.000 --> 00:04:27.920
+the infrastructure. A production RAG system. Well,&nbsp;
+it is quite heavy. You need a a chunking strategy&nbsp;&nbsp;
+
+00:04:27.920 --> 00:04:33.200
+which is like fixed size maybe or sliding window&nbsp;
+or recursive. You decide. You're going to need&nbsp;&nbsp;
+
+00:04:33.200 --> 00:04:39.840
+a embedding model to encode the data. You need&nbsp;
+a a vector database to store it. You're going&nbsp;&nbsp;
+
+00:04:39.840 --> 00:04:45.360
+to need a reranker to sort the results. you need&nbsp;
+to keep all the vectors in sync with your source&nbsp;&nbsp;
+
+00:04:45.360 --> 00:04:52.800
+data. It's basically a lot of moving parts, a lot&nbsp;
+of places for things to break. And long context&nbsp;&nbsp;
+
+00:04:52.800 --> 00:05:01.440
+offers what we might call well just simply the uh&nbsp;
+the no stack stack. You remove the database, you&nbsp;&nbsp;
+
+00:05:01.440 --> 00:05:06.880
+remove the embeddings, you remove the retrieval&nbsp;
+logic. The architecture simplifies down to getting&nbsp;&nbsp;
+
+00:05:06.880 --> 00:05:15.840
+the data and just well sending it to the model. So&nbsp;
+that's reason number one. Reason number two is the&nbsp;&nbsp;
+
+00:05:15.840 --> 00:05:23.840
+retrieval lottery. Now, RAG introduces a critical&nbsp;
+point of failure here, the retrieval step itself,&nbsp;&nbsp;
+
+00:05:23.840 --> 00:05:30.720
+because when a user asks a question, RAG looks at&nbsp;
+mathematical representations of the data, which are&nbsp;&nbsp;
+
+00:05:30.720 --> 00:05:37.040
+stored in vectors. And vectors are basically&nbsp;
+just like a really long series of numbers in&nbsp;&nbsp;
+
+00:05:37.040 --> 00:05:43.440
+an array. And it tries to find the closest&nbsp;
+match. That's semantic search. But semantic&nbsp;&nbsp;
+
+00:05:43.440 --> 00:05:49.280
+search is probabilistic and for all manner of&nbsp;
+reasons, the retrieval might fail to find the&nbsp;&nbsp;
+
+00:05:49.280 --> 00:05:55.760
+relevant document. And we actually have a name&nbsp;
+for this. It's called silent failure. The answer,&nbsp;&nbsp;
+
+00:05:55.760 --> 00:06:01.280
+well, it existed in the data, but the LLM never&nbsp;
+saw it because the retrieval step didn't return&nbsp;&nbsp;
+
+00:06:01.280 --> 00:06:08.080
+the right results. With long context, there is no&nbsp;
+retrieval step. The model gets to see everything.&nbsp;&nbsp;
+
+00:06:08.080 --> 00:06:15.120
+Now, reason number three that is well, I think&nbsp;
+we're going to call this the whole book problem.&nbsp;&nbsp;
+
+00:06:15.120 --> 00:06:21.200
+A RAG is fundamentally designed to retrieve&nbsp;
+what exists. It relies on finding a semantic&nbsp;&nbsp;
+
+00:06:21.200 --> 00:06:27.120
+match between your query and a specific snippet&nbsp;
+of text in your database. But what if the answer&nbsp;&nbsp;
+
+00:06:27.120 --> 00:06:35.040
+lies in what's not in the database? So, so let's&nbsp;
+say you have a set of product requirements stored&nbsp;&nbsp;
+
+00:06:35.040 --> 00:06:42.960
+as a document and you've also got a set of release&nbsp;
+notes stored as a document and then we ask which&nbsp;&nbsp;
+
+00:06:42.960 --> 00:06:50.720
+security requirements were omitted from the final&nbsp;
+release. Now using RAG when you query for omitted&nbsp;&nbsp;
+
+00:06:50.720 --> 00:06:57.280
+security requirements the vector search looks for&nbsp;
+chunks discussing well security and requirements.&nbsp;&nbsp;
+
+00:06:57.280 --> 00:07:02.880
+It retrieves snippets from the requirements doc.&nbsp;
+It retrieves snippets from the release notes,&nbsp;&nbsp;
+
+00:07:02.880 --> 00:07:09.040
+but it cannot retrieve the gap between them. And&nbsp;
+because RAG only shows the model a few isolated&nbsp;&nbsp;
+
+00:07:09.040 --> 00:07:15.280
+snapshots, the model never sees the full picture&nbsp;
+required to spot the missing pieces. The model&nbsp;&nbsp;
+
+00:07:15.280 --> 00:07:22.320
+really needs both of these documents in full to&nbsp;
+perform the comparison, which is exactly what&nbsp;&nbsp;
+
+00:07:22.320 --> 00:07:28.640
+long context does by dumping the whole book, the&nbsp;
+full requirements doc and the full release notes&nbsp;&nbsp;
+
+00:07:28.640 --> 00:07:35.520
+into the context window. So, is RAG dead? Is the&nbsp;
+vector database destined for the museum of things&nbsp;&nbsp;
+
+00:07:35.520 --> 00:07:43.600
+we needed in 2024? Well, not quite because while&nbsp;
+long context wins on simplicity, RAG still has a&nbsp;&nbsp;
+
+00:07:43.600 --> 00:07:53.040
+place. And I got another three reasons to support&nbsp;
+that. So, reason number one is the rereading text.&nbsp;&nbsp;
+
+00:07:53.040 --> 00:07:59.680
+Now, long context creates a massive compute&nbsp;
+inefficiency. So, if we take a manual, let's say&nbsp;&nbsp;
+
+00:07:59.680 --> 00:08:08.000
+this is like a a 500 page manual, and we've got to&nbsp;
+turn this into tokens. Well, that's something like&nbsp;&nbsp;
+
+00:08:08.000 --> 00:08:17.120
+250k of tokens. And we need to do that every time&nbsp;
+we make a user query and we put this document in&nbsp;&nbsp;
+
+00:08:17.120 --> 00:08:23.360
+the prompt. You're basically requiring the model&nbsp;
+to process that manual every time. Now, RAG also&nbsp;&nbsp;
+
+00:08:23.360 --> 00:08:30.320
+has to process that manual, but it only pays that&nbsp;
+processing cost once at indexing time. Now, prompt&nbsp;&nbsp;
+
+00:08:30.320 --> 00:08:36.160
+caching that can partially offset some of this for&nbsp;
+static data, but for dynamic data streams where&nbsp;&nbsp;
+
+00:08:36.160 --> 00:08:45.440
+content changes frequently, you are stuck paying&nbsp;
+the full tax on every request. Reason number two&nbsp;&nbsp;
+
+00:08:45.440 --> 00:08:52.560
+is the needle in the haystack problem. Now,&nbsp;
+there's a an intuitive assumption that if data&nbsp;&nbsp;
+
+00:08:52.560 --> 00:09:00.160
+is in the context window, the model's probably&nbsp;
+going to use it, but research suggests otherwise.&nbsp;&nbsp;
+
+00:09:00.160 --> 00:09:06.960
+Because as we start with a context window and then&nbsp;
+it grows and it continues to grow and now we're at&nbsp;&nbsp;
+
+00:09:06.960 --> 00:09:14.240
+like 500,000 tokens, well, the model's attention&nbsp;
+mechanism can get a bit diluted. If you ask a&nbsp;&nbsp;
+
+00:09:14.240 --> 00:09:19.280
+specific question about a single paragraph that's&nbsp;
+buried in, let's say, the middle of a 2,000 page&nbsp;&nbsp;
+
+00:09:19.280 --> 00:09:26.000
+document, well, the model often fails to retrieve&nbsp;
+it or it hallucinates details from the surrounding&nbsp;&nbsp;
+
+00:09:26.000 --> 00:09:35.200
+text. But with RAG, we're giving the model less&nbsp;
+noise. So by retrieving, say only the top five&nbsp;&nbsp;
+
+00:09:35.200 --> 00:09:42.320
+relevant chunks, RAG has removed the haystack&nbsp;
+and presents the model with just the needles.&nbsp;&nbsp;
+
+00:09:42.320 --> 00:09:49.280
+It forces the model to focus on the signal and&nbsp;
+not the noise. And then reason number three,&nbsp;&nbsp;
+
+00:09:49.280 --> 00:09:57.200
+well that is the infinite data set. Now a context&nbsp;
+window of millions of tokens sounds great but in&nbsp;&nbsp;
+
+00:09:57.200 --> 00:10:05.840
+the scheme of enterprise data that's really just a&nbsp;
+drop in the bucket. I mean an enterprise data lake&nbsp;&nbsp;
+
+00:10:05.840 --> 00:10:13.840
+that's probably measured in terabytes or or maybe&nbsp;
+even petabytes. So if you want an infinite data&nbsp;&nbsp;
+
+00:10:13.840 --> 00:10:19.840
+set that stores everything, you really do need to&nbsp;
+have a retrieval layer to filter information down&nbsp;&nbsp;
+
+00:10:19.840 --> 00:10:25.760
+to something that fits into the LLM context&nbsp;
+window. So where does this leave us? Well,&nbsp;&nbsp;
+
+00:10:25.760 --> 00:10:30.960
+if your problem involves a bounded data set and&nbsp;
+requires complex global reasoning like analyzing&nbsp;&nbsp;
+
+00:10:30.960 --> 00:10:38.000
+a specific legal contract or summarizing a book, I&nbsp;
+think long context is the way to go. It simplifies&nbsp;&nbsp;
+
+00:10:38.000 --> 00:10:44.000
+the stack and it improves the reasoning. But&nbsp;
+if you're navigating the infinite data set of&nbsp;&nbsp;
+
+00:10:44.000 --> 00:10:51.280
+enterprise knowledge, the vector database remains&nbsp;
+the only viable warehouse for your data. But how&nbsp;&nbsp;
+
+00:10:51.280 --> 00:11:03.440
+about you? Are you team long context, team RAG,&nbsp;
+maybe a bit of both? Let me know in the comments.
+
