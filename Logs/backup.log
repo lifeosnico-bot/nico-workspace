@@ -1563,3 +1563,16 @@
  6 files changed, 125 insertions(+), 1 deletion(-)
 [nico/ssot-session-data e88be0a] auto-backup: 2026-03-09_03:31
  6 files changed, 125 insertions(+), 1 deletion(-)
+[nico/ssot-session-data 53fa70c] auto-backup: 2026-03-09_03:46
+ 19 files changed, 18745 insertions(+), 14 deletions(-)
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/G8tXjcseNjg.en-orig.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/G8tXjcseNjg.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/G8tXjcseNjg.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/b29wl0ehrQI.en-orig.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/b29wl0ehrQI.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/b29wl0ehrQI.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/sTdz6PZoAnw.en-en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/sTdz6PZoAnw.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/vzCy44o3JwA.en-orig.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/vzCy44o3JwA.en.vtt
+ create mode 100644 CabinetAgentVault/30-resources/letta/transcripts/vzCy44o3JwA.md
