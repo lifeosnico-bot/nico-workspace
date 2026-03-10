@@ -9859,3 +9859,35 @@ Claude Code process exited with code 1
 [WARN]  socket-mode:SlackWebSocket:71 A pong wasn't received from the server before the timeout of 5000ms!
 [WARN]  socket-mode:SlackWebSocket:79 A pong wasn't received from the server before the timeout of 5000ms!
 [WARN]  socket-mode:SlackWebSocket:79 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:90 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:90 A ping wasn't received from the server before the timeout of 30000ms!
+[WARN]  socket-mode:SlackWebSocket:90 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:90 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:90 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:90 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:90 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:90 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:90 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:90 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:90 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:91 A pong wasn't received from the server before the timeout of 5000ms!
