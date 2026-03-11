@@ -129,3 +129,4 @@ Error: {
     "run_id": "run-c50d8436-aaee-47d4-aba8-b6580f151398"
   }
 }
+Error: Command '['/opt/homebrew/bin/letta', '-p', '--agent', 'agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668', "Generate a concise morning briefing. Read ~/Nico/Memory/status.md for current project status. Include: (1) Today's date and day, (2) What is currently in progress, (3) Top 3 priorities for today, (4) Any blockers. Keep it under 200 words. Plain text only, no markdown."]' timed out after 120 seconds
