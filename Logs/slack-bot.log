@@ -9935,3 +9935,12 @@ Claude Code process exited with code 1
 [WARN]  socket-mode:SlackWebSocket:110 A pong wasn't received from the server before the timeout of 5000ms!
 [WARN]  socket-mode:SlackWebSocket:110 A pong wasn't received from the server before the timeout of 5000ms!
 [WARN]  socket-mode:SlackWebSocket:110 A pong wasn't received from the server before the timeout of 5000ms!
+[ERROR]  socket-mode:SlackWebSocket:111 WebSocket error occurred: read ETIMEDOUT
+[ERROR]  socket-mode:SocketModeClient:0 WebSocket error! Error: read ETIMEDOUT
+[WARN]  socket-mode:SlackWebSocket:112 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:113 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:113 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:113 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:113 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:113 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:113 A pong wasn't received from the server before the timeout of 5000ms!
