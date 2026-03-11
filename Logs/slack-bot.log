@@ -9944,3 +9944,5 @@ Claude Code process exited with code 1
 [WARN]  socket-mode:SlackWebSocket:113 A pong wasn't received from the server before the timeout of 5000ms!
 [WARN]  socket-mode:SlackWebSocket:113 A pong wasn't received from the server before the timeout of 5000ms!
 [WARN]  socket-mode:SlackWebSocket:113 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:114 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:114 A ping wasn't received from the server before the timeout of 30000ms!
