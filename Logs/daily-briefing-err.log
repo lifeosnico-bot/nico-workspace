@@ -130,3 +130,32 @@ Error: {
   }
 }
 Error: Command '['/opt/homebrew/bin/letta', '-p', '--agent', 'agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668', "Generate a concise morning briefing. Read ~/Nico/Memory/status.md for current project status. Include: (1) Today's date and day, (2) What is currently in progress, (3) Top 3 priorities for today, (4) Any blockers. Keep it under 200 words. Plain text only, no markdown."]' timed out after 120 seconds
+Error: letta error: Error saving local project settings: Error: ENOENT: no such file or directory, mkdir '/.letta'
+    at mkdirSync (node:fs:1333:26)
+    at mkdir (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3476:3)
+    at SettingsManager.persistLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4103:15)
+    at SettingsManager.updateLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4088:31)
+    at SettingsManager.setLocalLastSession (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4189:10)
+    at handleHeadlessCommand (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:77567:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:122982:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'mkdir',
+  path: '/.letta'
+}
+Failed to persist local project settings: Error: ENOENT: no such file or directory, mkdir '/.letta'
+    at mkdirSync (node:fs:1333:26)
+    at mkdir (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3476:3)
+    at SettingsManager.persistLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4103:15)
+    at SettingsManager.updateLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4088:31)
+    at SettingsManager.setLocalLastSession (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4189:10)
+    at handleHeadlessCommand (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:77567:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:122982:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'mkdir',
+  path: '/.letta'
+}
+Error: Unexpected stop reason: error
