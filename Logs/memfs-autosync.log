@@ -151,3 +151,12 @@ Could not apply 161f581... # chore: memfs autosync 2026-03-09 00:36:41
 [2026-03-09 09:51:51] autosync: conflict detected, skipping
 [2026-03-09 09:56:52] autosync: conflict detected, skipping
 [2026-03-09 10:01:52] autosync: conflict detected, skipping
+[detached HEAD 3607e17] chore: memfs autosync 2026-03-12 18:23:56
+ 1 file changed, 1 insertion(+)
+You are not currently on a branch.
+Please specify which branch you want to rebase against.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+[2026-03-12 18:23:57] autosync: pull --rebase failed (manual fix needed)
