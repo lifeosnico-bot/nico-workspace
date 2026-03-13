@@ -159,3 +159,32 @@ Failed to persist local project settings: Error: ENOENT: no such file or directo
   path: '/.letta'
 }
 Error: Unexpected stop reason: error
+Error: letta error: Error saving local project settings: Error: ENOENT: no such file or directory, mkdir '/.letta'
+    at mkdirSync (node:fs:1333:26)
+    at mkdir (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3478:3)
+    at SettingsManager.persistLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4105:15)
+    at SettingsManager.updateLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4090:31)
+    at SettingsManager.setLocalLastSession (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4191:10)
+    at handleHeadlessCommand (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:77602:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:137401:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'mkdir',
+  path: '/.letta'
+}
+Failed to persist local project settings: Error: ENOENT: no such file or directory, mkdir '/.letta'
+    at mkdirSync (node:fs:1333:26)
+    at mkdir (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3478:3)
+    at SettingsManager.persistLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4105:15)
+    at SettingsManager.updateLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4090:31)
+    at SettingsManager.setLocalLastSession (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4191:10)
+    at handleHeadlessCommand (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:77602:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:137401:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'mkdir',
+  path: '/.letta'
+}
+Error: Unexpected stop reason: error
