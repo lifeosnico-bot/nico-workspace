@@ -2331,3 +2331,21 @@
  5 files changed, 122 insertions(+), 1 deletion(-)
 [nico/ssot-session-data 0d95f3d] auto-backup: 2026-03-18_18:22
  11 files changed, 423 insertions(+), 1 deletion(-)
+[nico/ssot-session-data 5a278cc] auto-backup: 2026-03-19_12:59
+ 29 files changed, 2959 insertions(+), 25 deletions(-)
+ create mode 100644 CabinetAgentVault/00-dashboard/daily/2026-03-14.md
+ create mode 100644 CabinetAgentVault/00-dashboard/daily/2026-03-18.md
+ create mode 100644 CabinetAgentVault/00-dashboard/daily/2026-03-19.md
+ create mode 100644 CabinetAgentVault/00-dashboard/llm-sessions/Claude Chat/mac-studio-migration-context-v1-2026-03-14.md
+ create mode 100644 CabinetAgentVault/01-inbox/March 15.md
+ delete mode 100644 CabinetAgentVault/01-inbox/Untitled.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/docs/lettabot.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/docs/memory-blocks.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/docs/multi-agent.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/docs/overview.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/docs/sleep-time.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/github/releases.md
+ create mode 100644 CabinetAgentVault/30-resources/letta/weekly-update.md
+ create mode 100644 CabinetAgentVault/multi-agent-startup-workflow-plan.md
+ create mode 100644 CabinetAgentVault/multi-agent-system-flowchart.html
+ create mode 100644 CabinetAgentVault/multi-agent-workflow-diagram.html
