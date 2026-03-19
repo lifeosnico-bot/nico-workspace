@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-Agent Startup Operating System</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0f; color: #e0e0e0; font-family: 'Inter', -apple-system, system-ui, sans-serif; overflow-x: hidden; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+  h1 { text-align: center; font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+  .subtitle { text-align: center; font-size: 14px; color: #666; margin-bottom: 48px; }
+
+  /* Section titles */
+  .section-title { font-size: 13px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; margin-top: 48px; }
+
+  /* ===== TOP: Vincent CEO ===== */
+  .ceo-bar {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 1px solid #2a2a4a;
+    border-radius: 16px;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 16px;
+  }
+  .ceo-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .ceo-info h2 { font-size: 20px; color: #fff; font-weight: 600; }
+  .ceo-info p { font-size: 13px; color: #888; margin-top: 2px; }
+  .ceo-channels { display: flex; gap: 8px; flex-shrink: 0; }
+  .channel-chip {
+    padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 500;
+    border: 1px solid; display: flex; align-items: center; gap: 6px;
+  }
+  .ch-telegram { background: #0088cc15; border-color: #0088cc40; color: #0088cc; }
+  .ch-slack { background: #4a154b15; border-color: #4a154b40; color: #bf6fbf; }
+  .ch-linear { background: #5e6ad215; border-color: #5e6ad240; color: #5e6ad2; }
+
+  /* ===== FLOW ARROW ===== */
+  .flow-arrow {
+    display: flex; flex-direction: column; align-items: center; padding: 8px 0;
+    color: #333; font-size: 11px; letter-spacing: 1px;
+  }
+  .flow-arrow .arrow { font-size: 20px; color: #444; }
+  .flow-arrow .label { color: #555; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; }
+
+  /* ===== NICO COORDINATOR ===== */
+  .nico-box {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    border: 1.5px solid #2dd4bf40;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .nico-box::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, #2dd4bf, transparent);
+  }
+  .nico-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+  .nico-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: linear-gradient(135deg, #2dd4bf, #06b6d4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .nico-header h3 { font-size: 18px; color: #2dd4bf; font-weight: 600; }
+  .nico-header p { font-size: 12px; color: #888; }
+
+  .nico-actions {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+  }
+  .nico-action {
+    background: #ffffff08; border: 1px solid #ffffff10; border-radius: 8px;
+    padding: 10px 12px; text-align: center; font-size: 11px; color: #aaa;
+  }
+  .nico-action strong { display: block; color: #2dd4bf; font-size: 12px; margin-bottom: 2px; }
+
+  /* ===== COORDINATION LAYER ===== */
+  .coord-layer {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
+    margin-bottom: 16px;
+  }
+  .coord-card {
+    border-radius: 12px; padding: 20px; text-align: center;
+    border: 1px solid;
+  }
+  .coord-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .coord-card p { font-size: 11px; color: #888; }
+  .coord-card .role { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; font-weight: 600; }
+
+  .cc-linear { background: #5e6ad210; border-color: #5e6ad230; }
+  .cc-linear h4 { color: #5e6ad2; }
+  .cc-linear .role { color: #5e6ad280; }
+
+  .cc-github { background: #f0883e10; border-color: #f0883e30; }
+  .cc-github h4 { color: #f0883e; }
+  .cc-github .role { color: #f0883e80; }
+
+  .cc-slack { background: #e01e5a10; border-color: #e01e5a30; }
+  .cc-slack h4 { color: #e01e5a; }
+  .cc-slack .role { color: #e01e5a80; }
+
+  /* ===== AGENT GRID ===== */
+  .agent-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    margin-bottom: 16px;
+  }
+  .agent-card {
+    background: #111118; border: 1px solid #222; border-radius: 12px;
+    padding: 20px; position: relative; transition: border-color 0.2s;
+  }
+  .agent-card:hover { border-color: #444; }
+  .agent-top { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .agent-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .dot-green { background: #22c55e; box-shadow: 0 0 8px #22c55e60; }
+  .dot-blue { background: #3b82f6; box-shadow: 0 0 8px #3b82f660; }
+  .dot-purple { background: #a855f7; box-shadow: 0 0 8px #a855f760; }
+  .dot-orange { background: #f97316; box-shadow: 0 0 8px #f9731660; }
+  .dot-cyan { background: #06b6d4; box-shadow: 0 0 8px #06b6d460; }
+  .dot-yellow { background: #eab308; box-shadow: 0 0 8px #eab30860; }
+  .agent-name { font-size: 14px; font-weight: 600; color: #fff; }
+  .agent-platform { font-size: 11px; color: #666; }
+  .agent-role { font-size: 12px; color: #999; margin-bottom: 10px; line-height: 1.4; }
+  .agent-tasks { display: flex; flex-wrap: wrap; gap: 4px; }
+  .task-tag {
+    font-size: 10px; padding: 3px 8px; border-radius: 4px;
+    background: #ffffff08; color: #888; border: 1px solid #ffffff10;
+  }
+
+  /* ===== ISOLATION LAYER ===== */
+  .isolation-box {
+    background: #0d1117; border: 1px solid #30363d; border-radius: 16px;
+    padding: 28px 32px; margin-bottom: 16px;
+  }
+  .isolation-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .isolation-header h3 { font-size: 16px; color: #58a6ff; font-weight: 600; }
+  .isolation-header span { font-size: 12px; color: #666; }
+
+  .worktree-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .worktree {
+    background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+    padding: 12px; font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+  .wt-branch { font-size: 11px; color: #58a6ff; margin-bottom: 4px; }
+  .wt-files { font-size: 10px; color: #7d8590; }
+  .wt-status { font-size: 10px; margin-top: 6px; padding: 2px 8px; border-radius: 10px; display: inline-block; }
+  .wt-active { background: #23863620; color: #3fb950; border: 1px solid #23863640; }
+  .wt-review { background: #a371f720; color: #bc8cff; border: 1px solid #a371f740; }
+  .wt-done { background: #58a6ff20; color: #58a6ff; border: 1px solid #58a6ff40; }
+
+  /* ===== MERGE PIPELINE ===== */
+  .pipeline {
+    background: #111118; border: 1px solid #222; border-radius: 16px;
+    padding: 24px 32px; margin-bottom: 16px;
+  }
+  .pipeline h3 { font-size: 16px; color: #f0883e; margin-bottom: 16px; font-weight: 600; }
+  .pipeline-flow {
+    display: flex; align-items: center; justify-content: space-between; gap: 4px;
+  }
+  .pipe-step {
+    flex: 1; text-align: center; padding: 14px 8px; border-radius: 10px;
+    border: 1px solid #222; background: #0a0a0f;
+  }
+  .pipe-step strong { display: block; font-size: 12px; color: #ddd; margin-bottom: 2px; }
+  .pipe-step span { font-size: 10px; color: #666; }
+  .pipe-arrow { color: #333; font-size: 18px; flex-shrink: 0; }
+  .pipe-highlight { border-color: #f0883e40; background: #f0883e08; }
+
+  /* ===== VAULT ===== */
+  .vault-bar {
+    background: linear-gradient(135deg, #1a0a2e, #2d1b4e);
+    border: 1px solid #6b21a840; border-radius: 16px;
+    padding: 20px 32px; display: flex; align-items: center; gap: 20px;
+  }
+  .vault-icon { font-size: 28px; }
+  .vault-bar h4 { font-size: 15px; color: #c084fc; font-weight: 600; }
+  .vault-bar p { font-size: 12px; color: #888; }
+  .vault-items { display: flex; gap: 16px; margin-left: auto; }
+  .vault-item { font-size: 11px; color: #a78bfa; text-align: center; }
+  .vault-item strong { display: block; font-size: 18px; color: #c084fc; }
+
+  /* ===== LEGEND ===== */
+  .legend {
+    margin-top: 40px; padding: 20px; border: 1px solid #222; border-radius: 12px;
+    background: #111118;
+  }
+  .legend h4 { font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .legend-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #999; }
+  .legend-line { width: 24px; height: 2px; border-radius: 1px; }
+  .l-green { background: #22c55e; }
+  .l-blue { background: #3b82f6; }
+  .l-purple { background: #a855f7; }
+  .l-orange { background: #f97316; }
+  .l-cyan { background: #06b6d4; }
+  .l-yellow { background: #eab308; }
+
+  /* ===== DAILY CYCLE ===== */
+  .cycle-section { margin-top: 48px; }
+  .cycle-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .cycle-card {
+    background: #111118; border: 1px solid #222; border-radius: 12px; padding: 20px;
+  }
+  .cycle-time { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .cycle-title { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+  .cycle-items { list-style: none; }
+  .cycle-items li { font-size: 12px; color: #999; padding: 3px 0; padding-left: 16px; position: relative; }
+  .cycle-items li::before { content: '→'; position: absolute; left: 0; color: #444; }
+
+  /* ===== KEY RULE ===== */
+  .key-rules { margin-top: 48px; }
+  .rule-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .rule-card {
+    background: #111118; border: 1px solid #222; border-radius: 12px; padding: 20px;
+    text-align: center;
+  }
+  .rule-num { font-size: 32px; font-weight: 700; color: #2dd4bf; margin-bottom: 4px; }
+  .rule-title { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .rule-desc { font-size: 12px; color: #888; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>Multi-Agent Startup Operating System</h1>
+  <p class="subtitle">How 6+ agents and 1 human build and run a business simultaneously</p>
+
+  <!-- CEO -->
+  <div class="ceo-bar">
+    <div class="ceo-avatar">V</div>
+    <div class="ceo-info">
+      <h2>Vincent — CEO</h2>
+      <p>Reviews, approves, prioritizes, decides</p>
+    </div>
+    <div class="ceo-channels">
+      <span class="channel-chip ch-telegram">Telegram</span>
+      <span class="channel-chip ch-slack">Slack</span>
+      <span class="channel-chip ch-linear">Linear</span>
+    </div>
+  </div>
+
+  <div class="flow-arrow">
+    <span class="label">delegates & approves</span>
+    <span class="arrow">↓</span>
+  </div>
+
+  <!-- NICO -->
+  <div class="nico-box">
+    <div class="nico-header">
+      <div class="nico-icon">🧠</div>
+      <div>
+        <h3>Nico — Chief of Staff (Coordinator)</h3>
+        <p>Decomposes goals → assigns agents → reviews PRs → merges</p>
+      </div>
+    </div>
+    <div class="nico-actions">
+      <div class="nico-action"><strong>Intake</strong>Capture tasks</div>
+      <div class="nico-action"><strong>Triage</strong>Set priority</div>
+      <div class="nico-action"><strong>Decompose</strong>Break into issues</div>
+      <div class="nico-action"><strong>Assign</strong>Route to agent</div>
+      <div class="nico-action"><strong>Review</strong>Check & merge</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow">
+    <span class="label">creates issues & assigns</span>
+    <span class="arrow">↓</span>
+  </div>
+
+  <!-- COORDINATION LAYER -->
+  <p class="section-title">Coordination Layer</p>
+  <div class="coord-layer">
+    <div class="coord-card cc-linear">
+      <h4>Linear</h4>
+      <p>Task database — all issues, priorities, assignments</p>
+      <div class="role">Source of Truth for Tasks</div>
+    </div>
+    <div class="coord-card cc-github">
+      <h4>GitHub</h4>
+      <p>Code repos — branches, PRs, CI/CD, reviews</p>
+      <div class="role">Source of Truth for Code</div>
+    </div>
+    <div class="coord-card cc-slack">
+      <h4>Slack</h4>
+      <p>Real-time alerts — status, blockers, approvals</p>
+      <div class="role">Communication Bus</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow">
+    <span class="label">agents pick up assigned issues</span>
+    <span class="arrow">↓</span>
+  </div>
+
+  <!-- AGENT GRID -->
+  <p class="section-title">Agent Execution Layer</p>
+  <div class="agent-grid">
+    <div class="agent-card">
+      <div class="agent-top">
+        <div class="agent-dot dot-green"></div>
+        <div><div class="agent-name">Claude Code</div><div class="agent-platform">3 terminals active</div></div>
+      </div>
+      <div class="agent-role">Senior Engineer — complex features, architecture, multi-file refactors</div>
+      <div class="agent-tasks">
+        <span class="task-tag">features</span>
+        <span class="task-tag">architecture</span>
+        <span class="task-tag">devops</span>
+      </div>
+    </div>
+
+    <div class="agent-card">
+      <div class="agent-top">
+        <div class="agent-dot dot-blue"></div>
+        <div><div class="agent-name">Codex</div><div class="agent-platform">2 windows active</div></div>
+      </div>
+      <div class="agent-role">Mid Engineer — focused implementation, tests, boilerplate</div>
+      <div class="agent-tasks">
+        <span class="task-tag">implementation</span>
+        <span class="task-tag">tests</span>
+        <span class="task-tag">APIs</span>
+      </div>
+    </div>
+
+    <div class="agent-card">
+      <div class="agent-top">
+        <div class="agent-dot dot-purple"></div>
+        <div><div class="agent-name">Letta Code</div><div class="agent-platform">1 session active</div></div>
+      </div>
+      <div class="agent-role">Research Agent — deep dives, analysis, persistent memory</div>
+      <div class="agent-tasks">
+        <span class="task-tag">research</span>
+        <span class="task-tag">analysis</span>
+        <span class="task-tag">docs</span>
+      </div>
+    </div>
+
+    <div class="agent-card">
+      <div class="agent-top">
+        <div class="agent-dot dot-orange"></div>
+        <div><div class="agent-name">Copilot</div><div class="agent-platform">GitHub-native</div></div>
+      </div>
+      <div class="agent-role">Junior Engineer — PR-scoped fixes, code review, quick patches</div>
+      <div class="agent-tasks">
+        <span class="task-tag">bug fixes</span>
+        <span class="task-tag">review</span>
+        <span class="task-tag">deps</span>
+      </div>
+    </div>
+
+    <div class="agent-card">
+      <div class="agent-top">
+        <div class="agent-dot dot-cyan"></div>
+        <div><div class="agent-name">Antigravity</div><div class="agent-platform">Skill-based IDE</div></div>
+      </div>
+      <div class="agent-role">Specialist — 1200+ pre-built skills, UI components, parallel execution</div>
+      <div class="agent-tasks">
+        <span class="task-tag">UI/UX</span>
+        <span class="task-tag">components</span>
+        <span class="task-tag">skills</span>
+      </div>
+    </div>
+
+    <div class="agent-card">
+      <div class="agent-top">
+        <div class="agent-dot dot-yellow"></div>
+        <div><div class="agent-name">Letta Bot</div><div class="agent-platform">Always-on (24/7)</div></div>
+      </div>
+      <div class="agent-role">Executive Assistant — Telegram interface, briefings, memory</div>
+      <div class="agent-tasks">
+        <span class="task-tag">briefings</span>
+        <span class="task-tag">alerts</span>
+        <span class="task-tag">memory</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow">
+    <span class="label">each agent works in isolation</span>
+    <span class="arrow">↓</span>
+  </div>
+
+  <!-- ISOLATION LAYER -->
+  <p class="section-title">Git Worktree Isolation (No Conflicts)</p>
+  <div class="isolation-box">
+    <div class="isolation-header">
+      <h3>Git Worktrees — Every Agent Gets Its Own Copy</h3>
+      <span>No two agents touch the same files</span>
+    </div>
+    <div class="worktree-grid">
+      <div class="worktree">
+        <div class="wt-branch">claude/14-auth-module</div>
+        <div class="wt-files">src/auth/* · 12 files changed</div>
+        <div class="wt-status wt-active">coding</div>
+      </div>
+      <div class="worktree">
+        <div class="wt-branch">claude/15-api-routes</div>
+        <div class="wt-files">src/api/* · 8 files changed</div>
+        <div class="wt-status wt-active">coding</div>
+      </div>
+      <div class="worktree">
+        <div class="wt-branch">claude/16-db-schema</div>
+        <div class="wt-files">prisma/schema.prisma · 1 file</div>
+        <div class="wt-status wt-review">PR open</div>
+      </div>
+      <div class="worktree">
+        <div class="wt-branch">codex/17-signup-flow</div>
+        <div class="wt-files">src/pages/signup/* · 5 files</div>
+        <div class="wt-status wt-active">coding</div>
+      </div>
+      <div class="worktree">
+        <div class="wt-branch">codex/18-api-tests</div>
+        <div class="wt-files">tests/api/* · 15 files</div>
+        <div class="wt-status wt-done">merged ✓</div>
+      </div>
+      <div class="worktree">
+        <div class="wt-branch">letta/19-market-research</div>
+        <div class="wt-files">docs/research/* · 3 files</div>
+        <div class="wt-status wt-active">researching</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow">
+    <span class="label">agents open PRs when done</span>
+    <span class="arrow">↓</span>
+  </div>
+
+  <!-- MERGE PIPELINE -->
+  <p class="section-title">Merge Pipeline</p>
+  <div class="pipeline">
+    <div class="pipeline-flow">
+      <div class="pipe-step">
+        <strong>PR Opened</strong>
+        <span>Agent pushes branch</span>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-step">
+        <strong>CI Runs</strong>
+        <span>Tests + lint auto</span>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-step">
+        <strong>Code Review</strong>
+        <span>Copilot + Nico</span>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-step pipe-highlight">
+        <strong>Merge</strong>
+        <span>Nico or Vincent</span>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-step">
+        <strong>Deploy</strong>
+        <span>CI/CD auto</span>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-step">
+        <strong>Linear → Done</strong>
+        <span>Auto-closes issue</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VAULT -->
+  <p class="section-title">Knowledge Layer</p>
+  <div class="vault-bar">
+    <div class="vault-icon">📚</div>
+    <div>
+      <h4>Obsidian Vault</h4>
+      <p>Decisions, SOPs, research, session notes, client docs — git-backed</p>
+    </div>
+    <div class="vault-items">
+      <div class="vault-item"><strong>Decisions</strong>append-only</div>
+      <div class="vault-item"><strong>Research</strong>Letta writes</div>
+      <div class="vault-item"><strong>SOPs</strong>Nico writes</div>
+      <div class="vault-item"><strong>Daily</strong>auto-gen</div>
+    </div>
+  </div>
+
+  <!-- DAILY CYCLE -->
+  <div class="cycle-section">
+    <p class="section-title">Daily Operating Cycle</p>
+    <div class="cycle-grid">
+      <div class="cycle-card">
+        <div class="cycle-time">8:00 AM</div>
+        <div class="cycle-title">Morning Briefing</div>
+        <ul class="cycle-items">
+          <li>Letta Bot sends Telegram briefing</li>
+          <li>Overnight PRs listed for review</li>
+          <li>Today's priorities from Linear</li>
+          <li>Any blockers flagged</li>
+        </ul>
+      </div>
+      <div class="cycle-card">
+        <div class="cycle-time">Working Hours</div>
+        <div class="cycle-title">Parallel Execution</div>
+        <ul class="cycle-items">
+          <li>Vincent reviews & prioritizes</li>
+          <li>Nico decomposes & assigns</li>
+          <li>Agents work in worktrees</li>
+          <li>PRs flow through pipeline</li>
+        </ul>
+      </div>
+      <div class="cycle-card">
+        <div class="cycle-time">Evening</div>
+        <div class="cycle-title">Wind Down</div>
+        <ul class="cycle-items">
+          <li>Vincent drops new ideas</li>
+          <li>Nico triages & queues</li>
+          <li>Overnight work tagged</li>
+          <li>Day summary generated</li>
+        </ul>
+      </div>
+      <div class="cycle-card">
+        <div class="cycle-time">Overnight</div>
+        <div class="cycle-title">Autonomous Work</div>
+        <ul class="cycle-items">
+          <li>Runner picks up queued tasks</li>
+          <li>Agents work in isolation</li>
+          <li>Draft PRs (no merging)</li>
+          <li>Letta consolidates memory</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY RULES -->
+  <div class="key-rules">
+    <p class="section-title">Three Rules That Make It Work</p>
+    <div class="rule-grid">
+      <div class="rule-card">
+        <div class="rule-num">1</div>
+        <div class="rule-title">Worktree Isolation</div>
+        <div class="rule-desc">Every agent gets its own copy of the repo. No merge conflicts during work. Conflicts only at PR time.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-num">2</div>
+        <div class="rule-title">Database for Tasks</div>
+        <div class="rule-desc">Linear (not flat files) for task coordination. N agents can read/write simultaneously without collisions.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-num">3</div>
+        <div class="rule-title">Coordinator Pattern</div>
+        <div class="rule-desc">Nico decomposes and routes. Coding agents code. Research agents research. Separation of concerns.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
