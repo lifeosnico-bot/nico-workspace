@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-Agent System — Complete Flow</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #fff; color: #111; font-family: -apple-system, system-ui, sans-serif; padding: 40px 20px; }
+.page { max-width: 1100px; margin: 0 auto; }
+h1 { font-size: 22px; font-weight: 700; text-align: center; margin-bottom: 4px; }
+.sub { text-align: center; font-size: 13px; color: #666; margin-bottom: 40px; }
+
+/* Flow container */
+.flow { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+/* Boxes */
+.box {
+  border: 2px solid #111; border-radius: 6px; padding: 16px 24px;
+  text-align: center; position: relative; background: #fff;
+}
+.box-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #888; margin-bottom: 6px; }
+.box h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.box p { font-size: 12px; color: #555; line-height: 1.5; }
+
+/* Wide boxes */
+.wide { width: 700px; }
+.medium { width: 520px; }
+.narrow { width: 360px; }
+
+/* Sections */
+.section { width: 100%; border: 1.5px dashed #ccc; border-radius: 8px; padding: 24px 20px; margin: 0; position: relative; }
+.section-label {
+  position: absolute; top: -10px; left: 24px; background: #fff; padding: 0 8px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #999;
+}
+
+/* Arrows */
+.arrow-down {
+  display: flex; flex-direction: column; align-items: center; padding: 4px 0;
+}
+.arrow-down .shaft { width: 2px; height: 20px; background: #111; }
+.arrow-down .head { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid #111; }
+.arrow-down .text { font-size: 10px; color: #666; margin-top: 2px; margin-bottom: 2px; font-style: italic; }
+
+/* Horizontal layouts */
+.h-row { display: flex; align-items: flex-start; justify-content: center; gap: 16px; width: 100%; }
+.h-row-tight { display: flex; align-items: flex-start; justify-content: center; gap: 12px; width: 100%; }
+
+/* Arrow right */
+.arrow-right { display: flex; align-items: center; padding: 0 2px; }
+.arrow-right .shaft { width: 20px; height: 2px; background: #111; }
+.arrow-right .head { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid #111; }
+
+/* Arrow left */
+.arrow-left { display: flex; align-items: center; padding: 0 2px; }
+.arrow-left .head { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-right: 7px solid #111; }
+.arrow-left .shaft { width: 20px; height: 2px; background: #111; }
+
+/* Bidirectional */
+.arrow-bidi { display: flex; align-items: center; padding: 0 2px; }
+.arrow-bidi .head-l { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-right: 7px solid #111; }
+.arrow-bidi .shaft { width: 16px; height: 2px; background: #111; }
+.arrow-bidi .head-r { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid #111; }
+
+/* Fan out arrows */
+.fan-out { display: flex; justify-content: center; width: 100%; position: relative; height: 40px; }
+.fan-line { position: absolute; background: #111; }
+.fan-h { height: 2px; top: 0; }
+.fan-v { width: 2px; }
+.fan-head { position: absolute; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid #111; }
+
+/* Small boxes in grids */
+.sm-box {
+  border: 1.5px solid #333; border-radius: 4px; padding: 10px 14px;
+  text-align: center; background: #fff; flex: 1; min-width: 0;
+}
+.sm-box h4 { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+.sm-box p { font-size: 10px; color: #666; line-height: 1.4; }
+.sm-box .detail { font-size: 9px; color: #999; margin-top: 4px; font-family: 'SF Mono', monospace; }
+
+/* Tiny boxes */
+.xs-box {
+  border: 1px solid #555; border-radius: 3px; padding: 6px 10px;
+  text-align: center; background: #fafafa; flex: 1; min-width: 0;
+}
+.xs-box strong { font-size: 11px; display: block; }
+.xs-box span { font-size: 9px; color: #777; }
+
+/* Worktree visual */
+.wt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; }
+.wt-box {
+  border: 1px solid #999; border-radius: 3px; padding: 8px 10px;
+  font-family: 'SF Mono', monospace; font-size: 10px; background: #f8f8f8;
+}
+.wt-box .branch { font-weight: 700; color: #111; }
+.wt-box .files { color: #666; font-size: 9px; }
+
+/* Pipeline */
+.pipeline { display: flex; align-items: center; justify-content: center; gap: 0; width: 100%; }
+.pipe-box {
+  border: 1.5px solid #111; border-radius: 4px; padding: 8px 12px;
+  text-align: center; background: #fff; min-width: 110px;
+}
+.pipe-box strong { font-size: 11px; display: block; }
+.pipe-box span { font-size: 9px; color: #666; }
+.pipe-arrow { font-size: 16px; color: #111; padding: 0 4px; }
+
+/* Merge point */
+.merge-diamond {
+  width: 36px; height: 36px; border: 2px solid #111; background: #fff;
+  transform: rotate(45deg); display: flex; align-items: center; justify-content: center;
+}
+.merge-diamond span { transform: rotate(-45deg); font-size: 10px; font-weight: 700; }
+
+/* Notes */
+.note { font-size: 11px; color: #888; text-align: center; max-width: 600px; line-height: 1.5; font-style: italic; }
+
+/* Separator */
+.sep { width: 100%; height: 1px; background: #ddd; margin: 12px 0; }
+
+/* Section spacer */
+.spacer { height: 8px; }
+
+/* Decision diamond */
+.decision {
+  width: 140px; height: 70px; border: 2px solid #111; background: #fff;
+  transform: rotate(45deg); display: flex; align-items: center; justify-content: center;
+  margin: 10px 0;
+}
+.decision span { transform: rotate(-45deg); font-size: 11px; font-weight: 600; text-align: center; line-height: 1.2; }
+
+/* Output labels on arrows */
+.labeled-arrow-down {
+  display: flex; flex-direction: column; align-items: center; padding: 2px 0;
+}
+.labeled-arrow-down .label { font-size: 9px; color: #111; font-weight: 600; background: #fff; padding: 0 4px; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
+
+/* Return arrow (going back up) */
+.return-arrow {
+  position: relative; width: 100%; height: 30px;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>Multi-Agent Startup System — Complete Flowchart</h1>
+<p class="sub">Every arrow shows where data moves. Every box shows who owns it.</p>
+
+<!-- ============================================ -->
+<!-- LAYER 1: INPUT -->
+<!-- ============================================ -->
+<div class="flow">
+
+<div class="section" style="padding-bottom: 16px;">
+  <div class="section-label">Layer 1 — Input Sources</div>
+
+  <div class="h-row" style="margin-top: 8px;">
+    <div class="sm-box">
+      <h4>Vincent (CEO)</h4>
+      <p>Ideas, priorities, approvals, decisions</p>
+      <div class="detail">Telegram / Slack / Linear UI / Voice</div>
+    </div>
+    <div class="sm-box">
+      <h4>Letta Bot Briefing</h4>
+      <p>Morning summary, overnight results, blockers</p>
+      <div class="detail">Telegram → Vincent at 8am daily</div>
+    </div>
+    <div class="sm-box">
+      <h4>GitHub Events</h4>
+      <p>Failed CI, new issues, PR comments, Dependabot</p>
+      <div class="detail">Webhooks → Slack #alerts</div>
+    </div>
+    <div class="sm-box">
+      <h4>Client Requests</h4>
+      <p>Lucavo client needs, quotes, change orders</p>
+      <div class="detail">Email / Phone → Vincent → Telegram</div>
+    </div>
+  </div>
+</div>
+
+<div class="arrow-down">
+  <div class="text">all inputs become Linear issues</div>
+  <div class="shaft"></div>
+  <div class="head"></div>
+</div>
+
+<!-- ============================================ -->
+<!-- LAYER 2: INTAKE & TRIAGE -->
+<!-- ============================================ -->
+
+<div class="section" style="padding-bottom: 16px;">
+  <div class="section-label">Layer 2 — Intake & Triage (Nico Owns This)</div>
+
+  <div class="flow" style="gap: 4px;">
+
+    <div class="box medium">
+      <div class="box-label">Step 1: Capture</div>
+      <h3>Linear Inbox</h3>
+      <p>Every request enters as an unassigned issue in the Inbox.<br>
+      Vincent can create directly. Letta Bot can create via API.<br>
+      GitHub events auto-create via integration.</p>
+    </div>
+
+    <div class="arrow-down"><div class="shaft"></div><div class="head"></div></div>
+
+    <div class="box medium">
+      <div class="box-label">Step 2: Triage</div>
+      <h3>Nico Evaluates Each Issue</h3>
+      <p>Sets priority (P1-P4) · Assigns project (Engineering, Ops, Product, Growth) ·<br>
+      Adds labels (type:feature, type:bug, type:research, type:ops) ·<br>
+      Determines if issue is agent-sized (5-15 min) or needs decomposition</p>
+    </div>
+
+    <div class="arrow-down">
+      <div class="text">is this one task or many?</div>
+      <div class="shaft"></div>
+      <div class="head"></div>
+    </div>
+
+    <div class="h-row">
+      <div class="sm-box">
+        <h4>Single Task</h4>
+        <p>Already scoped for one agent.<br>Move directly to assignment.</p>
+        <div class="detail">e.g., "fix login redirect bug"</div>
+      </div>
+      <div class="sm-box">
+        <h4>Needs Decomposition →</h4>
+        <p>Break into sub-issues. Each sub-issue<br>is one agent, one branch, one PR.</p>
+        <div class="detail">e.g., "build onboarding flow" → 8 sub-issues</div>
+      </div>
+      <div class="sm-box">
+        <h4>Needs Vincent Input</h4>
+        <p>Business decision required.<br>Escalate via Telegram/Slack.</p>
+        <div class="detail">e.g., "pricing model for SaaS tier"</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="arrow-down">
+  <div class="text">triaged issues move to "Todo" in Linear</div>
+  <div class="shaft"></div>
+  <div class="head"></div>
+</div>
+
+<!-- ============================================ -->
+<!-- LAYER 3: ASSIGNMENT & ROUTING -->
+<!-- ============================================ -->
+
+<div class="section" style="padding-bottom: 16px;">
+  <div class="section-label">Layer 3 — Assignment & Routing (Nico Owns This)</div>
+
+  <div class="flow" style="gap: 4px;">
+
+    <div class="box wide">
+      <div class="box-label">Step 3: Route to Agent</div>
+      <h3>Nico Matches Issue → Best Agent</h3>
+      <p style="text-align: left; max-width: 580px; margin: 8px auto 0;">
+        Complex architecture, multi-file refactors &nbsp;→&nbsp; <strong>Claude Code</strong><br>
+        Defined implementation, tests, boilerplate &nbsp;→&nbsp; <strong>Codex</strong><br>
+        Bug fix with failing test, small patches &nbsp;→&nbsp; <strong>Copilot</strong><br>
+        UI components, skill-based work &nbsp;→&nbsp; <strong>Antigravity</strong><br>
+        Research, analysis, deep dives &nbsp;→&nbsp; <strong>Letta Code</strong><br>
+        Client comms, briefings, memory tasks &nbsp;→&nbsp; <strong>Letta Bot</strong><br>
+        Vault docs, SOPs, decisions &nbsp;→&nbsp; <strong>Nico (self)</strong><br>
+        Needs human judgment &nbsp;→&nbsp; <strong>Vincent</strong>
+      </p>
+    </div>
+
+    <div class="arrow-down"><div class="shaft"></div><div class="head"></div></div>
+
+    <div class="box wide">
+      <div class="box-label">Step 4: Dispatch</div>
+      <h3>Issue Assigned in Linear + Worktree Created</h3>
+      <p>Linear issue moves from "Todo" → "In Progress"<br>
+      Git worktree created: <code style="font-size: 11px; background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">git worktree add ../wt-{agent}-{issue#} -b {agent}/{issue#}-{description}</code><br>
+      Agent gets: issue context, branch name, worktree path, acceptance criteria</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="arrow-down">
+  <div class="text">each agent receives its assignment + isolated worktree</div>
+  <div class="shaft"></div>
+  <div class="head"></div>
+</div>
+
+<!-- ============================================ -->
+<!-- LAYER 4: EXECUTION -->
+<!-- ============================================ -->
+
+<div class="section" style="padding-bottom: 20px;">
+  <div class="section-label">Layer 4 — Parallel Execution (Agents Own This)</div>
+
+  <p style="font-size: 11px; color: #888; text-align: center; margin-bottom: 16px;">
+    All agents work simultaneously. No agent touches another agent's files. Each has its own complete copy of the repo.
+  </p>
+
+  <div class="wt-grid">
+    <div class="wt-box">
+      <div class="branch">claude/14-auth-module</div>
+      <div class="files">Claude Code terminal 1</div>
+      <div class="files">Editing: src/auth/*, src/middleware/*</div>
+      <div class="files">Status: coding</div>
+    </div>
+    <div class="wt-box">
+      <div class="branch">claude/15-api-routes</div>
+      <div class="files">Claude Code terminal 2</div>
+      <div class="files">Editing: src/api/*, src/types/*</div>
+      <div class="files">Status: coding</div>
+    </div>
+    <div class="wt-box">
+      <div class="branch">claude/16-db-migrations</div>
+      <div class="files">Claude Code terminal 3</div>
+      <div class="files">Editing: prisma/schema, migrations/*</div>
+      <div class="files">Status: coding</div>
+    </div>
+    <div class="wt-box">
+      <div class="branch">codex/17-signup-flow</div>
+      <div class="files">Codex window 1</div>
+      <div class="files">Editing: src/pages/signup/*</div>
+      <div class="files">Status: coding</div>
+    </div>
+    <div class="wt-box">
+      <div class="branch">codex/18-api-validation</div>
+      <div class="files">Codex window 2</div>
+      <div class="files">Editing: src/utils/validation/*</div>
+      <div class="files">Status: coding</div>
+    </div>
+    <div class="wt-box">
+      <div class="branch">letta/19-competitor-research</div>
+      <div class="files">Letta Code session</div>
+      <div class="files">Writing: docs/research/competitors.md</div>
+      <div class="files">Status: researching</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="h-row-tight" style="margin-top: 12px;">
+    <div class="xs-box">
+      <strong>Rule 1</strong>
+      <span>Each agent = 1 branch = 1 worktree</span>
+    </div>
+    <div class="xs-box">
+      <strong>Rule 2</strong>
+      <span>Agent commits often to its branch</span>
+    </div>
+    <div class="xs-box">
+      <strong>Rule 3</strong>
+      <span>Agent NEVER merges to main</span>
+    </div>
+    <div class="xs-box">
+      <strong>Rule 4</strong>
+      <span>Agent opens PR when done</span>
+    </div>
+    <div class="xs-box">
+      <strong>Rule 5</strong>
+      <span>Agent updates Linear: "In Review"</span>
+    </div>
+  </div>
+
+  <div style="margin-top: 16px; font-size: 11px; color: #666; text-align: center;">
+    <strong>What happens when an agent gets blocked?</strong><br>
+    Agent adds <code style="background: #f0f0f0; padding: 1px 4px; border-radius: 2px;">blocked</code> label on Linear issue
+    → Slack #alerts fires notification
+    → Nico or Vincent unblocks
+    → Agent resumes
+  </div>
+</div>
+
+<div class="arrow-down">
+  <div class="text">agent finishes → opens Pull Request on GitHub</div>
+  <div class="shaft"></div>
+  <div class="head"></div>
+</div>
+
+<!-- ============================================ -->
+<!-- LAYER 5: REVIEW & MERGE PIPELINE -->
+<!-- ============================================ -->
+
+<div class="section" style="padding-bottom: 20px;">
+  <div class="section-label">Layer 5 — Review & Merge Pipeline (GitHub Owns This)</div>
+
+  <div class="flow" style="gap: 6px;">
+
+    <!-- Pipeline steps -->
+    <div class="pipeline">
+      <div class="pipe-box">
+        <strong>PR Opened</strong>
+        <span>Agent pushes branch,<br>opens PR on GitHub</span>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-box">
+        <strong>CI Runs</strong>
+        <span>GitHub Actions:<br>tests, lint, type-check</span>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-box">
+        <strong>Auto Review</strong>
+        <span>Copilot Code Review<br>checks for issues</span>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-box">
+        <strong>Nico Review</strong>
+        <span>Architecture check,<br>consistency, quality</span>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-box" style="border-width: 3px;">
+        <strong>MERGE</strong>
+        <span>Nico or Vincent<br>merges to main</span>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Decision points -->
+    <div style="font-size: 11px; color: #555; text-align: center; line-height: 2; max-width: 700px;">
+      <strong>At each gate, what can happen:</strong><br>
+      <strong>CI fails</strong> → PR stays open → Agent gets notified → Agent fixes on same branch → CI re-runs<br>
+      <strong>Review has comments</strong> → Agent addresses comments → Pushes update → Re-review<br>
+      <strong>Merge conflict with main</strong> → Agent rebases its branch → Resolves conflicts → Re-runs CI<br>
+      <strong>Merge conflict with another PR</strong> → Nico decides merge order → First PR merges → Second rebases<br>
+      <strong>All checks pass</strong> → Merge to main → Delete branch → Clean up worktree
+    </div>
+
+  </div>
+</div>
+
+<div class="arrow-down">
+  <div class="text">merged PR triggers downstream updates</div>
+  <div class="shaft"></div>
+  <div class="head"></div>
+</div>
+
+<!-- ============================================ -->
+<!-- LAYER 6: POST-MERGE -->
+<!-- ============================================ -->
+
+<div class="section" style="padding-bottom: 16px;">
+  <div class="section-label">Layer 6 — Post-Merge Automation</div>
+
+  <div class="h-row">
+    <div class="sm-box">
+      <h4>CI/CD Deploy</h4>
+      <p>GitHub Actions deploys to staging/prod</p>
+      <div class="detail">main branch → auto-deploy pipeline</div>
+    </div>
+    <div class="sm-box">
+      <h4>Linear → Done</h4>
+      <p>GitHub integration auto-moves issue to "Done"</p>
+      <div class="detail">bi-directional sync via branch name</div>
+    </div>
+    <div class="sm-box">
+      <h4>Worktree Cleanup</h4>
+      <p>Merged branch deleted, worktree removed</p>
+      <div class="detail">git worktree remove ../wt-{agent}-{issue}</div>
+    </div>
+    <div class="sm-box">
+      <h4>Slack Notification</h4>
+      <p>"PR #42 merged: auth module complete"</p>
+      <div class="detail">#status channel + relevant #project</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 16px; text-align: center;">
+    <div class="arrow-down" style="display: inline-flex;">
+      <div class="text">feeds back into the system</div>
+      <div class="shaft"></div>
+      <div class="head"></div>
+    </div>
+  </div>
+
+  <div class="h-row" style="margin-top: 4px;">
+    <div class="xs-box">
+      <strong>Letta Bot</strong>
+      <span>Reads merged status → updates next briefing</span>
+    </div>
+    <div class="xs-box">
+      <strong>Nico</strong>
+      <span>Checks for dependent issues → unblocks next tasks</span>
+    </div>
+    <div class="xs-box">
+      <strong>Metrics</strong>
+      <span>Cycle time, throughput, agent performance tracked</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SEPARATOR: NON-CODE FLOWS -->
+<!-- ============================================ -->
+
+<div style="width: 100%; border-top: 3px solid #111; margin: 32px 0 8px; position: relative;">
+  <span style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #fff; padding: 0 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111;">Parallel Flows (Non-Code Work)</span>
+</div>
+
+<div class="spacer"></div>
+
+<!-- ============================================ -->
+<!-- KNOWLEDGE FLOW -->
+<!-- ============================================ -->
+
+<div class="section" style="padding-bottom: 16px;">
+  <div class="section-label">Knowledge & Documentation Flow</div>
+
+  <div class="flow" style="gap: 6px;">
+    <div style="font-size: 12px; color: #555; text-align: center; max-width: 700px; line-height: 1.8;">
+      <strong>Research tasks</strong> (Letta Code / Gemini / ChatGPT)
+      &nbsp;→&nbsp; findings written to vault <code style="background: #f0f0f0; padding: 1px 4px; border-radius: 2px;">30-resources/</code>
+      &nbsp;→&nbsp; linked from Linear issue comment<br>
+
+      <strong>Decisions</strong> (Vincent via Nico)
+      &nbsp;→&nbsp; appended to <code style="background: #f0f0f0; padding: 1px 4px; border-radius: 2px;">decisions.md</code> (append-only, never edited)
+      &nbsp;→&nbsp; referenced in future issues<br>
+
+      <strong>SOPs & Processes</strong> (Nico)
+      &nbsp;→&nbsp; written to <code style="background: #f0f0f0; padding: 1px 4px; border-radius: 2px;">20-areas/</code>
+      &nbsp;→&nbsp; linked from AGENTS.md for agent context<br>
+
+      <strong>Session notes</strong> (auto-generated)
+      &nbsp;→&nbsp; written to <code style="background: #f0f0f0; padding: 1px 4px; border-radius: 2px;">00-dashboard/llm-sessions/</code>
+      &nbsp;→&nbsp; session-index.md auto-regenerated<br>
+
+      <strong>Client docs</strong> (Nico + Letta Bot)
+      &nbsp;→&nbsp; written to <code style="background: #f0f0f0; padding: 1px 4px; border-radius: 2px;">20-areas/clients/</code>
+      &nbsp;→&nbsp; linked from client's Linear project
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="h-row">
+      <div class="xs-box" style="border-color: #111; border-width: 2px;">
+        <strong>ONE WRITER PER FILE</strong>
+        <span>Only the designated owner edits. Others read only.</span>
+      </div>
+      <div class="xs-box" style="border-color: #111; border-width: 2px;">
+        <strong>VAULT = KNOWLEDGE ONLY</strong>
+        <span>Tasks live in Linear. Code lives in GitHub. Vault = docs + decisions.</span>
+      </div>
+      <div class="xs-box" style="border-color: #111; border-width: 2px;">
+        <strong>GIT-BACKED</strong>
+        <span>Vault is a git repo. Changes tracked. Conflicts resolved via git.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<!-- ============================================ -->
+<!-- COMMUNICATION FLOW -->
+<!-- ============================================ -->
+
+<div class="section" style="padding-bottom: 16px;">
+  <div class="section-label">Communication & Escalation Flow</div>
+
+  <div style="font-size: 12px; color: #555; text-align: center; line-height: 2.2; max-width: 800px; margin: 0 auto;">
+    <strong>Routine status:</strong>
+    Agent updates Linear issue status → Linear syncs to Slack #status → Letta Bot reads for briefing<br>
+
+    <strong>Agent blocked:</strong>
+    Agent labels issue "blocked" → Slack #alerts fires → Nico evaluates →
+    <em>if needs Vincent:</em> Telegram ping → Vincent responds → Nico unblocks<br>
+
+    <strong>Overnight result:</strong>
+    Overnight runner completes → draft PRs created → Letta Bot adds to morning briefing → Vincent reviews at 8am<br>
+
+    <strong>CI failure:</strong>
+    GitHub Actions fails → Slack #alerts → Nico assigns back to agent → agent fixes → re-runs<br>
+
+    <strong>Client escalation:</strong>
+    Client contacts Vincent → Vincent creates Linear issue tagged "client" P1 → Nico triages immediately<br>
+
+    <strong>Emergency:</strong>
+    Any agent can trigger iMessage alert via <code style="background: #f0f0f0; padding: 1px 4px; border-radius: 2px;">imessage-alert.sh</code> → goes to Vincent's phone
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<!-- ============================================ -->
+<!-- OVERNIGHT CYCLE -->
+<!-- ============================================ -->
+
+<div class="section" style="padding-bottom: 16px;">
+  <div class="section-label">Overnight Autonomous Cycle</div>
+
+  <div style="display: flex; align-items: flex-start; gap: 8px; width: 100%;">
+    <div class="xs-box" style="flex: none; width: 120px;">
+      <strong>10pm</strong>
+      <span>Nico queues overnight issues in Linear tagged "overnight-ok"</span>
+    </div>
+    <div class="arrow-right"><div class="shaft"></div><div class="head"></div></div>
+    <div class="xs-box" style="flex: none; width: 140px;">
+      <strong>2am</strong>
+      <span>Overnight runner reads queue, creates worktrees, dispatches agents</span>
+    </div>
+    <div class="arrow-right"><div class="shaft"></div><div class="head"></div></div>
+    <div class="xs-box" style="flex: none; width: 140px;">
+      <strong>2am–7am</strong>
+      <span>Agents work in isolated branches. Max 5 issues. No merging.</span>
+    </div>
+    <div class="arrow-right"><div class="shaft"></div><div class="head"></div></div>
+    <div class="xs-box" style="flex: none; width: 140px;">
+      <strong>7am</strong>
+      <span>Draft PRs ready. Summary generated. Letta Bot compiles briefing.</span>
+    </div>
+    <div class="arrow-right"><div class="shaft"></div><div class="head"></div></div>
+    <div class="xs-box" style="flex: none; width: 120px;">
+      <strong>8am</strong>
+      <span>Vincent reviews overnight PRs. Merges or requests changes.</span>
+    </div>
+  </div>
+
+  <div style="margin-top: 12px; font-size: 11px; color: #888; text-align: center;">
+    <strong>Safety rails:</strong> max 5 issues · "overnight-ok" label required · no schema migrations · no destructive ops · no auto-merge · alert on any failure
+  </div>
+</div>
+
+<div class="spacer"></div>
+<div class="spacer"></div>
+
+<!-- ============================================ -->
+<!-- COMPLETE DATA FLOW SUMMARY -->
+<!-- ============================================ -->
+
+<div style="width: 100%; border-top: 3px solid #111; margin: 16px 0 8px; position: relative;">
+  <span style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #fff; padding: 0 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111;">Complete Data Flow Summary</span>
+</div>
+
+<div class="spacer"></div>
+
+<div style="font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; line-height: 2; background: #fafafa; border: 1px solid #ddd; border-radius: 6px; padding: 20px 24px; white-space: pre; overflow-x: auto;">Vincent (idea)
+    │
+    ▼
+Telegram / Slack / Linear UI
+    │
+    ▼
+LINEAR INBOX ◄──── GitHub Events (CI fail, Dependabot, issue)
+    │                       ◄──── Letta Bot (auto-capture from Telegram)
+    ▼                       ◄──── Client requests (via Vincent)
+NICO TRIAGE
+    │
+    ├── P1-P4 priority set
+    ├── Project assigned
+    ├── Labels added
+    │
+    ▼
+DECOMPOSE (if needed)
+    │
+    ├── Sub-issue 1 ──→ Claude Code  ──→ worktree ──→ branch ──→ code ──→ PR
+    ├── Sub-issue 2 ──→ Codex        ──→ worktree ──→ branch ──→ code ──→ PR
+    ├── Sub-issue 3 ──→ Copilot      ──→ worktree ──→ branch ──→ code ──→ PR
+    ├── Sub-issue 4 ──→ Antigravity  ──→ worktree ──→ branch ──→ code ──→ PR
+    ├── Research     ──→ Letta Code  ──→ vault doc ──→ linked from issue
+    └── Docs/SOPs    ──→ Nico        ──→ vault doc ──→ linked from issue
+                                                            │
+    ┌───────────────────────────────────────────────────────┘
+    ▼
+GITHUB PR
+    │
+    ├── CI runs (tests, lint, type-check)
+    │     ├── FAIL ──→ back to agent ──→ fix ──→ re-push ──→ CI re-runs
+    │     └── PASS ──→ continue
+    │
+    ├── Copilot Code Review (automatic)
+    │     └── Comments ──→ agent addresses ──→ re-push
+    │
+    ├── Nico Review (architecture)
+    │     └── Comments ──→ agent addresses ──→ re-push
+    │
+    ├── Merge conflict?
+    │     ├── YES ──→ agent rebases ──→ re-push ──→ CI re-runs
+    │     └── NO  ──→ continue
+    │
+    ▼
+MERGE TO MAIN (Nico or Vincent)
+    │
+    ├──→ CI/CD deploys to staging/prod
+    ├──→ Linear issue auto-moves to "Done"
+    ├──→ Branch deleted, worktree cleaned up
+    ├──→ Slack #status notification
+    ├──→ Dependent issues unblocked in Linear
+    └──→ Letta Bot logs for next briefing
+    │
+    ▼
+CYCLE REPEATS</div>
+
+<div class="spacer"></div>
+<div class="spacer"></div>
+
+<!-- ============================================ -->
+<!-- WHAT LIVES WHERE -->
+<!-- ============================================ -->
+
+<div style="width: 100%; border-top: 3px solid #111; margin: 16px 0 8px; position: relative;">
+  <span style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #fff; padding: 0 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111;">What Lives Where (No Overlap)</span>
+</div>
+
+<div class="spacer"></div>
+
+<table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+  <thead>
+    <tr style="border-bottom: 2px solid #111;">
+      <th style="text-align: left; padding: 8px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888;">Data Type</th>
+      <th style="text-align: left; padding: 8px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888;">Lives In</th>
+      <th style="text-align: left; padding: 8px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888;">Who Writes</th>
+      <th style="text-align: left; padding: 8px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888;">Who Reads</th>
+      <th style="text-align: left; padding: 8px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888;">Why Here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 8px 12px; font-weight: 600;">Tasks & Issues</td>
+      <td style="padding: 8px 12px;">Linear</td>
+      <td style="padding: 8px 12px;">Any agent, Vincent</td>
+      <td style="padding: 8px 12px;">All agents, Vincent</td>
+      <td style="padding: 8px 12px; color: #666;">Database handles concurrent writes. Flat files can't.</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 8px 12px; font-weight: 600;">Application Code</td>
+      <td style="padding: 8px 12px;">GitHub repos</td>
+      <td style="padding: 8px 12px;">Coding agents (via worktree)</td>
+      <td style="padding: 8px 12px;">All agents</td>
+      <td style="padding: 8px 12px; color: #666;">Git handles branching & merging. Worktrees prevent conflicts.</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 8px 12px; font-weight: 600;">Decisions</td>
+      <td style="padding: 8px 12px;">Vault (decisions.md)</td>
+      <td style="padding: 8px 12px;">Nico only</td>
+      <td style="padding: 8px 12px;">All agents</td>
+      <td style="padding: 8px 12px; color: #666;">Append-only log. One writer = no conflicts.</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 8px 12px; font-weight: 600;">Research & Docs</td>
+      <td style="padding: 8px 12px;">Vault (30-resources/)</td>
+      <td style="padding: 8px 12px;">Designated agent per doc</td>
+      <td style="padding: 8px 12px;">All agents</td>
+      <td style="padding: 8px 12px; color: #666;">One writer per file rule. No two agents edit same doc.</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 8px 12px; font-weight: 600;">SOPs & Processes</td>
+      <td style="padding: 8px 12px;">Vault (20-areas/)</td>
+      <td style="padding: 8px 12px;">Nico</td>
+      <td style="padding: 8px 12px;">All agents</td>
+      <td style="padding: 8px 12px; color: #666;">Stable reference docs. Nico is sole maintainer.</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 8px 12px; font-weight: 600;">Persistent Memory</td>
+      <td style="padding: 8px 12px;">Letta Cloud</td>
+      <td style="padding: 8px 12px;">Letta agents only</td>
+      <td style="padding: 8px 12px;">Letta agents</td>
+      <td style="padding: 8px 12px; color: #666;">Agent identity & long-term context. Not shared with code agents.</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 8px 12px; font-weight: 600;">Real-time Comms</td>
+      <td style="padding: 8px 12px;">Slack + Telegram</td>
+      <td style="padding: 8px 12px;">Any agent, Vincent</td>
+      <td style="padding: 8px 12px;">Any agent, Vincent</td>
+      <td style="padding: 8px 12px; color: #666;">Ephemeral. Alerts & approvals. Not source of truth for anything.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 12px; font-weight: 600;">Metrics</td>
+      <td style="padding: 8px 12px;">Supabase or Spreadsheet</td>
+      <td style="padding: 8px 12px;">Automated (from Linear + GitHub APIs)</td>
+      <td style="padding: 8px 12px;">Nico, Vincent</td>
+      <td style="padding: 8px 12px; color: #666;">Derived data. Auto-generated from other systems.</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</body>
+</html>

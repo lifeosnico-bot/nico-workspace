@@ -1,0 +1,18 @@
+- obsidian plugins to match
+- Diagnose obsidian
+- Set up Mac studio
+- Get new letta bot working 
+	- Or get claude code working
+	- Or get letta running headless behind claude code
+- Get a final set up for security Mac studio
+- Final set up for multiple computers, agents and humans accessing the AI native Workspace
+- ? the overlying claude.md file at the moment 
+- Can obsidian be used to manage all tasks
+- Can git hub be used for task mgmt 
+- Orchestration set up 
+- Github orchestration software 
+- Memory
+- keep 1 obsidian or multiple vaults 
+- Obsidian vs Notion 
+- Paperclip?
+- 

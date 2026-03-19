@@ -1,6 +1,6 @@
 ---
 title: "Letta YouTube — Complete Video Catalog"
-date: 2026-03-01
+date: 2026-03-15
 tags: [letta, youtube, catalog]
 status: active
 type: research
@@ -8,13 +8,16 @@ project: nico-agent
 ---
 
 # Letta AI — Complete YouTube Catalog
-Last updated: 2026-03-01 | Source: @letta-ai channel
+Last updated: 2026-03-15 | Source: @letta-ai channel
 
 ✅ = Transcript pulled | ⏳ = Needs M1 pull
 
 ## Recent (Dec 2025 – Mar 2026) — 15 transcripts pulled ✅
 | ID | Title |
 |---|---|
+| 3npYYBU9NN4 | ⏳ Letta Devlog: Adding computer use to Claude Subconscious |
+| rCOHloFHgMs | ⏳ Letta Office Hours: March 12, 2026 |
+| -SwpYxjGRdg | ⏳ Letta Office Hours: Letta Remote, Claude Subconscious Demo, and Lettabot |
 | p7So3IM75WY | ✅ Letta Office Hours: MemFS, Letta Chat, and the future of AI agent memory |
 | j1agWxBx54E | ✅ Create stateful background agents using GitHub Actions |
 | R_4r_NNjg1M | ✅ Context Repositories: Git-backed Memory for Coding Agents (Deep Dive) |
