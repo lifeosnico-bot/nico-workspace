@@ -124093,3 +124093,24 @@ Starting LettaBot server...
 [06:48:21] [32mINFO[39m: [36m[Telegram] Group message filtered: groups-disabled[39m
 [02:53:34] [32mINFO[39m: [36m[Telegram] Group message filtered: groups-disabled[39m
 [02:53:40] [32mINFO[39m: [36m[Telegram] Group message filtered: groups-disabled[39m
+[16:18:34] [32mINFO[39m: [36m[Bot] Message from 8385420240 on telegram: hey[39m
+[16:18:34] [32mINFO[39m: [36m[Bot] Initializing session subprocess (key=telegram)...[39m
+[16:18:34] [31mERROR[39m: [36m[Bot] Error processing message:[39m 
+    err: {
+      "type": "Error",
+      "message": "Failed to initialize session - no init message received",
+      "stack":
+          Error: Failed to initialize session - no init message received
+              at Session.initialize (file:///Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/@letta-ai/letta-code-sdk/dist/index.js:449:11)
+              at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+              at async LettaBot.withSessionTimeout (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:345:20)
+              at async LettaBot._createSessionForKey (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:645:17)
+              at async LettaBot.ensureSessionForKey (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:575:20)
+              at async LettaBot.runSession (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:849:23)
+              at async LettaBot.processMessage (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1430:25)
+              at async LettaBot.processKeyedQueue (file:///Users/lifeos.nico/Nico/lettabot/lettabot/dist/core/bot.js:1295:17)
+    }
+[16:20:06] [32mINFO[39m: [36m[Telegram] Group message filtered: groups-disabled[39m
+[16:23:32] [32mINFO[39m: [36m[Telegram] Group message filtered: groups-disabled[39m
+[16:23:43] [32mINFO[39m: [36m[Telegram] Group message filtered: groups-disabled[39m
+[16:28:11] [32mINFO[39m: [36m[Telegram] Group message filtered: groups-disabled[39m

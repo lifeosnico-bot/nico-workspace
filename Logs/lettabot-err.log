@@ -16238,3 +16238,28 @@ Emitted 'error' event on Socket instance at:
 }
 
 Node.js v25.6.1
+[letta-code-sdk] CLI process error: Error: spawn node ENOENT
+    at ChildProcess._handle.onexit (node:internal/child_process:285:19)
+    at onErrorNT (node:internal/child_process:483:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'spawn node',
+  path: 'node',
+  spawnargs: [
+    '/Users/lifeos.nico/Nico/lettabot/lettabot/node_modules/@letta-ai/letta-code/letta.js',
+    '--output-format',
+    'stream-json',
+    '--input-format',
+    'stream-json',
+    '--conversation',
+    'conv-de2ec520-316d-44b5-a727-20215b0d13ac',
+    '--yolo',
+    '--allowedTools',
+    'Bash,Read,Edit,Write,Glob,Grep,Task,web_search,conversation_search,manage_todo',
+    '--disallowedTools',
+    'TodoWrite,EnterPlanMode,ExitPlanMode',
+    '--no-memfs'
+  ]
+}
+[letta-code-sdk] CLI process exited with code -2
