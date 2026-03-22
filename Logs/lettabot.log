@@ -124199,3 +124199,4 @@ Starting LettaBot server...
 [17:18:46] [32mINFO[39m: [36m[Gateway] 1/1 agents started[39m
 [17:18:46] [32mINFO[39m: [36m[Config] Key: f926454e... (set LETTABOT_API_KEY to customize)[39m
 [17:18:46] [32mINFO[39m: [36m[API] Server listening on 127.0.0.1:8088[39m
+[21:11:20] [32mINFO[39m: [36m[Telegram] Group message filtered: groups-disabled[39m
