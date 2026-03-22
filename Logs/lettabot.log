@@ -124114,3 +124114,7 @@ Starting LettaBot server...
 [16:23:32] [32mINFO[39m: [36m[Telegram] Group message filtered: groups-disabled[39m
 [16:23:43] [32mINFO[39m: [36m[Telegram] Group message filtered: groups-disabled[39m
 [16:28:11] [32mINFO[39m: [36m[Telegram] Group message filtered: groups-disabled[39m
+[17:18:06] [32mINFO[39m: [36m[Config] Shutting down...[39m
+[17:18:06] [32mINFO[39m: [36m[Cron] Service stopped[39m
+[17:18:06] [32mINFO[39m: [36m[Gateway] Stopping all agents...[39m
+[17:18:07] [32mINFO[39m: [36m[Gateway] Stopped: Nico[39m
