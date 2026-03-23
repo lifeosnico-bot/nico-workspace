@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucavo / LifeOS — CEO Launch Briefing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #111827;
+    --bg-card: #1a2235;
+    --bg-card-hover: #1f2a40;
+    --accent-blue: #0066ff;
+    --accent-cyan: #00e5ff;
+    --accent-orange: #d97757;
+    --accent-green: #34d399;
+    --accent-red: #f87171;
+    --accent-yellow: #fbbf24;
+    --accent-purple: #a78bfa;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border: #1e293b;
+    --border-accent: #0066ff33;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,14,23,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  nav .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; }
+  nav .logo span { color: var(--accent-cyan); }
+  nav .nav-links { display: flex; gap: 0.25rem; }
+  nav .nav-links a {
+    color: var(--text-secondary); text-decoration: none; font-size: 0.78rem;
+    padding: 0.4rem 0.75rem; border-radius: 6px; font-weight: 500;
+    transition: all 0.2s;
+  }
+  nav .nav-links a:hover, nav .nav-links a.active {
+    color: var(--text-primary); background: var(--bg-card);
+  }
+
+  /* ─── SECTIONS ─── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  section { padding: 5rem 0 3rem; }
+  section:first-of-type { padding-top: 7rem; }
+
+  h1 {
+    font-size: 3rem; font-weight: 900; letter-spacing: -0.04em;
+    line-height: 1.1; margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-cyan) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  h2 {
+    font-size: 1.75rem; font-weight: 800; letter-spacing: -0.03em;
+    margin-bottom: 1.5rem; color: var(--text-primary);
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  h2 .badge {
+    font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.6rem;
+    border-radius: 100px; text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  h3 {
+    font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem;
+    color: var(--text-primary); letter-spacing: -0.01em;
+  }
+  .subtitle {
+    font-size: 1.1rem; color: var(--text-secondary); max-width: 600px;
+    line-height: 1.7; margin-bottom: 2rem;
+  }
+  .section-label {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.15em; color: var(--accent-cyan); margin-bottom: 0.5rem;
+  }
+  .divider {
+    height: 1px; background: linear-gradient(90deg, var(--border) 0%, var(--accent-blue) 50%, var(--border) 100%);
+    margin: 3rem 0; opacity: 0.5;
+  }
+
+  /* ─── CARDS ─── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem; }
+
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.5rem;
+    transition: all 0.2s;
+  }
+  .card:hover { border-color: var(--accent-blue); background: var(--bg-card-hover); }
+
+  .stat-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem; text-align: center;
+  }
+  .stat-card .stat-value {
+    font-size: 2.2rem; font-weight: 900; letter-spacing: -0.03em;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .stat-card .stat-label {
+    font-size: 0.72rem; color: var(--text-muted); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.25rem;
+  }
+
+  /* ─── STATUS INDICATORS ─── */
+  .status {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.6rem;
+    border-radius: 100px; text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .status-done { background: #34d39920; color: var(--accent-green); }
+  .status-active { background: #0066ff20; color: var(--accent-blue); }
+  .status-blocked { background: #f8717120; color: var(--accent-red); }
+  .status-pending { background: #fbbf2420; color: var(--accent-yellow); }
+  .status-dot { width: 6px; height: 6px; border-radius: 50%; }
+  .status-done .status-dot { background: var(--accent-green); }
+  .status-active .status-dot { background: var(--accent-blue); }
+  .status-blocked .status-dot { background: var(--accent-red); }
+  .status-pending .status-dot { background: var(--accent-yellow); }
+
+  /* ─── TABLES ─── */
+  table {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    font-size: 0.82rem;
+  }
+  th {
+    text-align: left; padding: 0.6rem 1rem;
+    font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 0.7rem 1rem; border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+  tr:hover td { background: var(--bg-card); }
+
+  /* ─── DIAGRAMS ─── */
+  .diagram-box {
+    background: var(--bg-secondary); border: 1px solid var(--border);
+    border-radius: 12px; padding: 2rem; margin: 1.5rem 0;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+    overflow-x: auto;
+  }
+
+  .flow-row {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0;
+  }
+  .flow-node {
+    padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.75rem;
+    font-weight: 600; white-space: nowrap; text-align: center;
+    min-width: 80px;
+  }
+  .flow-arrow {
+    color: var(--text-muted); font-size: 1.2rem; flex-shrink: 0;
+  }
+
+  /* ─── PROGRESS BARS ─── */
+  .progress-bar {
+    height: 8px; background: var(--border); border-radius: 100px;
+    overflow: hidden; margin-top: 0.5rem;
+  }
+  .progress-fill {
+    height: 100%; border-radius: 100px;
+    transition: width 0.5s ease;
+  }
+
+  /* ─── TIMELINE ─── */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--border);
+  }
+  .timeline-item { position: relative; margin-bottom: 1.5rem; }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -2rem; top: 8px;
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 2px solid var(--accent-blue); background: var(--bg-primary);
+  }
+  .timeline-item.done::before { background: var(--accent-green); border-color: var(--accent-green); }
+  .timeline-item.active::before { background: var(--accent-blue); border-color: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-blue); }
+  .timeline-item.blocked::before { background: var(--accent-red); border-color: var(--accent-red); }
+  .timeline-week {
+    font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--accent-cyan); margin-bottom: 0.25rem;
+  }
+  .timeline-title { font-weight: 600; font-size: 0.9rem; }
+  .timeline-desc { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem; }
+
+  /* ─── PILL TAGS ─── */
+  .tag {
+    display: inline-block; font-size: 0.65rem; font-weight: 600;
+    padding: 0.15rem 0.5rem; border-radius: 100px;
+    letter-spacing: 0.04em;
+  }
+  .tag-blue { background: #0066ff20; color: #60a5fa; }
+  .tag-green { background: #34d39920; color: #34d399; }
+  .tag-orange { background: #d9775720; color: #d97757; }
+  .tag-red { background: #f8717120; color: #f87171; }
+  .tag-purple { background: #a78bfa20; color: #a78bfa; }
+
+  /* ─── ARCHITECTURE SVG ─── */
+  .arch-container { display: flex; justify-content: center; margin: 2rem 0; }
+  svg text { font-family: 'Inter', sans-serif; }
+
+  /* ─── QUESTION CARDS ─── */
+  .question-card {
+    background: var(--bg-card); border: 1px solid var(--accent-orange);
+    border-left: 4px solid var(--accent-orange);
+    border-radius: 0 12px 12px 0; padding: 1.25rem; margin-bottom: 1rem;
+  }
+  .question-card .q-num {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+    color: var(--accent-orange); font-weight: 700; margin-bottom: 0.25rem;
+  }
+  .question-card .q-text { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; }
+  .question-card .q-context { font-size: 0.78rem; color: var(--text-muted); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    h1 { font-size: 2rem; }
+    nav .nav-links { display: none; }
+  }
+
+  /* ─── TABS ─── */
+  .tab-group { display: flex; gap: 0.25rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .tab-btn {
+    padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--border);
+    background: transparent; color: var(--text-secondary); font-size: 0.78rem;
+    font-weight: 600; cursor: pointer; transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .tab-btn:hover { border-color: var(--accent-blue); color: var(--text-primary); }
+  .tab-btn.active { background: var(--accent-blue); border-color: var(--accent-blue); color: #fff; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* ─── METRIC BARS ─── */
+  .metric-row {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;
+  }
+  .metric-label { font-size: 0.78rem; font-weight: 500; min-width: 140px; color: var(--text-secondary); }
+  .metric-bar-bg {
+    flex: 1; height: 24px; background: var(--border); border-radius: 6px;
+    overflow: hidden; position: relative;
+  }
+  .metric-bar-fill {
+    height: 100%; border-radius: 6px; display: flex; align-items: center;
+    padding-left: 0.5rem; font-size: 0.7rem; font-weight: 700; color: #fff;
+    transition: width 0.6s ease;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav>
+  <div class="logo">LUCAVO<span> / </span>LIFEOS</div>
+  <div class="nav-links">
+    <a href="#overview" class="active">Overview</a>
+    <a href="#business">Business</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#agents">Agents</a>
+    <a href="#ops">Operations</a>
+    <a href="#infra">Infrastructure</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#finance">Finance</a>
+    <a href="#questions">Open Items</a>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="overview">
+<div class="container">
+  <div class="section-label">CEO Launch Briefing — March 21, 2026</div>
+  <h1>State of the Business</h1>
+  <p class="subtitle">Everything you need to know to launch. One document. Every system, every decision, every open question — synthesized from 280+ tasks, 35 sessions, and 60+ research notes across the entire vault.</p>
+
+  <div class="grid-4" style="margin-top:2.5rem;">
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--accent-green);">2</div>
+      <div class="stat-label">Business Lines</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--accent-cyan);">7</div>
+      <div class="stat-label">AI Agents Planned</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--accent-orange);">35</div>
+      <div class="stat-label">Work Sessions Done</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--accent-red);">12</div>
+      <div class="stat-label">Blockers / Open Qs</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══════════════ BUSINESS ═══════════════ -->
+<section id="business">
+<div class="container">
+  <div class="section-label">The Business</div>
+  <h2>Two Business Lines, One Operating System</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
+        <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent-orange),#b45309);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">&#9670;</div>
+        <div>
+          <h3 style="margin:0;">Lucavo Design</h3>
+          <span class="tag tag-orange">Revenue Generator</span>
+        </div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:1rem;">Custom cabinet design and manufacturing. Active client operations. The cash engine that funds the SaaS development.</p>
+      <table>
+        <tr><td style="font-weight:600;color:var(--text-primary);">Model</td><td>Service business — project-based</td></tr>
+        <tr><td style="font-weight:600;color:var(--text-primary);">Status</td><td><span class="status status-active"><span class="status-dot"></span>Active</span></td></tr>
+        <tr><td style="font-weight:600;color:var(--text-primary);">Processes</td><td>Client intake, quoting, project tracking, invoicing</td></tr>
+        <tr><td style="font-weight:600;color:var(--text-primary);">Agent Role</td><td>Nico + LettaBot manage client comms & ops</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
+        <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent-blue),var(--accent-cyan));display:flex;align-items:center;justify-content:center;font-size:1.2rem;">&#9671;</div>
+        <div>
+          <h3 style="margin:0;">Cabinet Agent SaaS Portal</h3>
+          <span class="tag tag-blue">Scale Play</span>
+        </div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:1rem;">AI-native client portal built on Next.js + Supabase. The vision: productize every internal workflow and sell the operating system to other businesses.</p>
+      <table>
+        <tr><td style="font-weight:600;color:var(--text-primary);">Model</td><td>SaaS — subscription-based</td></tr>
+        <tr><td style="font-weight:600;color:var(--text-primary);">Status</td><td><span class="status status-pending"><span class="status-dot"></span>Pre-Build</span></td></tr>
+        <tr><td style="font-weight:600;color:var(--text-primary);">Stack</td><td>Next.js, Supabase, Vercel</td></tr>
+        <tr><td style="font-weight:600;color:var(--text-primary);">Key Insight</td><td>Every workflow perfected internally = feature to sell</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1.25rem;border-color:var(--accent-cyan);border-left:4px solid var(--accent-cyan);border-radius:0 12px 12px 0;">
+    <h3 style="color:var(--accent-cyan);margin-bottom:0.5rem;">Core Thesis</h3>
+    <p style="font-size:0.88rem;color:var(--text-secondary);">You're not building a company that <em>uses</em> AI. You're building an <strong style="color:var(--text-primary);">AI-native company where the operating system IS the product.</strong> Lucavo Design is the proving ground. The SaaS portal is the scale vehicle. Every workflow perfected with Nico and the agent fleet becomes a sellable feature.</p>
+  </div>
+</div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══════════════ ARCHITECTURE ═══════════════ -->
+<section id="architecture">
+<div class="container">
+  <div class="section-label">System Architecture</div>
+  <h2>The Multi-Agent Operating System</h2>
+
+  <!-- Coordination Stack Diagram -->
+  <div class="diagram-box">
+    <div style="text-align:center;margin-bottom:1.5rem;">
+      <div class="flow-node" style="background:linear-gradient(135deg,var(--accent-orange),#b45309);color:#fff;font-size:0.85rem;padding:0.6rem 2rem;">VINCENT (CEO)</div>
+      <div style="color:var(--text-muted);margin:0.5rem 0;">Telegram / Slack / Linear UI</div>
+    </div>
+
+    <div style="text-align:center;color:var(--text-muted);font-size:1.2rem;">&#8595;</div>
+
+    <div style="text-align:center;margin:0.75rem 0;">
+      <div class="flow-node" style="background:var(--accent-blue);color:#fff;font-size:0.85rem;padding:0.6rem 2rem;display:inline-block;">NICO — Chief of Staff (Coordinator)</div>
+    </div>
+
+    <div style="text-align:center;color:var(--text-muted);font-size:1.2rem;">&#8595;</div>
+
+    <div class="flow-row" style="margin:1rem 0;">
+      <div class="flow-node" style="background:#1e3a5f;color:var(--accent-cyan);border:1px solid var(--accent-cyan);">LINEAR<br><span style="font-size:0.6rem;opacity:0.7;">Tasks</span></div>
+      <div class="flow-node" style="background:#1e3a5f;color:var(--accent-cyan);border:1px solid var(--accent-cyan);">GITHUB<br><span style="font-size:0.6rem;opacity:0.7;">Code + CI</span></div>
+      <div class="flow-node" style="background:#1e3a5f;color:var(--accent-cyan);border:1px solid var(--accent-cyan);">SLACK<br><span style="font-size:0.6rem;opacity:0.7;">Comms</span></div>
+      <div class="flow-node" style="background:#1e3a5f;color:var(--accent-cyan);border:1px solid var(--accent-cyan);">OBSIDIAN<br><span style="font-size:0.6rem;opacity:0.7;">Knowledge</span></div>
+      <div class="flow-node" style="background:#1e3a5f;color:var(--accent-cyan);border:1px solid var(--accent-cyan);">LETTA<br><span style="font-size:0.6rem;opacity:0.7;">Memory</span></div>
+    </div>
+
+    <div style="text-align:center;color:var(--text-muted);font-size:1.2rem;">&#8595;</div>
+
+    <div class="flow-row" style="margin:1rem 0;">
+      <div class="flow-node" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);">Claude Code</div>
+      <div class="flow-node" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);">Codex</div>
+      <div class="flow-node" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);">Copilot</div>
+      <div class="flow-node" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);">Antigravity</div>
+      <div class="flow-node" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);">LettaBot</div>
+    </div>
+
+    <div style="text-align:center;color:var(--text-muted);font-size:1.2rem;">&#8595;</div>
+
+    <div style="text-align:center;margin-top:0.75rem;">
+      <div class="flow-node" style="background:#0f2b1a;color:var(--accent-green);border:1px solid var(--accent-green);padding:0.5rem 2.5rem;">GIT WORKTREES → ISOLATED BRANCHES → PRs → MAIN</div>
+    </div>
+  </div>
+
+  <!-- Five Layer Architecture -->
+  <h3 style="margin-top:2rem;">Five-Layer Data Architecture</h3>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.75rem;margin-top:1rem;">
+    <div style="background:var(--bg-card);border-top:3px solid var(--accent-blue);border-radius:0 0 10px 10px;padding:1rem;text-align:center;">
+      <div style="font-size:0.85rem;font-weight:700;margin-bottom:0.25rem;">Tasks</div>
+      <div style="font-size:0.7rem;color:var(--text-muted);">Linear / GitHub Issues</div>
+      <div style="font-size:0.65rem;color:var(--accent-blue);margin-top:0.5rem;">Any agent writes</div>
+    </div>
+    <div style="background:var(--bg-card);border-top:3px solid var(--accent-green);border-radius:0 0 10px 10px;padding:1rem;text-align:center;">
+      <div style="font-size:0.85rem;font-weight:700;margin-bottom:0.25rem;">Knowledge</div>
+      <div style="font-size:0.7rem;color:var(--text-muted);">Obsidian Vault</div>
+      <div style="font-size:0.65rem;color:var(--accent-green);margin-top:0.5rem;">Designated writer</div>
+    </div>
+    <div style="background:var(--bg-card);border-top:3px solid var(--accent-purple);border-radius:0 0 10px 10px;padding:1rem;text-align:center;">
+      <div style="font-size:0.85rem;font-weight:700;margin-bottom:0.25rem;">Code</div>
+      <div style="font-size:0.7rem;color:var(--text-muted);">GitHub Repos</div>
+      <div style="font-size:0.65rem;color:var(--accent-purple);margin-top:0.5rem;">Agent via branch</div>
+    </div>
+    <div style="background:var(--bg-card);border-top:3px solid var(--accent-orange);border-radius:0 0 10px 10px;padding:1rem;text-align:center;">
+      <div style="font-size:0.85rem;font-weight:700;margin-bottom:0.25rem;">Comms</div>
+      <div style="font-size:0.7rem;color:var(--text-muted);">Slack + Telegram</div>
+      <div style="font-size:0.65rem;color:var(--accent-orange);margin-top:0.5rem;">Any agent</div>
+    </div>
+    <div style="background:var(--bg-card);border-top:3px solid var(--accent-red);border-radius:0 0 10px 10px;padding:1rem;text-align:center;">
+      <div style="font-size:0.85rem;font-weight:700;margin-bottom:0.25rem;">Memory</div>
+      <div style="font-size:0.7rem;color:var(--text-muted);">Letta Persistent</div>
+      <div style="font-size:0.65rem;color:var(--accent-red);margin-top:0.5rem;">Letta agents only</div>
+    </div>
+  </div>
+
+  <!-- Key Principle -->
+  <div class="card" style="margin-top:1.5rem;border-left:4px solid var(--accent-green);border-radius:0 12px 12px 0;">
+    <p style="font-size:0.85rem;color:var(--text-secondary);"><strong style="color:var(--accent-green);">Key Principle:</strong> Tasks go in a database (Linear), not a file. Files are for knowledge. Code is in repos. Never mix these. Never maintain two mutable copies of anything.</p>
+  </div>
+</div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══════════════ AGENTS ═══════════════ -->
+<section id="agents">
+<div class="container">
+  <div class="section-label">The Agent Fleet</div>
+  <h2>7 Agents, Defined Roles</h2>
+
+  <div style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>Agent</th>
+          <th>Platform</th>
+          <th>Role</th>
+          <th>Strength</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:700;color:var(--accent-blue);">Nico</td>
+          <td>Claude Code</td>
+          <td>Chief of Staff — delegates, coordinates, reviews</td>
+          <td>Strategic planning, task decomposition</td>
+          <td><span class="status status-active"><span class="status-dot"></span>Active</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:var(--accent-green);">LettaBot</td>
+          <td>Letta (always-on)</td>
+          <td>Executive Assistant — 24/7 interface via Telegram</td>
+          <td>Persistent memory, heartbeats</td>
+          <td><span class="status status-blocked"><span class="status-dot"></span>Needs Fix</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:var(--accent-purple);">Claude Code</td>
+          <td>Claude Code CLI</td>
+          <td>Senior Engineer — complex builds, architecture</td>
+          <td>Deep reasoning, multi-file refactors</td>
+          <td><span class="status status-active"><span class="status-dot"></span>Active</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:var(--accent-cyan);">Codex</td>
+          <td>OpenAI Codex CLI</td>
+          <td>Mid Engineer — focused implementation</td>
+          <td>Fast execution, boilerplate, tests</td>
+          <td><span class="status status-pending"><span class="status-dot"></span>Setup TBD</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:var(--text-secondary);">Copilot</td>
+          <td>GitHub Native</td>
+          <td>Junior Engineer — PR-scoped tasks</td>
+          <td>GitHub-native, auto-PR, CI integration</td>
+          <td><span class="status status-pending"><span class="status-dot"></span>Setup TBD</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:var(--accent-orange);">Antigravity</td>
+          <td>Antigravity IDE</td>
+          <td>Specialist — skill-based execution</td>
+          <td>1200+ pre-built skills</td>
+          <td><span class="status status-pending"><span class="status-dot"></span>Setup TBD</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:var(--accent-yellow);">Gemini / ChatGPT</td>
+          <td>Chat interfaces</td>
+          <td>Research Analysts</td>
+          <td>Broad knowledge, web access</td>
+          <td><span class="status status-active"><span class="status-dot"></span>Available</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Task Routing -->
+  <h3 style="margin-top:2.5rem;">Agent Task Routing Matrix</h3>
+  <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:1rem;">When Nico decomposes a task, it routes to the right agent based on task type.</p>
+
+  <div class="grid-3">
+    <div class="card" style="border-top:2px solid var(--accent-blue);">
+      <div style="font-size:0.72rem;color:var(--accent-blue);font-weight:700;margin-bottom:0.5rem;">CLAUDE CODE</div>
+      <ul style="font-size:0.78rem;color:var(--text-secondary);list-style:none;padding:0;">
+        <li style="margin-bottom:0.35rem;">&#8227; Complex architecture</li>
+        <li style="margin-bottom:0.35rem;">&#8227; Multi-file refactors</li>
+        <li style="margin-bottom:0.35rem;">&#8227; Spec writing</li>
+        <li style="margin-bottom:0.35rem;">&#8227; DevOps / CI/CD</li>
+        <li>&#8227; Financial modeling</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:2px solid var(--accent-cyan);">
+      <div style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.5rem;">CODEX + COPILOT</div>
+      <ul style="font-size:0.78rem;color:var(--text-secondary);list-style:none;padding:0;">
+        <li style="margin-bottom:0.35rem;">&#8227; Feature implementation</li>
+        <li style="margin-bottom:0.35rem;">&#8227; Bug fixes</li>
+        <li style="margin-bottom:0.35rem;">&#8227; Test writing</li>
+        <li style="margin-bottom:0.35rem;">&#8227; Overnight batch work</li>
+        <li>&#8227; Boilerplate generation</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:2px solid var(--accent-orange);">
+      <div style="font-size:0.72rem;color:var(--accent-orange);font-weight:700;margin-bottom:0.5rem;">LETTABOT + RESEARCH</div>
+      <ul style="font-size:0.78rem;color:var(--text-secondary);list-style:none;padding:0;">
+        <li style="margin-bottom:0.35rem;">&#8227; Client communications</li>
+        <li style="margin-bottom:0.35rem;">&#8227; Telegram interface</li>
+        <li style="margin-bottom:0.35rem;">&#8227; Competitive analysis</li>
+        <li style="margin-bottom:0.35rem;">&#8227; SEO research</li>
+        <li>&#8227; Content brainstorming</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══════════════ OPERATIONS ═══════════════ -->
+<section id="ops">
+<div class="container">
+  <div class="section-label">Daily Operations</div>
+  <h2>How the Day Actually Runs</h2>
+
+  <!-- Daily Cycle -->
+  <div class="grid-3">
+    <div class="card" style="border-top:3px solid var(--accent-yellow);">
+      <h3 style="color:var(--accent-yellow);">Morning (8 AM)</h3>
+      <ol style="font-size:0.8rem;color:var(--text-secondary);padding-left:1.25rem;">
+        <li style="margin-bottom:0.5rem;">LettaBot sends Telegram briefing: priorities, overnight PRs, blockers</li>
+        <li style="margin-bottom:0.5rem;">Nico scans Linear, updates priorities, assigns agents</li>
+        <li>Vincent reviews, reprioritizes via Telegram or Linear</li>
+      </ol>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent-blue);">
+      <h3 style="color:var(--accent-blue);">Work Hours</h3>
+      <ol style="font-size:0.8rem;color:var(--text-secondary);padding-left:1.25rem;">
+        <li style="margin-bottom:0.5rem;">Nico decomposes tasks into 5-15 min agent-sized issues</li>
+        <li style="margin-bottom:0.5rem;">Agents pick up issues → branch → work → PR</li>
+        <li style="margin-bottom:0.5rem;">CI runs tests on every PR automatically</li>
+        <li>Nico reviews PRs for architecture; Vincent reviews business-critical</li>
+      </ol>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent-purple);">
+      <h3 style="color:var(--accent-purple);">Overnight</h3>
+      <ol style="font-size:0.8rem;color:var(--text-secondary);padding-left:1.25rem;">
+        <li style="margin-bottom:0.5rem;">Runner picks up "overnight-ok" labeled tasks</li>
+        <li style="margin-bottom:0.5rem;">Agents work in isolated worktrees, open draft PRs</li>
+        <li style="margin-bottom:0.5rem;">Nothing merges without morning review</li>
+        <li>LettaBot consolidates day's decisions to memory</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Task Pipeline Flow -->
+  <h3 style="margin-top:2.5rem;">Task Pipeline</h3>
+  <div class="diagram-box">
+    <div class="flow-row">
+      <div class="flow-node" style="background:#7c3aed20;color:var(--accent-purple);border:1px solid var(--accent-purple);">INTAKE</div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-node" style="background:#0066ff20;color:var(--accent-blue);border:1px solid var(--accent-blue);">TRIAGE</div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-node" style="background:#00e5ff15;color:var(--accent-cyan);border:1px solid var(--accent-cyan);">DECOMPOSE</div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-node" style="background:#fbbf2420;color:var(--accent-yellow);border:1px solid var(--accent-yellow);">ASSIGN</div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-node" style="background:#d9775720;color:var(--accent-orange);border:1px solid var(--accent-orange);">EXECUTE</div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-node" style="background:#34d39920;color:var(--accent-green);border:1px solid var(--accent-green);">REVIEW</div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-node" style="background:#34d39940;color:var(--accent-green);border:1px solid var(--accent-green);font-weight:800;">MERGE</div>
+    </div>
+    <div style="text-align:center;margin-top:1rem;font-size:0.72rem;color:var(--text-muted);">
+      Vincent/LettaBot &nbsp;&#8594;&nbsp; Nico &nbsp;&#8594;&nbsp; Nico &nbsp;&#8594;&nbsp; Nico &nbsp;&#8594;&nbsp; Agent &nbsp;&#8594;&nbsp; CI + Nico &nbsp;&#8594;&nbsp; Nico/Vincent
+    </div>
+  </div>
+
+  <!-- Business Modules -->
+  <h3 style="margin-top:2.5rem;">Business Modules (Business-as-Software)</h3>
+  <div class="grid-3" style="margin-top:1rem;">
+    <div class="card">
+      <div style="font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Engineering</div>
+      <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.75rem;">Owner: Nico + Claude Code</div>
+      <div class="metric-row"><span class="metric-label">Features</span><div class="metric-bar-bg"><div class="metric-bar-fill" style="width:15%;background:var(--accent-blue);">Pre-build</div></div></div>
+      <div class="metric-row"><span class="metric-label">CI/CD</span><div class="metric-bar-bg"><div class="metric-bar-fill" style="width:40%;background:var(--accent-cyan);">GitHub Actions</div></div></div>
+      <div class="metric-row"><span class="metric-label">Testing</span><div class="metric-bar-bg"><div class="metric-bar-fill" style="width:10%;background:var(--accent-purple);">Planned</div></div></div>
+    </div>
+    <div class="card">
+      <div style="font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Operations</div>
+      <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.75rem;">Owner: Nico + LettaBot</div>
+      <div class="metric-row"><span class="metric-label">Task System</span><div class="metric-bar-bg"><div class="metric-bar-fill" style="width:65%;background:var(--accent-green);">status.md live</div></div></div>
+      <div class="metric-row"><span class="metric-label">Briefings</span><div class="metric-bar-bg"><div class="metric-bar-fill" style="width:30%;background:var(--accent-yellow);">Needs LettaBot</div></div></div>
+      <div class="metric-row"><span class="metric-label">Overnight</span><div class="metric-bar-bg"><div class="metric-bar-fill" style="width:50%;background:var(--accent-orange);">PR #14 pending</div></div></div>
+    </div>
+    <div class="card">
+      <div style="font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Client Mgmt</div>
+      <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.75rem;">Owner: Nico + LettaBot</div>
+      <div class="metric-row"><span class="metric-label">Intake</span><div class="metric-bar-bg"><div class="metric-bar-fill" style="width:20%;background:var(--accent-blue);">Template ready</div></div></div>
+      <div class="metric-row"><span class="metric-label">Quoting</span><div class="metric-bar-bg"><div class="metric-bar-fill" style="width:10%;background:var(--accent-purple);">Manual</div></div></div>
+      <div class="metric-row"><span class="metric-label">Comms</span><div class="metric-bar-bg"><div class="metric-bar-fill" style="width:25%;background:var(--accent-cyan);">LettaBot planned</div></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══════════════ INFRASTRUCTURE ═══════════════ -->
+<section id="infra">
+<div class="container">
+  <div class="section-label">Infrastructure</div>
+  <h2>What's Built vs. What's Needed</h2>
+
+  <div class="grid-2">
+    <!-- DONE -->
+    <div class="card" style="border-top:3px solid var(--accent-green);">
+      <h3 style="color:var(--accent-green);">Operational</h3>
+      <table>
+        <tr><td><span class="status status-done"><span class="status-dot"></span>Done</span></td><td>M1 Mac factory reset + hardened</td></tr>
+        <tr><td><span class="status status-done"><span class="status-dot"></span>Done</span></td><td>Claude Code + YOLO alias</td></tr>
+        <tr><td><span class="status status-done"><span class="status-dot"></span>Done</span></td><td>Letta / LettaBot on M1</td></tr>
+        <tr><td><span class="status status-done"><span class="status-dot"></span>Done</span></td><td>GitHub repos + branch protection</td></tr>
+        <tr><td><span class="status status-done"><span class="status-dot"></span>Done</span></td><td>Tailscale M1 ↔ M3 + SSH</td></tr>
+        <tr><td><span class="status status-done"><span class="status-dot"></span>Done</span></td><td>Obsidian Catalyst + CLI</td></tr>
+        <tr><td><span class="status status-done"><span class="status-dot"></span>Done</span></td><td>Slack workspace + bot token</td></tr>
+        <tr><td><span class="status status-done"><span class="status-dot"></span>Done</span></td><td>Vault structure (PARA-based)</td></tr>
+        <tr><td><span class="status status-done"><span class="status-dot"></span>Done</span></td><td>Session/decision logging</td></tr>
+      </table>
+    </div>
+
+    <!-- NEEDED -->
+    <div class="card" style="border-top:3px solid var(--accent-red);">
+      <h3 style="color:var(--accent-red);">Still Needed</h3>
+      <table>
+        <tr><td><span class="status status-blocked"><span class="status-dot"></span>Blocked</span></td><td>Telegram token rotation (needs Vincent)</td></tr>
+        <tr><td><span class="status status-blocked"><span class="status-dot"></span>Blocked</span></td><td>1Password account ($2.99/mo)</td></tr>
+        <tr><td><span class="status status-blocked"><span class="status-dot"></span>Blocked</span></td><td>Obsidian Sync + community plugins</td></tr>
+        <tr><td><span class="status status-pending"><span class="status-dot"></span>Pending</span></td><td>PR #14 merge (overnight runner)</td></tr>
+        <tr><td><span class="status status-pending"><span class="status-dot"></span>Pending</span></td><td>Linear workspace setup</td></tr>
+        <tr><td><span class="status status-pending"><span class="status-dot"></span>Pending</span></td><td>LettaBot diagnostic fixes (44 items)</td></tr>
+        <tr><td><span class="status status-pending"><span class="status-dot"></span>Pending</span></td><td>Agent GitHub accounts</td></tr>
+        <tr><td><span class="status status-pending"><span class="status-dot"></span>Pending</span></td><td>Mac Studio procurement</td></tr>
+        <tr><td><span class="status status-pending"><span class="status-dot"></span>Pending</span></td><td>AGENTS.md per repo</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Memory System -->
+  <h3 style="margin-top:2rem;">Three-Layer Memory Architecture</h3>
+  <div class="diagram-box">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;text-align:center;">
+      <div>
+        <div style="background:var(--accent-blue);color:#fff;padding:0.75rem;border-radius:10px 10px 0 0;font-weight:700;font-size:0.85rem;">Layer 1: Live Context</div>
+        <div style="background:var(--bg-card);padding:1rem;border-radius:0 0 10px 10px;border:1px solid var(--border);border-top:none;">
+          <div style="font-size:0.78rem;color:var(--text-secondary);">Claude session window</div>
+          <div style="font-size:0.68rem;color:var(--text-muted);margin-top:0.5rem;">200k tokens, ephemeral, per-session</div>
+        </div>
+      </div>
+      <div>
+        <div style="background:var(--accent-green);color:#fff;padding:0.75rem;border-radius:10px 10px 0 0;font-weight:700;font-size:0.85rem;">Layer 2: Persistent Memory</div>
+        <div style="background:var(--bg-card);padding:1rem;border-radius:0 0 10px 10px;border:1px solid var(--border);border-top:none;">
+          <div style="font-size:0.78rem;color:var(--text-secondary);">Letta agent memory blocks</div>
+          <div style="font-size:0.68rem;color:var(--text-muted);margin-top:0.5rem;">Core + recall + archival + sleeptime</div>
+        </div>
+      </div>
+      <div>
+        <div style="background:var(--accent-orange);color:#fff;padding:0.75rem;border-radius:10px 10px 0 0;font-weight:700;font-size:0.85rem;">Layer 3: Operating Docs</div>
+        <div style="background:var(--bg-card);padding:1rem;border-radius:0 0 10px 10px;border:1px solid var(--border);border-top:none;">
+          <div style="font-size:0.78rem;color:var(--text-secondary);">Obsidian vault (git-backed)</div>
+          <div style="font-size:0.68rem;color:var(--text-muted);margin-top:0.5rem;">SOPs, decisions, research, client docs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══════════════ DECISIONS ═══════════════ -->
+<section id="decisions">
+<div class="container">
+  <div class="section-label">Decision Log</div>
+  <h2>Key Decisions Made <span class="badge" style="background:var(--accent-green);color:#fff;">Locked</span></h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <table>
+        <tr><td style="font-weight:600;color:var(--accent-cyan);white-space:nowrap;">Architecture</td><td>Build for N agents (5+), not single-agent shortcuts</td></tr>
+        <tr><td style="font-weight:600;color:var(--accent-cyan);white-space:nowrap;">Communication</td><td>Slack = infrastructure backbone, iMessage for escalation only</td></tr>
+        <tr><td style="font-weight:600;color:var(--accent-cyan);white-space:nowrap;">Platform</td><td>Slack over Discord (business perception)</td></tr>
+        <tr><td style="font-weight:600;color:var(--accent-cyan);white-space:nowrap;">Git Workflow</td><td>Branch protection now, not later. PR-required merges.</td></tr>
+        <tr><td style="font-weight:600;color:var(--accent-cyan);white-space:nowrap;">LettaBot Model</td><td>OpenAI GPT via Pro sub ($0 marginal cost)</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <table>
+        <tr><td style="font-weight:600;color:var(--accent-cyan);white-space:nowrap;">Canonical Rule</td><td>Never maintain two mutable copies of anything</td></tr>
+        <tr><td style="font-weight:600;color:var(--accent-cyan);white-space:nowrap;">Autonomy</td><td>Nico owns infrastructure; Vincent owns business decisions</td></tr>
+        <tr><td style="font-weight:600;color:var(--accent-cyan);white-space:nowrap;">Sub-Agents</td><td>Letta for persistence, Claude Code for execution-only</td></tr>
+        <tr><td style="font-weight:600;color:var(--accent-cyan);white-space:nowrap;">Knowledge</td><td>Obsidian as sole doc front-end (no Apple Notes/Reminders)</td></tr>
+        <tr><td style="font-weight:600;color:var(--accent-cyan);white-space:nowrap;">Search</td><td>DuckDuckGo free over Exa shared credits</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══════════════ ROADMAP ═══════════════ -->
+<section id="roadmap">
+<div class="container">
+  <div class="section-label">Implementation Roadmap</div>
+  <h2>Four-Week Launch Plan</h2>
+
+  <div class="timeline">
+    <div class="timeline-item done">
+      <div class="timeline-week">Completed (Pre-Launch)</div>
+      <div class="timeline-title">Foundation Infrastructure</div>
+      <div class="timeline-desc">M1 reset, Claude Code, Letta, GitHub, Tailscale, Obsidian, Slack — all operational. 35 work sessions, 60+ research notes processed. Vault structure established.</div>
+    </div>
+
+    <div class="timeline-item active">
+      <div class="timeline-week">Week 1 — Foundation</div>
+      <div class="timeline-title">Resolve Blockers + Linear Setup</div>
+      <div class="timeline-desc">Telegram token rotation, 1Password, Obsidian Sync, Linear workspace, AGENTS.md files, VS Code workspace config. <strong>Vincent action required on 3 items.</strong></div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-week">Week 2 — Automation</div>
+      <div class="timeline-title">Worktree Scripts + Delegation Engine</div>
+      <div class="timeline-desc">Git worktree automation, Nico delegation loop (30-min cycle), GitHub Actions CI pipeline, migrate tasks from status.md to Linear.</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-week">Week 3 — Overnight + Metrics</div>
+      <div class="timeline-title">Autonomous Work + Observability</div>
+      <div class="timeline-desc">Overnight runner upgrade (max 5 issues/night), metrics tracking (per-agent throughput, cycle time), first full autonomous cycle test.</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-week">Week 4 — Optimize</div>
+      <div class="timeline-title">Tune + Document + Launch SaaS Build</div>
+      <div class="timeline-desc">Review Week 3 metrics, tune agent routing, document SOPs, begin SaaS portal feature development with full multi-agent pipeline.</div>
+    </div>
+  </div>
+
+  <!-- Phase Progress -->
+  <h3 style="margin-top:2.5rem;">Phase Completion Status</h3>
+  <div style="margin-top:1rem;">
+    <div style="margin-bottom:1rem;">
+      <div style="display:flex;justify-content:space-between;font-size:0.78rem;margin-bottom:0.35rem;">
+        <span style="font-weight:600;">Phase 0A: LettaBot Core</span>
+        <span style="color:var(--accent-green);">100%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--accent-green);"></div></div>
+    </div>
+    <div style="margin-bottom:1rem;">
+      <div style="display:flex;justify-content:space-between;font-size:0.78rem;margin-bottom:0.35rem;">
+        <span style="font-weight:600;">Phase 0B: Obsidian Setup</span>
+        <span style="color:var(--accent-yellow);">75%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:75%;background:var(--accent-yellow);"></div></div>
+    </div>
+    <div style="margin-bottom:1rem;">
+      <div style="display:flex;justify-content:space-between;font-size:0.78rem;margin-bottom:0.35rem;">
+        <span style="font-weight:600;">Phase 0C: Access & Comms</span>
+        <span style="color:var(--accent-yellow);">60%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:60%;background:var(--accent-yellow);"></div></div>
+    </div>
+    <div style="margin-bottom:1rem;">
+      <div style="display:flex;justify-content:space-between;font-size:0.78rem;margin-bottom:0.35rem;">
+        <span style="font-weight:600;">Phase 0D: Git Workflow</span>
+        <span style="color:var(--accent-yellow);">70%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:70%;background:var(--accent-yellow);"></div></div>
+    </div>
+    <div style="margin-bottom:1rem;">
+      <div style="display:flex;justify-content:space-between;font-size:0.78rem;margin-bottom:0.35rem;">
+        <span style="font-weight:600;">Phase 0E: Metadata Standards</span>
+        <span style="color:var(--accent-blue);">40%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:40%;background:var(--accent-blue);"></div></div>
+    </div>
+    <div style="margin-bottom:1rem;">
+      <div style="display:flex;justify-content:space-between;font-size:0.78rem;margin-bottom:0.35rem;">
+        <span style="font-weight:600;">Phase 0G: Overnight Autonomy</span>
+        <span style="color:var(--accent-orange);">50%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:50%;background:var(--accent-orange);"></div></div>
+    </div>
+    <div style="margin-bottom:1rem;">
+      <div style="display:flex;justify-content:space-between;font-size:0.78rem;margin-bottom:0.35rem;">
+        <span style="font-weight:600;">Phase 1-7: Security → SaaS → Backup</span>
+        <span style="color:var(--accent-red);">5%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:5%;background:var(--accent-red);"></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══════════════ FINANCE ═══════════════ -->
+<section id="finance">
+<div class="container">
+  <div class="section-label">Finance & Costs</div>
+  <h2>Current Tool Costs</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Monthly Recurring</h3>
+      <table>
+        <thead><tr><th>Tool</th><th>Cost</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Claude Code (API)</td><td style="font-family:'JetBrains Mono';color:var(--accent-cyan);">~$0.50/session</td><td>Active</td></tr>
+          <tr><td>Obsidian Catalyst</td><td style="font-family:'JetBrains Mono';color:var(--accent-cyan);">One-time</td><td>Paid</td></tr>
+          <tr><td>Obsidian Sync</td><td style="font-family:'JetBrains Mono';color:var(--accent-cyan);">$4/mo</td><td>TBD</td></tr>
+          <tr><td>1Password</td><td style="font-family:'JetBrains Mono';color:var(--accent-cyan);">$2.99/mo</td><td>TBD</td></tr>
+          <tr><td>Linear (Standard)</td><td style="font-family:'JetBrains Mono';color:var(--accent-cyan);">$8/user/mo</td><td>TBD</td></tr>
+          <tr><td>OpenAI Pro (LettaBot)</td><td style="font-family:'JetBrains Mono';color:var(--accent-cyan);">$0 marginal</td><td>Active</td></tr>
+          <tr><td>GitHub</td><td style="font-family:'JetBrains Mono';color:var(--accent-cyan);">Free tier</td><td>Active</td></tr>
+          <tr><td>Tailscale</td><td style="font-family:'JetBrains Mono';color:var(--accent-cyan);">Free tier</td><td>Active</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Cost Decisions Needed</h3>
+      <table>
+        <thead><tr><th>Decision</th><th>Impact</th></tr></thead>
+        <tbody>
+          <tr><td>Linear seats — just Vincent+Nico or per-agent?</td><td style="color:var(--accent-yellow);">$8-$48/mo</td></tr>
+          <tr><td>Codex access — requires Copilot Pro+</td><td style="color:var(--accent-yellow);">~$19/mo</td></tr>
+          <tr><td>Mac Studio procurement</td><td style="color:var(--accent-yellow);">~$2K one-time</td></tr>
+          <tr><td>Antigravity IDE access</td><td style="color:var(--accent-yellow);">Unknown</td></tr>
+          <tr><td>Vercel Pro (SaaS deploy)</td><td style="color:var(--accent-yellow);">$20/mo</td></tr>
+          <tr><td>Supabase Pro (SaaS DB)</td><td style="color:var(--accent-yellow);">$25/mo</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:1rem;padding:0.75rem;background:var(--bg-secondary);border-radius:8px;font-size:0.78rem;color:var(--text-muted);">
+        <strong style="color:var(--text-primary);">Estimated monthly burn (minimal):</strong> ~$35-55/mo<br>
+        <strong style="color:var(--text-primary);">Estimated monthly burn (full fleet):</strong> ~$120-170/mo
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══════════════ LETTABOT DIAGNOSTIC ═══════════════ -->
+<section id="lettabot">
+<div class="container">
+  <div class="section-label">Critical Path</div>
+  <h2>LettaBot — 44-Item Diagnostic <span class="badge" style="background:var(--accent-red);color:#fff;">Needs Attention</span></h2>
+  <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem;">LettaBot is the always-on Telegram interface. It's running but has 44 diagnostic items to address. Items 1-9 fix conversation drift. Items 1-7 can be done via API without restart.</p>
+
+  <div class="grid-3">
+    <div class="card" style="border-top:3px solid var(--accent-red);">
+      <div style="font-size:0.72rem;color:var(--accent-red);font-weight:700;">CRITICAL (Items 1-9)</div>
+      <ul style="font-size:0.78rem;color:var(--text-secondary);list-style:none;padding:0;margin-top:0.5rem;">
+        <li style="margin-bottom:0.4rem;">&#8227; Temperature too high (needs lower)</li>
+        <li style="margin-bottom:0.4rem;">&#8227; Memory tools not attached</li>
+        <li style="margin-bottom:0.4rem;">&#8227; Sleeptime agent not enabled</li>
+        <li style="margin-bottom:0.4rem;">&#8227; Conversation isolation broken</li>
+        <li>&#8227; Message sending misconfigured</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent-yellow);">
+      <div style="font-size:0.72rem;color:var(--accent-yellow);font-weight:700;">CONFIG & CLEANUP</div>
+      <ul style="font-size:0.78rem;color:var(--text-secondary);list-style:none;padding:0;margin-top:0.5rem;">
+        <li style="margin-bottom:0.4rem;">&#8227; 60+ duplicate todos to clean</li>
+        <li style="margin-bottom:0.4rem;">&#8227; lettabot.yaml streaming/images</li>
+        <li style="margin-bottom:0.4rem;">&#8227; Heartbeat configuration</li>
+        <li style="margin-bottom:0.4rem;">&#8227; GitHub/Obsidian/Google skills</li>
+        <li>&#8227; Timezone setting</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent-green);">
+      <div style="font-size:0.72rem;color:var(--accent-green);font-weight:700;">CRON JOBS TO CREATE</div>
+      <ul style="font-size:0.78rem;color:var(--text-secondary);list-style:none;padding:0;margin-top:0.5rem;">
+        <li style="margin-bottom:0.4rem;">&#8227; Morning briefing (daily)</li>
+        <li style="margin-bottom:0.4rem;">&#8227; Daily note triage</li>
+        <li style="margin-bottom:0.4rem;">&#8227; Weekly review generation</li>
+        <li style="margin-bottom:0.4rem;">&#8227; Memory sync health check</li>
+        <li>&#8227; Overnight summary</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══════════════ QUESTIONS ═══════════════ -->
+<section id="questions">
+<div class="container">
+  <div class="section-label">Open Questions for CEO</div>
+  <h2>12 Items Requiring Your Decision</h2>
+  <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:2rem;">These are blockers or decision points extracted from across all sessions and docs. Nothing moves forward on these without your input.</p>
+
+  <div class="question-card">
+    <div class="q-num">Q1 — BLOCKER</div>
+    <div class="q-text">Telegram token rotation — when are you doing this?</div>
+    <div class="q-context">Requires BotFather /revoke command from your Telegram. Needs 1Password set up first to store the new token. LettaBot is unstable until this is done.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-num">Q2 — BLOCKER</div>
+    <div class="q-text">1Password account — ready to create it? ($2.99/mo)</div>
+    <div class="q-context">All secrets (API keys, tokens, credentials) are currently unmanaged. Every agent needs access to secrets. This is foundational.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-num">Q3 — BLOCKER</div>
+    <div class="q-text">Obsidian Sync + community plugins — ready to enable?</div>
+    <div class="q-context">Phase 0B is 75% done. Need you to sign in, enable Sync, register CLI, and enable community plugins on the M1.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-num">Q4 — DECISION</div>
+    <div class="q-text">Linear vs. GitHub Projects for task management?</div>
+    <div class="q-context">Linear ($8/user/mo) has automation rules, cycles, bi-directional GitHub sync. GitHub Projects v2 is free but less sophisticated. I recommend Linear. How many seats — just you and Nico, or per-agent?</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-num">Q5 — DECISION</div>
+    <div class="q-text">Separate GitHub bot accounts per agent, or funnel through lifeosnico-bot?</div>
+    <div class="q-context">Separate accounts give clearer audit trails (who did what). Single org account is simpler. I recommend separate for codex-bot, antigravity-bot, copilot.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-num">Q6 — DECISION</div>
+    <div class="q-text">Overnight autonomy scope — how aggressive?</div>
+    <div class="q-context">Conservative (research/docs only), Moderate (+ tests + small features as draft PRs), or Aggressive (full feature work, draft PRs). I recommend Moderate to start.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-num">Q7 — TIMELINE</div>
+    <div class="q-text">Mac Studio timeline?</div>
+    <div class="q-context">The delegation engine needs an always-on machine. M1 works for now but Mac Studio is the target for running multiple agents concurrently.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-num">Q8 — ACCESS</div>
+    <div class="q-text">Do you have Antigravity IDE access? What level?</div>
+    <div class="q-context">Determines whether we include it in Week 1 rollout or defer. It has 1200+ pre-built skills which could accelerate UI work significantly.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-num">Q9 — ACCESS</div>
+    <div class="q-text">Do you have OpenAI Codex CLI access?</div>
+    <div class="q-context">Requires Copilot Pro+ or Enterprise. Determines our dispatch mechanism for mid-level engineering tasks.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-num">Q10 — DECISION</div>
+    <div class="q-text">GitHub org structure — lifeosnico-bot for everything, or separate org for the business?</div>
+    <div class="q-context">Clean separation matters for the SaaS product later. Recommend creating a business org (e.g., "lucavo") and keeping lifeosnico-bot for agent infra.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-num">Q11 — CLARITY</div>
+    <div class="q-text">What does "working overnight" success look like to you?</div>
+    <div class="q-context">Extracted from your Telegram messages. Need a concrete definition: number of PRs? Types of tasks? Zero-failure rate or acceptable failure %?</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-num">Q12 — PRIORITY</div>
+    <div class="q-text">SaaS portal MVP features — what ships first?</div>
+    <div class="q-context">Client onboarding? Project tracking? Invoicing? Quote generation? Need your top 3 features ranked to start the engineering queue once the agent pipeline is live.</div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<section style="padding:3rem 0;">
+<div class="container">
+  <div style="text-align:center;padding:2rem;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;">
+    <div style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.5rem;">Prepared by Nico — AI Chief of Staff</div>
+    <div style="font-size:0.85rem;color:var(--text-secondary);">Synthesized from <strong style="color:var(--text-primary);">280+ tasks</strong>, <strong style="color:var(--text-primary);">35 work sessions</strong>, <strong style="color:var(--text-primary);">60+ research notes</strong></div>
+    <div style="font-size:0.72rem;color:var(--text-muted);margin-top:0.5rem;">March 21, 2026 — Lucavo / LifeOS</div>
+  </div>
+</div>
+</section>
+
+<script>
+// Smooth scroll for nav links
+document.querySelectorAll('nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
+      a.classList.add('active');
+    }
+  });
+});
+
+// Active nav on scroll
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section[id]');
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+
+</body>
+</html>

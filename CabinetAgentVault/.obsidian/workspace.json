@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-dashboard/daily/2026-03-19.md",
-                "mode": "source",
+                "file": "00-dashboard/daily/2026-03-23.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-03-19"
+              "title": "2026-03-23"
             }
           }
         ],
@@ -226,8 +226,24 @@
   },
   "active": "d22031f27a1fe6de",
   "lastOpenFiles": [
-    "xozo-multi-agent-workflow-diagram copy 1.html",
+    "50-clippings/screenshot-2026-03-23-142927.jpg",
+    "50-clippings/_index.md",
+    "50-clippings/linqapp-untriaged.md",
+    "00-dashboard/daily/2026-03-23.md",
+    "30-resources/attachments/Pasted image 20260323125315.png",
+    "00-dashboard/daily/2026-03-22.md",
+    "30-resources/attachments/Pasted image 20260322234158.png",
+    "30-resources/attachments/Pasted image 20260322234033.png",
+    "30-resources/attachments",
+    "01-inbox/New Sample 2.md",
+    "01-inbox/Notes 2026-03-22.md",
+    "30-resources/research/letta-hitl-agent-creation-guide.md",
+    "ceo-launch-briefing.html",
+    "00-dashboard/daily/2026-03-21.md",
+    "01-inbox/Untitled.md",
+    "00-dashboard/daily/2026-03-20.md",
     "00-dashboard/daily/2026-03-19.md",
+    "xozo-multi-agent-workflow-diagram copy 1.html",
     "01-inbox/lolololol.md",
     "01-inbox/nononono.md",
     "01-inbox/YOYOYOYO.md",
@@ -248,19 +264,6 @@
     "00-dashboard/llm-sessions/Claude Chat/mac-studio-migration-context-v1-2026-03-14.md",
     "Sample",
     "00-dashboard/llm-sessions/Claude Chat",
-    "00-dashboard/daily/2026-03-14.md",
-    "00-dashboard/llm-sessions/2026-02-23_session-CC-8.md",
-    "00-dashboard/daily/2026-03-13.md",
-    "00-dashboard/daily/2026-03-09.md",
-    "new-vault-build/discord-1450238941713141810-deep-researcher-sdk-tool.md",
-    "new-vault-build/UabBYexBD4k-context-injection-rag-vs-memory.md",
-    "30-resources/letta/transcripts/UabBYexBD4k.md",
-    "30-resources/letta/transcripts/UabBYexBD4k.en.vtt",
-    "30-resources/letta/transcripts/UabBYexBD4k.en-orig.vtt",
-    "30-resources/letta/transcripts/UabBYexBD4k.en-en.vtt",
-    "01-inbox/2026-03-09_lettabot-diagnostic-fixes.md",
-    "new-vault-build/nN5R9DFYsXY-claude-and-playwright.md",
-    "30-resources/letta/transcripts/nN5R9DFYsXY.md",
-    "30-resources/letta/transcripts/nN5R9DFYsXY.en.vtt"
+    "30-resources/letta/transcripts/UabBYexBD4k.en.vtt"
   ]
 }

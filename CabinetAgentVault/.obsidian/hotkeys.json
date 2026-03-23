@@ -1,19 +1,28 @@
 {
+  "editor:toggle-checklist-status": [],
   "app:toggle-left-sidebar": [
     {
       "modifiers": [
         "Mod"
       ],
-      "key": "L"
+      "key": "ArrowLeft"
     }
   ],
-  "editor:toggle-checklist-status": [],
   "app:toggle-right-sidebar": [
     {
       "modifiers": [
         "Mod"
       ],
-      "key": "R"
+      "key": "ArrowRight"
     }
-  ]
+  ],
+  "app:toggle-ribbon": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "/"
+    }
+  ],
+  "editor:toggle-comments": []
 }

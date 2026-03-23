@@ -29,13 +29,13 @@ Your current vault-based system works for 1-2 agents. It breaks at 5+. Here's wh
 
 **The fix:** Split coordination into two layers:
 
-| Layer | Tool | What Lives Here | Who Writes |
-|-------|------|----------------|------------|
-| **Task Coordination** | GitHub Issues + Linear | All tasks, assignments, status, priorities | Any agent, any human |
-| **Knowledge / Docs** | Obsidian Vault (git-backed) | Decisions, SOPs, research, meeting notes | Designated writer per file |
-| **Code** | GitHub Repos (worktrees) | All application code, infrastructure | Any agent via isolated branch |
-| **Communication** | Slack + Telegram | Real-time alerts, approvals, handoffs | Any agent, any human |
-| **Memory** | Letta (persistent agents) | Long-term context, identity, behavior | Letta agents only |
+| Layer                 | Tool                        | What Lives Here                            | Who Writes                    |
+| --------------------- | --------------------------- | ------------------------------------------ | ----------------------------- |
+| **Task Coordination** | GitHub Issues + Linear      | All tasks, assignments, status, priorities | Any agent, any human          |
+| **Knowledge / Docs**  | Obsidian Vault (git-backed) | Decisions, SOPs, research, meeting notes   | Designated writer per file    |
+| **Code**              | GitHub Repos (worktrees)    | All application code, infrastructure       | Any agent via isolated branch |
+| **Communication**     | Slack + Telegram            | Real-time alerts, approvals, handoffs      | Any agent, any human          |
+| **Memory**            | Letta (persistent agents)   | Long-term context, identity, behavior      | Letta agents only             |
 
 **Key principle:** Tasks go in a database (Linear/GitHub Issues), not a file. Files are for knowledge. Code is in repos. Never mix these.
 
