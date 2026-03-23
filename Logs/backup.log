@@ -2949,3 +2949,19 @@
 [nico/ssot-session-data 4280860] auto-backup: 2026-03-23_14:23
  7 files changed, 146 insertions(+), 3 deletions(-)
  create mode 100644 Memory/Sessions/session-scratch-20260323-141335.md
+[nico/ssot-session-data 765a61d] auto-backup: 2026-03-23_14:38
+ 24 files changed, 1464 insertions(+), 594 deletions(-)
+ create mode 100644 CabinetAgentVault/00-dashboard/daily/2026-03-20.md
+ create mode 100644 CabinetAgentVault/00-dashboard/daily/2026-03-21.md
+ create mode 100644 CabinetAgentVault/00-dashboard/daily/2026-03-22.md
+ create mode 100644 CabinetAgentVault/00-dashboard/daily/2026-03-23.md
+ create mode 100644 CabinetAgentVault/01-inbox/New Sample 2.md
+ create mode 100644 CabinetAgentVault/01-inbox/Notes 2026-03-22.md
+ create mode 100644 CabinetAgentVault/01-inbox/Untitled.md
+ create mode 100644 CabinetAgentVault/30-resources/attachments/Pasted image 20260322234033.png
+ create mode 100644 CabinetAgentVault/30-resources/attachments/Pasted image 20260322234158.png
+ create mode 100644 CabinetAgentVault/30-resources/attachments/Pasted image 20260323125315.png
+ create mode 100644 CabinetAgentVault/30-resources/research/letta-hitl-agent-creation-guide.md
+ create mode 100644 CabinetAgentVault/50-clippings/screenshot-2026-03-23-142927.jpg
+ create mode 100644 CabinetAgentVault/ceo-launch-briefing.html
+ delete mode 100644 CabinetAgentVault/xozo-multi-agent-workflow-diagram copy 1.html
