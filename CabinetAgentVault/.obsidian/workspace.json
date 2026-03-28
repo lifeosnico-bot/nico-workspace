@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-dashboard/daily/2026-03-23.md",
+                "file": "00-dashboard/daily/2026-03-27.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-03-23"
+              "title": "2026-03-27"
             }
           }
         ],
@@ -211,6 +211,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "publish:Publish changes...": false,
       "audio-recorder:Start/stop recording": false,
       "peekaboo:Peekaboo": false,
       "switcher:Open quick switcher": false,
@@ -226,10 +227,11 @@
   },
   "active": "d22031f27a1fe6de",
   "lastOpenFiles": [
+    "00-dashboard/daily/2026-03-23.md",
+    "00-dashboard/daily/2026-03-27.md",
     "50-clippings/screenshot-2026-03-23-142927.jpg",
     "50-clippings/_index.md",
     "50-clippings/linqapp-untriaged.md",
-    "00-dashboard/daily/2026-03-23.md",
     "30-resources/attachments/Pasted image 20260323125315.png",
     "00-dashboard/daily/2026-03-22.md",
     "30-resources/attachments/Pasted image 20260322234158.png",
