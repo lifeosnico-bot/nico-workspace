@@ -11953,3 +11953,15 @@ Claude Code process exited with code 1
 [WARN]  socket-mode:SlackWebSocket:213 A pong wasn't received from the server before the timeout of 5000ms!
 [WARN]  socket-mode:SlackWebSocket:213 A pong wasn't received from the server before the timeout of 5000ms!
 [WARN]  socket-mode:SlackWebSocket:213 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:215 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:215 A ping wasn't received from the server before the timeout of 30000ms!
+[WARN]  socket-mode:SlackWebSocket:215 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:215 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:215 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:215 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:215 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[ERROR]  socket-mode:SlackWebSocket:216 WebSocket error occurred: read ETIMEDOUT
+[ERROR]  socket-mode:SocketModeClient:0 WebSocket error! Error: read ETIMEDOUT
