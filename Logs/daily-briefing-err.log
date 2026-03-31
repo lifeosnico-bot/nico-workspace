@@ -545,3 +545,42 @@ TypeError: terminated
 }
 
 Node.js v25.6.1
+Error: letta error: Error saving local project settings: Error: ENOENT: no such file or directory, mkdir '/.letta'
+    at mkdirSync (node:fs:1333:26)
+    at mkdir (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3511:3)
+    at SettingsManager.persistLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4157:15)
+    at SettingsManager.updateLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4142:31)
+    at SettingsManager.setLocalLastSession (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4244:10)
+    at SettingsManager.persistSession (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4266:10)
+    at handleHeadlessCommand (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:84439:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:147317:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'mkdir',
+  path: '/.letta'
+}
+Failed to persist local project settings: Error: ENOENT: no such file or directory, mkdir '/.letta'
+    at mkdirSync (node:fs:1333:26)
+    at mkdir (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:3511:3)
+    at SettingsManager.persistLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4157:15)
+    at SettingsManager.updateLocalProjectSettings (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4142:31)
+    at SettingsManager.setLocalLastSession (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4244:10)
+    at SettingsManager.persistSession (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:4266:10)
+    at handleHeadlessCommand (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:84439:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///opt/homebrew/lib/node_modules/@letta-ai/letta-code/letta.js:147317:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'mkdir',
+  path: '/.letta'
+}
+Error: Unexpected stop reason: error
+Error: letta error: Failed to connect to Letta server
+Base URL: https://api.letta.com
+Your credentials may be invalid or the server may be unreachable.
+Delete ~/.letta/settings.json then run 'letta' to re-authenticate
+Error: letta error: Failed to connect to Letta server
+Base URL: https://api.letta.com
+Your credentials may be invalid or the server may be unreachable.
+Delete ~/.letta/settings.json then run 'letta' to re-authenticate
