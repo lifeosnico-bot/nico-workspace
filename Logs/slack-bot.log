@@ -12163,3 +12163,81 @@ Claude Code process exited with code 1
 [WARN]  socket-mode:SlackWebSocket:282 A pong wasn't received from the server before the timeout of 5000ms!
 [WARN]  socket-mode:SlackWebSocket:282 A pong wasn't received from the server before the timeout of 5000ms!
 [WARN]  socket-mode:SlackWebSocket:282 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:283 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:283 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:283 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:284 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:284 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:284 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:284 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:284 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:284 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:284 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:284 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:284 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  socket-mode:SlackWebSocket:286 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:286 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:286 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:286 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:286 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  socket-mode:SlackWebSocket:287 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:287 A ping wasn't received from the server before the timeout of 30000ms!
+[WARN]  socket-mode:SlackWebSocket:287 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:287 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:287 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:287 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:287 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:287 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:287 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  bolt-app http request failed getaddrinfo ENOTFOUND slack.com
+[WARN]  socket-mode:SlackWebSocket:297 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:297 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:297 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:302 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:302 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:302 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:302 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:302 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:302 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A ping wasn't received from the server before the timeout of 30000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:306 A pong wasn't received from the server before the timeout of 5000ms!
