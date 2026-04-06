@@ -226,3 +226,30 @@ Migrations complete
 [12:30:07] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
 [13:26:02] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260406-092601.sql (2.0M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260406-092601.sql","sizeBytes":2076214,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
 [13:30:37] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[14:51:00] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[14:51:00] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"2aa9027f-1d5d-4af2-9157-adc73f111911","agentId":"eac7958f-4fba-433a-9eec-a120a05ea4fb","runId":"694fbf98-41f9-4e6b-9b2a-4ba11a34200d","adapterType":"claude_local"}[39m
+[14:51:00] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260406-105100.sql (2.0M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260406-105100.sql","sizeBytes":2139409,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[14:51:01] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/live-runs 200[39m
+[14:51:01] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/heartbeat-runs 200[39m
+[14:51:01] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[14:51:01] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[14:51:01] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/sidebar-badges 200[39m
+[14:51:01] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/live-runs 200[39m
+[14:51:01] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/heartbeat-runs 200[39m
+[14:51:01] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[14:51:01] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[14:51:01] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/sidebar-badges 200[39m
+[14:51:01] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[14:51:01] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[14:51:11] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/live-runs 200[39m
+[14:51:11] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[14:51:11] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/heartbeat-runs 200[39m
+[14:51:11] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[14:51:11] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[14:51:11] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/sidebar-badges 200[39m
+[14:51:11] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[16:05:26] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[16:05:26] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"b6aed83d-1336-487c-8475-308ea98a9a9f","adapterType":"claude_local"}[39m
+[16:05:27] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260406-120526.sql (2.1M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260406-120526.sql","sizeBytes":2196559,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[16:05:40] [33mWARN[39m: [36mGET /agents/me/inbox-lite 401[39m [90m{"routePath":"/agents/me/inbox-lite"}[39m
+[16:05:43] [33mWARN[39m: [36mGET /agents/me 401[39m [90m{"routePath":"/agents/me"}[39m
