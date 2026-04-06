@@ -175,3 +175,5 @@ Migrations complete
 [23:11:02] [32mINFO[39m: [36mGET /projects/foundation?companyId=2aa9027f-1d5d-4af2-9157-adc73f111911 200[39m
 [23:11:02] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/issues?projectId=1be90e57-365a-40c3-98bf-17abbefae70c 200[39m
 [23:48:16] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260405-194816.sql (1.4M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260405-194816.sql","sizeBytes":1419356,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[00:16:46] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[00:17:16] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
