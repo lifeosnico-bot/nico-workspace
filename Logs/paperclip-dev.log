@@ -178,3 +178,4 @@ Migrations complete
 [00:16:46] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
 [00:17:16] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
 [00:20:16] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[00:48:16] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260405-204816.sql (1.4M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260405-204816.sql","sizeBytes":1515454,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
