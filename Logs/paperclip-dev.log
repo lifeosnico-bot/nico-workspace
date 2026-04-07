@@ -429,3 +429,27 @@ Migrations complete
 [02:10:37] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
 [02:10:37] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
 [02:10:39] [33mWARN[39m: [36mGET /agents/me/inbox-lite 401[39m [90m{"routePath":"/agents/me/inbox-lite"}[39m
+[03:05:25] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260406-230525.sql (2.7M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260406-230525.sql","sizeBytes":2794591,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[03:10:58] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[03:10:58] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"2aa9027f-1d5d-4af2-9157-adc73f111911","agentId":"eac7958f-4fba-433a-9eec-a120a05ea4fb","runId":"0f3e85c4-a048-4eae-ad56-1dbc83473fa1","adapterType":"claude_local"}[39m
+[03:10:58] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"5ae60103-8e2a-4446-8b17-7be42f14f7da","adapterType":"claude_local"}[39m
+[03:10:58] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/live-runs 200[39m
+[03:10:58] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/heartbeat-runs 200[39m
+[03:10:58] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[03:10:58] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[03:10:58] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/sidebar-badges 200[39m
+[03:10:58] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/live-runs 200[39m
+[03:10:58] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/heartbeat-runs 200[39m
+[03:10:58] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[03:10:58] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[03:10:58] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/sidebar-badges 200[39m
+[03:10:58] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[03:10:58] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[03:11:07] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/live-runs 200[39m
+[03:11:07] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/heartbeat-runs 200[39m
+[03:11:07] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[03:11:07] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[03:11:07] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/sidebar-badges 200[39m
+[03:11:07] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[03:11:07] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[03:11:08] [33mWARN[39m: [36mGET /agents/me/inbox-lite 401[39m [90m{"routePath":"/agents/me/inbox-lite"}[39m
