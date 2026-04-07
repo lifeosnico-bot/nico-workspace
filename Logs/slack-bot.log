@@ -12542,3 +12542,5 @@ Claude Code process exited with code 1
 [WARN]  socket-mode:SlackWebSocket:376 A pong wasn't received from the server before the timeout of 5000ms!
 [WARN]  socket-mode:SlackWebSocket:376 A pong wasn't received from the server before the timeout of 5000ms!
 [WARN]  socket-mode:SlackWebSocket:378 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:397 A pong wasn't received from the server before the timeout of 5000ms!
+[WARN]  socket-mode:SlackWebSocket:397 A pong wasn't received from the server before the timeout of 5000ms!
