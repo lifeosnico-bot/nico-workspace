@@ -554,3 +554,28 @@ Migrations complete
 [07:13:28] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
 [07:13:28] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"88d6554a-10e1-4a86-9c13-7fcf00e4c365","adapterType":"claude_local"}[39m
 [07:13:41] [33mWARN[39m: [36mGET /agents/me/inbox-lite 401[39m [90m{"routePath":"/agents/me/inbox-lite"}[39m
+[08:05:25] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260407-040525.sql (2.9M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260407-040525.sql","sizeBytes":3046425,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[08:13:28] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[08:13:28] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"2aa9027f-1d5d-4af2-9157-adc73f111911","agentId":"eac7958f-4fba-433a-9eec-a120a05ea4fb","runId":"9042ded4-1748-4d19-a7ac-9122fcd05ca4","adapterType":"claude_local"}[39m
+[08:13:29] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/live-runs 200[39m
+[08:13:29] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/heartbeat-runs 200[39m
+[08:13:29] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[08:13:29] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[08:13:29] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[08:13:29] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/sidebar-badges 200[39m
+[08:13:29] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[08:13:29] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[08:13:29] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/sidebar-badges 200[39m
+[08:13:29] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[08:13:29] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/live-runs 200[39m
+[08:13:29] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/heartbeat-runs 200[39m
+[08:13:37] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/live-runs 200[39m
+[08:13:37] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/heartbeat-runs 200[39m
+[08:13:37] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[08:13:37] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[08:13:37] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/sidebar-badges 200[39m
+[08:13:37] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/agents 200[39m
+[08:13:37] [32mINFO[39m: [36mGET /companies/2aa9027f-1d5d-4af2-9157-adc73f111911/dashboard 200[39m
+[08:13:58] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[08:13:58] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"a9e9181e-80ef-4c0f-bc6d-b0ebc48a40ef","adapterType":"claude_local"}[39m
+[08:14:07] [33mWARN[39m: [36mGET /agents/me/inbox-lite 401[39m [90m{"routePath":"/agents/me/inbox-lite"}[39m
