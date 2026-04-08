@@ -1066,3 +1066,9 @@ Migrations complete
 [18:37:04] [33mWARN[39m: [36mGET /agents/me/inbox-lite 401[39m [90m{"routePath":"/agents/me/inbox-lite"}[39m
 [18:38:21] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
 [18:38:21] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"2aa9027f-1d5d-4af2-9157-adc73f111911","agentId":"eac7958f-4fba-433a-9eec-a120a05ea4fb","runId":"95fed72b-dedd-483f-8d53-ebca5d3663d1","adapterType":"claude_local"}[39m
+[19:31:18] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260408-153118.sql (4.2M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260408-153118.sql","sizeBytes":4449693,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[19:37:21] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[19:37:21] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"5040e0b8-01fd-4456-a291-9dd76a983fb0","adapterType":"claude_local"}[39m
+[19:37:35] [33mWARN[39m: [36mGET /agents/me/inbox-lite 401[39m [90m{"routePath":"/agents/me/inbox-lite"}[39m
+[19:38:51] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[19:38:51] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"2aa9027f-1d5d-4af2-9157-adc73f111911","agentId":"eac7958f-4fba-433a-9eec-a120a05ea4fb","runId":"21b27ac9-1bdc-4aa5-9ff7-5a0969d2d2af","adapterType":"claude_local"}[39m
