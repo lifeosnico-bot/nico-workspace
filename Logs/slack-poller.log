@@ -210338,3 +210338,231 @@ ERROR:fetch:<urlopen error [Errno 60] Operation timed out>
 2026-04-28 12:18:59 tock 47117 (OK)
 2026-04-28 14:20:06 tick 47118
 2026-04-28 14:20:06 tock 47118 (OK)
+2026-04-28 15:47:46 tick 47119
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-04-28 15:47:47 tock 47119 ()
+2026-04-28 15:47:47 WARN: poll failed (exit 1)
+2026-04-28 15:53:03 tick 47120
+2026-04-28 15:53:06 tock 47120 (OK)
+2026-04-28 17:23:06 tick 47121
+2026-04-28 17:23:07 tock 47121 (OK)
+2026-04-28 18:24:06 tick 47122
+2026-04-28 18:24:07 tock 47122 (OK)
+2026-04-28 19:36:14 tick 47123
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-04-28 19:36:15 tock 47123 ()
+2026-04-28 19:36:15 WARN: poll failed (exit 1)
+2026-04-28 19:40:31 tick 47124
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-04-28 19:40:31 tock 47124 ()
+2026-04-28 19:40:31 WARN: poll failed (exit 1)
+2026-04-28 19:57:05 tick 47125
+2026-04-28 19:57:05 tock 47125 (OK)
+2026-04-28 20:26:11 tick 47126
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-04-28 21:20:27 tock 47126 ()
+2026-04-28 21:20:27 WARN: poll failed (exit 1)
+2026-04-28 22:28:07 tick 47127
+2026-04-28 22:28:08 tock 47127 (OK)
+2026-04-29 01:19:32 tick 47128
+2026-04-29 01:19:34 tock 47128 (OK)
+2026-04-29 06:02:27 tick 47129
+2026-04-29 06:02:28 tock 47129 (OK)
+2026-04-29 08:16:09 tick 47130
+2026-04-29 08:16:09 tock 47130 (OK)
+2026-04-29 09:17:11 tick 47131
+2026-04-29 09:17:12 tock 47131 (OK)
+2026-04-29 10:19:16 tick 47132
+2026-04-29 10:19:16 tock 47132 (OK)
+2026-04-29 12:20:09 tick 47133
+2026-04-29 12:20:10 tock 47133 (OK)
+2026-04-29 14:22:07 tick 47134
+2026-04-29 14:22:08 tock 47134 (OK)
+2026-04-29 15:23:08 tick 47135
+2026-04-29 15:23:10 tock 47135 (OK)
+2026-04-29 17:25:07 tick 47136
+2026-04-29 17:25:08 tock 47136 (OK)
+2026-04-29 18:32:10 tick 47137
+2026-04-29 18:32:10 tock 47137 (OK)
+2026-04-29 19:27:14 tick 47138
+2026-04-29 19:27:14 tock 47138 (OK)
+2026-04-29 20:28:10 tick 47139
+2026-04-29 20:28:10 tock 47139 (OK)
+2026-04-29 22:30:09 tick 47140
+2026-04-29 22:30:10 tock 47140 (OK)
+2026-04-29 23:04:22 tick 47141
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-04-29 23:04:23 tock 47141 ()
+2026-04-29 23:04:23 WARN: poll failed (exit 1)
+2026-04-30 02:45:14 tick 47142
+2026-04-30 02:45:15 tock 47142 (OK)
+2026-04-30 06:02:41 tick 47143
+2026-04-30 06:02:42 tock 47143 (OK)
+2026-04-30 08:18:33 tick 47144
+2026-04-30 08:18:34 tock 47144 (OK)
+2026-04-30 09:19:36 tick 47145
+2026-04-30 09:19:36 tock 47145 (OK)
+2026-04-30 10:09:59 tick 47146
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-04-30 10:09:59 tock 47146 ()
+2026-04-30 10:09:59 WARN: poll failed (exit 1)
+2026-04-30 10:16:49 tick 47147
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-04-30 10:16:49 tock 47147 ()
+2026-04-30 10:16:49 WARN: poll failed (exit 1)
+2026-04-30 10:20:39 tick 47148
+2026-04-30 10:58:10 tock 47148 (OK)
+2026-04-30 11:20:09 tick 47149
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-04-30 11:20:10 tock 47149 ()
+2026-04-30 11:20:10 WARN: poll failed (exit 1)
+2026-04-30 11:25:31 tick 47150
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-04-30 11:25:31 tock 47150 ()
+2026-04-30 11:25:31 WARN: poll failed (exit 1)
+2026-04-30 12:22:36 tick 47151
+2026-04-30 13:23:31 tock 47151 (OK)
+2026-04-30 14:24:34 tick 47152
+2026-04-30 14:24:34 tock 47152 (OK)
+2026-04-30 16:26:33 tick 47153
+2026-04-30 16:26:34 tock 47153 (OK)
+2026-04-30 17:27:38 tick 47154
+2026-04-30 17:27:39 tock 47154 (OK)
+2026-04-30 19:11:14 tick 47155
+2026-04-30 19:11:15 tock 47155 (OK)
+2026-04-30 19:54:45 tick 47156
+2026-04-30 19:54:45 tock 47156 (OK)
+2026-04-30 21:31:32 tick 47157
+2026-04-30 21:31:33 tock 47157 (OK)
+2026-04-30 21:48:47 tick 47158
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-04-30 21:48:47 tock 47158 ()
+2026-04-30 21:48:47 WARN: poll failed (exit 1)
+2026-04-30 21:52:58 tick 47159
+2026-04-30 21:52:59 tock 47159 (OK)
+2026-05-01 03:24:10 tick 47160
+2026-05-01 03:24:11 tock 47160 (OK)
+2026-05-01 07:19:22 tick 47161
+2026-05-01 07:19:22 tock 47161 (OK)
+2026-05-01 08:20:27 tick 47162
+2026-05-01 08:20:28 tock 47162 (OK)
+2026-05-01 09:29:19 tick 47163
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-05-01 09:29:20 tock 47163 ()
+2026-05-01 09:29:20 WARN: poll failed (exit 1)
+2026-05-01 09:31:07 tick 47164
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-05-01 09:31:07 tock 47164 ()
+2026-05-01 09:31:07 WARN: poll failed (exit 1)
+2026-05-01 09:51:51 tick 47165
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-05-01 09:51:51 tock 47165 ()
+2026-05-01 09:51:51 WARN: poll failed (exit 1)
+2026-05-01 10:05:17 tick 47166
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-05-01 10:05:17 tock 47166 ()
+2026-05-01 10:05:17 WARN: poll failed (exit 1)
+2026-05-01 10:22:25 tick 47167
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-05-01 10:22:25 tock 47167 ()
+2026-05-01 10:22:25 WARN: poll failed (exit 1)
+2026-05-01 10:22:40 tick 47168
+2026-05-01 10:22:41 tock 47168 (OK)
+2026-05-01 11:37:15 tick 47169
+2026-05-01 11:37:15 tock 47169 (OK)
+2026-05-01 11:58:39 tick 47170
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-05-01 11:58:39 tock 47170 ()
+2026-05-01 11:58:39 WARN: poll failed (exit 1)
+2026-05-01 12:09:07 tick 47171
+2026-05-01 12:09:08 tock 47171 (OK)
+2026-05-01 12:24:28 tick 47172
+2026-05-01 12:24:29 tock 47172 (OK)
+2026-05-01 14:22:41 tick 47173
+2026-05-01 14:22:42 tock 47173 (OK)
+2026-05-01 15:27:29 tick 47174
+2026-05-01 15:27:29 tock 47174 (OK)
+2026-05-01 17:29:25 tick 47175
+2026-05-01 17:29:26 tock 47175 (OK)
+2026-05-01 19:31:24 tick 47176
+2026-05-01 19:31:25 tock 47176 (OK)
+2026-05-01 19:50:19 tick 47177
+2026-05-01 19:50:19 tock 47177 (OK)
+2026-05-01 20:32:23 tick 47178
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-05-01 20:32:23 tock 47178 ()
+2026-05-01 20:32:23 WARN: poll failed (exit 1)
+2026-05-01 20:39:03 tick 47179
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-05-01 20:39:03 tock 47179 ()
+2026-05-01 20:39:03 WARN: poll failed (exit 1)
+2026-05-01 21:33:27 tick 47180
+2026-05-01 21:33:28 tock 47180 (OK)
+2026-05-01 22:34:33 tick 47181
+2026-05-01 22:34:34 tock 47181 (OK)
+2026-05-02 00:34:52 tick 47182
+2026-05-02 00:34:53 tock 47182 (OK)
+2026-05-02 04:03:10 tick 47183
+2026-05-02 04:03:11 tock 47183 (OK)
+2026-05-02 08:24:44 tick 47184
+2026-05-02 08:24:45 tock 47184 (OK)
+2026-05-02 10:25:47 tick 47185
+2026-05-02 10:25:48 tock 47185 (OK)
+2026-05-02 11:26:46 tick 47186
+2026-05-02 11:26:46 tock 47186 (OK)
+2026-05-02 12:27:44 tick 47187
+2026-05-02 12:27:45 tock 47187 (OK)
+2026-05-02 14:19:11 tick 47188
+2026-05-02 14:19:12 tock 47188 (OK)
+2026-05-02 15:30:47 tick 47189
+ERROR:fetch:The read operation timed out
+2026-05-02 17:32:41 tock 47189 ()
+2026-05-02 17:32:41 WARN: poll failed (exit 1)
+2026-05-02 18:33:47 tick 47190
+2026-05-02 18:33:48 tock 47190 (OK)
+2026-05-02 20:29:10 tick 47191
+2026-05-02 20:29:12 tock 47191 (OK)
+2026-05-02 21:36:41 tick 47192
+2026-05-02 21:36:44 tock 47192 (OK)
+2026-05-02 23:38:43 tick 47193
+2026-05-02 23:38:44 tock 47193 (OK)
+2026-05-03 01:14:29 tick 47194
+2026-05-03 01:14:30 tock 47194 (OK)
+2026-05-03 04:42:14 tick 47195
+2026-05-03 04:42:15 tock 47195 (OK)
+2026-05-03 10:29:48 tick 47196
+2026-05-03 10:29:49 tock 47196 (OK)
+2026-05-03 11:30:53 tick 47197
+2026-05-03 11:30:55 tock 47197 (OK)
+2026-05-03 12:55:12 tick 47198
+2026-05-03 12:55:13 tock 47198 (OK)
+2026-05-03 13:21:43 tick 47199
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-05-03 13:21:43 tock 47199 ()
+2026-05-03 13:21:43 WARN: poll failed (exit 1)
+2026-05-03 13:25:39 tick 47200
+ERROR:fetch:<urlopen error [Errno 54] Connection reset by peer>
+2026-05-03 13:32:49 tock 47200 ()
+2026-05-03 13:32:49 WARN: poll failed (exit 1)
+2026-05-03 14:33:55 tick 47201
+2026-05-03 14:33:55 tock 47201 (OK)
+2026-05-03 16:24:28 tick 47202
+ERROR:fetch:<urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-05-03 16:24:28 tock 47202 ()
+2026-05-03 16:24:28 WARN: poll failed (exit 1)
+2026-05-03 16:28:13 tick 47203
+2026-05-03 16:28:14 tock 47203 (OK)
+2026-05-03 17:36:48 tick 47204
+2026-05-03 17:36:49 tock 47204 (OK)
+2026-05-03 18:37:56 tick 47205
+2026-05-03 18:37:57 tock 47205 (OK)
+2026-05-03 19:55:03 tick 47206
+2026-05-03 19:55:04 tock 47206 (OK)
+2026-05-03 21:08:09 tick 47207
+2026-05-03 21:08:11 tock 47207 (OK)
+2026-05-03 22:41:50 tick 47208
+2026-05-03 22:41:51 tock 47208 (OK)
+2026-05-04 05:21:16 tick 47209
+2026-05-04 05:21:16 tock 47209 (OK)
+2026-05-04 08:30:44 tick 47210
+2026-05-04 08:30:44 tock 47210 (OK)
