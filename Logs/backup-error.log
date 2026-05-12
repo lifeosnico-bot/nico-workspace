@@ -3905,3 +3905,7 @@ To https://github.com/lifeosnico-bot/nico-workspace.git
 To https://github.com/lifeosnico-bot/nico-workspace.git
    0f91a782..872cf5a8  HEAD -> backup
 fatal: unable to access 'https://github.com/lifeosnico-bot/nico-workspace.git/': Resolving timed out after 2730656 milliseconds
+error: RPC failed; curl 56 Recv failure: Operation timed out
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+Everything up-to-date

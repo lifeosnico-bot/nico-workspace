@@ -3164,3 +3164,227 @@ Migrations complete
 [09:43:46] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-054346.sql (12.1M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-054346.sql","sizeBytes":12692868,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
 [09:59:14] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
 [10:16:32] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[10:33:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[10:50:12] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[10:50:12] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-065012.sql (12.1M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-065012.sql","sizeBytes":12713122,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[11:05:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[11:21:16] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[11:36:50] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[11:36:50] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"c7e4b083-a278-4e5f-9fe6-9611515f372b","adapterType":"claude_local"}[39m
+[11:44:46] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[12:01:55] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[12:01:55] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-080155.sql (12.1M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-080155.sql","sizeBytes":12726814,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[12:19:10] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[12:36:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[12:45:45] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[13:03:03] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[13:03:03] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-090303.sql (12.1M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-090303.sql","sizeBytes":12735310,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[13:19:47] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[13:37:24] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[13:46:46] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[13:54:11] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[14:12:07] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[14:12:07] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-101207.sql (12.2M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-101207.sql","sizeBytes":12745930,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[14:30:08] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[14:47:47] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[15:04:47] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[15:19:58] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[15:19:59] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-111958.sql (12.2M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-111958.sql","sizeBytes":12754426,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[15:36:30] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[15:48:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[16:04:29] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[16:22:27] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[16:22:28] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-122227.sql (12.2M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-122227.sql","sizeBytes":12762922,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[16:40:07] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[16:49:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[17:05:58] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[17:22:34] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[17:22:34] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-132234.sql (12.2M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-132234.sql","sizeBytes":12779580,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[17:23:25] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[17:39:57] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[17:43:30] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[17:50:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[18:08:40] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[18:08:40] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"c42d69c7-193a-45d6-996a-eb425a69fbfe","adapterType":"claude_local"}[39m
+[18:09:34] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[18:25:26] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[18:25:27] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-142526.sql (12.2M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-142526.sql","sizeBytes":12795396,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[18:26:10] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[18:41:47] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[18:42:34] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[18:51:47] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[19:09:50] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[19:10:40] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[19:28:08] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[19:28:08] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-152808.sql (12.2M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-152808.sql","sizeBytes":12810264,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[19:28:57] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[19:46:42] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[19:47:38] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[19:52:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[20:10:02] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[20:11:00] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[20:28:04] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[20:28:55] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[20:28:56] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-162855.sql (12.2M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-162855.sql","sizeBytes":12830680,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[20:45:34] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[20:46:20] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[20:53:47] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[20:53:47] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"eb692bf5-27f1-4dd2-b125-5193901eb0a7","adapterType":"claude_local"}[39m
+[21:11:05] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[21:11:59] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[21:28:42] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[21:29:37] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[21:29:37] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-172936.sql (12.3M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-172936.sql","sizeBytes":12853387,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[21:47:17] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[21:49:01] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[21:54:47] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[21:54:47] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"88bca961-e20b-416f-83bd-8911e05c2581","adapterType":"claude_local"}[39m
+[22:07:10] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[22:22:55] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[22:23:47] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[22:39:30] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[22:39:30] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-183930.sql (12.3M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-183930.sql","sizeBytes":12875833,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[22:40:27] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[22:55:47] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[22:55:47] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"5213e819-47a5-4dc3-833c-037a32d1a6aa","adapterType":"claude_local"}[39m
+[23:11:13] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[23:17:51] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[23:35:15] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[23:52:40] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[23:52:40] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-195240.sql (12.3M; pruned 2 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-195240.sql","sizeBytes":12897218,"prunedCount":2,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[23:56:47] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[23:56:47] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"7b005bc0-c5ee-4016-b564-48158f8efde8","adapterType":"claude_local"}[39m
+[00:14:02] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[00:29:55] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[00:44:59] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[00:56:44] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[00:56:44] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-205644.sql (12.3M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-205644.sql","sizeBytes":12917541,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[01:12:16] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[01:12:16] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"31ae3d4a-369a-4ef5-bcf1-abb504b33f42","adapterType":"claude_local"}[39m
+[01:19:14] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[01:24:43] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[01:41:00] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[01:41:55] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[01:57:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[01:57:48] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-215748.sql (12.3M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-215748.sql","sizeBytes":12935481,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[02:14:24] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[02:15:21] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[02:30:38] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[02:31:23] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[02:48:55] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[02:50:29] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[03:08:07] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[03:08:08] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-230807.sql (12.4M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260511-230807.sql","sizeBytes":12957366,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[03:08:53] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[03:26:52] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[03:27:57] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[03:43:36] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[03:43:36] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"e165da1c-ffa2-4642-9a05-b6cf2d436e4c","adapterType":"claude_local"}[39m
+[03:44:24] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[04:00:41] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[04:01:36] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[04:17:36] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[04:17:36] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-001736.sql (12.4M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-001736.sql","sizeBytes":12982180,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[04:18:23] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[04:35:58] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[04:36:52] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[04:54:44] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[04:54:44] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"d9285adb-745c-4ae3-b8bf-06ae27863f02","adapterType":"claude_local"}[39m
+[04:55:36] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[05:12:06] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[05:13:02] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[05:30:08] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[05:30:09] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-013008.sql (12.4M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-013008.sql","sizeBytes":13006993,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[05:31:01] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[05:48:46] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[05:49:16] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[06:05:11] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[06:05:11] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"4890753f-e04e-4920-aae4-2be5522d98d9","adapterType":"claude_local"}[39m
+[06:05:59] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[06:20:10] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[06:36:20] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[06:36:20] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-023620.sql (12.4M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-023620.sql","sizeBytes":13023871,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[06:37:03] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[06:54:46] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[06:55:41] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[07:11:50] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[07:12:46] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[07:28:31] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[07:29:29] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[07:47:08] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[07:47:08] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-034708.sql (12.4M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-034708.sql","sizeBytes":13047140,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[07:47:52] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[08:04:26] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[08:05:13] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[08:20:57] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[08:20:57] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"aa666d81-b5c6-4dda-8ed0-106486f03c68","adapterType":"claude_local"}[39m
+[08:21:40] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[08:37:26] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[08:38:10] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[08:55:37] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[08:55:37] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-045537.sql (12.5M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-045537.sql","sizeBytes":13072213,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[08:56:29] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[09:12:32] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[09:13:30] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[09:29:38] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[09:29:38] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"902b3780-2fad-49f0-a4c4-fa2a4c25a049","adapterType":"claude_local"}[39m
+[09:30:32] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[09:43:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[10:01:46] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[10:01:46] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-060146.sql (12.5M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-060146.sql","sizeBytes":13089091,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[10:02:38] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[10:18:55] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[10:19:51] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[10:35:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[10:52:03] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[10:52:54] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[10:53:46] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[11:11:21] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[11:11:21] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-071121.sql (12.5M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-071121.sql","sizeBytes":13112350,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[11:12:07] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[11:28:32] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[11:29:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[11:44:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[12:01:01] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[12:01:01] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"294a0ea9-4ff6-44d8-9c99-fdacbebefabb","adapterType":"claude_local"}[39m
+[12:01:52] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[12:18:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[12:18:48] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-081848.sql (12.5M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-081848.sql","sizeBytes":13128166,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[12:19:43] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[12:36:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[12:37:41] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[12:45:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[13:03:47] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[13:04:43] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[13:20:38] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[13:20:38] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-092038.sql (12.5M)[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-092038.sql","sizeBytes":13143034,"prunedCount":0,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[13:21:34] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[13:37:11] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[13:38:03] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[13:46:50] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[14:02:28] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[14:03:16] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[14:19:36] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[14:20:32] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[14:20:38] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-102038.sql (12.6M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-102038.sql","sizeBytes":13163375,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[14:33:11] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[14:47:51] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[14:47:51] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"1f3ab190-655f-4c3c-98f6-62b9e5b7d28e","adapterType":"claude_local"}[39m
+[15:04:56] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[15:05:47] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[15:23:43] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[15:23:44] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-112343.sql (12.6M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-112343.sql","sizeBytes":13183960,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[15:24:34] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[15:40:51] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[15:41:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[15:48:50] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[15:48:50] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"7f77e7c5-5bd3-4c70-a043-d9d7bc2a40a3","adapterType":"claude_local"}[39m
+[16:06:29] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[16:07:27] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[16:23:32] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[16:24:21] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[16:24:21] [32mINFO[39m: [36mAutomatic database backup complete: /Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-122421.sql (12.6M; pruned 1 old backup(s))[39m [90m{"backupFile":"/Users/lifeos.nico/.paperclip/instances/default/data/backups/paperclip-20260512-122421.sql","sizeBytes":13207467,"prunedCount":1,"backupDir":"/Users/lifeos.nico/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[16:41:04] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[16:41:47] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":1,"skipped":0}[39m
+[16:49:51] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":2,"enqueued":2,"skipped":0}[39m
+[16:49:51] [33mWARN[39m: [36mlocal agent jwt secret missing or invalid; running without injected PAPERCLIP_API_KEY[39m [90m{"companyId":"a164fe8a-4153-4640-bcce-06f1ee7bd358","agentId":"bcf7ed61-ff90-4a79-978d-9224e31b6a8b","runId":"36c020b5-9c73-4666-a5c6-e79dc202fa02","adapterType":"claude_local"}[39m
