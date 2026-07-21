@@ -124365,3 +124365,7 @@ Starting LettaBot server...
 [12:14:24] [32mINFO[39m: [36m[Gateway] 1/1 agents started[39m
 [12:14:24] [32mINFO[39m: [36m[Config] Key: f926454e... (set LETTABOT_API_KEY to customize)[39m
 [12:14:25] [32mINFO[39m: [36m[API] Server listening on 127.0.0.1:8088[39m
+[14:49:04] [32mINFO[39m: [36m[Config] Shutting down...[39m
+[14:49:04] [32mINFO[39m: [36m[Cron] Service stopped[39m
+[14:49:04] [32mINFO[39m: [36m[Gateway] Stopping all agents...[39m
+[14:49:05] [32mINFO[39m: [36m[Gateway] Stopped: Nico[39m
