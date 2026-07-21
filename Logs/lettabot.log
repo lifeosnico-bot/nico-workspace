@@ -124369,3 +124369,92 @@ Starting LettaBot server...
 [14:49:04] [32mINFO[39m: [36m[Cron] Service stopped[39m
 [14:49:04] [32mINFO[39m: [36m[Gateway] Stopping all agents...[39m
 [14:49:05] [32mINFO[39m: [36m[Gateway] Stopped: Nico[39m
+Starting LettaBot server...
+
+[14:54:51] [32mINFO[39m: [36m[Config] Loaded from /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot.yaml[39m
+[14:54:51] [32mINFO[39m: [36m[Config] Mode: api, Agents: Nico[39m
+[14:54:51] [32mINFO[39m: [36m[Config] Starting LettaBot...[39m
+[14:54:51] [32mINFO[39m: [36m[Config] Data directory: /Users/lifeos.nico/Nico/lettabot/lettabot[39m
+[14:54:51] [32mINFO[39m: [36m[Config] Working directory: /tmp/lettabot[39m
+[14:54:51] [32mINFO[39m: [36m[Config] 1 agent(s) configured: Nico[39m
+[14:54:51] [32mINFO[39m: [36m[Config] Configuring agent: Nico[39m
+[14:54:51] [32mINFO[39m: [36m[Bot] LettaBot initialized. Agent ID: (new)[39m
+[14:54:51] [32mINFO[39m: [36m[Config] Agent Nico: memfs disabled (from LETTABOT_MEMFS env)[39m
+[14:54:51] [32mINFO[39m: [36m[Config] Using configured agent ID: agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668[39m
+[14:54:51] [32mINFO[39m: [36m[Bot] Agent ID set to: agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668[39m
+[14:54:51] [32mINFO[39m: [36m[Config] Stored agent agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668 not found on server[39m
+[14:54:51] [32mINFO[39m: [36m[Bot] Agent reset[39m
+[14:54:51] [32mINFO[39m: [36m[Config] No agent found - will create on first message[39m
+[14:54:51] [32mINFO[39m: [36m[Bot] Registered channel: Telegram[39m
+[14:54:51] [32mINFO[39m: [36m[Bot] Group batcher configured[39m
+[14:54:51] [32mINFO[39m: [36m[Cron] Service started (0 jobs, heartbeat: off, watching for changes)[39m
+[14:54:51] [32mINFO[39m: [36m[Gateway] Added agent: Nico[39m
+[14:54:51] [32mINFO[39m: [36m[Gateway] Starting 1 agent(s)...[39m
+[14:54:51] [32mINFO[39m: [36m[Bot] Starting channel: Telegram...[39m
+[14:54:52] [32mINFO[39m: [36m[Telegram] Bot started as @Nicolucavobot[39m
+[14:54:52] [32mINFO[39m: [36m[Telegram] DM policy: allowlist[39m
+
+░██         ░██████████ ░██████████ ░██████████   ░███    ░████████     ░██████   ░██████████
+░██         ░██             ░██        ░██      ░██░██   ░██    ░██   ░██   ░██      ░██
+░██         ░██             ░██        ░██     ░██  ░██  ░██    ░██  ░██     ░██     ░██
+░██         ░█████████      ░██        ░██    ░█████████ ░████████   ░██     ░██     ░██
+░██         ░██             ░██        ░██    ░██    ░██ ░██     ░██ ░██     ░██     ░██
+░██         ░██             ░██        ░██    ░██    ░██ ░██     ░██  ░██   ░██      ░██
+░██████████ ░██████████     ░██        ░██    ░██    ░██ ░█████████    ░██████       ░██
+
+            ╔══════════════════════════════════════════════════════════════════════════════════════════════╗
+            ║                                                                                              ║
+            ║             .           +           .           .           +           .                    ║
+            ║        *          .           .     [ W E   A R E ]     .           .          *             ║
+            ║             .           .                                     .           .                  ║
+            ║                               _ . - = ≈ ≡ ≡ ≡ ≈ = - . _                                      ║
+            ║         .           .       /`                         `\       .           .                ║
+            ║                   .        |      . : .       . : .      |        .                          ║
+            ║             *              |    - ( ◉ ) -   - ( ◉ ) -    |              *                    ║
+            ║                            |      ' : '   |   ' : '      |                                   ║
+            ║         .           .      \              |              /      .           .                ║
+            ║                             \      .      |      .      /                                    ║
+            ║                   .          `\    ` .    |    . `    /`          .                          ║
+            ║             +                  ` - . _    |    _ . - `                  +                    ║
+            ║         .              _ . - ~ ~ ~ - .`\  |  /`. - ~ ~ ~ - . _              .                ║
+            ║                      (░░░░░░░░░░░░░░░░░░)(V)(░░░░░░░░░░░░░░░░░░)                             ║
+            ║                   .   |▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒|  |  |▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒|   .                          ║
+            ║             *         |▓▓▓▓│▓▓▓▓│▓▓▓▓│▓|  |  |▓│▓▓▓▓│▓▓▓▓│▓▓▓▓|         *                    ║
+            ║                       |████│████│████│█|  |  |█│████│████│████|                              ║
+            ║         .             |████│████│████│█|  |  |█│████│████│████|             .                ║
+            ║                   .   |▓▓▓▓│▓▓▓▓│▓▓▓▓│▓| [ ] |▓│▓▓▓▓│▓▓▓▓│▓▓▓▓|   .                          ║
+            ║             +        /`---...________.´   |   `.________...---`\        +                    ║
+            ║                     /                     |                     \                            ║
+            ║         .          /      /` .    .       |       .    . `\      \          .                ║
+            ║                   /      |  (      )      |      (      )  |      \                          ║
+            ║             *    /       |   \    /       |       \    /   |       \    *                    ║
+            ║                 |        |    \  /        |        \  /    |        |                      ║
+            ║         .       |        |     \/         |         \/     |        |       .                ║
+            ║                 |        |     ||         |         ||     |        |                      ║
+            ║                 \         \    ||         |         ||    /         /                      ║
+            ║         .        \         \   ||         |         ||   /         /        .                ║
+            ║                   `\        \  ||         |         ||  /        /`                          ║
+            ║             +       `\       \ ||         |         || /       /`       +                    ║
+            ║                       `\      \||         |         ||/      /`                              ║
+            ║                         `\     `          |          `     /`                                ║
+            ║         .                 `\              $              /`                 .                ║
+            ║                             ` - . ______  |  ______ . - `                                    ║
+            ║   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░(|)░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   ║
+            ║   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓|▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ║
+            ║   ███████████████████████████████████████/ \████████████████████████████████████████████   ║
+            ║   ████████ ` H Y B R I D ` █████████████/   \█████████████ ` G E N E S I S ` ███████████   ║
+            ║   █████████████████████████████████████/  .  \██████████████████████████████████████████   ║
+            ║   ████████████████████████████████████/_______\█████████████████████████████████████████   ║
+            ║                                                                                              ║
+            ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+              loom: Genesis by liminal_bardo
+
+  Version:  v0.2.0 (703d06b)
+  Agent:    Nico (pending) [telegram]
+  Features: cron
+
+[14:54:52] [32mINFO[39m: [36m[Bot] Started channel: Telegram[39m
+[14:54:52] [32mINFO[39m: [36m[Gateway] Started: Nico[39m
+[14:54:52] [32mINFO[39m: [36m[Gateway] 1/1 agents started[39m
+[14:54:52] [32mINFO[39m: [36m[Config] Key: f926454e... (set LETTABOT_API_KEY to customize)[39m
+[14:54:52] [32mINFO[39m: [36m[API] Server listening on 127.0.0.1:8088[39m
