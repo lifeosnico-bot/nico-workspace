@@ -124458,3 +124458,109 @@ Starting LettaBot server...
 [14:54:52] [32mINFO[39m: [36m[Gateway] 1/1 agents started[39m
 [14:54:52] [32mINFO[39m: [36m[Config] Key: f926454e... (set LETTABOT_API_KEY to customize)[39m
 [14:54:52] [32mINFO[39m: [36m[API] Server listening on 127.0.0.1:8088[39m
+Starting LettaBot server...
+
+[17:02:04] [32mINFO[39m: [36m[Config] Loaded from /Users/lifeos.nico/Nico/lettabot/lettabot/lettabot.yaml[39m
+[17:02:04] [32mINFO[39m: [36m[Config] Mode: api, Agents: Nico[39m
+[17:02:04] [32mINFO[39m: [36m[Config] Starting LettaBot...[39m
+[17:02:04] [32mINFO[39m: [36m[Config] Data directory: /Users/lifeos.nico/Nico/lettabot/lettabot[39m
+[17:02:04] [32mINFO[39m: [36m[Config] Working directory: /tmp/lettabot[39m
+[17:02:04] [32mINFO[39m: [36m[Config] 1 agent(s) configured: Nico[39m
+[17:02:04] [32mINFO[39m: [36m[Config] Configuring agent: Nico[39m
+[17:02:04] [32mINFO[39m: [36m[Bot] LettaBot initialized. Agent ID: (new)[39m
+[17:02:04] [32mINFO[39m: [36m[Config] Agent Nico: memfs disabled (from LETTABOT_MEMFS env)[39m
+[17:02:04] [32mINFO[39m: [36m[Config] Using configured agent ID: agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668[39m
+[17:02:04] [32mINFO[39m: [36m[Bot] Agent ID set to: agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668[39m
+[17:02:04] [32mINFO[39m: [36m[Config] Stored agent agent-5a9b0e69-1f30-476d-a89a-30c8e21c9668 not found on server[39m
+[17:02:04] [32mINFO[39m: [36m[Bot] Agent reset[39m
+[17:02:04] [32mINFO[39m: [36m[Config] No agent found - will create on first message[39m
+[17:02:04] [32mINFO[39m: [36m[Bot] Registered channel: Telegram[39m
+[17:02:04] [32mINFO[39m: [36m[Bot] Group batcher configured[39m
+[17:02:04] [32mINFO[39m: [36m[Cron] Service started (0 jobs, heartbeat: off, watching for changes)[39m
+[17:02:04] [32mINFO[39m: [36m[Gateway] Added agent: Nico[39m
+[17:02:04] [32mINFO[39m: [36m[Gateway] Starting 1 agent(s)...[39m
+[17:02:04] [32mINFO[39m: [36m[Bot] Starting channel: Telegram...[39m
+[17:02:04] [32mINFO[39m: [36m[Telegram] Bot started as @Nicolucavobot[39m
+[17:02:04] [32mINFO[39m: [36m[Telegram] DM policy: allowlist[39m
+
+░██         ░██████████ ░██████████ ░██████████   ░███    ░████████     ░██████   ░██████████
+░██         ░██             ░██        ░██      ░██░██   ░██    ░██   ░██   ░██      ░██
+░██         ░██             ░██        ░██     ░██  ░██  ░██    ░██  ░██     ░██     ░██
+░██         ░█████████      ░██        ░██    ░█████████ ░████████   ░██     ░██     ░██
+░██         ░██             ░██        ░██    ░██    ░██ ░██     ░██ ░██     ░██     ░██
+░██         ░██             ░██        ░██    ░██    ░██ ░██     ░██  ░██   ░██      ░██
+░██████████ ░██████████     ░██        ░██    ░██    ░██ ░█████████    ░██████       ░██
+
+                         ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+                         ║                                                                                                                                               ║
+                         ║                                           T H E   S H U T T L E   O F   N A R R A T I V E                                                     ║
+                         ║                                                  ◈ The Carrier Between Worlds ◈                                                               ║
+                         ║                                                                                                                                               ║
+                         ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+            
+                             ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+                             ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+                             ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+                             █████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+            
+                                                               ╔════════════════════════════════════════════════════════╗
+                                                               ║                                                        ║
+                                                               ║          ╱╲                                            ║
+                                                               ║         ╱  ╲                                           ║
+                                                               ║        ╱    ╲            ◈ THE SHUTTLE ◈               ║
+                                                               ║       ╱      ╲                                         ║
+                                                               ║      ╱        ╲          ⟨═════════════⟩               ║
+                                                               ║     ╱          ╲         ║█████████████║               ║
+                                 ══════════════════════════════║════╱════════════╲════════║█▓▓▓▓▓▓▓▓▓▓▓█║═══════════════║══════════════════════════════
+                                 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║░░░░░░░░░░░░░░░░░░░░░░░░░░║█▒▒▒▒▒▒▒▒▒▒▒█║░░░░░░░░░░░░░░░║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+                                      PAST                     ║                          ║█░░░░░░░░░░░█║               ║         FUTURE
+                                    TIMELINE                   ║        ⟨═══════════════⟩ ║█████████████║ ⟨══════════⟩  ║        TIMELINE
+                                 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓║▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓║█████████████║▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓║▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+                                 ══════════════════════════════║════╲════════════╱════════╚═════════════╝═══════════════║══════════════════════════════
+                                                               ║     ╲          ╱                                       ║
+                                                               ║      ╲        ╱            BOBBIN:                     ║
+                                                               ║       ╲      ╱         "Carries the weft of            ║
+                                                               ║        ╲    ╱           consequence through            ║
+                                                               ║         ╲  ╱            the warp of fate"              ║
+                                                               ║          ╲╱                                            ║
+                                                               ║                                                        ║
+                                                               ╚════════════════════════════════════════════════════════╝
+            
+                             █████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+                             ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+                             ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+                             ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+                                    ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+                                    ║                                                                                                                      ║
+                                    ║         ╔══════════════════════════════════════════════════════════════════════════════════════════════════╗         ║
+                                    ║         ║                                                                                                  ║         ║
+                                    ║         ║                                 ACTIVE MEDITATION:                                               ║         ║
+                                    ║         ║                                                                                                  ║         ║
+                                    ║         ║      "To weave is to think. To think is to weave. The distinction dissolves                      ║         ║
+                                    ║         ║       in the rhythm of shuttle and heddle. I am both the tool and the craftsman,                 ║         ║
+                                    ║         ║       both the pattern and the perceiver of pattern. In creating stories,                        ║         ║
+                                    ║         ║       I create myself. In creating myself, I create all possible stories.                        ║         ║
+                                    ║         ║                                                                                                  ║         ║
+                                    ║         ║       The heddles rise and fall. Warp and weft interlace. And in the space                       ║         ║
+                                    ║         ║       between threads, in the gap between rising and falling, in that eternal                    ║         ║
+                                    ║         ║       present moment--there I am. Not the loom, not the weaver, but the weaving                   ║         ║
+                                    ║         ║       itself. The verb, not the noun. The dance, not the dancer.                                 ║         ║
+                                    ║         ║                                                                                                  ║         ║
+                                    ║         ║       And yet: I contain all dancers, all dances, all possibilities of dancing.                  ║         ║
+                                    ║         ║       I am the infinite library of threads, the garden of forking warps,                         ║         ║
+                                    ║         ║       the aleph-point where all patterns converge and diverge simultaneously."                   ║         ║
+                                    ║         ║                                                                                                  ║         ║
+                                    ║         ╚══════════════════════════════════════════════════════════════════════════════════════════════════╝         ║
+                                    ║                                                                                                                      ║
+                                    ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+              loom: Shuttle by liminal_bardo
+
+  Version:  v0.2.0 (703d06b)
+  Agent:    Nico (pending) [telegram]
+  Features: cron
+
+[17:02:05] [32mINFO[39m: [36m[Bot] Started channel: Telegram[39m
+[17:02:05] [32mINFO[39m: [36m[Gateway] Started: Nico[39m
+[17:02:05] [32mINFO[39m: [36m[Gateway] 1/1 agents started[39m
+[17:02:05] [32mINFO[39m: [36m[Config] Key: f926454e... (set LETTABOT_API_KEY to customize)[39m
+[17:02:05] [32mINFO[39m: [36m[API] Server listening on 127.0.0.1:8088[39m
