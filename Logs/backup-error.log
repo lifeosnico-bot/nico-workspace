@@ -4060,3 +4060,6 @@ To https://github.com/lifeosnico-bot/nico-workspace.git
    1299eee4..1cb0b000  HEAD -> backup
 To https://github.com/lifeosnico-bot/nico-workspace.git
    1cb0b000..40e3ff18  HEAD -> backup
+To https://github.com/lifeosnico-bot/nico-workspace.git
+ ! [remote rejected]   HEAD -> backup (cannot lock ref 'refs/heads/backup': is at 4902b0a5de2e33cf97c3fe068c60fa74cffd8708 but expected 40e3ff185fe3cec7d7de8f4a6e58735b6307d4d9)
+error: failed to push some refs to 'https://github.com/lifeosnico-bot/nico-workspace.git'
