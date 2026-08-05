@@ -4065,3 +4065,4 @@ To https://github.com/lifeosnico-bot/nico-workspace.git
 error: failed to push some refs to 'https://github.com/lifeosnico-bot/nico-workspace.git'
 To https://github.com/lifeosnico-bot/nico-workspace.git
    4902b0a5..6b4db824  HEAD -> backup
+fatal: unable to access 'https://github.com/lifeosnico-bot/nico-workspace.git/': Recv failure: Operation timed out

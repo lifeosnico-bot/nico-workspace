@@ -1049,3 +1049,6 @@ Get an API key at https://app.letta.com/api-keys
 Error: letta error: Missing LETTA_API_KEY
 Headless mode requires an API key set via the LETTA_API_KEY environment variable.
 Get an API key at https://app.letta.com/api-keys
+Error: letta error: Missing LETTA_API_KEY
+Headless mode requires an API key set via the LETTA_API_KEY environment variable.
+Get an API key at https://app.letta.com/api-keys
